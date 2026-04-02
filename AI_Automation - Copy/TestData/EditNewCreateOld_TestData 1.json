@@ -1,0 +1,24 @@
+{
+    "testCases":  [
+                      {
+                          "testCaseId":  "TC_28042822",
+                          "testName":  "Edit_AdministrativeTemplates_RestrictedSitesZone_Allowactivescripting_Win365",
+                          "description":  "Edit profile - Allow active scripting (Restricted Sites Zone) - 2nd edit instance",
+                          "category":  "Windows 365 Security Baseline",
+                          "priority":  "High",
+                          "enabled":  true,
+                          "parameters":  {
+                                             "firstLink":  "Endpoint security",
+                                             "secondLink":  "Security baselines",
+                                             "secBaselineName":  "Windows 365 Security Baseline",
+                                             "configurationSettings":  "Administrative Templates",
+                                             "parentDropDown":  "Allow active scripting",
+                                             "parentDropDownOption":  "Enabled",
+                                             "childDropDown":  "Allow active scripting",
+                                             "childDropDownOption":  "Prompt",
+                                             "parentSectionPath":  "Windows Components > Internet Explorer > Internet Control Panel > Security Page > Restricted Sites Zone",
+                                             "childSectionPath":  "Windows Components > Internet Explorer > Internet Control Panel > Security Page > Restricted Sites Zone"
+                                         }
+                      }
+                  ]
+}

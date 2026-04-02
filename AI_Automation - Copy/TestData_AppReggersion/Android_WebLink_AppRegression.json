@@ -1,0 +1,122 @@
+{
+    "testCases": [
+        
+        {
+            "testCaseId": "TC_952931",
+            "testName": "Android_WebLink_InstallStatus_Required_UserGroup",
+            "description": "[IntuneSA]:[Android]:[InstallStatus]:[WebApp]:[Required][UserGroup]:IT Pro can see installation status summary for app deployed for User group as required",
+            "category": "AndroidWebLink",
+            "priority": "High",
+            "enabled": true,
+            "parameters": {
+                "firstLink": "Apps",
+                "secondLink": "Android",
+                "AppType": "Web link",
+                "Name": "TC_952931_WebLink_Microsoft",
+                "Description": "TC_952931_WebLink_Microsoft",
+                "Publisher": "AIAuto ddmmyyyymmss",
+                "App URL": "https://www.microsoft.com/",
+                "Require a managed browser to open this link": "No",
+                "Category": "",
+                "Show this as a featured app": "No",
+                "Information URL": "",
+                "Privacy URL": "",
+                "Developer": "",
+                "Owner": "",
+                "Notes": "",
+                "Logo": "",
+                "Assignments": {
+                    "Required": "Add group",
+                    "Available for enrolled devices": "",
+                    "uninstall": "",
+                    "select groups": "AI_Automation_User_group"
+                },
+                "API parameters": {},
+                "Device Validation": {
+                    "pre-requisite on device": "Create Android enrollment",
+                    "App Installation Validation": "IT Pro can see installation status summary for app deployed for User group as required",
+                    "searchTerm": "",
+                    "expectedValue": ""
+                }
+            }
+        },
+        {
+            "testCaseId": "TC_952936",
+            "testName": "Android_WebLink_InstallStatus_Required_DeviceGroup",
+            "description": "[IntuneSA]:[Android]:[InstallStatus]:[WebApp]:[Required][DeviceGroup]:IT Pro can see installation status summary for app deployed for Device group as required",
+            "category": "AndroidWebLink",
+            "priority": "High",
+            "enabled": true,
+            "parameters": {
+                "firstLink": "Apps",
+                "secondLink": "Android",
+                "AppType": "Web link",
+                "Name": "TC_952936_WebLink_Outlook",
+                "Description": "TC_952936_WebLink_Outlook",
+                "Publisher": "AIAuto ddmmyyyymmss",
+                "App URL": "https://outlook.office.com/",
+                "Require a managed browser to open this link": "No",
+                "Category": "",
+                "Show this as a featured app": "No",
+                "Information URL": "",
+                "Privacy URL": "",
+                "Developer": "",
+                "Owner": "",
+                "Notes": "",
+                "Logo": "",
+                "Assignments": {
+                    "Required": "Add group",
+                    "Available for enrolled devices": "",
+                    "uninstall": "",
+                    "select groups": "AI_Automation_Device_group"
+                },
+                "API parameters": {},
+                "Device Validation": {
+                    "pre-requisite on device": "Create Android enrollment",
+                    "App Installation Validation": "IT Pro can see installation status summary for app deployed for Device group as required",
+                    "searchTerm": "",
+                    "expectedValue": ""
+                }
+            }
+        },
+        {
+            "testCaseId": "TC_952916",
+            "testName": "Android_WebLink_Uninstall_UserGroup",
+            "description": "[IntuneSA]:[Android]:[Uninstall]:[WebApp]:[UserGroup]:[WebApp]:Verify Uninstall is success for all Android devices of user",
+            "category": "AndroidWebLink",
+            "priority": "High",
+            "enabled": true,
+            "parameters": {
+                "firstLink": "Apps",
+                "secondLink": "Android",
+                "AppType": "Web link",
+                "Name": "TC_952916_WebLink_BingTranslate",
+                "Description": "TC_952916_WebLink_BingTranslate",
+                "Publisher": "AIAuto ddmmyyyymmss",
+                "App URL": "https://www.bing.com/translator",
+                "Require a managed browser to open this link": "No",
+                "Category": "",
+                "Show this as a featured app": "No",
+                "Information URL": "",
+                "Privacy URL": "",
+                "Developer": "",
+                "Owner": "",
+                "Notes": "",
+                "Logo": "",
+                "Assignments": {
+                    "Required": "Add group",
+                    "Available for enrolled devices": "",
+                    "uninstall": "Add group",
+                    "select groups": "AI_Automation_User_group"
+                },
+                "API parameters": {},
+                "Device Validation": {
+                    "pre-requisite on device": "Enroll one Android device",
+                    "App Installation Validation": "Verify Install first as Required to User Group, then manually update to uninstall user group. Verify uninstall is success for all Android Users in group",
+                    "searchTerm": "",
+                    "expectedValue": ""
+                }
+            }
+        }
+    ]
+}

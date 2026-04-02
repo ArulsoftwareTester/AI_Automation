@@ -1,0 +1,750 @@
+{
+  "testCases": [
+    {
+      "testCaseId": "TC_7532673",
+      "testName": "Conflict_Include_UserGroup_Required_Match_Available_Match",
+      "description": "[IntuneSA]:[Assignment Filters][Conflict]:[Required][Available][Include][UserGroup]:G1 Required F1 Match, G2 Available F2 Match, Verify Successful Install and show in CP and IWP",
+      "category": "AssignmentFiltersConflict",
+      "priority": "High",
+      "enabled": true,
+      "parameters": {
+        "firstLink": "Apps",
+        "secondLink": "Android",
+        "AppType": "Line-of-business app",
+        "select app package file": "A_Online_Radio_1.0.6.apk",
+        "Name": "TC_7532673_A_Online_Radio_1.0.6.apk",
+        "Description": "TC_7532673_A_Online_Radio_1.0.6.apk",
+        "Publisher": "AIAuto ddmmyyyymmss",
+        "Targeted platform": "",
+        "Minimum operating system": "Android 5.0 (Lollipop)",
+        "Category": "",
+        "Show this as a featured app": "No",
+        "Information URL": "",
+        "Privacy URL": "",
+        "Developer": "",
+        "Owner": "",
+        "Notes": "",
+        "Logo": "",
+        "Create Matching Assignment Filters": true,
+        "Assignments": {
+          "Required": {
+            "Add group": "AI_Automation_User_group",
+            "Filter mode": "Include filtered devices in assignment",
+            "Search by name": "Matching Filter", "select filter": "Matching Filter"
+          },
+          "Available for enrolled devices": {
+            "Add group": "AI_Automation",
+            "Filter mode": "Include filtered devices in assignment",
+            "Search by name": "Matching Filter", "select filter": "Matching Filter"
+          }
+        },
+        "API parameters": {},
+        "Device Validation": {
+          "pre-requisite on device": "Create Android enrollment, Create Matching Assignment Filters, Create 2 User Groups (G1 and G2) with same user",
+          "App Installation Validation": "Verify app is installed on the device. Verify app shows in IWP and CP",
+          "searchTerm": "",
+          "expectedValue": ""
+        }
+      }
+    },
+    {
+      "testCaseId": "TC_7532750",
+      "testName": "Conflict_Include_UserGroup_Required_Match_Available_NoMatch",
+      "description": "[IntuneSA]:[Assignment Filters][Conflict]:[Required][Available][Include][UserGroup]:G1 Required F1 Match, G2 Available F2 No Match, Verify Installs and also app will show in CP and IWP",
+      "category": "AssignmentFiltersConflict",
+      "priority": "High",
+      "enabled": true,
+      "parameters": {
+        "firstLink": "Apps",
+        "secondLink": "Android",
+        "AppType": "Web link",
+        "Name": "TC_7532750_WebLink_Wikipedia",
+        "Description": "TC_7532750_WebLink_Wikipedia",
+        "Publisher": "AIAuto ddmmyyyymmss",
+        "App URL": "https://www.wikipedia.org/",
+        "Require a managed browser to open this link": "No",
+        "Category": "",
+        "Show this as a featured app": "No",
+        "Information URL": "",
+        "Privacy URL": "",
+        "Developer": "",
+        "Owner": "",
+        "Notes": "",
+        "Logo": "",
+        "Create Matching Assignment Filters": true,
+        "Create Non-Matching Assignment Filters": true,
+        "Assignments": {
+          "Required": {
+            "Add group": "AI_Automation_User_group",
+            "Filter mode": "Include filtered devices in assignment",
+            "Search by name": "Matching Filter", "select filter": "Matching Filter"
+          },
+          "Available for enrolled devices": {
+            "Add group": "AI_Automation",
+            "Filter mode": "Include filtered devices in assignment",
+            "Search by name": "Non-Matching Filter", "select filter": "Non-Matching Filter"
+          }
+        },
+        "API parameters": {},
+        "Device Validation": {
+          "pre-requisite on device": "Create Android enrollment, Create Matching and Non-Matching Assignment Filters, Create 2 User Groups with same user",
+          "App Installation Validation": "App should install on device and should show in IWP or CP. One filter must match for the app to install",
+          "searchTerm": "",
+          "expectedValue": ""
+        }
+      }
+    },
+    {
+      "testCaseId": "TC_7532819",
+      "testName": "Conflict_Include_UserGroup_Required_NoMatch_Available_Match",
+      "description": "[IntuneSA]:[Assignment Filters][Conflict]:[Required][Available][Include][UserGroup]:G1 Required F1 No Match, G2 Available F2 Match, Verify app gets Installed and it shows in CP and IWP",
+      "category": "AssignmentFiltersConflict",
+      "priority": "High",
+      "enabled": true,
+      "parameters": {
+        "firstLink": "Apps",
+        "secondLink": "Android",
+        "AppType": "Android store app",
+        "Name": "TC_7532819_GoogleSheets_StoreApp",
+        "Description": "TC_7532819_GoogleSheets_StoreApp",
+        "Publisher": "AIAuto ddmmyyyymmss",
+        "Appstore URL": "https://play.google.com/store/apps/details?id=com.google.android.apps.docs.editors.sheets",
+        "Minimum operating system": "Android 4.0 (Ice Cream Sandwich)",
+        "Category": "",
+        "Show this as a featured app": "No",
+        "Information URL": "",
+        "Privacy URL": "",
+        "Developer": "",
+        "Owner": "",
+        "Notes": "",
+        "Logo": "",
+        "Create Matching Assignment Filters": true,
+        "Create Non-Matching Assignment Filters": true,
+        "Assignments": {
+          "Required": {
+            "Add group": "AI_Automation_User_group",
+            "Filter mode": "Include filtered devices in assignment",
+            "Search by name": "Non-Matching Filter", "select filter": "Non-Matching Filter"
+          },
+          "Available for enrolled devices": {
+            "Add group": "AI_Automation",
+            "Filter mode": "Include filtered devices in assignment",
+            "Search by name": "Matching Filter", "select filter": "Matching Filter"
+          }
+        },
+        "API parameters": {},
+        "Device Validation": {
+          "pre-requisite on device": "Create Android enrollment, Create Matching and Non-Matching Assignment Filters, Create 2 User Groups with same user",
+          "App Installation Validation": "App should install on device, and it will show in IWP or CP. At least one filter must match",
+          "searchTerm": "",
+          "expectedValue": ""
+        }
+      }
+    },
+    {
+      "testCaseId": "TC_7532907",
+      "testName": "Conflict_Include_UserGroup_Required_NoMatch_Available_NoMatch",
+      "description": "[IntuneSA]:[Assignment Filters][Conflict]:[Required][Available][Include][UserGroup]:G1 Required F1 No Match, G2 Available F2 No Match, Verify app does not get Installed and does not show in CP and IWP",
+      "category": "AssignmentFiltersConflict",
+      "priority": "High",
+      "enabled": true,
+      "parameters": {
+        "firstLink": "Apps",
+        "secondLink": "Android",
+        "AppType": "Line-of-business app",
+        "select app package file": "Adobe_Flash_Player_10.3.185.25.apk",
+        "Name": "TC_7532907_AdobeFlash25_Conflict",
+        "Description": "TC_7532907_AdobeFlash25_Conflict",
+        "Publisher": "AIAuto ddmmyyyymmss",
+        "Targeted platform": "",
+        "Minimum operating system": "Android 5.0 (Lollipop)",
+        "Category": "",
+        "Show this as a featured app": "No",
+        "Information URL": "",
+        "Privacy URL": "",
+        "Developer": "",
+        "Owner": "",
+        "Notes": "",
+        "Logo": "",
+        "Create Non-Matching Assignment Filters": true,
+        "Assignments": {
+          "Required": {
+            "Add group": "AI_Automation_User_group",
+            "Filter mode": "Include filtered devices in assignment",
+            "Search by name": "Non-Matching Filter", "select filter": "Non-Matching Filter"
+          },
+          "Available for enrolled devices": {
+            "Add group": "AI_Automation",
+            "Filter mode": "Include filtered devices in assignment",
+            "Search by name": "Non-Matching Filter", "select filter": "Non-Matching Filter"
+          }
+        },
+        "API parameters": {},
+        "Device Validation": {
+          "pre-requisite on device": "Create Android enrollment, Create Non-Matching Assignment Filters, Create 2 User Groups with same user",
+          "App Installation Validation": "App does not install on device and does not show in IWP or CP",
+          "searchTerm": "",
+          "expectedValue": ""
+        }
+      }
+    },
+    {
+      "testCaseId": "TC_7532982",
+      "testName": "Conflict_Include_UserGroup_Required_Match_Uninstall_Match",
+      "description": "[IntuneSA]:[Assignment Filters][Conflict]:[Required][Uninstall][Include][UserGroup]:G1 Required F1 Match, G2 Uninstall F2 Match, Verify app gets Installed",
+      "category": "AssignmentFiltersConflict",
+      "priority": "High",
+      "enabled": true,
+      "parameters": {
+        "firstLink": "Apps",
+        "secondLink": "Android",
+        "AppType": "Web link",
+        "Name": "TC_7532982_WebLink_GitHub",
+        "Description": "TC_7532982_WebLink_GitHub",
+        "Publisher": "AIAuto ddmmyyyymmss",
+        "App URL": "https://www.github.com/",
+        "Require a managed browser to open this link": "No",
+        "Category": "",
+        "Show this as a featured app": "No",
+        "Information URL": "",
+        "Privacy URL": "",
+        "Developer": "",
+        "Owner": "",
+        "Notes": "",
+        "Logo": "",
+        "Create Matching Assignment Filters": true,
+        "Assignments": {
+          "Required": {
+            "Add group": "AI_Automation_User_group",
+            "Filter mode": "Include filtered devices in assignment",
+            "Search by name": "Matching Filter", "select filter": "Matching Filter"
+          },
+          "uninstall": {
+            "Add group": "AI_Automation",
+            "Filter mode": "Include filtered devices in assignment",
+            "Search by name": "Matching Filter", "select filter": "Matching Filter"
+          }
+        },
+        "API parameters": {},
+        "Device Validation": {
+          "pre-requisite on device": "Create Android enrollment, Create Matching Assignment Filters, Create 2 User Groups with same user",
+          "App Installation Validation": "App does not install on device and does not show in IWP or CP",
+          "searchTerm": "",
+          "expectedValue": ""
+        }
+      }
+    },
+    {
+      "testCaseId": "TC_7532990",
+      "testName": "Conflict_Include_DeviceGroup_Required_Match_Available_Match",
+      "description": "[IntuneSA]:[Assignment Filters][Conflict]:[Required][Available][Include][DeviceGroup]:G1 Required F1 Match, G2 Available F2 Match, Verify Successful Install and does not show in IWP. CP will show only if affiliated user",
+      "category": "AssignmentFiltersConflict",
+      "priority": "High",
+      "enabled": true,
+      "parameters": {
+        "firstLink": "Apps",
+        "secondLink": "Android",
+        "AppType": "Android store app",
+        "Name": "TC_7532990_GoogleSlides_StoreApp",
+        "Description": "TC_7532990_GoogleSlides_StoreApp",
+        "Publisher": "AIAuto ddmmyyyymmss",
+        "Appstore URL": "https://play.google.com/store/apps/details?id=com.google.android.apps.docs.editors.slides",
+        "Minimum operating system": "Android 4.0 (Ice Cream Sandwich)",
+        "Category": "",
+        "Show this as a featured app": "No",
+        "Information URL": "",
+        "Privacy URL": "",
+        "Developer": "",
+        "Owner": "",
+        "Notes": "",
+        "Logo": "",
+        "Create Matching Assignment Filters": true,
+        "Assignments": {
+          "Required": {
+            "Add group": "AI_Automation_Device_group",
+            "Filter mode": "Include filtered devices in assignment",
+            "Search by name": "Matching Filter", "select filter": "Matching Filter"
+          },
+          "Available for enrolled devices": {
+            "Add group": "AI_Automation",
+            "Filter mode": "Include filtered devices in assignment",
+            "Search by name": "Matching Filter", "select filter": "Matching Filter"
+          }
+        },
+        "API parameters": {},
+        "Device Validation": {
+          "pre-requisite on device": "Create Android enrollment, Create Matching Assignment Filters, Create 2 Device Groups (G1 and G2) with same device",
+          "App Installation Validation": "App installs. Does not show in IWP. CP will show only if affiliated user",
+          "searchTerm": "",
+          "expectedValue": ""
+        }
+      }
+    },
+    {
+      "testCaseId": "TC_7533002",
+      "testName": "Conflict_Include_DeviceGroup_Required_Match_Available_NoMatch",
+      "description": "[IntuneSA]:[Assignment Filters][Conflict]:[Required][Available][Include][DeviceGroup]:G1 Required F1 Match, G2 Available F2 No Match, Verify Successful Install and does not show in CP and IWP",
+      "category": "AssignmentFiltersConflict",
+      "priority": "High",
+      "enabled": true,
+      "parameters": {
+        "firstLink": "Apps",
+        "secondLink": "Android",
+        "AppType": "Web link",
+        "Name": "TC_7533002_WebLink_StackOverflow",
+        "Description": "TC_7533002_WebLink_StackOverflow",
+        "Publisher": "AIAuto ddmmyyyymmss",
+        "App URL": "https://stackoverflow.com/",
+        "Require a managed browser to open this link": "No",
+        "Category": "",
+        "Show this as a featured app": "No",
+        "Information URL": "",
+        "Privacy URL": "",
+        "Developer": "",
+        "Owner": "",
+        "Notes": "",
+        "Logo": "",
+        "Create Matching Assignment Filters": true,
+        "Create Non-Matching Assignment Filters": true,
+        "Assignments": {
+          "Required": {
+            "Add group": "AI_Automation_Device_group",
+            "Filter mode": "Include filtered devices in assignment",
+            "Search by name": "Matching Filter", "select filter": "Matching Filter"
+          },
+          "Available for enrolled devices": {
+            "Add group": "AI_Automation",
+            "Filter mode": "Include filtered devices in assignment",
+            "Search by name": "Non-Matching Filter", "select filter": "Non-Matching Filter"
+          }
+        },
+        "API parameters": {},
+        "Device Validation": {
+          "pre-requisite on device": "Create Android enrollment, Create Matching and Non-Matching Assignment Filters, Create 2 Device Groups with same device",
+          "App Installation Validation": "App does not install on device and does not show in IWP or CP",
+          "searchTerm": "",
+          "expectedValue": ""
+        }
+      }
+    },
+    {
+      "testCaseId": "TC_7533015",
+      "testName": "Conflict_Include_DeviceGroup_Required_NoMatch_Available_Match",
+      "description": "[IntuneSA]:[Assignment Filters][Conflict]:[Required][Available][Include][DeviceGroup]:G1 Required F1 No Match, G2 Available F2 Match, Verify Successful Install and does not show in CP and IWP",
+      "category": "AssignmentFiltersConflict",
+      "priority": "High",
+      "enabled": true,
+      "parameters": {
+        "firstLink": "Apps",
+        "secondLink": "Android",
+        "AppType": "Android store app",
+        "Name": "TC_7533015_GoogleCalendar_StoreApp",
+        "Description": "TC_7533015_GoogleCalendar_StoreApp",
+        "Publisher": "AIAuto ddmmyyyymmss",
+        "Appstore URL": "https://play.google.com/store/apps/details?id=com.google.android.calendar",
+        "Minimum operating system": "Android 4.0 (Ice Cream Sandwich)",
+        "Category": "",
+        "Show this as a featured app": "No",
+        "Information URL": "",
+        "Privacy URL": "",
+        "Developer": "",
+        "Owner": "",
+        "Notes": "",
+        "Logo": "",
+        "Create Matching Assignment Filters": true,
+        "Create Non-Matching Assignment Filters": true,
+        "Assignments": {
+          "Required": {
+            "Add group": "AI_Automation_Device_group",
+            "Filter mode": "Include filtered devices in assignment",
+            "Search by name": "Non-Matching Filter", "select filter": "Non-Matching Filter"
+          },
+          "Available for enrolled devices": {
+            "Add group": "AI_Automation",
+            "Filter mode": "Include filtered devices in assignment",
+            "Search by name": "Matching Filter", "select filter": "Matching Filter"
+          }
+        },
+        "API parameters": {},
+        "Device Validation": {
+          "pre-requisite on device": "Create Android enrollment, Create Matching and Non-Matching Assignment Filters, Create 2 Device Groups with same device",
+          "App Installation Validation": "App does not install on device and does not show in IWP or CP",
+          "searchTerm": "",
+          "expectedValue": ""
+        }
+      }
+    },
+    {
+      "testCaseId": "TC_7533024",
+      "testName": "Conflict_Include_DeviceGroup_Required_NoMatch_Available_NoMatch",
+      "description": "[IntuneSA]:[Assignment Filters][Conflict]:[Required][Available][Include][DeviceGroup]:G1 Required F1 No Match, G2 Available F2 No Match, Verify app does not get Installed and does not show in CP and IWP",
+      "category": "AssignmentFiltersConflict",
+      "priority": "High",
+      "enabled": true,
+      "parameters": {
+        "firstLink": "Apps",
+        "secondLink": "Android",
+        "AppType": "Web link",
+        "Name": "TC_7533024_WebLink_Azure",
+        "Description": "TC_7533024_WebLink_Azure",
+        "Publisher": "AIAuto ddmmyyyymmss",
+        "App URL": "https://portal.azure.com/",
+        "Require a managed browser to open this link": "No",
+        "Category": "",
+        "Show this as a featured app": "No",
+        "Information URL": "",
+        "Privacy URL": "",
+        "Developer": "",
+        "Owner": "",
+        "Notes": "",
+        "Logo": "",
+        "Create Non-Matching Assignment Filters": true,
+        "Assignments": {
+          "Required": {
+            "Add group": "AI_Automation_Device_group",
+            "Filter mode": "Include filtered devices in assignment",
+            "Search by name": "Non-Matching Filter", "select filter": "Non-Matching Filter"
+          },
+          "Available for enrolled devices": {
+            "Add group": "AI_Automation",
+            "Filter mode": "Include filtered devices in assignment",
+            "Search by name": "Non-Matching Filter", "select filter": "Non-Matching Filter"
+          }
+        },
+        "API parameters": {},
+        "Device Validation": {
+          "pre-requisite on device": "Create Android enrollment, Create Non-Matching Assignment Filters, Create 2 Device Groups with same device",
+          "App Installation Validation": "App does not install on device and does not show in IWP or CP",
+          "searchTerm": "",
+          "expectedValue": ""
+        }
+      }
+    },
+    {
+      "testCaseId": "TC_7817263",
+      "testName": "Conflict_Include_UserGroup_Available_Match_Uninstall_Match",
+      "description": "[IntuneSA]:[Assignment Filters][Conflict]:[Available][Uninstall][Include][UserGroup]:G1 Available F1 Match, G2 Uninstall F2 Match, Verify app gets uninstalled. App does not show in IWP or CP",
+      "category": "AssignmentFiltersConflict",
+      "priority": "High",
+      "enabled": true,
+      "parameters": {
+        "firstLink": "Apps",
+        "secondLink": "Android",
+        "AppType": "Android store app",
+        "Name": "TC_7817263_Gmail_StoreApp",
+        "Description": "TC_7817263_Gmail_StoreApp",
+        "Publisher": "AIAuto ddmmyyyymmss",
+        "Appstore URL": "https://play.google.com/store/apps/details?id=com.google.android.gm",
+        "Minimum operating system": "Android 4.0 (Ice Cream Sandwich)",
+        "Category": "",
+        "Show this as a featured app": "No",
+        "Information URL": "",
+        "Privacy URL": "",
+        "Developer": "",
+        "Owner": "",
+        "Notes": "",
+        "Logo": "",
+        "Create Matching Assignment Filters": true,
+        "Assignments": {
+          "Available for enrolled devices": {
+            "Add group": "AI_Automation_User_group",
+            "Filter mode": "Include filtered devices in assignment",
+            "Search by name": "Matching Filter", "select filter": "Matching Filter"
+          },
+          "uninstall": {
+            "Add group": "AI_Automation",
+            "Filter mode": "Include filtered devices in assignment",
+            "Search by name": "Matching Filter", "select filter": "Matching Filter"
+          }
+        },
+        "API parameters": {},
+        "Device Validation": {
+          "pre-requisite on device": "Create Android enrollment, Create Matching Assignment Filters, Create 2 User Groups with same user. Install app first.",
+          "App Installation Validation": "G1 Available F1 Match, G2 Uninstall F2 Match - Verify app gets uninstalled. App does not show in IWP or CP",
+          "searchTerm": "",
+          "expectedValue": ""
+        }
+      }
+    },
+    {
+      "testCaseId": "TC_7817266",
+      "testName": "Conflict_Include_UserGroup_Available_Match_Uninstall_NoMatch",
+      "description": "[IntuneSA]:[Assignment Filters][Conflict]:[Available][Uninstall][Include][UserGroup]:G1 Available F1 Match, G2 Uninstall F2 NoMatch, Verify app does not get uninstalled. App does not show in IWP or CP",
+      "category": "AssignmentFiltersConflict",
+      "priority": "High",
+      "enabled": true,
+      "parameters": {
+        "firstLink": "Apps",
+        "secondLink": "Android",
+        "AppType": "Web link",
+        "Name": "TC_7817266_WebLink_Teams",
+        "Description": "TC_7817266_WebLink_Teams",
+        "Publisher": "AIAuto ddmmyyyymmss",
+        "App URL": "https://teams.microsoft.com/",
+        "Require a managed browser to open this link": "No",
+        "Category": "",
+        "Show this as a featured app": "No",
+        "Information URL": "",
+        "Privacy URL": "",
+        "Developer": "",
+        "Owner": "",
+        "Notes": "",
+        "Logo": "",
+        "Create Matching Assignment Filters": true,
+        "Create Non-Matching Assignment Filters": true,
+        "Assignments": {
+          "Available for enrolled devices": {
+            "Add group": "AI_Automation_User_group",
+            "Filter mode": "Include filtered devices in assignment",
+            "Search by name": "Matching Filter", "select filter": "Matching Filter"
+          },
+          "uninstall": {
+            "Add group": "AI_Automation",
+            "Filter mode": "Include filtered devices in assignment",
+            "Search by name": "Non-Matching Filter", "select filter": "Non-Matching Filter"
+          }
+        },
+        "API parameters": {},
+        "Device Validation": {
+          "pre-requisite on device": "Create Android enrollment, Create Matching and Non-Matching Filters, Create 2 User Groups with same user. Install app first.",
+          "App Installation Validation": "G1 Available F1 Match, G2 Uninstall F2 NoMatch - Verify app does not get uninstalled. App does not show in IWP or CP",
+          "searchTerm": "",
+          "expectedValue": ""
+        }
+      }
+    },
+    {
+      "testCaseId": "TC_7817269",
+      "testName": "Conflict_Include_UserGroup_Available_NoMatch_Uninstall_Match",
+      "description": "[IntuneSA]:[Assignment Filters][Conflict]:[Available][Uninstall][Include][UserGroup]:G1 Available F1 NoMatch, G2 Uninstall F2 Match, Verify app gets uninstalled. App does not show in IWP or CP",
+      "category": "AssignmentFiltersConflict",
+      "priority": "High",
+      "enabled": true,
+      "parameters": {
+        "firstLink": "Apps",
+        "secondLink": "Android",
+        "AppType": "Android store app",
+        "Name": "TC_7817269_YouTube_StoreApp",
+        "Description": "TC_7817269_YouTube_StoreApp",
+        "Publisher": "AIAuto ddmmyyyymmss",
+        "Appstore URL": "https://play.google.com/store/apps/details?id=com.google.android.youtube",
+        "Minimum operating system": "Android 4.0 (Ice Cream Sandwich)",
+        "Category": "",
+        "Show this as a featured app": "No",
+        "Information URL": "",
+        "Privacy URL": "",
+        "Developer": "",
+        "Owner": "",
+        "Notes": "",
+        "Logo": "",
+        "Create Matching Assignment Filters": true,
+        "Create Non-Matching Assignment Filters": true,
+        "Assignments": {
+          "Available for enrolled devices": {
+            "Add group": "AI_Automation_User_group",
+            "Filter mode": "Include filtered devices in assignment",
+            "Search by name": "Non-Matching Filter", "select filter": "Non-Matching Filter"
+          },
+          "uninstall": {
+            "Add group": "AI_Automation",
+            "Filter mode": "Include filtered devices in assignment",
+            "Search by name": "Matching Filter", "select filter": "Matching Filter"
+          }
+        },
+        "API parameters": {},
+        "Device Validation": {
+          "pre-requisite on device": "Create Android enrollment, Create Matching and Non-Matching Filters, Create 2 User Groups with same user. Install app first.",
+          "App Installation Validation": "G1 Available F1 NoMatch, G2 Uninstall F2 Match - Verify app gets uninstalled. App does not show in IWP or CP",
+          "searchTerm": "",
+          "expectedValue": ""
+        }
+      }
+    },
+    {
+      "testCaseId": "TC_7817272",
+      "testName": "Conflict_Include_UserGroup_Available_NoMatch_Uninstall_NoMatch",
+      "description": "[IntuneSA]:[Assignment Filters][Conflict]:[Available][Uninstall][Include][UserGroup]:G1 Available F1 NoMatch, G2 Uninstall F2 NoMatch, Verify app does not get uninstalled. App does not show in IWP or CP",
+      "category": "AssignmentFiltersConflict",
+      "priority": "High",
+      "enabled": true,
+      "parameters": {
+        "firstLink": "Apps",
+        "secondLink": "Android",
+        "AppType": "Web link",
+        "Name": "TC_7817272_WebLink_OneDrive",
+        "Description": "TC_7817272_WebLink_OneDrive",
+        "Publisher": "AIAuto ddmmyyyymmss",
+        "App URL": "https://onedrive.live.com/",
+        "Require a managed browser to open this link": "No",
+        "Category": "",
+        "Show this as a featured app": "No",
+        "Information URL": "",
+        "Privacy URL": "",
+        "Developer": "",
+        "Owner": "",
+        "Notes": "",
+        "Logo": "",
+        "Create Non-Matching Assignment Filters": true,
+        "Assignments": {
+          "Available for enrolled devices": {
+            "Add group": "AI_Automation_User_group",
+            "Filter mode": "Include filtered devices in assignment",
+            "Search by name": "Non-Matching Filter", "select filter": "Non-Matching Filter"
+          },
+          "uninstall": {
+            "Add group": "AI_Automation",
+            "Filter mode": "Include filtered devices in assignment",
+            "Search by name": "Non-Matching Filter", "select filter": "Non-Matching Filter"
+          }
+        },
+        "API parameters": {},
+        "Device Validation": {
+          "pre-requisite on device": "Create Android enrollment, Create Non-Matching Filters, Create 2 User Groups with same user. Install app first.",
+          "App Installation Validation": "G1 Available F1 NoMatch, G2 Uninstall F2 NoMatch - Verify app does not get uninstalled. App does not show in IWP or CP",
+          "searchTerm": "",
+          "expectedValue": ""
+        }
+      }
+    },
+    {
+      "testCaseId": "TC_7817274",
+      "testName": "Conflict_Include_DeviceGroup_Required_Match_Uninstall_NoMatch",
+      "description": "[IntuneSA]:[Assignment Filters][Conflict]:[Required][Uninstall][Include][DeviceGroup]:G1 Required F1 Match, G2 Uninstall F2 NoMatch, Verify Successful Install",
+      "category": "AssignmentFiltersConflict",
+      "priority": "High",
+      "enabled": true,
+      "parameters": {
+        "firstLink": "Apps",
+        "secondLink": "Android",
+        "AppType": "Android store app",
+        "Name": "TC_7817274_GoogleDrive_StoreApp",
+        "Description": "TC_7817274_GoogleDrive_StoreApp",
+        "Publisher": "AIAuto ddmmyyyymmss",
+        "Appstore URL": "https://play.google.com/store/apps/details?id=com.google.android.apps.docs",
+        "Minimum operating system": "Android 4.0 (Ice Cream Sandwich)",
+        "Category": "",
+        "Show this as a featured app": "No",
+        "Information URL": "",
+        "Privacy URL": "",
+        "Developer": "",
+        "Owner": "",
+        "Notes": "",
+        "Logo": "",
+        "Create Matching Assignment Filters": true,
+        "Create Non-Matching Assignment Filters": true,
+        "Assignments": {
+          "Required": {
+            "Add group": "AI_Automation_Device_group",
+            "Filter mode": "Include filtered devices in assignment",
+            "Search by name": "Matching Filter", "select filter": "Matching Filter"
+          },
+          "uninstall": {
+            "Add group": "AI_Automation",
+            "Filter mode": "Include filtered devices in assignment",
+            "Search by name": "Non-Matching Filter", "select filter": "Non-Matching Filter"
+          }
+        },
+        "API parameters": {},
+        "Device Validation": {
+          "pre-requisite on device": "Create Android enrollment, Create Matching and Non-Matching Filters, Create 2 Device Groups with same device",
+          "App Installation Validation": "G1 Required F1 Match, G2 Uninstall F2 NoMatch - Verify Successful Install",
+          "searchTerm": "",
+          "expectedValue": ""
+        }
+      }
+    },
+    {
+      "testCaseId": "TC_7817277",
+      "testName": "Conflict_Include_DeviceGroup_Required_NoMatch_Uninstall_Match",
+      "description": "[IntuneSA]:[Assignment Filters][Conflict]:[Required][Uninstall][Include][DeviceGroup]:G1 Required F1 No Match, G2 Uninstall F2 Match, Verify app does not Install on device",
+      "category": "AssignmentFiltersConflict",
+      "priority": "High",
+      "enabled": true,
+      "parameters": {
+        "firstLink": "Apps",
+        "secondLink": "Android",
+        "AppType": "Web link",
+        "Name": "TC_7817277_WebLink_SharePoint",
+        "Description": "TC_7817277_WebLink_SharePoint",
+        "Publisher": "AIAuto ddmmyyyymmss",
+        "App URL": "https://www.sharepoint.com/",
+        "Require a managed browser to open this link": "No",
+        "Category": "",
+        "Show this as a featured app": "No",
+        "Information URL": "",
+        "Privacy URL": "",
+        "Developer": "",
+        "Owner": "",
+        "Notes": "",
+        "Logo": "",
+        "Create Matching Assignment Filters": true,
+        "Create Non-Matching Assignment Filters": true,
+        "Assignments": {
+          "Required": {
+            "Add group": "AI_Automation_Device_group",
+            "Filter mode": "Include filtered devices in assignment",
+            "Search by name": "Non-Matching Filter", "select filter": "Non-Matching Filter"
+          },
+          "uninstall": {
+            "Add group": "AI_Automation",
+            "Filter mode": "Include filtered devices in assignment",
+            "Search by name": "Matching Filter", "select filter": "Matching Filter"
+          }
+        },
+        "API parameters": {},
+        "Device Validation": {
+          "pre-requisite on device": "Create Android enrollment, Create Matching and Non-Matching Filters, Create 2 Device Groups with same device",
+          "App Installation Validation": "G1 Required F1 No Match, G2 Uninstall F2 Match - Verify app does not Install on device",
+          "searchTerm": "",
+          "expectedValue": ""
+        }
+      }
+    },
+    {
+      "testCaseId": "TC_7817280",
+      "testName": "Conflict_Include_DeviceGroup_Required_NoMatch_Uninstall_NoMatch",
+      "description": "[IntuneSA]:[Assignment Filters][Conflict]:[Required][Uninstall][Include][DeviceGroup]:G1 Required F1 NoMatch, G2 Uninstall F2 NoMatch, Verify no install, no uninstall",
+      "category": "AssignmentFiltersConflict",
+      "priority": "High",
+      "enabled": true,
+      "parameters": {
+        "firstLink": "Apps",
+        "secondLink": "Android",
+        "AppType": "Android store app",
+        "Name": "TC_7817280_GoogleNews_StoreApp",
+        "Description": "TC_7817280_GoogleNews_StoreApp",
+        "Publisher": "AIAuto ddmmyyyymmss",
+        "Appstore URL": "https://play.google.com/store/apps/details?id=com.google.android.apps.magazines",
+        "Minimum operating system": "Android 4.0 (Ice Cream Sandwich)",
+        "Category": "",
+        "Show this as a featured app": "No",
+        "Information URL": "",
+        "Privacy URL": "",
+        "Developer": "",
+        "Owner": "",
+        "Notes": "",
+        "Logo": "",
+        "Create Non-Matching Assignment Filters": true,
+        "Assignments": {
+          "Required": {
+            "Add group": "AI_Automation_Device_group",
+            "Filter mode": "Include filtered devices in assignment",
+            "Search by name": "Non-Matching Filter", "select filter": "Non-Matching Filter"
+          },
+          "uninstall": {
+            "Add group": "AI_Automation",
+            "Filter mode": "Include filtered devices in assignment",
+            "Search by name": "Non-Matching Filter", "select filter": "Non-Matching Filter"
+          }
+        },
+        "API parameters": {},
+        "Device Validation": {
+          "pre-requisite on device": "Create Android enrollment, Create Non-Matching Filters, Create 2 Device Groups with same device",
+          "App Installation Validation": "G1 Required F1 NoMatch, G2 Uninstall F2 NoMatch - Verify no install, no uninstall",
+          "searchTerm": "",
+          "expectedValue": ""
+        }
+      }
+    }
+  ]
+}

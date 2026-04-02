@@ -1,0 +1,38 @@
+{
+  "testCases": [
+    {
+      "testCaseId": "TC_9025364",
+      "testName": "Endpoint security_Firewall_Windows Firewall_Disable Stateful Ftp",
+      "description": "Endpoint Security - Create Firewall policy with Windows Firewall profile and configure Disable Stateful Ftp",
+      "category": "Endpoint Security Firewall",
+      "priority": "High",
+      "enabled": true,
+      "parameters": {
+        "firstLink": "Endpoint security",
+        "secondLink": "Firewall",
+        "platform": "Windows",
+        "profile": "Windows Firewall",
+        "assignmentGroup": "Automation_AI",
+        "settingsValue": "Disable Stateful Ftp",
+        "dropDownValue": "False (Default)"
+      }
+    },
+    {
+      "testCaseId": "TC_9025365",
+      "testName": "Endpoint security_Firewall_Windows Firewall_Security Association Idle Time",
+      "description": "Endpoint Security - Create Firewall policy with Windows Firewall profile and configure Security association idle time",
+      "category": "Endpoint Security Firewall",
+      "priority": "High",
+      "enabled": false,
+      "parameters": {
+        "firstLink": "Endpoint security",
+        "secondLink": "Firewall",
+        "platform": "Windows",
+        "profile": "Windows Firewall",
+        "assignmentGroup": "Automation_AI",
+        "settingsValue": "Security association idle time",
+        "numericValue": "500"
+      }
+    }
+  ]
+}

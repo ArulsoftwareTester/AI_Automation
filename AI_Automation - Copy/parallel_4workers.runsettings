@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RunSettings>
+  <!-- Configuration for parallel test execution with 4 worker nodes -->
+  
+  <!-- NUnit specific settings -->
+  <NUnit>
+    <!-- Number of worker threads for parallel test execution -->
+    <NumberOfTestWorkers>4</NumberOfTestWorkers>
+    
+    <!-- Where to run tests in parallel -->
+    <DefaultTestNamePattern>{m}{a}</DefaultTestNamePattern>
+    
+    <!-- Random seed for test execution order (optional) -->
+    <RandomSeed>1234</RandomSeed>
+    
+    <!-- Work directory for test execution -->
+    <WorkDirectory>.</WorkDirectory>
+    
+    <!-- Internal trace level (Off, Error, Warning, Info, Verbose) -->
+    <InternalTraceLevel>Off</InternalTraceLevel>
+  </NUnit>
+
+  <!-- RunConfiguration for test platform -->
+  <RunConfiguration>
+    <!-- Maximum number of cores to use in parallel -->
+    <MaxCpuCount>4</MaxCpuCount>
+    
+    <!-- Results directory -->
+    <ResultsDirectory>.\TestResults</ResultsDirectory>
+    
+    <!-- Target platform (x86 or x64) -->
+    <TargetPlatform>x64</TargetPlatform>
+    
+    <!-- Target framework -->
+    <TargetFrameworkVersion>net10.0-windows</TargetFrameworkVersion>
+    
+    <!-- Disable parallel execution at assembly level (we control it at class level) -->
+    <DisableParallelization>false</DisableParallelization>
+    
+    <!-- Test session timeout in milliseconds (24 hours = 1440 minutes) -->
+    <TestSessionTimeout>86400000</TestSessionTimeout>
+  </RunConfiguration>
+
+  <!-- Logger configuration -->
+  <LoggerRunSettings>
+    <Loggers>
+      <Logger friendlyName="console" enabled="True">
+        <Configuration>
+          <Verbosity>normal</Verbosity>
+        </Configuration>
+      </Logger>
+      <Logger friendlyName="trx" enabled="True">
+        <Configuration>
+          <LogFileName>DataDrivenTests.trx</LogFileName>
+        </Configuration>
+      </Logger>
+    </Loggers>
+  </LoggerRunSettings>
+
+  <!-- Data collection configuration -->
+  <DataCollectionRunSettings>
+    <DataCollectors>
+      <!-- Code coverage (optional, disable if not needed) -->
+      <DataCollector friendlyName="Code Coverage" uri="datacollector://Microsoft/CodeCoverage/2.0" assemblyQualifiedName="Microsoft.VisualStudio.Coverage.DynamicCoverageDataCollector, Microsoft.VisualStudio.TraceCollector, Version=11.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+        <Configuration>
+          <CodeCoverage>
+            <ModulePaths>
+              <Exclude>
+                <ModulePath>.*Tests.dll$</ModulePath>
+              </Exclude>
+            </ModulePaths>
+          </CodeCoverage>
+        </Configuration>
+      </DataCollector>
+    </DataCollectors>
+  </DataCollectionRunSettings>
+</RunSettings>

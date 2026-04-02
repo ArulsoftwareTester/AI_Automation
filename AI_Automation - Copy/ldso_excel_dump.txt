@@ -1,0 +1,1181 @@
+﻿Row 1: Num | ID | Work Item Type | Title | Test Step | Step Action | Step Expected | Area Path
+Row 2: 1 | 8906680 | Test Case | [Shanghai Vendor][DC][Endpoint Protection][Localdevicesecurityoptions][Accounts]: Add new Microsoft accounts |  |  |  | Intune\Mgmt\Device Configuration\DCv1
+Row 3:  |  |  |  | 1 | Navigate to Create Profile blade on Intune Device Configuration |  | 
+Row 4:  |  |  |  | 1.1 | Login to  MEM admin center with your admin account: <NL> DF: https://aka.ms/intunedf <NL> SH: https://aka.ms/IntuneSH <NL> Canary: https://aka.ms/IntuneCanary <NL> PE: https://aka.ms/intune <NL> Fairfax: https://aka.ms/intuneFF <NL> Mooncake: https://aka.ms/intuneMC |  <NL>  | 
+Row 5:  |  |  |  | 1.2 | Click the "Device" in the left list column <NL>  |  <NL>  | 
+Row 6:  |  |  |  | 1.3 | Click the "configuration profile" feature in "Device" <NL>  |  <NL>  | 
+Row 7:  |  |  |  | 1.4 | Click "Create profile", and select Platform : "Windows 10 and later" <NL>  |  <NL>  | 
+Row 8:  |  |  |  | 2 | selected the "Endpoint Protection" in Profile and click the "Create" button <NL>  |  <NL>  | 
+Row 9:  |  |  |  | 3 | Enter "test1" for "Name" and click the "Next" button <NL>  |  <NL>  | 
+Row 10:  |  |  |  | 4 | selected "Local device security options" -  "Accounts"  <NL> Set "Add new Microsoft accounts" settings to "Block" and "Next" |  <NL>  | 
+Row 11:  |  |  |  | 5 | Assign the profile to User/Device group and complete the creation of the DC profile |  | 
+Row 12:  |  |  |  | 5.1 | Click the "Selected groups to include" in "Included groups" <NL>  |  <NL>  | 
+Row 13:  |  |  |  | 5.2 | search your group and select group, and click "Select" button <NL>  |  <NL>  | 
+Row 14:  |  |  |  | 5.3 | Click "Next"--"Next"--"Next"--"Create" <NL>  |  <NL>  | 
+Row 15:  |  |  |  | 5.4 | the profile will be created successful <NL>  |  <NL>  | 
+Row 16:  |  |  |  | 6 | Enroll a windows 10 device to intune and Trigger a manual sync of MDM policies in Windows 10 Device |  | 
+Row 17:  |  |  |  | 6.1 | Open the "Settings" App |  <NL>  | 
+Row 18:  |  |  |  | 6.2 | Click "Accounts" |  <NL>  | 
+Row 19:  |  |  |  | 6.3 | Click "Access work or School" |  <NL>  | 
+Row 20:  |  |  |  | 6.4 | Click"Connect“  and enter the IW User email address that you want to deploy the Windows Profiles against. If you haven't created IW User or put the user into a group that is used to assign the Profile (policy), do it from Azure portal's "Users and Groups" blade before this step. Click "Next" after entering the account email. |  <NL>  | 
+Row 21:  |  |  |  | 6.5 | Repeat Step4 and Step5 one more time to complete the MDM enrollment. First time "Connect" adds the "Connected to Microsoft MDM" icon. Enter the password for the user when prompted. |  <NL>  | 
+Row 22:  |  |  |  | 6.6 | Click the "Info" button and click "Sync" button |  <NL>  | 
+Row 23:  |  |  |  | 6.7 | Wait 5-10 minutes to allow profile assign to device |  <NL>  | 
+Row 24:  |  |  |  | 7 | In the same window that was used at step 6. above, locate the "Advanced Diagnostic Report" situated at the bottom of the page, and click on the "Create report" button.  <NL>  |  <NL>  | 
+Row 25:  |  |  |  | 8 | Click the "Export" button in the popup window - this will cause the log files to be exported to the file "c:\users\Public\Documents\MDMDiagnostics\MDMDiagReport.html" <NL>  |  <NL>  | 
+Row 26:  |  |  |  | 9 | Double click on the file name, by default it will open with Edge. <NL>  | Scroll down - You should see a section with  the title "Managed policies". You can find ”Accounts_BlockMicrosoftAccounts" .   <NL>  Accounts_BlockMicrosoftAccounts Should be 1. | 
+Row 27:  |  |  |  | 10 | Reopen the profile and changed the settings to "Not configured" and "Show" the change and "Sync" the Device  <NL>  | Scroll down - You should see a section with  the title "Managed policies". You can't find ”Accounts_BlockMicrosoftAccounts“ .  | 
+Row 28: 2 | 8906713 | Test Case | [Shanghai Vendor][DC][Endpoint Protection][LocalDeviceSecurityOptions][Accounts]: Remote log on without password |  |  |  | Intune\Mgmt\Device Configuration\DCv1
+Row 29:  |  |  |  | 1 | Navigate to Create Profile blade on Intune Device Configuration |  | 
+Row 30:  |  |  |  | 1.1 | Login to  MEM admin center with your admin account: <NL> DF: https://aka.ms/intunedf <NL> SH: https://aka.ms/IntuneSH <NL> Canary: https://aka.ms/IntuneCanary <NL> PE: https://aka.ms/intune <NL> Fairfax: https://aka.ms/intuneFF <NL> Mooncake: https://aka.ms/intuneMC |  <NL>  | 
+Row 31:  |  |  |  | 1.2 | Click the "Device" in the left list column <NL>  |  <NL>  | 
+Row 32:  |  |  |  | 1.3 | Click the "configuration profile" feature in "Device" <NL>  |  <NL>  | 
+Row 33:  |  |  |  | 1.4 | Click "Create profile", and select Platform : "Windows 10 and later" <NL>  |  <NL>  | 
+Row 34:  |  |  |  | 2 | selected the "Endpoint Protection" in Profile and click the "Create" button <NL>  |  <NL>  | 
+Row 35:  |  |  |  | 3 | Enter "test1" for "Name" and click the "Next" button <NL>  |  <NL>  | 
+Row 36:  |  |  |  | 4 | selected "Local Device Security Options" -  "Accounts"  <NL> Set "Remote log on without password" settings to "Block" and "Next" <NL>  |  <NL>  | 
+Row 37:  |  |  |  | 5 | Assign the profile to User/Device group and complete the creation of the DC profile |  | 
+Row 38:  |  |  |  | 5.1 | Click the "Selected groups to include" in "Included groups" <NL>  |  <NL>  | 
+Row 39:  |  |  |  | 5.2 | search your group and select group, and click "Select" button <NL>  |  <NL>  | 
+Row 40:  |  |  |  | 5.3 | Click "Next"--"Next"--"Next"--"Create" <NL>  |  <NL>  | 
+Row 41:  |  |  |  | 5.4 | the profile will be created successful <NL>  |  <NL>  | 
+Row 42:  |  |  |  | 6 | Enroll a windows 10 device to intune and Trigger a manual sync of MDM policies in Windows 10 Device |  | 
+Row 43:  |  |  |  | 6.1 | Open the "Settings" App |  <NL>  | 
+Row 44:  |  |  |  | 6.2 | Click "Accounts" |  <NL>  | 
+Row 45:  |  |  |  | 6.3 | Click "Access work or School" |  <NL>  | 
+Row 46:  |  |  |  | 6.4 | Click"Connect“  and enter the IW User email address that you want to deploy the Windows Profiles against. If you haven't created IW User or put the user into a group that is used to assign the Profile (policy), do it from Azure portal's "Users and Groups" blade before this step. Click "Next" after entering the account email. |  <NL>  | 
+Row 47:  |  |  |  | 6.5 | Repeat Step4 and Step5 one more time to complete the MDM enrollment. First time "Connect" adds the "Connected to Microsoft MDM" icon. Enter the password for the user when prompted. |  <NL>  | 
+Row 48:  |  |  |  | 6.6 | Click the "Info" button and click "Sync" button |  <NL>  | 
+Row 49:  |  |  |  | 6.7 | Wait 5-10 minutes to allow profile assign to device |  <NL>  | 
+Row 50:  |  |  |  | 7 | In the same window that was used at step 6. above, locate the "Advanced Diagnostic Report" situated at the bottom of the page, and click on the "Create report" button.  <NL>  |  <NL>  | 
+Row 51:  |  |  |  | 8 | Click the "Export" button in the popup window - this will cause the log files to be exported to the file "c:\users\Public\Documents\MDMDiagnostics\MDMDiagReport.html" <NL>  |  <NL>  | 
+Row 52:  |  |  |  | 9 | Double click on the file name, by default it will open with Edge. <NL>  | Scroll down - You should see a section with  the title "Managed policies". You can find ”Accounts_LimitLocalAccountUseOfBlankPasswordsToConsoleLogonOnly“. <NL> Accounts_LimitLocalAccountUseOfBlankPasswordsToConsoleLogonOnly Should be 1. <NL>  | 
+Row 53:  |  |  |  | 10 | Reopen the profile and changed the settings to "Not Configured" and "Save" the change and "Sync" the Device  <NL>  | Scroll down - You should see a section with  the title "Managed policies". You can't find ”Accounts_LimitLocalAccountUseOfBlankPasswordsToConsoleLogonOnly“.  | 
+Row 54: 3 | 8906928 | Test Case | [Shanghai Vendor][DC][Endpoint Protection][LocalDeviceSecurityOptions][Accounts]: Local admin account |  |  |  | Intune\Mgmt\Device Configuration\DCv1
+Row 55:  |  |  |  | 1 | Navigate to Create Profile blade on Intune Device Configuration |  | 
+Row 56:  |  |  |  | 1.1 | Login to  MEM admin center with your admin account: <NL> DF: https://aka.ms/intunedf <NL> SH: https://aka.ms/IntuneSH <NL> Canary: https://aka.ms/IntuneCanary <NL> PE: https://aka.ms/intune <NL> Fairfax: https://aka.ms/intuneFF <NL> Mooncake: https://aka.ms/intuneMC |  <NL>  | 
+Row 57:  |  |  |  | 1.2 | Click the "Device" in the left list column <NL>  |  <NL>  | 
+Row 58:  |  |  |  | 1.3 | Click the "configuration profile" feature in "Device" <NL>  |  <NL>  | 
+Row 59:  |  |  |  | 1.4 | Click "Create profile", and select Platform : "Windows 10 and later" <NL>  |  <NL>  | 
+Row 60:  |  |  |  | 2 | selected the "Endpoint Protection" in Profile and click the "Create" button <NL>  |  <NL>  | 
+Row 61:  |  |  |  | 3 | Enter "test1" for "Name" and click the "Next" button <NL>  |  <NL>  | 
+Row 62:  |  |  |  | 4 | selected "Local Device Security Options" -  "Accounts"  <NL> Set "Local admin account" settings to "Block" and "Next" <NL>  |  <NL>  | 
+Row 63:  |  |  |  | 5 | Assign the profile to User/Device group and complete the creation of the DC profile |  | 
+Row 64:  |  |  |  | 5.1 | Click the "Selected groups to include" in "Included groups" <NL>  |  <NL>  | 
+Row 65:  |  |  |  | 5.2 | search your group and select group, and click "Select" button <NL>  |  <NL>  | 
+Row 66:  |  |  |  | 5.3 | Click "Next"--"Next"--"Next"--"Create" <NL>  |  <NL>  | 
+Row 67:  |  |  |  | 5.4 | the profile will be created successful <NL>  |  <NL>  | 
+Row 68:  |  |  |  | 6 | Enroll a windows 10 device to intune and Trigger a manual sync of MDM policies in Windows 10 Device |  | 
+Row 69:  |  |  |  | 6.1 | Open the "Settings" App |  <NL>  | 
+Row 70:  |  |  |  | 6.2 | Click "Accounts" |  <NL>  | 
+Row 71:  |  |  |  | 6.3 | Click "Access work or School" |  <NL>  | 
+Row 72:  |  |  |  | 6.4 | Click"Connect“  and enter the IW User email address that you want to deploy the Windows Profiles against. If you haven't created IW User or put the user into a group that is used to assign the Profile (policy), do it from Azure portal's "Users and Groups" blade before this step. Click "Next" after entering the account email. |  <NL>  | 
+Row 73:  |  |  |  | 6.5 | Repeat Step4 and Step5 one more time to complete the MDM enrollment. First time "Connect" adds the "Connected to Microsoft MDM" icon. Enter the password for the user when prompted. |  <NL>  | 
+Row 74:  |  |  |  | 6.6 | Click the "Info" button and click "Sync" button |  <NL>  | 
+Row 75:  |  |  |  | 6.7 | Wait 5-10 minutes to allow profile assign to device |  <NL>  | 
+Row 76:  |  |  |  | 7 | In the same window that was used at step 6. above, locate the "Advanced Diagnostic Report" situated at the bottom of the page, and click on the "Create report" button.  <NL>  |  <NL>  | 
+Row 77:  |  |  |  | 8 | Click the "Export" button in the popup window - this will cause the log files to be exported to the file "c:\users\Public\Documents\MDMDiagnostics\MDMDiagReport.html" <NL>  |  <NL>  | 
+Row 78:  |  |  |  | 9 | Double click on the file name, by default it will open with Edge. <NL>  | Scroll down - You should see a section with  the title "Managed policies". You can find ”Accounts_EnableAdministratorAccountStatus“. <NL> Accounts_EnableAdministratorAccountStatus Should be 0. <NL>  | 
+Row 79:  |  |  |  | 10 | Reopen the profile and changed the settings to "Not Configured" and "Save" the change and "Sync" the Device  <NL>  | Scroll down - You should see a section with  the title "Managed policies". You can't find ”Accounts_EnableAdministratorAccountStatus“.  | 
+Row 80:  |  |  |  | 11 |  <NL>  |  <NL>  | 
+Row 81: 4 | 8906997 | Test Case | [Shanghai Vendor][DC][Endpoint Protection][LocalDeviceSecurityOptions][Accounts]: Rename admin account |  |  |  | Intune\Mgmt\Device Configuration\DCv1
+Row 82:  |  |  |  | 1 | Navigate to Create Profile blade on Intune Device Configuration |  | 
+Row 83:  |  |  |  | 1.1 | Login to  MEM admin center with your admin account: <NL> DF: https://aka.ms/intunedf <NL> SH: https://aka.ms/IntuneSH <NL> Canary: https://aka.ms/IntuneCanary <NL> PE: https://aka.ms/intune <NL> Fairfax: https://aka.ms/intuneFF <NL> Mooncake: https://aka.ms/intuneMC |  <NL>  | 
+Row 84:  |  |  |  | 1.2 | Click the "Device" in the left list column <NL>  |  <NL>  | 
+Row 85:  |  |  |  | 1.3 | Click the "configuration profile" feature in "Device" <NL>  |  <NL>  | 
+Row 86:  |  |  |  | 1.4 | Click "Create profile", and select Platform : "Windows 10 and later" <NL>  |  <NL>  | 
+Row 87:  |  |  |  | 2 | selected the "Endpoint Protection" in Profile and click the "Create" button <NL>  |  <NL>  | 
+Row 88:  |  |  |  | 3 | Enter "test1" for "Name" and click the "Next" button <NL>  |  <NL>  | 
+Row 89:  |  |  |  | 4 | selected "Local Device Security Options" -  "Accounts"  <NL> Set "Rename admin account" settings to "west1" and "Next" <NL>  |  <NL>  | 
+Row 90:  |  |  |  | 5 | Assign the profile to User/Device group and complete the creation of the DC profile |  | 
+Row 91:  |  |  |  | 5.1 | Click the "Selected groups to include" in "Included groups" <NL>  |  <NL>  | 
+Row 92:  |  |  |  | 5.2 | search your group and select group, and click "Select" button <NL>  |  <NL>  | 
+Row 93:  |  |  |  | 5.3 | Click "Next"--"Next"--"Next"--"Create" <NL>  |  <NL>  | 
+Row 94:  |  |  |  | 5.4 | the profile will be created successful <NL>  |  <NL>  | 
+Row 95:  |  |  |  | 6 | Enroll a windows 10 device to intune and Trigger a manual sync of MDM policies in Windows 10 Device |  | 
+Row 96:  |  |  |  | 6.1 | Open the "Settings" App |  <NL>  | 
+Row 97:  |  |  |  | 6.2 | Click "Accounts" |  <NL>  | 
+Row 98:  |  |  |  | 6.3 | Click "Access work or School" |  <NL>  | 
+Row 99:  |  |  |  | 6.4 | Click"Connect“  and enter the IW User email address that you want to deploy the Windows Profiles against. If you haven't created IW User or put the user into a group that is used to assign the Profile (policy), do it from Azure portal's "Users and Groups" blade before this step. Click "Next" after entering the account email. |  <NL>  | 
+Row 100:  |  |  |  | 6.5 | Repeat Step4 and Step5 one more time to complete the MDM enrollment. First time "Connect" adds the "Connected to Microsoft MDM" icon. Enter the password for the user when prompted. |  <NL>  | 
+Row 101:  |  |  |  | 6.6 | Click the "Info" button and click "Sync" button |  <NL>  | 
+Row 102:  |  |  |  | 6.7 | Wait 5-10 minutes to allow profile assign to device |  <NL>  | 
+Row 103:  |  |  |  | 7 | In the same window that was used at step 6. above, locate the "Advanced Diagnostic Report" situated at the bottom of the page, and click on the "Create report" button.  <NL>  |  <NL>  | 
+Row 104:  |  |  |  | 8 | Click the "Export" button in the popup window - this will cause the log files to be exported to the file "c:\users\Public\Documents\MDMDiagnostics\MDMDiagReport.html" <NL>  |  <NL>  | 
+Row 105:  |  |  |  | 9 | Double click on the file name, by default it will open with Edge. <NL>  | Scroll down - You should see a section with  the title "Managed policies". You can find ”Accounts_RenameAdministratorAccount“. <NL> Accounts_RenameAdministratorAccount Should be west1. <NL>  | 
+Row 106: 5 | 8907034 | Test Case | [Shanghai Vendor][DC][Endpoint Protection][LocalDeviceSecurityOptions][Accounts]: Guest account |  |  |  | Intune\Mgmt\Device Configuration\DCv1
+Row 107:  |  |  |  | 1 | Navigate to Create Profile blade on Intune Device Configuration |  | 
+Row 108:  |  |  |  | 1.1 | Login to  MEM admin center with your admin account: <NL> DF: https://aka.ms/intunedf <NL> SH: https://aka.ms/IntuneSH <NL> Canary: https://aka.ms/IntuneCanary <NL> PE: https://aka.ms/intune <NL> Fairfax: https://aka.ms/intuneFF <NL> Mooncake: https://aka.ms/intuneMC |  <NL>  | 
+Row 109:  |  |  |  | 1.2 | Click the "Device" in the left list column <NL>  |  <NL>  | 
+Row 110:  |  |  |  | 1.3 | Click the "configuration profile" feature in "Device" <NL>  |  <NL>  | 
+Row 111:  |  |  |  | 1.4 | Click "Create profile", and select Platform : "Windows 10 and later" <NL>  |  <NL>  | 
+Row 112:  |  |  |  | 2 | selected the "Endpoint Protection" in Profile and click the "Create" button <NL>  |  <NL>  | 
+Row 113:  |  |  |  | 3 | Enter "test1" for "Name" and click the "Next" button <NL>  |  <NL>  | 
+Row 114:  |  |  |  | 4 | selected "Local Device Security Options" -  "Accounts"  <NL> Set "Guest account" settings to "Block" and "Next" <NL>  |  <NL>  | 
+Row 115:  |  |  |  | 5 | Assign the profile to User/Device group and complete the creation of the DC profile |  | 
+Row 116:  |  |  |  | 5.1 | Click the "Selected groups to include" in "Included groups" <NL>  |  <NL>  | 
+Row 117:  |  |  |  | 5.2 | search your group and select group, and click "Select" button <NL>  |  <NL>  | 
+Row 118:  |  |  |  | 5.3 | Click "Next"--"Next"--"Next"--"Create" <NL>  |  <NL>  | 
+Row 119:  |  |  |  | 5.4 | the profile will be created successful <NL>  |  <NL>  | 
+Row 120:  |  |  |  | 6 | Enroll a windows 10 device to intune and Trigger a manual sync of MDM policies in Windows 10 Device |  | 
+Row 121:  |  |  |  | 6.1 | Open the "Settings" App |  <NL>  | 
+Row 122:  |  |  |  | 6.2 | Click "Accounts" |  <NL>  | 
+Row 123:  |  |  |  | 6.3 | Click "Access work or School" |  <NL>  | 
+Row 124:  |  |  |  | 6.4 | Click"Connect“  and enter the IW User email address that you want to deploy the Windows Profiles against. If you haven't created IW User or put the user into a group that is used to assign the Profile (policy), do it from Azure portal's "Users and Groups" blade before this step. Click "Next" after entering the account email. |  <NL>  | 
+Row 125:  |  |  |  | 6.5 | Repeat Step4 and Step5 one more time to complete the MDM enrollment. First time "Connect" adds the "Connected to Microsoft MDM" icon. Enter the password for the user when prompted. |  <NL>  | 
+Row 126:  |  |  |  | 6.6 | Click the "Info" button and click "Sync" button |  <NL>  | 
+Row 127:  |  |  |  | 6.7 | Wait 5-10 minutes to allow profile assign to device |  <NL>  | 
+Row 128:  |  |  |  | 7 | In the same window that was used at step 6. above, locate the "Advanced Diagnostic Report" situated at the bottom of the page, and click on the "Create report" button.  <NL>  |  <NL>  | 
+Row 129:  |  |  |  | 8 | Click the "Export" button in the popup window - this will cause the log files to be exported to the file "c:\users\Public\Documents\MDMDiagnostics\MDMDiagReport.html" <NL>  |  <NL>  | 
+Row 130:  |  |  |  | 9 | Double click on the file name, by default it will open with Edge. <NL>  | Scroll down - You should see a section with  the title "Managed policies". You can find ”Accounts_EnableGuestAccountStatus“. <NL> Accounts_EnableGuestAccountStatus Should be 0. <NL>  | 
+Row 131:  |  |  |  | 10 | Reopen the profile and changed the settings to "Not Configured" and "Save" the change and "Sync" the Device  <NL>  | Scroll down - You should see a section with  the title "Managed policies". You can't find ”Accounts_EnableGuestAccountStatus“.  | 
+Row 132: 6 | 8914892 | Test Case | [Shanghai Vendor][DC][Endpoint Protection][LocalDeviceSecurityOptions][Accounts]: Rename guest account |  |  |  | Intune\Mgmt\Device Configuration\DCv1
+Row 133:  |  |  |  | 1 | Navigate to Create Profile blade on Intune Device Configuration |  | 
+Row 134:  |  |  |  | 1.1 | Login to  MEM admin center with your admin account: <NL> DF: https://aka.ms/intunedf <NL> SH: https://aka.ms/IntuneSH <NL> Canary: https://aka.ms/IntuneCanary <NL> PE: https://aka.ms/intune <NL> Fairfax: https://aka.ms/intuneFF <NL> Mooncake: https://aka.ms/intuneMC |  <NL>  | 
+Row 135:  |  |  |  | 1.2 | Click the "Device" in the left list column <NL>  |  <NL>  | 
+Row 136:  |  |  |  | 1.3 | Click the "configuration profile" feature in "Device" <NL>  |  <NL>  | 
+Row 137:  |  |  |  | 1.4 | Click "Create profile", and select Platform : "Windows 10 and later" <NL>  |  <NL>  | 
+Row 138:  |  |  |  | 2 | selected the "Endpoint Protection" in Profile and click the "Create" button <NL>  |  <NL>  | 
+Row 139:  |  |  |  | 3 | Enter "test1" for "Name" and click the "Next" button <NL>  |  <NL>  | 
+Row 140:  |  |  |  | 4 | selected "Local Device Security Options" -  "Accounts"  <NL> Set "Rename guest account" settings to "west1" and "Next" <NL>  |  <NL>  | 
+Row 141:  |  |  |  | 5 | Assign the profile to User/Device group and complete the creation of the DC profile |  | 
+Row 142:  |  |  |  | 5.1 | Click the "Selected groups to include" in "Included groups" <NL>  |  <NL>  | 
+Row 143:  |  |  |  | 5.2 | search your group and select group, and click "Select" button <NL>  |  <NL>  | 
+Row 144:  |  |  |  | 5.3 | Click "Next"--"Next"--"Next"--"Create" <NL>  |  <NL>  | 
+Row 145:  |  |  |  | 5.4 | the profile will be created successful <NL>  |  <NL>  | 
+Row 146:  |  |  |  | 6 | Enroll a windows 10 device to intune and Trigger a manual sync of MDM policies in Windows 10 Device |  | 
+Row 147:  |  |  |  | 6.1 | Open the "Settings" App |  <NL>  | 
+Row 148:  |  |  |  | 6.2 | Click "Accounts" |  <NL>  | 
+Row 149:  |  |  |  | 6.3 | Click "Access work or School" |  <NL>  | 
+Row 150:  |  |  |  | 6.4 | Click"Connect“  and enter the IW User email address that you want to deploy the Windows Profiles against. If you haven't created IW User or put the user into a group that is used to assign the Profile (policy), do it from Azure portal's "Users and Groups" blade before this step. Click "Next" after entering the account email. |  <NL>  | 
+Row 151:  |  |  |  | 6.5 | Repeat Step4 and Step5 one more time to complete the MDM enrollment. First time "Connect" adds the "Connected to Microsoft MDM" icon. Enter the password for the user when prompted. |  <NL>  | 
+Row 152:  |  |  |  | 6.6 | Click the "Info" button and click "Sync" button |  <NL>  | 
+Row 153:  |  |  |  | 6.7 | Wait 5-10 minutes to allow profile assign to device |  <NL>  | 
+Row 154:  |  |  |  | 7 | In the same window that was used at step 6. above, locate the "Advanced Diagnostic Report" situated at the bottom of the page, and click on the "Create report" button.  <NL>  |  <NL>  | 
+Row 155:  |  |  |  | 8 | Click the "Export" button in the popup window - this will cause the log files to be exported to the file "c:\users\Public\Documents\MDMDiagnostics\MDMDiagReport.html" <NL>  |  <NL>  | 
+Row 156:  |  |  |  | 9 | Double click on the file name, by default it will open with Edge. <NL>  | Scroll down - You should see a section with  the title "Managed policies". You can find ”Accounts_RenameGuestAccount“. <NL> Accounts_RenameGuestAccount Should be west1. <NL>  | 
+Row 157: 7 | 8914902 | Test Case | [Shanghai Vendor][DC][Endpoint Protection][LocalDeviceSecurityOptions][Devices]: Undock device without logon |  |  |  | Intune\Mgmt\Device Configuration\DCv1
+Row 158:  |  |  |  | 1 | Navigate to Create Profile blade on Intune Device Configuration |  | 
+Row 159:  |  |  |  | 1.1 | Login to  MEM admin center with your admin account: <NL> DF: https://aka.ms/intunedf <NL> SH: https://aka.ms/IntuneSH <NL> Canary: https://aka.ms/IntuneCanary <NL> PE: https://aka.ms/intune <NL> Fairfax: https://aka.ms/intuneFF <NL> Mooncake: https://aka.ms/intuneMC |  <NL>  | 
+Row 160:  |  |  |  | 1.2 | Click the "Device" in the left list column <NL>  |  <NL>  | 
+Row 161:  |  |  |  | 1.3 | Click the "configuration profile" feature in "Device" <NL>  |  <NL>  | 
+Row 162:  |  |  |  | 1.4 | Click "Create profile", and select Platform : "Windows 10 and later" <NL>  |  <NL>  | 
+Row 163:  |  |  |  | 2 | selected the "Endpoint Protection" in Profile and click the "Create" button <NL>  |  <NL>  | 
+Row 164:  |  |  |  | 3 | Enter "test1" for "Name" and click the "Next" button <NL>  |  <NL>  | 
+Row 165:  |  |  |  | 4 | selected "Local Device Security Options" -  "Devices"  <NL> Set "Undock device without logon" settings to "Block" and "Next" <NL>  |  <NL>  | 
+Row 166:  |  |  |  | 5 | Assign the profile to User/Device group and complete the creation of the DC profile |  | 
+Row 167:  |  |  |  | 5.1 | Click the "Selected groups to include" in "Included groups" <NL>  |  <NL>  | 
+Row 168:  |  |  |  | 5.2 | search your group and select group, and click "Select" button <NL>  |  <NL>  | 
+Row 169:  |  |  |  | 5.3 | Click "Next"--"Next"--"Next"--"Create" <NL>  |  <NL>  | 
+Row 170:  |  |  |  | 5.4 | the profile will be created successful <NL>  |  <NL>  | 
+Row 171:  |  |  |  | 6 | Enroll a windows 10 device to intune and Trigger a manual sync of MDM policies in Windows 10 Device |  | 
+Row 172:  |  |  |  | 6.1 | Open the "Settings" App |  <NL>  | 
+Row 173:  |  |  |  | 6.2 | Click "Accounts" |  <NL>  | 
+Row 174:  |  |  |  | 6.3 | Click "Access work or School" |  <NL>  | 
+Row 175:  |  |  |  | 6.4 | Click"Connect“  and enter the IW User email address that you want to deploy the Windows Profiles against. If you haven't created IW User or put the user into a group that is used to assign the Profile (policy), do it from Azure portal's "Users and Groups" blade before this step. Click "Next" after entering the account email. |  <NL>  | 
+Row 176:  |  |  |  | 6.5 | Repeat Step4 and Step5 one more time to complete the MDM enrollment. First time "Connect" adds the "Connected to Microsoft MDM" icon. Enter the password for the user when prompted. |  <NL>  | 
+Row 177:  |  |  |  | 6.6 | Click the "Info" button and click "Sync" button |  <NL>  | 
+Row 178:  |  |  |  | 6.7 | Wait 5-10 minutes to allow profile assign to device |  <NL>  | 
+Row 179:  |  |  |  | 7 | In the same window that was used at step 6. above, locate the "Advanced Diagnostic Report" situated at the bottom of the page, and click on the "Create report" button.  <NL>  |  <NL>  | 
+Row 180:  |  |  |  | 8 | Click the "Export" button in the popup window - this will cause the log files to be exported to the file "c:\users\Public\Documents\MDMDiagnostics\MDMDiagReport.html" <NL>  |  <NL>  | 
+Row 181:  |  |  |  | 9 | Double click on the file name, by default it will open with Edge. <NL>  | Scroll down - You should see a section with  the title "Managed policies". You can find ”Devices_AllowUndockWithoutHavingToLogon“. <NL> Devices_AllowUndockWithoutHavingToLogon Should be 0. <NL>  | 
+Row 182:  |  |  |  | 10 | Reopen the profile and changed the settings to "Not Configured" and "Save" the change and "Sync" the Device  <NL>  | Scroll down - You should see a section with  the title "Managed policies". You can't find ”Devices_AllowUndockWithoutHavingToLogon“.  | 
+Row 183: 8 | 8925723 | Test Case | [Shanghai Vendor][DC][Endpoint Protection][LocalDeviceSecurityOptions][Devices]: Install printer drivers for shared printers |  |  |  | Intune\Mgmt\Device Configuration\DCv1
+Row 184:  |  |  |  | 1 | Navigate to Create Profile blade on Intune Device Configuration |  | 
+Row 185:  |  |  |  | 1.1 | Login to  MEM admin center with your admin account: <NL> DF: https://aka.ms/intunedf <NL> SH: https://aka.ms/IntuneSH <NL> Canary: https://aka.ms/IntuneCanary <NL> PE: https://aka.ms/intune <NL> Fairfax: https://aka.ms/intuneFF <NL> Mooncake: https://aka.ms/intuneMC |  <NL>  | 
+Row 186:  |  |  |  | 1.2 | Click the "Device" in the left list column <NL>  |  <NL>  | 
+Row 187:  |  |  |  | 1.3 | Click the "configuration profile" feature in "Device" <NL>  |  <NL>  | 
+Row 188:  |  |  |  | 1.4 | Click "Create profile", and select Platform : "Windows 10 and later" <NL>  |  <NL>  | 
+Row 189:  |  |  |  | 2 | selected the "Endpoint Protection" in Profile and click the "Create" button <NL>  |  <NL>  | 
+Row 190:  |  |  |  | 3 | Enter "test1" for "Name" and click the "Next" button <NL>  |  <NL>  | 
+Row 191:  |  |  |  | 4 | selected "Local Device Security Options" -  "Devices"  <NL> Set "Install printer drivers for shared printers" settings to "Enable" and "Next" <NL>  |  <NL>  | 
+Row 192:  |  |  |  | 5 | Assign the profile to User/Device group and complete the creation of the DC profile |  | 
+Row 193:  |  |  |  | 5.1 | Click the "Selected groups to include" in "Included groups" <NL>  |  <NL>  | 
+Row 194:  |  |  |  | 5.2 | search your group and select group, and click "Select" button <NL>  |  <NL>  | 
+Row 195:  |  |  |  | 5.3 | Click "Next"--"Next"--"Next"--"Create" <NL>  |  <NL>  | 
+Row 196:  |  |  |  | 5.4 | the profile will be created successful <NL>  |  <NL>  | 
+Row 197:  |  |  |  | 6 | Enroll a windows 10 device to intune and Trigger a manual sync of MDM policies in Windows 10 Device |  | 
+Row 198:  |  |  |  | 6.1 | Open the "Settings" App |  <NL>  | 
+Row 199:  |  |  |  | 6.2 | Click "Accounts" |  <NL>  | 
+Row 200:  |  |  |  | 6.3 | Click "Access work or School" |  <NL>  | 
+Row 201:  |  |  |  | 6.4 | Click"Connect“  and enter the IW User email address that you want to deploy the Windows Profiles against. If you haven't created IW User or put the user into a group that is used to assign the Profile (policy), do it from Azure portal's "Users and Groups" blade before this step. Click "Next" after entering the account email. |  <NL>  | 
+Row 202:  |  |  |  | 6.5 | Repeat Step4 and Step5 one more time to complete the MDM enrollment. First time "Connect" adds the "Connected to Microsoft MDM" icon. Enter the password for the user when prompted. |  <NL>  | 
+Row 203:  |  |  |  | 6.6 | Click the "Info" button and click "Sync" button |  <NL>  | 
+Row 204:  |  |  |  | 6.7 | Wait 5-10 minutes to allow profile assign to device |  <NL>  | 
+Row 205:  |  |  |  | 7 | In the same window that was used at step 6. above, locate the "Advanced Diagnostic Report" situated at the bottom of the page, and click on the "Create report" button.  <NL>  |  <NL>  | 
+Row 206:  |  |  |  | 8 | Click the "Export" button in the popup window - this will cause the log files to be exported to the file "c:\users\Public\Documents\MDMDiagnostics\MDMDiagReport.html" <NL>  |  <NL>  | 
+Row 207:  |  |  |  | 9 | Double click on the file name, by default it will open with Edge. <NL>  | Scroll down - You should see a section with  the title "Managed policies". You can find ”Devices_PreventUsersFromInstallingPrinterDriversWhenConnectingToSharedPrinters“. <NL> Devices_PreventUsersFromInstallingPrinterDriversWhenConnectingToSharedPrinters Should be 1. <NL>  | 
+Row 208:  |  |  |  | 10 | Reopen the profile and changed the settings to "Not Configured" and "Save" the change and "Sync" the Device  <NL>  | Scroll down - You should see a section with  the title "Managed policies". You can't find ”Devices_PreventUsersFromInstallingPrinterDriversWhenConnectingToSharedPrinters“.  | 
+Row 209: 9 | 8925745 | Test Case | [Shanghai Vendor][DC][Endpoint Protection][LocalDeviceSecurityOptions][MicrosoftNetworkServer] Digitally sign communications (if client agrees) |  |  |  | Intune\Mgmt\Device Configuration\DCv1
+Row 210:  |  |  |  | 1 | Navigate to Create Profile blade on Intune Device Configuration |  | 
+Row 211:  |  |  |  | 1.1 | Login to  MEM admin center with your admin account: <NL> DF: https://aka.ms/intunedf <NL> SH: https://aka.ms/IntuneSH <NL> Canary: https://aka.ms/IntuneCanary <NL> PE: https://aka.ms/intune <NL> Fairfax: https://aka.ms/intuneFF <NL> Mooncake: https://aka.ms/intuneMC |  <NL>  | 
+Row 212:  |  |  |  | 1.2 | Click the "Device" in the left list column <NL>  |  <NL>  | 
+Row 213:  |  |  |  | 1.3 | Click the "configuration profile" feature in "Device" <NL>  |  <NL>  | 
+Row 214:  |  |  |  | 1.4 | Click "Create profile", and select Platform : "Windows 10 and later" <NL>  |  <NL>  | 
+Row 215:  |  |  |  | 2 | selected the "Endpoint Protection" in Profile and click the "Create" button <NL>  |  <NL>  | 
+Row 216:  |  |  |  | 3 | Enter "test1" for "Name" and click the "Next" button <NL>  |  <NL>  | 
+Row 217:  |  |  |  | 4 | Selected the "Local Device Security Options"--"Microsoft Network Server" |  <NL>  | 
+Row 218:  |  |  |  | 5 | Set the "Digitally sign communications (if client agrees)" to "Enable" |  <NL>  | 
+Row 219:  |  |  |  | 6 | Assign the profile to User/Device group and complete the creation of the DC profile |  | 
+Row 220:  |  |  |  | 6.1 | Click the "Selected groups to include" in "Included groups" <NL>  |  <NL>  | 
+Row 221:  |  |  |  | 6.2 | search your group and select group, and click "Select" button <NL>  |  <NL>  | 
+Row 222:  |  |  |  | 6.3 | Click "Next"--"Next"--"Next"--"Create" <NL>  |  <NL>  | 
+Row 223:  |  |  |  | 6.4 | the profile will be created successful <NL>  |  <NL>  | 
+Row 224:  |  |  |  | 7 | Enroll a windows 10 device to intune and Trigger a manual sync of MDM policies in Windows 10 Device |  | 
+Row 225:  |  |  |  | 7.1 | Open the "Settings" App |  <NL>  | 
+Row 226:  |  |  |  | 7.2 | Click "Accounts" |  <NL>  | 
+Row 227:  |  |  |  | 7.3 | Click "Access work or School" |  <NL>  | 
+Row 228:  |  |  |  | 7.4 | Click"Connect“  and enter the IW User email address that you want to deploy the Windows Profiles against. If you haven't created IW User or put the user into a group that is used to assign the Profile (policy), do it from Azure portal's "Users and Groups" blade before this step. Click "Next" after entering the account email. |  <NL>  | 
+Row 229:  |  |  |  | 7.5 | Repeat Step4 and Step5 one more time to complete the MDM enrollment. First time "Connect" adds the "Connected to Microsoft MDM" icon. Enter the password for the user when prompted. |  <NL>  | 
+Row 230:  |  |  |  | 7.6 | Click the "Info" button and click "Sync" button |  <NL>  | 
+Row 231:  |  |  |  | 7.7 | Wait 5-10 minutes to allow profile assign to device |  <NL>  | 
+Row 232:  |  |  |  | 8 | check the result in the MDM Diagnostic Information, search for the rows with the Area label "MicrosoftNetworkServer_Digitallysigncommunicationsifclientagrees" under the "Managed policies".  | "MicrosoftNetworkServer_Digitallysigncommunicationsifclientagrees" should be set to "1" as seen in the "Config Source" column <NL>  | 
+Row 233:  |  |  |  | 9 | reopen the profile, and change the settings to "Not Configured", save profile and sync the device, recheck the value in MDM Diagnostic <NL>  |  <NL>  | 
+Row 234: 10 | 8925754 | Test Case | [Shanghai Vendor][DC][Endpoint Protection][LocalDeviceSecurityOptions][MicrosoftNetworkServer] Digitally sign communications (always) |  |  |  | Intune\Mgmt\Device Configuration\DCv1
+Row 235:  |  |  |  | 1 | Navigate to Create Profile blade on Intune Device Configuration |  | 
+Row 236:  |  |  |  | 1.1 | Login to  MEM admin center with your admin account: <NL> DF: https://aka.ms/intunedf <NL> SH: https://aka.ms/IntuneSH <NL> Canary: https://aka.ms/IntuneCanary <NL> PE: https://aka.ms/intune <NL> Fairfax: https://aka.ms/intuneFF <NL> Mooncake: https://aka.ms/intuneMC |  <NL>  | 
+Row 237:  |  |  |  | 1.2 | Click the "Device" in the left list column <NL>  |  <NL>  | 
+Row 238:  |  |  |  | 1.3 | Click the "configuration profile" feature in "Device" <NL>  |  <NL>  | 
+Row 239:  |  |  |  | 1.4 | Click "Create profile", and select Platform : "Windows 10 and later" <NL>  |  <NL>  | 
+Row 240:  |  |  |  | 2 | selected the "Endpoint Protection" in Profile and click the "Create" button <NL>  |  <NL>  | 
+Row 241:  |  |  |  | 3 | Enter "test1" for "Name" and click the "Next" button <NL>  |  <NL>  | 
+Row 242:  |  |  |  | 4 | Selected the "Local Device Security Options"--"Microsoft Network Server" |  <NL>  | 
+Row 243:  |  |  |  | 5 | Set the "Digitally sign communications (always)" to "Enable" |  <NL>  | 
+Row 244:  |  |  |  | 6 | Assign the profile to User/Device group and complete the creation of the DC profile |  | 
+Row 245:  |  |  |  | 6.1 | Click the "Selected groups to include" in "Included groups" <NL>  |  <NL>  | 
+Row 246:  |  |  |  | 6.2 | search your group and select group, and click "Select" button <NL>  |  <NL>  | 
+Row 247:  |  |  |  | 6.3 | Click "Next"--"Next"--"Next"--"Create" <NL>  |  <NL>  | 
+Row 248:  |  |  |  | 6.4 | the profile will be created successful <NL>  |  <NL>  | 
+Row 249:  |  |  |  | 7 | Enroll a windows 10 device to intune and Trigger a manual sync of MDM policies in Windows 10 Device |  | 
+Row 250:  |  |  |  | 7.1 | Open the "Settings" App |  <NL>  | 
+Row 251:  |  |  |  | 7.2 | Click "Accounts" |  <NL>  | 
+Row 252:  |  |  |  | 7.3 | Click "Access work or School" |  <NL>  | 
+Row 253:  |  |  |  | 7.4 | Click"Connect“  and enter the IW User email address that you want to deploy the Windows Profiles against. If you haven't created IW User or put the user into a group that is used to assign the Profile (policy), do it from Azure portal's "Users and Groups" blade before this step. Click "Next" after entering the account email. |  <NL>  | 
+Row 254:  |  |  |  | 7.5 | Repeat Step4 and Step5 one more time to complete the MDM enrollment. First time "Connect" adds the "Connected to Microsoft MDM" icon. Enter the password for the user when prompted. |  <NL>  | 
+Row 255:  |  |  |  | 7.6 | Click the "Info" button and click "Sync" button |  <NL>  | 
+Row 256:  |  |  |  | 7.7 | Wait 5-10 minutes to allow profile assign to device |  <NL>  | 
+Row 257:  |  |  |  | 8 | check the result in the MDM Diagnostic Information, search for the rows with the Area label "MicrosoftNetworkServer_Digitallysigncommunicationsalways" under the "Managed policies".  <NL>  | "MicrosoftNetworkServer_Digitallysigncommunicationsalways" should be set to "1" as seen in the "Config Source" column <NL>  | 
+Row 258:  |  |  |  | 9 | reopen the profile, and change the settings to "Not Configured", save profile and sync the device, recheck the value in MDM Diagnostic |  <NL>  | 
+Row 259:  |  |  |  | 10 |  <NL>  |  <NL>  | 
+Row 260: 11 | 8925756 | Test Case | [Shanghai Vendor][DC][Endpoint Protection][LocalDeviceSecurityOptions][MicrosoftNetworkClient] Digitally sign communications (if server agrees) |  |  |  | Intune\Mgmt\Device Configuration\DCv1
+Row 261:  |  |  |  | 1 | Navigate to Create Profile blade on Intune Device Configuration |  | 
+Row 262:  |  |  |  | 1.1 | Login to  MEM admin center with your admin account: <NL> DF: https://aka.ms/intunedf <NL> SH: https://aka.ms/IntuneSH <NL> Canary: https://aka.ms/IntuneCanary <NL> PE: https://aka.ms/intune <NL> Fairfax: https://aka.ms/intuneFF <NL> Mooncake: https://aka.ms/intuneMC |  <NL>  | 
+Row 263:  |  |  |  | 1.2 | Click the "Device" in the left list column <NL>  |  <NL>  | 
+Row 264:  |  |  |  | 1.3 | Click the "configuration profile" feature in "Device" <NL>  |  <NL>  | 
+Row 265:  |  |  |  | 1.4 | Click "Create profile", and select Platform : "Windows 10 and later" <NL>  |  <NL>  | 
+Row 266:  |  |  |  | 2 | selected the "Endpoint Protection" in Profile and click the "Create" button <NL>  |  <NL>  | 
+Row 267:  |  |  |  | 3 | Enter "test1" for "Name" and click the "Next" button <NL>  |  <NL>  | 
+Row 268:  |  |  |  | 4 | Selected the "Local Device Security Options"--"Microsoft Network Client" |  <NL>  | 
+Row 269:  |  |  |  | 5 | Set the "Digitally sign communications (if server agrees)" to "Block" |  <NL>  | 
+Row 270:  |  |  |  | 6 | Assign the profile to User/Device group and complete the creation of the DC profile |  | 
+Row 271:  |  |  |  | 6.1 | Click the "Selected groups to include" in "Included groups" <NL>  |  <NL>  | 
+Row 272:  |  |  |  | 6.2 | search your group and select group, and click "Select" button <NL>  |  <NL>  | 
+Row 273:  |  |  |  | 6.3 | Click "Next"--"Next"--"Next"--"Create" <NL>  |  <NL>  | 
+Row 274:  |  |  |  | 6.4 | the profile will be created successful <NL>  |  <NL>  | 
+Row 275:  |  |  |  | 7 | Enroll a windows 10 device to intune and Trigger a manual sync of MDM policies in Windows 10 Device |  | 
+Row 276:  |  |  |  | 7.1 | Open the "Settings" App |  <NL>  | 
+Row 277:  |  |  |  | 7.2 | Click "Accounts" |  <NL>  | 
+Row 278:  |  |  |  | 7.3 | Click "Access work or School" |  <NL>  | 
+Row 279:  |  |  |  | 7.4 | Click"Connect“  and enter the IW User email address that you want to deploy the Windows Profiles against. If you haven't created IW User or put the user into a group that is used to assign the Profile (policy), do it from Azure portal's "Users and Groups" blade before this step. Click "Next" after entering the account email. |  <NL>  | 
+Row 280:  |  |  |  | 7.5 | Repeat Step4 and Step5 one more time to complete the MDM enrollment. First time "Connect" adds the "Connected to Microsoft MDM" icon. Enter the password for the user when prompted. |  <NL>  | 
+Row 281:  |  |  |  | 7.6 | Click the "Info" button and click "Sync" button |  <NL>  | 
+Row 282:  |  |  |  | 7.7 | Wait 5-10 minutes to allow profile assign to device |  <NL>  | 
+Row 283:  |  |  |  | 8 | check the result in the MDM Diagnostic Information, search for the rows with the Area label "MicrosoftNetworkClient_Digitallysigncommunicationsifserveragrees" under the "Managed policies".  <NL>  | "MicrosoftNetworkClient_Digitallysigncommunicationsifserveragrees" should be set to "0" as seen in the "Config Source" column <NL>  | 
+Row 284:  |  |  |  | 9 | reopen the profile, and change the settings to "Not Configured", save profile and sync the device, recheck the value in MDM Diagnostic <NL>  |  <NL>  | 
+Row 285: 12 | 8925758 | Test Case | [Shanghai Vendor][DC][Endpoint Protection][LocalDeviceSecurityOptions][MicrosoftNetworkClient] Send unencrypted password to third-party SMB servers |  |  |  | Intune\Mgmt\Device Configuration\DCv1
+Row 286:  |  |  |  | 1 | Navigate to Create Profile blade on Intune Device Configuration |  | 
+Row 287:  |  |  |  | 1.1 | Login to  MEM admin center with your admin account: <NL> DF: https://aka.ms/intunedf <NL> SH: https://aka.ms/IntuneSH <NL> Canary: https://aka.ms/IntuneCanary <NL> PE: https://aka.ms/intune <NL> Fairfax: https://aka.ms/intuneFF <NL> Mooncake: https://aka.ms/intuneMC |  <NL>  | 
+Row 288:  |  |  |  | 1.2 | Click the "Device" in the left list column <NL>  |  <NL>  | 
+Row 289:  |  |  |  | 1.3 | Click the "configuration profile" feature in "Device" <NL>  |  <NL>  | 
+Row 290:  |  |  |  | 1.4 | Click "Create profile", and select Platform : "Windows 10 and later" <NL>  |  <NL>  | 
+Row 291:  |  |  |  | 2 | selected the "Endpoint Protection" in Profile and click the "Create" button <NL>  |  <NL>  | 
+Row 292:  |  |  |  | 3 | Enter "test1" for "Name" and click the "Next" button <NL>  |  <NL>  | 
+Row 293:  |  |  |  | 4 | Selected the "Local Device Security Options"--"Microsoft Network Client" |  <NL>  | 
+Row 294:  |  |  |  | 5 | Set the "Send unencrypted password to third-party SMB servers" to "Block" |  <NL>  | 
+Row 295:  |  |  |  | 6 | Assign the profile to User/Device group and complete the creation of the DC profile |  | 
+Row 296:  |  |  |  | 6.1 | Click the "Selected groups to include" in "Included groups" <NL>  |  <NL>  | 
+Row 297:  |  |  |  | 6.2 | search your group and select group, and click "Select" button <NL>  |  <NL>  | 
+Row 298:  |  |  |  | 6.3 | Click "Next"--"Next"--"Next"--"Create" <NL>  |  <NL>  | 
+Row 299:  |  |  |  | 6.4 | the profile will be created successful <NL>  |  <NL>  | 
+Row 300:  |  |  |  | 7 | Enroll a windows 10 device to intune and Trigger a manual sync of MDM policies in Windows 10 Device |  | 
+Row 301:  |  |  |  | 7.1 | Open the "Settings" App |  <NL>  | 
+Row 302:  |  |  |  | 7.2 | Click "Accounts" |  <NL>  | 
+Row 303:  |  |  |  | 7.3 | Click "Access work or School" |  <NL>  | 
+Row 304:  |  |  |  | 7.4 | Click"Connect“  and enter the IW User email address that you want to deploy the Windows Profiles against. If you haven't created IW User or put the user into a group that is used to assign the Profile (policy), do it from Azure portal's "Users and Groups" blade before this step. Click "Next" after entering the account email. |  <NL>  | 
+Row 305:  |  |  |  | 7.5 | Repeat Step4 and Step5 one more time to complete the MDM enrollment. First time "Connect" adds the "Connected to Microsoft MDM" icon. Enter the password for the user when prompted. |  <NL>  | 
+Row 306:  |  |  |  | 7.6 | Click the "Info" button and click "Sync" button |  <NL>  | 
+Row 307:  |  |  |  | 7.7 | Wait 5-10 minutes to allow profile assign to device |  <NL>  | 
+Row 308:  |  |  |  | 8 | check the result in the MDM Diagnostic Information, search for the rows with the Area label "MicrosoftNetworkClient_SendUnencryptedPasswordToThirdPartySMBServers" under the "Managed policies".  <NL>  | "MicrosoftNetworkClient_SendUnencryptedPasswordToThirdPartySMBServers" should be set to "0" as seen in the "Config Source" column <NL>  | 
+Row 309:  |  |  |  | 9 | reopen the profile, and change the settings to "Not Configured", save profile and sync the device, recheck the value in MDM Diagnostic <NL>  |  <NL>  | 
+Row 310: 13 | 8925759 | Test Case | [Shanghai Vendor][DC][Endpoint Protection][LocalDeviceSecurityOptions][MicrosoftNetworkClient] Digitally sign communications (always) |  |  |  | Intune\Mgmt\Device Configuration\DCv1
+Row 311:  |  |  |  | 1 | Navigate to Create Profile blade on Intune Device Configuration |  | 
+Row 312:  |  |  |  | 1.1 | Login to  MEM admin center with your admin account: <NL> DF: https://aka.ms/intunedf <NL> SH: https://aka.ms/IntuneSH <NL> Canary: https://aka.ms/IntuneCanary <NL> PE: https://aka.ms/intune <NL> Fairfax: https://aka.ms/intuneFF <NL> Mooncake: https://aka.ms/intuneMC |  <NL>  | 
+Row 313:  |  |  |  | 1.2 | Click the "Device" in the left list column <NL>  |  <NL>  | 
+Row 314:  |  |  |  | 1.3 | Click the "configuration profile" feature in "Device" <NL>  |  <NL>  | 
+Row 315:  |  |  |  | 1.4 | Click "Create profile", and select Platform : "Windows 10 and later" <NL>  |  <NL>  | 
+Row 316:  |  |  |  | 2 | selected the "Endpoint Protection" in Profile and click the "Create" button <NL>  |  <NL>  | 
+Row 317:  |  |  |  | 3 | Enter "test1" for "Name" and click the "Next" button <NL>  |  <NL>  | 
+Row 318:  |  |  |  | 4 | Selected the "Local Device Security Options"--"Microsoft Network Client" |  <NL>  | 
+Row 319:  |  |  |  | 5 | Set the "Digitally sign communications (always)" to "Enable" |  <NL>  | 
+Row 320:  |  |  |  | 6 | Assign the profile to User/Device group and complete the creation of the DC profile |  | 
+Row 321:  |  |  |  | 6.1 | Click the "Selected groups to include" in "Included groups" <NL>  |  <NL>  | 
+Row 322:  |  |  |  | 6.2 | search your group and select group, and click "Select" button <NL>  |  <NL>  | 
+Row 323:  |  |  |  | 6.3 | Click "Next"--"Next"--"Next"--"Create" <NL>  |  <NL>  | 
+Row 324:  |  |  |  | 6.4 | the profile will be created successful <NL>  |  <NL>  | 
+Row 325:  |  |  |  | 7 | Enroll a windows 10 device to intune and Trigger a manual sync of MDM policies in Windows 10 Device |  | 
+Row 326:  |  |  |  | 7.1 | Open the "Settings" App |  <NL>  | 
+Row 327:  |  |  |  | 7.2 | Click "Accounts" |  <NL>  | 
+Row 328:  |  |  |  | 7.3 | Click "Access work or School" |  <NL>  | 
+Row 329:  |  |  |  | 7.4 | Click"Connect“  and enter the IW User email address that you want to deploy the Windows Profiles against. If you haven't created IW User or put the user into a group that is used to assign the Profile (policy), do it from Azure portal's "Users and Groups" blade before this step. Click "Next" after entering the account email. |  <NL>  | 
+Row 330:  |  |  |  | 7.5 | Repeat Step4 and Step5 one more time to complete the MDM enrollment. First time "Connect" adds the "Connected to Microsoft MDM" icon. Enter the password for the user when prompted. |  <NL>  | 
+Row 331:  |  |  |  | 7.6 | Click the "Info" button and click "Sync" button |  <NL>  | 
+Row 332:  |  |  |  | 7.7 | Wait 5-10 minutes to allow profile assign to device |  <NL>  | 
+Row 333:  |  |  |  | 8 | check the result in the MDM Diagnostic Information, search for the rows with the Area label "MicrosoftNetworkClient_DigitallySignCommunicationsAlways" under the "Managed policies".  <NL>  | "MicrosoftNetworkClient_DigitallySignCommunicationsAlways" should be set to "1" as seen in the "Config Source" column <NL>  | 
+Row 334:  |  |  |  | 9 | reopen the profile, and change the settings to "Not Configured", save profile and sync the device, recheck the value in MDM Diagnostic <NL>  |  <NL>  | 
+Row 335: 14 | 8925770 | Test Case | [Shanghai Vendor][DC][Endpoint Protection][LocalDeviceSecurityOptions][Devices]: Restrict CD-ROM access to local active user |  |  |  | Intune\Mgmt\Device Configuration\DCv1
+Row 336:  |  |  |  | 1 | Navigate to Create Profile blade on Intune Device Configuration |  | 
+Row 337:  |  |  |  | 1.1 | Login to  MEM admin center with your admin account: <NL> DF: https://aka.ms/intunedf <NL> SH: https://aka.ms/IntuneSH <NL> Canary: https://aka.ms/IntuneCanary <NL> PE: https://aka.ms/intune <NL> Fairfax: https://aka.ms/intuneFF <NL> Mooncake: https://aka.ms/intuneMC |  <NL>  | 
+Row 338:  |  |  |  | 1.2 | Click the "Device" in the left list column <NL>  |  <NL>  | 
+Row 339:  |  |  |  | 1.3 | Click the "configuration profile" feature in "Device" <NL>  |  <NL>  | 
+Row 340:  |  |  |  | 1.4 | Click "Create profile", and select Platform : "Windows 10 and later" <NL>  |  <NL>  | 
+Row 341:  |  |  |  | 2 | selected the "Endpoint Protection" in Profile and click the "Create" button <NL>  |  <NL>  | 
+Row 342:  |  |  |  | 3 | Enter "test1" for "Name" and click the "Next" button <NL>  |  <NL>  | 
+Row 343:  |  |  |  | 4 | selected "Local Device Security Options" -  "Devices"  <NL> Set "Restrict CD-ROM access to local active user" settings to "Enable" and "Next" <NL>  |  <NL>  | 
+Row 344:  |  |  |  | 5 | Assign the profile to User/Device group and complete the creation of the DC profile |  | 
+Row 345:  |  |  |  | 5.1 | Click the "Selected groups to include" in "Included groups" <NL>  |  <NL>  | 
+Row 346:  |  |  |  | 5.2 | search your group and select group, and click "Select" button <NL>  |  <NL>  | 
+Row 347:  |  |  |  | 5.3 | Click "Next"--"Next"--"Next"--"Create" <NL>  |  <NL>  | 
+Row 348:  |  |  |  | 5.4 | the profile will be created successful <NL>  |  <NL>  | 
+Row 349:  |  |  |  | 6 | Enroll a windows 10 device to intune and Trigger a manual sync of MDM policies in Windows 10 Device |  | 
+Row 350:  |  |  |  | 6.1 | Open the "Settings" App |  <NL>  | 
+Row 351:  |  |  |  | 6.2 | Click "Accounts" |  <NL>  | 
+Row 352:  |  |  |  | 6.3 | Click "Access work or School" |  <NL>  | 
+Row 353:  |  |  |  | 6.4 | Click"Connect“  and enter the IW User email address that you want to deploy the Windows Profiles against. If you haven't created IW User or put the user into a group that is used to assign the Profile (policy), do it from Azure portal's "Users and Groups" blade before this step. Click "Next" after entering the account email. |  <NL>  | 
+Row 354:  |  |  |  | 6.5 | Repeat Step4 and Step5 one more time to complete the MDM enrollment. First time "Connect" adds the "Connected to Microsoft MDM" icon. Enter the password for the user when prompted. |  <NL>  | 
+Row 355:  |  |  |  | 6.6 | Click the "Info" button and click "Sync" button |  <NL>  | 
+Row 356:  |  |  |  | 6.7 | Wait 5-10 minutes to allow profile assign to device |  <NL>  | 
+Row 357:  |  |  |  | 7 | In the same window that was used at step 6. above, locate the "Advanced Diagnostic Report" situated at the bottom of the page, and click on the "Create report" button.  <NL>  |  <NL>  | 
+Row 358:  |  |  |  | 8 | Click the "Export" button in the popup window - this will cause the log files to be exported to the file "c:\users\Public\Documents\MDMDiagnostics\MDMDiagReport.html" <NL>  |  <NL>  | 
+Row 359:  |  |  |  | 9 | Double click on the file name, by default it will open with Edge. <NL>  | Scroll down - You should see a section with  the title "Managed policies". You can find ”Devices_RestrictCDROMAccessToLocallyLoggedOnUserOnly“. <NL> Devices_RestrictCDROMAccessToLocallyLoggedOnUserOnly Should be 1. <NL>  | 
+Row 360:  |  |  |  | 10 | Reopen the profile and changed the settings to "Not Configured" and "Save" the change and "Sync" the Device  <NL>  | Scroll down - You should see a section with  the title "Managed policies". You can't find ”Devices_RestrictCDROMAccessToLocallyLoggedOnUserOnly“.  | 
+Row 361: 15 | 8925802 | Test Case | [Shanghai Vendor][DC][Endpoint Protection][LocalDeviceSecurityOptions][Devices]: Format and eject removable media |  |  |  | Intune\Mgmt\Device Configuration\DCv1
+Row 362:  |  |  |  | 1 | Navigate to Create Profile blade on Intune Device Configuration |  | 
+Row 363:  |  |  |  | 1.1 | Login to  MEM admin center with your admin account: <NL> DF: https://aka.ms/intunedf <NL> SH: https://aka.ms/IntuneSH <NL> Canary: https://aka.ms/IntuneCanary <NL> PE: https://aka.ms/intune <NL> Fairfax: https://aka.ms/intuneFF <NL> Mooncake: https://aka.ms/intuneMC |  <NL>  | 
+Row 364:  |  |  |  | 1.2 | Click the "Device" in the left list column <NL>  |  <NL>  | 
+Row 365:  |  |  |  | 1.3 | Click the "configuration profile" feature in "Device" <NL>  |  <NL>  | 
+Row 366:  |  |  |  | 1.4 | Click "Create profile", and select Platform : "Windows 10 and later" <NL>  |  <NL>  | 
+Row 367:  |  |  |  | 2 | selected the "Endpoint Protection" in Profile and click the "Create" button <NL>  |  <NL>  | 
+Row 368:  |  |  |  | 3 | Enter "test1" for "Name" and click the "Next" button <NL>  |  <NL>  | 
+Row 369:  |  |  |  | 4 | selected "Local Device Security Options" -  "Devices"  <NL> Set "Format and eject removable media" settings to "Administrators" and "Next" <NL>  |  <NL>  | 
+Row 370:  |  |  |  | 5 | Assign the profile to User/Device group and complete the creation of the DC profile |  | 
+Row 371:  |  |  |  | 5.1 | Click the "Selected groups to include" in "Included groups" <NL>  |  <NL>  | 
+Row 372:  |  |  |  | 5.2 | search your group and select group, and click "Select" button <NL>  |  <NL>  | 
+Row 373:  |  |  |  | 5.3 | Click "Next"--"Next"--"Next"--"Create" <NL>  |  <NL>  | 
+Row 374:  |  |  |  | 5.4 | the profile will be created successful <NL>  |  <NL>  | 
+Row 375:  |  |  |  | 6 | Enroll a windows 10 device to intune and Trigger a manual sync of MDM policies in Windows 10 Device |  | 
+Row 376:  |  |  |  | 6.1 | Open the "Settings" App |  <NL>  | 
+Row 377:  |  |  |  | 6.2 | Click "Accounts" |  <NL>  | 
+Row 378:  |  |  |  | 6.3 | Click "Access work or School" |  <NL>  | 
+Row 379:  |  |  |  | 6.4 | Click"Connect“  and enter the IW User email address that you want to deploy the Windows Profiles against. If you haven't created IW User or put the user into a group that is used to assign the Profile (policy), do it from Azure portal's "Users and Groups" blade before this step. Click "Next" after entering the account email. |  <NL>  | 
+Row 380:  |  |  |  | 6.5 | Repeat Step4 and Step5 one more time to complete the MDM enrollment. First time "Connect" adds the "Connected to Microsoft MDM" icon. Enter the password for the user when prompted. |  <NL>  | 
+Row 381:  |  |  |  | 6.6 | Click the "Info" button and click "Sync" button |  <NL>  | 
+Row 382:  |  |  |  | 6.7 | Wait 5-10 minutes to allow profile assign to device |  <NL>  | 
+Row 383:  |  |  |  | 7 | In the same window that was used at step 6. above, locate the "Advanced Diagnostic Report" situated at the bottom of the page, and click on the "Create report" button.  <NL>  |  <NL>  | 
+Row 384:  |  |  |  | 8 | Click the "Export" button in the popup window - this will cause the log files to be exported to the file "c:\users\Public\Documents\MDMDiagnostics\MDMDiagReport.html" <NL>  |  <NL>  | 
+Row 385:  |  |  |  | 9 | Double click on the file name, by default it will open with Edge. <NL>  | Scroll down - You should see a section with  the title "Managed policies". You can find ”Devices_AllowedToFormatAndEjectRemovableMedia“. <NL> Devices_AllowedToFormatAndEjectRemovableMedia Should be 0. <NL>  | 
+Row 386:  |  |  |  | 10 | Reopen the profile and changed the settings to "Administrators and Power Users" and "Save" the change and "Sync" the Device  <NL>  | Scroll down - You should see a section with  the title "Managed policies". You can find ”Devices_AllowedToFormatAndEjectRemovableMedia“. <NL> Devices_AllowedToFormatAndEjectRemovableMedia Should be 1. | 
+Row 387:  |  |  |  | 11 | Reopen the profile and changed the settings to "Administrators and Interactive Users" and "Save" the change and "Sync" the Device  <NL>  | Scroll down - You should see a section with  the title "Managed policies". You can find ”Devices_AllowedToFormatAndEjectRemovableMedia“. <NL> Devices_AllowedToFormatAndEjectRemovableMedia Should be 2. | 
+Row 388:  |  |  |  | 12 | Reopen the profile and changed the settings to "Not Configured" and "Save" the change and "Sync" the Device  <NL>  | Scroll down - You should see a section with  the title "Managed policies". You can't find ”Devices_AllowedToFormatAndEjectRemovableMedia“.  | 
+Row 389: 16 | 8925871 | Test Case | [Shanghai Vendor][DC][Endpoint Protection][LocalDeviceSecurityOptions][Interactive Logon]: Minutes of lock screen inactivity until screen saver activates |  |  |  | Intune\Mgmt\Device Configuration\DCv1
+Row 390:  |  |  |  | 1 | Navigate to Create Profile blade on Intune Device Configuration |  | 
+Row 391:  |  |  |  | 1.1 | Login to  MEM admin center with your admin account: <NL> DF: https://aka.ms/intunedf <NL> SH: https://aka.ms/IntuneSH <NL> Canary: https://aka.ms/IntuneCanary <NL> PE: https://aka.ms/intune <NL> Fairfax: https://aka.ms/intuneFF <NL> Mooncake: https://aka.ms/intuneMC |  <NL>  | 
+Row 392:  |  |  |  | 1.2 | Click the "Device" in the left list column <NL>  |  <NL>  | 
+Row 393:  |  |  |  | 1.3 | Click the "configuration profile" feature in "Device" <NL>  |  <NL>  | 
+Row 394:  |  |  |  | 1.4 | Click "Create profile", and select Platform : "Windows 10 and later" <NL>  |  <NL>  | 
+Row 395:  |  |  |  | 2 | selected the "Endpoint Protection" in Profile and click the "Create" button <NL>  |  <NL>  | 
+Row 396:  |  |  |  | 3 | Enter "test1" for "Name" and click the "Next" button <NL>  |  <NL>  | 
+Row 397:  |  |  |  | 4 | selected "Local Device Security Options" -  "Interactive Logon"  <NL> Set "Minutes of lock screen inactivity until screen saver activates" settings to "50" and "Next" <NL>  |  <NL>  | 
+Row 398:  |  |  |  | 5 | Assign the profile to User/Device group and complete the creation of the DC profile |  | 
+Row 399:  |  |  |  | 5.1 | Click the "Selected groups to include" in "Included groups" <NL>  |  <NL>  | 
+Row 400:  |  |  |  | 5.2 | search your group and select group, and click "Select" button <NL>  |  <NL>  | 
+Row 401:  |  |  |  | 5.3 | Click "Next"--"Next"--"Next"--"Create" <NL>  |  <NL>  | 
+Row 402:  |  |  |  | 5.4 | the profile will be created successful <NL>  |  <NL>  | 
+Row 403:  |  |  |  | 6 | Enroll a windows 10 device to intune and Trigger a manual sync of MDM policies in Windows 10 Device |  | 
+Row 404:  |  |  |  | 6.1 | Open the "Settings" App |  <NL>  | 
+Row 405:  |  |  |  | 6.2 | Click "Accounts" |  <NL>  | 
+Row 406:  |  |  |  | 6.3 | Click "Access work or School" |  <NL>  | 
+Row 407:  |  |  |  | 6.4 | Click"Connect“  and enter the IW User email address that you want to deploy the Windows Profiles against. If you haven't created IW User or put the user into a group that is used to assign the Profile (policy), do it from Azure portal's "Users and Groups" blade before this step. Click "Next" after entering the account email. |  <NL>  | 
+Row 408:  |  |  |  | 6.5 | Repeat Step4 and Step5 one more time to complete the MDM enrollment. First time "Connect" adds the "Connected to Microsoft MDM" icon. Enter the password for the user when prompted. |  <NL>  | 
+Row 409:  |  |  |  | 6.6 | Click the "Info" button and click "Sync" button |  <NL>  | 
+Row 410:  |  |  |  | 6.7 | Wait 5-10 minutes to allow profile assign to device |  <NL>  | 
+Row 411:  |  |  |  | 7 | In the same window that was used at step 6. above, locate the "Advanced Diagnostic Report" situated at the bottom of the page, and click on the "Create report" button.  <NL>  |  <NL>  | 
+Row 412:  |  |  |  | 8 | Click the "Export" button in the popup window - this will cause the log files to be exported to the file "c:\users\Public\Documents\MDMDiagnostics\MDMDiagReport.html" <NL>  |  <NL>  | 
+Row 413:  |  |  |  | 9 | Double click on the file name, by default it will open with Edge. <NL>  | Scroll down - You should see a section with  the title "Managed policies". You can find ”InteractiveLogon_MachineInactivityLimit“. <NL> InteractiveLogon_MachineInactivityLimit Should be 3000. <NL>  | 
+Row 414: 17 | 8925935 | Test Case | [Shanghai Vendor][DC][Endpoint Protection][LocalDeviceSecurityOptions][Interactive Logon]: Require CTRL + ALT + DEL to log on |  |  |  | Intune\Mgmt\Device Configuration\DCv1
+Row 415:  |  |  |  | 1 | Navigate to Create Profile blade on Intune Device Configuration |  | 
+Row 416:  |  |  |  | 1.1 | Login to  MEM admin center with your admin account: <NL> DF: https://aka.ms/intunedf <NL> SH: https://aka.ms/IntuneSH <NL> Canary: https://aka.ms/IntuneCanary <NL> PE: https://aka.ms/intune <NL> Fairfax: https://aka.ms/intuneFF <NL> Mooncake: https://aka.ms/intuneMC |  <NL>  | 
+Row 417:  |  |  |  | 1.2 | Click the "Device" in the left list column <NL>  |  <NL>  | 
+Row 418:  |  |  |  | 1.3 | Click the "configuration profile" feature in "Device" <NL>  |  <NL>  | 
+Row 419:  |  |  |  | 1.4 | Click "Create profile", and select Platform : "Windows 10 and later" <NL>  |  <NL>  | 
+Row 420:  |  |  |  | 2 | selected the "Endpoint Protection" in Profile and click the "Create" button <NL>  |  <NL>  | 
+Row 421:  |  |  |  | 3 | Enter "test1" for "Name" and click the "Next" button <NL>  |  <NL>  | 
+Row 422:  |  |  |  | 4 | selected "Local Device Security Options" -  "Interactive Logon"  <NL> Set "Require CTRL + ALT + DEL to log on" settings to "Enable" and "Next" <NL>  |  <NL>  | 
+Row 423:  |  |  |  | 5 | Assign the profile to User/Device group and complete the creation of the DC profile |  | 
+Row 424:  |  |  |  | 5.1 | Click the "Selected groups to include" in "Included groups" <NL>  |  <NL>  | 
+Row 425:  |  |  |  | 5.2 | search your group and select group, and click "Select" button <NL>  |  <NL>  | 
+Row 426:  |  |  |  | 5.3 | Click "Next"--"Next"--"Next"--"Create" <NL>  |  <NL>  | 
+Row 427:  |  |  |  | 5.4 | the profile will be created successful <NL>  |  <NL>  | 
+Row 428:  |  |  |  | 6 | Enroll a windows 10 device to intune and Trigger a manual sync of MDM policies in Windows 10 Device |  | 
+Row 429:  |  |  |  | 6.1 | Open the "Settings" App |  <NL>  | 
+Row 430:  |  |  |  | 6.2 | Click "Accounts" |  <NL>  | 
+Row 431:  |  |  |  | 6.3 | Click "Access work or School" |  <NL>  | 
+Row 432:  |  |  |  | 6.4 | Click"Connect“  and enter the IW User email address that you want to deploy the Windows Profiles against. If you haven't created IW User or put the user into a group that is used to assign the Profile (policy), do it from Azure portal's "Users and Groups" blade before this step. Click "Next" after entering the account email. |  <NL>  | 
+Row 433:  |  |  |  | 6.5 | Repeat Step4 and Step5 one more time to complete the MDM enrollment. First time "Connect" adds the "Connected to Microsoft MDM" icon. Enter the password for the user when prompted. |  <NL>  | 
+Row 434:  |  |  |  | 6.6 | Click the "Info" button and click "Sync" button |  <NL>  | 
+Row 435:  |  |  |  | 6.7 | Wait 5-10 minutes to allow profile assign to device |  <NL>  | 
+Row 436:  |  |  |  | 7 | In the same window that was used at step 6. above, locate the "Advanced Diagnostic Report" situated at the bottom of the page, and click on the "Create report" button.  <NL>  |  <NL>  | 
+Row 437:  |  |  |  | 8 | Click the "Export" button in the popup window - this will cause the log files to be exported to the file "c:\users\Public\Documents\MDMDiagnostics\MDMDiagReport.html" <NL>  |  <NL>  | 
+Row 438:  |  |  |  | 9 | Double click on the file name, by default it will open with Edge. <NL>  | Scroll down - You should see a section with  the title "Managed policies". You can find ”InteractiveLogon_DoNotRequireCTRLALTDEL“. <NL> InteractiveLogon_DoNotRequireCTRLALTDEL Should be 0. <NL>  | 
+Row 439:  |  |  |  | 10 | Reopen the profile and changed the settings to "Not Configured" and "Save" the change and "Sync" the Device  <NL>  | Scroll down - You should see a section with  the title "Managed policies". You can't find ”InteractiveLogon_DoNotRequireCTRLALTDEL“.  | 
+Row 440: 18 | 8925966 | Test Case | [Shanghai Vendor][DC][Endpoint Protection][LocalDeviceSecurityOptions][UserAccountControl] Run all admins in Admin Approval Mode |  |  |  | Intune\Mgmt\Device Configuration\DCv1
+Row 441:  |  |  |  | 1 | Navigate to Create Profile blade on Intune Device Configuration |  | 
+Row 442:  |  |  |  | 1.1 | Login to  MEM admin center with your admin account: <NL> DF: https://aka.ms/intunedf <NL> SH: https://aka.ms/IntuneSH <NL> Canary: https://aka.ms/IntuneCanary <NL> PE: https://aka.ms/intune <NL> Fairfax: https://aka.ms/intuneFF <NL> Mooncake: https://aka.ms/intuneMC |  <NL>  | 
+Row 443:  |  |  |  | 1.2 | Click the "Device" in the left list column <NL>  |  <NL>  | 
+Row 444:  |  |  |  | 1.3 | Click the "configuration profile" feature in "Device" <NL>  |  <NL>  | 
+Row 445:  |  |  |  | 1.4 | Click "Create profile", and select Platform : "Windows 10 and later" <NL>  |  <NL>  | 
+Row 446:  |  |  |  | 2 | selected the "Endpoint Protection" in Profile and click the "Create" button <NL>  |  <NL>  | 
+Row 447:  |  |  |  | 3 | Enter "test1" for "Name" and click the "Next" button <NL>  |  <NL>  | 
+Row 448:  |  |  |  | 4 | Selected the "Local Device Security Options"--"User Account Control" |  <NL>  | 
+Row 449:  |  |  |  | 5 | Set the "Run all admins in Admin Approval Mode" to "Enabled" |  <NL>  | 
+Row 450:  |  |  |  | 6 | Assign the profile to User/Device group and complete the creation of the DC profile |  | 
+Row 451:  |  |  |  | 6.1 | Click the "Selected groups to include" in "Included groups" <NL>  |  <NL>  | 
+Row 452:  |  |  |  | 6.2 | search your group and select group, and click "Select" button <NL>  |  <NL>  | 
+Row 453:  |  |  |  | 6.3 | Click "Next"--"Next"--"Next"--"Create" <NL>  |  <NL>  | 
+Row 454:  |  |  |  | 6.4 | the profile will be created successful <NL>  |  <NL>  | 
+Row 455:  |  |  |  | 7 | Enroll a windows 10 device to intune and Trigger a manual sync of MDM policies in Windows 10 Device |  | 
+Row 456:  |  |  |  | 7.1 | Open the "Settings" App |  <NL>  | 
+Row 457:  |  |  |  | 7.2 | Click "Accounts" |  <NL>  | 
+Row 458:  |  |  |  | 7.3 | Click "Access work or School" |  <NL>  | 
+Row 459:  |  |  |  | 7.4 | Click"Connect“  and enter the IW User email address that you want to deploy the Windows Profiles against. If you haven't created IW User or put the user into a group that is used to assign the Profile (policy), do it from Azure portal's "Users and Groups" blade before this step. Click "Next" after entering the account email. |  <NL>  | 
+Row 460:  |  |  |  | 7.5 | Repeat Step4 and Step5 one more time to complete the MDM enrollment. First time "Connect" adds the "Connected to Microsoft MDM" icon. Enter the password for the user when prompted. |  <NL>  | 
+Row 461:  |  |  |  | 7.6 | Click the "Info" button and click "Sync" button |  <NL>  | 
+Row 462:  |  |  |  | 7.7 | Wait 5-10 minutes to allow profile assign to device |  <NL>  | 
+Row 463:  |  |  |  | 8 | check the result in the MDM Diagnostic Information, search for the rows with the Area label "UserAccountControl_RunAllAdministratorsInAdminApprovalMode" under the "Managed policies".  <NL>  | "UserAccountControl_RunAllAdministratorsInAdminApprovalMode" should be set to "1" as seen in the "Config Source" column <NL>  | 
+Row 464:  |  |  |  | 9 | reopen the profile, and change the settings to "Not Configured", save profile and sync the device, recheck the value in MDM Diagnostic | "UserAccountControl_RunAllAdministratorsInAdminApprovalMode" should be disappear <NL>  | 
+Row 465:  |  |  |  | 10 |  <NL>  |  <NL>  | 
+Row 466: 19 | 8925972 | Test Case | [Shanghai Vendor][DC][Endpoint Protection][LocalDeviceSecurityOptions][Interactive Logon]: Smart card removal behavior |  |  |  | Intune\Mgmt\Device Configuration\DCv1
+Row 467:  |  |  |  | 1 | Navigate to Create Profile blade on Intune Device Configuration |  | 
+Row 468:  |  |  |  | 1.1 | Login to  MEM admin center with your admin account: <NL> DF: https://aka.ms/intunedf <NL> SH: https://aka.ms/IntuneSH <NL> Canary: https://aka.ms/IntuneCanary <NL> PE: https://aka.ms/intune <NL> Fairfax: https://aka.ms/intuneFF <NL> Mooncake: https://aka.ms/intuneMC |  <NL>  | 
+Row 469:  |  |  |  | 1.2 | Click the "Device" in the left list column <NL>  |  <NL>  | 
+Row 470:  |  |  |  | 1.3 | Click the "configuration profile" feature in "Device" <NL>  |  <NL>  | 
+Row 471:  |  |  |  | 1.4 | Click "Create profile", and select Platform : "Windows 10 and later" <NL>  |  <NL>  | 
+Row 472:  |  |  |  | 2 | selected the "Endpoint Protection" in Profile and click the "Create" button <NL>  |  <NL>  | 
+Row 473:  |  |  |  | 3 | Enter "test1" for "Name" and click the "Next" button <NL>  |  <NL>  | 
+Row 474:  |  |  |  | 4 | selected "Local Device Security Options" -  "Interactive Logon"  <NL> Set "Smart card removal behavior" settings to "Lock Workstation" and "Next" |  <NL>  | 
+Row 475:  |  |  |  | 5 | Assign the profile to User/Device group and complete the creation of the DC profile |  | 
+Row 476:  |  |  |  | 5.1 | Click the "Selected groups to include" in "Included groups" <NL>  |  <NL>  | 
+Row 477:  |  |  |  | 5.2 | search your group and select group, and click "Select" button <NL>  |  <NL>  | 
+Row 478:  |  |  |  | 5.3 | Click "Next"--"Next"--"Next"--"Create" <NL>  |  <NL>  | 
+Row 479:  |  |  |  | 5.4 | the profile will be created successful <NL>  |  <NL>  | 
+Row 480:  |  |  |  | 6 | Enroll a windows 10 device to intune and Trigger a manual sync of MDM policies in Windows 10 Device |  | 
+Row 481:  |  |  |  | 6.1 | Open the "Settings" App |  <NL>  | 
+Row 482:  |  |  |  | 6.2 | Click "Accounts" |  <NL>  | 
+Row 483:  |  |  |  | 6.3 | Click "Access work or School" |  <NL>  | 
+Row 484:  |  |  |  | 6.4 | Click"Connect“  and enter the IW User email address that you want to deploy the Windows Profiles against. If you haven't created IW User or put the user into a group that is used to assign the Profile (policy), do it from Azure portal's "Users and Groups" blade before this step. Click "Next" after entering the account email. |  <NL>  | 
+Row 485:  |  |  |  | 6.5 | Repeat Step4 and Step5 one more time to complete the MDM enrollment. First time "Connect" adds the "Connected to Microsoft MDM" icon. Enter the password for the user when prompted. |  <NL>  | 
+Row 486:  |  |  |  | 6.6 | Click the "Info" button and click "Sync" button |  <NL>  | 
+Row 487:  |  |  |  | 6.7 | Wait 5-10 minutes to allow profile assign to device |  <NL>  | 
+Row 488:  |  |  |  | 7 | In the same window that was used at step 6. above, locate the "Advanced Diagnostic Report" situated at the bottom of the page, and click on the "Create report" button.  <NL>  |  <NL>  | 
+Row 489:  |  |  |  | 8 | Click the "Export" button in the popup window - this will cause the log files to be exported to the file "c:\users\Public\Documents\MDMDiagnostics\MDMDiagReport.html" <NL>  |  <NL>  | 
+Row 490:  |  |  |  | 9 | Double click on the file name, by default it will open with Edge. <NL>  | Scroll down - You should see a section with  the title "Managed policies". You can find ”InteractiveLogon_SmartCardRemovalBehavior“. <NL> InteractiveLogon_SmartCardRemovalBehavior Should be 1. <NL>  | 
+Row 491:  |  |  |  | 10 | Reopen the profile and changed the settings to "Force Logoff" and "Save" the change and "Sync" the Device  <NL>  | Scroll down - You should see a section with  the title "Managed policies". You can find ”InteractiveLogon_SmartCardRemovalBehavior“. <NL> InteractiveLogon_SmartCardRemovalBehavior Should be 2. | 
+Row 492:  |  |  |  | 11 | Reopen the profile and changed the settings to "Disconnect if a Remote Desktop Services session" and "Save" the change and "Sync" the Device  <NL>  | Scroll down - You should see a section with  the title "Managed policies". You can find ”InteractiveLogon_SmartCardRemovalBehavior“. <NL> InteractiveLogon_SmartCardRemovalBehavior Should be 3. | 
+Row 493:  |  |  |  | 12 | Reopen the profile and changed the settings to "Not Action" and "Save" the change and "Sync" the Device  <NL>  | Scroll down - You should see a section with  the title "Managed policies". You can't find ”InteractiveLogon_SmartCardRemovalBehavior“.  | 
+Row 494: 20 | 8926040 | Test Case | [Shanghai Vendor][DC][Endpoint Protection][LocalDeviceSecurityOptions][Interactive Logon]: User information on lock screen |  |  |  | Intune\Mgmt\Device Configuration\DCv1
+Row 495:  |  |  |  | 1 | Navigate to Create Profile blade on Intune Device Configuration |  | 
+Row 496:  |  |  |  | 1.1 | Login to  MEM admin center with your admin account: <NL> DF: https://aka.ms/intunedf <NL> SH: https://aka.ms/IntuneSH <NL> Canary: https://aka.ms/IntuneCanary <NL> PE: https://aka.ms/intune <NL> Fairfax: https://aka.ms/intuneFF <NL> Mooncake: https://aka.ms/intuneMC |  <NL>  | 
+Row 497:  |  |  |  | 1.2 | Click the "Device" in the left list column <NL>  |  <NL>  | 
+Row 498:  |  |  |  | 1.3 | Click the "configuration profile" feature in "Device" <NL>  |  <NL>  | 
+Row 499:  |  |  |  | 1.4 | Click "Create profile", and select Platform : "Windows 10 and later" <NL>  |  <NL>  | 
+Row 500:  |  |  |  | 2 | selected the "Endpoint Protection" in Profile and click the "Create" button <NL>  |  <NL>  | 
+Row 501:  |  |  |  | 3 | Enter "test1" for "Name" and click the "Next" button <NL>  |  <NL>  | 
+Row 502:  |  |  |  | 4 | selected "Local Device Security Options" -  "Interactive Logon"  <NL> Set "User information on lock screen" settings to "User display name, domain and user names" and "Next" <NL>  |  <NL>  | 
+Row 503:  |  |  |  | 5 | Assign the profile to User/Device group and complete the creation of the DC profile |  | 
+Row 504:  |  |  |  | 5.1 | Click the "Selected groups to include" in "Included groups" <NL>  |  <NL>  | 
+Row 505:  |  |  |  | 5.2 | search your group and select group, and click "Select" button <NL>  |  <NL>  | 
+Row 506:  |  |  |  | 5.3 | Click "Next"--"Next"--"Next"--"Create" <NL>  |  <NL>  | 
+Row 507:  |  |  |  | 5.4 | the profile will be created successful <NL>  |  <NL>  | 
+Row 508:  |  |  |  | 6 | Enroll a windows 10 device to intune and Trigger a manual sync of MDM policies in Windows 10 Device |  | 
+Row 509:  |  |  |  | 6.1 | Open the "Settings" App |  <NL>  | 
+Row 510:  |  |  |  | 6.2 | Click "Accounts" |  <NL>  | 
+Row 511:  |  |  |  | 6.3 | Click "Access work or School" |  <NL>  | 
+Row 512:  |  |  |  | 6.4 | Click"Connect“  and enter the IW User email address that you want to deploy the Windows Profiles against. If you haven't created IW User or put the user into a group that is used to assign the Profile (policy), do it from Azure portal's "Users and Groups" blade before this step. Click "Next" after entering the account email. |  <NL>  | 
+Row 513:  |  |  |  | 6.5 | Repeat Step4 and Step5 one more time to complete the MDM enrollment. First time "Connect" adds the "Connected to Microsoft MDM" icon. Enter the password for the user when prompted. |  <NL>  | 
+Row 514:  |  |  |  | 6.6 | Click the "Info" button and click "Sync" button |  <NL>  | 
+Row 515:  |  |  |  | 6.7 | Wait 5-10 minutes to allow profile assign to device |  <NL>  | 
+Row 516:  |  |  |  | 7 | In the same window that was used at step 6. above, locate the "Advanced Diagnostic Report" situated at the bottom of the page, and click on the "Create report" button.  <NL>  |  <NL>  | 
+Row 517:  |  |  |  | 8 | Click the "Export" button in the popup window - this will cause the log files to be exported to the file "c:\users\Public\Documents\MDMDiagnostics\MDMDiagReport.html" <NL>  |  <NL>  | 
+Row 518:  |  |  |  | 9 | Double click on the file name, by default it will open with Edge. <NL>  | Scroll down - You should see a section with  the title "Managed policies". You can find ”InteractiveLogon_DisplayUserInformationWhenTheSessionIsLocked“. <NL> InteractiveLogon_DisplayUserInformationWhenTheSessionIsLocked Should be 1. <NL>  | 
+Row 519:  |  |  |  | 10 | Reopen the profile and changed the settings to "User display name only" and "Save" the change and "Sync" the Device  <NL>  | Scroll down - You should see a section with  the title "Managed policies". You can find ”InteractiveLogon_DisplayUserInformationWhenTheSessionIsLocked“. <NL> InteractiveLogon_DisplayUserInformationWhenTheSessionIsLocked Should be 2. | 
+Row 520:  |  |  |  | 11 | Reopen the profile and changed the settings to "Do not display user information" and "Save" the change and "Sync" the Device  <NL>  | Scroll down - You should see a section with  the title "Managed policies". You can find ”InteractiveLogon_DisplayUserInformationWhenTheSessionIsLocked“. <NL> InteractiveLogon_DisplayUserInformationWhenTheSessionIsLocked Should be 3. | 
+Row 521:  |  |  |  | 12 | Reopen the profile and changed the settings to "Not Configured" and "Save" the change and "Sync" the Device  <NL>  | Scroll down - You should see a section with  the title "Managed policies". You can't find ”InteractiveLogon_DisplayUserInformationWhenTheSessionIsLocked“.  | 
+Row 522: 21 | 8926081 | Test Case | [Shanghai Vendor][DC][Endpoint Protection][LocalDeviceSecurityOptions][UserAccountControl] Virtualize file and registry write failures to per-user locations |  |  |  | Intune\Mgmt\Device Configuration\DCv1
+Row 523:  |  |  |  | 1 | Navigate to Create Profile blade on Intune Device Configuration |  | 
+Row 524:  |  |  |  | 1.1 | Login to  MEM admin center with your admin account: <NL> DF: https://aka.ms/intunedf <NL> SH: https://aka.ms/IntuneSH <NL> Canary: https://aka.ms/IntuneCanary <NL> PE: https://aka.ms/intune <NL> Fairfax: https://aka.ms/intuneFF <NL> Mooncake: https://aka.ms/intuneMC |  <NL>  | 
+Row 525:  |  |  |  | 1.2 | Click the "Device" in the left list column <NL>  |  <NL>  | 
+Row 526:  |  |  |  | 1.3 | Click the "configuration profile" feature in "Device" <NL>  |  <NL>  | 
+Row 527:  |  |  |  | 1.4 | Click "Create profile", and select Platform : "Windows 10 and later" <NL>  |  <NL>  | 
+Row 528:  |  |  |  | 2 | selected the "Endpoint Protection" in Profile and click the "Create" button <NL>  |  <NL>  | 
+Row 529:  |  |  |  | 3 | Enter "test1" for "Name" and click the "Next" button <NL>  |  <NL>  | 
+Row 530:  |  |  |  | 4 | Selected the "Local Device Security Options"--"User Account Control" |  <NL>  | 
+Row 531:  |  |  |  | 5 | Set the "Virtualize file and registry write failures to per-user locations" to "Enabled" |  <NL>  | 
+Row 532:  |  |  |  | 6 | Assign the profile to User/Device group and complete the creation of the DC profile |  | 
+Row 533:  |  |  |  | 6.1 | Click the "Selected groups to include" in "Included groups" <NL>  |  <NL>  | 
+Row 534:  |  |  |  | 6.2 | search your group and select group, and click "Select" button <NL>  |  <NL>  | 
+Row 535:  |  |  |  | 6.3 | Click "Next"--"Next"--"Next"--"Create" <NL>  |  <NL>  | 
+Row 536:  |  |  |  | 6.4 | the profile will be created successful <NL>  |  <NL>  | 
+Row 537:  |  |  |  | 7 | Enroll a windows 10 device to intune and Trigger a manual sync of MDM policies in Windows 10 Device |  | 
+Row 538:  |  |  |  | 7.1 | Open the "Settings" App |  <NL>  | 
+Row 539:  |  |  |  | 7.2 | Click "Accounts" |  <NL>  | 
+Row 540:  |  |  |  | 7.3 | Click "Access work or School" |  <NL>  | 
+Row 541:  |  |  |  | 7.4 | Click"Connect“  and enter the IW User email address that you want to deploy the Windows Profiles against. If you haven't created IW User or put the user into a group that is used to assign the Profile (policy), do it from Azure portal's "Users and Groups" blade before this step. Click "Next" after entering the account email. |  <NL>  | 
+Row 542:  |  |  |  | 7.5 | Repeat Step4 and Step5 one more time to complete the MDM enrollment. First time "Connect" adds the "Connected to Microsoft MDM" icon. Enter the password for the user when prompted. |  <NL>  | 
+Row 543:  |  |  |  | 7.6 | Click the "Info" button and click "Sync" button |  <NL>  | 
+Row 544:  |  |  |  | 7.7 | Wait 5-10 minutes to allow profile assign to device |  <NL>  | 
+Row 545:  |  |  |  | 8 | check the result in the MDM Diagnostic Information, search for the rows with the Area label "UserAccountControl_VirtualizeFileAndRegistryWriteFailuresToPerUserLocations" under the "Managed policies".  <NL>  | "UserAccountControl_VirtualizeFileAndRegistryWriteFailuresToPerUserLocations" should be set to "1" as seen in the "Config Source" column <NL>  | 
+Row 546:  |  |  |  | 9 | reopen the profile, and change the settings to "Not Configured", save profile and sync the device, recheck the value in MDM Diagnostic | "UserAccountControl_VirtualizeFileAndRegistryWriteFailuresToPerUserLocations" should be disppear <NL>  | 
+Row 547:  |  |  |  | 10 |  <NL>  |  <NL>  | 
+Row 548: 22 | 8926094 | Test Case | [Shanghai Vendor][DC][Endpoint Protection][LocalDeviceSecurityOptions][UserAccountControl] Admin Approval Mode For Built-in Administrator |  |  |  | Intune\Mgmt\Device Configuration\DCv1
+Row 549:  |  |  |  | 1 | Navigate to Create Profile blade on Intune Device Configuration |  | 
+Row 550:  |  |  |  | 1.1 | Login to  MEM admin center with your admin account: <NL> DF: https://aka.ms/intunedf <NL> SH: https://aka.ms/IntuneSH <NL> Canary: https://aka.ms/IntuneCanary <NL> PE: https://aka.ms/intune <NL> Fairfax: https://aka.ms/intuneFF <NL> Mooncake: https://aka.ms/intuneMC |  <NL>  | 
+Row 551:  |  |  |  | 1.2 | Click the "Device" in the left list column <NL>  |  <NL>  | 
+Row 552:  |  |  |  | 1.3 | Click the "configuration profile" feature in "Device" <NL>  |  <NL>  | 
+Row 553:  |  |  |  | 1.4 | Click "Create profile", and select Platform : "Windows 10 and later" <NL>  |  <NL>  | 
+Row 554:  |  |  |  | 2 | selected the "Endpoint Protection" in Profile and click the "Create" button <NL>  |  <NL>  | 
+Row 555:  |  |  |  | 3 | Enter "test1" for "Name" and click the "Next" button <NL>  |  <NL>  | 
+Row 556:  |  |  |  | 4 | Selected the "Local Device Security Options"--"User Account Control" |  <NL>  | 
+Row 557:  |  |  |  | 5 | Set the "Admin Approval Mode For Built-in Administrator" to "Enabled" |  <NL>  | 
+Row 558:  |  |  |  | 6 | Assign the profile to User/Device group and complete the creation of the DC profile |  | 
+Row 559:  |  |  |  | 6.1 | Click the "Selected groups to include" in "Included groups" <NL>  |  <NL>  | 
+Row 560:  |  |  |  | 6.2 | search your group and select group, and click "Select" button <NL>  |  <NL>  | 
+Row 561:  |  |  |  | 6.3 | Click "Next"--"Next"--"Next"--"Create" <NL>  |  <NL>  | 
+Row 562:  |  |  |  | 6.4 | the profile will be created successful <NL>  |  <NL>  | 
+Row 563:  |  |  |  | 7 | Enroll a windows 10 device to intune and Trigger a manual sync of MDM policies in Windows 10 Device |  | 
+Row 564:  |  |  |  | 7.1 | Open the "Settings" App |  <NL>  | 
+Row 565:  |  |  |  | 7.2 | Click "Accounts" |  <NL>  | 
+Row 566:  |  |  |  | 7.3 | Click "Access work or School" |  <NL>  | 
+Row 567:  |  |  |  | 7.4 | Click"Connect“  and enter the IW User email address that you want to deploy the Windows Profiles against. If you haven't created IW User or put the user into a group that is used to assign the Profile (policy), do it from Azure portal's "Users and Groups" blade before this step. Click "Next" after entering the account email. |  <NL>  | 
+Row 568:  |  |  |  | 7.5 | Repeat Step4 and Step5 one more time to complete the MDM enrollment. First time "Connect" adds the "Connected to Microsoft MDM" icon. Enter the password for the user when prompted. |  <NL>  | 
+Row 569:  |  |  |  | 7.6 | Click the "Info" button and click "Sync" button |  <NL>  | 
+Row 570:  |  |  |  | 7.7 | Wait 5-10 minutes to allow profile assign to device |  <NL>  | 
+Row 571:  |  |  |  | 8 | check the result in the MDM Diagnostic Information, search for the rows with the Area label "UserAccountControl_UseAdminApprovalMode" under the "Managed policies".  <NL>  | "UserAccountControl_UseAdminApprovalMode" should be set to "1" as seen in the "Config Source" column <NL>  | 
+Row 572:  |  |  |  | 9 | reopen the profile, and change the settings to "Not Configured", save profile and sync the device, recheck the value in MDM Diagnostic | "UserAccountControl_UseAdminApprovalMode" should be disappear <NL>  | 
+Row 573:  |  |  |  | 10 |  <NL>  |  <NL>  | 
+Row 574: 23 | 8926098 | Test Case | [Shanghai Vendor][DC][Endpoint Protection][LocalDeviceSecurityOptions][Interactive Logon]: Hide last signed-in user |  |  |  | Intune\Mgmt\Device Configuration\DCv1
+Row 575:  |  |  |  | 1 | Navigate to Create Profile blade on Intune Device Configuration |  | 
+Row 576:  |  |  |  | 1.1 | Login to  MEM admin center with your admin account: <NL> DF: https://aka.ms/intunedf <NL> SH: https://aka.ms/IntuneSH <NL> Canary: https://aka.ms/IntuneCanary <NL> PE: https://aka.ms/intune <NL> Fairfax: https://aka.ms/intuneFF <NL> Mooncake: https://aka.ms/intuneMC |  <NL>  | 
+Row 577:  |  |  |  | 1.2 | Click the "Device" in the left list column <NL>  |  <NL>  | 
+Row 578:  |  |  |  | 1.3 | Click the "configuration profile" feature in "Device" <NL>  |  <NL>  | 
+Row 579:  |  |  |  | 1.4 | Click "Create profile", and select Platform : "Windows 10 and later" <NL>  |  <NL>  | 
+Row 580:  |  |  |  | 2 | selected the "Endpoint Protection" in Profile and click the "Create" button <NL>  |  <NL>  | 
+Row 581:  |  |  |  | 3 | Enter "test1" for "Name" and click the "Next" button <NL>  |  <NL>  | 
+Row 582:  |  |  |  | 4 | selected "Local Device Security Options" -  "Interactive Logon"  <NL> Set "Hide last signed-in user" settings to "Enable" and "Next" <NL>  |  <NL>  | 
+Row 583:  |  |  |  | 5 | Assign the profile to User/Device group and complete the creation of the DC profile |  | 
+Row 584:  |  |  |  | 5.1 | Click the "Selected groups to include" in "Included groups" <NL>  |  <NL>  | 
+Row 585:  |  |  |  | 5.2 | search your group and select group, and click "Select" button <NL>  |  <NL>  | 
+Row 586:  |  |  |  | 5.3 | Click "Next"--"Next"--"Next"--"Create" <NL>  |  <NL>  | 
+Row 587:  |  |  |  | 5.4 | the profile will be created successful <NL>  |  <NL>  | 
+Row 588:  |  |  |  | 6 | Enroll a windows 10 device to intune and Trigger a manual sync of MDM policies in Windows 10 Device |  | 
+Row 589:  |  |  |  | 6.1 | Open the "Settings" App |  <NL>  | 
+Row 590:  |  |  |  | 6.2 | Click "Accounts" |  <NL>  | 
+Row 591:  |  |  |  | 6.3 | Click "Access work or School" |  <NL>  | 
+Row 592:  |  |  |  | 6.4 | Click"Connect“  and enter the IW User email address that you want to deploy the Windows Profiles against. If you haven't created IW User or put the user into a group that is used to assign the Profile (policy), do it from Azure portal's "Users and Groups" blade before this step. Click "Next" after entering the account email. |  <NL>  | 
+Row 593:  |  |  |  | 6.5 | Repeat Step4 and Step5 one more time to complete the MDM enrollment. First time "Connect" adds the "Connected to Microsoft MDM" icon. Enter the password for the user when prompted. |  <NL>  | 
+Row 594:  |  |  |  | 6.6 | Click the "Info" button and click "Sync" button |  <NL>  | 
+Row 595:  |  |  |  | 6.7 | Wait 5-10 minutes to allow profile assign to device |  <NL>  | 
+Row 596:  |  |  |  | 7 | In the same window that was used at step 6. above, locate the "Advanced Diagnostic Report" situated at the bottom of the page, and click on the "Create report" button.  <NL>  |  <NL>  | 
+Row 597:  |  |  |  | 8 | Click the "Export" button in the popup window - this will cause the log files to be exported to the file "c:\users\Public\Documents\MDMDiagnostics\MDMDiagReport.html" <NL>  |  <NL>  | 
+Row 598:  |  |  |  | 9 | Double click on the file name, by default it will open with Edge. <NL>  | Scroll down - You should see a section with  the title "Managed policies". You can find ”InteractiveLogon_DoNotDisplayLastSignedIn“. <NL> InteractiveLogon_DoNotDisplayLastSignedIn Should be 1. <NL>  | 
+Row 599:  |  |  |  | 10 | Reopen the profile and changed the settings to "Not Configured" and "Save" the change and "Sync" the Device  <NL>  | Scroll down - You should see a section with  the title "Managed policies". You can't find ”InteractiveLogon_DoNotDisplayLastSignedIn“.  | 
+Row 600: 24 | 8926100 | Test Case | [Shanghai Vendor][DC][Endpoint Protection][LocalDeviceSecurityOptions][UserAccountControl] Elevation prompt for standard users |  |  |  | Intune\Mgmt\Device Configuration\DCv1
+Row 601:  |  |  |  | 1 | Navigate to Create Profile blade on Intune Device Configuration |  | 
+Row 602:  |  |  |  | 1.1 | Login to  MEM admin center with your admin account: <NL> DF: https://aka.ms/intunedf <NL> SH: https://aka.ms/IntuneSH <NL> Canary: https://aka.ms/IntuneCanary <NL> PE: https://aka.ms/intune <NL> Fairfax: https://aka.ms/intuneFF <NL> Mooncake: https://aka.ms/intuneMC |  <NL>  | 
+Row 603:  |  |  |  | 1.2 | Click the "Device" in the left list column <NL>  |  <NL>  | 
+Row 604:  |  |  |  | 1.3 | Click the "configuration profile" feature in "Device" <NL>  |  <NL>  | 
+Row 605:  |  |  |  | 1.4 | Click "Create profile", and select Platform : "Windows 10 and later" <NL>  |  <NL>  | 
+Row 606:  |  |  |  | 2 | selected the "Endpoint Protection" in Profile and click the "Create" button <NL>  |  <NL>  | 
+Row 607:  |  |  |  | 3 | Enter "test1" for "Name" and click the "Next" button <NL>  |  <NL>  | 
+Row 608:  |  |  |  | 4 | Selected the "Local Device Security Options"--"User Account Control" |  <NL>  | 
+Row 609:  |  |  |  | 5 | Set the "Elevation prompt for standard users" to "Automatically deny elevation requests" |  <NL>  | 
+Row 610:  |  |  |  | 6 | Assign the profile to User/Device group and complete the creation of the DC profile |  | 
+Row 611:  |  |  |  | 6.1 | Click the "Selected groups to include" in "Included groups" <NL>  |  <NL>  | 
+Row 612:  |  |  |  | 6.2 | search your group and select group, and click "Select" button <NL>  |  <NL>  | 
+Row 613:  |  |  |  | 6.3 | Click "Next"--"Next"--"Next"--"Create" <NL>  |  <NL>  | 
+Row 614:  |  |  |  | 6.4 | the profile will be created successful <NL>  |  <NL>  | 
+Row 615:  |  |  |  | 7 | Enroll a windows 10 device to intune and Trigger a manual sync of MDM policies in Windows 10 Device |  | 
+Row 616:  |  |  |  | 7.1 | Open the "Settings" App |  <NL>  | 
+Row 617:  |  |  |  | 7.2 | Click "Accounts" |  <NL>  | 
+Row 618:  |  |  |  | 7.3 | Click "Access work or School" |  <NL>  | 
+Row 619:  |  |  |  | 7.4 | Click"Connect“  and enter the IW User email address that you want to deploy the Windows Profiles against. If you haven't created IW User or put the user into a group that is used to assign the Profile (policy), do it from Azure portal's "Users and Groups" blade before this step. Click "Next" after entering the account email. |  <NL>  | 
+Row 620:  |  |  |  | 7.5 | Repeat Step4 and Step5 one more time to complete the MDM enrollment. First time "Connect" adds the "Connected to Microsoft MDM" icon. Enter the password for the user when prompted. |  <NL>  | 
+Row 621:  |  |  |  | 7.6 | Click the "Info" button and click "Sync" button |  <NL>  | 
+Row 622:  |  |  |  | 7.7 | Wait 5-10 minutes to allow profile assign to device |  <NL>  | 
+Row 623:  |  |  |  | 8 | check the result in the MDM Diagnostic Information, search for the rows with the Area label "UserAccountControl_BehaviorOfTheElevationPromptForStandardUsers" under the "Managed policies".  <NL>  | "UserAccountControl_BehaviorOfTheElevationPromptForStandardUsers" should be set to "0" as seen in the "Config Source" column <NL>  | 
+Row 624:  |  |  |  | 9 | reopen the profile, and change the settings to "Prompt for credentials on the secure desktop", save profile and sync the device, recheck the value in MDM Diagnostic | "UserAccountControl_BehaviorOfTheElevationPromptForStandardUsers" should be set to "1" as seen in the "Config Source" column <NL>  | 
+Row 625:  |  |  |  | 10 | reopen the profile, and change the settings to "Prompt for credentials", save profile and sync the device, recheck the value in MDM Diagnostic <NL>  | "UserAccountControl_BehaviorOfTheElevationPromptForStandardUsers" should be set to "3" as seen in the "Config Source" column <NL>  | 
+Row 626:  |  |  |  | 11 | reopen the profile, and change the settings to "Not Configured", save profile and sync the device, recheck the value in MDM Diagnostic <NL>  | "UserAccountControl_BehaviorOfTheElevationPromptForStandardUsers" should be disappear <NL>  | 
+Row 627: 25 | 8926108 | Test Case | [Shanghai Vendor][DC][Endpoint Protection][LocalDeviceSecurityOptions][UserAccountControl] Elevation prompt for admins |  |  |  | Intune\Mgmt\Device Configuration\DCv1
+Row 628:  |  |  |  | 1 | Navigate to Create Profile blade on Intune Device Configuration |  | 
+Row 629:  |  |  |  | 1.1 | Login to  MEM admin center with your admin account: <NL> DF: https://aka.ms/intunedf <NL> SH: https://aka.ms/IntuneSH <NL> Canary: https://aka.ms/IntuneCanary <NL> PE: https://aka.ms/intune <NL> Fairfax: https://aka.ms/intuneFF <NL> Mooncake: https://aka.ms/intuneMC |  <NL>  | 
+Row 630:  |  |  |  | 1.2 | Click the "Device" in the left list column <NL>  |  <NL>  | 
+Row 631:  |  |  |  | 1.3 | Click the "configuration profile" feature in "Device" <NL>  |  <NL>  | 
+Row 632:  |  |  |  | 1.4 | Click "Create profile", and select Platform : "Windows 10 and later" <NL>  |  <NL>  | 
+Row 633:  |  |  |  | 2 | selected the "Endpoint Protection" in Profile and click the "Create" button <NL>  |  <NL>  | 
+Row 634:  |  |  |  | 3 | Enter "test1" for "Name" and click the "Next" button <NL>  |  <NL>  | 
+Row 635:  |  |  |  | 4 | Selected the "Local Device Security Options"--"User Account Control" |  <NL>  | 
+Row 636:  |  |  |  | 5 | Set the "Elevation prompt for admins" to "Elevate without prompting" |  <NL>  | 
+Row 637:  |  |  |  | 6 | Assign the profile to User/Device group and complete the creation of the DC profile |  | 
+Row 638:  |  |  |  | 6.1 | Click the "Selected groups to include" in "Included groups" <NL>  |  <NL>  | 
+Row 639:  |  |  |  | 6.2 | search your group and select group, and click "Select" button <NL>  |  <NL>  | 
+Row 640:  |  |  |  | 6.3 | Click "Next"--"Next"--"Next"--"Create" <NL>  |  <NL>  | 
+Row 641:  |  |  |  | 6.4 | the profile will be created successful <NL>  |  <NL>  | 
+Row 642:  |  |  |  | 7 | Enroll a windows 10 device to intune and Trigger a manual sync of MDM policies in Windows 10 Device |  | 
+Row 643:  |  |  |  | 7.1 | Open the "Settings" App |  <NL>  | 
+Row 644:  |  |  |  | 7.2 | Click "Accounts" |  <NL>  | 
+Row 645:  |  |  |  | 7.3 | Click "Access work or School" |  <NL>  | 
+Row 646:  |  |  |  | 7.4 | Click"Connect“  and enter the IW User email address that you want to deploy the Windows Profiles against. If you haven't created IW User or put the user into a group that is used to assign the Profile (policy), do it from Azure portal's "Users and Groups" blade before this step. Click "Next" after entering the account email. |  <NL>  | 
+Row 647:  |  |  |  | 7.5 | Repeat Step4 and Step5 one more time to complete the MDM enrollment. First time "Connect" adds the "Connected to Microsoft MDM" icon. Enter the password for the user when prompted. |  <NL>  | 
+Row 648:  |  |  |  | 7.6 | Click the "Info" button and click "Sync" button |  <NL>  | 
+Row 649:  |  |  |  | 7.7 | Wait 5-10 minutes to allow profile assign to device |  <NL>  | 
+Row 650:  |  |  |  | 8 | check the result in the MDM Diagnostic Information, search for the rows with the Area label "UserAccountControl_BehaviorOfTheElevationPromptForAdministrators" under the "Managed policies".  <NL>  | "UserAccountControl_BehaviorOfTheElevationPromptForAdministrators" should be set to "0" as seen in the "Config Source" column <NL>  | 
+Row 651:  |  |  |  | 9 | reopen the profile, and change the settings to "Prompt for credentials on the secure desktop", save profile and sync the device, recheck the value in MDM Diagnostic | "UserAccountControl_BehaviorOfTheElevationPromptForAdministrators" should be set to "1" as seen in the "Config Source" column <NL>  | 
+Row 652:  |  |  |  | 10 | reopen the profile, and change the settings to "Prompt for consent on the secure desktop", save profile and sync the device, recheck the value in MDM Diagnostic <NL>  | "UserAccountControl_BehaviorOfTheElevationPromptForAdministrators" should be set to "2" as seen in the "Config Source" column <NL>  | 
+Row 653:  |  |  |  | 11 | reopen the profile, and change the settings to "Prompt for credentials", save profile and sync the device, recheck the value in MDM Diagnostic <NL>  | "UserAccountControl_BehaviorOfTheElevationPromptForAdministrators" should be set to "3" as seen in the "Config Source" column <NL>  | 
+Row 654:  |  |  |  | 12 | reopen the profile, and change the settings to "Prompt for consent", save profile and sync the device, recheck the value in MDM Diagnostic <NL>  | "UserAccountControl_BehaviorOfTheElevationPromptForAdministrators" should be set to "4" as seen in the "Config Source" column <NL>  | 
+Row 655:  |  |  |  | 13 | reopen the profile, and change the settings to "Prompt for consent for non-Windows binaries", save profile and sync the device, recheck the value in MDM Diagnostic <NL>  | "UserAccountControl_BehaviorOfTheElevationPromptForAdministrators" should be set to "5" as seen in the "Config Source" column <NL>  | 
+Row 656:  |  |  |  | 14 | reopen the profile, and change the settings to "Not Configured", save profile and sync the device, recheck the value in MDM Diagnostic <NL>  | "UserAccountControl_BehaviorOfTheElevationPromptForAdministrators" should be disappear <NL>  | 
+Row 657: 26 | 8926120 | Test Case | [Shanghai Vendor][DC][Endpoint Protection][LocalDeviceSecurityOptions][Interactive Logon]: Hide username at sign in |  |  |  | Intune\Mgmt\Device Configuration\DCv1
+Row 658:  |  |  |  | 1 | Navigate to Create Profile blade on Intune Device Configuration |  | 
+Row 659:  |  |  |  | 1.1 | Login to  MEM admin center with your admin account: <NL> DF: https://aka.ms/intunedf <NL> SH: https://aka.ms/IntuneSH <NL> Canary: https://aka.ms/IntuneCanary <NL> PE: https://aka.ms/intune <NL> Fairfax: https://aka.ms/intuneFF <NL> Mooncake: https://aka.ms/intuneMC |  <NL>  | 
+Row 660:  |  |  |  | 1.2 | Click the "Device" in the left list column <NL>  |  <NL>  | 
+Row 661:  |  |  |  | 1.3 | Click the "configuration profile" feature in "Device" <NL>  |  <NL>  | 
+Row 662:  |  |  |  | 1.4 | Click "Create profile", and select Platform : "Windows 10 and later" <NL>  |  <NL>  | 
+Row 663:  |  |  |  | 2 | selected the "Endpoint Protection" in Profile and click the "Create" button <NL>  |  <NL>  | 
+Row 664:  |  |  |  | 3 | Enter "test1" for "Name" and click the "Next" button <NL>  |  <NL>  | 
+Row 665:  |  |  |  | 4 | selected "Local Device Security Options" -  "Interactive Logon"  <NL> Set "Hide username at sign in" settings to "Enable" and "Next" <NL>  |  <NL>  | 
+Row 666:  |  |  |  | 5 | Assign the profile to User/Device group and complete the creation of the DC profile |  | 
+Row 667:  |  |  |  | 5.1 | Click the "Selected groups to include" in "Included groups" <NL>  |  <NL>  | 
+Row 668:  |  |  |  | 5.2 | search your group and select group, and click "Select" button <NL>  |  <NL>  | 
+Row 669:  |  |  |  | 5.3 | Click "Next"--"Next"--"Next"--"Create" <NL>  |  <NL>  | 
+Row 670:  |  |  |  | 5.4 | the profile will be created successful <NL>  |  <NL>  | 
+Row 671:  |  |  |  | 6 | Enroll a windows 10 device to intune and Trigger a manual sync of MDM policies in Windows 10 Device |  | 
+Row 672:  |  |  |  | 6.1 | Open the "Settings" App |  <NL>  | 
+Row 673:  |  |  |  | 6.2 | Click "Accounts" |  <NL>  | 
+Row 674:  |  |  |  | 6.3 | Click "Access work or School" |  <NL>  | 
+Row 675:  |  |  |  | 6.4 | Click"Connect“  and enter the IW User email address that you want to deploy the Windows Profiles against. If you haven't created IW User or put the user into a group that is used to assign the Profile (policy), do it from Azure portal's "Users and Groups" blade before this step. Click "Next" after entering the account email. |  <NL>  | 
+Row 676:  |  |  |  | 6.5 | Repeat Step4 and Step5 one more time to complete the MDM enrollment. First time "Connect" adds the "Connected to Microsoft MDM" icon. Enter the password for the user when prompted. |  <NL>  | 
+Row 677:  |  |  |  | 6.6 | Click the "Info" button and click "Sync" button |  <NL>  | 
+Row 678:  |  |  |  | 6.7 | Wait 5-10 minutes to allow profile assign to device |  <NL>  | 
+Row 679:  |  |  |  | 7 | In the same window that was used at step 6. above, locate the "Advanced Diagnostic Report" situated at the bottom of the page, and click on the "Create report" button.  <NL>  |  <NL>  | 
+Row 680:  |  |  |  | 8 | Click the "Export" button in the popup window - this will cause the log files to be exported to the file "c:\users\Public\Documents\MDMDiagnostics\MDMDiagReport.html" <NL>  |  <NL>  | 
+Row 681:  |  |  |  | 9 | Double click on the file name, by default it will open with Edge. <NL>  | Scroll down - You should see a section with  the title "Managed policies". You can find ”InteractiveLogon_DoNotDisplayUsernameAtSignIn“. <NL> InteractiveLogon_DoNotDisplayUsernameAtSignIn Should be 0. <NL>  | 
+Row 682:  |  |  |  | 10 | Reopen the profile and changed the settings to "Not Configured" and "Save" the change and "Sync" the Device  <NL>  | Scroll down - You should see a section with  the title "Managed policies". You can't find ”InteractiveLogon_DoNotDisplayUsernameAtSignIn“.  | 
+Row 683: 27 | 8926146 | Test Case | [Shanghai Vendor][DC][Endpoint Protection][LocalDeviceSecurityOptions][UserAccountControl] UIA integrity without secure location |  |  |  | Intune\Mgmt\Device Configuration\DCv1
+Row 684:  |  |  |  | 1 | Navigate to Create Profile blade on Intune Device Configuration |  | 
+Row 685:  |  |  |  | 1.1 | Login to  MEM admin center with your admin account: <NL> DF: https://aka.ms/intunedf <NL> SH: https://aka.ms/IntuneSH <NL> Canary: https://aka.ms/IntuneCanary <NL> PE: https://aka.ms/intune <NL> Fairfax: https://aka.ms/intuneFF <NL> Mooncake: https://aka.ms/intuneMC |  <NL>  | 
+Row 686:  |  |  |  | 1.2 | Click the "Device" in the left list column <NL>  |  <NL>  | 
+Row 687:  |  |  |  | 1.3 | Click the "configuration profile" feature in "Device" <NL>  |  <NL>  | 
+Row 688:  |  |  |  | 1.4 | Click "Create profile", and select Platform : "Windows 10 and later" <NL>  |  <NL>  | 
+Row 689:  |  |  |  | 2 | selected the "Endpoint Protection" in Profile and click the "Create" button <NL>  |  <NL>  | 
+Row 690:  |  |  |  | 3 | Enter "test1" for "Name" and click the "Next" button <NL>  |  <NL>  | 
+Row 691:  |  |  |  | 4 | Selected the "Local Device Security Options"--"User Account Control" |  <NL>  | 
+Row 692:  |  |  |  | 5 | Set the "UIA integrity without secure location" to "Block" |  <NL>  | 
+Row 693:  |  |  |  | 6 | Assign the profile to User/Device group and complete the creation of the DC profile |  | 
+Row 694:  |  |  |  | 6.1 | Click the "Selected groups to include" in "Included groups" <NL>  |  <NL>  | 
+Row 695:  |  |  |  | 6.2 | search your group and select group, and click "Select" button <NL>  |  <NL>  | 
+Row 696:  |  |  |  | 6.3 | Click "Next"--"Next"--"Next"--"Create" <NL>  |  <NL>  | 
+Row 697:  |  |  |  | 6.4 | the profile will be created successful <NL>  |  <NL>  | 
+Row 698:  |  |  |  | 7 | Enroll a windows 10 device to intune and Trigger a manual sync of MDM policies in Windows 10 Device |  | 
+Row 699:  |  |  |  | 7.1 | Open the "Settings" App |  <NL>  | 
+Row 700:  |  |  |  | 7.2 | Click "Accounts" |  <NL>  | 
+Row 701:  |  |  |  | 7.3 | Click "Access work or School" |  <NL>  | 
+Row 702:  |  |  |  | 7.4 | Click"Connect“  and enter the IW User email address that you want to deploy the Windows Profiles against. If you haven't created IW User or put the user into a group that is used to assign the Profile (policy), do it from Azure portal's "Users and Groups" blade before this step. Click "Next" after entering the account email. |  <NL>  | 
+Row 703:  |  |  |  | 7.5 | Repeat Step4 and Step5 one more time to complete the MDM enrollment. First time "Connect" adds the "Connected to Microsoft MDM" icon. Enter the password for the user when prompted. |  <NL>  | 
+Row 704:  |  |  |  | 7.6 | Click the "Info" button and click "Sync" button |  <NL>  | 
+Row 705:  |  |  |  | 7.7 | Wait 5-10 minutes to allow profile assign to device |  <NL>  | 
+Row 706:  |  |  |  | 8 | check the result in the MDM Diagnostic Information, search for the rows with the Area label "UserAccountControl_AllowUIAccessApplicationsToPromptForElevation" under the "Managed policies".  <NL>  | "UserAccountControl_AllowUIAccessApplicationsToPromptForElevation" should be set to "0" as seen in the "Config Source" column <NL>  | 
+Row 707:  |  |  |  | 9 | reopen the profile, and change the settings to "Not Configured", save profile and sync the device, recheck the value in MDM Diagnostic | "UserAccountControl_AllowUIAccessApplicationsToPromptForElevation" should be disappear <NL>  | 
+Row 708:  |  |  |  | 10 |  <NL>  |  <NL>  | 
+Row 709: 28 | 8926153 | Test Case | [Shanghai Vendor][DC][Endpoint Protection][LocalDeviceSecurityOptions][UserAccountControl] Only elevate executable files that are signed and validated |  |  |  | Intune\Mgmt\Device Configuration\DCv1
+Row 710:  |  |  |  | 1 | Navigate to Create Profile blade on Intune Device Configuration |  | 
+Row 711:  |  |  |  | 1.1 | Login to  MEM admin center with your admin account: <NL> DF: https://aka.ms/intunedf <NL> SH: https://aka.ms/IntuneSH <NL> Canary: https://aka.ms/IntuneCanary <NL> PE: https://aka.ms/intune <NL> Fairfax: https://aka.ms/intuneFF <NL> Mooncake: https://aka.ms/intuneMC |  <NL>  | 
+Row 712:  |  |  |  | 1.2 | Click the "Device" in the left list column <NL>  |  <NL>  | 
+Row 713:  |  |  |  | 1.3 | Click the "configuration profile" feature in "Device" <NL>  |  <NL>  | 
+Row 714:  |  |  |  | 1.4 | Click "Create profile", and select Platform : "Windows 10 and later" <NL>  |  <NL>  | 
+Row 715:  |  |  |  | 2 | selected the "Endpoint Protection" in Profile and click the "Create" button <NL>  |  <NL>  | 
+Row 716:  |  |  |  | 3 | Enter "test1" for "Name" and click the "Next" button <NL>  |  <NL>  | 
+Row 717:  |  |  |  | 4 | Selected the "Local Device Security Options"--"User Account Control" |  <NL>  | 
+Row 718:  |  |  |  | 5 | Set the "Only elevate executable files that are signed and validated" to "Enabled" |  <NL>  | 
+Row 719:  |  |  |  | 6 | Assign the profile to User/Device group and complete the creation of the DC profile |  | 
+Row 720:  |  |  |  | 6.1 | Click the "Selected groups to include" in "Included groups" <NL>  |  <NL>  | 
+Row 721:  |  |  |  | 6.2 | search your group and select group, and click "Select" button <NL>  |  <NL>  | 
+Row 722:  |  |  |  | 6.3 | Click "Next"--"Next"--"Next"--"Create" <NL>  |  <NL>  | 
+Row 723:  |  |  |  | 6.4 | the profile will be created successful <NL>  |  <NL>  | 
+Row 724:  |  |  |  | 7 | Enroll a windows 10 device to intune and Trigger a manual sync of MDM policies in Windows 10 Device |  | 
+Row 725:  |  |  |  | 7.1 | Open the "Settings" App |  <NL>  | 
+Row 726:  |  |  |  | 7.2 | Click "Accounts" |  <NL>  | 
+Row 727:  |  |  |  | 7.3 | Click "Access work or School" |  <NL>  | 
+Row 728:  |  |  |  | 7.4 | Click"Connect“  and enter the IW User email address that you want to deploy the Windows Profiles against. If you haven't created IW User or put the user into a group that is used to assign the Profile (policy), do it from Azure portal's "Users and Groups" blade before this step. Click "Next" after entering the account email. |  <NL>  | 
+Row 729:  |  |  |  | 7.5 | Repeat Step4 and Step5 one more time to complete the MDM enrollment. First time "Connect" adds the "Connected to Microsoft MDM" icon. Enter the password for the user when prompted. |  <NL>  | 
+Row 730:  |  |  |  | 7.6 | Click the "Info" button and click "Sync" button |  <NL>  | 
+Row 731:  |  |  |  | 7.7 | Wait 5-10 minutes to allow profile assign to device |  <NL>  | 
+Row 732:  |  |  |  | 8 | check the result in the MDM Diagnostic Information, search for the rows with the Area label "UserAccountControl_OnlyElevateExecutableFilesThatAreSignedAndValidated" under the "Managed policies".  <NL>  | "UserAccountControl_OnlyElevateExecutableFilesThatAreSignedAndValidated" should be set to "1" as seen in the "Config Source" column <NL>  | 
+Row 733:  |  |  |  | 9 | reopen the profile, and change the settings to "Not Configured", save profile and sync the device, recheck the value in MDM Diagnostic | "UserAccountControl_OnlyElevateExecutableFilesThatAreSignedAndValidated" should be disappear <NL>  | 
+Row 734: 29 | 8926167 | Test Case | [Shanghai Vendor][DC][Endpoint Protection][LocalDeviceSecurityOptions][Interactive Logon]: Login message title |  |  |  | Intune\Mgmt\Device Configuration\DCv1
+Row 735:  |  |  |  | 1 | Navigate to Create Profile blade on Intune Device Configuration |  | 
+Row 736:  |  |  |  | 1.1 | Login to  MEM admin center with your admin account: <NL> DF: https://aka.ms/intunedf <NL> SH: https://aka.ms/IntuneSH <NL> Canary: https://aka.ms/IntuneCanary <NL> PE: https://aka.ms/intune <NL> Fairfax: https://aka.ms/intuneFF <NL> Mooncake: https://aka.ms/intuneMC |  <NL>  | 
+Row 737:  |  |  |  | 1.2 | Click the "Device" in the left list column <NL>  |  <NL>  | 
+Row 738:  |  |  |  | 1.3 | Click the "configuration profile" feature in "Device" <NL>  |  <NL>  | 
+Row 739:  |  |  |  | 1.4 | Click "Create profile", and select Platform : "Windows 10 and later" <NL>  |  <NL>  | 
+Row 740:  |  |  |  | 2 | selected the "Endpoint Protection" in Profile and click the "Create" button <NL>  |  <NL>  | 
+Row 741:  |  |  |  | 3 | Enter "test1" for "Name" and click the "Next" button <NL>  |  <NL>  | 
+Row 742:  |  |  |  | 4 | selected "Local Device Security Options" -  "Interactive Logon"  <NL> Set "Login message title" settings to "west1" and "Next" <NL>  |  <NL>  | 
+Row 743:  |  |  |  | 5 | Assign the profile to User/Device group and complete the creation of the DC profile |  | 
+Row 744:  |  |  |  | 5.1 | Click the "Selected groups to include" in "Included groups" <NL>  |  <NL>  | 
+Row 745:  |  |  |  | 5.2 | search your group and select group, and click "Select" button <NL>  |  <NL>  | 
+Row 746:  |  |  |  | 5.3 | Click "Next"--"Next"--"Next"--"Create" <NL>  |  <NL>  | 
+Row 747:  |  |  |  | 5.4 | the profile will be created successful <NL>  |  <NL>  | 
+Row 748:  |  |  |  | 6 | Enroll a windows 10 device to intune and Trigger a manual sync of MDM policies in Windows 10 Device |  | 
+Row 749:  |  |  |  | 6.1 | Open the "Settings" App |  <NL>  | 
+Row 750:  |  |  |  | 6.2 | Click "Accounts" |  <NL>  | 
+Row 751:  |  |  |  | 6.3 | Click "Access work or School" |  <NL>  | 
+Row 752:  |  |  |  | 6.4 | Click"Connect“  and enter the IW User email address that you want to deploy the Windows Profiles against. If you haven't created IW User or put the user into a group that is used to assign the Profile (policy), do it from Azure portal's "Users and Groups" blade before this step. Click "Next" after entering the account email. |  <NL>  | 
+Row 753:  |  |  |  | 6.5 | Repeat Step4 and Step5 one more time to complete the MDM enrollment. First time "Connect" adds the "Connected to Microsoft MDM" icon. Enter the password for the user when prompted. |  <NL>  | 
+Row 754:  |  |  |  | 6.6 | Click the "Info" button and click "Sync" button |  <NL>  | 
+Row 755:  |  |  |  | 6.7 | Wait 5-10 minutes to allow profile assign to device |  <NL>  | 
+Row 756:  |  |  |  | 7 | In the same window that was used at step 6. above, locate the "Advanced Diagnostic Report" situated at the bottom of the page, and click on the "Create report" button.  <NL>  |  <NL>  | 
+Row 757:  |  |  |  | 8 | Click the "Export" button in the popup window - this will cause the log files to be exported to the file "c:\users\Public\Documents\MDMDiagnostics\MDMDiagReport.html" <NL>  |  <NL>  | 
+Row 758:  |  |  |  | 9 | Double click on the file name, by default it will open with Edge. <NL>  | Scroll down - You should see a section with  the title "Managed policies". You can find ”InteractiveLogon_MessageTitleForUsersAttemptingToLogOn“. <NL> InteractiveLogon_MessageTitleForUsersAttemptingToLogOn Should be west1. <NL>  | 
+Row 759: 30 | 8926214 | Test Case | [Shanghai Vendor][DC][Endpoint Protection][LocalDeviceSecurityOptions][UserAccountControl] Route elevation prompts to user’s interactive desktop |  |  |  | Intune\Mgmt\Device Configuration\DCv1
+Row 760:  |  |  |  | 1 | Navigate to Create Profile blade on Intune Device Configuration |  | 
+Row 761:  |  |  |  | 1.1 | Login to  MEM admin center with your admin account: <NL> DF: https://aka.ms/intunedf <NL> SH: https://aka.ms/IntuneSH <NL> Canary: https://aka.ms/IntuneCanary <NL> PE: https://aka.ms/intune <NL> Fairfax: https://aka.ms/intuneFF <NL> Mooncake: https://aka.ms/intuneMC |  <NL>  | 
+Row 762:  |  |  |  | 1.2 | Click the "Device" in the left list column <NL>  |  <NL>  | 
+Row 763:  |  |  |  | 1.3 | Click the "configuration profile" feature in "Device" <NL>  |  <NL>  | 
+Row 764:  |  |  |  | 1.4 | Click "Create profile", and select Platform : "Windows 10 and later" <NL>  |  <NL>  | 
+Row 765:  |  |  |  | 2 | selected the "Endpoint Protection" in Profile and click the "Create" button <NL>  |  <NL>  | 
+Row 766:  |  |  |  | 3 | Enter "test1" for "Name" and click the "Next" button <NL>  |  <NL>  | 
+Row 767:  |  |  |  | 4 | Selected the "Local Device Security Options"--"User Account Control" |  <NL>  | 
+Row 768:  |  |  |  | 5 | Set the "Route elevation prompts to user’s interactive desktop" to "Enabled" |  <NL>  | 
+Row 769:  |  |  |  | 6 | Assign the profile to User/Device group and complete the creation of the DC profile |  | 
+Row 770:  |  |  |  | 6.1 | Click the "Selected groups to include" in "Included groups" <NL>  |  <NL>  | 
+Row 771:  |  |  |  | 6.2 | search your group and select group, and click "Select" button <NL>  |  <NL>  | 
+Row 772:  |  |  |  | 6.3 | Click "Next"--"Next"--"Next"--"Create" <NL>  |  <NL>  | 
+Row 773:  |  |  |  | 6.4 | the profile will be created successful <NL>  |  <NL>  | 
+Row 774:  |  |  |  | 7 | Enroll a windows 10 device to intune and Trigger a manual sync of MDM policies in Windows 10 Device |  | 
+Row 775:  |  |  |  | 7.1 | Open the "Settings" App |  <NL>  | 
+Row 776:  |  |  |  | 7.2 | Click "Accounts" |  <NL>  | 
+Row 777:  |  |  |  | 7.3 | Click "Access work or School" |  <NL>  | 
+Row 778:  |  |  |  | 7.4 | Click"Connect“  and enter the IW User email address that you want to deploy the Windows Profiles against. If you haven't created IW User or put the user into a group that is used to assign the Profile (policy), do it from Azure portal's "Users and Groups" blade before this step. Click "Next" after entering the account email. |  <NL>  | 
+Row 779:  |  |  |  | 7.5 | Repeat Step4 and Step5 one more time to complete the MDM enrollment. First time "Connect" adds the "Connected to Microsoft MDM" icon. Enter the password for the user when prompted. |  <NL>  | 
+Row 780:  |  |  |  | 7.6 | Click the "Info" button and click "Sync" button |  <NL>  | 
+Row 781:  |  |  |  | 7.7 | Wait 5-10 minutes to allow profile assign to device |  <NL>  | 
+Row 782:  |  |  |  | 8 | check the result in the MDM Diagnostic Information, search for the rows with the Area label "UserAccountControl_SwitchToTheSecureDesktopWhenPromptingForElevation" under the "Managed policies".  <NL>  | "UserAccountControl_SwitchToTheSecureDesktopWhenPromptingForElevation" should be set to "0" as seen in the "Config Source" column <NL>  | 
+Row 783:  |  |  |  | 9 | reopen the profile, and change the settings to "Not Configured", save profile and sync the device, recheck the value in MDM Diagnostic | "UserAccountControl_SwitchToTheSecureDesktopWhenPromptingForElevation" should be disappear <NL>  | 
+Row 784:  |  |  |  | 10 |  <NL>  |  <NL>  | 
+Row 785: 31 | 8926255 | Test Case | [Shanghai Vendor][DC][Endpoint Protection][LocalDeviceSecurityOptions][UserAccountControl] UIA elevation prompt without secure desktop |  |  |  | Intune\Mgmt\Device Configuration\DCv1
+Row 786:  |  |  |  | 1 | Navigate to Create Profile blade on Intune Device Configuration |  | 
+Row 787:  |  |  |  | 1.1 | Login to  MEM admin center with your admin account: <NL> DF: https://aka.ms/intunedf <NL> SH: https://aka.ms/IntuneSH <NL> Canary: https://aka.ms/IntuneCanary <NL> PE: https://aka.ms/intune <NL> Fairfax: https://aka.ms/intuneFF <NL> Mooncake: https://aka.ms/intuneMC |  <NL>  | 
+Row 788:  |  |  |  | 1.2 | Click the "Device" in the left list column <NL>  |  <NL>  | 
+Row 789:  |  |  |  | 1.3 | Click the "configuration profile" feature in "Device" <NL>  |  <NL>  | 
+Row 790:  |  |  |  | 1.4 | Click "Create profile", and select Platform : "Windows 10 and later" <NL>  |  <NL>  | 
+Row 791:  |  |  |  | 2 | selected the "Endpoint Protection" in Profile and click the "Create" button <NL>  |  <NL>  | 
+Row 792:  |  |  |  | 3 | Enter "test1" for "Name" and click the "Next" button <NL>  |  <NL>  | 
+Row 793:  |  |  |  | 4 | Selected the "Local Device Security Options"--"User Account Control" |  <NL>  | 
+Row 794:  |  |  |  | 5 | Set the "UIA elevation prompt without secure desktop" to "Enable" |  <NL>  | 
+Row 795:  |  |  |  | 6 | Assign the profile to User/Device group and complete the creation of the DC profile |  | 
+Row 796:  |  |  |  | 6.1 | Click the "Selected groups to include" in "Included groups" <NL>  |  <NL>  | 
+Row 797:  |  |  |  | 6.2 | search your group and select group, and click "Select" button <NL>  |  <NL>  | 
+Row 798:  |  |  |  | 6.3 | Click "Next"--"Next"--"Next"--"Create" <NL>  |  <NL>  | 
+Row 799:  |  |  |  | 6.4 | the profile will be created successful <NL>  |  <NL>  | 
+Row 800:  |  |  |  | 7 | Enroll a windows 10 device to intune and Trigger a manual sync of MDM policies in Windows 10 Device |  | 
+Row 801:  |  |  |  | 7.1 | Open the "Settings" App |  <NL>  | 
+Row 802:  |  |  |  | 7.2 | Click "Accounts" |  <NL>  | 
+Row 803:  |  |  |  | 7.3 | Click "Access work or School" |  <NL>  | 
+Row 804:  |  |  |  | 7.4 | Click"Connect“  and enter the IW User email address that you want to deploy the Windows Profiles against. If you haven't created IW User or put the user into a group that is used to assign the Profile (policy), do it from Azure portal's "Users and Groups" blade before this step. Click "Next" after entering the account email. |  <NL>  | 
+Row 805:  |  |  |  | 7.5 | Repeat Step4 and Step5 one more time to complete the MDM enrollment. First time "Connect" adds the "Connected to Microsoft MDM" icon. Enter the password for the user when prompted. |  <NL>  | 
+Row 806:  |  |  |  | 7.6 | Click the "Info" button and click "Sync" button |  <NL>  | 
+Row 807:  |  |  |  | 7.7 | Wait 5-10 minutes to allow profile assign to device |  <NL>  | 
+Row 808:  |  |  |  | 8 | check the result in the MDM Diagnostic Information, search for the rows with the Area label "UserAccountControl_OnlyElevateUIAccessApplicationsThatAreInstalledInSecureLocations" under the "Managed policies".  <NL>  | "UserAccountControl_OnlyElevateUIAccessApplicationsThatAreInstalledInSecureLocations" should be set to "1" as seen in the "Config Source" column <NL>  | 
+Row 809:  |  |  |  | 9 | reopen the profile, and change the settings to "Not Configured", save profile and sync the device, recheck the value in MDM Diagnostic | "UserAccountControl_OnlyElevateUIAccessApplicationsThatAreInstalledInSecureLocations" should be disappear <NL>  | 
+Row 810:  |  |  |  | 10 |  <NL>  |  <NL>  | 
+Row 811: 32 | 8926286 | Test Case | [Shanghai Vendor][DC][Endpoint Protection][LocalDeviceSecurityOptions][UserAccountControl] Elevated prompt for app installations |  |  |  | Intune\Mgmt\Device Configuration\DCv1
+Row 812:  |  |  |  | 1 | Navigate to Create Profile blade on Intune Device Configuration |  | 
+Row 813:  |  |  |  | 1.1 | Login to  MEM admin center with your admin account: <NL> DF: https://aka.ms/intunedf <NL> SH: https://aka.ms/IntuneSH <NL> Canary: https://aka.ms/IntuneCanary <NL> PE: https://aka.ms/intune <NL> Fairfax: https://aka.ms/intuneFF <NL> Mooncake: https://aka.ms/intuneMC |  <NL>  | 
+Row 814:  |  |  |  | 1.2 | Click the "Device" in the left list column <NL>  |  <NL>  | 
+Row 815:  |  |  |  | 1.3 | Click the "configuration profile" feature in "Device" <NL>  |  <NL>  | 
+Row 816:  |  |  |  | 1.4 | Click "Create profile", and select Platform : "Windows 10 and later" <NL>  |  <NL>  | 
+Row 817:  |  |  |  | 2 | selected the "Endpoint Protection" in Profile and click the "Create" button <NL>  |  <NL>  | 
+Row 818:  |  |  |  | 3 | Enter "test1" for "Name" and click the "Next" button <NL>  |  <NL>  | 
+Row 819:  |  |  |  | 4 | Selected the "Local Device Security Options"--"User Account Control" |  <NL>  | 
+Row 820:  |  |  |  | 5 | Set the "Elevated prompt for app installations" to "Enable" |  <NL>  | 
+Row 821:  |  |  |  | 6 | Assign the profile to User/Device group and complete the creation of the DC profile |  | 
+Row 822:  |  |  |  | 6.1 | Click the "Selected groups to include" in "Included groups" <NL>  |  <NL>  | 
+Row 823:  |  |  |  | 6.2 | search your group and select group, and click "Select" button <NL>  |  <NL>  | 
+Row 824:  |  |  |  | 6.3 | Click "Next"--"Next"--"Next"--"Create" <NL>  |  <NL>  | 
+Row 825:  |  |  |  | 6.4 | the profile will be created successful <NL>  |  <NL>  | 
+Row 826:  |  |  |  | 7 | Enroll a windows 10 device to intune and Trigger a manual sync of MDM policies in Windows 10 Device |  | 
+Row 827:  |  |  |  | 7.1 | Open the "Settings" App |  <NL>  | 
+Row 828:  |  |  |  | 7.2 | Click "Accounts" |  <NL>  | 
+Row 829:  |  |  |  | 7.3 | Click "Access work or School" |  <NL>  | 
+Row 830:  |  |  |  | 7.4 | Click"Connect“  and enter the IW User email address that you want to deploy the Windows Profiles against. If you haven't created IW User or put the user into a group that is used to assign the Profile (policy), do it from Azure portal's "Users and Groups" blade before this step. Click "Next" after entering the account email. |  <NL>  | 
+Row 831:  |  |  |  | 7.5 | Repeat Step4 and Step5 one more time to complete the MDM enrollment. First time "Connect" adds the "Connected to Microsoft MDM" icon. Enter the password for the user when prompted. |  <NL>  | 
+Row 832:  |  |  |  | 7.6 | Click the "Info" button and click "Sync" button |  <NL>  | 
+Row 833:  |  |  |  | 7.7 | Wait 5-10 minutes to allow profile assign to device |  <NL>  | 
+Row 834:  |  |  |  | 8 | check the result in the MDM Diagnostic Information, search for the rows with the Area label "UserAccountControl_DetectApplicationInstallationsAndPromptForElevation" under the "Managed policies".  <NL>  | "UserAccountControl_DetectApplicationInstallationsAndPromptForElevation" should be set to "1" as seen in the "Config Source" column <NL>  | 
+Row 835:  |  |  |  | 9 | reopen the profile, and change the settings to "Not Configured", save profile and sync the device, recheck the value in MDM Diagnostic |  <NL>  | 
+Row 836:  |  |  |  | 10 |  |  | 
+Row 837: 33 | 8926321 | Test Case | [Shanghai Vendor][DC][Endpoint Protection][LocalDeviceSecurityOptions][Interactive Logon]: Login message text |  |  |  | Intune\Mgmt\Device Configuration\DCv1
+Row 838:  |  |  |  | 1 | Navigate to Create Profile blade on Intune Device Configuration |  | 
+Row 839:  |  |  |  | 1.1 | Login to  MEM admin center with your admin account: <NL> DF: https://aka.ms/intunedf <NL> SH: https://aka.ms/IntuneSH <NL> Canary: https://aka.ms/IntuneCanary <NL> PE: https://aka.ms/intune <NL> Fairfax: https://aka.ms/intuneFF <NL> Mooncake: https://aka.ms/intuneMC |  <NL>  | 
+Row 840:  |  |  |  | 1.2 | Click the "Device" in the left list column <NL>  |  <NL>  | 
+Row 841:  |  |  |  | 1.3 | Click the "configuration profile" feature in "Device" <NL>  |  <NL>  | 
+Row 842:  |  |  |  | 1.4 | Click "Create profile", and select Platform : "Windows 10 and later" <NL>  |  <NL>  | 
+Row 843:  |  |  |  | 2 | selected the "Endpoint Protection" in Profile and click the "Create" button <NL>  |  <NL>  | 
+Row 844:  |  |  |  | 3 | Enter "test1" for "Name" and click the "Next" button <NL>  |  <NL>  | 
+Row 845:  |  |  |  | 4 | selected "Local Device Security Options" -  "Interactive Logon"  <NL> Set "Login message text" settings to "west1" and "Next" <NL>  |  <NL>  | 
+Row 846:  |  |  |  | 5 | Assign the profile to User/Device group and complete the creation of the DC profile |  | 
+Row 847:  |  |  |  | 5.1 | Click the "Selected groups to include" in "Included groups" <NL>  |  <NL>  | 
+Row 848:  |  |  |  | 5.2 | search your group and select group, and click "Select" button <NL>  |  <NL>  | 
+Row 849:  |  |  |  | 5.3 | Click "Next"--"Next"--"Next"--"Create" <NL>  |  <NL>  | 
+Row 850:  |  |  |  | 5.4 | the profile will be created successful <NL>  |  <NL>  | 
+Row 851:  |  |  |  | 6 | Enroll a windows 10 device to intune and Trigger a manual sync of MDM policies in Windows 10 Device |  | 
+Row 852:  |  |  |  | 6.1 | Open the "Settings" App |  <NL>  | 
+Row 853:  |  |  |  | 6.2 | Click "Accounts" |  <NL>  | 
+Row 854:  |  |  |  | 6.3 | Click "Access work or School" |  <NL>  | 
+Row 855:  |  |  |  | 6.4 | Click"Connect“  and enter the IW User email address that you want to deploy the Windows Profiles against. If you haven't created IW User or put the user into a group that is used to assign the Profile (policy), do it from Azure portal's "Users and Groups" blade before this step. Click "Next" after entering the account email. |  <NL>  | 
+Row 856:  |  |  |  | 6.5 | Repeat Step4 and Step5 one more time to complete the MDM enrollment. First time "Connect" adds the "Connected to Microsoft MDM" icon. Enter the password for the user when prompted. |  <NL>  | 
+Row 857:  |  |  |  | 6.6 | Click the "Info" button and click "Sync" button |  <NL>  | 
+Row 858:  |  |  |  | 6.7 | Wait 5-10 minutes to allow profile assign to device |  <NL>  | 
+Row 859:  |  |  |  | 7 | In the same window that was used at step 6. above, locate the "Advanced Diagnostic Report" situated at the bottom of the page, and click on the "Create report" button.  <NL>  |  <NL>  | 
+Row 860:  |  |  |  | 8 | Click the "Export" button in the popup window - this will cause the log files to be exported to the file "c:\users\Public\Documents\MDMDiagnostics\MDMDiagReport.html" <NL>  |  <NL>  | 
+Row 861:  |  |  |  | 9 | Double click on the file name, by default it will open with Edge. <NL>  | Scroll down - You should see a section with  the title "Managed policies". You can find ”InteractiveLogon_MessageTextForUsersAttemptingToLogOn“. <NL> InteractiveLogon_MessageTextForUsersAttemptingToLogOn Should be west1. <NL>  | 
+Row 862: 34 | 8926330 | Test Case | [Shanghai Vendor][DC][Endpoint Protection][LocalDeviceSecurityOptions][Network access and security]: Anonymous access to Named Pipes and Shares |  |  |  | Intune\Mgmt\Device Configuration\DCv1
+Row 863:  |  |  |  | 1 | Navigate to Create Profile blade on Intune Device Configuration |  | 
+Row 864:  |  |  |  | 1.1 | Login to  MEM admin center with your admin account: <NL> DF: https://aka.ms/intunedf <NL> SH: https://aka.ms/IntuneSH <NL> Canary: https://aka.ms/IntuneCanary <NL> PE: https://aka.ms/intune <NL> Fairfax: https://aka.ms/intuneFF <NL> Mooncake: https://aka.ms/intuneMC |  <NL>  | 
+Row 865:  |  |  |  | 1.2 | Click the "Device" in the left list column <NL>  |  <NL>  | 
+Row 866:  |  |  |  | 1.3 | Click the "configuration profile" feature in "Device" <NL>  |  <NL>  | 
+Row 867:  |  |  |  | 1.4 | Click "Create profile", and select Platform : "Windows 10 and later" <NL>  |  <NL>  | 
+Row 868:  |  |  |  | 2 | selected the "Endpoint Protection" in Profile and click the "Create" button <NL>  |  <NL>  | 
+Row 869:  |  |  |  | 3 | Enter "test1" for "Name" and click the "Next" button <NL>  |  <NL>  | 
+Row 870:  |  |  |  | 4 | selected "Local Device Security Options" -  "Network access and security"  <NL> Set "Anonymous access to Named Pipes and Shares" settings to "Block" and "Next" |  <NL>  | 
+Row 871:  |  |  |  | 5 | Assign the profile to User/Device group and complete the creation of the DC profile |  | 
+Row 872:  |  |  |  | 5.1 | Click the "Selected groups to include" in "Included groups" <NL>  |  <NL>  | 
+Row 873:  |  |  |  | 5.2 | search your group and select group, and click "Select" button <NL>  |  <NL>  | 
+Row 874:  |  |  |  | 5.3 | Click "Next"--"Next"--"Next"--"Create" <NL>  |  <NL>  | 
+Row 875:  |  |  |  | 5.4 | the profile will be created successful <NL>  |  <NL>  | 
+Row 876:  |  |  |  | 6 | Enroll a windows 10 device to intune and Trigger a manual sync of MDM policies in Windows 10 Device |  | 
+Row 877:  |  |  |  | 6.1 | Open the "Settings" App |  <NL>  | 
+Row 878:  |  |  |  | 6.2 | Click "Accounts" |  <NL>  | 
+Row 879:  |  |  |  | 6.3 | Click "Access work or School" |  <NL>  | 
+Row 880:  |  |  |  | 6.4 | Click"Connect“  and enter the IW User email address that you want to deploy the Windows Profiles against. If you haven't created IW User or put the user into a group that is used to assign the Profile (policy), do it from Azure portal's "Users and Groups" blade before this step. Click "Next" after entering the account email. |  <NL>  | 
+Row 881:  |  |  |  | 6.5 | Repeat Step4 and Step5 one more time to complete the MDM enrollment. First time "Connect" adds the "Connected to Microsoft MDM" icon. Enter the password for the user when prompted. |  <NL>  | 
+Row 882:  |  |  |  | 6.6 | Click the "Info" button and click "Sync" button |  <NL>  | 
+Row 883:  |  |  |  | 6.7 | Wait 5-10 minutes to allow profile assign to device |  <NL>  | 
+Row 884:  |  |  |  | 7 | In the same window that was used at step 6. above, locate the "Advanced Diagnostic Report" situated at the bottom of the page, and click on the "Create report" button.  <NL>  |  <NL>  | 
+Row 885:  |  |  |  | 8 | Click the "Export" button in the popup window - this will cause the log files to be exported to the file "c:\users\Public\Documents\MDMDiagnostics\MDMDiagReport.html" <NL>  |  <NL>  | 
+Row 886:  |  |  |  | 9 | Double click on the file name, by default it will open with Edge. <NL>  | Scroll down - You should see a section with  the title "Managed policies". You can find ”NetworkAccess_RestrictAnonymousAccessToNamedPipesAndShares“. <NL> NetworkAccess_RestrictAnonymousAccessToNamedPipesAndShares Should be 1. <NL>  | 
+Row 887:  |  |  |  | 10 | Reopen the profile and changed the settings to "Not Configured" and "Save" the change and "Sync" the Device  <NL>  | Scroll down - You should see a section with  the title "Managed policies". You can't find ”NetworkAccess_RestrictAnonymousAccessToNamedPipesAndShares“.  | 
+Row 888: 35 | 8926365 | Test Case | [Shanghai Vendor][DC][Endpoint Protection][LocalDeviceSecurityOptions][Network access and security]: Anonymous enumeration of SAM accounts |  |  |  | Intune\Mgmt\Device Configuration\DCv1
+Row 889:  |  |  |  | 1 | Navigate to Create Profile blade on Intune Device Configuration |  | 
+Row 890:  |  |  |  | 1.1 | Login to  MEM admin center with your admin account: <NL> DF: https://aka.ms/intunedf <NL> SH: https://aka.ms/IntuneSH <NL> Canary: https://aka.ms/IntuneCanary <NL> PE: https://aka.ms/intune <NL> Fairfax: https://aka.ms/intuneFF <NL> Mooncake: https://aka.ms/intuneMC |  <NL>  | 
+Row 891:  |  |  |  | 1.2 | Click the "Device" in the left list column <NL>  |  <NL>  | 
+Row 892:  |  |  |  | 1.3 | Click the "configuration profile" feature in "Device" <NL>  |  <NL>  | 
+Row 893:  |  |  |  | 1.4 | Click "Create profile", and select Platform : "Windows 10 and later" <NL>  |  <NL>  | 
+Row 894:  |  |  |  | 2 | selected the "Endpoint Protection" in Profile and click the "Create" button <NL>  |  <NL>  | 
+Row 895:  |  |  |  | 3 | Enter "test1" for "Name" and click the "Next" button <NL>  |  <NL>  | 
+Row 896:  |  |  |  | 4 | selected "Local Device Security Options" -  "Network access and security"  <NL> Set "Anonymous enumeration of SAM accounts" settings to "Block" and "Next" |  <NL>  | 
+Row 897:  |  |  |  | 5 | Assign the profile to User/Device group and complete the creation of the DC profile |  | 
+Row 898:  |  |  |  | 5.1 | Click the "Selected groups to include" in "Included groups" <NL>  |  <NL>  | 
+Row 899:  |  |  |  | 5.2 | search your group and select group, and click "Select" button <NL>  |  <NL>  | 
+Row 900:  |  |  |  | 5.3 | Click "Next"--"Next"--"Next"--"Create" <NL>  |  <NL>  | 
+Row 901:  |  |  |  | 5.4 | the profile will be created successful <NL>  |  <NL>  | 
+Row 902:  |  |  |  | 6 | Enroll a windows 10 device to intune and Trigger a manual sync of MDM policies in Windows 10 Device |  | 
+Row 903:  |  |  |  | 6.1 | Open the "Settings" App |  <NL>  | 
+Row 904:  |  |  |  | 6.2 | Click "Accounts" |  <NL>  | 
+Row 905:  |  |  |  | 6.3 | Click "Access work or School" |  <NL>  | 
+Row 906:  |  |  |  | 6.4 | Click"Connect“  and enter the IW User email address that you want to deploy the Windows Profiles against. If you haven't created IW User or put the user into a group that is used to assign the Profile (policy), do it from Azure portal's "Users and Groups" blade before this step. Click "Next" after entering the account email. |  <NL>  | 
+Row 907:  |  |  |  | 6.5 | Repeat Step4 and Step5 one more time to complete the MDM enrollment. First time "Connect" adds the "Connected to Microsoft MDM" icon. Enter the password for the user when prompted. |  <NL>  | 
+Row 908:  |  |  |  | 6.6 | Click the "Info" button and click "Sync" button |  <NL>  | 
+Row 909:  |  |  |  | 6.7 | Wait 5-10 minutes to allow profile assign to device |  <NL>  | 
+Row 910:  |  |  |  | 7 | In the same window that was used at step 6. above, locate the "Advanced Diagnostic Report" situated at the bottom of the page, and click on the "Create report" button.  <NL>  |  <NL>  | 
+Row 911:  |  |  |  | 8 | Click the "Export" button in the popup window - this will cause the log files to be exported to the file "c:\users\Public\Documents\MDMDiagnostics\MDMDiagReport.html" <NL>  |  <NL>  | 
+Row 912:  |  |  |  | 9 | Double click on the file name, by default it will open with Edge. <NL>  | Scroll down - You should see a section with  the title "Managed policies". You can find ”NetworkAccess_DoNotAllowAnonymousEnumerationOfSAMAccounts“. <NL> NetworkAccess_DoNotAllowAnonymousEnumerationOfSAMAccounts Should be 1. <NL>  | 
+Row 913:  |  |  |  | 10 | Reopen the profile and changed the settings to "Not Configured" and "Save" the change and "Sync" the Device  <NL>  | Scroll down - You should see a section with  the title "Managed policies". You can't find ”NetworkAccess_DoNotAllowAnonymousEnumerationOfSAMAccounts“.  | 
+Row 914: 36 | 8926384 | Test Case | [Shanghai Vendor][DC][Endpoint Protection][LocalDeviceSecurityOptions][Network access and security]: Anonymous enumeration of SAM accounts and shares |  |  |  | Intune\Mgmt\Device Configuration\DCv1
+Row 915:  |  |  |  | 1 | Navigate to Create Profile blade on Intune Device Configuration |  | 
+Row 916:  |  |  |  | 1.1 | Login to  MEM admin center with your admin account: <NL> DF: https://aka.ms/intunedf <NL> SH: https://aka.ms/IntuneSH <NL> Canary: https://aka.ms/IntuneCanary <NL> PE: https://aka.ms/intune <NL> Fairfax: https://aka.ms/intuneFF <NL> Mooncake: https://aka.ms/intuneMC |  <NL>  | 
+Row 917:  |  |  |  | 1.2 | Click the "Device" in the left list column <NL>  |  <NL>  | 
+Row 918:  |  |  |  | 1.3 | Click the "configuration profile" feature in "Device" <NL>  |  <NL>  | 
+Row 919:  |  |  |  | 1.4 | Click "Create profile", and select Platform : "Windows 10 and later" <NL>  |  <NL>  | 
+Row 920:  |  |  |  | 2 | selected the "Endpoint Protection" in Profile and click the "Create" button <NL>  |  <NL>  | 
+Row 921:  |  |  |  | 3 | Enter "test1" for "Name" and click the "Next" button <NL>  |  <NL>  | 
+Row 922:  |  |  |  | 4 | selected "Local Device Security Options "Network access and security"  <NL> Set "Anonymous enumeration of SAM accounts and shares" settings to "Block" and "Next" |  <NL>  | 
+Row 923:  |  |  |  | 5 | Assign the profile to User/Device group and complete the creation of the DC profile |  | 
+Row 924:  |  |  |  | 5.1 | Click the "Selected groups to include" in "Included groups" <NL>  |  <NL>  | 
+Row 925:  |  |  |  | 5.2 | search your group and select group, and click "Select" button <NL>  |  <NL>  | 
+Row 926:  |  |  |  | 5.3 | Click "Next"--"Next"--"Next"--"Create" <NL>  |  <NL>  | 
+Row 927:  |  |  |  | 5.4 | the profile will be created successful <NL>  |  <NL>  | 
+Row 928:  |  |  |  | 6 | Enroll a windows 10 device to intune and Trigger a manual sync of MDM policies in Windows 10 Device |  | 
+Row 929:  |  |  |  | 6.1 | Open the "Settings" App |  <NL>  | 
+Row 930:  |  |  |  | 6.2 | Click "Accounts" |  <NL>  | 
+Row 931:  |  |  |  | 6.3 | Click "Access work or School" |  <NL>  | 
+Row 932:  |  |  |  | 6.4 | Click"Connect“  and enter the IW User email address that you want to deploy the Windows Profiles against. If you haven't created IW User or put the user into a group that is used to assign the Profile (policy), do it from Azure portal's "Users and Groups" blade before this step. Click "Next" after entering the account email. |  <NL>  | 
+Row 933:  |  |  |  | 6.5 | Repeat Step4 and Step5 one more time to complete the MDM enrollment. First time "Connect" adds the "Connected to Microsoft MDM" icon. Enter the password for the user when prompted. |  <NL>  | 
+Row 934:  |  |  |  | 6.6 | Click the "Info" button and click "Sync" button |  <NL>  | 
+Row 935:  |  |  |  | 6.7 | Wait 5-10 minutes to allow profile assign to device |  <NL>  | 
+Row 936:  |  |  |  | 7 | In the same window that was used at step 6. above, locate the "Advanced Diagnostic Report" situated at the bottom of the page, and click on the "Create report" button.  <NL>  |  <NL>  | 
+Row 937:  |  |  |  | 8 | Click the "Export" button in the popup window - this will cause the log files to be exported to the file "c:\users\Public\Documents\MDMDiagnostics\MDMDiagReport.html" <NL>  |  <NL>  | 
+Row 938:  |  |  |  | 9 | Double click on the file name, by default it will open with Edge. <NL>  | Scroll down - You should see a section with  the title "Managed policies". You can find ”NetworkAccess_DoNotAllowAnonymousEnumerationOfSamAccountsAndShares“. <NL> NetworkAccess_DoNotAllowAnonymousEnumerationOfSamAccountsAndShares Should be 1. <NL>  | 
+Row 939:  |  |  |  | 10 | Reopen the profile and changed the settings to "Not Configured" and "Save" the change and "Sync" the Device  <NL>  | Scroll down - You should see a section with  the title "Managed policies". You can't find ”NetworkAccess_DoNotAllowAnonymousEnumerationOfSamAccountsAndShares“.  | 
+Row 940: 37 | 8926532 | Test Case | [Shanghai Vendor][DC][Endpoint Protection][LocalDeviceSecurityOptions][Network access and security]: LAN Manager hash value stored on password change |  |  |  | Intune\Mgmt\Device Configuration\DCv1
+Row 941:  |  |  |  | 1 | Navigate to Create Profile blade on Intune Device Configuration |  | 
+Row 942:  |  |  |  | 1.1 | Login to  MEM admin center with your admin account: <NL> DF: https://aka.ms/intunedf <NL> SH: https://aka.ms/IntuneSH <NL> Canary: https://aka.ms/IntuneCanary <NL> PE: https://aka.ms/intune <NL> Fairfax: https://aka.ms/intuneFF <NL> Mooncake: https://aka.ms/intuneMC |  <NL>  | 
+Row 943:  |  |  |  | 1.2 | Click the "Device" in the left list column <NL>  |  <NL>  | 
+Row 944:  |  |  |  | 1.3 | Click the "configuration profile" feature in "Device" <NL>  |  <NL>  | 
+Row 945:  |  |  |  | 1.4 | Click "Create profile", and select Platform : "Windows 10 and later" <NL>  |  <NL>  | 
+Row 946:  |  |  |  | 2 | selected the "Endpoint Protection" in Profile and click the "Create" button <NL>  |  <NL>  | 
+Row 947:  |  |  |  | 3 | Enter "test1" for "Name" and click the "Next" button <NL>  |  <NL>  | 
+Row 948:  |  |  |  | 4 | selected "Local Device Security Options" -  "Network access and security"  <NL> Set "LAN Manager hash value stored on password change" settings to "Block" and "Next" |  <NL>  | 
+Row 949:  |  |  |  | 5 | Assign the profile to User/Device group and complete the creation of the DC profile |  | 
+Row 950:  |  |  |  | 5.1 | Click the "Selected groups to include" in "Included groups" <NL>  |  <NL>  | 
+Row 951:  |  |  |  | 5.2 | search your group and select group, and click "Select" button <NL>  |  <NL>  | 
+Row 952:  |  |  |  | 5.3 | Click "Next"--"Next"--"Next"--"Create" <NL>  |  <NL>  | 
+Row 953:  |  |  |  | 5.4 | the profile will be created successful <NL>  |  <NL>  | 
+Row 954:  |  |  |  | 6 | Enroll a windows 10 device to intune and Trigger a manual sync of MDM policies in Windows 10 Device |  | 
+Row 955:  |  |  |  | 6.1 | Open the "Settings" App |  <NL>  | 
+Row 956:  |  |  |  | 6.2 | Click "Accounts" |  <NL>  | 
+Row 957:  |  |  |  | 6.3 | Click "Access work or School" |  <NL>  | 
+Row 958:  |  |  |  | 6.4 | Click"Connect“  and enter the IW User email address that you want to deploy the Windows Profiles against. If you haven't created IW User or put the user into a group that is used to assign the Profile (policy), do it from Azure portal's "Users and Groups" blade before this step. Click "Next" after entering the account email. |  <NL>  | 
+Row 959:  |  |  |  | 6.5 | Repeat Step4 and Step5 one more time to complete the MDM enrollment. First time "Connect" adds the "Connected to Microsoft MDM" icon. Enter the password for the user when prompted. |  <NL>  | 
+Row 960:  |  |  |  | 6.6 | Click the "Info" button and click "Sync" button |  <NL>  | 
+Row 961:  |  |  |  | 6.7 | Wait 5-10 minutes to allow profile assign to device |  <NL>  | 
+Row 962:  |  |  |  | 7 | In the same window that was used at step 6. above, locate the "Advanced Diagnostic Report" situated at the bottom of the page, and click on the "Create report" button.  <NL>  |  <NL>  | 
+Row 963:  |  |  |  | 8 | Click the "Export" button in the popup window - this will cause the log files to be exported to the file "c:\users\Public\Documents\MDMDiagnostics\MDMDiagReport.html" <NL>  |  <NL>  | 
+Row 964:  |  |  |  | 9 | Double click on the file name, by default it will open with Edge. <NL>  | Scroll down - You should see a section with  the title "Managed policies". You can find ”NetworkSecurity_DoNotStoreLANManagerHashValueOnNextPasswordChange“. <NL> NetworkSecurity_DoNotStoreLANManagerHashValueOnNextPasswordChange Should be 1. <NL>  | 
+Row 965:  |  |  |  | 10 | Reopen the profile and changed the settings to "Not Configured" and "Save" the change and "Sync" the Device  <NL>  | Scroll down - You should see a section with  the title "Managed policies". You can't find ”NetworkSecurity_DoNotStoreLANManagerHashValueOnNextPasswordChange“.  | 
+Row 966: 38 | 8926550 | Test Case | [Shanghai Vendor][DC][Endpoint Protection][LocalDeviceSecurityOptions][Network access and security]: PKU2U authentication requests |  |  |  | Intune\Mgmt\Device Configuration\DCv1
+Row 967:  |  |  |  | 1 | Navigate to Create Profile blade on Intune Device Configuration |  | 
+Row 968:  |  |  |  | 1.1 | Login to  MEM admin center with your admin account: <NL> DF: https://aka.ms/intunedf <NL> SH: https://aka.ms/IntuneSH <NL> Canary: https://aka.ms/IntuneCanary <NL> PE: https://aka.ms/intune <NL> Fairfax: https://aka.ms/intuneFF <NL> Mooncake: https://aka.ms/intuneMC |  <NL>  | 
+Row 969:  |  |  |  | 1.2 | Click the "Device" in the left list column <NL>  |  <NL>  | 
+Row 970:  |  |  |  | 1.3 | Click the "configuration profile" feature in "Device" <NL>  |  <NL>  | 
+Row 971:  |  |  |  | 1.4 | Click "Create profile", and select Platform : "Windows 10 and later" <NL>  |  <NL>  | 
+Row 972:  |  |  |  | 2 | selected the "Endpoint Protection" in Profile and click the "Create" button <NL>  |  <NL>  | 
+Row 973:  |  |  |  | 3 | Enter "test1" for "Name" and click the "Next" button <NL>  |  <NL>  | 
+Row 974:  |  |  |  | 4 | selected "Local Device Security Options" -  "Network access and security"  <NL> Set "PKU2U authentication requests" settings to "Block" and "Next" |  <NL>  | 
+Row 975:  |  |  |  | 5 | Assign the profile to User/Device group and complete the creation of the DC profile |  | 
+Row 976:  |  |  |  | 5.1 | Click the "Selected groups to include" in "Included groups" <NL>  |  <NL>  | 
+Row 977:  |  |  |  | 5.2 | search your group and select group, and click "Select" button <NL>  |  <NL>  | 
+Row 978:  |  |  |  | 5.3 | Click "Next"--"Next"--"Next"--"Create" <NL>  |  <NL>  | 
+Row 979:  |  |  |  | 5.4 | the profile will be created successful <NL>  |  <NL>  | 
+Row 980:  |  |  |  | 6 | Enroll a windows 10 device to intune and Trigger a manual sync of MDM policies in Windows 10 Device |  | 
+Row 981:  |  |  |  | 6.1 | Open the "Settings" App |  <NL>  | 
+Row 982:  |  |  |  | 6.2 | Click "Accounts" |  <NL>  | 
+Row 983:  |  |  |  | 6.3 | Click "Access work or School" |  <NL>  | 
+Row 984:  |  |  |  | 6.4 | Click"Connect“  and enter the IW User email address that you want to deploy the Windows Profiles against. If you haven't created IW User or put the user into a group that is used to assign the Profile (policy), do it from Azure portal's "Users and Groups" blade before this step. Click "Next" after entering the account email. |  <NL>  | 
+Row 985:  |  |  |  | 6.5 | Repeat Step4 and Step5 one more time to complete the MDM enrollment. First time "Connect" adds the "Connected to Microsoft MDM" icon. Enter the password for the user when prompted. |  <NL>  | 
+Row 986:  |  |  |  | 6.6 | Click the "Info" button and click "Sync" button |  <NL>  | 
+Row 987:  |  |  |  | 6.7 | Wait 5-10 minutes to allow profile assign to device |  <NL>  | 
+Row 988:  |  |  |  | 7 | In the same window that was used at step 6. above, locate the "Advanced Diagnostic Report" situated at the bottom of the page, and click on the "Create report" button.  <NL>  |  <NL>  | 
+Row 989:  |  |  |  | 8 | Click the "Export" button in the popup window - this will cause the log files to be exported to the file "c:\users\Public\Documents\MDMDiagnostics\MDMDiagReport.html" <NL>  |  <NL>  | 
+Row 990:  |  |  |  | 9 | Double click on the file name, by default it will open with Edge. <NL>  | Scroll down - You should see a section with  the title "Managed policies". You can find ”NetworkSecurity_AllowPKU2UAuthenticationRequests“. <NL> NetworkSecurity_AllowPKU2UAuthenticationRequests Should be 0. <NL>  | 
+Row 991:  |  |  |  | 10 | Reopen the profile and changed the settings to "Not Configured" and "Save" the change and "Sync" the Device  <NL>  | Scroll down - You should see a section with  the title "Managed policies". You can't find ”NetworkSecurity_AllowPKU2UAuthenticationRequests“.  | 
+Row 992: 39 | 8926576 | Test Case | [Shanghai Vendor][DC][Endpoint Protection][LocalDeviceSecurityOptions][Network access and security]: Restrict remote RPC connections to SAM |  |  |  | Intune\Mgmt\Device Configuration\DCv1
+Row 993:  |  |  |  | 1 | Navigate to Create Profile blade on Intune Device Configuration |  | 
+Row 994:  |  |  |  | 1.1 | Login to  MEM admin center with your admin account: <NL> DF: https://aka.ms/intunedf <NL> SH: https://aka.ms/IntuneSH <NL> Canary: https://aka.ms/IntuneCanary <NL> PE: https://aka.ms/intune <NL> Fairfax: https://aka.ms/intuneFF <NL> Mooncake: https://aka.ms/intuneMC |  <NL>  | 
+Row 995:  |  |  |  | 1.2 | Click the "Device" in the left list column <NL>  |  <NL>  | 
+Row 996:  |  |  |  | 1.3 | Click the "configuration profile" feature in "Device" <NL>  |  <NL>  | 
+Row 997:  |  |  |  | 1.4 | Click "Create profile", and select Platform : "Windows 10 and later" <NL>  |  <NL>  | 
+Row 998:  |  |  |  | 2 | selected the "Endpoint Protection" in Profile and click the "Create" button <NL>  |  <NL>  | 
+Row 999:  |  |  |  | 3 | Enter "test1" for "Name" and click the "Next" button <NL>  |  <NL>  | 
+Row 1000:  |  |  |  | 4 | selected "Local Device Security Options" -  "Network access and security"  <NL> Set "Restrict remote RPC connections to SAM" settings to "Allow" - "Security Descriptor" settings to "west1" and "Next" |  <NL>  | 
+Row 1001:  |  |  |  | 5 | Assign the profile to User/Device group and complete the creation of the DC profile |  | 
+Row 1002:  |  |  |  | 5.1 | Click the "Selected groups to include" in "Included groups" <NL>  |  <NL>  | 
+Row 1003:  |  |  |  | 5.2 | search your group and select group, and click "Select" button <NL>  |  <NL>  | 
+Row 1004:  |  |  |  | 5.3 | Click "Next"--"Next"--"Next"--"Create" <NL>  |  <NL>  | 
+Row 1005:  |  |  |  | 5.4 | the profile will be created successful <NL>  |  <NL>  | 
+Row 1006:  |  |  |  | 6 | Enroll a windows 10 device to intune and Trigger a manual sync of MDM policies in Windows 10 Device |  | 
+Row 1007:  |  |  |  | 6.1 | Open the "Settings" App |  <NL>  | 
+Row 1008:  |  |  |  | 6.2 | Click "Accounts" |  <NL>  | 
+Row 1009:  |  |  |  | 6.3 | Click "Access work or School" |  <NL>  | 
+Row 1010:  |  |  |  | 6.4 | Click"Connect“  and enter the IW User email address that you want to deploy the Windows Profiles against. If you haven't created IW User or put the user into a group that is used to assign the Profile (policy), do it from Azure portal's "Users and Groups" blade before this step. Click "Next" after entering the account email. |  <NL>  | 
+Row 1011:  |  |  |  | 6.5 | Repeat Step4 and Step5 one more time to complete the MDM enrollment. First time "Connect" adds the "Connected to Microsoft MDM" icon. Enter the password for the user when prompted. |  <NL>  | 
+Row 1012:  |  |  |  | 6.6 | Click the "Info" button and click "Sync" button |  <NL>  | 
+Row 1013:  |  |  |  | 6.7 | Wait 5-10 minutes to allow profile assign to device |  <NL>  | 
+Row 1014:  |  |  |  | 7 | In the same window that was used at step 6. above, locate the "Advanced Diagnostic Report" situated at the bottom of the page, and click on the "Create report" button.  <NL>  |  <NL>  | 
+Row 1015:  |  |  |  | 8 | Click the "Export" button in the popup window - this will cause the log files to be exported to the file "c:\users\Public\Documents\MDMDiagnostics\MDMDiagReport.html" <NL>  |  <NL>  | 
+Row 1016:  |  |  |  | 9 | Double click on the file name, by default it will open with Edge. <NL>  | Scroll down - You should see a section with  the title "Managed policies". You can find ”RestrictClientsAllowedToMakeRemoteCallsToSAM“. <NL> RestrictClientsAllowedToMakeRemoteCallsToSAM Should be west1. <NL>  | 
+Row 1017:  |  |  |  | 10 | Reopen the profile and changed the settings to "Not Configured" and "Save" the change and "Sync" the Device  <NL>  | Scroll down - You should see a section with  the title "Managed policies". You can't find ”RestrictClientsAllowedToMakeRemoteCallsToSAM“.  | 
+Row 1018: 40 | 8926615 | Test Case | [Shanghai Vendor][DC][Endpoint Protection][LocalDeviceSecurityOptions][Network access and security]: Minimum Session Security For NTLM SSP Based Clients |  |  |  | Intune\Mgmt\Device Configuration\DCv1
+Row 1019:  |  |  |  | 1 | Navigate to Create Profile blade on Intune Device Configuration |  | 
+Row 1020:  |  |  |  | 1.1 | Login to  MEM admin center with your admin account: <NL> DF: https://aka.ms/intunedf <NL> SH: https://aka.ms/IntuneSH <NL> Canary: https://aka.ms/IntuneCanary <NL> PE: https://aka.ms/intune <NL> Fairfax: https://aka.ms/intuneFF <NL> Mooncake: https://aka.ms/intuneMC |  <NL>  | 
+Row 1021:  |  |  |  | 1.2 | Click the "Device" in the left list column <NL>  |  <NL>  | 
+Row 1022:  |  |  |  | 1.3 | Click the "configuration profile" feature in "Device" <NL>  |  <NL>  | 
+Row 1023:  |  |  |  | 1.4 | Click "Create profile", and select Platform : "Windows 10 and later" <NL>  |  <NL>  | 
+Row 1024:  |  |  |  | 2 | selected the "Endpoint Protection" in Profile and click the "Create" button <NL>  |  <NL>  | 
+Row 1025:  |  |  |  | 3 | Enter "test1" for "Name" and click the "Next" button <NL>  |  <NL>  | 
+Row 1026:  |  |  |  | 4 | selected "Local Device Security Options" -  "Network access and security"  <NL> Set "Minimum Session Security For NTLM SSP Based Clients" settings to "Require NTLMv2 session security" and "Next" |  <NL>  | 
+Row 1027:  |  |  |  | 5 | Assign the profile to User/Device group and complete the creation of the DC profile |  | 
+Row 1028:  |  |  |  | 5.1 | Click the "Selected groups to include" in "Included groups" <NL>  |  <NL>  | 
+Row 1029:  |  |  |  | 5.2 | search your group and select group, and click "Select" button <NL>  |  <NL>  | 
+Row 1030:  |  |  |  | 5.3 | Click "Next"--"Next"--"Next"--"Create" <NL>  |  <NL>  | 
+Row 1031:  |  |  |  | 5.4 | the profile will be created successful <NL>  |  <NL>  | 
+Row 1032:  |  |  |  | 6 | Enroll a windows 10 device to intune and Trigger a manual sync of MDM policies in Windows 10 Device |  | 
+Row 1033:  |  |  |  | 6.1 | Open the "Settings" App |  <NL>  | 
+Row 1034:  |  |  |  | 6.2 | Click "Accounts" |  <NL>  | 
+Row 1035:  |  |  |  | 6.3 | Click "Access work or School" |  <NL>  | 
+Row 1036:  |  |  |  | 6.4 | Click"Connect“  and enter the IW User email address that you want to deploy the Windows Profiles against. If you haven't created IW User or put the user into a group that is used to assign the Profile (policy), do it from Azure portal's "Users and Groups" blade before this step. Click "Next" after entering the account email. |  <NL>  | 
+Row 1037:  |  |  |  | 6.5 | Repeat Step4 and Step5 one more time to complete the MDM enrollment. First time "Connect" adds the "Connected to Microsoft MDM" icon. Enter the password for the user when prompted. |  <NL>  | 
+Row 1038:  |  |  |  | 6.6 | Click the "Info" button and click "Sync" button |  <NL>  | 
+Row 1039:  |  |  |  | 6.7 | Wait 5-10 minutes to allow profile assign to device |  <NL>  | 
+Row 1040:  |  |  |  | 7 | In the same window that was used at step 6. above, locate the "Advanced Diagnostic Report" situated at the bottom of the page, and click on the "Create report" button.  <NL>  |  <NL>  | 
+Row 1041:  |  |  |  | 8 | Click the "Export" button in the popup window - this will cause the log files to be exported to the file "c:\users\Public\Documents\MDMDiagnostics\MDMDiagReport.html" <NL>  |  <NL>  | 
+Row 1042:  |  |  |  | 9 | Double click on the file name, by default it will open with Edge. <NL>  | Scroll down - You should see a section with  the title "Managed policies". You can find ”NetworkSecurity_MinimumSessionSecurityForNTLMSSPBasedClients“. <NL> NetworkSecurity_MinimumSessionSecurityForNTLMSSPBasedClients Should be 524288. <NL>  | 
+Row 1043:  |  |  |  | 10 | Reopen the profile and changed the settings to "Require 128-bit encryption" and "Save" the change and "Sync" the Device  <NL>  | Scroll down - You should see a section with  the title "Managed policies". You can find ”NetworkSecurity_MinimumSessionSecurityForNTLMSSPBasedClients“. <NL> NetworkSecurity_MinimumSessionSecurityForNTLMSSPBasedClients Should be 536870912. | 
+Row 1044:  |  |  |  | 11 | Reopen the profile and changed the settings to "NTLMv2 and 128-bit encryption" and "Save" the change and "Sync" the Device  <NL>  | Scroll down - You should see a section with  the title "Managed policies". You can find ”NetworkSecurity_MinimumSessionSecurityForNTLMSSPBasedClients“. <NL> NetworkSecurity_MinimumSessionSecurityForNTLMSSPBasedClients Should be 537395200. | 
+Row 1045:  |  |  |  | 12 | Reopen the profile and changed the settings to "none" and "Save" the change and "Sync" the Device  <NL>  | Scroll down - You should see a section with  the title "Managed policies". You can't find ”NetworkSecurity_MinimumSessionSecurityForNTLMSSPBasedClients“.  | 
+Row 1046: 41 | 8933779 | Test Case | [Shanghai Vendor][DC][Endpoint Protection][LocalDeviceSecurityOptions][Network access and security]: Minimum Session Security For NTLM SSP Based Server |  |  |  | Intune\Mgmt\Device Configuration\DCv1
+Row 1047:  |  |  |  | 1 | Navigate to Create Profile blade on Intune Device Configuration |  | 
+Row 1048:  |  |  |  | 1.1 | Login to  MEM admin center with your admin account: <NL> DF: https://aka.ms/intunedf <NL> SH: https://aka.ms/IntuneSH <NL> Canary: https://aka.ms/IntuneCanary <NL> PE: https://aka.ms/intune <NL> Fairfax: https://aka.ms/intuneFF <NL> Mooncake: https://aka.ms/intuneMC |  <NL>  | 
+Row 1049:  |  |  |  | 1.2 | Click the "Device" in the left list column <NL>  |  <NL>  | 
+Row 1050:  |  |  |  | 1.3 | Click the "configuration profile" feature in "Device" <NL>  |  <NL>  | 
+Row 1051:  |  |  |  | 1.4 | Click "Create profile", and select Platform : "Windows 10 and later" <NL>  |  <NL>  | 
+Row 1052:  |  |  |  | 2 | selected the "Endpoint Protection" in Profile and click the "Create" button <NL>  |  <NL>  | 
+Row 1053:  |  |  |  | 3 | Enter "test1" for "Name" and click the "Next" button <NL>  |  <NL>  | 
+Row 1054:  |  |  |  | 4 | selected "Local Device Security Options" -  "Network access and security"  <NL> Set "Minimum Session Security For NTLM SSP Based Server" settings to "Require NTLMv2 session security" and "Next" |  <NL>  | 
+Row 1055:  |  |  |  | 5 | Assign the profile to User/Device group and complete the creation of the DC profile |  | 
+Row 1056:  |  |  |  | 5.1 | Click the "Selected groups to include" in "Included groups" <NL>  |  <NL>  | 
+Row 1057:  |  |  |  | 5.2 | search your group and select group, and click "Select" button <NL>  |  <NL>  | 
+Row 1058:  |  |  |  | 5.3 | Click "Next"--"Next"--"Next"--"Create" <NL>  |  <NL>  | 
+Row 1059:  |  |  |  | 5.4 | the profile will be created successful <NL>  |  <NL>  | 
+Row 1060:  |  |  |  | 6 | Enroll a windows 10 device to intune and Trigger a manual sync of MDM policies in Windows 10 Device |  | 
+Row 1061:  |  |  |  | 6.1 | Open the "Settings" App |  <NL>  | 
+Row 1062:  |  |  |  | 6.2 | Click "Accounts" |  <NL>  | 
+Row 1063:  |  |  |  | 6.3 | Click "Access work or School" |  <NL>  | 
+Row 1064:  |  |  |  | 6.4 | Click"Connect“  and enter the IW User email address that you want to deploy the Windows Profiles against. If you haven't created IW User or put the user into a group that is used to assign the Profile (policy), do it from Azure portal's "Users and Groups" blade before this step. Click "Next" after entering the account email. |  <NL>  | 
+Row 1065:  |  |  |  | 6.5 | Repeat Step4 and Step5 one more time to complete the MDM enrollment. First time "Connect" adds the "Connected to Microsoft MDM" icon. Enter the password for the user when prompted. |  <NL>  | 
+Row 1066:  |  |  |  | 6.6 | Click the "Info" button and click "Sync" button |  <NL>  | 
+Row 1067:  |  |  |  | 6.7 | Wait 5-10 minutes to allow profile assign to device |  <NL>  | 
+Row 1068:  |  |  |  | 7 | In the same window that was used at step 6. above, locate the "Advanced Diagnostic Report" situated at the bottom of the page, and click on the "Create report" button.  <NL>  |  <NL>  | 
+Row 1069:  |  |  |  | 8 | Click the "Export" button in the popup window - this will cause the log files to be exported to the file "c:\users\Public\Documents\MDMDiagnostics\MDMDiagReport.html" <NL>  |  <NL>  | 
+Row 1070:  |  |  |  | 9 | Double click on the file name, by default it will open with Edge. <NL>  | Scroll down - You should see a section with  the title "Managed policies". You can find ”NetworkSecurity_MinimumSessionSecurityForNTLMSSPBasedServers“. <NL> NetworkSecurity_MinimumSessionSecurityForNTLMSSPBasedServers Should be 524288. <NL>  | 
+Row 1071:  |  |  |  | 10 | Reopen the profile and changed the settings to "Require 128-bit encryption" and "Save" the change and "Sync" the Device  <NL>  | Scroll down - You should see a section with  the title "Managed policies". You can find ”NetworkSecurity_MinimumSessionSecurityForNTLMSSPBasedServers“. <NL> NetworkSecurity_MinimumSessionSecurityForNTLMSSPBasedServers Should be 536870912. | 
+Row 1072:  |  |  |  | 11 | Reopen the profile and changed the settings to "NTLMv2 and 128-bit encryption" and "Save" the change and "Sync" the Device  <NL>  | Scroll down - You should see a section with  the title "Managed policies". You can find ”NetworkSecurity_MinimumSessionSecurityForNTLMSSPBasedServers“. <NL> NetworkSecurity_MinimumSessionSecurityForNTLMSSPBasedServers Should be 537395200. | 
+Row 1073:  |  |  |  | 12 | Reopen the profile and changed the settings to "none" and "Save" the change and "Sync" the Device  <NL>  | Scroll down - You should see a section with  the title "Managed policies". You can't find ”NetworkSecurity_MinimumSessionSecurityForNTLMSSPBasedServers“.  | 
+Row 1074: 42 | 8933850 | Test Case | [Shanghai Vendor][DC][Endpoint Protection][LocalDeviceSecurityOptions][Network access and security]: LAN Manager Authentication Level |  |  |  | Intune\Mgmt\Device Configuration\DCv1
+Row 1075:  |  |  |  | 1 | Navigate to Create Profile blade on Intune Device Configuration |  | 
+Row 1076:  |  |  |  | 1.1 | Login to  MEM admin center with your admin account: <NL> DF: https://aka.ms/intunedf <NL> SH: https://aka.ms/IntuneSH <NL> Canary: https://aka.ms/IntuneCanary <NL> PE: https://aka.ms/intune <NL> Fairfax: https://aka.ms/intuneFF <NL> Mooncake: https://aka.ms/intuneMC |  <NL>  | 
+Row 1077:  |  |  |  | 1.2 | Click the "Device" in the left list column <NL>  |  <NL>  | 
+Row 1078:  |  |  |  | 1.3 | Click the "configuration profile" feature in "Device" <NL>  |  <NL>  | 
+Row 1079:  |  |  |  | 1.4 | Click "Create profile", and select Platform : "Windows 10 and later" <NL>  |  <NL>  | 
+Row 1080:  |  |  |  | 2 | selected the "Endpoint Protection" in Profile and click the "Create" button <NL>  |  <NL>  | 
+Row 1081:  |  |  |  | 3 | Enter "test1" for "Name" and click the "Next" button <NL>  |  <NL>  | 
+Row 1082:  |  |  |  | 4 | selected "Local Device Security Options" -  "Network access and security"  <NL> Set "LAN Manager Authentication Level" settings to "LM, NTLM and NTLMv2" and "Next" |  <NL>  | 
+Row 1083:  |  |  |  | 5 | Assign the profile to User/Device group and complete the creation of the DC profile |  | 
+Row 1084:  |  |  |  | 5.1 | Click the "Selected groups to include" in "Included groups" <NL>  |  <NL>  | 
+Row 1085:  |  |  |  | 5.2 | search your group and select group, and click "Select" button <NL>  |  <NL>  | 
+Row 1086:  |  |  |  | 5.3 | Click "Next"--"Next"--"Next"--"Create" <NL>  |  <NL>  | 
+Row 1087:  |  |  |  | 5.4 | the profile will be created successful <NL>  |  <NL>  | 
+Row 1088:  |  |  |  | 6 | Enroll a windows 10 device to intune and Trigger a manual sync of MDM policies in Windows 10 Device |  | 
+Row 1089:  |  |  |  | 6.1 | Open the "Settings" App |  <NL>  | 
+Row 1090:  |  |  |  | 6.2 | Click "Accounts" |  <NL>  | 
+Row 1091:  |  |  |  | 6.3 | Click "Access work or School" |  <NL>  | 
+Row 1092:  |  |  |  | 6.4 | Click"Connect“  and enter the IW User email address that you want to deploy the Windows Profiles against. If you haven't created IW User or put the user into a group that is used to assign the Profile (policy), do it from Azure portal's "Users and Groups" blade before this step. Click "Next" after entering the account email. |  <NL>  | 
+Row 1093:  |  |  |  | 6.5 | Repeat Step4 and Step5 one more time to complete the MDM enrollment. First time "Connect" adds the "Connected to Microsoft MDM" icon. Enter the password for the user when prompted. |  <NL>  | 
+Row 1094:  |  |  |  | 6.6 | Click the "Info" button and click "Sync" button |  <NL>  | 
+Row 1095:  |  |  |  | 6.7 | Wait 5-10 minutes to allow profile assign to device |  <NL>  | 
+Row 1096:  |  |  |  | 7 | In the same window that was used at step 6. above, locate the "Advanced Diagnostic Report" situated at the bottom of the page, and click on the "Create report" button.  <NL>  |  <NL>  | 
+Row 1097:  |  |  |  | 8 | Click the "Export" button in the popup window - this will cause the log files to be exported to the file "c:\users\Public\Documents\MDMDiagnostics\MDMDiagReport.html" <NL>  |  <NL>  | 
+Row 1098:  |  |  |  | 9 | Double click on the file name, by default it will open with Edge. <NL>  | Scroll down - You should see a section with  the title "Managed policies". You can find ”NetworkSecurity_LANManagerAuthenticationLevel“. <NL> NetworkSecurity_LANManagerAuthenticationLevel Should be 1. <NL>  | 
+Row 1099:  |  |  |  | 10 | Reopen the profile and changed the settings to "NTLM" and "Save" the change and "Sync" the Device  <NL>  | Scroll down - You should see a section with  the title "Managed policies". You can find ”NetworkSecurity_LANManagerAuthenticationLevel“. <NL> NetworkSecurity_LANManagerAuthenticationLevel Should be 2. | 
+Row 1100:  |  |  |  | 11 | Reopen the profile and changed the settings to "NTLMv2" and "Save" the change and "Sync" the Device  <NL>  | Scroll down - You should see a section with  the title "Managed policies". You can find ”NetworkSecurity_LANManagerAuthenticationLevel“. <NL> NetworkSecurity_LANManagerAuthenticationLevel Should be 3. | 
+Row 1101:  |  |  |  | 12 | Reopen the profile and changed the settings to "NTLMv2 and not LM" and "Save" the change and "Sync" the Device <NL>  | Scroll down - You should see a section with  the title "Managed policies". You can find ”NetworkSecurity_LANManagerAuthenticationLevel“. <NL> NetworkSecurity_LANManagerAuthenticationLevel Should be 4. | 
+Row 1102:  |  |  |  | 13 | Reopen the profile and changed the settings to "NTLMv2 and not LM or NTLM" and "Save" the change and "Sync" the Device <NL>  | Scroll down - You should see a section with  the title "Managed policies". You can find ”NetworkSecurity_LANManagerAuthenticationLevel“. <NL> NetworkSecurity_LANManagerAuthenticationLevel Should be 5. | 
+Row 1103:  |  |  |  | 14 | Reopen the profile and changed the settings to "LM and NTLM" and "Save" the change and "Sync" the Device  <NL>  | Scroll down - You should see a section with  the title "Managed policies". You can't find ”NetworkSecurity_LANManagerAuthenticationLevel“.  | 
+Row 1104: 43 | 8934720 | Test Case | [Shanghai Vendor][DC][Endpoint Protection][LocalDeviceSecurityOptions][Network access and security]: Insecure Guest Logons |  |  |  | Intune\Mgmt\Device Configuration\DCv1
+Row 1105:  |  |  |  | 1 | Navigate to Create Profile blade on Intune Device Configuration |  | 
+Row 1106:  |  |  |  | 1.1 | Login to  MEM admin center with your admin account: <NL> DF: https://aka.ms/intunedf <NL> SH: https://aka.ms/IntuneSH <NL> Canary: https://aka.ms/IntuneCanary <NL> PE: https://aka.ms/intune <NL> Fairfax: https://aka.ms/intuneFF <NL> Mooncake: https://aka.ms/intuneMC |  <NL>  | 
+Row 1107:  |  |  |  | 1.2 | Click the "Device" in the left list column <NL>  |  <NL>  | 
+Row 1108:  |  |  |  | 1.3 | Click the "configuration profile" feature in "Device" <NL>  |  <NL>  | 
+Row 1109:  |  |  |  | 1.4 | Click "Create profile", and select Platform : "Windows 10 and later" <NL>  |  <NL>  | 
+Row 1110:  |  |  |  | 2 | selected the "Endpoint Protection" in Profile and click the "Create" button <NL>  |  <NL>  | 
+Row 1111:  |  |  |  | 3 | Enter "test1" for "Name" and click the "Next" button <NL>  |  <NL>  | 
+Row 1112:  |  |  |  | 4 | selected "Local Device Security Options" -  "Network access and security"  <NL> Set "Insecure Guest Logons" settings to "Block" and "Next" |  <NL>  | 
+Row 1113:  |  |  |  | 5 | Assign the profile to User/Device group and complete the creation of the DC profile |  | 
+Row 1114:  |  |  |  | 5.1 | Click the "Selected groups to include" in "Included groups" <NL>  |  <NL>  | 
+Row 1115:  |  |  |  | 5.2 | search your group and select group, and click "Select" button <NL>  |  <NL>  | 
+Row 1116:  |  |  |  | 5.3 | Click "Next"--"Next"--"Next"--"Create" <NL>  |  <NL>  | 
+Row 1117:  |  |  |  | 5.4 | the profile will be created successful <NL>  |  <NL>  | 
+Row 1118:  |  |  |  | 6 | Enroll a windows 10 device to intune and Trigger a manual sync of MDM policies in Windows 10 Device |  | 
+Row 1119:  |  |  |  | 6.1 | Open the "Settings" App |  <NL>  | 
+Row 1120:  |  |  |  | 6.2 | Click "Accounts" |  <NL>  | 
+Row 1121:  |  |  |  | 6.3 | Click "Access work or School" |  <NL>  | 
+Row 1122:  |  |  |  | 6.4 | Click"Connect“  and enter the IW User email address that you want to deploy the Windows Profiles against. If you haven't created IW User or put the user into a group that is used to assign the Profile (policy), do it from Azure portal's "Users and Groups" blade before this step. Click "Next" after entering the account email. |  <NL>  | 
+Row 1123:  |  |  |  | 6.5 | Repeat Step4 and Step5 one more time to complete the MDM enrollment. First time "Connect" adds the "Connected to Microsoft MDM" icon. Enter the password for the user when prompted. |  <NL>  | 
+Row 1124:  |  |  |  | 6.6 | Click the "Info" button and click "Sync" button |  <NL>  | 
+Row 1125:  |  |  |  | 6.7 | Wait 5-10 minutes to allow profile assign to device |  <NL>  | 
+Row 1126:  |  |  |  | 7 | In the same window that was used at step 6. above, locate the "Advanced Diagnostic Report" situated at the bottom of the page, and click on the "Create report" button.  <NL>  |  <NL>  | 
+Row 1127:  |  |  |  | 8 | Click the "Export" button in the popup window - this will cause the log files to be exported to the file "c:\users\Public\Documents\MDMDiagnostics\MDMDiagReport.html" <NL>  |  <NL>  | 
+Row 1128:  |  |  |  | 9 | Double click on the file name, by default it will open with Edge. <NL>  | Scroll down - You should see a section with  the title "Managed policies". You can find ”EnableInsecureGuestLogons“. <NL> EnableInsecureGuestLogons Should be 0. <NL>  | 
+Row 1129:  |  |  |  | 10 | Reopen the profile and changed the settings to "Not Configured" and "Save" the change and "Sync" the Device  <NL>  | Scroll down - You should see a section with  the title "Managed policies". You can't find ”EnableInsecureGuestLogons“.  | 
+Row 1130: 44 | 9000494 | Test Case | [Shanghai Vendor][DC][Endpoint Protection][LocalDeviceSecurityOptions][Recovery console and shutdown]: Clear virtual memory pagefile when shutting down |  |  |  | Intune\Mgmt\Device Configuration\DCv1
+Row 1131:  |  |  |  | 1 | Navigate to Create Profile blade on Intune Device Configuration |  | 
+Row 1132:  |  |  |  | 1.1 | Login to  MEM admin center with your admin account: <NL> DF: https://aka.ms/intunedf <NL> SH: https://aka.ms/IntuneSH <NL> Canary: https://aka.ms/IntuneCanary <NL> PE: https://aka.ms/intune <NL> Fairfax: https://aka.ms/intuneFF <NL> Mooncake: https://aka.ms/intuneMC |  <NL>  | 
+Row 1133:  |  |  |  | 1.2 | Click the "Device" in the left list column <NL>  |  <NL>  | 
+Row 1134:  |  |  |  | 1.3 | Click the "configuration profile" feature in "Device" <NL>  |  <NL>  | 
+Row 1135:  |  |  |  | 1.4 | Click "Create profile", and select Platform : "Windows 10 and later" <NL>  |  <NL>  | 
+Row 1136:  |  |  |  | 2 | selected the "Endpoint Protection" in Profile and click the "Create" button <NL>  |  <NL>  | 
+Row 1137:  |  |  |  | 3 | Enter "test1" for "Name" and click the "Next" button <NL>  |  <NL>  | 
+Row 1138:  |  |  |  | 4 | selected "Local Device Security Options" -  "Recovery console and shutdown"  <NL> Set "Clear virtual memory pagefile when shutting down" settings to "Enable" and "Next" <NL>  |  <NL>  | 
+Row 1139:  |  |  |  | 5 | Assign the profile to User/Device group and complete the creation of the DC profile |  | 
+Row 1140:  |  |  |  | 5.1 | Click the "Selected groups to include" in "Included groups" <NL>  |  <NL>  | 
+Row 1141:  |  |  |  | 5.2 | search your group and select group, and click "Select" button <NL>  |  <NL>  | 
+Row 1142:  |  |  |  | 5.3 | Click "Next"--"Next"--"Next"--"Create" <NL>  |  <NL>  | 
+Row 1143:  |  |  |  | 5.4 | the profile will be created successful <NL>  |  <NL>  | 
+Row 1144:  |  |  |  | 6 | Enroll a windows 10 device to intune and Trigger a manual sync of MDM policies in Windows 10 Device |  | 
+Row 1145:  |  |  |  | 6.1 | Open the "Settings" App |  <NL>  | 
+Row 1146:  |  |  |  | 6.2 | Click "Accounts" |  <NL>  | 
+Row 1147:  |  |  |  | 6.3 | Click "Access work or School" |  <NL>  | 
+Row 1148:  |  |  |  | 6.4 | Click"Connect“  and enter the IW User email address that you want to deploy the Windows Profiles against. If you haven't created IW User or put the user into a group that is used to assign the Profile (policy), do it from Azure portal's "Users and Groups" blade before this step. Click "Next" after entering the account email. |  <NL>  | 
+Row 1149:  |  |  |  | 6.5 | Repeat Step4 and Step5 one more time to complete the MDM enrollment. First time "Connect" adds the "Connected to Microsoft MDM" icon. Enter the password for the user when prompted. |  <NL>  | 
+Row 1150:  |  |  |  | 6.6 | Click the "Info" button and click "Sync" button |  <NL>  | 
+Row 1151:  |  |  |  | 6.7 | Wait 5-10 minutes to allow profile assign to device |  <NL>  | 
+Row 1152:  |  |  |  | 7 | In the same window that was used at step 6. above, locate the "Advanced Diagnostic Report" situated at the bottom of the page, and click on the "Create report" button.  <NL>  |  <NL>  | 
+Row 1153:  |  |  |  | 8 | Click the "Export" button in the popup window - this will cause the log files to be exported to the file "c:\users\Public\Documents\MDMDiagnostics\MDMDiagReport.html" <NL>  |  <NL>  | 
+Row 1154:  |  |  |  | 9 | Double click on the file name, by default it will open with Edge. <NL>  | Scroll down - You should see a section with  the title "Managed policies". You can find ”Shutdown_ClearVirtualMemoryPageFile“. <NL> Shutdown_ClearVirtualMemoryPageFile Should be 1. <NL>  | 
+Row 1155:  |  |  |  | 10 | Reopen the profile and changed the settings to "Not Configured" and "Save" the change and "Sync" the Device  <NL>  | Scroll down - You should see a section with  the title "Managed policies". You can't find ”InteractiveLogon_DoNotDisplayLastSignedIn“.  | 
+Row 1156: 45 | 9000563 | Test Case | [Shanghai Vendor][DC][Endpoint Protection][LocalDeviceSecurityOptions][Recovery console and shutdown]: Shutdown without logon |  |  |  | Intune\Mgmt\Device Configuration\DCv1
+Row 1157:  |  |  |  | 1 | Navigate to Create Profile blade on Intune Device Configuration |  | 
+Row 1158:  |  |  |  | 1.1 | Login to  MEM admin center with your admin account: <NL> DF: https://aka.ms/intunedf <NL> SH: https://aka.ms/IntuneSH <NL> Canary: https://aka.ms/IntuneCanary <NL> PE: https://aka.ms/intune <NL> Fairfax: https://aka.ms/intuneFF <NL> Mooncake: https://aka.ms/intuneMC |  <NL>  | 
+Row 1159:  |  |  |  | 1.2 | Click the "Device" in the left list column <NL>  |  <NL>  | 
+Row 1160:  |  |  |  | 1.3 | Click the "configuration profile" feature in "Device" <NL>  |  <NL>  | 
+Row 1161:  |  |  |  | 1.4 | Click "Create profile", and select Platform : "Windows 10 and later" <NL>  |  <NL>  | 
+Row 1162:  |  |  |  | 2 | selected the "Endpoint Protection" in Profile and click the "Create" button <NL>  |  <NL>  | 
+Row 1163:  |  |  |  | 3 | Enter "test1" for "Name" and click the "Next" button <NL>  |  <NL>  | 
+Row 1164:  |  |  |  | 4 | selected "Local Device Security Options" -  "Recovery console and shutdown"  <NL> Set "Shutdown without logon" settings to "Block" and "Next" <NL>  |  <NL>  | 
+Row 1165:  |  |  |  | 5 | Assign the profile to User/Device group and complete the creation of the DC profile |  | 
+Row 1166:  |  |  |  | 5.1 | Click the "Selected groups to include" in "Included groups" <NL>  |  <NL>  | 
+Row 1167:  |  |  |  | 5.2 | search your group and select group, and click "Select" button <NL>  |  <NL>  | 
+Row 1168:  |  |  |  | 5.3 | Click "Next"--"Next"--"Next"--"Create" <NL>  |  <NL>  | 
+Row 1169:  |  |  |  | 5.4 | the profile will be created successful <NL>  |  <NL>  | 
+Row 1170:  |  |  |  | 6 | Enroll a windows 10 device to intune and Trigger a manual sync of MDM policies in Windows 10 Device |  | 
+Row 1171:  |  |  |  | 6.1 | Open the "Settings" App |  <NL>  | 
+Row 1172:  |  |  |  | 6.2 | Click "Accounts" |  <NL>  | 
+Row 1173:  |  |  |  | 6.3 | Click "Access work or School" |  <NL>  | 
+Row 1174:  |  |  |  | 6.4 | Click"Connect“  and enter the IW User email address that you want to deploy the Windows Profiles against. If you haven't created IW User or put the user into a group that is used to assign the Profile (policy), do it from Azure portal's "Users and Groups" blade before this step. Click "Next" after entering the account email. |  <NL>  | 
+Row 1175:  |  |  |  | 6.5 | Repeat Step4 and Step5 one more time to complete the MDM enrollment. First time "Connect" adds the "Connected to Microsoft MDM" icon. Enter the password for the user when prompted. |  <NL>  | 
+Row 1176:  |  |  |  | 6.6 | Click the "Info" button and click "Sync" button |  <NL>  | 
+Row 1177:  |  |  |  | 6.7 | Wait 5-10 minutes to allow profile assign to device |  <NL>  | 
+Row 1178:  |  |  |  | 7 | In the same window that was used at step 6. above, locate the "Advanced Diagnostic Report" situated at the bottom of the page, and click on the "Create report" button.  <NL>  |  <NL>  | 
+Row 1179:  |  |  |  | 8 | Click the "Export" button in the popup window - this will cause the log files to be exported to the file "c:\users\Public\Documents\MDMDiagnostics\MDMDiagReport.html" <NL>  |  <NL>  | 
+Row 1180:  |  |  |  | 9 | Double click on the file name, by default it will open with Edge. <NL>  | Scroll down - You should see a section with  the title "Managed policies". You can find ”Shutdown_AllowSystemToBeShutDownWithoutHavingToLogOn“. <NL> Shutdown_AllowSystemToBeShutDownWithoutHavingToLogOn Should be 0. <NL>  | 
+Row 1181:  |  |  |  | 10 | Reopen the profile and changed the settings to "Not Configured" and "Save" the change and "Sync" the Device  <NL>  | Scroll down - You should see a section with  the title "Managed policies". You can't find ”InteractiveLogon_DoNotDisplayLastSignedIn“.  | 

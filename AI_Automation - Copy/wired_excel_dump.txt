@@ -1,0 +1,168 @@
+﻿Row 1: ID | Work Item Type | Title | Test Step | Step Action | Step Expected | Area Path | Assigned To | State
+Row 2: 26297420 | Test Case | [Shanghai Vendor][DC][Wired network] [UX validation] Authentication Mode |  |  |  | Intune\Mgmt\Device Configuration\DCv1 | Alan Wang (Centific Technologies Inc) <v-wanyin@microsoft.com> | Design
+Row 3: 8758651 | Shared Steps |  | 1 | Navigate to Create Profile blade on Intune Device Configuration |  |  |  | 
+Row 4:  |  |  | 1.1 | Login to  MEM admin center with your admin account: <NL> DF: https://aka.ms/intunedf <NL> SH: https://aka.ms/IntuneSH <NL> Canary: https://aka.ms/IntuneCanary <NL> PE: https://aka.ms/intune <NL> Fairfax: https://aka.ms/intuneFF <NL> Mooncake: https://aka.ms/intuneMC |  <NL>  |  |  | 
+Row 5:  |  |  | 1.2 | Click the "Device" in the left list column <NL>  |  <NL>  |  |  | 
+Row 6:  |  |  | 1.3 | Click the "configuration profile" feature in "Device" <NL>  |  <NL>  |  |  | 
+Row 7:  |  |  | 1.4 | Click "Create profile", and select Platform : "Windows 10 and later" <NL>  |  <NL>  |  |  | 
+Row 8:  |  |  | 2 | Selected "Wired network" Feature <NL>  |  <NL>  |  |  | 
+Row 9:  |  |  | 3 | Enter "test1" for "Name" and click the "Next" button. <NL>  |  <NL>  |  |  | 
+Row 10:  |  |  | 4 | Set "Authentication Mode" settings to "User" and "Next" <NL>  |  <NL>  |  |  | 
+Row 11:  |  |  | 5 | Set the 'Scope tags' - 'Assignments' - 'applicability Rules' and save the profile. |  <NL>  |  |  | 
+Row 12:  |  |  | 6 | Open the profile. |  <NL>  |  |  | 
+Row 13:  |  |  | 7 | Verify that no UX issue with the profile. |  <NL>  |  |  | 
+Row 14:  |  |  | 8 | Edit the profile. |  <NL>  |  |  | 
+Row 15:  |  |  | 9 | Change the 'Authentication Mode" settings to "User or Machine" and save the profile.  |  <NL>  |  |  | 
+Row 16:  |  |  | 10 | Verify that the profile is what you set. <NL>  |  <NL>  |  |  | 
+Row 17:  |  |  | 11 | Change the 'Authentication Mode" settings to "Guest" and save the profile.  <NL>  |  <NL>  |  |  | 
+Row 18:  |  |  | 12 | Verify that the profile is what you set. <NL>  |  <NL>  |  |  | 
+Row 19: 26297603 | Test Case | [Shanghai Vendor][DC][Wired network] [UX validation] Remember credentials at each logon. |  |  |  | Intune\Mgmt\Device Configuration\DCv1 | Alan Wang (Centific Technologies Inc) <v-wanyin@microsoft.com> | Design
+Row 20: 8758651 | Shared Steps |  | 1 | Navigate to Create Profile blade on Intune Device Configuration |  |  |  | 
+Row 21:  |  |  | 1.1 | Login to  MEM admin center with your admin account: <NL> DF: https://aka.ms/intunedf <NL> SH: https://aka.ms/IntuneSH <NL> Canary: https://aka.ms/IntuneCanary <NL> PE: https://aka.ms/intune <NL> Fairfax: https://aka.ms/intuneFF <NL> Mooncake: https://aka.ms/intuneMC |  <NL>  |  |  | 
+Row 22:  |  |  | 1.2 | Click the "Device" in the left list column <NL>  |  <NL>  |  |  | 
+Row 23:  |  |  | 1.3 | Click the "configuration profile" feature in "Device" <NL>  |  <NL>  |  |  | 
+Row 24:  |  |  | 1.4 | Click "Create profile", and select Platform : "Windows 10 and later" <NL>  |  <NL>  |  |  | 
+Row 25:  |  |  | 2 | Selected "Wired network" Feature <NL>  |  <NL>  |  |  | 
+Row 26:  |  |  | 3 | Enter "test1" for "Name" and click the "Next" button. <NL>  |  <NL>  |  |  | 
+Row 27:  |  |  | 4 | Set "Remember credentials at each logon" settings to "Enable" and "Next" <NL>  |  <NL>  |  |  | 
+Row 28:  |  |  | 5 | Set the 'Scope tags' - 'Assignments' - 'applicability Rules' and save the profile. |  <NL>  |  |  | 
+Row 29:  |  |  | 6 | Open the profile. |  <NL>  |  |  | 
+Row 30:  |  |  | 7 | Verify that no UX issue with the profile. |  <NL>  |  |  | 
+Row 31:  |  |  | 8 | Edit the profile. |  <NL>  |  |  | 
+Row 32:  |  |  | 9 | Change the "Remember credentials at each logon" setting to "Disable" and save the profile.  |  <NL>  |  |  | 
+Row 33:  |  |  | 10 | Verify that the profile is what you set. <NL>  |  <NL>  |  |  | 
+Row 34:  |  |  | 11 | Change the 'Authentication Mode" settings to "Not configured" and save the profile.  <NL>  |  <NL>  |  |  | 
+Row 35:  |  |  | 12 | Verify that the profile is what you set. <NL>  |  <NL>  |  |  | 
+Row 36: 26297647 | Test Case | [Shanghai Vendor][DC][Wired network] [UX validation] Authentication period. |  |  |  | Intune\Mgmt\Device Configuration\DCv1 | Alan Wang (Centific Technologies Inc) <v-wanyin@microsoft.com> | Design
+Row 37: 8758651 | Shared Steps |  | 1 | Navigate to Create Profile blade on Intune Device Configuration |  |  |  | 
+Row 38:  |  |  | 1.1 | Login to  MEM admin center with your admin account: <NL> DF: https://aka.ms/intunedf <NL> SH: https://aka.ms/IntuneSH <NL> Canary: https://aka.ms/IntuneCanary <NL> PE: https://aka.ms/intune <NL> Fairfax: https://aka.ms/intuneFF <NL> Mooncake: https://aka.ms/intuneMC |  <NL>  |  |  | 
+Row 39:  |  |  | 1.2 | Click the "Device" in the left list column <NL>  |  <NL>  |  |  | 
+Row 40:  |  |  | 1.3 | Click the "configuration profile" feature in "Device" <NL>  |  <NL>  |  |  | 
+Row 41:  |  |  | 1.4 | Click "Create profile", and select Platform : "Windows 10 and later" <NL>  |  <NL>  |  |  | 
+Row 42:  |  |  | 2 | Selected "Wired network" Feature <NL>  |  <NL>  |  |  | 
+Row 43:  |  |  | 3 | Enter "test1" for "Name" and click the "Next" button. <NL>  |  <NL>  |  |  | 
+Row 44:  |  |  | 4 | Set "Authentication period" settings to "0" and "Next" | Verify that an error shows 'The value must be between 1 and 3600.' <NL>  |  |  | 
+Row 45:  |  |  | 5 | Change the value to '3601' for "Authentication period " setting. <NL>  | Verify the error still there. <NL>  |  |  | 
+Row 46:  |  |  | 6 | Change the value to '1' for "Authentication period " setting. <NL>  | Verify that the error is gone. |  |  | 
+Row 47:  |  |  | 7 | Set the 'Scope tags' - 'Assignments' - 'applicability Rules' and save the profile. |  <NL>  |  |  | 
+Row 48:  |  |  | 8 | Open the profile. |  <NL>  |  |  | 
+Row 49:  |  |  | 9 | Verify that no UX issue with the profile. |  <NL>  |  |  | 
+Row 50:  |  |  | 10 | Edit the profile. |  <NL>  |  |  | 
+Row 51:  |  |  | 11 | Clear the value for "Authentication period" setting and save the profile.  |  <NL>  |  |  | 
+Row 52:  |  |  | 12 | Verify that the profile is what you set. <NL>  |  <NL>  |  |  | 
+Row 53: 26297696 | Test Case | [Shanghai Vendor][DC][Wired network] [UX validation] Authentication retry delay period。 |  |  |  | Intune\Mgmt\Device Configuration\DCv1 | Alan Wang (Centific Technologies Inc) <v-wanyin@microsoft.com> | Design
+Row 54: 8758651 | Shared Steps |  | 1 | Navigate to Create Profile blade on Intune Device Configuration |  |  |  | 
+Row 55:  |  |  | 1.1 | Login to  MEM admin center with your admin account: <NL> DF: https://aka.ms/intunedf <NL> SH: https://aka.ms/IntuneSH <NL> Canary: https://aka.ms/IntuneCanary <NL> PE: https://aka.ms/intune <NL> Fairfax: https://aka.ms/intuneFF <NL> Mooncake: https://aka.ms/intuneMC |  <NL>  |  |  | 
+Row 56:  |  |  | 1.2 | Click the "Device" in the left list column <NL>  |  <NL>  |  |  | 
+Row 57:  |  |  | 1.3 | Click the "configuration profile" feature in "Device" <NL>  |  <NL>  |  |  | 
+Row 58:  |  |  | 1.4 | Click "Create profile", and select Platform : "Windows 10 and later" <NL>  |  <NL>  |  |  | 
+Row 59:  |  |  | 2 | Selected "Wired network" Feature <NL>  |  <NL>  |  |  | 
+Row 60:  |  |  | 3 | Enter "test1" for "Name" and click the "Next" button. <NL>  |  <NL>  |  |  | 
+Row 61:  |  |  | 4 | Set "Authentication retry delay period " setting to "0" and "Next" |  <NL>  |  |  | 
+Row 62:  |  |  | 5 | Verify an error shows 'The value must be between 1 and 3600.' |  <NL>  |  |  | 
+Row 63:  |  |  | 6 | Change the value to '3601' for "Authentication retry delay period " setting. |  <NL>  |  |  | 
+Row 64:  |  |  | 7 | Verify the error still there. |  <NL>  |  |  | 
+Row 65:  |  |  | 8 | Change the value to '1' for "Authentication retry delay period " setting. <NL>  |  <NL>  |  |  | 
+Row 66:  |  |  | 9 | Verify that no error shows. |  <NL>  |  |  | 
+Row 67:  |  |  | 10 | Set the 'Scope tags' - 'Assignments' - 'applicability Rules' and save the profile. |  <NL>  |  |  | 
+Row 68:  |  |  | 11 | Open the profile. |  <NL>  |  |  | 
+Row 69:  |  |  | 12 | Verify that no UX issue with the profile. |  <NL>  |  |  | 
+Row 70:  |  |  | 13 | Edit the profile. |  <NL>  |  |  | 
+Row 71:  |  |  | 14 | Clear the value for "Authentication retry delay period" setting and save the profile.  |  <NL>  |  |  | 
+Row 72:  |  |  | 15 | Verify that the profile is what you set. <NL>  |  <NL>  |  |  | 
+Row 73: 26297725 | Test Case | [Shanghai Vendor][DC][Wired network] [UX validation] Start period. |  |  |  | Intune\Mgmt\Device Configuration\DCv1 | Alan Wang (Centific Technologies Inc) <v-wanyin@microsoft.com> | Design
+Row 74: 8758651 | Shared Steps |  | 1 | Navigate to Create Profile blade on Intune Device Configuration |  |  |  | 
+Row 75:  |  |  | 1.1 | Login to  MEM admin center with your admin account: <NL> DF: https://aka.ms/intunedf <NL> SH: https://aka.ms/IntuneSH <NL> Canary: https://aka.ms/IntuneCanary <NL> PE: https://aka.ms/intune <NL> Fairfax: https://aka.ms/intuneFF <NL> Mooncake: https://aka.ms/intuneMC |  <NL>  |  |  | 
+Row 76:  |  |  | 1.2 | Click the "Device" in the left list column <NL>  |  <NL>  |  |  | 
+Row 77:  |  |  | 1.3 | Click the "configuration profile" feature in "Device" <NL>  |  <NL>  |  |  | 
+Row 78:  |  |  | 1.4 | Click "Create profile", and select Platform : "Windows 10 and later" <NL>  |  <NL>  |  |  | 
+Row 79:  |  |  | 2 | Selected "Wired network" Feature <NL>  |  <NL>  |  |  | 
+Row 80:  |  |  | 3 | Enter "test1" for "Name" and click the "Next" button. <NL>  |  <NL>  |  |  | 
+Row 81:  |  |  | 4 | Set "Start period" settings to "0" and "Next" | Verify that an error shows 'The value must be between 1 and 3600.' <NL>  |  |  | 
+Row 82:  |  |  | 5 | Change the value to '3601' for "Start period " setting. <NL>  | Verify the error still there. <NL>  |  |  | 
+Row 83:  |  |  | 6 | Change the value to '1' for "Start period " setting. <NL>  | Verify that the error is gone. |  |  | 
+Row 84:  |  |  | 7 | Set the 'Scope tags' - 'Assignments' - 'applicability Rules' and save the profile. |  <NL>  |  |  | 
+Row 85:  |  |  | 8 | Open the profile. |  <NL>  |  |  | 
+Row 86:  |  |  | 9 | Verify that no UX issue with the profile. |  <NL>  |  |  | 
+Row 87:  |  |  | 10 | Edit the profile. |  <NL>  |  |  | 
+Row 88:  |  |  | 11 | Clear the value for "Start period" setting and save the profile.  |  <NL>  |  |  | 
+Row 89:  |  |  | 12 | Verify that the profile is what you set. <NL>  |  <NL>  |  |  | 
+Row 90: 26297741 | Test Case | [Shanghai Vendor][DC][Wired network] [UX validation] Maximum EAPOL-start. |  |  |  | Intune\Mgmt\Device Configuration\DCv1 | Alan Wang (Centific Technologies Inc) <v-wanyin@microsoft.com> | Design
+Row 91: 8758651 | Shared Steps |  | 1 | Navigate to Create Profile blade on Intune Device Configuration |  |  |  | 
+Row 92:  |  |  | 1.1 | Login to  MEM admin center with your admin account: <NL> DF: https://aka.ms/intunedf <NL> SH: https://aka.ms/IntuneSH <NL> Canary: https://aka.ms/IntuneCanary <NL> PE: https://aka.ms/intune <NL> Fairfax: https://aka.ms/intuneFF <NL> Mooncake: https://aka.ms/intuneMC |  <NL>  |  |  | 
+Row 93:  |  |  | 1.2 | Click the "Device" in the left list column <NL>  |  <NL>  |  |  | 
+Row 94:  |  |  | 1.3 | Click the "configuration profile" feature in "Device" <NL>  |  <NL>  |  |  | 
+Row 95:  |  |  | 1.4 | Click "Create profile", and select Platform : "Windows 10 and later" <NL>  |  <NL>  |  |  | 
+Row 96:  |  |  | 2 | Selected "Wired network" Feature <NL>  |  <NL>  |  |  | 
+Row 97:  |  |  | 3 | Enter "test1" for "Name" and click the "Next" button. <NL>  |  <NL>  |  |  | 
+Row 98:  |  |  | 4 | Set "Maximum EAPOL-start" settings to "0" and "Next" | Verify that an error shows 'The value must be between 1 and 100.' |  |  | 
+Row 99:  |  |  | 5 | Change the value to '101' for "Maximum EAPOL-start " setting. <NL>  | Verify the error still there. <NL>  |  |  | 
+Row 100:  |  |  | 6 | Change the value to '1' for "Maximum EAPOL-start " setting. <NL>  | Verify that the error is gone. |  |  | 
+Row 101:  |  |  | 7 | Set the 'Scope tags' - 'Assignments' - 'applicability Rules' and save the profile. |  <NL>  |  |  | 
+Row 102:  |  |  | 8 | Open the profile. |  <NL>  |  |  | 
+Row 103:  |  |  | 9 | Verify that no UX issue with the profile. |  <NL>  |  |  | 
+Row 104:  |  |  | 10 | Edit the profile. |  <NL>  |  |  | 
+Row 105:  |  |  | 11 | Clear the value for "Maximum EAPOL-start" setting and save the profile.  |  <NL>  |  |  | 
+Row 106:  |  |  | 12 | Verify that the profile is what you set. <NL>  |  <NL>  |  |  | 
+Row 107: 26297757 | Test Case | [Shanghai Vendor][DC][Wired network] [UX validation] Maximum authentication failures. |  |  |  | Intune\Mgmt\Device Configuration\DCv1 | Alan Wang (Centific Technologies Inc) <v-wanyin@microsoft.com> | Design
+Row 108: 8758651 | Shared Steps |  | 1 | Navigate to Create Profile blade on Intune Device Configuration |  |  |  | 
+Row 109:  |  |  | 1.1 | Login to  MEM admin center with your admin account: <NL> DF: https://aka.ms/intunedf <NL> SH: https://aka.ms/IntuneSH <NL> Canary: https://aka.ms/IntuneCanary <NL> PE: https://aka.ms/intune <NL> Fairfax: https://aka.ms/intuneFF <NL> Mooncake: https://aka.ms/intuneMC |  <NL>  |  |  | 
+Row 110:  |  |  | 1.2 | Click the "Device" in the left list column <NL>  |  <NL>  |  |  | 
+Row 111:  |  |  | 1.3 | Click the "configuration profile" feature in "Device" <NL>  |  <NL>  |  |  | 
+Row 112:  |  |  | 1.4 | Click "Create profile", and select Platform : "Windows 10 and later" <NL>  |  <NL>  |  |  | 
+Row 113:  |  |  | 2 | Selected "Wired network" Feature <NL>  |  <NL>  |  |  | 
+Row 114:  |  |  | 3 | Enter "test1" for "Name" and click the "Next" button. <NL>  |  <NL>  |  |  | 
+Row 115:  |  |  | 4 | Set "Maximum authentication failures" settings to "0" and "Next" | Verify that an error shows 'The value must be between 1 and 100.' |  |  | 
+Row 116:  |  |  | 5 | Change the value to '101' for "Maximum authentication failures" setting. <NL>  | Verify the error still there. <NL>  |  |  | 
+Row 117:  |  |  | 6 | Change the value to '1' for "Maximum authentication failures " setting. <NL>  | Verify that the error is gone. |  |  | 
+Row 118:  |  |  | 7 | Set the 'Scope tags' - 'Assignments' - 'applicability Rules' and save the profile. |  <NL>  |  |  | 
+Row 119:  |  |  | 8 | Open the profile. |  <NL>  |  |  | 
+Row 120:  |  |  | 9 | Verify that no UX issue with the profile. |  <NL>  |  |  | 
+Row 121:  |  |  | 10 | Edit the profile. |  <NL>  |  |  | 
+Row 122:  |  |  | 11 | Clear the value for "Maximum authentication failures" setting and save the profile.  |  <NL>  |  |  | 
+Row 123:  |  |  | 12 | Verify that the profile is what you set. <NL>  |  <NL>  |  |  | 
+Row 124: 26297772 | Test Case | [Shanghai Vendor][DC][Wired network] [UX validation] 802.1x. |  |  |  | Intune\Mgmt\Device Configuration\DCv1 | Alan Wang (Centific Technologies Inc) <v-wanyin@microsoft.com> | Design
+Row 125: 8758651 | Shared Steps |  | 1 | Navigate to Create Profile blade on Intune Device Configuration |  |  |  | 
+Row 126:  |  |  | 1.1 | Login to  MEM admin center with your admin account: <NL> DF: https://aka.ms/intunedf <NL> SH: https://aka.ms/IntuneSH <NL> Canary: https://aka.ms/IntuneCanary <NL> PE: https://aka.ms/intune <NL> Fairfax: https://aka.ms/intuneFF <NL> Mooncake: https://aka.ms/intuneMC |  <NL>  |  |  | 
+Row 127:  |  |  | 1.2 | Click the "Device" in the left list column <NL>  |  <NL>  |  |  | 
+Row 128:  |  |  | 1.3 | Click the "configuration profile" feature in "Device" <NL>  |  <NL>  |  |  | 
+Row 129:  |  |  | 1.4 | Click "Create profile", and select Platform : "Windows 10 and later" <NL>  |  <NL>  |  |  | 
+Row 130:  |  |  | 2 | Selected "Wired network" Feature <NL>  |  <NL>  |  |  | 
+Row 131:  |  |  | 3 | Enter "test1" for "Name" and click the "Next" button. <NL>  |  <NL>  |  |  | 
+Row 132:  |  |  | 4 | Set "802.1x" settings to "Enforce" and "Next" | Notice: When set to "Enforce", internet access will be blocked on the device. |  |  | 
+Row 133:  |  |  | 5 | Set the 'Scope tags' - 'Assignments' - 'applicability Rules' and save the profile. |  <NL>  |  |  | 
+Row 134:  |  |  | 6 | Open the profile. |  <NL>  |  |  | 
+Row 135:  |  |  | 7 | Verify that no UX issue with the profile. |  <NL>  |  |  | 
+Row 136:  |  |  | 8 | Edit the profile. |  <NL>  |  |  | 
+Row 137:  |  |  | 9 | Change the "802.1x" setting to 'Do not enforce' and save the profile.  |  <NL>  |  |  | 
+Row 138:  |  |  | 10 | Verify that the profile is what you set. <NL>  |  <NL>  |  |  | 
+Row 139: 26297791 | Test Case | [Shanghai Vendor][DC][Wired network] [UX validation] Block period (minutes). |  |  |  | Intune\Mgmt\Device Configuration\DCv1 | Alan Wang (Centific Technologies Inc) <v-wanyin@microsoft.com> | Design
+Row 140: 8758651 | Shared Steps |  | 1 | Navigate to Create Profile blade on Intune Device Configuration |  |  |  | 
+Row 141:  |  |  | 1.1 | Login to  MEM admin center with your admin account: <NL> DF: https://aka.ms/intunedf <NL> SH: https://aka.ms/IntuneSH <NL> Canary: https://aka.ms/IntuneCanary <NL> PE: https://aka.ms/intune <NL> Fairfax: https://aka.ms/intuneFF <NL> Mooncake: https://aka.ms/intuneMC |  <NL>  |  |  | 
+Row 142:  |  |  | 1.2 | Click the "Device" in the left list column <NL>  |  <NL>  |  |  | 
+Row 143:  |  |  | 1.3 | Click the "configuration profile" feature in "Device" <NL>  |  <NL>  |  |  | 
+Row 144:  |  |  | 1.4 | Click "Create profile", and select Platform : "Windows 10 and later" <NL>  |  <NL>  |  |  | 
+Row 145:  |  |  | 2 | Selected "Wired network" Feature <NL>  |  <NL>  |  |  | 
+Row 146:  |  |  | 3 | Enter "test1" for "Name" and click the "Next" button. <NL>  |  <NL>  |  |  | 
+Row 147:  |  |  | 4 | Set "Block period (minutes)." settings to "-1" and "Next" | Verify that an error shows 'The value must be between 0 and 1440.' |  |  | 
+Row 148:  |  |  | 5 | Change the value to '1441' for "Block period (minutes)" setting. <NL>  | Verify the error still there. <NL>  |  |  | 
+Row 149:  |  |  | 6 | Change the value to '100' for "Block period (minutes) " setting. <NL>  | Verify that the error is gone. |  |  | 
+Row 150:  |  |  | 7 | Set the 'Scope tags' - 'Assignments' - 'applicability Rules' and save the profile. |  <NL>  |  |  | 
+Row 151:  |  |  | 8 | Open the profile. |  <NL>  |  |  | 
+Row 152:  |  |  | 9 | Verify that no UX issue with the profile. |  <NL>  |  |  | 
+Row 153:  |  |  | 10 | Edit the profile. |  <NL>  |  |  | 
+Row 154:  |  |  | 11 | Clear the value for "Block period (minutes)" setting and save the profile.  |  <NL>  |  |  | 
+Row 155:  |  |  | 12 | Verify that the profile is what you set. <NL>  |  <NL>  |  |  | 
+Row 156: 26297820 | Test Case | [Shanghai Vendor][DC][Wired network] [UX validation] EAP type. |  |  |  | Intune\Mgmt\Device Configuration\DCv1 | Alan Wang (Centific Technologies Inc) <v-wanyin@microsoft.com> | Design
+Row 157: 8758651 | Shared Steps |  | 1 | Navigate to Create Profile blade on Intune Device Configuration |  |  |  | 
+Row 158:  |  |  | 1.1 | Login to  MEM admin center with your admin account: <NL> DF: https://aka.ms/intunedf <NL> SH: https://aka.ms/IntuneSH <NL> Canary: https://aka.ms/IntuneCanary <NL> PE: https://aka.ms/intune <NL> Fairfax: https://aka.ms/intuneFF <NL> Mooncake: https://aka.ms/intuneMC |  <NL>  |  |  | 
+Row 159:  |  |  | 1.2 | Click the "Device" in the left list column <NL>  |  <NL>  |  |  | 
+Row 160:  |  |  | 1.3 | Click the "configuration profile" feature in "Device" <NL>  |  <NL>  |  |  | 
+Row 161:  |  |  | 1.4 | Click "Create profile", and select Platform : "Windows 10 and later" <NL>  |  <NL>  |  |  | 
+Row 162:  |  |  | 2 | Selected "Wired network" Feature <NL>  |  <NL>  |  |  | 
+Row 163:  |  |  | 3 | Enter "test1" for "Name" and click the "Next" button. <NL>  |  <NL>  |  |  | 
+Row 164:  |  |  | 4 | Set "EAP type" settings to "EAP - SIM" and "Next" <NL>  |  <NL>  |  |  | 
+Row 165:  |  |  | 5 | Set the 'Scope tags' - 'Assignments' - 'applicability Rules' and save the profile. |  <NL>  |  |  | 
+Row 166:  |  |  | 6 | Open the profile. |  <NL>  |  |  | 
+Row 167:  |  |  | 7 | Verify that no UX issue with the profile. |  <NL>  |  |  | 
+Row 168:  |  |  | 8 | Notice: When set "EAP type" to "EAP - TLS"/"EAP - TTLS"/"Protected EAP (PEAP)"/"Tunnel EAP (TEAP)", some certificates will be required, the profile cannot be saved successfully. |  <NL>  |  |  | 

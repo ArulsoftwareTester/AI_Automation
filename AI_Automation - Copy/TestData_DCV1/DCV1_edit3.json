@@ -1,0 +1,73 @@
+{
+    "testCases":  [
+                      {
+                          "testCaseId":  "TC_8797693",
+                          "testName":  "SharedMultiUserDevice_AccountManagement (Edit3 - Step 11)",
+                          "description":  "Shared Multi-user Device - Account management - Change to Not Configured (Edit3)",
+                          "category":  "Shared Multi-user Device",
+                          "priority":  "High",
+                          "enabled":  true,
+                          "parameters":  {
+                                             "firstLink":  "Devices",
+                                             "secondLink":  "Configuration",
+                                             "secBaselineName":  "Shared multi-user device",
+                                             "configurationSettings":  "",
+                                             "parentDropDown":  "Account management",
+                                             "parentDropDownOption":  "Not configured",
+                                             "Textvalue":  "",
+                                             "childDropDown":  "",
+                                             "childDropDownOption":  "",
+                                             "parentSectionPath":  "",
+                                             "childSectionPath":  "",
+                                             "searchTerm":  "EnableAccountManager",
+                                             "expectedValue":  ""
+                                         }
+                      },
+                      {
+                          "testCaseId":  "TC_8926108",
+                          "testName":  "Endpoint Protection_LocalDeviceSecurityOptions_UserAccountControl: Elevation prompt for admins (Edit3 - Step 13)",
+                          "description":  "Endpoint Protection - Local devices security options - User Account Control - Elevation prompt for admins - Change to Prompt for consent for non-Windows binaries (Edit3)",
+                          "category":  "Endpoint Protection",
+                          "priority":  "High",
+                          "enabled":  true,
+                          "parameters":  {
+                                             "firstLink":  "Devices",
+                                             "secondLink":  "Configuration",
+                                             "secBaselineName":  "Endpoint protection",
+                                             "configurationSettings":  "Local device security options",
+                                             "parentDropDown":  "User Account Control",
+                                             "parentDropDownOption":  "",
+                                             "Textvalue":  "",
+                                             "childDropDown":  "Elevation prompt for admins",
+                                             "childDropDownOption":  "Prompt for consent for non-Windows binaries",
+                                             "parentSectionPath":  "",
+                                             "childSectionPath":  "",
+                                             "searchTerm":  "UserAccountControl_BehaviorOfTheElevationPromptForAdministrators",
+                                             "expectedValue":  "5"
+                                         }
+                      },
+                      {
+                          "testCaseId":  "TC_8933850",
+                          "testName":  "Endpoint Protection_LocalDeviceSecurityOptions_NetworkAccessAndSecurity: LAN Manager Authentication Level (Edit3 - Step 13)",
+                          "description":  "Endpoint Protection - Local devices security options - Network access and security - LAN Manager Authentication Level - Change to NTLMv2 and not LM or NTLM (Edit3)",
+                          "category":  "Endpoint Protection",
+                          "priority":  "High",
+                          "enabled":  true,
+                          "parameters":  {
+                                             "firstLink":  "Devices",
+                                             "secondLink":  "Configuration",
+                                             "secBaselineName":  "Endpoint protection",
+                                             "configurationSettings":  "Local device security options",
+                                             "parentDropDown":  "Network access and security",
+                                             "parentDropDownOption":  "",
+                                             "Textvalue":  "",
+                                             "childDropDown":  "LAN Manager Authentication Level",
+                                             "childDropDownOption":  "NTLMv2 and not LM or NTLM",
+                                             "parentSectionPath":  "",
+                                             "childSectionPath":  "",
+                                             "searchTerm":  "NetworkSecurity_LANManagerAuthenticationLevel",
+                                             "expectedValue":  "5"
+                                         }
+                      }
+                    ]
+                }

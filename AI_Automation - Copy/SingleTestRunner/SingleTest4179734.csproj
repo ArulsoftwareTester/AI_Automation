@@ -1,0 +1,27 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <IsPackable>false</IsPackable>
+    <IsTestProject>true</IsTestProject>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.6.0" />
+    <PackageReference Include="NUnit" Version="3.13.3" />
+    <PackageReference Include="NUnit3TestAdapter" Version="4.2.1" />
+    <PackageReference Include="NUnit.Analyzers" Version="3.6.1" />
+    <PackageReference Include="coverlet.collector" Version="6.0.0" />
+    <PackageReference Include="Microsoft.Playwright.NUnit" Version="1.40.0" />
+    <PackageReference Include="ExtentReports" Version="4.1.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Include="..\IntuneCanaryTests\App_Regression\App_Signoff_Test\WinClassicApp_Regression_Test_Pass_C\4179734_Ibiza_Win10_UI_AppInfo_WinClassicApp_IntuneWin_Verify correct Name is populated_from Detection xml.cs" Link="Test4179734.cs" />
+    <Compile Include="..\IntuneCanaryTests\ExtentReportHelper.cs" Link="ExtentReportHelper.cs" />
+    <Compile Include="..\IntuneCanaryTests\TestInitialize.cs" Link="TestInitialize.cs" />
+  </ItemGroup>
+
+</Project>

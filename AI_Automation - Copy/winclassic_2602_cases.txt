@@ -1,0 +1,36 @@
+﻿3045446|[IntuneSA]:[Win10]:[E2E][Create]:[WinClassicApp]:[Required]:[AllUserGroup]:[IntuneWin]:Verify Install is success for all Windows Users in group
+3045455|[IntuneSA]:[Win10]:[E2E][Create]:[WinClassicApp]:[Required]:[UserGroup]:[IntuneWin]:Verify Install is success for all Windows Users in group
+4179738|[IntuneSA]:[Win10]:[E2E][Create]:[WinClassicApp]:[Available]:[AllUserGroup]:[IntuneWin]:Verify Install is success for all Windows Users in group
+4179739|[IntuneSA]:[Win10]:[E2E][Create]:[WinClassicApp]:[Available]:[UserGroup]:[IntuneWin]:Verify Install is success for all Windows Users in group
+4179740|[IntuneSA]:[Win10]:[E2E][Create]:[WinClassicApp]:[Available]:[AllDeviceGroup]:[IntuneWin]:Verify All Devices is a selection in the UI in 2211+
+4179741|[IntuneSA]:[Win10]:[E2E][Create]:[WinClassicApp]:[Available]:[DeviceGroup]:[IntuneWin]:Verify App does not show in IWPortal/CP for all Windows devices in group
+4179742|[IntuneSA]:[Win10]:[E2E][Create]:[WinClassicApp]:[Required]:[AllUserGroup]:[IntuneWin]:Verify Install is success for all Windows Users in group
+4179743|[IntuneSA]:[Win10]:[E2E][Create]:[WinClassicApp]:[Required]:[UserGroup]:[IntuneWin]:Verify Install is success for all Windows Users in group
+4179745|[IntuneSA]:[Win10]:[E2E][Create]:[WinClassicApp]:[Required]:[DeviceGroup]:[IntuneWin]:Verify App does not show in IWPortal/CP for all Windows devices in group
+4179754|[IntuneSA]:[Win10]:[E2E][Delete]:[WinClassicApp]:[IntuneWin]:Verify deletion success
+4180340|[IntuneSA]:[Windows][Win10]:[DependentApp]:[WinClassicApp]:[Available][UserGroup]: A -> B, both applicable to client, deploy A to user
+4180341|[IntuneSA]:[Windows][Win10]:[DependentApp]:[WinClassicApp]:[Required][DeviceGroup]:A -> B. A is deployed, B is installed then A. Then dependency is changed to A -> C. At global re-eval, C is installed
+4180343|[IntuneSA]:[Windows][Win10]:[DependentApp]:[WinClassicApp]:[Required][UserGroup]: Dependency Loop
+4180345|[IntuneSA]:[Windows][Win10]:[DependentApp][Dependencies]:[WinClassicApp]: Create an application with 2 different Win32 app types as dependent apps A -> B (EXE), A -> C (MSI)
+4180346|[IntuneSA]:[Windows][Win10]:[DependentApp][Dependencies][E2E][AutoInstall]:[WinClassicApp]:[Required][UserGroup]: A -> B (AutoInst no). If AppB is not present, App A's installation should fail.
+4180347|[IntuneSA]:[Windows][Win10]:[DependentApp][Dependencies][E2E][AutoInstall]:[WinClassicApp]:[Required][UserGroup]: A->B (AutoInst no), A->C (AutoInst yes) and A->D (AutoInst no) A->E (AutoInst yes). B,D already installed. A deployed,  C, E then A installed
+4180358|[IntuneSA]:[Windows][Win10]:[DependentApp][Dependencies][E2E]:[WinClassicApp]:[Required][UserGroup]:A->B, B->C. C not applicable. When A is deployed, A B not installed (req-not-met). Update C to v2 now applicable. At GRS, Cv2, Bv1 and Av1 installed
+4180360|[IntuneSA]:[Windows][Win10]:[DependentApp][Dependencies][E2E]:[WinClassicApp]:[Required][UserGroup]: A -> B. A is already installed but not B. When A is deployed, B should be installed but A should not be attempted
+4180361|[IntuneSA]:[Windows][Win10]:[DependentApp][Dependencies][E2E]:[WinClassicApp]:[Required][UserGroup]: A -> B. B then A is installed. B is updated to v2. At global re-eval, Bv2 is installed.
+4180362|[IntuneSA]:[Windows][Win10]:[DependentApp][Dependencies][E2E]:[WinClassicApp]:[Required][UserGroup]: A -> B. When A is deployed B should be installed first. If B fails, A should not be attempted
+4180363|[IntuneSA]:[Windows][Win10]:[DependentApp][Dependencies][E2E]:[WinClassicApp]:[Required][UserGroup]: A -> B. When A is deployed, B  then A is installed. A is updated to v2. At global re-eval, A v2 is installed
+4185879|[IntuneSA]:[Windows][Win10]:[DependentApp][Dependencies][E2E]:[WinClassicApp]:[Required][UserGroup]: Verify Deployment with Dependency returns Success when both Apps successfully install
+4185880|[IntuneSA]:[Windows][Win10]:[DependentApp][Dependencies][E2E][Conflict]:[WinClassicApp]:[Available][UserGroup]: A -> B, A is deployed Available, B is deployed Uninstall to same group.  If A is installed, Uninstall should be ignored
+4185914|[IntuneSA]:[Windows][Win10]:[DependentApp][UI]:[WinClassicApp]: Can add a dependency
+4185926|[IntuneSA]:[Windows][Win10]:[DependentApp][UI][Delete]:[WinClassicApp]: Can delete a dependency
+4237713|[IntuneSA]:[Windows][Win10]:[DependentApp]:[WinClassicApp]:[Required][DeviceGroup]: A -> B, both applicable to client, deploy A to device group
+4237714|[IntuneSA]:[Windows][Win10]:[DependentApp]:[WinClassicApp]:[Available][UserGroup]:A -> B. A is deployed, B is installed then A. Then dependency is changed to A -> C. At global re-eval, C is installed
+4237715|[IntuneSA]:[Windows][Win10]:[DependentApp][Dependencies][E2E]:[WinClassicApp]:[Available][UserGroup]: A -> B. When A is deployed B should be installed first. If B fails, A should not be attempted
+8195617|[IntuneSA]:[Windows][Win10]:[Supersedence][UI][Delete]:[WinClassicApp]: Can delete a superseded app after removing related relationships
+8195618|[IntuneSA]:[Windows][Win10]:[Supersedence][UI][Delete]:[WinClassicApp]: Can delete a superseding app after removing related relationships
+8195638|[IntuneSA]:[Windows][Win10]:[Supersedence][AppUpdate]:[WinClassicApp]:[Required][UserGroup]: A<<-B; A & B Required; A not present; only B gets installed; Status: A Not Installed, B Installed
+8195641|[IntuneSA]:[Windows][Win10]:[Supersedence][AppUpdate]:[WinClassicApp]:[Required][UserGroup]: A<<-B; A & B Required; A not present, B is present; no action; Status: A Not Installed, B Installed
+8195646|[IntuneSA]:[Windows][Win10]:[Supersedence][AppReplace]:[WinClassicApp]:[Required][UserGroup]: A<<+B; A & B Required; A not present; Install B; Status: A Not Installed, B Installed
+8195647|[IntuneSA]:[Windows][Win10]:[Supersedence][AppReplace]:[WinClassicApp]:[Required][UserGroup]: A<<+B; A & B Required; A is present; A uninstalled, B installed; Status: A Not Installed, B Installed
+9133729|[IntuneSA]:[Win10]:[E2E][Create]:[WinClassicApp]:[Required]:[AllDeviceGroup]:[IntuneWin]:Verify app is Installed for all Windows devices in group
+16135393|[IntuneSA]:[Win10]:[E2E][Create]:[WinClassicApp]:[Required]:[DeviceGroup]:[IntuneWin]: Verify Install is success in the next scheduled check-in

@@ -1,0 +1,2950 @@
+﻿{
+    "testCases": [
+        {
+            "testCaseId": "TC_4179911",
+            "testName": "Win32App_Create_UserContext_Delete_Available_AppRemovedFromCompanyPortal",
+            "description": "[IntuneSA]:[Win10]:[E2E][Delete]:[WinClassicApp][UserContext]:[Available][IntuneWin]:[MSI | EXE] Verify deletion causes app to be removed from Company Portal / IWPortal",
+            "category": "WinClassicApp",
+            "priority": "High",
+            "enabled": true,
+            "parameters": {
+                "firstLink": "Apps",
+                "secondLink": "Windows",
+                "AppType": "Windows app (Win32)",
+                "select app package file": "01 Fake MSI.intunewin",
+                "Type of app install file": "MSI",
+                "Name": "TC_4179911_01 Fake MSI.intunewin",
+                "Description": "TC_4179911_01 Fake MSI.intunewin",
+                "Publisher": "AIAuto ddmmyyyymmss",
+                "program parameters": {
+                    "Installation time required (mins)": "5",
+                    "Install behavior.": "User"
+                },
+                "Requirements parameters": {
+                    "check operating system architecture": "No. Allow this app to be installed on all systems.",
+                    "architecture type": "",
+                    "Minimum operating system": "Windows 10 1607"
+                },
+                "Detection rules parameters": {
+                    "Rule type": "MSI",
+                    "Rules format": "Manually configure detection rules"
+                },
+                "Dependencies": "",
+                "Supercedence": "",
+                "Assignments": {
+                    "Required": "",
+                    "Available for enrolled devices": "Add group",
+                    "uninstall": "",
+                    "select groups": "Automation_AI"
+                },
+                "API parameters": {},
+                "Device Validation": {
+                    "pre-requisite on device": "",
+                    "App Installation Validation": "Verify App A should be installed on the device",
+                    "searchTerm": "",
+                    "expectedValue": ""
+                }
+            }
+        },
+        {
+            "testCaseId": "TC_4179912",
+            "testName": "Win32App_Create_UserContext_Script_64bitApp_RunAs32bit_InstalledOn64bitClients",
+            "description": "[IntuneSA][Ibiza]:[Win10]:[E2E]:[WinClassicApp][UserContext]:[IntuneWin]:[MSI] Verify 64 bit app and detection script is set to Run script as 32 bit process on 64 bit clients",
+            "category": "WinClassicApp",
+            "priority": "High",
+            "enabled": true,
+            "parameters": {
+                "firstLink": "Apps",
+                "secondLink": "Windows",
+                "AppType": "Windows app (Win32)",
+                "select app package file": "01 Fake MSI.intunewin",
+                "Type of app install file": "EXE",
+                "Name": "TC_4179912_01 Fake MSI.intunewin",
+                "Description": "TC_4179912_01 Fake MSI.intunewin",
+                "Publisher": "AIAuto ddmmyyyymmss",
+                "program parameters": {
+                    "Installation time required (mins)": "5",
+                    "Install behavior.": "User"
+                },
+                "Requirements parameters": {
+                    "check operating system architecture": "No. Allow this app to be installed on all systems.",
+                    "architecture type": "",
+                    "Minimum operating system": "Windows 10 1607"
+                },
+                "Detection rules parameters": {
+                    "Script file": "detect-script.ps1",
+                    "Run script as 32 bit process on 64 bit clients": "Yes",
+                    "Rules format": "Use a custom detection script",
+                    "Enforce script signature check and run script silently": "No"
+                },
+                "Dependencies": "",
+                "Supercedence": "",
+                "Assignments": {
+                    "Required": "Add group",
+                    "Available for enrolled devices": "",
+                    "uninstall": "",
+                    "select groups": "Automation_AI"
+                },
+                "API parameters": {},
+                "Device Validation": {
+                    "pre-requisite on device": "",
+                    "App Installation Validation": "Verify App A should be installed on the device",
+                    "searchTerm": "",
+                    "expectedValue": ""
+                }
+            }
+        },
+        {
+            "testCaseId": "TC_4179913",
+            "testName": "Win32App_Create_UserContext_Script_32bitApp_RunAs64bit_InstalledOn64bitClients",
+            "description": "[IntuneSA][Ibiza]:[Win10]:[E2E]:[WinClassicApp][UserContext]:[IntuneWin]:[MSI] Verify 32 bit app and detection script is set to Run script as 64 bit process on 64 bit clients",
+            "category": "WinClassicApp",
+            "priority": "High",
+            "enabled": true,
+            "parameters": {
+                "firstLink": "Apps",
+                "secondLink": "Windows",
+                "AppType": "Windows app (Win32)",
+                "select app package file": "01 Fake MSI.intunewin",
+                "Type of app install file": "EXE",
+                "Name": "TC_4179913_01 Fake MSI.intunewin",
+                "Description": "TC_4179913_01 Fake MSI.intunewin",
+                "Publisher": "AIAuto ddmmyyyymmss",
+                "program parameters": {
+                    "Installation time required (mins)": "5",
+                    "Install behavior.": "User"
+                },
+                "Requirements parameters": {
+                    "check operating system architecture": "No. Allow this app to be installed on all systems.",
+                    "architecture type": "",
+                    "Minimum operating system": "Windows 10 1607"
+                },
+                "Detection rules parameters": {
+                    "Script file": "detect-script.ps1",
+                    "Run script as 32 bit process on 64 bit clients": "No",
+                    "Rules format": "Use a custom detection script",
+                    "Enforce script signature check and run script silently": "No"
+                },
+                "Dependencies": "",
+                "Supercedence": "",
+                "Assignments": {
+                    "Required": "Add group",
+                    "Available for enrolled devices": "",
+                    "uninstall": "",
+                    "select groups": "Automation_AI"
+                },
+                "API parameters": {},
+                "Device Validation": {
+                    "pre-requisite on device": "",
+                    "App Installation Validation": "Verify App A should be installed on the device",
+                    "searchTerm": "",
+                    "expectedValue": ""
+                }
+            }
+        },
+        {
+            "testCaseId": "TC_4179918",
+            "testName": "Win32App_Create_UserContext_Script_EnforceSignatureCheck_Yes_UnsignedScriptBlocked",
+            "description": "[IntuneSA][Ibiza]:[Win10]:[E2E][CustomScript]:[WinClassicApp][UserContext]:[IntuneWin]:[MSI][EXE] App with Enforce script signature check = YES will not run unsigned script",
+            "category": "WinClassicApp",
+            "priority": "High",
+            "enabled": true,
+            "parameters": {
+                "firstLink": "Apps",
+                "secondLink": "Windows",
+                "AppType": "Windows app (Win32)",
+                "select app package file": "01 Fake MSI.intunewin",
+                "Type of app install file": "EXE",
+                "Name": "TC_4179918_01 Fake MSI.intunewin",
+                "Description": "TC_4179918_01 Fake MSI.intunewin",
+                "Publisher": "AIAuto ddmmyyyymmss",
+                "program parameters": {
+                    "Installation time required (mins)": "5",
+                    "Install behavior.": "User"
+                },
+                "Requirements parameters": {
+                    "check operating system architecture": "No. Allow this app to be installed on all systems.",
+                    "architecture type": "",
+                    "Minimum operating system": "Windows 10 1607"
+                },
+                "Detection rules parameters": {
+                    "Script file": "detect-script.ps1",
+                    "Run script as 32 bit process on 64 bit clients": "No",
+                    "Rules format": "Use a custom detection script",
+                    "Enforce script signature check and run script silently": "Yes"
+                },
+                "Dependencies": "",
+                "Supercedence": "",
+                "Assignments": {
+                    "Required": "Add group",
+                    "Available for enrolled devices": "",
+                    "uninstall": "",
+                    "select groups": "Automation_AI"
+                },
+                "API parameters": {},
+                "Device Validation": {
+                    "pre-requisite on device": "",
+                    "App Installation Validation": "Verify App A should not be installed on the device",
+                    "searchTerm": "",
+                    "expectedValue": ""
+                }
+            }
+        },
+        {
+            "testCaseId": "TC_4179919",
+            "testName": "Win32App_Create_UserContext_Script_EnforceSignatureCheck_No_UnsignedOrSignedScriptAllowed",
+            "description": "[IntuneSA][Ibiza]:[Win10]:[E2E][CustomScript]:[WinClassicApp][UserContext]:[IntuneWin]:[MSI][EXE] App with Enforce script signature check = NO will run unsigned or signed script",
+            "category": "WinClassicApp",
+            "priority": "High",
+            "enabled": true,
+            "parameters": {
+                "firstLink": "Apps",
+                "secondLink": "Windows",
+                "AppType": "Windows app (Win32)",
+                "select app package file": "01 Fake MSI.intunewin",
+                "Type of app install file": "EXE",
+                "Name": "TC_4179919_01 Fake MSI.intunewin",
+                "Description": "TC_4179919_01 Fake MSI.intunewin",
+                "Publisher": "AIAuto ddmmyyyymmss",
+                "program parameters": {
+                    "Installation time required (mins)": "5",
+                    "Install behavior.": "User"
+                },
+                "Requirements parameters": {
+                    "check operating system architecture": "No. Allow this app to be installed on all systems.",
+                    "architecture type": "",
+                    "Minimum operating system": "Windows 10 1607"
+                },
+                "Detection rules parameters": {
+                    "Script file": "detect-script.ps1",
+                    "Run script as 32 bit process on 64 bit clients": "No",
+                    "Rules format": "Use a custom detection script",
+                    "Enforce script signature check and run script silently": "No"
+                },
+                "Dependencies": "",
+                "Supercedence": "",
+                "Assignments": {
+                    "Required": "Add group",
+                    "Available for enrolled devices": "",
+                    "uninstall": "",
+                    "select groups": "Automation_AI"
+                },
+                "API parameters": {},
+                "Device Validation": {
+                    "pre-requisite on device": "",
+                    "App Installation Validation": "Verify App A should be installed on the device",
+                    "searchTerm": "",
+                    "expectedValue": ""
+                }
+            }
+        },
+        {
+            "testCaseId": "TC_4179920",
+            "testName": "Win32App_Create_UserContext_Script_OutputsNoText_AppInstalled",
+            "description": "[IntuneSA][Ibiza]:[Win10]:[E2E][CustomScript]:[WinClassicApp][UserContext]:[IntuneWin]:[MSI][EXE] App with detection script should install if script outputs no text",
+            "category": "WinClassicApp",
+            "priority": "High",
+            "enabled": true,
+            "parameters": {
+                "firstLink": "Apps",
+                "secondLink": "Windows",
+                "AppType": "Windows app (Win32)",
+                "select app package file": "01 Fake MSI.intunewin",
+                "Type of app install file": "EXE",
+                "Name": "TC_4179920_01 Fake MSI.intunewin",
+                "Description": "TC_4179920_01 Fake MSI.intunewin",
+                "Publisher": "AIAuto ddmmyyyymmss",
+                "program parameters": {
+                    "Installation time required (mins)": "5",
+                    "Install behavior.": "User"
+                },
+                "Requirements parameters": {
+                    "check operating system architecture": "No. Allow this app to be installed on all systems.",
+                    "architecture type": "",
+                    "Minimum operating system": "Windows 10 1607"
+                },
+                "Detection rules parameters": {
+                    "Script file": "detect-script.ps1",
+                    "Run script as 32 bit process on 64 bit clients": "No",
+                    "Rules format": "Use a custom detection script",
+                    "Enforce script signature check and run script silently": "No"
+                },
+                "Dependencies": "",
+                "Supercedence": "",
+                "Assignments": {
+                    "Required": "Add group",
+                    "Available for enrolled devices": "",
+                    "uninstall": "",
+                    "select groups": "Automation_AI"
+                },
+                "API parameters": {},
+                "Device Validation": {
+                    "pre-requisite on device": "",
+                    "App Installation Validation": "Verify App A should be installed on the device",
+                    "searchTerm": "",
+                    "expectedValue": ""
+                }
+            }
+        },
+        {
+            "testCaseId": "TC_4179921",
+            "testName": "Win32App_Create_UserContext_Script_OutputsText_AppNotInstalled",
+            "description": "[IntuneSA][Ibiza]:[Win10]:[E2E][CustomScript]:[WinClassicApp][UserContext]:[IntuneWin]:[MSI][EXE] App with detection script should NOT install if script outputs any text",
+            "category": "WinClassicApp",
+            "priority": "High",
+            "enabled": true,
+            "parameters": {
+                "firstLink": "Apps",
+                "secondLink": "Windows",
+                "AppType": "Windows app (Win32)",
+                "select app package file": "01 Fake MSI.intunewin",
+                "Type of app install file": "EXE",
+                "Name": "TC_4179921_01 Fake MSI.intunewin",
+                "Description": "TC_4179921_01 Fake MSI.intunewin",
+                "Publisher": "AIAuto ddmmyyyymmss",
+                "program parameters": {
+                    "Installation time required (mins)": "5",
+                    "Install behavior.": "User"
+                },
+                "Requirements parameters": {
+                    "check operating system architecture": "No. Allow this app to be installed on all systems.",
+                    "architecture type": "",
+                    "Minimum operating system": "Windows 10 1607"
+                },
+                "Detection rules parameters": {
+                    "Script file": "detect-script.ps1",
+                    "Run script as 32 bit process on 64 bit clients": "No",
+                    "Rules format": "Use a custom detection script",
+                    "Enforce script signature check and run script silently": "No"
+                },
+                "Dependencies": "",
+                "Supercedence": "",
+                "Assignments": {
+                    "Required": "Add group",
+                    "Available for enrolled devices": "",
+                    "uninstall": "",
+                    "select groups": "Automation_AI"
+                },
+                "API parameters": {},
+                "Device Validation": {
+                    "pre-requisite on device": "",
+                    "App Installation Validation": "Verify App A should not be installed on the device",
+                    "searchTerm": "",
+                    "expectedValue": ""
+                }
+            }
+        },
+        {
+            "testCaseId": "TC_4179922",
+            "testName": "Win32App_Create_UserContext_Requirements_MinOS_Honored",
+            "description": "[IntuneSA][Ibiza]:[Win10]:[E2E][Requirements]:[WinClassicApp][UserContext]:[IntuneWin]:[MSI][EXE] Verify MIN OS is honored",
+            "category": "WinClassicApp",
+            "priority": "High",
+            "enabled": true,
+            "parameters": {
+                "firstLink": "Apps",
+                "secondLink": "Windows",
+                "AppType": "Windows app (Win32)",
+                "select app package file": "01 Fake MSI.intunewin",
+                "Type of app install file": "MSI",
+                "Name": "TC_4179922_01 Fake MSI.intunewin",
+                "Description": "TC_4179922_01 Fake MSI.intunewin",
+                "Publisher": "AIAuto ddmmyyyymmss",
+                "program parameters": {
+                    "Installation time required (mins)": "5",
+                    "Install behavior.": "User"
+                },
+                "Requirements parameters": {
+                    "check operating system architecture": "No. Allow this app to be installed on all systems.",
+                    "architecture type": "",
+                    "Minimum operating system": "Windows 10 1607"
+                },
+                "Detection rules parameters": {
+                    "Rule type": "MSI",
+                    "Rules format": "Manually configure detection rules"
+                },
+                "Dependencies": "",
+                "Supercedence": "",
+                "Assignments": {
+                    "Required": "Add group",
+                    "Available for enrolled devices": "",
+                    "uninstall": "",
+                    "select groups": "Automation_AI"
+                },
+                "API parameters": {},
+                "Device Validation": {
+                    "pre-requisite on device": "",
+                    "App Installation Validation": "Verify App A should be installed on the device",
+                    "searchTerm": "",
+                    "expectedValue": ""
+                }
+            }
+        },
+        {
+            "testCaseId": "TC_4179923",
+            "testName": "Win32App_Create_UserContext_Requirements_RunAs32bit_On64bitOS_Honored",
+            "description": "[IntuneSA][Ibiza]:[Win10]:[E2E][Requirements]:[WinClassicApp][UserContext]:[IntuneWin]:[MSI][EXE] Verify run as 32-bit process on 64-bit OS",
+            "category": "WinClassicApp",
+            "priority": "High",
+            "enabled": true,
+            "parameters": {
+                "firstLink": "Apps",
+                "secondLink": "Windows",
+                "AppType": "Windows app (Win32)",
+                "select app package file": "01 Fake MSI.intunewin",
+                "Type of app install file": "MSI",
+                "Name": "TC_4179923_01 Fake MSI.intunewin",
+                "Description": "TC_4179923_01 Fake MSI.intunewin",
+                "Publisher": "AIAuto ddmmyyyymmss",
+                "program parameters": {
+                    "Installation time required (mins)": "5",
+                    "Install behavior.": "User"
+                },
+                "Requirements parameters": {
+                    "check operating system architecture": "No. Allow this app to be installed on all systems.",
+                    "architecture type": "",
+                    "Minimum operating system": "Windows 10 1607"
+                },
+                "Detection rules parameters": {
+                    "Rule type": "MSI",
+                    "Rules format": "Manually configure detection rules"
+                },
+                "Dependencies": "",
+                "Supercedence": "",
+                "Assignments": {
+                    "Required": "Add group",
+                    "Available for enrolled devices": "",
+                    "uninstall": "",
+                    "select groups": "Automation_AI"
+                },
+                "API parameters": {},
+                "Device Validation": {
+                    "pre-requisite on device": "",
+                    "App Installation Validation": "Verify App A should be installed on the device",
+                    "searchTerm": "",
+                    "expectedValue": ""
+                }
+            }
+        },
+        {
+            "testCaseId": "TC_4179924",
+            "testName": "Win32App_Create_UserContext_Requirements_OSArchitecture_Honored",
+            "description": "[IntuneSA][Ibiza]:[Win10]:[E2E][Requirements]:[WinClassicApp][UserContext]:[IntuneWin]:[MSI][EXE] Verify OS Architecture is honored",
+            "category": "WinClassicApp",
+            "priority": "High",
+            "enabled": true,
+            "parameters": {
+                "firstLink": "Apps",
+                "secondLink": "Windows",
+                "AppType": "Windows app (Win32)",
+                "select app package file": "01 Fake MSI.intunewin",
+                "Type of app install file": "MSI",
+                "Name": "TC_4179924_01 Fake MSI.intunewin",
+                "Description": "TC_4179924_01 Fake MSI.intunewin",
+                "Publisher": "AIAuto ddmmyyyymmss",
+                "program parameters": {
+                    "Installation time required (mins)": "5",
+                    "Install behavior.": "User"
+                },
+                "Requirements parameters": {
+                    "check operating system architecture": "Yes. You must specifically select the supported architectures",
+                    "architecture type": "x86, x64, ARM64, ARM32",
+                    "Minimum operating system": "Windows 10 1607"
+                },
+                "Detection rules parameters": {
+                    "Rule type": "MSI",
+                    "Rules format": "Manually configure detection rules"
+                },
+                "Dependencies": "",
+                "Supercedence": "",
+                "Assignments": {
+                    "Required": "Add group",
+                    "Available for enrolled devices": "",
+                    "uninstall": "",
+                    "select groups": "Automation_AI"
+                },
+                "API parameters": {},
+                "Device Validation": {
+                    "pre-requisite on device": "",
+                    "App Installation Validation": "Verify App A should be installed on the device",
+                    "searchTerm": "",
+                    "expectedValue": ""
+                }
+            }
+        },
+        {
+            "testCaseId": "TC_4179925",
+            "testName": "Win32App_Create_UserContext_Requirements_MinDiskSpace_Honored",
+            "description": "[IntuneSA][Ibiza]:[Win10]:[E2E][Requirements]:[WinClassicApp][UserContext]:[IntuneWin]:[MSI][EXE] Verify Min Disk space is honored",
+            "category": "WinClassicApp",
+            "priority": "High",
+            "enabled": true,
+            "parameters": {
+                "firstLink": "Apps",
+                "secondLink": "Windows",
+                "AppType": "Windows app (Win32)",
+                "select app package file": "01 Fake MSI.intunewin",
+                "Type of app install file": "MSI",
+                "Name": "TC_4179925_01 Fake MSI.intunewin",
+                "Description": "TC_4179925_01 Fake MSI.intunewin",
+                "Publisher": "AIAuto ddmmyyyymmss",
+                "program parameters": {
+                    "Installation time required (mins)": "5",
+                    "Install behavior.": "User"
+                },
+                "Requirements parameters": {
+                    "check operating system architecture": "No. Allow this app to be installed on all systems.",
+                    "architecture type": "",
+                    "Minimum operating system": "Windows 10 1607"
+                },
+                "Detection rules parameters": {
+                    "Rule type": "MSI",
+                    "Rules format": "Manually configure detection rules"
+                },
+                "Dependencies": "",
+                "Supercedence": "",
+                "Assignments": {
+                    "Required": "Add group",
+                    "Available for enrolled devices": "",
+                    "uninstall": "",
+                    "select groups": "Automation_AI"
+                },
+                "API parameters": {},
+                "Device Validation": {
+                    "pre-requisite on device": "",
+                    "App Installation Validation": "Verify App A should be installed on the device",
+                    "searchTerm": "",
+                    "expectedValue": ""
+                }
+            }
+        },
+        {
+            "testCaseId": "TC_4179926",
+            "testName": "Win32App_Create_UserContext_Requirements_MinPhysicalMemory_Honored",
+            "description": "[IntuneSA][Ibiza]:[Win10]:[E2E][Requirements]:[WinClassicApp][UserContext]:[IntuneWin]:[MSI][EXE] Verify Min Physical Memory is honored",
+            "category": "WinClassicApp",
+            "priority": "High",
+            "enabled": true,
+            "parameters": {
+                "firstLink": "Apps",
+                "secondLink": "Windows",
+                "AppType": "Windows app (Win32)",
+                "select app package file": "01 Fake MSI.intunewin",
+                "Type of app install file": "MSI",
+                "Name": "TC_4179926_01 Fake MSI.intunewin",
+                "Description": "TC_4179926_01 Fake MSI.intunewin",
+                "Publisher": "AIAuto ddmmyyyymmss",
+                "program parameters": {
+                    "Installation time required (mins)": "5",
+                    "Install behavior.": "User"
+                },
+                "Requirements parameters": {
+                    "check operating system architecture": "No. Allow this app to be installed on all systems.",
+                    "architecture type": "",
+                    "Minimum operating system": "Windows 10 1607"
+                },
+                "Detection rules parameters": {
+                    "Rule type": "MSI",
+                    "Rules format": "Manually configure detection rules"
+                },
+                "Dependencies": "",
+                "Supercedence": "",
+                "Assignments": {
+                    "Required": "Add group",
+                    "Available for enrolled devices": "",
+                    "uninstall": "",
+                    "select groups": "Automation_AI"
+                },
+                "API parameters": {},
+                "Device Validation": {
+                    "pre-requisite on device": "",
+                    "App Installation Validation": "Verify App A should be installed on the device",
+                    "searchTerm": "",
+                    "expectedValue": ""
+                }
+            }
+        },
+        {
+            "testCaseId": "TC_4179927",
+            "testName": "Win32App_Create_UserContext_Requirements_MinCPUCount_Honored",
+            "description": "[IntuneSA][Ibiza]:[Win10]:[E2E][Requirements]:[WinClassicApp][UserContext]:[IntuneWin]:[MSI][EXE] Verify Min Number of CPU\u0027s is honored",
+            "category": "WinClassicApp",
+            "priority": "High",
+            "enabled": true,
+            "parameters": {
+                "firstLink": "Apps",
+                "secondLink": "Windows",
+                "AppType": "Windows app (Win32)",
+                "select app package file": "01 Fake MSI.intunewin",
+                "Type of app install file": "MSI",
+                "Name": "TC_4179927_01 Fake MSI.intunewin",
+                "Description": "TC_4179927_01 Fake MSI.intunewin",
+                "Publisher": "AIAuto ddmmyyyymmss",
+                "program parameters": {
+                    "Installation time required (mins)": "5",
+                    "Install behavior.": "User"
+                },
+                "Requirements parameters": {
+                    "check operating system architecture": "No. Allow this app to be installed on all systems.",
+                    "architecture type": "",
+                    "Minimum operating system": "Windows 10 1607"
+                },
+                "Detection rules parameters": {
+                    "Rule type": "MSI",
+                    "Rules format": "Manually configure detection rules"
+                },
+                "Dependencies": "",
+                "Supercedence": "",
+                "Assignments": {
+                    "Required": "Add group",
+                    "Available for enrolled devices": "",
+                    "uninstall": "",
+                    "select groups": "Automation_AI"
+                },
+                "API parameters": {},
+                "Device Validation": {
+                    "pre-requisite on device": "",
+                    "App Installation Validation": "Verify App A should be installed on the device",
+                    "searchTerm": "",
+                    "expectedValue": ""
+                }
+            }
+        },
+        {
+            "testCaseId": "TC_4179928",
+            "testName": "Win32App_Create_UserContext_Requirements_MinCPUSpeed_Honored",
+            "description": "[IntuneSA][Ibiza]:[Win10]:[E2E][Requirements]:[WinClassicApp][UserContext]:[IntuneWin]:[MSI][EXE] Verify Min CPU Speed is honored",
+            "category": "WinClassicApp",
+            "priority": "High",
+            "enabled": true,
+            "parameters": {
+                "firstLink": "Apps",
+                "secondLink": "Windows",
+                "AppType": "Windows app (Win32)",
+                "select app package file": "01 Fake MSI.intunewin",
+                "Type of app install file": "MSI",
+                "Name": "TC_4179928_01 Fake MSI.intunewin",
+                "Description": "TC_4179928_01 Fake MSI.intunewin",
+                "Publisher": "AIAuto ddmmyyyymmss",
+                "program parameters": {
+                    "Installation time required (mins)": "5",
+                    "Install behavior.": "User"
+                },
+                "Requirements parameters": {
+                    "check operating system architecture": "No. Allow this app to be installed on all systems.",
+                    "architecture type": "",
+                    "Minimum operating system": "Windows 10 1607"
+                },
+                "Detection rules parameters": {
+                    "Rule type": "MSI",
+                    "Rules format": "Manually configure detection rules"
+                },
+                "Dependencies": "",
+                "Supercedence": "",
+                "Assignments": {
+                    "Required": "Add group",
+                    "Available for enrolled devices": "",
+                    "uninstall": "",
+                    "select groups": "Automation_AI"
+                },
+                "API parameters": {},
+                "Device Validation": {
+                    "pre-requisite on device": "",
+                    "App Installation Validation": "Verify App A should be installed on the device",
+                    "searchTerm": "",
+                    "expectedValue": ""
+                }
+            }
+        },
+        {
+            "testCaseId": "TC_4179929",
+            "testName": "Win32App_Create_UserContext_MSI_DetectionRule_ProductCodeNotFound_VersionCheckNo_Installed",
+            "description": "[IntuneSA][Ibiza]:[Win10]:[E2E][DetectionRules][MSICode]:[WinClassicApp][UserContext]:[IntuneWin]:[MSI] Verify app is installed when MSI Product Code is not found and version check is NO",
+            "category": "WinClassicApp",
+            "priority": "High",
+            "enabled": true,
+            "parameters": {
+                "firstLink": "Apps",
+                "secondLink": "Windows",
+                "AppType": "Windows app (Win32)",
+                "select app package file": "01 Fake MSI.intunewin",
+                "Type of app install file": "MSI",
+                "Name": "TC_4179929_01 Fake MSI.intunewin",
+                "Description": "TC_4179929_01 Fake MSI.intunewin",
+                "Publisher": "AIAuto ddmmyyyymmss",
+                "program parameters": {
+                    "Installation time required (mins)": "5",
+                    "Install behavior.": "User"
+                },
+                "Requirements parameters": {
+                    "check operating system architecture": "No. Allow this app to be installed on all systems.",
+                    "architecture type": "",
+                    "Minimum operating system": "Windows 10 1607"
+                },
+                "Detection rules parameters": {
+                    "Rule type": "MSI",
+                    "Rules format": "Manually configure detection rules",
+                    "MSI product version check": "No"
+                },
+                "Dependencies": "",
+                "Supercedence": "",
+                "Assignments": {
+                    "Required": "Add group",
+                    "Available for enrolled devices": "",
+                    "uninstall": "",
+                    "select groups": "Automation_AI"
+                },
+                "API parameters": {},
+                "Device Validation": {
+                    "pre-requisite on device": "",
+                    "App Installation Validation": "Verify App A should be installed on the device",
+                    "searchTerm": "",
+                    "expectedValue": ""
+                }
+            }
+        },
+        {
+            "testCaseId": "TC_4179930",
+            "testName": "Win32App_Create_UserContext_MSI_DetectionRule_ProductCodeFound_VersionCheckNo_NotInstalled",
+            "description": "[IntuneSA][Ibiza]:[Win10]:[E2E][DetectionRules][MSICode]:[WinClassicApp][UserContext]:[IntuneWin]:[MSI] Verify app is NOT installed when MSI Product Code is found and version check is NO",
+            "category": "WinClassicApp",
+            "priority": "High",
+            "enabled": true,
+            "parameters": {
+                "firstLink": "Apps",
+                "secondLink": "Windows",
+                "AppType": "Windows app (Win32)",
+                "select app package file": "01 Fake MSI.intunewin",
+                "Type of app install file": "MSI",
+                "Name": "TC_4179930_01 Fake MSI.intunewin",
+                "Description": "TC_4179930_01 Fake MSI.intunewin",
+                "Publisher": "AIAuto ddmmyyyymmss",
+                "program parameters": {
+                    "Installation time required (mins)": "5",
+                    "Install behavior.": "User"
+                },
+                "Requirements parameters": {
+                    "check operating system architecture": "No. Allow this app to be installed on all systems.",
+                    "architecture type": "",
+                    "Minimum operating system": "Windows 10 1607"
+                },
+                "Detection rules parameters": {
+                    "Rule type": "MSI",
+                    "Rules format": "Manually configure detection rules",
+                    "MSI product version check": "No"
+                },
+                "Dependencies": "",
+                "Supercedence": "",
+                "Assignments": {
+                    "Required": "Add group",
+                    "Available for enrolled devices": "",
+                    "uninstall": "",
+                    "select groups": "Automation_AI"
+                },
+                "API parameters": {},
+                "Device Validation": {
+                    "pre-requisite on device": "",
+                    "App Installation Validation": "Verify App A should not be installed on the device",
+                    "searchTerm": "",
+                    "expectedValue": ""
+                }
+            }
+        },
+        {
+            "testCaseId": "TC_4179931",
+            "testName": "Win32App_Create_UserContext_MSI_DetectionRule_ProductCodeNotFound_VersionCheckYes_Installed",
+            "description": "[IntuneSA][Ibiza]:[Win10]:[E2E][DetectionRules][MSICode][VersionCheck]:[WinClassicApp][UserContext]:[IntuneWin]:[MSI] Verify app is installed when MSI Product Code is not found and version check is YES",
+            "category": "WinClassicApp",
+            "priority": "High",
+            "enabled": true,
+            "parameters": {
+                "firstLink": "Apps",
+                "secondLink": "Windows",
+                "AppType": "Windows app (Win32)",
+                "select app package file": "01 Fake MSI.intunewin",
+                "Type of app install file": "MSI",
+                "Name": "TC_4179931_01 Fake MSI.intunewin",
+                "Description": "TC_4179931_01 Fake MSI.intunewin",
+                "Publisher": "AIAuto ddmmyyyymmss",
+                "program parameters": {
+                    "Installation time required (mins)": "5",
+                    "Install behavior.": "User"
+                },
+                "Requirements parameters": {
+                    "check operating system architecture": "No. Allow this app to be installed on all systems.",
+                    "architecture type": "",
+                    "Minimum operating system": "Windows 10 1607"
+                },
+                "Detection rules parameters": {
+                    "Rule type": "MSI",
+                    "Rules format": "Manually configure detection rules",
+                    "MSI product version check": "Yes"
+                },
+                "Dependencies": "",
+                "Supercedence": "",
+                "Assignments": {
+                    "Required": "Add group",
+                    "Available for enrolled devices": "",
+                    "uninstall": "",
+                    "select groups": "Automation_AI"
+                },
+                "API parameters": {},
+                "Device Validation": {
+                    "pre-requisite on device": "",
+                    "App Installation Validation": "Verify App A should be installed on the device",
+                    "searchTerm": "",
+                    "expectedValue": ""
+                }
+            }
+        },
+        {
+            "testCaseId": "TC_4179934",
+            "testName": "Win32App_Create_UserContext_MSI_DetectionRule_VersionCheck_NotEqualTo_False_Installed",
+            "description": "[IntuneSA][Ibiza]:[Win10]:[E2E][DetectionRules][MSICode][VersionCheck]:[WinClassicApp][UserContext]:[IntuneWin]:[MSI] Verify app is installed when MSI Product Code is found, version check is YES and evaluates \u0027Not Equal to\u0027 to FALSE",
+            "category": "WinClassicApp",
+            "priority": "High",
+            "enabled": true,
+            "parameters": {
+                "firstLink": "Apps",
+                "secondLink": "Windows",
+                "AppType": "Windows app (Win32)",
+                "select app package file": "01 Fake MSI.intunewin",
+                "Type of app install file": "MSI",
+                "Name": "TC_4179934_01 Fake MSI.intunewin",
+                "Description": "TC_4179934_01 Fake MSI.intunewin",
+                "Publisher": "AIAuto ddmmyyyymmss",
+                "program parameters": {
+                    "Installation time required (mins)": "5",
+                    "Install behavior.": "User"
+                },
+                "Requirements parameters": {
+                    "check operating system architecture": "No. Allow this app to be installed on all systems.",
+                    "architecture type": "",
+                    "Minimum operating system": "Windows 10 1607"
+                },
+                "Detection rules parameters": {
+                    "Operator": "Not Equal to",
+                    "Rule type": "MSI",
+                    "Rules format": "Manually configure detection rules",
+                    "MSI product version check": "Yes"
+                },
+                "Dependencies": "",
+                "Supercedence": "",
+                "Assignments": {
+                    "Required": "Add group",
+                    "Available for enrolled devices": "",
+                    "uninstall": "",
+                    "select groups": "Automation_AI"
+                },
+                "API parameters": {},
+                "Device Validation": {
+                    "pre-requisite on device": "",
+                    "App Installation Validation": "Verify App A should be installed on the device",
+                    "searchTerm": "",
+                    "expectedValue": ""
+                }
+            }
+        },
+        {
+            "testCaseId": "TC_4179937",
+            "testName": "Win32App_Create_UserContext_MSI_DetectionRule_VersionCheck_GreaterThanOrEqualTo_True_NotInstalled",
+            "description": "[IntuneSA][Ibiza]:[Win10]:[E2E][DetectionRules][MSICode][VersionCheck]:[WinClassicApp][UserContext]:[IntuneWin]:[MSI] Verify app is NOT installed when MSI Product Code is found, version check is YES and evaluates \u0027Greater than or equal to\u0027 to True",
+            "category": "WinClassicApp",
+            "priority": "High",
+            "enabled": true,
+            "parameters": {
+                "firstLink": "Apps",
+                "secondLink": "Windows",
+                "AppType": "Windows app (Win32)",
+                "select app package file": "01 Fake MSI.intunewin",
+                "Type of app install file": "MSI",
+                "Name": "TC_4179937_01 Fake MSI.intunewin",
+                "Description": "TC_4179937_01 Fake MSI.intunewin",
+                "Publisher": "AIAuto ddmmyyyymmss",
+                "program parameters": {
+                    "Installation time required (mins)": "5",
+                    "Install behavior.": "User"
+                },
+                "Requirements parameters": {
+                    "check operating system architecture": "No. Allow this app to be installed on all systems.",
+                    "architecture type": "",
+                    "Minimum operating system": "Windows 10 1607"
+                },
+                "Detection rules parameters": {
+                    "Operator": "Greater than or equal to",
+                    "Rule type": "MSI",
+                    "Rules format": "Manually configure detection rules",
+                    "MSI product version check": "Yes"
+                },
+                "Dependencies": "",
+                "Supercedence": "",
+                "Assignments": {
+                    "Required": "Add group",
+                    "Available for enrolled devices": "",
+                    "uninstall": "",
+                    "select groups": "Automation_AI"
+                },
+                "API parameters": {},
+                "Device Validation": {
+                    "pre-requisite on device": "",
+                    "App Installation Validation": "Verify App A should not be installed on the device",
+                    "searchTerm": "",
+                    "expectedValue": ""
+                }
+            }
+        },
+        {
+            "testCaseId": "TC_4179940",
+            "testName": "Win32App_Create_UserContext_MSI_DetectionRule_VersionCheck_LessThanOrEqualTo_False_Installed",
+            "description": "[IntuneSA][Ibiza]:[Win10]:[E2E][DetectionRules][MSICode][VersionCheck]:[WinClassicApp][UserContext]:[IntuneWin]:[MSI] Verify app is installed when MSI Product Code is found, version check is YES and evaluates \u0027Less than or equal to\u0027 to FALSE",
+            "category": "WinClassicApp",
+            "priority": "High",
+            "enabled": true,
+            "parameters": {
+                "firstLink": "Apps",
+                "secondLink": "Windows",
+                "AppType": "Windows app (Win32)",
+                "select app package file": "01 Fake MSI.intunewin",
+                "Type of app install file": "MSI",
+                "Name": "TC_4179940_01 Fake MSI.intunewin",
+                "Description": "TC_4179940_01 Fake MSI.intunewin",
+                "Publisher": "AIAuto ddmmyyyymmss",
+                "program parameters": {
+                    "Installation time required (mins)": "5",
+                    "Install behavior.": "User"
+                },
+                "Requirements parameters": {
+                    "check operating system architecture": "No. Allow this app to be installed on all systems.",
+                    "architecture type": "",
+                    "Minimum operating system": "Windows 10 1607"
+                },
+                "Detection rules parameters": {
+                    "Operator": "Less than or equal to",
+                    "Rule type": "MSI",
+                    "Rules format": "Manually configure detection rules",
+                    "MSI product version check": "Yes"
+                },
+                "Dependencies": "",
+                "Supercedence": "",
+                "Assignments": {
+                    "Required": "Add group",
+                    "Available for enrolled devices": "",
+                    "uninstall": "",
+                    "select groups": "Automation_AI"
+                },
+                "API parameters": {},
+                "Device Validation": {
+                    "pre-requisite on device": "",
+                    "App Installation Validation": "Verify App A should be installed on the device",
+                    "searchTerm": "",
+                    "expectedValue": ""
+                }
+            }
+        },
+        {
+            "testCaseId": "TC_4179943",
+            "testName": "Win32App_Create_UserContext_MSI_DetectionRule_VersionCheck_LessThan_True_NotInstalled",
+            "description": "[IntuneSA][Ibiza]:[Win10]:[E2E][DetectionRules][MSICode][VersionCheck]:[WinClassicApp][UserContext]:[IntuneWin]:[MSI] Verify app is NOT installed when MSI Product Code is found, version check is YES and evaluates \u0027Less than\u0027 to True",
+            "category": "WinClassicApp",
+            "priority": "High",
+            "enabled": true,
+            "parameters": {
+                "firstLink": "Apps",
+                "secondLink": "Windows",
+                "AppType": "Windows app (Win32)",
+                "select app package file": "01 Fake MSI.intunewin",
+                "Type of app install file": "MSI",
+                "Name": "TC_4179943_01 Fake MSI.intunewin",
+                "Description": "TC_4179943_01 Fake MSI.intunewin",
+                "Publisher": "AIAuto ddmmyyyymmss",
+                "program parameters": {
+                    "Installation time required (mins)": "5",
+                    "Install behavior.": "User"
+                },
+                "Requirements parameters": {
+                    "check operating system architecture": "No. Allow this app to be installed on all systems.",
+                    "architecture type": "",
+                    "Minimum operating system": "Windows 10 1607"
+                },
+                "Detection rules parameters": {
+                    "Operator": "Less than",
+                    "Rule type": "MSI",
+                    "Rules format": "Manually configure detection rules",
+                    "MSI product version check": "Yes"
+                },
+                "Dependencies": "",
+                "Supercedence": "",
+                "Assignments": {
+                    "Required": "Add group",
+                    "Available for enrolled devices": "",
+                    "uninstall": "",
+                    "select groups": "Automation_AI"
+                },
+                "API parameters": {},
+                "Device Validation": {
+                    "pre-requisite on device": "",
+                    "App Installation Validation": "Verify App A should not be installed on the device",
+                    "searchTerm": "",
+                    "expectedValue": ""
+                }
+            }
+        },
+        {
+            "testCaseId": "TC_4179946",
+            "testName": "Win32App_Create_UserContext_File_DetectionRule_DateModified_Equals_False_Installed",
+            "description": "[IntuneSA][Ibiza]:[Win10]:[E2E][DetectionRules][FileSystem]:[WinClassicApp][UserContext]:[IntuneWin]:[MSI][EXE] Verify app is installed when Date modified (UTC) of File or Folder specified by (Path\\File or Folder) evaluates \u0027Equals\u0027 to FALSE",
+            "category": "WinClassicApp",
+            "priority": "High",
+            "enabled": true,
+            "parameters": {
+                "firstLink": "Apps",
+                "secondLink": "Windows",
+                "AppType": "Windows app (Win32)",
+                "select app package file": "01 Fake MSI.intunewin",
+                "Type of app install file": "EXE",
+                "Name": "TC_4179946_01 Fake MSI.intunewin",
+                "Description": "TC_4179946_01 Fake MSI.intunewin",
+                "Publisher": "AIAuto ddmmyyyymmss",
+                "program parameters": {
+                    "Installation time required (mins)": "5",
+                    "Install behavior.": "User"
+                },
+                "Requirements parameters": {
+                    "check operating system architecture": "No. Allow this app to be installed on all systems.",
+                    "architecture type": "",
+                    "Minimum operating system": "Windows 10 1607"
+                },
+                "Detection rules parameters": {
+                    "Path": "C:\\test",
+                    "File or folder": "test.txt",
+                    "Rules format": "Manually configure detection rules",
+                    "Rule type": "File",
+                    "Operator": "Equals",
+                    "Detection method": "Date modified"
+                },
+                "Dependencies": "",
+                "Supercedence": "",
+                "Assignments": {
+                    "Required": "Add group",
+                    "Available for enrolled devices": "",
+                    "uninstall": "",
+                    "select groups": "Automation_AI"
+                },
+                "API parameters": {},
+                "Device Validation": {
+                    "pre-requisite on device": "",
+                    "App Installation Validation": "Verify App A should be installed on the device",
+                    "searchTerm": "",
+                    "expectedValue": ""
+                }
+            }
+        },
+        {
+            "testCaseId": "TC_4179949",
+            "testName": "Win32App_Create_UserContext_File_DetectionRule_DateModified_NotEqualTo_True_NotInstalled",
+            "description": "[IntuneSA][Ibiza]:[Win10]:[E2E][DetectionRules][FileSystem]:[WinClassicApp][UserContext]:[IntuneWin]:[MSI][EXE] Verify app is NOT installed when Date modified (UTC) of File or Folder specified by (Path\\File or Folder) evaluates \u0027Not Equal to\u0027 to True",
+            "category": "WinClassicApp",
+            "priority": "High",
+            "enabled": true,
+            "parameters": {
+                "firstLink": "Apps",
+                "secondLink": "Windows",
+                "AppType": "Windows app (Win32)",
+                "select app package file": "01 Fake MSI.intunewin",
+                "Type of app install file": "EXE",
+                "Name": "TC_4179949_01 Fake MSI.intunewin",
+                "Description": "TC_4179949_01 Fake MSI.intunewin",
+                "Publisher": "AIAuto ddmmyyyymmss",
+                "program parameters": {
+                    "Installation time required (mins)": "5",
+                    "Install behavior.": "User"
+                },
+                "Requirements parameters": {
+                    "check operating system architecture": "No. Allow this app to be installed on all systems.",
+                    "architecture type": "",
+                    "Minimum operating system": "Windows 10 1607"
+                },
+                "Detection rules parameters": {
+                    "Path": "C:\\test",
+                    "File or folder": "test.txt",
+                    "Rules format": "Manually configure detection rules",
+                    "Rule type": "File",
+                    "Operator": "Not Equal to",
+                    "Detection method": "Date modified"
+                },
+                "Dependencies": "",
+                "Supercedence": "",
+                "Assignments": {
+                    "Required": "Add group",
+                    "Available for enrolled devices": "",
+                    "uninstall": "",
+                    "select groups": "Automation_AI"
+                },
+                "API parameters": {},
+                "Device Validation": {
+                    "pre-requisite on device": "",
+                    "App Installation Validation": "Verify App A should not be installed on the device",
+                    "searchTerm": "",
+                    "expectedValue": ""
+                }
+            }
+        },
+        {
+            "testCaseId": "TC_4179952",
+            "testName": "Win32App_Create_UserContext_File_DetectionRule_DateModified_LessThanOrEqualTo_False_Installed",
+            "description": "[IntuneSA][Ibiza]:[Win10]:[E2E][DetectionRules][FileSystem]:[WinClassicApp][UserContext]:[IntuneWin]:[MSI][EXE] Verify app is installed when Date modified (UTC) of File or Folder specified by (Path\\File or Folder) evaluates \u0027Less than or equal to\u0027 to FALSE",
+            "category": "WinClassicApp",
+            "priority": "High",
+            "enabled": true,
+            "parameters": {
+                "firstLink": "Apps",
+                "secondLink": "Windows",
+                "AppType": "Windows app (Win32)",
+                "select app package file": "01 Fake MSI.intunewin",
+                "Type of app install file": "EXE",
+                "Name": "TC_4179952_01 Fake MSI.intunewin",
+                "Description": "TC_4179952_01 Fake MSI.intunewin",
+                "Publisher": "AIAuto ddmmyyyymmss",
+                "program parameters": {
+                    "Installation time required (mins)": "5",
+                    "Install behavior.": "User"
+                },
+                "Requirements parameters": {
+                    "check operating system architecture": "No. Allow this app to be installed on all systems.",
+                    "architecture type": "",
+                    "Minimum operating system": "Windows 10 1607"
+                },
+                "Detection rules parameters": {
+                    "Path": "C:\\test",
+                    "File or folder": "test.txt",
+                    "Rules format": "Manually configure detection rules",
+                    "Rule type": "File",
+                    "Operator": "Less than or equal to",
+                    "Detection method": "Date modified"
+                },
+                "Dependencies": "",
+                "Supercedence": "",
+                "Assignments": {
+                    "Required": "Add group",
+                    "Available for enrolled devices": "",
+                    "uninstall": "",
+                    "select groups": "Automation_AI"
+                },
+                "API parameters": {},
+                "Device Validation": {
+                    "pre-requisite on device": "",
+                    "App Installation Validation": "Verify App A should be installed on the device",
+                    "searchTerm": "",
+                    "expectedValue": ""
+                }
+            }
+        },
+        {
+            "testCaseId": "TC_4179955",
+            "testName": "Win32App_Create_UserContext_File_DetectionRule_DateCreated_Equals_False_Installed",
+            "description": "[IntuneSA][Ibiza]:[Win10]:[E2E][DetectionRules][FileSystem]:[WinClassicApp][UserContext]:[IntuneWin]:[MSI][EXE] Verify app is installed when Date created (UTC) of File or Folder specified by (Path\\File or Folder) evaluates \u0027Equals\u0027 to FALSE",
+            "category": "WinClassicApp",
+            "priority": "High",
+            "enabled": true,
+            "parameters": {
+                "firstLink": "Apps",
+                "secondLink": "Windows",
+                "AppType": "Windows app (Win32)",
+                "select app package file": "01 Fake MSI.intunewin",
+                "Type of app install file": "EXE",
+                "Name": "TC_4179955_01 Fake MSI.intunewin",
+                "Description": "TC_4179955_01 Fake MSI.intunewin",
+                "Publisher": "AIAuto ddmmyyyymmss",
+                "program parameters": {
+                    "Installation time required (mins)": "5",
+                    "Install behavior.": "User"
+                },
+                "Requirements parameters": {
+                    "check operating system architecture": "No. Allow this app to be installed on all systems.",
+                    "architecture type": "",
+                    "Minimum operating system": "Windows 10 1607"
+                },
+                "Detection rules parameters": {
+                    "Path": "C:\\test",
+                    "File or folder": "test.txt",
+                    "Rules format": "Manually configure detection rules",
+                    "Rule type": "File",
+                    "Operator": "Equals",
+                    "Detection method": "Date created"
+                },
+                "Dependencies": "",
+                "Supercedence": "",
+                "Assignments": {
+                    "Required": "Add group",
+                    "Available for enrolled devices": "",
+                    "uninstall": "",
+                    "select groups": "Automation_AI"
+                },
+                "API parameters": {},
+                "Device Validation": {
+                    "pre-requisite on device": "",
+                    "App Installation Validation": "Verify App A should be installed on the device",
+                    "searchTerm": "",
+                    "expectedValue": ""
+                }
+            }
+        },
+        {
+            "testCaseId": "TC_4179958",
+            "testName": "Win32App_Create_UserContext_File_DetectionRule_DateCreated_NotEqualTo_True_NotInstalled",
+            "description": "[IntuneSA][Ibiza]:[Win10]:[E2E][DetectionRules][FileSystem]:[WinClassicApp][UserContext]:[IntuneWin]:[MSI][EXE] Verify app is NOT installed when Date created (UTC) of File or Folder specified by (Path\\File or Folder) evaluates \u0027Not Equal to\u0027 to True",
+            "category": "WinClassicApp",
+            "priority": "High",
+            "enabled": true,
+            "parameters": {
+                "firstLink": "Apps",
+                "secondLink": "Windows",
+                "AppType": "Windows app (Win32)",
+                "select app package file": "01 Fake MSI.intunewin",
+                "Type of app install file": "EXE",
+                "Name": "TC_4179958_01 Fake MSI.intunewin",
+                "Description": "TC_4179958_01 Fake MSI.intunewin",
+                "Publisher": "AIAuto ddmmyyyymmss",
+                "program parameters": {
+                    "Installation time required (mins)": "5",
+                    "Install behavior.": "User"
+                },
+                "Requirements parameters": {
+                    "check operating system architecture": "No. Allow this app to be installed on all systems.",
+                    "architecture type": "",
+                    "Minimum operating system": "Windows 10 1607"
+                },
+                "Detection rules parameters": {
+                    "Path": "C:\\test",
+                    "File or folder": "test.txt",
+                    "Rules format": "Manually configure detection rules",
+                    "Rule type": "File",
+                    "Operator": "Not Equal to",
+                    "Detection method": "Date created"
+                },
+                "Dependencies": "",
+                "Supercedence": "",
+                "Assignments": {
+                    "Required": "Add group",
+                    "Available for enrolled devices": "",
+                    "uninstall": "",
+                    "select groups": "Automation_AI"
+                },
+                "API parameters": {},
+                "Device Validation": {
+                    "pre-requisite on device": "",
+                    "App Installation Validation": "Verify App A should not be installed on the device",
+                    "searchTerm": "",
+                    "expectedValue": ""
+                }
+            }
+        },
+        {
+            "testCaseId": "TC_4179961",
+            "testName": "Win32App_Create_UserContext_File_DetectionRule_DateCreated_LessThanOrEqualTo_False_Installed",
+            "description": "[IntuneSA][Ibiza]:[Win10]:[E2E][DetectionRules][FileSystem]:[WinClassicApp][UserContext]:[IntuneWin]:[MSI][EXE] Verify app is installed when Date created (UTC) of File or Folder specified by (Path\\File or Folder) evaluates \u0027Less than or equal to\u0027 to FALSE",
+            "category": "WinClassicApp",
+            "priority": "High",
+            "enabled": true,
+            "parameters": {
+                "firstLink": "Apps",
+                "secondLink": "Windows",
+                "AppType": "Windows app (Win32)",
+                "select app package file": "01 Fake MSI.intunewin",
+                "Type of app install file": "EXE",
+                "Name": "TC_4179961_01 Fake MSI.intunewin",
+                "Description": "TC_4179961_01 Fake MSI.intunewin",
+                "Publisher": "AIAuto ddmmyyyymmss",
+                "program parameters": {
+                    "Installation time required (mins)": "5",
+                    "Install behavior.": "User"
+                },
+                "Requirements parameters": {
+                    "check operating system architecture": "No. Allow this app to be installed on all systems.",
+                    "architecture type": "",
+                    "Minimum operating system": "Windows 10 1607"
+                },
+                "Detection rules parameters": {
+                    "Path": "C:\\test",
+                    "File or folder": "test.txt",
+                    "Rules format": "Manually configure detection rules",
+                    "Rule type": "File",
+                    "Operator": "Less than or equal to",
+                    "Detection method": "Date created"
+                },
+                "Dependencies": "",
+                "Supercedence": "",
+                "Assignments": {
+                    "Required": "Add group",
+                    "Available for enrolled devices": "",
+                    "uninstall": "",
+                    "select groups": "Automation_AI"
+                },
+                "API parameters": {},
+                "Device Validation": {
+                    "pre-requisite on device": "",
+                    "App Installation Validation": "Verify App A should be installed on the device",
+                    "searchTerm": "",
+                    "expectedValue": ""
+                }
+            }
+        },
+        {
+            "testCaseId": "TC_4179964",
+            "testName": "Win32App_Create_UserContext_File_DetectionRule_StringVersion_Equals_False_Installed",
+            "description": "[IntuneSA][Ibiza]:[Win10]:[E2E][DetectionRules][FileSystem]:[WinClassicApp][UserContext]:[IntuneWin]:[MSI][EXE] Verify app is installed when String (version) of File or Folder specified by (Path\\File or Folder) evaluates \u0027Equals\u0027 to FALSE",
+            "category": "WinClassicApp",
+            "priority": "High",
+            "enabled": true,
+            "parameters": {
+                "firstLink": "Apps",
+                "secondLink": "Windows",
+                "AppType": "Windows app (Win32)",
+                "select app package file": "01 Fake MSI.intunewin",
+                "Type of app install file": "EXE",
+                "Name": "TC_4179964_01 Fake MSI.intunewin",
+                "Description": "TC_4179964_01 Fake MSI.intunewin",
+                "Publisher": "AIAuto ddmmyyyymmss",
+                "program parameters": {
+                    "Installation time required (mins)": "5",
+                    "Install behavior.": "User"
+                },
+                "Requirements parameters": {
+                    "check operating system architecture": "No. Allow this app to be installed on all systems.",
+                    "architecture type": "",
+                    "Minimum operating system": "Windows 10 1607"
+                },
+                "Detection rules parameters": {
+                    "Path": "C:\\test",
+                    "File or folder": "microsoft.management.services.intunewindowsagent.exe",
+                    "Rules format": "Manually configure detection rules",
+                    "Rule type": "File",
+                    "Operator": "Equals",
+                    "Detection method": "String (version)"
+                },
+                "Dependencies": "",
+                "Supercedence": "",
+                "Assignments": {
+                    "Required": "Add group",
+                    "Available for enrolled devices": "",
+                    "uninstall": "",
+                    "select groups": "Automation_AI"
+                },
+                "API parameters": {},
+                "Device Validation": {
+                    "pre-requisite on device": "",
+                    "App Installation Validation": "Verify App A should be installed on the device",
+                    "searchTerm": "",
+                    "expectedValue": ""
+                }
+            }
+        },
+        {
+            "testCaseId": "TC_4179967",
+            "testName": "Win32App_Create_UserContext_File_DetectionRule_StringVersion_NotEqualTo_True_NotInstalled",
+            "description": "[IntuneSA][Ibiza]:[Win10]:[E2E][DetectionRules][FileSystem]:[WinClassicApp][UserContext]:[IntuneWin]:[MSI][EXE] Verify app is NOT installed when String (version) of File or Folder specified by (Path\\File or Folder) evaluates \u0027Not Equal to\u0027 to True",
+            "category": "WinClassicApp",
+            "priority": "High",
+            "enabled": true,
+            "parameters": {
+                "firstLink": "Apps",
+                "secondLink": "Windows",
+                "AppType": "Windows app (Win32)",
+                "select app package file": "01 Fake MSI.intunewin",
+                "Type of app install file": "EXE",
+                "Name": "TC_4179967_01 Fake MSI.intunewin",
+                "Description": "TC_4179967_01 Fake MSI.intunewin",
+                "Publisher": "AIAuto ddmmyyyymmss",
+                "program parameters": {
+                    "Installation time required (mins)": "5",
+                    "Install behavior.": "User"
+                },
+                "Requirements parameters": {
+                    "check operating system architecture": "No. Allow this app to be installed on all systems.",
+                    "architecture type": "",
+                    "Minimum operating system": "Windows 10 1607"
+                },
+                "Detection rules parameters": {
+                    "Path": "C:\\test",
+                    "File or folder": "microsoft.management.services.intunewindowsagent.exe",
+                    "Rules format": "Manually configure detection rules",
+                    "Rule type": "File",
+                    "Operator": "Not Equal to",
+                    "Detection method": "String (version)"
+                },
+                "Dependencies": "",
+                "Supercedence": "",
+                "Assignments": {
+                    "Required": "Add group",
+                    "Available for enrolled devices": "",
+                    "uninstall": "",
+                    "select groups": "Automation_AI"
+                },
+                "API parameters": {},
+                "Device Validation": {
+                    "pre-requisite on device": "",
+                    "App Installation Validation": "Verify App A should not be installed on the device",
+                    "searchTerm": "",
+                    "expectedValue": ""
+                }
+            }
+        },
+        {
+            "testCaseId": "TC_4179970",
+            "testName": "Win32App_Create_UserContext_File_DetectionRule_StringVersion_GreaterThan_True_NotInstalled",
+            "description": "[IntuneSA][Ibiza]:[Win10]:[E2E][DetectionRules][FileSystem]:[WinClassicApp][UserContext]:[IntuneWin]:[MSI][EXE] Verify app is NOT installed when String (version) of File or Folder specified by (Path\\File or Folder) evaluates \u0027Greater than\u0027 to True",
+            "category": "WinClassicApp",
+            "priority": "High",
+            "enabled": true,
+            "parameters": {
+                "firstLink": "Apps",
+                "secondLink": "Windows",
+                "AppType": "Windows app (Win32)",
+                "select app package file": "01 Fake MSI.intunewin",
+                "Type of app install file": "EXE",
+                "Name": "TC_4179970_01 Fake MSI.intunewin",
+                "Description": "TC_4179970_01 Fake MSI.intunewin",
+                "Publisher": "AIAuto ddmmyyyymmss",
+                "program parameters": {
+                    "Installation time required (mins)": "5",
+                    "Install behavior.": "User"
+                },
+                "Requirements parameters": {
+                    "check operating system architecture": "No. Allow this app to be installed on all systems.",
+                    "architecture type": "",
+                    "Minimum operating system": "Windows 10 1607"
+                },
+                "Detection rules parameters": {
+                    "Path": "C:\\test",
+                    "File or folder": "microsoft.management.services.intunewindowsagent.exe",
+                    "Rules format": "Manually configure detection rules",
+                    "Rule type": "File",
+                    "Operator": "Greater than",
+                    "Detection method": "String (version)"
+                },
+                "Dependencies": "",
+                "Supercedence": "",
+                "Assignments": {
+                    "Required": "Add group",
+                    "Available for enrolled devices": "",
+                    "uninstall": "",
+                    "select groups": "Automation_AI"
+                },
+                "API parameters": {},
+                "Device Validation": {
+                    "pre-requisite on device": "",
+                    "App Installation Validation": "Verify App A should not be installed on the device",
+                    "searchTerm": "",
+                    "expectedValue": ""
+                }
+            }
+        },
+        {
+            "testCaseId": "TC_4179973",
+            "testName": "Win32App_Create_UserContext_File_DetectionRule_StringVersion_LessThan_False_Installed",
+            "description": "[IntuneSA][Ibiza]:[Win10]:[E2E][DetectionRules][FileSystem]:[WinClassicApp][UserContext]:[IntuneWin]:[MSI][EXE] Verify app is installed when String (version) of File or Folder specified by (Path\\File or Folder) evaluates \u0027Less than\u0027 to FALSE",
+            "category": "WinClassicApp",
+            "priority": "High",
+            "enabled": true,
+            "parameters": {
+                "firstLink": "Apps",
+                "secondLink": "Windows",
+                "AppType": "Windows app (Win32)",
+                "select app package file": "01 Fake MSI.intunewin",
+                "Type of app install file": "EXE",
+                "Name": "TC_4179973_01 Fake MSI.intunewin",
+                "Description": "TC_4179973_01 Fake MSI.intunewin",
+                "Publisher": "AIAuto ddmmyyyymmss",
+                "program parameters": {
+                    "Installation time required (mins)": "5",
+                    "Install behavior.": "User"
+                },
+                "Requirements parameters": {
+                    "check operating system architecture": "No. Allow this app to be installed on all systems.",
+                    "architecture type": "",
+                    "Minimum operating system": "Windows 10 1607"
+                },
+                "Detection rules parameters": {
+                    "Path": "C:\\test",
+                    "File or folder": "microsoft.management.services.intunewindowsagent.exe",
+                    "Rules format": "Manually configure detection rules",
+                    "Rule type": "File",
+                    "Operator": "Less than",
+                    "Detection method": "String (version)"
+                },
+                "Dependencies": "",
+                "Supercedence": "",
+                "Assignments": {
+                    "Required": "Add group",
+                    "Available for enrolled devices": "",
+                    "uninstall": "",
+                    "select groups": "Automation_AI"
+                },
+                "API parameters": {},
+                "Device Validation": {
+                    "pre-requisite on device": "",
+                    "App Installation Validation": "Verify App A should be installed on the device",
+                    "searchTerm": "",
+                    "expectedValue": ""
+                }
+            }
+        },
+        {
+            "testCaseId": "TC_4179976",
+            "testName": "Win32App_Create_UserContext_File_DetectionRule_SizeMB_Equals_True_NotInstalled",
+            "description": "[IntuneSA][Ibiza]:[Win10]:[E2E][DetectionRules][FileSystem]:[WinClassicApp][UserContext]:[IntuneWin]:[MSI][EXE] Verify app is NOT installed when Size in MB of File or Folder specified by (Path\\File or Folder) evaluates \u0027Equals\u0027 to True",
+            "category": "WinClassicApp",
+            "priority": "High",
+            "enabled": true,
+            "parameters": {
+                "firstLink": "Apps",
+                "secondLink": "Windows",
+                "AppType": "Windows app (Win32)",
+                "select app package file": "01 Fake MSI.intunewin",
+                "Type of app install file": "EXE",
+                "Name": "TC_4179976_01 Fake MSI.intunewin",
+                "Description": "TC_4179976_01 Fake MSI.intunewin",
+                "Publisher": "AIAuto ddmmyyyymmss",
+                "program parameters": {
+                    "Installation time required (mins)": "5",
+                    "Install behavior.": "User"
+                },
+                "Requirements parameters": {
+                    "check operating system architecture": "No. Allow this app to be installed on all systems.",
+                    "architecture type": "",
+                    "Minimum operating system": "Windows 10 1607"
+                },
+                "Detection rules parameters": {
+                    "Path": "C:\\test",
+                    "File or folder": "test.txt",
+                    "Rules format": "Manually configure detection rules",
+                    "Rule type": "File",
+                    "Operator": "Equals",
+                    "Detection method": "Size in MB"
+                },
+                "Dependencies": "",
+                "Supercedence": "",
+                "Assignments": {
+                    "Required": "Add group",
+                    "Available for enrolled devices": "",
+                    "uninstall": "",
+                    "select groups": "Automation_AI"
+                },
+                "API parameters": {},
+                "Device Validation": {
+                    "pre-requisite on device": "",
+                    "App Installation Validation": "Verify App A should not be installed on the device",
+                    "searchTerm": "",
+                    "expectedValue": ""
+                }
+            }
+        },
+        {
+            "testCaseId": "TC_4179979",
+            "testName": "Win32App_Create_UserContext_File_DetectionRule_SizeMB_GreaterThanOrEqualTo_False_Installed",
+            "description": "[IntuneSA][Ibiza]:[Win10]:[E2E][DetectionRules][FileSystem]:[WinClassicApp][UserContext]:[IntuneWin]:[MSI][EXE] Verify app is installed when Size in MB of File or Folder specified by (Path\\File or Folder) evaluates \u0027Greater than or equal to\u0027 to FALSE",
+            "category": "WinClassicApp",
+            "priority": "High",
+            "enabled": true,
+            "parameters": {
+                "firstLink": "Apps",
+                "secondLink": "Windows",
+                "AppType": "Windows app (Win32)",
+                "select app package file": "01 Fake MSI.intunewin",
+                "Type of app install file": "EXE",
+                "Name": "TC_4179979_01 Fake MSI.intunewin",
+                "Description": "TC_4179979_01 Fake MSI.intunewin",
+                "Publisher": "AIAuto ddmmyyyymmss",
+                "program parameters": {
+                    "Installation time required (mins)": "5",
+                    "Install behavior.": "User"
+                },
+                "Requirements parameters": {
+                    "check operating system architecture": "No. Allow this app to be installed on all systems.",
+                    "architecture type": "",
+                    "Minimum operating system": "Windows 10 1607"
+                },
+                "Detection rules parameters": {
+                    "Path": "C:\\test",
+                    "File or folder": "test.txt",
+                    "Rules format": "Manually configure detection rules",
+                    "Rule type": "File",
+                    "Operator": "Greater than or equal to",
+                    "Detection method": "Size in MB"
+                },
+                "Dependencies": "",
+                "Supercedence": "",
+                "Assignments": {
+                    "Required": "Add group",
+                    "Available for enrolled devices": "",
+                    "uninstall": "",
+                    "select groups": "Automation_AI"
+                },
+                "API parameters": {},
+                "Device Validation": {
+                    "pre-requisite on device": "",
+                    "App Installation Validation": "Verify App A should be installed on the device",
+                    "searchTerm": "",
+                    "expectedValue": ""
+                }
+            }
+        },
+        {
+            "testCaseId": "TC_4179982",
+            "testName": "Win32App_Create_UserContext_File_DetectionRule_SizeMB_GreaterThan_True_NotInstalled",
+            "description": "[IntuneSA][Ibiza]:[Win10]:[E2E][DetectionRules][FileSystem]:[WinClassicApp][UserContext]:[IntuneWin]:[MSI][EXE] Verify app is NOT installed when Size in MB of File or Folder specified by (Path\\File or Folder) evaluates \u0027Greater than\u0027 to True",
+            "category": "WinClassicApp",
+            "priority": "High",
+            "enabled": true,
+            "parameters": {
+                "firstLink": "Apps",
+                "secondLink": "Windows",
+                "AppType": "Windows app (Win32)",
+                "select app package file": "01 Fake MSI.intunewin",
+                "Type of app install file": "EXE",
+                "Name": "TC_4179982_01 Fake MSI.intunewin",
+                "Description": "TC_4179982_01 Fake MSI.intunewin",
+                "Publisher": "AIAuto ddmmyyyymmss",
+                "program parameters": {
+                    "Installation time required (mins)": "5",
+                    "Install behavior.": "User"
+                },
+                "Requirements parameters": {
+                    "check operating system architecture": "No. Allow this app to be installed on all systems.",
+                    "architecture type": "",
+                    "Minimum operating system": "Windows 10 1607"
+                },
+                "Detection rules parameters": {
+                    "Path": "C:\\test",
+                    "File or folder": "test.txt",
+                    "Rules format": "Manually configure detection rules",
+                    "Rule type": "File",
+                    "Operator": "Greater than",
+                    "Detection method": "Size in MB"
+                },
+                "Dependencies": "",
+                "Supercedence": "",
+                "Assignments": {
+                    "Required": "Add group",
+                    "Available for enrolled devices": "",
+                    "uninstall": "",
+                    "select groups": "Automation_AI"
+                },
+                "API parameters": {},
+                "Device Validation": {
+                    "pre-requisite on device": "",
+                    "App Installation Validation": "Verify App A should not be installed on the device",
+                    "searchTerm": "",
+                    "expectedValue": ""
+                }
+            }
+        },
+        {
+            "testCaseId": "TC_4179985",
+            "testName": "Win32App_Create_UserContext_File_DetectionRule_SizeMB_LessThan_False_Installed",
+            "description": "[IntuneSA][Ibiza]:[Win10]:[E2E][DetectionRules][FileSystem]:[WinClassicApp][UserContext]:[IntuneWin]:[MSI][EXE] Verify app is installed when Size in MB of File or Folder specified by (Path\\File or Folder) evaluates \u0027Less than\u0027 to FALSE",
+            "category": "WinClassicApp",
+            "priority": "High",
+            "enabled": true,
+            "parameters": {
+                "firstLink": "Apps",
+                "secondLink": "Windows",
+                "AppType": "Windows app (Win32)",
+                "select app package file": "01 Fake MSI.intunewin",
+                "Type of app install file": "EXE",
+                "Name": "TC_4179985_01 Fake MSI.intunewin",
+                "Description": "TC_4179985_01 Fake MSI.intunewin",
+                "Publisher": "AIAuto ddmmyyyymmss",
+                "program parameters": {
+                    "Installation time required (mins)": "5",
+                    "Install behavior.": "User"
+                },
+                "Requirements parameters": {
+                    "check operating system architecture": "No. Allow this app to be installed on all systems.",
+                    "architecture type": "",
+                    "Minimum operating system": "Windows 10 1607"
+                },
+                "Detection rules parameters": {
+                    "Path": "C:\\test",
+                    "File or folder": "test.txt",
+                    "Rules format": "Manually configure detection rules",
+                    "Rule type": "File",
+                    "Operator": "Less than",
+                    "Detection method": "Size in MB"
+                },
+                "Dependencies": "",
+                "Supercedence": "",
+                "Assignments": {
+                    "Required": "Add group",
+                    "Available for enrolled devices": "",
+                    "uninstall": "",
+                    "select groups": "Automation_AI"
+                },
+                "API parameters": {},
+                "Device Validation": {
+                    "pre-requisite on device": "",
+                    "App Installation Validation": "Verify App A should be installed on the device",
+                    "searchTerm": "",
+                    "expectedValue": ""
+                }
+            }
+        },
+        {
+            "testCaseId": "TC_4179988",
+            "testName": "Win32App_Create_UserContext_Registry_DetectionRule_ValueExists_Found_NotInstalled",
+            "description": "[IntuneSA][Ibiza]:[Win10]:[E2E][DetectionRules][Registry]:[WinClassicApp][UserContext]:[IntuneWin]:[MSI][EXE] Verify app is NOT installed when registry specified by Path\\Key name is found and Data type is \u0027Value exists\u0027",
+            "category": "WinClassicApp",
+            "priority": "High",
+            "enabled": true,
+            "parameters": {
+                "firstLink": "Apps",
+                "secondLink": "Windows",
+                "AppType": "Windows app (Win32)",
+                "select app package file": "01 Fake MSI.intunewin",
+                "Type of app install file": "EXE",
+                "Name": "TC_4179988_01 Fake MSI.intunewin",
+                "Description": "TC_4179988_01 Fake MSI.intunewin",
+                "Publisher": "AIAuto ddmmyyyymmss",
+                "program parameters": {
+                    "Installation time required (mins)": "5",
+                    "Install behavior.": "User"
+                },
+                "Requirements parameters": {
+                    "check operating system architecture": "No. Allow this app to be installed on all systems.",
+                    "architecture type": "",
+                    "Minimum operating system": "Windows 10 1607"
+                },
+                "Detection rules parameters": {
+                    "Key path": "HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Internet Explorer",
+                    "Rule type": "Registry",
+                    "Rules format": "Manually configure detection rules",
+                    "Value name": "test1",
+                    "Detection method": "Value exists"
+                },
+                "Dependencies": "",
+                "Supercedence": "",
+                "Assignments": {
+                    "Required": "Add group",
+                    "Available for enrolled devices": "",
+                    "uninstall": "",
+                    "select groups": "Automation_AI"
+                },
+                "API parameters": {},
+                "Device Validation": {
+                    "pre-requisite on device": "",
+                    "App Installation Validation": "Verify App A should not be installed on the device",
+                    "searchTerm": "",
+                    "expectedValue": ""
+                }
+            }
+        },
+        {
+            "testCaseId": "TC_4179991",
+            "testName": "Win32App_Create_UserContext_Registry_DetectionRule_StringData_Equals_False_Installed",
+            "description": "[IntuneSA][Ibiza]:[Win10]:[E2E][DetectionRules][Registry]:[WinClassicApp][UserContext]:[IntuneWin]:[MSI][EXE] Verify app is installed when String Data value of registry specified by Path\\Key name\\Data value evaluates \u0027Equals\u0027 to FALSE",
+            "category": "WinClassicApp",
+            "priority": "High",
+            "enabled": true,
+            "parameters": {
+                "firstLink": "Apps",
+                "secondLink": "Windows",
+                "AppType": "Windows app (Win32)",
+                "select app package file": "01 Fake MSI.intunewin",
+                "Type of app install file": "EXE",
+                "Name": "TC_4179991_01 Fake MSI.intunewin",
+                "Description": "TC_4179991_01 Fake MSI.intunewin",
+                "Publisher": "AIAuto ddmmyyyymmss",
+                "program parameters": {
+                    "Installation time required (mins)": "5",
+                    "Install behavior.": "User"
+                },
+                "Requirements parameters": {
+                    "check operating system architecture": "No. Allow this app to be installed on all systems.",
+                    "architecture type": "",
+                    "Minimum operating system": "Windows 10 1607"
+                },
+                "Detection rules parameters": {
+                    "Key path": "HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Internet Explorer",
+                    "Operator": "Equals",
+                    "Rules format": "Manually configure detection rules",
+                    "Rule type": "Registry",
+                    "Value name": "test1",
+                    "Detection method": "String"
+                },
+                "Dependencies": "",
+                "Supercedence": "",
+                "Assignments": {
+                    "Required": "Add group",
+                    "Available for enrolled devices": "",
+                    "uninstall": "",
+                    "select groups": "Automation_AI"
+                },
+                "API parameters": {},
+                "Device Validation": {
+                    "pre-requisite on device": "",
+                    "App Installation Validation": "Verify App A should be installed on the device",
+                    "searchTerm": "",
+                    "expectedValue": ""
+                }
+            }
+        },
+        {
+            "testCaseId": "TC_4179994",
+            "testName": "Win32App_Create_UserContext_Registry_DetectionRule_StringData_NotEqualTo_True_NotInstalled",
+            "description": "[IntuneSA][Ibiza]:[Win10]:[E2E][DetectionRules][Registry]:[WinClassicApp][UserContext]:[IntuneWin]:[MSI][EXE] Verify app is NOT installed when String Data value of registry specified by Path\\Key name\\Data value evaluates \u0027Not Equal to\u0027 to True",
+            "category": "WinClassicApp",
+            "priority": "High",
+            "enabled": true,
+            "parameters": {
+                "firstLink": "Apps",
+                "secondLink": "Windows",
+                "AppType": "Windows app (Win32)",
+                "select app package file": "01 Fake MSI.intunewin",
+                "Type of app install file": "EXE",
+                "Name": "TC_4179994_01 Fake MSI.intunewin",
+                "Description": "TC_4179994_01 Fake MSI.intunewin",
+                "Publisher": "AIAuto ddmmyyyymmss",
+                "program parameters": {
+                    "Installation time required (mins)": "5",
+                    "Install behavior.": "User"
+                },
+                "Requirements parameters": {
+                    "check operating system architecture": "No. Allow this app to be installed on all systems.",
+                    "architecture type": "",
+                    "Minimum operating system": "Windows 10 1607"
+                },
+                "Detection rules parameters": {
+                    "Key path": "HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Internet Explorer",
+                    "Operator": "Not Equal to",
+                    "Rules format": "Manually configure detection rules",
+                    "Rule type": "Registry",
+                    "Value name": "test1",
+                    "Detection method": "String"
+                },
+                "Dependencies": "",
+                "Supercedence": "",
+                "Assignments": {
+                    "Required": "Add group",
+                    "Available for enrolled devices": "",
+                    "uninstall": "",
+                    "select groups": "Automation_AI"
+                },
+                "API parameters": {},
+                "Device Validation": {
+                    "pre-requisite on device": "",
+                    "App Installation Validation": "Verify App A should not be installed on the device",
+                    "searchTerm": "",
+                    "expectedValue": ""
+                }
+            }
+        },
+        {
+            "testCaseId": "TC_4180003",
+            "testName": "Win32App_Create_UserContext_Registry_DetectionRule_StringVersion_Equals_False_Installed",
+            "description": "[IntuneSA][Ibiza]:[Win10]:[E2E][DetectionRules][Registry]:[WinClassicApp][UserContext]:[IntuneWin]:[MSI][EXE] Verify app is installed when String (version) Data value of registry specified by Path\\Key name\\Data value evaluates \u0027Equals\u0027 to FALSE",
+            "category": "WinClassicApp",
+            "priority": "High",
+            "enabled": true,
+            "parameters": {
+                "firstLink": "Apps",
+                "secondLink": "Windows",
+                "AppType": "Windows app (Win32)",
+                "select app package file": "01 Fake MSI.intunewin",
+                "Type of app install file": "EXE",
+                "Name": "TC_4180003_01 Fake MSI.intunewin",
+                "Description": "TC_4180003_01 Fake MSI.intunewin",
+                "Publisher": "AIAuto ddmmyyyymmss",
+                "program parameters": {
+                    "Installation time required (mins)": "5",
+                    "Install behavior.": "User"
+                },
+                "Requirements parameters": {
+                    "check operating system architecture": "No. Allow this app to be installed on all systems.",
+                    "architecture type": "",
+                    "Minimum operating system": "Windows 10 1607"
+                },
+                "Detection rules parameters": {
+                    "Key path": "HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Internet Explorer",
+                    "Operator": "Equals",
+                    "Rules format": "Manually configure detection rules",
+                    "Rule type": "Registry",
+                    "Value name": "test1",
+                    "Detection method": "String (version)"
+                },
+                "Dependencies": "",
+                "Supercedence": "",
+                "Assignments": {
+                    "Required": "Add group",
+                    "Available for enrolled devices": "",
+                    "uninstall": "",
+                    "select groups": "Automation_AI"
+                },
+                "API parameters": {},
+                "Device Validation": {
+                    "pre-requisite on device": "",
+                    "App Installation Validation": "Verify App A should be installed on the device",
+                    "searchTerm": "",
+                    "expectedValue": ""
+                }
+            }
+        },
+        {
+            "testCaseId": "TC_4180006",
+            "testName": "Win32App_Create_UserContext_Registry_DetectionRule_StringVersion_NotEqualTo_True_NotInstalled",
+            "description": "[IntuneSA][Ibiza]:[Win10]:[E2E][DetectionRules][Registry]:[WinClassicApp][UserContext]:[IntuneWin]:[MSI][EXE] Verify app is NOT installed when String (version) Data value of registry specified by Path\\Key name\\Data value evaluates \u0027Not Equal to\u0027 to True",
+            "category": "WinClassicApp",
+            "priority": "High",
+            "enabled": true,
+            "parameters": {
+                "firstLink": "Apps",
+                "secondLink": "Windows",
+                "AppType": "Windows app (Win32)",
+                "select app package file": "01 Fake MSI.intunewin",
+                "Type of app install file": "EXE",
+                "Name": "TC_4180006_01 Fake MSI.intunewin",
+                "Description": "TC_4180006_01 Fake MSI.intunewin",
+                "Publisher": "AIAuto ddmmyyyymmss",
+                "program parameters": {
+                    "Installation time required (mins)": "5",
+                    "Install behavior.": "User"
+                },
+                "Requirements parameters": {
+                    "check operating system architecture": "No. Allow this app to be installed on all systems.",
+                    "architecture type": "",
+                    "Minimum operating system": "Windows 10 1607"
+                },
+                "Detection rules parameters": {
+                    "Key path": "HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Internet Explorer",
+                    "Operator": "Not Equal to",
+                    "Rules format": "Manually configure detection rules",
+                    "Rule type": "Registry",
+                    "Value name": "test1",
+                    "Detection method": "String (version)"
+                },
+                "Dependencies": "",
+                "Supercedence": "",
+                "Assignments": {
+                    "Required": "Add group",
+                    "Available for enrolled devices": "",
+                    "uninstall": "",
+                    "select groups": "Automation_AI"
+                },
+                "API parameters": {},
+                "Device Validation": {
+                    "pre-requisite on device": "",
+                    "App Installation Validation": "Verify App A should not be installed on the device",
+                    "searchTerm": "",
+                    "expectedValue": ""
+                }
+            }
+        },
+        {
+            "testCaseId": "TC_4180009",
+            "testName": "Win32App_Create_UserContext_Registry_DetectionRule_StringVersion_LessThan_False_Installed",
+            "description": "[IntuneSA][Ibiza]:[Win10]:[E2E][DetectionRules][Registry]:[WinClassicApp][UserContext]:[IntuneWin]:[MSI][EXE] Verify app is installed when String (version) Data value of registry specified by Path\\Key name\\Data value evaluates \u0027Less than\u0027 to FALSE",
+            "category": "WinClassicApp",
+            "priority": "High",
+            "enabled": true,
+            "parameters": {
+                "firstLink": "Apps",
+                "secondLink": "Windows",
+                "AppType": "Windows app (Win32)",
+                "select app package file": "01 Fake MSI.intunewin",
+                "Type of app install file": "EXE",
+                "Name": "TC_4180009_01 Fake MSI.intunewin",
+                "Description": "TC_4180009_01 Fake MSI.intunewin",
+                "Publisher": "AIAuto ddmmyyyymmss",
+                "program parameters": {
+                    "Installation time required (mins)": "5",
+                    "Install behavior.": "User"
+                },
+                "Requirements parameters": {
+                    "check operating system architecture": "No. Allow this app to be installed on all systems.",
+                    "architecture type": "",
+                    "Minimum operating system": "Windows 10 1607"
+                },
+                "Detection rules parameters": {
+                    "Key path": "HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Internet Explorer",
+                    "Operator": "Less than",
+                    "Rules format": "Manually configure detection rules",
+                    "Rule type": "Registry",
+                    "Value name": "test1",
+                    "Detection method": "String (version)"
+                },
+                "Dependencies": "",
+                "Supercedence": "",
+                "Assignments": {
+                    "Required": "Add group",
+                    "Available for enrolled devices": "",
+                    "uninstall": "",
+                    "select groups": "Automation_AI"
+                },
+                "API parameters": {},
+                "Device Validation": {
+                    "pre-requisite on device": "",
+                    "App Installation Validation": "Verify App A should be installed on the device",
+                    "searchTerm": "",
+                    "expectedValue": ""
+                }
+            }
+        },
+        {
+            "testCaseId": "TC_4180012",
+            "testName": "Win32App_Create_UserContext_Registry_DetectionRule_IntegerData_Equals_True_NotInstalled",
+            "description": "[IntuneSA][Ibiza]:[Win10]:[E2E][DetectionRules][Registry]:[WinClassicApp][UserContext]:[IntuneWin]:[MSI][EXE] Verify app is NOT installed when Integer Data value of registry specified by Path\\Key name\\Data value evaluates \u0027Equals\u0027 to True",
+            "category": "WinClassicApp",
+            "priority": "High",
+            "enabled": true,
+            "parameters": {
+                "firstLink": "Apps",
+                "secondLink": "Windows",
+                "AppType": "Windows app (Win32)",
+                "select app package file": "01 Fake MSI.intunewin",
+                "Type of app install file": "EXE",
+                "Name": "TC_4180012_01 Fake MSI.intunewin",
+                "Description": "TC_4180012_01 Fake MSI.intunewin",
+                "Publisher": "AIAuto ddmmyyyymmss",
+                "program parameters": {
+                    "Installation time required (mins)": "5",
+                    "Install behavior.": "User"
+                },
+                "Requirements parameters": {
+                    "check operating system architecture": "No. Allow this app to be installed on all systems.",
+                    "architecture type": "",
+                    "Minimum operating system": "Windows 10 1607"
+                },
+                "Detection rules parameters": {
+                    "Key path": "HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Internet Explorer",
+                    "Operator": "Equals",
+                    "Rules format": "Manually configure detection rules",
+                    "Rule type": "Registry",
+                    "Value name": "test1",
+                    "Detection method": "Integer"
+                },
+                "Dependencies": "",
+                "Supercedence": "",
+                "Assignments": {
+                    "Required": "Add group",
+                    "Available for enrolled devices": "",
+                    "uninstall": "",
+                    "select groups": "Automation_AI"
+                },
+                "API parameters": {},
+                "Device Validation": {
+                    "pre-requisite on device": "",
+                    "App Installation Validation": "Verify App A should not be installed on the device",
+                    "searchTerm": "",
+                    "expectedValue": ""
+                }
+            }
+        },
+        {
+            "testCaseId": "TC_4180015",
+            "testName": "Win32App_Create_UserContext_Registry_DetectionRule_IntegerData_GreaterThanOrEqualTo_False_Installed",
+            "description": "[IntuneSA][Ibiza]:[Win10]:[E2E][DetectionRules][Registry]:[WinClassicApp][UserContext]:[IntuneWin]:[MSI][EXE] Verify app is installed when Integer Data value of registry specified by Path\\Key name\\Data value evaluates \u0027Greater than or equal to\u0027 to FALSE",
+            "category": "WinClassicApp",
+            "priority": "High",
+            "enabled": true,
+            "parameters": {
+                "firstLink": "Apps",
+                "secondLink": "Windows",
+                "AppType": "Windows app (Win32)",
+                "select app package file": "01 Fake MSI.intunewin",
+                "Type of app install file": "EXE",
+                "Name": "TC_4180015_01 Fake MSI.intunewin",
+                "Description": "TC_4180015_01 Fake MSI.intunewin",
+                "Publisher": "AIAuto ddmmyyyymmss",
+                "program parameters": {
+                    "Installation time required (mins)": "5",
+                    "Install behavior.": "User"
+                },
+                "Requirements parameters": {
+                    "check operating system architecture": "No. Allow this app to be installed on all systems.",
+                    "architecture type": "",
+                    "Minimum operating system": "Windows 10 1607"
+                },
+                "Detection rules parameters": {
+                    "Key path": "HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Internet Explorer",
+                    "Operator": "Greater than or equal to",
+                    "Rules format": "Manually configure detection rules",
+                    "Rule type": "Registry",
+                    "Value name": "test1",
+                    "Detection method": "Integer"
+                },
+                "Dependencies": "",
+                "Supercedence": "",
+                "Assignments": {
+                    "Required": "Add group",
+                    "Available for enrolled devices": "",
+                    "uninstall": "",
+                    "select groups": "Automation_AI"
+                },
+                "API parameters": {},
+                "Device Validation": {
+                    "pre-requisite on device": "",
+                    "App Installation Validation": "Verify App A should be installed on the device",
+                    "searchTerm": "",
+                    "expectedValue": ""
+                }
+            }
+        },
+        {
+            "testCaseId": "TC_4180018",
+            "testName": "Win32App_Create_UserContext_Registry_DetectionRule_IntegerData_GreaterThan_True_NotInstalled",
+            "description": "[IntuneSA][Ibiza]:[Win10]:[E2E][DetectionRules][Registry]:[WinClassicApp][UserContext]:[IntuneWin]:[MSI][EXE] Verify app is NOT installed when Integer Data value of registry specified by Path\\Key name\\Data value evaluates \u0027Greater than\u0027 to True",
+            "category": "WinClassicApp",
+            "priority": "High",
+            "enabled": true,
+            "parameters": {
+                "firstLink": "Apps",
+                "secondLink": "Windows",
+                "AppType": "Windows app (Win32)",
+                "select app package file": "01 Fake MSI.intunewin",
+                "Type of app install file": "EXE",
+                "Name": "TC_4180018_01 Fake MSI.intunewin",
+                "Description": "TC_4180018_01 Fake MSI.intunewin",
+                "Publisher": "AIAuto ddmmyyyymmss",
+                "program parameters": {
+                    "Installation time required (mins)": "5",
+                    "Install behavior.": "User"
+                },
+                "Requirements parameters": {
+                    "check operating system architecture": "No. Allow this app to be installed on all systems.",
+                    "architecture type": "",
+                    "Minimum operating system": "Windows 10 1607"
+                },
+                "Detection rules parameters": {
+                    "Key path": "HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Internet Explorer",
+                    "Operator": "Greater than",
+                    "Rules format": "Manually configure detection rules",
+                    "Rule type": "Registry",
+                    "Value name": "test1",
+                    "Detection method": "Integer"
+                },
+                "Dependencies": "",
+                "Supercedence": "",
+                "Assignments": {
+                    "Required": "Add group",
+                    "Available for enrolled devices": "",
+                    "uninstall": "",
+                    "select groups": "Automation_AI"
+                },
+                "API parameters": {},
+                "Device Validation": {
+                    "pre-requisite on device": "",
+                    "App Installation Validation": "Verify App A should not be installed on the device",
+                    "searchTerm": "",
+                    "expectedValue": ""
+                }
+            }
+        },
+        {
+            "testCaseId": "TC_4180021",
+            "testName": "Win32App_Create_UserContext_Registry_DetectionRule_IntegerData_LessThan_False_Installed",
+            "description": "[IntuneSA][Ibiza]:[Win10]:[E2E][DetectionRules][Registry]:[WinClassicApp][UserContext]:[IntuneWin]:[MSI][EXE] Verify app is installed when Integer Data value of registry specified by Path\\Key name\\Data value evaluates \u0027Less than\u0027 to FALSE",
+            "category": "WinClassicApp",
+            "priority": "High",
+            "enabled": true,
+            "parameters": {
+                "firstLink": "Apps",
+                "secondLink": "Windows",
+                "AppType": "Windows app (Win32)",
+                "select app package file": "01 Fake MSI.intunewin",
+                "Type of app install file": "EXE",
+                "Name": "TC_4180021_01 Fake MSI.intunewin",
+                "Description": "TC_4180021_01 Fake MSI.intunewin",
+                "Publisher": "AIAuto ddmmyyyymmss",
+                "program parameters": {
+                    "Installation time required (mins)": "5",
+                    "Install behavior.": "User"
+                },
+                "Requirements parameters": {
+                    "check operating system architecture": "No. Allow this app to be installed on all systems.",
+                    "architecture type": "",
+                    "Minimum operating system": "Windows 10 1607"
+                },
+                "Detection rules parameters": {
+                    "Key path": "HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Internet Explorer",
+                    "Operator": "Less than",
+                    "Rules format": "Manually configure detection rules",
+                    "Rule type": "Registry",
+                    "Value name": "test1",
+                    "Detection method": "Integer"
+                },
+                "Dependencies": "",
+                "Supercedence": "",
+                "Assignments": {
+                    "Required": "Add group",
+                    "Available for enrolled devices": "",
+                    "uninstall": "",
+                    "select groups": "Automation_AI"
+                },
+                "API parameters": {},
+                "Device Validation": {
+                    "pre-requisite on device": "",
+                    "App Installation Validation": "Verify App A should be installed on the device",
+                    "searchTerm": "",
+                    "expectedValue": ""
+                }
+            }
+        },
+        {
+            "testCaseId": "TC_4180273",
+            "testName": "Win32App_Create_DeviceContext_RunAsUser_AADJ_NoUserLogon_AppNotExecuted",
+            "description": "[IntuneSA]:[Win10]:[E2E]:[WinClassicApp]:[DeviceGroup] Set RunAs:User, AADJ the device with a user, but do NOT logon with the user. Expected: Sidecar agent check-in and gets the App but filter it out. The App will NOT be executed",
+            "category": "WinClassicApp",
+            "priority": "High",
+            "enabled": true,
+            "parameters": {
+                "firstLink": "Apps",
+                "secondLink": "Windows",
+                "AppType": "Windows app (Win32)",
+                "select app package file": "01 Fake MSI.intunewin",
+                "Type of app install file": "MSI",
+                "Name": "TC_4180273_01 Fake MSI.intunewin",
+                "Description": "TC_4180273_01 Fake MSI.intunewin",
+                "Publisher": "AIAuto ddmmyyyymmss",
+                "program parameters": {
+                    "Installation time required (mins)": "5",
+                    "Install behavior.": "User"
+                },
+                "Requirements parameters": {
+                    "check operating system architecture": "No. Allow this app to be installed on all systems.",
+                    "architecture type": "",
+                    "Minimum operating system": "Windows 10 1607"
+                },
+                "Detection rules parameters": {
+                    "Rule type": "MSI",
+                    "Rules format": "Manually configure detection rules"
+                },
+                "Dependencies": "",
+                "Supercedence": "",
+                "Assignments": {
+                    "Required": "Add group",
+                    "Available for enrolled devices": "",
+                    "uninstall": "",
+                    "select groups": "Automation_AI"
+                },
+                "API parameters": {},
+                "Device Validation": {
+                    "pre-requisite on device": "",
+                    "App Installation Validation": "Verify App A should be installed on the device",
+                    "searchTerm": "",
+                    "expectedValue": ""
+                }
+            }
+        },
+        {
+            "testCaseId": "TC_4180274",
+            "testName": "Win32App_Create_UserContext_Required_CancelInstall_ErrorUserCancelled",
+            "description": "[IntuneSA]:[Win10]:[E2E]:[WinClassicApp][UserContext]:[Required][Available]:[MSI] Verify msg \u0027The user cancelled the app installation. (0x80070642)\u0027 when user \u0027cancel\u0027 OR close interactive window during installation",
+            "category": "WinClassicApp",
+            "priority": "High",
+            "enabled": true,
+            "parameters": {
+                "firstLink": "Apps",
+                "secondLink": "Windows",
+                "AppType": "Windows app (Win32)",
+                "select app package file": "01 Fake MSI.intunewin",
+                "Type of app install file": "MSI",
+                "Name": "TC_4180274_01 Fake MSI.intunewin",
+                "Description": "TC_4180274_01 Fake MSI.intunewin",
+                "Publisher": "AIAuto ddmmyyyymmss",
+                "program parameters": {
+                    "Installation time required (mins)": "5",
+                    "Install behavior.": "User"
+                },
+                "Requirements parameters": {
+                    "check operating system architecture": "No. Allow this app to be installed on all systems.",
+                    "architecture type": "",
+                    "Minimum operating system": "Windows 10 1607"
+                },
+                "Detection rules parameters": {
+                    "Rule type": "MSI",
+                    "Rules format": "Manually configure detection rules"
+                },
+                "Dependencies": "",
+                "Supercedence": "",
+                "Assignments": {
+                    "Required": "Add group",
+                    "Available for enrolled devices": "",
+                    "uninstall": "",
+                    "select groups": "Automation_AI"
+                },
+                "API parameters": {},
+                "Device Validation": {
+                    "pre-requisite on device": "",
+                    "App Installation Validation": "Verify App A should be installed on the device",
+                    "searchTerm": "",
+                    "expectedValue": ""
+                }
+            }
+        },
+        {
+            "testCaseId": "TC_4180275",
+            "testName": "Win32App_Create_AppUpdate_Required_AllUserGroup_V1ToV2_UpdatedOnAllDevices",
+            "description": "[IntuneSA]:[Win10]:[E2E][AppUpdate]:[WinClassicApp][UserContext]:[Required]:[AllUserGroup]:[MSI][EXE] Verify that App V1 deployed as required is installed for all devices of group. App V1 updated to V2, V2 is updated on all devices with V1 installed.",
+            "category": "WinClassicApp",
+            "priority": "High",
+            "enabled": true,
+            "parameters": {
+                "firstLink": "Apps",
+                "secondLink": "Windows",
+                "AppType": "Windows app (Win32)",
+                "select app package file": "01 Fake MSI.intunewin",
+                "Type of app install file": "MSI",
+                "Name": "TC_4180275_01 Fake MSI.intunewin",
+                "Description": "TC_4180275_01 Fake MSI.intunewin",
+                "Publisher": "AIAuto ddmmyyyymmss",
+                "program parameters": {
+                    "Installation time required (mins)": "5",
+                    "Install behavior.": "User"
+                },
+                "Requirements parameters": {
+                    "check operating system architecture": "No. Allow this app to be installed on all systems.",
+                    "architecture type": "",
+                    "Minimum operating system": "Windows 10 1607"
+                },
+                "Detection rules parameters": {
+                    "Rule type": "MSI",
+                    "Rules format": "Manually configure detection rules"
+                },
+                "Dependencies": "",
+                "Supercedence": "",
+                "Assignments": {
+                    "Required": "Add group",
+                    "Available for enrolled devices": "",
+                    "uninstall": "",
+                    "select groups": "Automation_AI"
+                },
+                "API parameters": {},
+                "Device Validation": {
+                    "pre-requisite on device": "",
+                    "App Installation Validation": "Verify App A should be installed on the device",
+                    "searchTerm": "",
+                    "expectedValue": ""
+                }
+            }
+        },
+        {
+            "testCaseId": "TC_4180276",
+            "testName": "Win32App_Create_AppUpdate_Required_UserGroup_V1ToV2_UpdatedOnAllDevices",
+            "description": "[IntuneSA]:[Win10]:[E2E][AppUpdate]:[WinClassicApp][UserContext]:[Required]:[UserGroup]:[MSI][EXE] Verify that App V1 deployed as required is installed for all devices of group. When App V1 is updated to V2, V2 is updated on all devices with V1 installed.",
+            "category": "WinClassicApp",
+            "priority": "High",
+            "enabled": true,
+            "parameters": {
+                "firstLink": "Apps",
+                "secondLink": "Windows",
+                "AppType": "Windows app (Win32)",
+                "select app package file": "01 Fake MSI.intunewin",
+                "Type of app install file": "MSI",
+                "Name": "TC_4180276_01 Fake MSI.intunewin",
+                "Description": "TC_4180276_01 Fake MSI.intunewin",
+                "Publisher": "AIAuto ddmmyyyymmss",
+                "program parameters": {
+                    "Installation time required (mins)": "5",
+                    "Install behavior.": "User"
+                },
+                "Requirements parameters": {
+                    "check operating system architecture": "No. Allow this app to be installed on all systems.",
+                    "architecture type": "",
+                    "Minimum operating system": "Windows 10 1607"
+                },
+                "Detection rules parameters": {
+                    "Rule type": "MSI",
+                    "Rules format": "Manually configure detection rules"
+                },
+                "Dependencies": "",
+                "Supercedence": "",
+                "Assignments": {
+                    "Required": "Add group",
+                    "Available for enrolled devices": "",
+                    "uninstall": "",
+                    "select groups": "Automation_AI"
+                },
+                "API parameters": {},
+                "Device Validation": {
+                    "pre-requisite on device": "",
+                    "App Installation Validation": "Verify App A should be installed on the device",
+                    "searchTerm": "",
+                    "expectedValue": ""
+                }
+            }
+        },
+        {
+            "testCaseId": "TC_4180277",
+            "testName": "Win32App_Create_AppUpdate_Required_AllUserGroup_MultiVersion_V1V2V3Updated",
+            "description": "[IntuneSA]:[Win10]:[E2E][AppUpdate]:[WinClassicApp][UserContext]:[Required]:[AllUserGroup]:[MSI][EXE] Verify App update for different versions is updated for all devices of user. [V1 installed, V1 update to V2: V2 installed, V2 updated to V3: V3 installed]",
+            "category": "WinClassicApp",
+            "priority": "High",
+            "enabled": true,
+            "parameters": {
+                "firstLink": "Apps",
+                "secondLink": "Windows",
+                "AppType": "Windows app (Win32)",
+                "select app package file": "01 Fake MSI.intunewin",
+                "Type of app install file": "MSI",
+                "Name": "TC_4180277_01 Fake MSI.intunewin",
+                "Description": "TC_4180277_01 Fake MSI.intunewin",
+                "Publisher": "AIAuto ddmmyyyymmss",
+                "program parameters": {
+                    "Installation time required (mins)": "5",
+                    "Install behavior.": "User"
+                },
+                "Requirements parameters": {
+                    "check operating system architecture": "No. Allow this app to be installed on all systems.",
+                    "architecture type": "",
+                    "Minimum operating system": "Windows 10 1607"
+                },
+                "Detection rules parameters": {
+                    "Rule type": "MSI",
+                    "Rules format": "Manually configure detection rules"
+                },
+                "Dependencies": "",
+                "Supercedence": "",
+                "Assignments": {
+                    "Required": "Add group",
+                    "Available for enrolled devices": "",
+                    "uninstall": "",
+                    "select groups": "Automation_AI"
+                },
+                "API parameters": {},
+                "Device Validation": {
+                    "pre-requisite on device": "",
+                    "App Installation Validation": "Verify App A should be installed on the device",
+                    "searchTerm": "",
+                    "expectedValue": ""
+                }
+            }
+        },
+        {
+            "testCaseId": "TC_4180278",
+            "testName": "Win32App_Create_AppUpdate_Required_DeviceGroup_V1ToV2_UpdatedOnAllDevices",
+            "description": "[IntuneSA]:[Win10]:[E2E][AppUpdate]:[WinClassicApp][UserContext]:[Required]:[DeviceGroup] Verify that App V1 deployed as required is installed for all devices of group. When App V1 is updated to V2, V2 is updated on all devices with V1 installed.",
+            "category": "WinClassicApp",
+            "priority": "High",
+            "enabled": true,
+            "parameters": {
+                "firstLink": "Apps",
+                "secondLink": "Windows",
+                "AppType": "Windows app (Win32)",
+                "select app package file": "01 Fake MSI.intunewin",
+                "Type of app install file": "MSI",
+                "Name": "TC_4180278_01 Fake MSI.intunewin",
+                "Description": "TC_4180278_01 Fake MSI.intunewin",
+                "Publisher": "AIAuto ddmmyyyymmss",
+                "program parameters": {
+                    "Installation time required (mins)": "5",
+                    "Install behavior.": "System"
+                },
+                "Requirements parameters": {
+                    "check operating system architecture": "No. Allow this app to be installed on all systems.",
+                    "architecture type": "",
+                    "Minimum operating system": "Windows 10 1607"
+                },
+                "Detection rules parameters": {
+                    "Rule type": "MSI",
+                    "Rules format": "Manually configure detection rules"
+                },
+                "Dependencies": "",
+                "Supercedence": "",
+                "Assignments": {
+                    "Required": "Add group",
+                    "Available for enrolled devices": "",
+                    "uninstall": "",
+                    "select groups": "Automation_AI"
+                },
+                "API parameters": {},
+                "Device Validation": {
+                    "pre-requisite on device": "",
+                    "App Installation Validation": "Verify App A should be installed on the device",
+                    "searchTerm": "",
+                    "expectedValue": ""
+                }
+            }
+        },
+        {
+            "testCaseId": "TC_4180279",
+            "testName": "Win32App_Create_AppUpdate_Required_AllDeviceGroup_V1ToV2_UpdatedAfterUserLogin",
+            "description": "[IntuneSA]:[Win10]:[E2E][AppUpdate]:[WinClassicApp][UserContext]:[Required]:[AllDeviceGroup]:[MSI][EXE] Verify that App V1 is installed for all devices of group. App V1 updated to V2, V2 is updated on all devices with V1 installed after user log in",
+            "category": "WinClassicApp",
+            "priority": "High",
+            "enabled": true,
+            "parameters": {
+                "firstLink": "Apps",
+                "secondLink": "Windows",
+                "AppType": "Windows app (Win32)",
+                "select app package file": "01 Fake MSI.intunewin",
+                "Type of app install file": "MSI",
+                "Name": "TC_4180279_01 Fake MSI.intunewin",
+                "Description": "TC_4180279_01 Fake MSI.intunewin",
+                "Publisher": "AIAuto ddmmyyyymmss",
+                "program parameters": {
+                    "Installation time required (mins)": "5",
+                    "Install behavior.": "System"
+                },
+                "Requirements parameters": {
+                    "check operating system architecture": "No. Allow this app to be installed on all systems.",
+                    "architecture type": "",
+                    "Minimum operating system": "Windows 10 1607"
+                },
+                "Detection rules parameters": {
+                    "Rule type": "MSI",
+                    "Rules format": "Manually configure detection rules"
+                },
+                "Dependencies": "",
+                "Supercedence": "",
+                "Assignments": {
+                    "Required": "Add group",
+                    "Available for enrolled devices": "",
+                    "uninstall": "",
+                    "select groups": "Automation_AI"
+                },
+                "API parameters": {},
+                "Device Validation": {
+                    "pre-requisite on device": "",
+                    "App Installation Validation": "Verify App A should be installed on the device",
+                    "searchTerm": "",
+                    "expectedValue": ""
+                }
+            }
+        },
+        {
+            "testCaseId": "TC_4180280",
+            "testName": "Win32App_Create_AppUpdate_Required_DeviceGroup_V1ToV2_UpdatedAfterUserLogin",
+            "description": "[IntuneSA]:[Win10]:[E2E][AppUpdate]:[WinClassicApp][UserContext]:[Required]:[DeviceGroup]:[MSI][EXE] Verify that App V1 is installed for all devices of group. When App V1 is updated to V2, V2 is updated on all devices with V1 installed after user login",
+            "category": "WinClassicApp",
+            "priority": "High",
+            "enabled": true,
+            "parameters": {
+                "firstLink": "Apps",
+                "secondLink": "Windows",
+                "AppType": "Windows app (Win32)",
+                "select app package file": "01 Fake MSI.intunewin",
+                "Type of app install file": "MSI",
+                "Name": "TC_4180280_01 Fake MSI.intunewin",
+                "Description": "TC_4180280_01 Fake MSI.intunewin",
+                "Publisher": "AIAuto ddmmyyyymmss",
+                "program parameters": {
+                    "Installation time required (mins)": "5",
+                    "Install behavior.": "System"
+                },
+                "Requirements parameters": {
+                    "check operating system architecture": "No. Allow this app to be installed on all systems.",
+                    "architecture type": "",
+                    "Minimum operating system": "Windows 10 1607"
+                },
+                "Detection rules parameters": {
+                    "Rule type": "MSI",
+                    "Rules format": "Manually configure detection rules"
+                },
+                "Dependencies": "",
+                "Supercedence": "",
+                "Assignments": {
+                    "Required": "Add group",
+                    "Available for enrolled devices": "",
+                    "uninstall": "",
+                    "select groups": "Automation_AI"
+                },
+                "API parameters": {},
+                "Device Validation": {
+                    "pre-requisite on device": "",
+                    "App Installation Validation": "Verify App A should be installed on the device",
+                    "searchTerm": "",
+                    "expectedValue": ""
+                }
+            }
+        },
+        {
+            "testCaseId": "TC_4180281",
+            "testName": "Win32App_Create_AppUpdate_Required_AllDeviceGroup_MultiVersion_V1V2V3_AfterUserLogin",
+            "description": "[IntuneSA]:[Win10]:[E2E][AppUpdate]:[WinClassicApp][UserContext]:[Required]:[AllDeviceGroup]:[MSI][EXE] Verify App update for diff ver is updated for all devices. V1 installed, V1 update to V2: V2 installed, V2 updated to V3: V3 installed after user login",
+            "category": "WinClassicApp",
+            "priority": "High",
+            "enabled": true,
+            "parameters": {
+                "firstLink": "Apps",
+                "secondLink": "Windows",
+                "AppType": "Windows app (Win32)",
+                "select app package file": "01 Fake MSI.intunewin",
+                "Type of app install file": "MSI",
+                "Name": "TC_4180281_01 Fake MSI.intunewin",
+                "Description": "TC_4180281_01 Fake MSI.intunewin",
+                "Publisher": "AIAuto ddmmyyyymmss",
+                "program parameters": {
+                    "Installation time required (mins)": "5",
+                    "Install behavior.": "System"
+                },
+                "Requirements parameters": {
+                    "check operating system architecture": "No. Allow this app to be installed on all systems.",
+                    "architecture type": "",
+                    "Minimum operating system": "Windows 10 1607"
+                },
+                "Detection rules parameters": {
+                    "Rule type": "MSI",
+                    "Rules format": "Manually configure detection rules"
+                },
+                "Dependencies": "",
+                "Supercedence": "",
+                "Assignments": {
+                    "Required": "Add group",
+                    "Available for enrolled devices": "",
+                    "uninstall": "",
+                    "select groups": "Automation_AI"
+                },
+                "API parameters": {},
+                "Device Validation": {
+                    "pre-requisite on device": "",
+                    "App Installation Validation": "Verify App A should be installed on the device",
+                    "searchTerm": "",
+                    "expectedValue": ""
+                }
+            }
+        },
+        {
+            "testCaseId": "TC_4180282",
+            "testName": "Win32App_Create_AppUpdate_Required_AllDeviceGroup_V1ToV2_ModifiedToUninstall",
+            "description": "[IntuneSA]:[Win10]:[E2E][AppUpdate]:[WinClassicApp][UserContext]:[Required]:[AllDeviceGroup]:[MSI][EXE] App V1 is installed on device OOB. Now V1 is updated to V2. Modify to Uninstall, make sure all versions V2,V1 are uninstalled from user after user login",
+            "category": "WinClassicApp",
+            "priority": "High",
+            "enabled": true,
+            "parameters": {
+                "firstLink": "Apps",
+                "secondLink": "Windows",
+                "AppType": "Windows app (Win32)",
+                "select app package file": "01 Fake MSI.intunewin",
+                "Type of app install file": "MSI",
+                "Name": "TC_4180282_01 Fake MSI.intunewin",
+                "Description": "TC_4180282_01 Fake MSI.intunewin",
+                "Publisher": "AIAuto ddmmyyyymmss",
+                "program parameters": {
+                    "Installation time required (mins)": "5",
+                    "Install behavior.": "System"
+                },
+                "Requirements parameters": {
+                    "check operating system architecture": "No. Allow this app to be installed on all systems.",
+                    "architecture type": "",
+                    "Minimum operating system": "Windows 10 1607"
+                },
+                "Detection rules parameters": {
+                    "Rule type": "MSI",
+                    "Rules format": "Manually configure detection rules"
+                },
+                "Dependencies": "",
+                "Supercedence": "",
+                "Assignments": {
+                    "Required": "Add group",
+                    "Available for enrolled devices": "",
+                    "uninstall": "",
+                    "select groups": "Automation_AI"
+                },
+                "API parameters": {},
+                "Device Validation": {
+                    "pre-requisite on device": "",
+                    "App Installation Validation": "Verify App A should be installed on the device",
+                    "searchTerm": "",
+                    "expectedValue": ""
+                }
+            }
+        },
+        {
+            "testCaseId": "TC_4180283",
+            "testName": "Win32App_Create_UserContext_File_DetectionRule_DateModified_GreaterThanOrEqualTo_False_Installed",
+            "description": "[IntuneSA][Ibiza]:[Win10]:[E2E][DetectionRules][FileSystem]:[WinClassicApp][UserContext]:[MSI][EXE] Verify app is installed when Date modified (UTC) of File or Folder specified by (Path\\File or Folder) evaluates \u0027Greater than or equal to\u0027 to FALSE",
+            "category": "WinClassicApp",
+            "priority": "High",
+            "enabled": true,
+            "parameters": {
+                "firstLink": "Apps",
+                "secondLink": "Windows",
+                "AppType": "Windows app (Win32)",
+                "select app package file": "01 Fake MSI.intunewin",
+                "Type of app install file": "EXE",
+                "Name": "TC_4180283_01 Fake MSI.intunewin",
+                "Description": "TC_4180283_01 Fake MSI.intunewin",
+                "Publisher": "AIAuto ddmmyyyymmss",
+                "program parameters": {
+                    "Installation time required (mins)": "5",
+                    "Install behavior.": "User"
+                },
+                "Requirements parameters": {
+                    "check operating system architecture": "No. Allow this app to be installed on all systems.",
+                    "architecture type": "",
+                    "Minimum operating system": "Windows 10 1607"
+                },
+                "Detection rules parameters": {
+                    "Path": "C:\\test",
+                    "File or folder": "test.txt",
+                    "Rules format": "Manually configure detection rules",
+                    "Rule type": "File",
+                    "Operator": "Greater than or equal to",
+                    "Detection method": "Date modified"
+                },
+                "Dependencies": "",
+                "Supercedence": "",
+                "Assignments": {
+                    "Required": "Add group",
+                    "Available for enrolled devices": "",
+                    "uninstall": "",
+                    "select groups": "Automation_AI"
+                },
+                "API parameters": {},
+                "Device Validation": {
+                    "pre-requisite on device": "",
+                    "App Installation Validation": "Verify App A should be installed on the device",
+                    "searchTerm": "",
+                    "expectedValue": ""
+                }
+            }
+        },
+        {
+            "testCaseId": "TC_4180284",
+            "testName": "Win32App_Create_UserContext_File_DetectionRule_DateModified_GreaterThanOrEqualTo_True_NotInstalled",
+            "description": "[IntuneSA][Ibiza]:[Win10]:[E2E][DetectionRules][FileSystem]:[WinClassicApp][UserContext]:[MSI][EXE] Verify app is NOT installed when Date modified (UTC) of File or Folder specified by (Path\\File or Folder) evaluates \u0027Greater than or equal to\u0027 to True",
+            "category": "WinClassicApp",
+            "priority": "High",
+            "enabled": true,
+            "parameters": {
+                "firstLink": "Apps",
+                "secondLink": "Windows",
+                "AppType": "Windows app (Win32)",
+                "select app package file": "01 Fake MSI.intunewin",
+                "Type of app install file": "EXE",
+                "Name": "TC_4180284_01 Fake MSI.intunewin",
+                "Description": "TC_4180284_01 Fake MSI.intunewin",
+                "Publisher": "AIAuto ddmmyyyymmss",
+                "program parameters": {
+                    "Installation time required (mins)": "5",
+                    "Install behavior.": "User"
+                },
+                "Requirements parameters": {
+                    "check operating system architecture": "No. Allow this app to be installed on all systems.",
+                    "architecture type": "",
+                    "Minimum operating system": "Windows 10 1607"
+                },
+                "Detection rules parameters": {
+                    "Path": "C:\\test",
+                    "File or folder": "test.txt",
+                    "Rules format": "Manually configure detection rules",
+                    "Rule type": "File",
+                    "Operator": "Greater than or equal to",
+                    "Detection method": "Date modified"
+                },
+                "Dependencies": "",
+                "Supercedence": "",
+                "Assignments": {
+                    "Required": "Add group",
+                    "Available for enrolled devices": "",
+                    "uninstall": "",
+                    "select groups": "Automation_AI"
+                },
+                "API parameters": {},
+                "Device Validation": {
+                    "pre-requisite on device": "",
+                    "App Installation Validation": "Verify App A should not be installed on the device",
+                    "searchTerm": "",
+                    "expectedValue": ""
+                }
+            }
+        },
+        {
+            "testCaseId": "TC_4180285",
+            "testName": "Win32App_Create_UserContext_File_DetectionRule_DateModified_LessThanOrEqualTo_True_NotInstalled",
+            "description": "[IntuneSA][Ibiza]:[Win10]:[E2E][DetectionRules][FileSystem]:[WinClassicApp][UserContext]:[MSI][EXE] Verify app is NOT installed when Date modified (UTC) of File or Folder specified by (Path\\File or Folder) evaluates \u0027Less than or equal to\u0027 to True",
+            "category": "WinClassicApp",
+            "priority": "High",
+            "enabled": true,
+            "parameters": {
+                "firstLink": "Apps",
+                "secondLink": "Windows",
+                "AppType": "Windows app (Win32)",
+                "select app package file": "01 Fake MSI.intunewin",
+                "Type of app install file": "EXE",
+                "Name": "TC_4180285_01 Fake MSI.intunewin",
+                "Description": "TC_4180285_01 Fake MSI.intunewin",
+                "Publisher": "AIAuto ddmmyyyymmss",
+                "program parameters": {
+                    "Installation time required (mins)": "5",
+                    "Install behavior.": "User"
+                },
+                "Requirements parameters": {
+                    "check operating system architecture": "No. Allow this app to be installed on all systems.",
+                    "architecture type": "",
+                    "Minimum operating system": "Windows 10 1607"
+                },
+                "Detection rules parameters": {
+                    "Path": "C:\\test",
+                    "File or folder": "test.txt",
+                    "Rules format": "Manually configure detection rules",
+                    "Rule type": "File",
+                    "Operator": "Less than or equal to",
+                    "Detection method": "Date modified"
+                },
+                "Dependencies": "",
+                "Supercedence": "",
+                "Assignments": {
+                    "Required": "Add group",
+                    "Available for enrolled devices": "",
+                    "uninstall": "",
+                    "select groups": "Automation_AI"
+                },
+                "API parameters": {},
+                "Device Validation": {
+                    "pre-requisite on device": "",
+                    "App Installation Validation": "Verify App A should not be installed on the device",
+                    "searchTerm": "",
+                    "expectedValue": ""
+                }
+            }
+        },
+        {
+            "testCaseId": "TC_4180286",
+            "testName": "Win32App_Create_UserContext_File_DetectionRule_DateCreated_GreaterThanOrEqualTo_False_Installed",
+            "description": "[IntuneSA][Ibiza]:[Win10]:[E2E][DetectionRules][FileSystem]:[WinClassicApp][UserContext]:[MSI][EXE] Verify app is installed when Date created (UTC) of File or Folder specified by (Path\\File or Folder) evaluates \u0027Greater than or equal to\u0027 to FALSE",
+            "category": "WinClassicApp",
+            "priority": "High",
+            "enabled": true,
+            "parameters": {
+                "firstLink": "Apps",
+                "secondLink": "Windows",
+                "AppType": "Windows app (Win32)",
+                "select app package file": "01 Fake MSI.intunewin",
+                "Type of app install file": "EXE",
+                "Name": "TC_4180286_01 Fake MSI.intunewin",
+                "Description": "TC_4180286_01 Fake MSI.intunewin",
+                "Publisher": "AIAuto ddmmyyyymmss",
+                "program parameters": {
+                    "Installation time required (mins)": "5",
+                    "Install behavior.": "User"
+                },
+                "Requirements parameters": {
+                    "check operating system architecture": "No. Allow this app to be installed on all systems.",
+                    "architecture type": "",
+                    "Minimum operating system": "Windows 10 1607"
+                },
+                "Detection rules parameters": {
+                    "Path": "C:\\test",
+                    "File or folder": "test.txt",
+                    "Rules format": "Manually configure detection rules",
+                    "Rule type": "File",
+                    "Operator": "Greater than or equal to",
+                    "Detection method": "Date created"
+                },
+                "Dependencies": "",
+                "Supercedence": "",
+                "Assignments": {
+                    "Required": "Add group",
+                    "Available for enrolled devices": "",
+                    "uninstall": "",
+                    "select groups": "Automation_AI"
+                },
+                "API parameters": {},
+                "Device Validation": {
+                    "pre-requisite on device": "",
+                    "App Installation Validation": "Verify App A should be installed on the device",
+                    "searchTerm": "",
+                    "expectedValue": ""
+                }
+            }
+        },
+        {
+            "testCaseId": "TC_4180287",
+            "testName": "Win32App_Create_UserContext_File_DetectionRule_DateCreated_GreaterThanOrEqualTo_True_NotInstalled",
+            "description": "[IntuneSA][Ibiza]:[Win10]:[E2E][DetectionRules][FileSystem]:[WinClassicApp][UserContext]:[MSI][EXE] Verify app is NOT installed when Date created (UTC) of File or Folder specified by (Path\\File or Folder) evaluates \u0027Greater than or equal to\u0027 to True",
+            "category": "WinClassicApp",
+            "priority": "High",
+            "enabled": true,
+            "parameters": {
+                "firstLink": "Apps",
+                "secondLink": "Windows",
+                "AppType": "Windows app (Win32)",
+                "select app package file": "01 Fake MSI.intunewin",
+                "Type of app install file": "EXE",
+                "Name": "TC_4180287_01 Fake MSI.intunewin",
+                "Description": "TC_4180287_01 Fake MSI.intunewin",
+                "Publisher": "AIAuto ddmmyyyymmss",
+                "program parameters": {
+                    "Installation time required (mins)": "5",
+                    "Install behavior.": "User"
+                },
+                "Requirements parameters": {
+                    "check operating system architecture": "No. Allow this app to be installed on all systems.",
+                    "architecture type": "",
+                    "Minimum operating system": "Windows 10 1607"
+                },
+                "Detection rules parameters": {
+                    "Path": "C:\\test",
+                    "File or folder": "test.txt",
+                    "Rules format": "Manually configure detection rules",
+                    "Rule type": "File",
+                    "Operator": "Greater than or equal to",
+                    "Detection method": "Date created"
+                },
+                "Dependencies": "",
+                "Supercedence": "",
+                "Assignments": {
+                    "Required": "Add group",
+                    "Available for enrolled devices": "",
+                    "uninstall": "",
+                    "select groups": "Automation_AI"
+                },
+                "API parameters": {},
+                "Device Validation": {
+                    "pre-requisite on device": "",
+                    "App Installation Validation": "Verify App A should not be installed on the device",
+                    "searchTerm": "",
+                    "expectedValue": ""
+                }
+            }
+        },
+        {
+            "testCaseId": "TC_4179765",
+            "testName": "WinClassicApp_App with detection script should NOT install if script outputs any text",
+            "description": "CustomScript_WinClassicApp_App with detection script should NOT install if script outputs any text",
+            "category": "WinClassicApp",
+            "priority": "High",
+            "enabled": true,
+            "parameters": {
+                "firstLink": "Apps",
+                "secondLink": "Windows",
+                "AppType": "Windows app (Win32)",
+                "select app package file": "winrar-x64-501.intunewin",
+                "Type of app install file": "MSI",
+                "Name": "TC_4179765_winrar-x64-501.intunewin",
+                "Description": "TC_4179765_winrar-x64-501.intunewin",
+                "Publisher": "Company",
+                "program parameters": {
+                    "Installation time required (mins)": "10",
+                    "Install behavior.": "System"
+                },
+                "Requirements parameters": {
+                    "check operating system architecture": "No. Allow this app to be installed on all systems",
+                    "architecture type": "",
+                    "Minimum operating system": "Windows 10 1607"
+                },
+                "Detection rules parameters": {
+                    "Rules format": "Use a custom detection script",
+                    "Script file": "detect-output.ps1",
+                    "Run script as 32 bit process on 64 bit clients": "No",
+                    "Enforce script signature check and run script silently": "No"
+                },
+                "Dependencies": "",
+                "Supercedence": "",
+                "Assignments": {
+                    "Required": "Add group",
+                    "Available for enrolled devices": "",
+                    "uninstall": "",
+                    "select groups": "AI_Automation_User_group"
+                },
+                "API parameters": {},
+                "Device Validation": {
+                    "pre-requisite on device": "",
+                    "App Installation Validation": "Verify App A should not be installed on the device",
+                    "searchTerm": "",
+                    "expectedValue": ""
+                }
+            }
+        }
+    ]
+}

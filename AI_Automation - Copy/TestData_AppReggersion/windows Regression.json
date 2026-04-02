@@ -1,0 +1,2406 @@
+﻿{
+    "testCases":  [
+                      {
+                          "testCaseId":  "TC_952826",
+                          "testName":  "Windows_Required_UserGroup_Appx_InstallSuccess",
+                          "description":  "[IntuneSA]:[Windows]:[Required]:[UserGroup][Appx]:Verify Install is success for all Windows devices of a user.",
+                          "category":  "WinClassicApp",
+                          "priority":  "High",
+                          "enabled":  true,
+                          "parameters":  {
+                                             "firstLink":  "Apps",
+                                             "secondLink":  "Windows",
+                                             "AppType":  "Line-of-business app",
+                                             "select app package file":  "TestAppX1.appx",
+                                             "Type of app install file":  "",
+                                             "Name":  "TC_952826_TestAppX1.appx",
+                                             "Description":  "TC_952826_TestAppX1.appx",
+                                             "Publisher":  "AIAuto ddmmyyyymmss",
+                                             "Assignments":  {
+                                                                 "Required":  "Add group",
+                                                                 "Available for enrolled devices":  "",
+                                                                 "uninstall":  "",
+                                                                 "select groups":  "AI_Automation"
+                                                             },
+                                             "API parameters":  {
+
+                                                                },
+                                             "Device Validation":  {
+                                                                       "pre-requisite on device":  "",
+                                                                       "App Installation Validation":  "Verify Install is success for all Windows devices of a user",
+                                                                       "searchTerm":  "",
+                                                                       "expectedValue":  ""
+                                                                   }
+                                         }
+                      },
+                      {
+                          "testCaseId":  "TC_952832",
+                          "testName":  "Windows_Uninstall_UserGroup_Appx_UninstallSuccess",
+                          "description":  "[IntuneSA]:[Windows]:[Uninstall]:[UserGroup]:[Appx]:Verify Uninstall is success for all Windows devices in Group",
+                          "category":  "WinClassicApp",
+                          "priority":  "High",
+                          "enabled":  true,
+                          "parameters":  {
+                                             "firstLink":  "Apps",
+                                             "secondLink":  "Windows",
+                                             "AppType":  "Line-of-business app",
+                                             "select app package file":  "TestAppX2.appx",
+                                             "Type of app install file":  "",
+                                             "Name":  "TC_952832_TestAppX2.appx",
+                                             "Description":  "TC_952832_TestAppX2.appx",
+                                             "Publisher":  "AIAuto ddmmyyyymmss",
+                                             "Assignments":  {
+                                                                 "Required":  "Add group",
+                                                                 "Available for enrolled devices":  "",
+                                                                 "uninstall":  "Add group",
+                                                                 "select groups":  "AI_Automation"
+                                                             },
+                                             "API parameters":  {
+
+                                                                },
+                                             "Device Validation":  {
+                                                                       "pre-requisite on device":  "",
+                                                                       "App Installation Validation":  "Verify Uninstall is success for all Windows devices in Group",
+                                                                       "searchTerm":  "",
+                                                                       "expectedValue":  ""
+                                                                   }
+                                         }
+                      },
+                      {
+                          "testCaseId":  "TC_952836",
+                          "testName":  "Windows_InstallStatus_Available_UserGroup_Appx",
+                          "description":  "[IntuneSA]:[Windows]:[InstallStatus]:[Available][UserGroup]:[Appx]:IT Pro can see installation status summary for app deployed for User group as available",
+                          "category":  "WinClassicApp",
+                          "priority":  "High",
+                          "enabled":  true,
+                          "parameters":  {
+                                             "firstLink":  "Apps",
+                                             "secondLink":  "Windows",
+                                             "AppType":  "Line-of-business app",
+                                             "select app package file":  "TestAppX3.appx",
+                                             "Type of app install file":  "",
+                                             "Name":  "TC_952836_TestAppX3.appx",
+                                             "Description":  "TC_952836_TestAppX3.appx",
+                                             "Publisher":  "AIAuto ddmmyyyymmss",
+                                             "Assignments":  {
+                                                                 "Required":  "",
+                                                                 "Available for enrolled devices":  "Add group",
+                                                                 "uninstall":  "",
+                                                                 "select groups":  "AI_Automation"
+                                                             },
+                                             "API parameters":  {
+
+                                                                },
+                                             "Device Validation":  {
+                                                                       "pre-requisite on device":  "",
+                                                                       "App Installation Validation":  "Verify installation status summary for available app on user group",
+                                                                       "searchTerm":  "",
+                                                                       "expectedValue":  ""
+                                                                   }
+                                         }
+                      },
+                      {
+                          "testCaseId":  "TC_952837",
+                          "testName":  "Windows_InstallStatus_Required_UserGroup_InstallFailed_AppxBundle",
+                          "description":  "[IntuneSA]:[Windows]:[InstallStatus]:[Required][UserGroup]:[InstallFailed]:[Appx/AppxBundle]:IT Pro can see installation status summary with error code for app deployed for User group as required as failed with error",
+                          "category":  "WinClassicApp",
+                          "priority":  "High",
+                          "enabled":  true,
+                          "parameters":  {
+                                             "firstLink":  "Apps",
+                                             "secondLink":  "Windows",
+                                             "AppType":  "Line-of-business app",
+                                             "select app package file":  "SpartanV1.appxbundle",
+                                             "Type of app install file":  "",
+                                             "Name":  "TC_952837_SpartanV1.appxbundle",
+                                             "Description":  "TC_952837_SpartanV1.appxbundle",
+                                             "Publisher":  "AIAuto ddmmyyyymmss",
+                                             "Assignments":  {
+                                                                 "Required":  "Add group",
+                                                                 "Available for enrolled devices":  "",
+                                                                 "uninstall":  "",
+                                                                 "select groups":  "AI_Automation_User_group"
+                                                             },
+                                             "API parameters":  {
+
+                                                                },
+                                             "Device Validation":  {
+                                                                       "pre-requisite on device":  "",
+                                                                       "App Installation Validation":  "Verify installation status summary shows failed with error code",
+                                                                       "searchTerm":  "",
+                                                                       "expectedValue":  ""
+                                                                   }
+                                         }
+                      },
+                      {
+                          "testCaseId":  "TC_952839",
+                          "testName":  "Windows_InstallStatus_Required_DeviceGroup_Appx",
+                          "description":  "[IntuneSA]:[Windows]:[InstallStatus]:[Required][DeviceGroup]:[Appx]:IT Pro can see installation status summary for app deployed for Device group as required",
+                          "category":  "WinClassicApp",
+                          "priority":  "High",
+                          "enabled":  true,
+                          "parameters":  {
+                                             "firstLink":  "Apps",
+                                             "secondLink":  "Windows",
+                                             "AppType":  "Line-of-business app",
+                                             "select app package file":  "TestAppX5.appx",
+                                             "Type of app install file":  "",
+                                             "Name":  "TC_952839_TestAppX5.appx",
+                                             "Description":  "TC_952839_TestAppX5.appx",
+                                             "Publisher":  "AIAuto ddmmyyyymmss",
+                                             "Assignments":  {
+                                                                 "Required":  "Add group",
+                                                                 "Available for enrolled devices":  "",
+                                                                 "uninstall":  "",
+                                                                 "select groups":  "AI_Automation_Device_group"
+                                                             },
+                                             "API parameters":  {
+
+                                                                },
+                                             "Device Validation":  {
+                                                                       "pre-requisite on device":  "",
+                                                                       "App Installation Validation":  "Verify installation status summary for required app on device group",
+                                                                       "searchTerm":  "",
+                                                                       "expectedValue":  ""
+                                                                   }
+                                         }
+                      },
+                      {
+                          "testCaseId":  "TC_952842",
+                          "testName":  "Windows_AppDelete_Appx_Deployed",
+                          "description":  "[IntuneSA]:[Windows]:[AppDelete]:[Appx][Deployed]:IT Pro can delete app from admin console which has active deployments",
+                          "category":  "WinClassicApp",
+                          "priority":  "High",
+                          "enabled":  true,
+                          "parameters":  {
+                                             "firstLink":  "Apps",
+                                             "secondLink":  "Windows",
+                                             "AppType":  "Line-of-business app",
+                                             "select app package file":  "TestAppX6.appx",
+                                             "Type of app install file":  "",
+                                             "Name":  "TC_952842_TestAppX6.appx",
+                                             "Description":  "TC_952842_TestAppX6.appx",
+                                             "Publisher":  "AIAuto ddmmyyyymmss",
+                                             "Assignments":  {
+                                                                 "Required":  "",
+                                                                 "Available for enrolled devices":  "Add group",
+                                                                 "uninstall":  "",
+                                                                 "select groups":  "AI_Automation"
+                                                             },
+                                             "API parameters":  {
+
+                                                                },
+                                             "Device Validation":  {
+                                                                       "pre-requisite on device":  "",
+                                                                       "App Installation Validation":  "Verify app can be deleted from admin console with active deployments",
+                                                                       "searchTerm":  "",
+                                                                       "expectedValue":  ""
+                                                                   }
+                                         }
+                      },
+                      {
+                          "testCaseId":  "TC_952844",
+                          "testName":  "Windows_Targeting_DeviceGroup_Required_Uninstall_AppxBundle",
+                          "description":  "[IntuneSA]:[Windows]:[Targeting]:[DeviceGroup]:[Required][Uninstall]:[AppX/AppxBundle]:Deploy App as required and make sure app is installed on device, Now change targeting to Uninstall and verify app is uninstalled from device",
+                          "category":  "WinClassicApp",
+                          "priority":  "High",
+                          "enabled":  true,
+                          "parameters":  {
+                                             "firstLink":  "Apps",
+                                             "secondLink":  "Windows",
+                                             "AppType":  "Line-of-business app",
+                                             "select app package file":  "SpartanV1.appxbundle",
+                                             "Type of app install file":  "",
+                                             "Name":  "TC_952844_SpartanV1.appxbundle",
+                                             "Description":  "TC_952844_SpartanV1.appxbundle",
+                                             "Publisher":  "AIAuto ddmmyyyymmss",
+                                             "Assignments":  {
+                                                                 "Required":  "Add group",
+                                                                 "Available for enrolled devices":  "",
+                                                                 "uninstall":  "Add group",
+                                                                 "select groups":  "AI_Automation_Device_group"
+                                                             },
+                                             "API parameters":  {
+
+                                                                },
+                                             "Device Validation":  {
+                                                                       "pre-requisite on device":  "",
+                                                                       "App Installation Validation":  "Verify required app can be retargeted to uninstall on device group",
+                                                                       "searchTerm":  "",
+                                                                       "expectedValue":  ""
+                                                                   }
+                                         }
+                      },
+                      {
+                          "testCaseId":  "TC_952852",
+                          "testName":  "Windows_Targeting_MobileMSI_Uninstall_DeviceGroup",
+                          "description":  "[IntuneSA]:[Windows][Win10]:[Targeting]:[MobileMSI]:[Uninstall][DeviceGroup]:Deploy App as required and make sure app is installed on device, Now change targeting to Uninstall and verify app is uninstalled from device",
+                          "category":  "WinClassicApp",
+                          "priority":  "High",
+                          "enabled":  true,
+                          "parameters":  {
+                                             "firstLink":  "Apps",
+                                             "secondLink":  "Windows",
+                                             "AppType":  "Line-of-business app",
+                                             "select app package file":  "01 Fake MSI.msi",
+                                             "Type of app install file":  "",
+                                             "Name":  "TC_952852_01 Fake MSI.msi",
+                                             "Description":  "TC_952852_01 Fake MSI.msi",
+                                             "Publisher":  "AIAuto ddmmyyyymmss",
+                                             "Assignments":  {
+                                                                 "Required":  "Add group",
+                                                                 "Available for enrolled devices":  "",
+                                                                 "uninstall":  "Add group",
+                                                                 "select groups":  "AI_Automation_Device_group"
+                                                             },
+                                             "API parameters":  {
+
+                                                                },
+                                             "Device Validation":  {
+                                                                       "pre-requisite on device":  "",
+                                                                       "App Installation Validation":  "Verify app can be retargeted from required to uninstall for device group",
+                                                                       "searchTerm":  "",
+                                                                       "expectedValue":  ""
+                                                                   }
+                                         }
+                      },
+                      {
+                          "testCaseId":  "TC_952854",
+                          "testName":  "Windows_Publish_MobileMSI_UserGroup",
+                          "description":  "[IntuneSA]:[Windows][Win10]:[Publish]:[MobileMSI]:[UserGroup]:Verify admin can create a MobileMSI application and deploy it",
+                          "category":  "WinClassicApp",
+                          "priority":  "High",
+                          "enabled":  true,
+                          "parameters":  {
+                                             "firstLink":  "Apps",
+                                             "secondLink":  "Windows",
+                                             "AppType":  "Line-of-business app",
+                                             "select app package file":  "02 Fake MSI.msi",
+                                             "Type of app install file":  "",
+                                             "Name":  "TC_952854_02 Fake MSI.msi",
+                                             "Description":  "TC_952854_02 Fake MSI.msi",
+                                             "Publisher":  "AIAuto ddmmyyyymmss",
+                                             "Assignments":  {
+                                                                 "Required":  "Add group",
+                                                                 "Available for enrolled devices":  "",
+                                                                 "uninstall":  "",
+                                                                 "select groups":  "AI_Automation"
+                                                             },
+                                             "API parameters":  {
+
+                                                                },
+                                             "Device Validation":  {
+                                                                       "pre-requisite on device":  "",
+                                                                       "App Installation Validation":  "Verify admin can publish MobileMSI app to user group",
+                                                                       "searchTerm":  "",
+                                                                       "expectedValue":  ""
+                                                                   }
+                                         }
+                      },
+                      {
+                          "testCaseId":  "TC_952855",
+                          "testName":  "Windows_MobileMSI_Required_UserGroup_InstallSuccess",
+                          "description":  "[IntuneSA]:[Windows][Win10]:[MobileMSI]:[Required][UserGroup]:Verify Install is success for all Windows devices of user",
+                          "category":  "WinClassicApp",
+                          "priority":  "High",
+                          "enabled":  true,
+                          "parameters":  {
+                                             "firstLink":  "Apps",
+                                             "secondLink":  "Windows",
+                                             "AppType":  "Line-of-business app",
+                                             "select app package file":  "03 Fake MSI.msi",
+                                             "Type of app install file":  "",
+                                             "Name":  "TC_952855_03 Fake MSI.msi",
+                                             "Description":  "TC_952855_03 Fake MSI.msi",
+                                             "Publisher":  "AIAuto ddmmyyyymmss",
+                                             "Assignments":  {
+                                                                 "Required":  "Add group",
+                                                                 "Available for enrolled devices":  "",
+                                                                 "uninstall":  "",
+                                                                 "select groups":  "AI_Automation"
+                                                             },
+                                             "API parameters":  {
+
+                                                                },
+                                             "Device Validation":  {
+                                                                       "pre-requisite on device":  "",
+                                                                       "App Installation Validation":  "Verify MobileMSI install is success for all Windows devices of user",
+                                                                       "searchTerm":  "",
+                                                                       "expectedValue":  ""
+                                                                   }
+                                         }
+                      },
+                      {
+                          "testCaseId":  "TC_952856",
+                          "testName":  "Windows_FastApp_MobileMSI_Required_UserGroup",
+                          "description":  "[IntuneSA]:[Windows][Win10]:[FastApp]:[MobileMSI]:[Required][UserGroup]:Verify app is installed during enrollment within 2 minutes for all Windows devices of user",
+                          "category":  "WinClassicApp",
+                          "priority":  "High",
+                          "enabled":  true,
+                          "parameters":  {
+                                             "firstLink":  "Apps",
+                                             "secondLink":  "Windows",
+                                             "AppType":  "Line-of-business app",
+                                             "select app package file":  "04 Fake MSI.msi",
+                                             "Type of app install file":  "",
+                                             "Name":  "TC_952856_04 Fake MSI.msi",
+                                             "Description":  "TC_952856_04 Fake MSI.msi",
+                                             "Publisher":  "AIAuto ddmmyyyymmss",
+                                             "Assignments":  {
+                                                                 "Required":  "Add group",
+                                                                 "Available for enrolled devices":  "",
+                                                                 "uninstall":  "",
+                                                                 "select groups":  "AI_Automation"
+                                                             },
+                                             "API parameters":  {
+
+                                                                },
+                                             "Device Validation":  {
+                                                                       "pre-requisite on device":  "",
+                                                                       "App Installation Validation":  "Verify FastApp MobileMSI install during enrollment within 2 minutes",
+                                                                       "searchTerm":  "",
+                                                                       "expectedValue":  ""
+                                                                   }
+                                         }
+                      },
+                      {
+                          "testCaseId":  "TC_952857",
+                          "testName":  "Windows_Required_DeviceGroup_Universal_InstallSuccess",
+                          "description":  "[IntuneSA]:[Windows]:[Required]:[Win10][DeviceGroup][Universal]:Verify Install is success for all devices in group",
+                          "category":  "WinClassicApp",
+                          "priority":  "High",
+                          "enabled":  true,
+                          "parameters":  {
+                                             "firstLink":  "Apps",
+                                             "secondLink":  "Windows",
+                                             "AppType":  "Line-of-business app",
+                                             "select app package file":  "TestAppX8.appx",
+                                             "Type of app install file":  "",
+                                             "Name":  "TC_952857_TestAppX8.appx",
+                                             "Description":  "TC_952857_TestAppX8.appx",
+                                             "Publisher":  "AIAuto ddmmyyyymmss",
+                                             "Assignments":  {
+                                                                 "Required":  "Add group",
+                                                                 "Available for enrolled devices":  "",
+                                                                 "uninstall":  "",
+                                                                 "select groups":  "AI_Automation_Device_group"
+                                                             },
+                                             "API parameters":  {
+
+                                                                },
+                                             "Device Validation":  {
+                                                                       "pre-requisite on device":  "",
+                                                                       "App Installation Validation":  "Verify Universal app install is success for all devices in device group",
+                                                                       "searchTerm":  "",
+                                                                       "expectedValue":  ""
+                                                                   }
+                                         }
+                      },
+                      {
+                          "testCaseId":  "TC_952858",
+                          "testName":  "Windows_Required_UserGroup_Universal_InstallSuccess",
+                          "description":  "[IntuneSA]:[Windows]:[Required]:[Win10][UserGroup][Universal]:Verify Install is success for all devices of a user",
+                          "category":  "WinClassicApp",
+                          "priority":  "High",
+                          "enabled":  true,
+                          "parameters":  {
+                                             "firstLink":  "Apps",
+                                             "secondLink":  "Windows",
+                                             "AppType":  "Line-of-business app",
+                                             "select app package file":  "TestAppX9.appx",
+                                             "Type of app install file":  "",
+                                             "Name":  "TC_952858_TestAppX9.appx",
+                                             "Description":  "TC_952858_TestAppX9.appx",
+                                             "Publisher":  "AIAuto ddmmyyyymmss",
+                                             "Assignments":  {
+                                                                 "Required":  "Add group",
+                                                                 "Available for enrolled devices":  "",
+                                                                 "uninstall":  "",
+                                                                 "select groups":  "AI_Automation"
+                                                             },
+                                             "API parameters":  {
+
+                                                                },
+                                             "Device Validation":  {
+                                                                       "pre-requisite on device":  "",
+                                                                       "App Installation Validation":  "Verify Universal app install is success for all devices of a user",
+                                                                       "searchTerm":  "",
+                                                                       "expectedValue":  ""
+                                                                   }
+                                         }
+                      },
+                      {
+                          "testCaseId":  "TC_952861",
+                          "testName":  "Windows_Uninstall_DeviceGroup_Universal",
+                          "description":  "[IntuneSA]:[Windows]:[Uninstall]:[Win10]:[DeviceGroup]:[Universal]:Verify Uninstall is success for all devices in a group",
+                          "category":  "WinClassicApp",
+                          "priority":  "High",
+                          "enabled":  true,
+                          "parameters":  {
+                                             "firstLink":  "Apps",
+                                             "secondLink":  "Windows",
+                                             "AppType":  "Line-of-business app",
+                                             "select app package file":  "TestAppX8.appx",
+                                             "Type of app install file":  "",
+                                             "Name":  "TC_952861_TestAppX8.appx",
+                                             "Description":  "TC_952861_TestAppX8.appx",
+                                             "Publisher":  "AIAuto ddmmyyyymmss",
+                                             "Assignments":  {
+                                                                 "Required":  "",
+                                                                 "Available for enrolled devices":  "",
+                                                                 "uninstall":  "Add group",
+                                                                 "select groups":  "AI_Automation_Device_group"
+                                                             },
+                                             "API parameters":  {
+
+                                                                },
+                                             "Device Validation":  {
+                                                                       "pre-requisite on device":  "",
+                                                                       "App Installation Validation":  "Verify Universal app uninstall is success for all devices in a group",
+                                                                       "searchTerm":  "",
+                                                                       "expectedValue":  ""
+                                                                   }
+                                         }
+                      },
+                      {
+                          "testCaseId":  "TC_952862",
+                          "testName":  "Windows_Uninstall_UserGroup_Universal",
+                          "description":  "[IntuneSA]:[Windows]:[Uninstall]:[Win10]:[UserGroup]:[Universal]:Verify Uninstall is success for all devices of a user",
+                          "category":  "WinClassicApp",
+                          "priority":  "High",
+                          "enabled":  true,
+                          "parameters":  {
+                                             "firstLink":  "Apps",
+                                             "secondLink":  "Windows",
+                                             "AppType":  "Line-of-business app",
+                                             "select app package file":  "TestAppX9.appx",
+                                             "Type of app install file":  "",
+                                             "Name":  "TC_952862_TestAppX9.appx",
+                                             "Description":  "TC_952862_TestAppX9.appx",
+                                             "Publisher":  "AIAuto ddmmyyyymmss",
+                                             "Assignments":  {
+                                                                 "Required":  "",
+                                                                 "Available for enrolled devices":  "",
+                                                                 "uninstall":  "Add group",
+                                                                 "select groups":  "AI_Automation_User_group"
+                                                             },
+                                             "API parameters":  {
+
+                                                                },
+                                             "Device Validation":  {
+                                                                       "pre-requisite on device":  "",
+                                                                       "App Installation Validation":  "Verify Universal app uninstall is success for all devices of a user",
+                                                                       "searchTerm":  "",
+                                                                       "expectedValue":  ""
+                                                                   }
+                                         }
+                      },
+                      {
+                          "testCaseId":  "TC_952865",
+                          "testName":  "Windows_MobileMSI_Available_UserGroup_InstallSuccess",
+                          "description":  "[IntuneSA]:[Windows][Win10]:[MobileMSI]:[Available][UserGroup]:Verify Install is success for all Windows devices of user",
+                          "category":  "WinClassicApp",
+                          "priority":  "High",
+                          "enabled":  true,
+                          "parameters":  {
+                                             "firstLink":  "Apps",
+                                             "secondLink":  "Windows",
+                                             "AppType":  "Line-of-business app",
+                                             "select app package file":  "01 Fake MSI.msi",
+                                             "Type of app install file":  "",
+                                             "Name":  "TC_952865_01 Fake MSI.msi",
+                                             "Description":  "TC_952865_01 Fake MSI.msi",
+                                             "Publisher":  "AIAuto ddmmyyyymmss",
+                                             "Assignments":  {
+                                                                 "Required":  "",
+                                                                 "Available for enrolled devices":  "Add group",
+                                                                 "uninstall":  "",
+                                                                 "select groups":  "AI_Automation"
+                                                             },
+                                             "API parameters":  {
+
+                                                                },
+                                             "Device Validation":  {
+                                                                       "pre-requisite on device":  "",
+                                                                       "App Installation Validation":  "Verify MobileMSI available install is success for all Windows devices of user",
+                                                                       "searchTerm":  "",
+                                                                       "expectedValue":  ""
+                                                                   }
+                                         }
+                      },
+                      {
+                          "testCaseId":  "TC_1351419",
+                          "testName":  "Windows_Publish_MSI",
+                          "description":  "[IntuneSA]:[Windows]:[Publish][MSI]:Verify admin can publish an MSI",
+                          "category":  "WinClassicApp",
+                          "priority":  "High",
+                          "enabled":  true,
+                          "parameters":  {
+                                             "firstLink":  "Apps",
+                                             "secondLink":  "Windows",
+                                             "AppType":  "Line-of-business app",
+                                             "select app package file":  "02 Fake MSI.msi",
+                                             "Type of app install file":  "",
+                                             "Name":  "TC_1351419_02 Fake MSI.msi",
+                                             "Description":  "TC_1351419_02 Fake MSI.msi",
+                                             "Publisher":  "AIAuto ddmmyyyymmss",
+                                             "Assignments":  {
+                                                                 "Required":  "",
+                                                                 "Available for enrolled devices":  "",
+                                                                 "uninstall":  "",
+                                                                 "select groups":  ""
+                                                             },
+                                             "API parameters":  {
+
+                                                                },
+                                             "Device Validation":  {
+                                                                       "pre-requisite on device":  "",
+                                                                       "App Installation Validation":  "Verify admin can publish MSI app",
+                                                                       "searchTerm":  "",
+                                                                       "expectedValue":  ""
+                                                                   }
+                                         }
+                      },
+                      {
+                          "testCaseId":  "TC_1351428",
+                          "testName":  "Windows_Publish_Appx",
+                          "description":  "[IntuneSA]:[Windows]:[Publish][Appx]:Verify admin can publish an appx",
+                          "category":  "WinClassicApp",
+                          "priority":  "High",
+                          "enabled":  true,
+                          "parameters":  {
+                                             "firstLink":  "Apps",
+                                             "secondLink":  "Windows",
+                                             "AppType":  "Line-of-business app",
+                                             "select app package file":  "TestAppX1.appx",
+                                             "Type of app install file":  "",
+                                             "Name":  "TC_1351428_TestAppX1.appx",
+                                             "Description":  "TC_1351428_TestAppX1.appx",
+                                             "Publisher":  "AIAuto ddmmyyyymmss",
+                                             "Assignments":  {
+                                                                 "Required":  "",
+                                                                 "Available for enrolled devices":  "",
+                                                                 "uninstall":  "",
+                                                                 "select groups":  ""
+                                                             },
+                                             "API parameters":  {
+
+                                                                },
+                                             "Device Validation":  {
+                                                                       "pre-requisite on device":  "",
+                                                                       "App Installation Validation":  "Verify admin can publish Appx app",
+                                                                       "searchTerm":  "",
+                                                                       "expectedValue":  ""
+                                                                   }
+                                         }
+                      },
+                      {
+                          "testCaseId":  "TC_1351430",
+                          "testName":  "Windows_Publish_AppxBundle",
+                          "description":  "[IntuneSA]:[Windows]:[Publish][Appx Bundle]:Verify admin can publish an appx bundle",
+                          "category":  "WinClassicApp",
+                          "priority":  "High",
+                          "enabled":  true,
+                          "parameters":  {
+                                             "firstLink":  "Apps",
+                                             "secondLink":  "Windows",
+                                             "AppType":  "Line-of-business app",
+                                             "select app package file":  "SpartanV1.appxbundle",
+                                             "Type of app install file":  "",
+                                             "Name":  "TC_1351430_SpartanV1.appxbundle",
+                                             "Description":  "TC_1351430_SpartanV1.appxbundle",
+                                             "Publisher":  "AIAuto ddmmyyyymmss",
+                                             "Assignments":  {
+                                                                 "Required":  "",
+                                                                 "Available for enrolled devices":  "",
+                                                                 "uninstall":  "",
+                                                                 "select groups":  ""
+                                                             },
+                                             "API parameters":  {
+
+                                                                },
+                                             "Device Validation":  {
+                                                                       "pre-requisite on device":  "",
+                                                                       "App Installation Validation":  "Verify admin can publish Appx bundle",
+                                                                       "searchTerm":  "",
+                                                                       "expectedValue":  ""
+                                                                   }
+                                         }
+                      },
+                      {
+                          "testCaseId":  "TC_1351437",
+                          "testName":  "Windows_AppUpdate_Uninstall_Appx_AppxBundle_Required_UserGroup",
+                          "description":  "[IntuneSA]:[Windows]:[AppUpdate][Uninstall]:[Appx/AppxBundle]:[Required][UserGroup]:Verify App V1 is installed on devices for user. Uninstall V1 OOB and update V1 to V2 and Verify that V2 is installed on the device.",
+                          "category":  "WinClassicApp",
+                          "priority":  "High",
+                          "enabled":  true,
+                          "parameters":  {
+                                             "firstLink":  "Apps",
+                                             "secondLink":  "Windows",
+                                             "AppType":  "Line-of-business app",
+                                             "select app package file":  "TestAppX1.appx",
+                                             "Type of app install file":  "",
+                                             "Name":  "TC_1351437_TestAppX1.appx",
+                                             "Description":  "TC_1351437_TestAppX1.appx",
+                                             "Publisher":  "AIAuto ddmmyyyymmss",
+                                             "Assignments":  {
+                                                                 "Required":  "Add group",
+                                                                 "Available for enrolled devices":  "",
+                                                                 "uninstall":  "Add group",
+                                                                 "select groups":  "AI_Automation"
+                                                             },
+                                             "API parameters":  {
+
+                                                                },
+                                             "Device Validation":  {
+                                                                       "pre-requisite on device":  "",
+                                                                       "App Installation Validation":  "Verify app update after uninstall flow for required user group",
+                                                                       "searchTerm":  "",
+                                                                       "expectedValue":  ""
+                                                                   }
+                                         }
+                      },
+                      {
+                          "testCaseId":  "TC_1351438",
+                          "testName":  "Windows_AppUpdate_Appx_Required_UserGroup",
+                          "description":  "[IntuneSA]:[Windows]:[AppUpdate]:[Appx]:[Required][UserGroup]:Verify that App V1 deployed as required is installed for all devices of User. When App V1 is updated to V2, V2 is updated on all devices with V1 installed.",
+                          "category":  "WinClassicApp",
+                          "priority":  "High",
+                          "enabled":  true,
+                          "parameters":  {
+                                             "firstLink":  "Apps",
+                                             "secondLink":  "Windows",
+                                             "AppType":  "Line-of-business app",
+                                             "select app package file":  "TestAppX4.appx",
+                                             "Type of app install file":  "",
+                                             "Name":  "TC_1351438_TestAppX4.appx",
+                                             "Description":  "TC_1351438_TestAppX4.appx",
+                                             "Publisher":  "AIAuto ddmmyyyymmss",
+                                             "Assignments":  {
+                                                                 "Required":  "Add group",
+                                                                 "Available for enrolled devices":  "",
+                                                                 "uninstall":  "",
+                                                                 "select groups":  "AI_Automation_User_group"
+                                                             },
+                                             "API parameters":  {
+
+                                                                },
+                                             "Device Validation":  {
+                                                                       "pre-requisite on device":  "",
+                                                                       "App Installation Validation":  "Verify Appx update from V1 to V2 for required user group",
+                                                                       "searchTerm":  "",
+                                                                       "expectedValue":  ""
+                                                                   }
+                                         }
+                      },
+                      {
+                          "testCaseId":  "TC_1351441",
+                          "testName":  "Windows_AppUpdate_Universal_Required_DeviceGroup",
+                          "description":  "[IntuneSA]:[Windows]:[Appupdate]:[Universal]:[Required][DeviceGroup]:App V1 is installed on device. Now V1 is updated to V2. Verify V1 is updated to V2",
+                          "category":  "WinClassicApp",
+                          "priority":  "High",
+                          "enabled":  true,
+                          "parameters":  {
+                                             "firstLink":  "Apps",
+                                             "secondLink":  "Windows",
+                                             "AppType":  "Line-of-business app",
+                                             "select app package file":  "TestAppX5.appx",
+                                             "Type of app install file":  "",
+                                             "Name":  "TC_1351441_TestAppX5.appx",
+                                             "Description":  "TC_1351441_TestAppX5.appx",
+                                             "Publisher":  "AIAuto ddmmyyyymmss",
+                                             "Assignments":  {
+                                                                 "Required":  "Add group",
+                                                                 "Available for enrolled devices":  "",
+                                                                 "uninstall":  "",
+                                                                 "select groups":  "AI_Automation"
+                                                             },
+                                             "API parameters":  {
+
+                                                                },
+                                             "Device Validation":  {
+                                                                       "pre-requisite on device":  "",
+                                                                       "App Installation Validation":  "Verify Universal app update from V1 to V2 for required device group",
+                                                                       "searchTerm":  "",
+                                                                       "expectedValue":  ""
+                                                                   }
+                                         }
+                      },
+                      {
+                          "testCaseId":  "TC_1351442",
+                          "testName":  "Windows_AppUpdate_Universal_Required_UserGroup",
+                          "description":  "[IntuneSA]:[Windows]:[Appupdate]:[Universal]:[Required][UserGroup]:App V1 is installed on device. Now V1 is updated to V2. Verify V1 is updated to V2",
+                          "category":  "WinClassicApp",
+                          "priority":  "High",
+                          "enabled":  true,
+                          "parameters":  {
+                                             "firstLink":  "Apps",
+                                             "secondLink":  "Windows",
+                                             "AppType":  "Line-of-business app",
+                                             "select app package file":  "TestAppX6.appx",
+                                             "Type of app install file":  "",
+                                             "Name":  "TC_1351442_TestAppX6.appx",
+                                             "Description":  "TC_1351442_TestAppX6.appx",
+                                             "Publisher":  "AIAuto ddmmyyyymmss",
+                                             "Assignments":  {
+                                                                 "Required":  "Add group",
+                                                                 "Available for enrolled devices":  "",
+                                                                 "uninstall":  "",
+                                                                 "select groups":  "AI_Automation_User_group"
+                                                             },
+                                             "API parameters":  {
+
+                                                                },
+                                             "Device Validation":  {
+                                                                       "pre-requisite on device":  "",
+                                                                       "App Installation Validation":  "Verify Universal app update from V1 to V2 for required user group",
+                                                                       "searchTerm":  "",
+                                                                       "expectedValue":  ""
+                                                                   }
+                                         }
+                      },
+                      {
+                          "testCaseId":  "TC_1731029",
+                          "testName":  "Windows_OfficeCSP_UI_LearnMore_Hyperlinks",
+                          "description":  "[IntuneSA]:[Ibiza]:[Windows][Win10RS2+]:[OfficeCSP][UI]:Verify that \"Learn more\" hyperlinks on the \"Add app\" and \"Configure app suite\" blades work and are directed to the correct place",
+                          "category":  "WinClassicApp",
+                          "priority":  "High",
+                          "enabled":  true,
+                          "parameters":  {
+                                             "firstLink":  "Apps",
+                                             "secondLink":  "Windows",
+                                             "AppType":  "Microsoft 365 Apps for Windows 10 and later",
+                                             "select app package file":  "",
+                                             "Type of app install file":  "",
+                                             "Name":  "TC_1731029_M365Apps",
+                                             "Description":  "TC_1731029_M365Apps",
+                                             "Publisher":  "AIAuto ddmmyyyymmss",
+                                             "Assignments":  {
+                                                                 "Required":  "",
+                                                                 "Available for enrolled devices":  "",
+                                                                 "uninstall":  "",
+                                                                 "select groups":  ""
+                                                             },
+                                             "API parameters":  {
+
+                                                                },
+                                             "Device Validation":  {
+                                                                       "pre-requisite on device":  "",
+                                                                       "App Installation Validation":  "Verify Learn more hyperlinks navigate to the correct destination",
+                                                                       "searchTerm":  "",
+                                                                       "expectedValue":  ""
+                                                                   },
+                                             "autoAcceptEula":  true,
+                                             "useSharedComputerActivation":  false,
+                                             "updateChannel":  "current",
+                                             "officeSuiteAppDefaultFileFormat":  "officeOpenDocumentFormat",
+                                             "officePlatformArchitecture":  "x64",
+                                             "localesToInstall":  [
+
+                                                                  ],
+                                             "installProgressDisplayLevel":  "none",
+                                             "shouldUninstallOlderVersionsOfOffice":  true,
+                                             "targetVersion":  "",
+                                             "updateVersion":  "",
+                                             "excludedApps":  {
+                                                                  "access":  false,
+                                                                  "bing":  false,
+                                                                  "excel":  false,
+                                                                  "groove":  true,
+                                                                  "infoPath":  true,
+                                                                  "lync":  false,
+                                                                  "oneDrive":  false,
+                                                                  "oneNote":  false,
+                                                                  "outlook":  false,
+                                                                  "powerPoint":  false,
+                                                                  "publisher":  false,
+                                                                  "sharePointDesigner":  true,
+                                                                  "teams":  false,
+                                                                  "visio":  false,
+                                                                  "word":  false
+                                                              }
+                                         }
+                      },
+                      {
+                          "testCaseId":  "TC_1731055",
+                          "testName":  "Windows_OfficeCSP_InstallStatus_ProPlus_Required_DeviceGroup",
+                          "description":  "[IntuneSA]:[Ibiza]:[Windows][Win10RS2+]:[OfficeCSP][InstallStatus]:[ProPlus]:[Required][DeviceGroup]:Verify successful ProPlus (multiple apps) installation is reported successfully in the UI for all Devices in the Group",
+                          "category":  "WinClassicApp",
+                          "priority":  "High",
+                          "enabled":  true,
+                          "parameters":  {
+                                             "firstLink":  "Apps",
+                                             "secondLink":  "Windows",
+                                             "AppType":  "Microsoft 365 Apps for Windows 10 and later",
+                                             "select app package file":  "",
+                                             "Type of app install file":  "",
+                                             "Name":  "TC_1731055_M365Apps",
+                                             "Description":  "TC_1731055_M365Apps",
+                                             "Publisher":  "AIAuto ddmmyyyymmss",
+                                             "Assignments":  {
+                                                                 "Required":  "Add group",
+                                                                 "Available for enrolled devices":  "",
+                                                                 "uninstall":  "",
+                                                                 "select groups":  "AI_Automation_Device_group"
+                                                             },
+                                             "API parameters":  {
+
+                                                                },
+                                             "Device Validation":  {
+                                                                       "pre-requisite on device":  "",
+                                                                       "App Installation Validation":  "Verify ProPlus install status shows success for required device group",
+                                                                       "searchTerm":  "",
+                                                                       "expectedValue":  ""
+                                                                   },
+                                             "autoAcceptEula":  true,
+                                             "useSharedComputerActivation":  false,
+                                             "updateChannel":  "current",
+                                             "officeSuiteAppDefaultFileFormat":  "officeOpenDocumentFormat",
+                                             "officePlatformArchitecture":  "x64",
+                                             "localesToInstall":  [
+
+                                                                  ],
+                                             "installProgressDisplayLevel":  "none",
+                                             "shouldUninstallOlderVersionsOfOffice":  true,
+                                             "targetVersion":  "",
+                                             "updateVersion":  "",
+                                             "excludedApps":  {
+                                                                  "access":  true,
+                                                                  "bing":  true,
+                                                                  "excel":  true,
+                                                                  "groove":  true,
+                                                                  "infoPath":  true,
+                                                                  "lync":  false,
+                                                                  "oneDrive":  true,
+                                                                  "oneNote":  true,
+                                                                  "outlook":  true,
+                                                                  "powerPoint":  true,
+                                                                  "publisher":  true,
+                                                                  "sharePointDesigner":  true,
+                                                                  "teams":  false,
+                                                                  "visio":  false,
+                                                                  "word":  false
+                                                              }
+                                         }
+                      },
+                      {
+                          "testCaseId":  "TC_1731059",
+                          "testName":  "Windows_OfficeCSP_InstallStatus_Visio_Required_DeviceGroup",
+                          "description":  "[IntuneSA]:[Ibiza]:[Windows][Win10RS2+]:[OfficeCSP][InstallStatus]:[Visio]:[Required][DeviceGroup]:Verify successful Visio installation is reported successfully in the UI for all Devices in the Group",
+                          "category":  "WinClassicApp",
+                          "priority":  "High",
+                          "enabled":  true,
+                          "parameters":  {
+                                             "firstLink":  "Apps",
+                                             "secondLink":  "Windows",
+                                             "AppType":  "Microsoft 365 Apps for Windows 10 and later",
+                                             "select app package file":  "",
+                                             "Type of app install file":  "",
+                                             "Name":  "TC_1731059_M365Apps",
+                                             "Description":  "TC_1731059_M365Apps",
+                                             "Publisher":  "AIAuto ddmmyyyymmss",
+                                             "Assignments":  {
+                                                                 "Required":  "Add group",
+                                                                 "Available for enrolled devices":  "",
+                                                                 "uninstall":  "",
+                                                                 "select groups":  "AI_Automation_Device_group"
+                                                             },
+                                             "API parameters":  {
+
+                                                                },
+                                             "Device Validation":  {
+                                                                       "pre-requisite on device":  "",
+                                                                       "App Installation Validation":  "Verify Visio install status shows success for required device group",
+                                                                       "searchTerm":  "",
+                                                                       "expectedValue":  ""
+                                                                   },
+                                             "autoAcceptEula":  true,
+                                             "useSharedComputerActivation":  false,
+                                             "updateChannel":  "current",
+                                             "officeSuiteAppDefaultFileFormat":  "officeOpenDocumentFormat",
+                                             "officePlatformArchitecture":  "x64",
+                                             "localesToInstall":  [
+
+                                                                  ],
+                                             "installProgressDisplayLevel":  "none",
+                                             "shouldUninstallOlderVersionsOfOffice":  true,
+                                             "targetVersion":  "",
+                                             "updateVersion":  "",
+                                             "excludedApps":  {
+                                                                  "access":  false,
+                                                                  "bing":  false,
+                                                                  "excel":  false,
+                                                                  "groove":  true,
+                                                                  "infoPath":  true,
+                                                                  "lync":  false,
+                                                                  "oneDrive":  false,
+                                                                  "oneNote":  false,
+                                                                  "outlook":  false,
+                                                                  "powerPoint":  false,
+                                                                  "publisher":  false,
+                                                                  "sharePointDesigner":  true,
+                                                                  "teams":  false,
+                                                                  "visio":  true,
+                                                                  "word":  true
+                                                              }
+                                         }
+                      },
+                      {
+                          "testCaseId":  "TC_1731063",
+                          "testName":  "Windows_OfficeCSP_InstallStatus_Project_Required_DeviceGroup",
+                          "description":  "[IntuneSA]:[Ibiza]:[Windows][Win10RS2+]:[OfficeCSP][InstallStatus]:[Project]:[Required][DeviceGroup]:Verify successful Project installation is reported successfully in the UI for all Devices in the Group",
+                          "category":  "WinClassicApp",
+                          "priority":  "High",
+                          "enabled":  true,
+                          "parameters":  {
+                                             "firstLink":  "Apps",
+                                             "secondLink":  "Windows",
+                                             "AppType":  "Microsoft 365 Apps for Windows 10 and later",
+                                             "select app package file":  "",
+                                             "Type of app install file":  "",
+                                             "Name":  "TC_1731063_M365Apps",
+                                             "Description":  "TC_1731063_M365Apps",
+                                             "Publisher":  "AIAuto ddmmyyyymmss",
+                                             "Assignments":  {
+                                                                 "Required":  "Add group",
+                                                                 "Available for enrolled devices":  "",
+                                                                 "uninstall":  "",
+                                                                 "select groups":  "AI_Automation_Device_group"
+                                                             },
+                                             "API parameters":  {
+
+                                                                },
+                                             "Device Validation":  {
+                                                                       "pre-requisite on device":  "",
+                                                                       "App Installation Validation":  "Verify Project install status shows success for required device group",
+                                                                       "searchTerm":  "",
+                                                                       "expectedValue":  ""
+                                                                   },
+                                             "autoAcceptEula":  true,
+                                             "useSharedComputerActivation":  false,
+                                             "updateChannel":  "current",
+                                             "officeSuiteAppDefaultFileFormat":  "officeOpenDocumentFormat",
+                                             "officePlatformArchitecture":  "x64",
+                                             "localesToInstall":  [
+
+                                                                  ],
+                                             "installProgressDisplayLevel":  "none",
+                                             "shouldUninstallOlderVersionsOfOffice":  true,
+                                             "targetVersion":  "",
+                                             "updateVersion":  "",
+                                             "excludedApps":  {
+                                                                  "access":  true,
+                                                                  "bing":  false,
+                                                                  "excel":  true,
+                                                                  "groove":  true,
+                                                                  "infoPath":  true,
+                                                                  "lync":  false,
+                                                                  "oneDrive":  false,
+                                                                  "oneNote":  false,
+                                                                  "outlook":  false,
+                                                                  "powerPoint":  false,
+                                                                  "publisher":  false,
+                                                                  "sharePointDesigner":  true,
+                                                                  "teams":  false,
+                                                                  "visio":  false,
+                                                                  "word":  false
+                                                              }
+                                         }
+                      },
+                      {
+                          "testCaseId":  "TC_1731079",
+                          "testName":  "Windows_OfficeCSP_Uninstall_Visio_Required_DeviceAndUserGroup",
+                          "description":  "[IntuneSA]:[Ibiza]:[Windows][Win10RS2+]:[OfficeCSP][Uninstall]:[Visio]:[Required][DeviceGroup][UserGroup]:Verify Visio can be uninstalled successfully",
+                          "category":  "WinClassicApp",
+                          "priority":  "High",
+                          "enabled":  true,
+                          "parameters":  {
+                                             "firstLink":  "Apps",
+                                             "secondLink":  "Windows",
+                                             "AppType":  "Microsoft 365 Apps for Windows 10 and later",
+                                             "select app package file":  "",
+                                             "Type of app install file":  "",
+                                             "Name":  "TC_1731079_M365Apps",
+                                             "Description":  "TC_1731079_M365Apps",
+                                             "Publisher":  "AIAuto ddmmyyyymmss",
+                                             "Assignments":  {
+                                                                 "Required":  "Add group",
+                                                                 "Available for enrolled devices":  "",
+                                                                 "uninstall":  "Add group",
+                                                                 "select groups":  "AI_Automation_Device_group"
+                                                             },
+                                             "API parameters":  {
+
+                                                                },
+                                             "Device Validation":  {
+                                                                       "pre-requisite on device":  "",
+                                                                       "App Installation Validation":  "Verify Visio uninstall is successful",
+                                                                       "searchTerm":  "",
+                                                                       "expectedValue":  ""
+                                                                   },
+                                             "autoAcceptEula":  true,
+                                             "useSharedComputerActivation":  false,
+                                             "updateChannel":  "current",
+                                             "officeSuiteAppDefaultFileFormat":  "officeOpenDocumentFormat",
+                                             "officePlatformArchitecture":  "x64",
+                                             "localesToInstall":  [
+
+                                                                  ],
+                                             "installProgressDisplayLevel":  "none",
+                                             "shouldUninstallOlderVersionsOfOffice":  true,
+                                             "targetVersion":  "",
+                                             "updateVersion":  "",
+                                             "excludedApps":  {
+                                                                  "access":  true,
+                                                                  "bing":  false,
+                                                                  "excel":  true,
+                                                                  "groove":  true,
+                                                                  "infoPath":  true,
+                                                                  "lync":  false,
+                                                                  "oneDrive":  false,
+                                                                  "oneNote":  false,
+                                                                  "outlook":  false,
+                                                                  "powerPoint":  true,
+                                                                  "publisher":  true,
+                                                                  "sharePointDesigner":  true,
+                                                                  "teams":  false,
+                                                                  "visio":  true,
+                                                                  "word":  true
+                                                              }
+                                         }
+                      },
+                      {
+                          "testCaseId":  "TC_1731080",
+                          "testName":  "Windows_OfficeCSP_Uninstall_Project_Required_UserGroup",
+                          "description":  "[IntuneSA]:[Ibiza]:[Windows][Win10RS2+]:[OfficeCSP][Uninstall]:[Project]:[Required][UserGroup]:Verify Project can be uninstalled successfully",
+                          "category":  "WinClassicApp",
+                          "priority":  "High",
+                          "enabled":  true,
+                          "parameters":  {
+                                             "firstLink":  "Apps",
+                                             "secondLink":  "Windows",
+                                             "AppType":  "Microsoft 365 Apps for Windows 10 and later",
+                                             "select app package file":  "",
+                                             "Type of app install file":  "",
+                                             "Name":  "TC_1731080_M365Apps",
+                                             "Description":  "TC_1731080_M365Apps",
+                                             "Publisher":  "AIAuto ddmmyyyymmss",
+                                             "Assignments":  {
+                                                                 "Required":  "",
+                                                                 "Available for enrolled devices":  "",
+                                                                 "uninstall":  "Add group",
+                                                                 "select groups":  "AI_Automation_User_group"
+                                                             },
+                                             "API parameters":  {
+
+                                                                },
+                                             "Device Validation":  {
+                                                                       "pre-requisite on device":  "",
+                                                                       "App Installation Validation":  "Verify Project uninstall is successful",
+                                                                       "searchTerm":  "",
+                                                                       "expectedValue":  ""
+                                                                   },
+                                             "autoAcceptEula":  true,
+                                             "useSharedComputerActivation":  false,
+                                             "updateChannel":  "current",
+                                             "officeSuiteAppDefaultFileFormat":  "officeOpenDocumentFormat",
+                                             "officePlatformArchitecture":  "x64",
+                                             "localesToInstall":  [
+
+                                                                  ],
+                                             "installProgressDisplayLevel":  "none",
+                                             "shouldUninstallOlderVersionsOfOffice":  true,
+                                             "targetVersion":  "",
+                                             "updateVersion":  "",
+                                             "excludedApps":  {
+                                                                  "access":  false,
+                                                                  "bing":  false,
+                                                                  "excel":  false,
+                                                                  "groove":  true,
+                                                                  "infoPath":  true,
+                                                                  "lync":  false,
+                                                                  "oneDrive":  false,
+                                                                  "oneNote":  false,
+                                                                  "outlook":  false,
+                                                                  "powerPoint":  false,
+                                                                  "publisher":  false,
+                                                                  "sharePointDesigner":  true,
+                                                                  "teams":  false,
+                                                                  "visio":  true,
+                                                                  "word":  true
+                                                              }
+                                         }
+                      },
+                      {
+                          "testCaseId":  "TC_1731088",
+                          "testName":  "Windows_OfficeCSP_Uninstall_ProPlus_Visio_Project_Required_UserGroup",
+                          "description":  "[IntuneSA]:[Windows][Win10RS2+]:[OfficeCSP][Uninstall]:[ProPlus][Visio][Project]:[Required][UserGroup]:Verify ProPlus (multiple apps), Visio and Project can all be uninstall successfully",
+                          "category":  "WinClassicApp",
+                          "priority":  "High",
+                          "enabled":  true,
+                          "parameters":  {
+                                             "firstLink":  "Apps",
+                                             "secondLink":  "Windows",
+                                             "AppType":  "Microsoft 365 Apps for Windows 10 and later",
+                                             "select app package file":  "",
+                                             "Type of app install file":  "",
+                                             "Name":  "TC_1731088_M365Apps",
+                                             "Description":  "TC_1731088_M365Apps",
+                                             "Publisher":  "AIAuto ddmmyyyymmss",
+                                             "Assignments":  {
+                                                                 "Required":  "",
+                                                                 "Available for enrolled devices":  "",
+                                                                 "uninstall":  "Add group",
+                                                                 "select groups":  "AI_Automation_User_group"
+                                                             },
+                                             "API parameters":  {
+
+                                                                },
+                                             "Device Validation":  {
+                                                                       "pre-requisite on device":  "",
+                                                                       "App Installation Validation":  "Verify ProPlus, Visio, and Project uninstall successfully",
+                                                                       "searchTerm":  "",
+                                                                       "expectedValue":  ""
+                                                                   },
+                                             "autoAcceptEula":  true,
+                                             "useSharedComputerActivation":  false,
+                                             "updateChannel":  "current",
+                                             "officeSuiteAppDefaultFileFormat":  "officeOpenDocumentFormat",
+                                             "officePlatformArchitecture":  "x64",
+                                             "localesToInstall":  [
+
+                                                                  ],
+                                             "installProgressDisplayLevel":  "none",
+                                             "shouldUninstallOlderVersionsOfOffice":  true,
+                                             "targetVersion":  "",
+                                             "updateVersion":  "",
+                                             "excludedApps":  {
+                                                                  "access":  true,
+                                                                  "bing":  false,
+                                                                  "excel":  true,
+                                                                  "groove":  true,
+                                                                  "infoPath":  true,
+                                                                  "lync":  false,
+                                                                  "oneDrive":  false,
+                                                                  "oneNote":  false,
+                                                                  "outlook":  false,
+                                                                  "powerPoint":  true,
+                                                                  "publisher":  true,
+                                                                  "sharePointDesigner":  true,
+                                                                  "teams":  false,
+                                                                  "visio":  true,
+                                                                  "word":  true
+                                                              }
+                                         }
+                      },
+                      {
+                          "testCaseId":  "TC_1731090",
+                          "testName":  "Windows_OfficeCSP_Install_Language_ProPlus_Required_DeviceGroup",
+                          "description":  "[IntuneSA]:[Ibiza]:[Windows][Win10RS2+]:[OfficeCSP][Install][Language]:[ProPlus]:[Required][DeviceGroup]:Verify ProPlus (multiple apps), Single Language can all install successfully",
+                          "category":  "WinClassicApp",
+                          "priority":  "High",
+                          "enabled":  true,
+                          "parameters":  {
+                                             "firstLink":  "Apps",
+                                             "secondLink":  "Windows",
+                                             "AppType":  "Microsoft 365 Apps for Windows 10 and later",
+                                             "select app package file":  "",
+                                             "Type of app install file":  "",
+                                             "Name":  "TC_1731090_M365Apps",
+                                             "Description":  "TC_1731090_M365Apps",
+                                             "Publisher":  "AIAuto ddmmyyyymmss",
+                                             "Assignments":  {
+                                                                 "Required":  "Add group",
+                                                                 "Available for enrolled devices":  "",
+                                                                 "uninstall":  "",
+                                                                 "select groups":  "AI_Automation_Device_group"
+                                                             },
+                                             "API parameters":  {
+
+                                                                },
+                                             "Device Validation":  {
+                                                                       "pre-requisite on device":  "",
+                                                                       "App Installation Validation":  "Verify ProPlus single-language install is successful",
+                                                                       "searchTerm":  "",
+                                                                       "expectedValue":  ""
+                                                                   },
+                                             "autoAcceptEula":  true,
+                                             "useSharedComputerActivation":  false,
+                                             "updateChannel":  "current",
+                                             "officeSuiteAppDefaultFileFormat":  "officeOpenDocumentFormat",
+                                             "officePlatformArchitecture":  "x64",
+                                             "localesToInstall":  [
+                                                                      "Tamil"
+                                                                  ],
+                                             "installProgressDisplayLevel":  "none",
+                                             "shouldUninstallOlderVersionsOfOffice":  true,
+                                             "targetVersion":  "",
+                                             "updateVersion":  "",
+                                             "excludedApps":  {
+                                                                  "access":  true,
+                                                                  "bing":  false,
+                                                                  "excel":  true,
+                                                                  "groove":  true,
+                                                                  "infoPath":  true,
+                                                                  "lync":  false,
+                                                                  "oneDrive":  false,
+                                                                  "oneNote":  false,
+                                                                  "outlook":  false,
+                                                                  "powerPoint":  false,
+                                                                  "publisher":  false,
+                                                                  "sharePointDesigner":  true,
+                                                                  "teams":  false,
+                                                                  "visio":  true,
+                                                                  "word":  true
+                                                              }
+                                         }
+                      },
+                      {
+                          "testCaseId":  "TC_1731093",
+                          "testName":  "Windows_OfficeCSP_Install_ProPlus_Visio_Project_Required_DeviceAndUserGroup",
+                          "description":  "[IntuneSA]:[Windows][Win10RS2+]:[OfficeCSP][Install]:[ProPlus][Visio][Project]:[Required][DeviceGroup][UserGroup]:Verify ProPlus (multiple apps), Visio and Project can all install successfully",
+                          "category":  "WinClassicApp",
+                          "priority":  "High",
+                          "enabled":  true,
+                          "parameters":  {
+                                             "firstLink":  "Apps",
+                                             "secondLink":  "Windows",
+                                             "AppType":  "Microsoft 365 Apps for Windows 10 and later",
+                                             "select app package file":  "",
+                                             "Type of app install file":  "",
+                                             "Name":  "TC_1731093_M365Apps",
+                                             "Description":  "TC_1731093_M365Apps",
+                                             "Publisher":  "AIAuto ddmmyyyymmss",
+                                             "Assignments":  {
+                                                                 "Required":  "Add group",
+                                                                 "Available for enrolled devices":  "",
+                                                                 "uninstall":  "",
+                                                                 "select groups":  "AI_Automation_Device_group,AI_Automation_User_group"
+                                                             },
+                                             "API parameters":  {
+
+                                                                },
+                                             "Device Validation":  {
+                                                                       "pre-requisite on device":  "",
+                                                                       "App Installation Validation":  "Verify ProPlus, Visio, and Project install successfully",
+                                                                       "searchTerm":  "",
+                                                                       "expectedValue":  ""
+                                                                   },
+                                             "autoAcceptEula":  true,
+                                             "useSharedComputerActivation":  false,
+                                             "updateChannel":  "current",
+                                             "officeSuiteAppDefaultFileFormat":  "officeOpenDocumentFormat",
+                                             "officePlatformArchitecture":  "x64",
+                                             "localesToInstall":  [
+
+                                                                  ],
+                                             "installProgressDisplayLevel":  "none",
+                                             "shouldUninstallOlderVersionsOfOffice":  true,
+                                             "targetVersion":  "",
+                                             "updateVersion":  "",
+                                             "excludedApps":  {
+                                                                  "access":  true,
+                                                                  "bing":  false,
+                                                                  "excel":  true,
+                                                                  "groove":  true,
+                                                                  "infoPath":  true,
+                                                                  "lync":  false,
+                                                                  "oneDrive":  false,
+                                                                  "oneNote":  false,
+                                                                  "outlook":  false,
+                                                                  "powerPoint":  false,
+                                                                  "publisher":  false,
+                                                                  "sharePointDesigner":  true,
+                                                                  "teams":  true,
+                                                                  "visio":  true,
+                                                                  "word":  true
+                                                              }
+                                         }
+                      },
+                      {
+                          "testCaseId":  "TC_3778549",
+                          "testName":  "Windows_AppUpdate_InstallStatus_Appx_Required_UserGroup",
+                          "description":  "[IntuneSA]:[Windows]:[AppUpdate]:[InstallStatus]:[Appx]:[Required]:[UserGroup]:IT Pro can view application status summary change for V1 of app when V2 is updated. Existing status moves to Unknown.",
+                          "category":  "WinClassicApp",
+                          "priority":  "High",
+                          "enabled":  true,
+                          "parameters":  {
+                                             "firstLink":  "Apps",
+                                             "secondLink":  "Windows",
+                                             "AppType":  "Line-of-business app",
+                                             "select app package file":  "TestAppX10.appx",
+                                             "Type of app install file":  "",
+                                             "Name":  "TC_3778549_TestAppX10.appx",
+                                             "Description":  "TC_3778549_TestAppX10.appx",
+                                             "Publisher":  "AIAuto ddmmyyyymmss",
+                                             "Assignments":  {
+                                                                 "Required":  "Add group",
+                                                                 "Available for enrolled devices":  "",
+                                                                 "uninstall":  "",
+                                                                 "select groups":  "AI_Automation_User_group"
+                                                             },
+                                             "API parameters":  {
+
+                                                                },
+                                             "Device Validation":  {
+                                                                       "pre-requisite on device":  "",
+                                                                       "App Installation Validation":  "Verify app status summary for V1 moves to Unknown when V2 is updated",
+                                                                       "searchTerm":  "",
+                                                                       "expectedValue":  ""
+                                                                   }
+                                         }
+                      },
+                      {
+                          "testCaseId":  "TC_3778601",
+                          "testName":  "Windows_AppUpdate_UninstallOOB_Appx_AppxBundle_Required_UserGroup",
+                          "description":  "[IntuneSA]:[Windows]:[AppUpdate][UninstallOOB]:[Appx/AppxBundle]:[Required][UserGroup]:Verify App V1 is installed on devices for user. Uninstall V1 OOB and update V1 to V2 and Verify that V2 is installed on the device.",
+                          "category":  "WinClassicApp",
+                          "priority":  "High",
+                          "enabled":  true,
+                          "parameters":  {
+                                             "firstLink":  "Apps",
+                                             "secondLink":  "Windows",
+                                             "AppType":  "Line-of-business app",
+                                             "select app package file":  "SpartanV1.appxbundle",
+                                             "Type of app install file":  "",
+                                             "Name":  "TC_3778601_SpartanV1.appxbundle",
+                                             "Description":  "TC_3778601_SpartanV1.appxbundle",
+                                             "Publisher":  "AIAuto ddmmyyyymmss",
+                                             "Assignments":  {
+                                                                 "Required":  "Add group",
+                                                                 "Available for enrolled devices":  "",
+                                                                 "uninstall":  "Add group",
+                                                                 "select groups":  "AI_Automation_User_group"
+                                                             },
+                                             "API parameters":  {
+
+                                                                },
+                                             "Device Validation":  {
+                                                                       "pre-requisite on device":  "",
+                                                                       "App Installation Validation":  "Verify app update after uninstall OOB flow for required user group",
+                                                                       "searchTerm":  "",
+                                                                       "expectedValue":  ""
+                                                                   }
+                                         }
+                      },
+                      {
+                          "testCaseId":  "TC_5657696",
+                          "testName":  "Windows_Win10RS3_Publish_E2E_Edge_Dev_Channel_Deployment",
+                          "description":  "[IntuneSA]:[Windows][Win10RS3+]:[Publish][E2E]:Verify Microsoft Edge Dev channel app deployment for user group.",
+                          "category":  "WinClassicApp",
+                          "priority":  "High",
+                          "enabled":  true,
+                          "parameters":  {
+                                             "firstLink":  "Apps",
+                                             "secondLink":  "Windows",
+                                             "AppType":  "Microsoft Edge for Windows 10 and later",
+                                             "displayName":  "43 App regression",
+                                             "description":  "Microsoft Edge is the browser for business with modern and legacy web compatibility, new privacy features such as Tracking prevention, and built-in productivity tools such as enterprise-grade PDF support and access to Office and corporate search right from a new tab.",
+                                             "publisher":  "Microsoft",
+                                             "channel":  "Beta",
+                                             "Assignments":  {
+                                                                 "Required":  "",
+                                                                 "Available for enrolled devices":  "Add group",
+                                                                 "uninstall":  "",
+                                                                 "select groups":  "AI_Automation_User_group"
+                                                             },
+                                             "API parameters":  {
+
+                                                                },
+                                             "Device Validation":  {
+                                                                       "pre-requisite on device":  "",
+                                                                       "App Installation Validation":  "Verify Edge Beta app deployment behavior.",
+                                                                       "searchTerm":  "",
+                                                                       "expectedValue":  ""
+                                                                   }
+                                         }
+                      },
+                      {
+                          "testCaseId":  "TC_5657697",
+                          "testName":  "Windows_Win10RS3_Publish_E2E_Verify_Edge_Dev_and_Edge_Beta_app_can_be_installed_side_by_side",
+                          "description":  "[IntuneSA]:[Windows][Win10RS3+]:[Publish][E2E]:Verify Edge Dev and Edge Beta app can be installed side by side.",
+                          "category":  "WinClassicApp",
+                          "priority":  "High",
+                          "enabled":  true,
+                          "parameters":  {
+                                             "firstLink":  "Apps",
+                                             "secondLink":  "Windows",
+                                             "AppType":  "Microsoft Edge for Windows 10 and later",
+                                             "displayName":  "43 App regression",
+                                             "description":  "Microsoft Edge is the browser for business with modern and legacy web compatibility, new privacy features such as Tracking prevention, and built-in productivity tools such as enterprise-grade PDF support and access to Office and corporate search right from a new tab.",
+                                             "publisher":  "Microsoft",
+                                             "channel":  "dev,Beta",
+                                             "Assignments":  {
+                                                                 "Required":  "Add group",
+                                                                 "Available for enrolled devices":  "",
+                                                                 "uninstall":  "Add group",
+                                                                 "select groups":  "AI_Automation_User_group"
+                                                             },
+                                             "API parameters":  {
+
+                                                                },
+                                             "Device Validation":  {
+                                                                       "pre-requisite on device":  "",
+                                                                       "App Installation Validation":  "Verify Edge Dev and Edge Beta side-by-side behavior.",
+                                                                       "searchTerm":  "",
+                                                                       "expectedValue":  ""
+                                                                   }
+                                         }
+                      },
+                      {
+                          "testCaseId":  "TC_7365651",
+                          "testName":  "Windows_Windows_Win10RS2_Assignment_Filters_Match_E2E_OfficeCSP_ProPlus_Required_UserGroup_Verify_ProPlus_Single_Language_can_all_install_successfully",
+                          "description":  "[IntuneSA]:[Windows]:[Assignment Filters]:Windows Win10RS2+ Assignment Filters Match E2E OfficeCSP ProPlus Required UserGroup Verify ProPlus  , Single Language can all install successfully",
+                          "category":  "WinClassicApp",
+                          "priority":  "High",
+                          "enabled":  true,
+                          "parameters":  {
+                                             "firstLink":  "Apps",
+                                             "secondLink":  "Windows",
+                                             "AppType":  "Microsoft 365 Apps for Windows 10 and later",
+                                             "select app package file":  "",
+                                             "Type of app install file":  "",
+                                             "Name":  "TC_7365651_M365Apps",
+                                             "Description":  "TC_7365651_M365Apps",
+                                             "Publisher":  "AIAuto ddmmyyyymmss",
+                                             "Assignments":  {
+                                                                 "Required":  "Add group",
+                                                                 "Available for enrolled devices":  "",
+                                                                 "uninstall":  "",
+                                                                 "select groups":  "AI_Automation_User_group",
+                                                                 "AssignmentFiltergroup":  "Ai_Automation_matching",
+                                                                 "AppManagementAssignmentFilterType":  "include"
+                                                             },
+                                             "API parameters":  {
+
+                                                                },
+                                             "Device Validation":  {
+                                                                       "pre-requisite on device":  "",
+                                                                       "App Installation Validation":  "Verify assignment filter behavior as per intent and filter matching outcome.",
+                                                                       "searchTerm":  "",
+                                                                       "expectedValue":  ""
+                                                                   },
+                                             "autoAcceptEula":  true,
+                                             "useSharedComputerActivation":  false,
+                                             "updateChannel":  "current",
+                                             "officeSuiteAppDefaultFileFormat":  "officeOpenDocumentFormat",
+                                             "officePlatformArchitecture":  "x64",
+                                             "localesToInstall":  [
+
+                                                                  ],
+                                             "installProgressDisplayLevel":  "none",
+                                             "shouldUninstallOlderVersionsOfOffice":  true,
+                                             "targetVersion":  "",
+                                             "updateVersion":  "",
+                                             "excludedApps":  {
+                                                                  "access":  true,
+                                                                  "bing":  false,
+                                                                  "excel":  true,
+                                                                  "groove":  true,
+                                                                  "infoPath":  true,
+                                                                  "lync":  false,
+                                                                  "oneDrive":  false,
+                                                                  "oneNote":  false,
+                                                                  "outlook":  false,
+                                                                  "powerPoint":  false,
+                                                                  "publisher":  false,
+                                                                  "sharePointDesigner":  true,
+                                                                  "teams":  true,
+                                                                  "visio":  true,
+                                                                  "word":  true
+                                                              }
+                                         }
+                      },
+                      {
+                          "testCaseId":  "TC_7365652",
+                          "testName":  "Windows_Windows_Win10RS2_Assignment_Filters_Match_E2E_OfficeCSP_ProPlus_Uninstall_UserGroup_Verify_ProPlus_Single_Language_all_uninstall_successfully",
+                          "description":  "[IntuneSA]:[Windows]:[Assignment Filters]:Windows Win10RS2+ Assignment Filters Match E2E OfficeCSP ProPlus Uninstall UserGroup Verify ProPlus  , Single Language all uninstall successfully",
+                          "category":  "WinClassicApp",
+                          "priority":  "High",
+                          "enabled":  true,
+                          "parameters":  {
+                                             "firstLink":  "Apps",
+                                             "secondLink":  "Windows",
+                                             "AppType":  "Microsoft 365 Apps for Windows 10 and later",
+                                             "select app package file":  "",
+                                             "Type of app install file":  "",
+                                             "Name":  "TC_7365652_M365Apps",
+                                             "Description":  "TC_7365652_M365Apps",
+                                             "Publisher":  "AIAuto ddmmyyyymmss",
+                                             "Assignments":  {
+                                                                 "Required":  "Add group",
+                                                                 "Available for enrolled devices":  "",
+                                                                 "uninstall":  "Add group",
+                                                                 "select groups":  "AI_Automation_User_group",
+                                                                 "AssignmentFiltergroup":  "Ai_Automation_matching",
+                                                                 "AppManagementAssignmentFilterType":  "include"
+                                                             },
+                                             "API parameters":  {
+
+                                                                },
+                                             "Device Validation":  {
+                                                                       "pre-requisite on device":  "",
+                                                                       "App Installation Validation":  "Verify assignment filter behavior as per intent and filter matching outcome.",
+                                                                       "searchTerm":  "",
+                                                                       "expectedValue":  ""
+                                                                   },
+                                             "autoAcceptEula":  true,
+                                             "useSharedComputerActivation":  false,
+                                             "updateChannel":  "current",
+                                             "officeSuiteAppDefaultFileFormat":  "officeOpenDocumentFormat",
+                                             "officePlatformArchitecture":  "x64",
+                                             "localesToInstall":  [
+
+                                                                  ],
+                                             "installProgressDisplayLevel":  "none",
+                                             "shouldUninstallOlderVersionsOfOffice":  true,
+                                             "targetVersion":  "",
+                                             "updateVersion":  "",
+                                             "excludedApps":  {
+                                                                  "access":  true,
+                                                                  "bing":  false,
+                                                                  "excel":  true,
+                                                                  "groove":  true,
+                                                                  "infoPath":  true,
+                                                                  "lync":  false,
+                                                                  "oneDrive":  false,
+                                                                  "oneNote":  false,
+                                                                  "outlook":  false,
+                                                                  "powerPoint":  false,
+                                                                  "publisher":  false,
+                                                                  "sharePointDesigner":  true,
+                                                                  "teams":  true,
+                                                                  "visio":  true,
+                                                                  "word":  true
+                                                              }
+                                         }
+                      },
+                      {
+                          "testCaseId":  "TC_7365653",
+                          "testName":  "Windows_Windows_Win10RS2_Assignment_Filters_Match_E2E_OfficeCSP_ProPlus_Available_UserGroup_Verify_ProPlus_Single_Language_shows_in_CP_and_IWP_and_can_all_install_successfully",
+                          "description":  "[IntuneSA]:[Windows]:[Assignment Filters]:Windows Win10RS2+ Assignment Filters Match E2E OfficeCSP ProPlus Available UserGroup Verify ProPlus  , Single Language shows in CP and IWP and can all install successfully",
+                          "category":  "WinClassicApp",
+                          "priority":  "High",
+                          "enabled":  true,
+                          "parameters":  {
+                                             "firstLink":  "Apps",
+                                             "secondLink":  "Windows",
+                                             "AppType":  "Microsoft 365 Apps for Windows 10 and later",
+                                             "select app package file":  "",
+                                             "Type of app install file":  "",
+                                             "Name":  "TC_7365653_M365Apps",
+                                             "Description":  "TC_7365653_M365Apps",
+                                             "Publisher":  "AIAuto ddmmyyyymmss",
+                                             "Assignments":  {
+                                                                 "Required":  "",
+                                                                 "Available for enrolled devices":  "Add group",
+                                                                 "uninstall":  "",
+                                                                 "select groups":  "AI_Automation_User_group",
+                                                                 "AssignmentFiltergroup":  "Ai_Automation_matching",
+                                                                 "AppManagementAssignmentFilterType":  "include"
+                                                             },
+                                             "API parameters":  {
+
+                                                                },
+                                             "Device Validation":  {
+                                                                       "pre-requisite on device":  "",
+                                                                       "App Installation Validation":  "Verify assignment filter behavior as per intent and filter matching outcome.",
+                                                                       "searchTerm":  "",
+                                                                       "expectedValue":  ""
+                                                                   },
+                                             "autoAcceptEula":  true,
+                                             "useSharedComputerActivation":  false,
+                                             "updateChannel":  "current",
+                                             "officeSuiteAppDefaultFileFormat":  "officeOpenDocumentFormat",
+                                             "officePlatformArchitecture":  "x64",
+                                             "localesToInstall":  [
+
+                                                                  ],
+                                             "installProgressDisplayLevel":  "none",
+                                             "shouldUninstallOlderVersionsOfOffice":  true,
+                                             "targetVersion":  "",
+                                             "updateVersion":  "",
+                                             "excludedApps":  {
+                                                                  "access":  true,
+                                                                  "bing":  false,
+                                                                  "excel":  true,
+                                                                  "groove":  true,
+                                                                  "infoPath":  true,
+                                                                  "lync":  false,
+                                                                  "oneDrive":  false,
+                                                                  "oneNote":  false,
+                                                                  "outlook":  false,
+                                                                  "powerPoint":  false,
+                                                                  "publisher":  false,
+                                                                  "sharePointDesigner":  true,
+                                                                  "teams":  true,
+                                                                  "visio":  true,
+                                                                  "word":  true
+                                                              }
+                                         }
+                      },
+                      {
+                          "testCaseId":  "TC_7365654",
+                          "testName":  "Windows_Windows_Win10RS2_Assignment_Filters_No_Match_E2E_OfficeCSP_ProPlus_Required_UserGroup_Verify_ProPlus_Single_Language_is_not_installed_on_the_device",
+                          "description":  "[IntuneSA]:[Windows]:[Assignment Filters]:Windows Win10RS2+ Assignment Filters No Match E2E OfficeCSP ProPlus Required UserGroup Verify ProPlus  , Single Language is not installed on the device",
+                          "category":  "WinClassicApp",
+                          "priority":  "High",
+                          "enabled":  true,
+                          "parameters":  {
+                                             "firstLink":  "Apps",
+                                             "secondLink":  "Windows",
+                                             "AppType":  "Microsoft 365 Apps for Windows 10 and later",
+                                             "select app package file":  "",
+                                             "Type of app install file":  "",
+                                             "Name":  "TC_7365654_M365Apps",
+                                             "Description":  "TC_7365654_M365Apps",
+                                             "Publisher":  "AIAuto ddmmyyyymmss",
+                                             "Assignments":  {
+                                                                 "Required":  "Add group",
+                                                                 "Available for enrolled devices":  "",
+                                                                 "uninstall":  "",
+                                                                 "select groups":  "AI_Automation_User_group",
+                                                                 "AssignmentFiltergroup":  "AI_Automation_Nonmatching",
+                                                                 "AppManagementAssignmentFilterType":  "exclude"
+                                                             },
+                                             "API parameters":  {
+
+                                                                },
+                                             "Device Validation":  {
+                                                                       "pre-requisite on device":  "",
+                                                                       "App Installation Validation":  "Verify assignment filter behavior as per intent and filter matching outcome.",
+                                                                       "searchTerm":  "",
+                                                                       "expectedValue":  ""
+                                                                   },
+                                             "autoAcceptEula":  true,
+                                             "useSharedComputerActivation":  false,
+                                             "updateChannel":  "current",
+                                             "officeSuiteAppDefaultFileFormat":  "officeOpenDocumentFormat",
+                                             "officePlatformArchitecture":  "x64",
+                                             "localesToInstall":  [
+
+                                                                  ],
+                                             "installProgressDisplayLevel":  "none",
+                                             "shouldUninstallOlderVersionsOfOffice":  true,
+                                             "targetVersion":  "",
+                                             "updateVersion":  "",
+                                             "excludedApps":  {
+                                                                  "access":  true,
+                                                                  "bing":  false,
+                                                                  "excel":  true,
+                                                                  "groove":  true,
+                                                                  "infoPath":  true,
+                                                                  "lync":  false,
+                                                                  "oneDrive":  false,
+                                                                  "oneNote":  false,
+                                                                  "outlook":  false,
+                                                                  "powerPoint":  false,
+                                                                  "publisher":  false,
+                                                                  "sharePointDesigner":  true,
+                                                                  "teams":  true,
+                                                                  "visio":  true,
+                                                                  "word":  true
+                                                              }
+                                         }
+                      },
+                      {
+                          "testCaseId":  "TC_7365655",
+                          "testName":  "Windows_Windows_Win10RS2_Assignment_Filters_No_Match_OfficeCSP_ProPlus_Available_UserGroup_Verify_ProPlus_Single_Language_does_not_show_in_CP_and_IWP",
+                          "description":  "[IntuneSA]:[Windows]:[Assignment Filters]:Windows Win10RS2+ Assignment Filters No Match OfficeCSP ProPlus Available UserGroup Verify ProPlus  , Single Language does not show in CP and IWP",
+                          "category":  "WinClassicApp",
+                          "priority":  "High",
+                          "enabled":  true,
+                          "parameters":  {
+                                             "firstLink":  "Apps",
+                                             "secondLink":  "Windows",
+                                             "AppType":  "Microsoft 365 Apps for Windows 10 and later",
+                                             "select app package file":  "",
+                                             "Type of app install file":  "",
+                                             "Name":  "TC_7365655_M365Apps",
+                                             "Description":  "TC_7365655_M365Apps",
+                                             "Publisher":  "AIAuto ddmmyyyymmss",
+                                             "Assignments":  {
+                                                                 "Required":  "",
+                                                                 "Available for enrolled devices":  "Add group",
+                                                                 "uninstall":  "",
+                                                                 "select groups":  "AI_Automation_User_group",
+                                                                 "AssignmentFiltergroup":  "AI_Automation_Nonmatching",
+                                                                 "AppManagementAssignmentFilterType":  "exclude"
+                                                             },
+                                             "API parameters":  {
+
+                                                                },
+                                             "Device Validation":  {
+                                                                       "pre-requisite on device":  "",
+                                                                       "App Installation Validation":  "Verify assignment filter behavior as per intent and filter matching outcome.",
+                                                                       "searchTerm":  "",
+                                                                       "expectedValue":  ""
+                                                                   },
+                                             "autoAcceptEula":  true,
+                                             "useSharedComputerActivation":  false,
+                                             "updateChannel":  "current",
+                                             "officeSuiteAppDefaultFileFormat":  "officeOpenDocumentFormat",
+                                             "officePlatformArchitecture":  "x64",
+                                             "localesToInstall":  [
+
+                                                                  ],
+                                             "installProgressDisplayLevel":  "none",
+                                             "shouldUninstallOlderVersionsOfOffice":  true,
+                                             "targetVersion":  "",
+                                             "updateVersion":  "",
+                                             "excludedApps":  {
+                                                                  "access":  true,
+                                                                  "bing":  false,
+                                                                  "excel":  true,
+                                                                  "groove":  true,
+                                                                  "infoPath":  true,
+                                                                  "lync":  false,
+                                                                  "oneDrive":  false,
+                                                                  "oneNote":  false,
+                                                                  "outlook":  false,
+                                                                  "powerPoint":  false,
+                                                                  "publisher":  false,
+                                                                  "sharePointDesigner":  true,
+                                                                  "teams":  true,
+                                                                  "visio":  true,
+                                                                  "word":  true
+                                                              }
+                                         }
+                      },
+                      {
+                          "testCaseId":  "TC_7365656",
+                          "testName":  "Windows_Windows_Win10_Assignment_Filters_Match_E2E_Appx_Universal_Required_UserGroup_Verify_LOB_App_is_install_successfully_on_the_device",
+                          "description":  "[IntuneSA]:[Windows]:[Assignment Filters]:Windows Win10 Assignment Filters Match E2E Appx Universal Required UserGroup Verify LOB App is install successfully on the device",
+                          "category":  "WinClassicApp",
+                          "priority":  "High",
+                          "enabled":  true,
+                          "parameters":  {
+                                             "firstLink":  "Apps",
+                                             "secondLink":  "Windows",
+                                             "AppType":  "Line-of-business app",
+                                             "select app package file":  "TestAppX10.appx",
+                                             "Type of app install file":  "",
+                                             "Name":  "TC_7365656_AssignmentFilter",
+                                             "Description":  "TC_7365656_AssignmentFilter",
+                                             "Publisher":  "AIAuto ddmmyyyymmss",
+                                             "Assignments":  {
+                                                                 "Required":  "Add group",
+                                                                 "Available for enrolled devices":  "",
+                                                                 "uninstall":  "",
+                                                                 "select groups":  "AI_Automation_User_group",
+                                                                 "AssignmentFiltergroup":  "Ai_Automation_matching",
+                                                                 "AppManagementAssignmentFilterType":  "include"
+                                                             },
+                                             "API parameters":  {
+
+                                                                },
+                                             "Device Validation":  {
+                                                                       "pre-requisite on device":  "",
+                                                                       "App Installation Validation":  "Verify assignment filter behavior as per intent and filter matching outcome.",
+                                                                       "searchTerm":  "",
+                                                                       "expectedValue":  ""
+                                                                   }
+                                         }
+                      },
+                      {
+                          "testCaseId":  "TC_7365657",
+                          "testName":  "Windows_Windows_Win10_Assignment_Filters_Match_E2E_Appx_Universal_Uninstall_UserGroup_Verify_LOB_App_is_uninstalled_on_the_device",
+                          "description":  "[IntuneSA]:[Windows]:[Assignment Filters]:Windows Win10 Assignment Filters Match E2E Appx Universal Uninstall UserGroup Verify LOB App is uninstalled on the device",
+                          "category":  "WinClassicApp",
+                          "priority":  "High",
+                          "enabled":  true,
+                          "parameters":  {
+                                             "firstLink":  "Apps",
+                                             "secondLink":  "Windows",
+                                             "AppType":  "Line-of-business app",
+                                             "select app package file":  "TestAppX10.appx",
+                                             "Type of app install file":  "",
+                                             "Name":  "TC_7365657_AssignmentFilter",
+                                             "Description":  "TC_7365657_AssignmentFilter",
+                                             "Publisher":  "AIAuto ddmmyyyymmss",
+                                             "Assignments":  {
+                                                                 "Required":  "Add group",
+                                                                 "Available for enrolled devices":  "",
+                                                                 "uninstall":  "Add group",
+                                                                 "select groups":  "AI_Automation_User_group",
+                                                                 "AssignmentFiltergroup":  "Ai_Automation_matching",
+                                                                 "AppManagementAssignmentFilterType":  "include"
+                                                             },
+                                             "API parameters":  {
+
+                                                                },
+                                             "Device Validation":  {
+                                                                       "pre-requisite on device":  "",
+                                                                       "App Installation Validation":  "Verify assignment filter behavior as per intent and filter matching outcome.",
+                                                                       "searchTerm":  "",
+                                                                       "expectedValue":  ""
+                                                                   }
+                                         }
+                      },
+                      {
+                          "testCaseId":  "TC_7365658",
+                          "testName":  "Windows_Windows_Win10_Assignment_Filters_Match_E2E_Appx_Universal_Available_UserGroup_Verify_LOB_App_shows_in_CP_and_IWP_and_can_all_install_successfully_on_the_device",
+                          "description":  "[IntuneSA]:[Windows]:[Assignment Filters]:Windows Win10 Assignment Filters Match E2E Appx Universal Available UserGroup Verify LOB App shows in CP and IWP and can all install successfully on the device",
+                          "category":  "WinClassicApp",
+                          "priority":  "High",
+                          "enabled":  true,
+                          "parameters":  {
+                                             "firstLink":  "Apps",
+                                             "secondLink":  "Windows",
+                                             "AppType":  "Line-of-business app",
+                                             "select app package file":  "TestAppX10.appx",
+                                             "Type of app install file":  "",
+                                             "Name":  "TC_7365658_AssignmentFilter",
+                                             "Description":  "TC_7365658_AssignmentFilter",
+                                             "Publisher":  "AIAuto ddmmyyyymmss",
+                                             "Assignments":  {
+                                                                 "Required":  "",
+                                                                 "Available for enrolled devices":  "Add group",
+                                                                 "uninstall":  "",
+                                                                 "select groups":  "AI_Automation_User_group",
+                                                                 "AssignmentFiltergroup":  "Ai_Automation_matching",
+                                                                 "AppManagementAssignmentFilterType":  "include"
+                                                             },
+                                             "API parameters":  {
+
+                                                                },
+                                             "Device Validation":  {
+                                                                       "pre-requisite on device":  "",
+                                                                       "App Installation Validation":  "Verify assignment filter behavior as per intent and filter matching outcome.",
+                                                                       "searchTerm":  "",
+                                                                       "expectedValue":  ""
+                                                                   }
+                                         }
+                      },
+                      {
+                          "testCaseId":  "TC_7365659",
+                          "testName":  "Windows_Windows_Win10_Assignment_Filters_No_Match_E2E_Appx_Universal_Required_UserGroup_Verify_LOB_App_is_not_installed_on_the_device",
+                          "description":  "[IntuneSA]:[Windows]:[Assignment Filters]:Windows Win10 Assignment Filters No Match E2E Appx Universal Required UserGroup Verify LOB App is not installed on the device",
+                          "category":  "WinClassicApp",
+                          "priority":  "High",
+                          "enabled":  true,
+                          "parameters":  {
+                                             "firstLink":  "Apps",
+                                             "secondLink":  "Windows",
+                                             "AppType":  "Line-of-business app",
+                                             "select app package file":  "TestAppX10.appx",
+                                             "Type of app install file":  "",
+                                             "Name":  "TC_7365659_AssignmentFilter",
+                                             "Description":  "TC_7365659_AssignmentFilter",
+                                             "Publisher":  "AIAuto ddmmyyyymmss",
+                                             "Assignments":  {
+                                                                 "Required":  "Add group",
+                                                                 "Available for enrolled devices":  "",
+                                                                 "uninstall":  "",
+                                                                 "select groups":  "AI_Automation_User_group",
+                                                                 "AssignmentFiltergroup":  "AI_Automation_Nonmatching",
+                                                                 "AppManagementAssignmentFilterType":  "include"
+                                                             },
+                                             "API parameters":  {
+
+                                                                },
+                                             "Device Validation":  {
+                                                                       "pre-requisite on device":  "",
+                                                                       "App Installation Validation":  "Verify assignment filter behavior as per intent and filter matching outcome.",
+                                                                       "searchTerm":  "",
+                                                                       "expectedValue":  ""
+                                                                   }
+                                         }
+                      },
+                      {
+                          "testCaseId":  "TC_7365660",
+                          "testName":  "Windows_Windows_Win10_Assignment_Filters_No_Match_Appx_Universal_Available_UserGroup_Verify_LOB_App_does_not_show_in_CP_and_IWP",
+                          "description":  "[IntuneSA]:[Windows]:[Assignment Filters]:Windows Win10 Assignment Filters No Match Appx Universal Available UserGroup Verify LOB App does not show in CP and IWP",
+                          "category":  "WinClassicApp",
+                          "priority":  "High",
+                          "enabled":  true,
+                          "parameters":  {
+                                             "firstLink":  "Apps",
+                                             "secondLink":  "Windows",
+                                             "AppType":  "Line-of-business app",
+                                             "select app package file":  "TestAppX10.appx",
+                                             "Type of app install file":  "",
+                                             "Name":  "TC_7365660_AssignmentFilter",
+                                             "Description":  "TC_7365660_AssignmentFilter",
+                                             "Publisher":  "AIAuto ddmmyyyymmss",
+                                             "Assignments":  {
+                                                                 "Required":  "",
+                                                                 "Available for enrolled devices":  "Add group",
+                                                                 "uninstall":  "",
+                                                                 "select groups":  "AI_Automation_User_group",
+                                                                 "AssignmentFiltergroup":  "AI_Automation_Nonmatching",
+                                                                 "AppManagementAssignmentFilterType":  "include"
+                                                             },
+                                             "API parameters":  {
+
+                                                                },
+                                             "Device Validation":  {
+                                                                       "pre-requisite on device":  "",
+                                                                       "App Installation Validation":  "Verify assignment filter behavior as per intent and filter matching outcome.",
+                                                                       "searchTerm":  "",
+                                                                       "expectedValue":  ""
+                                                                   }
+                                         }
+                      },
+
+
+                      {
+                          "testCaseId":  "TC_9495531",
+                          "testName":  "Windows_Verify_App_is_install_successfully_on_the_device",
+                          "description":  "[IntuneSA]:[Windows][Win10]:[Assignment Filters][Include][Match][E2E]:[Edge]:[Required][UserGroup]:Verify App is install successfully on the device",
+                          "category":  "WinClassicApp",
+                          "priority":  "High",
+                          "enabled":  true,
+                          "parameters":  {
+                                             "firstLink":  "Apps",
+                                             "secondLink":  "Windows",
+                                             "AppType":  "Microsoft Edge for Windows 10 and later",
+                                             "displayName":  "TC_9495531_Edge",
+                                             "description":  "Microsoft Edge is the browser for business with modern and legacy web compatibility, new privacy features such as Tracking prevention, and built-in productivity tools such as enterprise-grade PDF support and access to Office and corporate search right from a new tab.",
+                                             "publisher":  "Microsoft",
+                                             "channel":  "dev",
+                                             "Assignments":  {
+                                                                 "Required":  "Add group",
+                                                                 "Available for enrolled devices":  "",
+                                                                 "uninstall":  "",
+                                                                 "select groups":  "AI_Automation_User_group",
+                                                                 "AssignmentFiltergroup":  "Ai_Automation_matching",
+                                                                 "AppManagementAssignmentFilterType":  "include"
+                                                             },
+                                             "API parameters":  {
+
+                                                                },
+                                             "Device Validation":  {
+                                                                       "pre-requisite on device":  "",
+                                                                       "App Installation Validation":  "Verify assignment/filter and deployment behavior as per test intent.",
+                                                                       "searchTerm":  "",
+                                                                       "expectedValue":  ""
+                                                                   }
+                                         }
+                      },
+                      {
+                          "testCaseId":  "TC_9495532",
+                          "testName":  "Windows_Verify_App_is_uninstalled_on_the_device",
+                          "description":  "[IntuneSA]:[Windows][Win10]:[Assignment Filters][Include][Match][E2E]:[Edge]:[Uninstall][UserGroup]:Verify App is uninstalled on the device",
+                          "category":  "WinClassicApp",
+                          "priority":  "High",
+                          "enabled":  true,
+                          "parameters":  {
+                                             "firstLink":  "Apps",
+                                             "secondLink":  "Windows",
+                                             "AppType":  "Microsoft Edge for Windows 10 and later",
+                                             "displayName":  "TC_9495532_Edge",
+                                             "description":  "Microsoft Edge is the browser for business with modern and legacy web compatibility, new privacy features such as Tracking prevention, and built-in productivity tools such as enterprise-grade PDF support and access to Office and corporate search right from a new tab.",
+                                             "publisher":  "Microsoft",
+                                             "channel":  "dev",
+                                             "Assignments":  {
+                                                                 "Required":  "",
+                                                                 "Available for enrolled devices":  "",
+                                                                 "uninstall":  "Add group",
+                                                                 "select groups":  "AI_Automation_User_group",
+                                                                 "AssignmentFiltergroup":  "Ai_Automation_matching",
+                                                                 "AppManagementAssignmentFilterType":  "include"
+                                                             },
+                                             "API parameters":  {
+
+                                                                },
+                                             "Device Validation":  {
+                                                                       "pre-requisite on device":  "",
+                                                                       "App Installation Validation":  "Verify assignment/filter and deployment behavior as per test intent.",
+                                                                       "searchTerm":  "",
+                                                                       "expectedValue":  ""
+                                                                   }
+                                         }
+                      },
+                      {
+                          "testCaseId":  "TC_9495533",
+                          "testName":  "Windows_Verify_App_shows_in_CP_and_IWP_and_can_all_install_successfully_on_the_device",
+                          "description":  "[IntuneSA]:[Windows][Win10]:[Assignment Filters][Include][Match][E2E]:[Edge]:[Available][UserGroup]:Verify App shows in CP and IWP and can all install successfully on the device",
+                          "category":  "WinClassicApp",
+                          "priority":  "High",
+                          "enabled":  true,
+                          "parameters":  {
+                                             "firstLink":  "Apps",
+                                             "secondLink":  "Windows",
+                                             "AppType":  "Microsoft Edge for Windows 10 and later",
+                                             "displayName":  "TC_9495533_Edge",
+                                             "description":  "Microsoft Edge is the browser for business with modern and legacy web compatibility, new privacy features such as Tracking prevention, and built-in productivity tools such as enterprise-grade PDF support and access to Office and corporate search right from a new tab.",
+                                             "publisher":  "Microsoft",
+                                             "channel":  "dev",
+                                             "Assignments":  {
+                                                                 "Required":  "",
+                                                                 "Available for enrolled devices":  "Add group",
+                                                                 "uninstall":  "",
+                                                                 "select groups":  "AI_Automation_User_group",
+                                                                 "AssignmentFiltergroup":  "Ai_Automation_matching",
+                                                                 "AppManagementAssignmentFilterType":  "include"
+                                                             },
+                                             "API parameters":  {
+
+                                                                },
+                                             "Device Validation":  {
+                                                                       "pre-requisite on device":  "",
+                                                                       "App Installation Validation":  "Verify assignment/filter and deployment behavior as per test intent.",
+                                                                       "searchTerm":  "",
+                                                                       "expectedValue":  ""
+                                                                   }
+                                         }
+                      },
+                      {
+                          "testCaseId":  "TC_9495534",
+                          "testName":  "Windows_Verify_App_is_not_installed_on_the_device",
+                          "description":  "[IntuneSA]:[Windows][Win10]:[Assignment Filters][Exclude][Match][E2E]:[Edge]:[Required][UserGroup]:Verify App is not installed on the device",
+                          "category":  "WinClassicApp",
+                          "priority":  "High",
+                          "enabled":  true,
+                          "parameters":  {
+                                             "firstLink":  "Apps",
+                                             "secondLink":  "Windows",
+                                             "AppType":  "Microsoft Edge for Windows 10 and later",
+                                             "displayName":  "TC_9495534_Edge",
+                                             "description":  "Microsoft Edge is the browser for business with modern and legacy web compatibility, new privacy features such as Tracking prevention, and built-in productivity tools such as enterprise-grade PDF support and access to Office and corporate search right from a new tab.",
+                                             "publisher":  "Microsoft",
+                                             "channel":  "dev",
+                                             "Assignments":  {
+                                                                 "Required":  "Add group",
+                                                                 "Available for enrolled devices":  "",
+                                                                 "uninstall":  "",
+                                                                 "select groups":  "AI_Automation_User_group",
+                                                                 "AssignmentFiltergroup":  "Ai_Automation_matching",
+                                                                 "AppManagementAssignmentFilterType":  "exclude"
+                                                             },
+                                             "API parameters":  {
+
+                                                                },
+                                             "Device Validation":  {
+                                                                       "pre-requisite on device":  "",
+                                                                       "App Installation Validation":  "Verify assignment/filter and deployment behavior as per test intent.",
+                                                                       "searchTerm":  "",
+                                                                       "expectedValue":  ""
+                                                                   }
+                                         }
+                      },
+                      {
+                          "testCaseId":  "TC_9495535",
+                          "testName":  "Windows_Verify_App_does_not_show_in_CP_and_IWP_and_does_not_install_on_the_device",
+                          "description":  "[IntuneSA]:[Windows][Win10]:[Assignment Filters][Exclude][Match]:[Edge]:[Available][UserGroup]:Verify App does not show in CP and IWP and does not install on the device",
+                          "category":  "WinClassicApp",
+                          "priority":  "High",
+                          "enabled":  true,
+                          "parameters":  {
+                                             "firstLink":  "Apps",
+                                             "secondLink":  "Windows",
+                                             "AppType":  "Microsoft Edge for Windows 10 and later",
+                                             "displayName":  "TC_9495535_Edge",
+                                             "description":  "Microsoft Edge is the browser for business with modern and legacy web compatibility, new privacy features such as Tracking prevention, and built-in productivity tools such as enterprise-grade PDF support and access to Office and corporate search right from a new tab.",
+                                             "publisher":  "Microsoft",
+                                             "channel":  "dev",
+                                             "Assignments":  {
+                                                                 "Required":  "",
+                                                                 "Available for enrolled devices":  "Add group",
+                                                                 "uninstall":  "",
+                                                                 "select groups":  "AI_Automation_User_group",
+                                                                 "AssignmentFiltergroup":  "Ai_Automation_matching",
+                                                                 "AppManagementAssignmentFilterType":  "exclude"
+                                                             },
+                                             "API parameters":  {
+
+                                                                },
+                                             "Device Validation":  {
+                                                                       "pre-requisite on device":  "",
+                                                                       "App Installation Validation":  "Verify assignment/filter and deployment behavior as per test intent.",
+                                                                       "searchTerm":  "",
+                                                                       "expectedValue":  ""
+                                                                   }
+                                         }
+                      },
+                      {
+                          "testCaseId":  "TC_5657696",
+                          "testName":  "Windows_Verify_Edge_Beta_app_is_installed_and_correct_version_is_reported_in_status",
+                          "description":  "[IntuneSA]:[Windows][Win10RS3+]:[Publish][E2E]:[Available]:Verify Edge Beta app is installed and correct version is reported in status",
+                          "category":  "WinClassicApp",
+                          "priority":  "High",
+                          "enabled":  true,
+                          "parameters":  {
+                                             "firstLink":  "Apps",
+                                             "secondLink":  "Windows",
+                                             "AppType":  "Microsoft Edge for Windows 10 and later",
+                                             "displayName":  "TC_5657696_Edge",
+                                             "description":  "Microsoft Edge is the browser for business with modern and legacy web compatibility, new privacy features such as Tracking prevention, and built-in productivity tools such as enterprise-grade PDF support and access to Office and corporate search right from a new tab.",
+                                             "publisher":  "Microsoft",
+                                             "channel":  "Beta",
+                                             "Assignments":  {
+                                                                 "Required":  "",
+                                                                 "Available for enrolled devices":  "Add group",
+                                                                 "uninstall":  "",
+                                                                 "select groups":  "AI_Automation_User_group"
+                                                             },
+                                             "API parameters":  {
+
+                                                                },
+                                             "Device Validation":  {
+                                                                       "pre-requisite on device":  "",
+                                                                       "App Installation Validation":  "Verify assignment/filter and deployment behavior as per test intent.",
+                                                                       "searchTerm":  "",
+                                                                       "expectedValue":  ""
+                                                                   }
+                                         }
+                      },
+                      {
+                          "testCaseId":  "TC_5657697",
+                          "testName":  "Windows_Verify_Edge_Dev_and_Edge_Beta_app_can_be_installed_side_by_side",
+                          "description":  "[IntuneSA]:[Windows][Win10RS3+]:[Publish][E2E]:Verify Edge Dev and Edge Beta app can be installed side by side",
+                          "category":  "WinClassicApp",
+                          "priority":  "High",
+                          "enabled":  true,
+                          "parameters":  {
+                                             "firstLink":  "Apps",
+                                             "secondLink":  "Windows",
+                                             "AppType":  "Microsoft Edge for Windows 10 and later",
+                                             "displayName":  "TC_5657697_Edge",
+                                             "description":  "Microsoft Edge is the browser for business with modern and legacy web compatibility, new privacy features such as Tracking prevention, and built-in productivity tools such as enterprise-grade PDF support and access to Office and corporate search right from a new tab.",
+                                             "publisher":  "Microsoft",
+                                             "channel":  "dev",
+                                             "Assignments":  {
+                                                                 "Required":  "",
+                                                                 "Available for enrolled devices":  "",
+                                                                 "uninstall":  "",
+                                                                 "select groups":  "AI_Automation_User_group"
+                                                             },
+                                             "API parameters":  {
+
+                                                                },
+                                             "Device Validation":  {
+                                                                       "pre-requisite on device":  "",
+                                                                       "App Installation Validation":  "Verify assignment/filter and deployment behavior as per test intent.",
+                                                                       "searchTerm":  "",
+                                                                       "expectedValue":  ""
+                                                                                                                                     }
+                                                                                 }
+                                            },
+                                            {
+                          "testCaseId":  "TC_8982222",
+                          "testName":  "Windows_Verify_Edge_Dev_can_be_uninstalled",
+                          "description":  "[IntuneSA]:[Windows][Win10RS3+]:[Publish][E2E]:[Uninstall]:Verify Edge Dev can be uninstalled",
+                          "category":  "WinClassicApp",
+                          "priority":  "High",
+                          "enabled":  true,
+                          "parameters":  {
+                                             "firstLink":  "Apps",
+                                             "secondLink":  "Windows",
+                                             "AppType":  "Microsoft Edge for Windows 10 and later",
+                                             "displayName":  "TC_8982222_Edge",
+                                             "description":  "Microsoft Edge is the browser for business with modern and legacy web compatibility, new privacy features such as Tracking prevention, and built-in productivity tools such as enterprise-grade PDF support and access to Office and corporate search right from a new tab.",
+                                             "publisher":  "Microsoft",
+                                             "channel":  "dev",
+                                             "Assignments":  {
+                                                                 "Required":  "",
+                                                                 "Available for enrolled devices":  "",
+                                                                 "uninstall":  "Add group",
+                                                                 "select groups":  "AI_Automation_User_group"
+                                                             },
+                                             "API parameters":  {
+
+                                                                },
+                                             "Device Validation":  {
+                                                                       "pre-requisite on device":  "",
+                                                                       "App Installation Validation":  "Verify assignment/filter and deployment behavior as per test intent.",
+                                                                       "searchTerm":  "",
+                                                                       "expectedValue":  ""
+                                                                   }
+                                         }
+                      },
+                      {
+                          "testCaseId":  "TC_8982257",
+                          "testName":  "Windows_Verify_Edge_Stable_app_is_installed_and_correct_version_is_reported_in_status",
+                          "description":  "[IntuneSA]:[Windows][Win10RS3+]:[Publish][E2E]:[Required]:Verify Edge Stable app is installed and correct version is reported in status",
+                          "category":  "WinClassicApp",
+                          "priority":  "High",
+                          "enabled":  true,
+                          "parameters":  {
+                                             "firstLink":  "Apps",
+                                             "secondLink":  "Windows",
+                                             "AppType":  "Microsoft Edge for Windows 10 and later",
+                                             "displayName":  "TC_8982257_Edge",
+                                             "description":  "Microsoft Edge is the browser for business with modern and legacy web compatibility, new privacy features such as Tracking prevention, and built-in productivity tools such as enterprise-grade PDF support and access to Office and corporate search right from a new tab.",
+                                             "publisher":  "Microsoft",
+                                             "channel":  "stable",
+                                             "Assignments":  {
+                                                                 "Required":  "Add group",
+                                                                 "Available for enrolled devices":  "",
+                                                                 "uninstall":  "",
+                                                                 "select groups":  "AI_Automation_User_group"
+                                                             },
+                                             "API parameters":  {
+
+                                                                },
+                                             "Device Validation":  {
+                                                                       "pre-requisite on device":  "",
+                                                                       "App Installation Validation":  "Verify assignment/filter and deployment behavior as per test intent.",
+                                                                       "searchTerm":  "",
+                                                                       "expectedValue":  ""
+                                                                   }
+                                         }
+                      },
+                      {
+                          "testCaseId":  "TC_952863",
+                          "testName":  "Windows_Required_DeepLink_UserGroup_Verify_Store_App_is_installed_successfully_on_the_device",
+                          "description":  "[IntuneSA]:[Windows]:[Required]:[DeepLink][UserGroup]:Verify Store App is installed successfully on the device",
+                          "category":  "WinClassicApp",
+                          "priority":  "High",
+                          "enabled":  true,
+                          "parameters":  {
+                                             "firstLink":  "Apps",
+                                             "secondLink":  "Windows",
+                                             "AppType":  "Microsoft Store app (legacy)",
+                                             "displayName":  "17 App regression",
+                                             "description":  "adfgadgadgsthyrth",
+                                             "publisher":  "https://www.microsoft.com/store/p/<App-Name>/<ProductID>",
+                                             "appStoreUrl":  "https://apps.microsoft.com/detail/9wzdncrfj2wl?hl=en-US&gl=US",
+                                             "Assignments":  {
+                                                                 "Required":  "Add group",
+                                                                 "Available for enrolled devices":  "",
+                                                                 "uninstall":  "",
+                                                                 "select groups":  "AI_Automation_User_group"
+                                                             },
+                                             "API parameters":  {
+
+                                                                },
+                                             "Device Validation":  {
+                                                                       "pre-requisite on device":  "",
+                                                                       "App Installation Validation":  "Verify Store App is installed successfully on the device.",
+                                                                       "searchTerm":  "",
+                                                                       "expectedValue":  ""
+                                                                   }
+                                         }
+                      },
+                      {
+                          "testCaseId":  "TC_3778593",
+                          "testName":  "Windows_AppDelete_DeepLink_Verify_App_is_removed_from_SSP_and_IWPortal_and_not_uninstalled_from_device",
+                          "description":  "[IntuneSA]:[Windows]:[AppDelete]:[Deeplink]:IT Pro can delete app from admin console and app is removed from SSP/IWPortal and not uninstalled from device if already installed",
+                          "category":  "WinClassicApp",
+                          "priority":  "High",
+                          "enabled":  true,
+                          "parameters":  {
+                                             "firstLink":  "Apps",
+                                             "secondLink":  "Windows",
+                                             "AppType":  "Microsoft Store app (legacy)",
+                                             "displayName":  "17 App regression",
+                                             "description":  "adfgadgadgsthyrth",
+                                             "publisher":  "https://www.microsoft.com/store/p/<App-Name>/<ProductID>",
+                                             "appStoreUrl":  "https://apps.microsoft.com/detail/9wzdncrfj2wl?hl=en-US&gl=US",
+                                             "Assignments":  {
+                                                                 "Required":  "",
+                                                                 "Available for enrolled devices":  "",
+                                                                 "uninstall":  "",
+                                                                 "select groups":  "AI_Automation_User_group"
+                                                             },
+                                             "API parameters":  {
+
+                                                                },
+                                             "Device Validation":  {
+                                                                       "pre-requisite on device":  "",
+                                                                       "App Installation Validation":  "Verify app delete behavior from admin console and portal visibility impact.",
+                                                                       "searchTerm":  "",
+                                                                       "expectedValue":  ""
+                                                                   }
+                                         }
+                      },
+                      {
+                          "testCaseId":  "TC_14716382",
+                          "testName":  "Windows_WebApp_UI_Admin_can_update_the_application_metadata",
+                          "description":  "[IntuneSA]:[Windows]:[WebApp][UI]:Admin can update the application metadata",
+                          "category":  "WinClassicApp",
+                          "priority":  "High",
+                          "enabled":  true,
+                          "parameters":  {
+                                             "firstLink":  "Apps",
+                                             "secondLink":  "Windows",
+                                             "AppType":  "Web Link",
+                                             "displayName":  "17 App regression",
+                                             "description":  "adfgadgadgsthyrth",
+                                             "publisher":  "https://www.microsoft.com/store/p/<App-Name>/<ProductID>",
+                                             "appStoreUrl":  "https://apps.microsoft.com/detail/9wzdncrfj2wl?hl=en-US&gl=US",
+                                             "Assignments":  {
+                                                                 "Required":  "",
+                                                                 "Available for enrolled devices":  "",
+                                                                 "uninstall":  "",
+                                                                 "select groups":  ""
+                                                             },
+                                             "API parameters":  {
+
+                                                                },
+                                             "Device Validation":  {
+                                                                       "pre-requisite on device":  "",
+                                                                       "App Installation Validation":  "Verify Web Link app metadata update behavior.",
+                                                                       "searchTerm":  "",
+                                                                       "expectedValue":  ""
+                                                                   }
+                                         }
+                      },
+                      {
+                          "testCaseId":  "TC_14716397",
+                          "testName":  "Windows_WebApp_UI_Admin_can_delete_the_application",
+                          "description":  "[IntuneSA]:[Windows]:[WebApp][UI]:Admin can delete the application",
+                          "category":  "WinClassicApp",
+                          "priority":  "High",
+                          "enabled":  true,
+                          "parameters":  {
+                                             "firstLink":  "Apps",
+                                             "secondLink":  "Windows",
+                                             "AppType":  "Web Link",
+                                             "displayName":  "17 App regression",
+                                             "description":  "adfgadgadgsthyrth",
+                                             "publisher":  "https://www.microsoft.com/store/p/<App-Name>/<ProductID>",
+                                             "appStoreUrl":  "https://apps.microsoft.com/detail/9wzdncrfj2wl?hl=en-US&gl=US",
+                                             "Assignments":  {
+                                                                 "Required":  "",
+                                                                 "Available for enrolled devices":  "",
+                                                                 "uninstall":  "",
+                                                                 "select groups":  ""
+                                                             },
+                                             "API parameters":  {
+
+                                                                },
+                                             "Device Validation":  {
+                                                                       "pre-requisite on device":  "",
+                                                                       "App Installation Validation":  "Verify Web Link app delete behavior.",
+                                                                       "searchTerm":  "",
+                                                                       "expectedValue":  ""
+                                                                   }
+                                         }
+                      },
+                      {
+                          "testCaseId":  "TC_14775098",
+                          "testName":  "Windows_Appinfo_WebApp_UI_Verify_common_properties_are_properly_saved",
+                          "description":  "[IntuneSA]:[Windows]:[Appinfo]:[WebApp][UI]:Verify common properties (Description/Publisher/Category/etc) are properly saved",
+                          "category":  "WinClassicApp",
+                          "priority":  "High",
+                          "enabled":  true,
+                          "parameters":  {
+                                             "firstLink":  "Apps",
+                                             "secondLink":  "Windows",
+                                             "AppType":  "Web Link",
+                                             "displayName":  "17 App regression",
+                                             "description":  "adfgadgadgsthyrth",
+                                             "publisher":  "https://www.microsoft.com/store/p/<App-Name>/<ProductID>",
+                                             "appStoreUrl":  "https://apps.microsoft.com/detail/9wzdncrfj2wl?hl=en-US&gl=US",
+                                             "Assignments":  {
+                                                                 "Required":  "",
+                                                                 "Available for enrolled devices":  "",
+                                                                 "uninstall":  "",
+                                                                 "select groups":  ""
+                                                             },
+                                             "API parameters":  {
+
+                                                                },
+                                             "Device Validation":  {
+                                                                       "pre-requisite on device":  "",
+                                                                       "App Installation Validation":  "Verify common Web Link app properties are saved correctly.",
+                                                                       "searchTerm":  "",
+                                                                       "expectedValue":  ""
+                                                                   }
+                                         }
+                      }
+                  ]
+}

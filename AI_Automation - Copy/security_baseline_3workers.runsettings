@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RunSettings>
+  <RunConfiguration>
+    <EnvironmentVariables>
+      <HEADED>0</HEADED>
+      <BROWSER>chromium</BROWSER>
+    </EnvironmentVariables>
+    <!-- 20-minute per-test timeout (in milliseconds) -->
+    <TestSessionTimeout>0</TestSessionTimeout>
+  </RunConfiguration>
+  <NUnit>
+    <NumberOfTestWorkers>3</NumberOfTestWorkers>
+    <DefaultTestNamePattern>{m}</DefaultTestNamePattern>
+    <!-- 20-minute per-test timeout (in milliseconds) -->
+    <DefaultTimeout>1200000</DefaultTimeout>
+  </NUnit>
+  <Playwright>
+    <BrowserName>chromium</BrowserName>
+    <LaunchOptions>
+      <Headless>true</Headless>
+    </LaunchOptions>
+    <!-- 20-minute Expect timeout -->
+    <ExpectTimeout>1200000</ExpectTimeout>
+  </Playwright>
+</RunSettings>

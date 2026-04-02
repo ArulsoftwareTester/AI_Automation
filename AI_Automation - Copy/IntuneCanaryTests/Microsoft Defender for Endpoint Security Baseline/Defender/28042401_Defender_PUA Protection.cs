@@ -1,0 +1,21 @@
+using Microsoft.Playwright;
+using Microsoft.Playwright.NUnit;
+using NUnit.Framework;
+using System;
+using System.Threading.Tasks;
+
+namespace IntuneCanaryTests
+{
+    [TestFixture]
+    public class T28042401_Defender_PUA_Protection : SecurityBaseline
+    {
+        [Test]
+        public async Task Test_28042401_Defender_PUA_Protection()
+        {
+            await IPLogin(Page);
+            await createProfile_Win365(Page, "Microsoft Defender for Endpoint Security Baseline");
+            await MDMPolicySync(Page);
+            Console.WriteLine("Test_28042401 completed");
+        }
+    }
+}

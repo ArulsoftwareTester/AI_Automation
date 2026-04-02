@@ -1,0 +1,277 @@
+{
+    "testCases": [
+        {
+            "testCaseId": "TC_952948",
+            "testName": "Android_DeepLink_Required_UserGroup_Install",
+            "description": "[IntuneSA]:[Android]:[DeepLink]:[Required][UserGroup]:Verify Store App is installed successfully on the device",
+            "category": "AndroidStoreApp",
+            "priority": "High",
+            "enabled": true,
+            "parameters": {
+                "firstLink": "Apps",
+                "secondLink": "Android",
+                "AppType": "Android store app",
+                "Name": "TC_952948_Calculator_DeepLink",
+                "Description": "TC_952948_Calculator_DeepLink",
+                "Publisher": "AIAuto ddmmyyyymmss",
+                "Appstore URL": "https://play.google.com/store/apps/details?id=de.underflow.calc",
+                "Minimum operating system": "Android 4.0 (Ice Cream Sandwich)",
+                "Category": "",
+                "Show this as a featured app": "No",
+                "Information URL": "",
+                "Privacy URL": "",
+                "Developer": "",
+                "Owner": "",
+                "Notes": "",
+                "Logo": "",
+                "Assignments": {
+                    "Required": "Add group",
+                    "Available for enrolled devices": "",
+                    "uninstall": "",
+                    "select groups": "AI_Automation_User_group"
+                },
+                "API parameters": {},
+                "Device Validation": {
+                    "pre-requisite on device": "Create Android enrollment",
+                    "App Installation Validation": "Verify Install is success for all Android devices in group",
+                    "searchTerm": "",
+                    "expectedValue": ""
+                }
+            }
+        },
+        {
+            "testCaseId": "TC_1363141",
+            "testName": "Android_GlobalMAMApp_Available_UserGroup_IWPortal",
+            "description": "[IntuneSA]:[Ibiza]:[Android]:[GlobalMAMApp]:[Available][UserGroup]:Verify Store App is displayed on IWPortal/SSP and Install is successful when IWUser install from SSP/IWPortal",
+            "category": "AndroidStoreApp",
+            "priority": "High",
+            "enabled": true,
+            "parameters": {
+                "firstLink": "Apps",
+                "secondLink": "Android",
+                "AppType": "Android store app",
+                "Name": "TC_1363141_GoogleTranslate_StoreApp",
+                "Description": "TC_1363141_GoogleTranslate_StoreApp",
+                "Publisher": "AIAuto ddmmyyyymmss",
+                "Appstore URL": "https://play.google.com/store/apps/details?id=com.google.android.apps.translate",
+                "Minimum operating system": "Android 4.0 (Ice Cream Sandwich)",
+                "Category": "",
+                "Show this as a featured app": "No",
+                "Information URL": "",
+                "Privacy URL": "",
+                "Developer": "",
+                "Owner": "",
+                "Notes": "",
+                "Logo": "",
+                "Assignments": {
+                    "Required": "",
+                    "Available for enrolled devices": "Add group",
+                    "uninstall": "",
+                    "select groups": "AI_Automation_User_group"
+                },
+                "API parameters": {},
+                "Device Validation": {
+                    "pre-requisite on device": "Create Android enrollment",
+                    "App Installation Validation": "Verify Store App is displayed on IWPortal/SSP and Install is successful when IWUser install from SSP/IWPortal",
+                    "searchTerm": "",
+                    "expectedValue": ""
+                }
+            }
+        },
+        {
+            "testCaseId": "TC_1363143",
+            "testName": "Android_GlobalMAMApp_Required_UserGroup_Install",
+            "description": "[IntuneSA]:[Ibiza]:[Android]:[GlobalMAMApp]:[Required][UserGroup]:Verify Store App is installed successfully on the device",
+            "category": "AndroidStoreApp",
+            "priority": "High",
+            "enabled": true,
+            "parameters": {
+                "firstLink": "Apps",
+                "secondLink": "Android",
+                "AppType": "Android store app",
+                "Name": "TC_1363143_GoogleMaps_StoreApp",
+                "Description": "TC_1363143_GoogleMaps_StoreApp",
+                "Publisher": "AIAuto ddmmyyyymmss",
+                "Appstore URL": "https://play.google.com/store/apps/details?id=com.google.android.apps.maps",
+                "Minimum operating system": "Android 4.0 (Ice Cream Sandwich)",
+                "Category": "",
+                "Show this as a featured app": "No",
+                "Information URL": "",
+                "Privacy URL": "",
+                "Developer": "",
+                "Owner": "",
+                "Notes": "",
+                "Logo": "",
+                "Assignments": {
+                    "Required": "Add group",
+                    "Available for enrolled devices": "",
+                    "uninstall": "",
+                    "select groups": "AI_Automation_User_group"
+                },
+                "API parameters": {},
+                "Device Validation": {
+                    "pre-requisite on device": "Create Android enrollment",
+                    "App Installation Validation": "Verify Store App is installed successfully on the device",
+                    "searchTerm": "",
+                    "expectedValue": ""
+                }
+            }
+        },
+        {
+            "testCaseId": "TC_3729886",
+            "testName": "Android_DeepLink_Available_UserGroup_IWPortal_NoStatus",
+            "description": "[IntuneSA]:[Android]:[Deeplink]:[Available][UserGroup]:Verify Store App is displayed on IWPortal/SSP and Install is successful when IWUser install from SSP/IWPortal (No Status in Admin UI)",
+            "category": "AndroidStoreApp",
+            "priority": "High",
+            "enabled": true,
+            "parameters": {
+                "firstLink": "Apps",
+                "secondLink": "Android",
+                "AppType": "Android store app",
+                "Name": "TC_3729886_Calculator_DeepLink_Available",
+                "Description": "TC_3729886_Calculator_DeepLink_Available",
+                "Publisher": "AIAuto ddmmyyyymmss",
+                "Appstore URL": "https://play.google.com/store/apps/details?id=de.underflow.calc",
+                "Minimum operating system": "Android 4.0 (Ice Cream Sandwich)",
+                "Category": "",
+                "Show this as a featured app": "No",
+                "Information URL": "",
+                "Privacy URL": "",
+                "Developer": "",
+                "Owner": "",
+                "Notes": "",
+                "Logo": "",
+                "Assignments": {
+                    "Required": "",
+                    "Available for enrolled devices": "Add group",
+                    "uninstall": "",
+                    "select groups": "AI_Automation_User_group"
+                },
+                "API parameters": {},
+                "Device Validation": {
+                    "pre-requisite on device": "Create Android enrollment",
+                    "App Installation Validation": "Verify Store App is displayed on IWPortal/SSP and Install is successful. NO STATUS WILL SHOW - this is by design",
+                    "searchTerm": "",
+                    "expectedValue": ""
+                }
+            }
+        },
+        {
+            "testCaseId": "TC_3778080",
+            "testName": "Android_AppDelete_Deployed_DeepLink",
+            "description": "[IntuneSA]:[Android]:[AppDelete]:[Deployed][Deeplink]:IT Pro can delete app from admin console which has active deployments",
+            "category": "AndroidStoreApp",
+            "priority": "High",
+            "enabled": true,
+            "parameters": {
+                "firstLink": "Apps",
+                "secondLink": "Android",
+                "AppType": "Android store app",
+                "Name": "TC_3778080_Calculator_DeepLink_Delete",
+                "Description": "TC_3778080_Calculator_DeepLink_Delete",
+                "Publisher": "AIAuto ddmmyyyymmss",
+                "Appstore URL": "https://play.google.com/store/apps/details?id=de.underflow.calc",
+                "Minimum operating system": "Android 4.0 (Ice Cream Sandwich)",
+                "Category": "",
+                "Show this as a featured app": "No",
+                "Information URL": "",
+                "Privacy URL": "",
+                "Developer": "",
+                "Owner": "",
+                "Notes": "",
+                "Logo": "",
+                "Assignments": {
+                    "Required": "Add group",
+                    "Available for enrolled devices": "",
+                    "uninstall": "",
+                    "select groups": "AI_Automation_User_group"
+                },
+                "API parameters": {},
+                "Device Validation": {
+                    "pre-requisite on device": "Create Android enrollment",
+                    "App Installation Validation": "IT Pro can delete app from admin console which has active deployments",
+                    "searchTerm": "",
+                    "expectedValue": ""
+                }
+            }
+        },
+        {
+            "testCaseId": "TC_3778106",
+            "testName": "Android_AppDelete_DeepLink_Available_UserGroup",
+            "description": "[IntuneSA]:[Android]:[AppDelete]:[Deeplink]:[Available][UserGroup]:IT Pro can delete app from admin console and app is removed from SSP/IWPortal and not uninstalled from device if already installed",
+            "category": "AndroidStoreApp",
+            "priority": "High",
+            "enabled": true,
+            "parameters": {
+                "firstLink": "Apps",
+                "secondLink": "Android",
+                "AppType": "Android store app",
+                "Name": "TC_3778106_GoogleKeep_DeepLink",
+                "Description": "TC_3778106_GoogleKeep_DeepLink",
+                "Publisher": "AIAuto ddmmyyyymmss",
+                "Appstore URL": "https://play.google.com/store/apps/details?id=com.google.android.keep",
+                "Minimum operating system": "Android 4.0 (Ice Cream Sandwich)",
+                "Category": "",
+                "Show this as a featured app": "No",
+                "Information URL": "",
+                "Privacy URL": "",
+                "Developer": "",
+                "Owner": "",
+                "Notes": "",
+                "Logo": "",
+                "Assignments": {
+                    "Required": "",
+                    "Available for enrolled devices": "Add group",
+                    "uninstall": "",
+                    "select groups": "AI_Automation_User_group"
+                },
+                "API parameters": {},
+                "Device Validation": {
+                    "pre-requisite on device": "Create Android enrollment",
+                    "App Installation Validation": "Verify Install first, then IT Pro delete app from admin console. Verify app is removed from SSP/IWPortal and not uninstalled from device if already installed",
+                    "searchTerm": "",
+                    "expectedValue": ""
+                }
+            }
+        },
+        {
+            "testCaseId": "TC_25572285",
+            "testName": "Android_MinOS_DeepLink_Required_UserGroup",
+            "description": "[IntuneSA]:[Android]:[MinOS]:[DeepLink]:[Required][UserGroup]: MinOS is honored",
+            "category": "AndroidStoreApp",
+            "priority": "High",
+            "enabled": true,
+            "parameters": {
+                "firstLink": "Apps",
+                "secondLink": "Android",
+                "AppType": "Android store app",
+                "Name": "TC_25572285_Chrome_DeepLink_MinOS",
+                "Description": "TC_25572285_Chrome_DeepLink_MinOS",
+                "Publisher": "AIAuto ddmmyyyymmss",
+                "Appstore URL": "https://play.google.com/store/apps/details?id=com.android.chrome",
+                "Minimum operating system": "Android 4.0 (Ice Cream Sandwich)",
+                "Category": "",
+                "Show this as a featured app": "No",
+                "Information URL": "",
+                "Privacy URL": "",
+                "Developer": "",
+                "Owner": "",
+                "Notes": "",
+                "Logo": "",
+                "Assignments": {
+                    "Required": "Add group",
+                    "Available for enrolled devices": "",
+                    "uninstall": "",
+                    "select groups": "AI_Automation_User_group"
+                },
+                "API parameters": {},
+                "Device Validation": {
+                    "pre-requisite on device": "Create 2 deployments: 1) with MinOS set to MaxVer, 2) with MinOS set to version lower than MaxVer. Enroll 2 android devices - one with Max OS Version and one with a version lower than Max OS Version",
+                    "App Installation Validation": "Verify that both apps install on Max OS device and only the version lower than MaxVer app installs on the lower OS version device",
+                    "searchTerm": "",
+                    "expectedValue": ""
+                }
+            }
+        }
+    ]
+}

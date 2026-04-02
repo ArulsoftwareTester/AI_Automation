@@ -1,0 +1,21 @@
+﻿  Determining projects to restore...
+  All projects are up-to-date for restore.
+  IntuneCanaryTests -> C:\AI_Automation\IntuneCanaryTests\bin\Debug\net9.0-windows\IntuneCanaryTests.dll
+Test run for C:\AI_Automation\IntuneCanaryTests\bin\Debug\net9.0-windows\IntuneCanaryTests.dll (.NETCoreApp,Version=v9.0)
+VSTest version 17.14.1 (x64)
+
+Starting test execution, please wait...
+A total of 1 test files matched the specified pattern.
+C:\AI_Automation\IntuneCanaryTests\bin\Debug\net9.0-windows\IntuneCanaryTests.dll
+NUnit Adapter 4.6.0.0: Test execution started
+Running selected tests in C:\AI_Automation\IntuneCanaryTests\bin\Debug\net9.0-windows\IntuneCanaryTests.dll
+[TestDataLoader] Loading test data from: C:\AI_Automation\TestData\sampleTestData.json
+[TestDataLoader] Loaded 1 Sample test cases
+[TestDataLoader] Loading test data from: C:\AI_Automation\TestData\CreateNewProfile_TestData.json
+[TestDataLoader] Loaded 116 CreateNewProfile test cases
+[TestDataLoader] Loading test data from: C:\AI_Automation\TestData\EditNewCreatedPolicy_TestData.json
+[TestDataLoader] Loaded 116 EditNewCreatedPolicy test cases
+[TestDataLoader] No failed tests file found - returning empty collection
+[TestDataLoader] Loading test data from: C:\AI_Automation\TestData\VMSync_TestData.json
+[TestDataLoader] Loaded 6 VMSync test cases
+   NUnit3TestExecutor discovered 12 of 12 NUnit test cases using Current Discovery mode, Non-Explicit run

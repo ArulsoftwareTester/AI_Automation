@@ -1,0 +1,1372 @@
+[
+  {
+    "PolicyName": "Automation_20260227_115721",
+    "BaselineType": "Windows 365 Security Baseline",
+    "CreatedDateTime": "2026-02-27 11:58:48",
+    "TestName": "Execute(TC_28040921)",
+    "ParentDropDown": "Access data sources across domains",
+    "ParentDropDownOption": "Enabled",
+    "ChildDropDown": "Access data sources across domains",
+    "ChildDropDownOption": "Enable"
+  },
+  {
+    "PolicyName": "Automation_20260227_115954",
+    "BaselineType": "Windows 365 Security Baseline",
+    "CreatedDateTime": "2026-02-27 12:01:25",
+    "TestName": "Execute(TC_28040953)",
+    "ParentDropDown": "Allow cut, copy or paste operations from the clipboard via script",
+    "ParentDropDownOption": "Enabled",
+    "ChildDropDown": "Allow paste operations via script",
+    "ChildDropDownOption": "Enable"
+  },
+  {
+    "PolicyName": "Automation_20260227_120226",
+    "BaselineType": "Windows 365 Security Baseline",
+    "CreatedDateTime": "2026-02-27 12:03:50",
+    "TestName": "Execute(TC_28040969)",
+    "ParentDropDown": "Allow drag and drop or copy and paste files",
+    "ParentDropDownOption": "Enabled",
+    "ChildDropDown": "Allow drag and drop or copy and paste files",
+    "ChildDropDownOption": "Enable"
+  },
+  {
+    "PolicyName": "Automation_20260227_120918",
+    "BaselineType": "Windows 365 Security Baseline",
+    "CreatedDateTime": "2026-02-27 12:10:45",
+    "TestName": "Execute(TC_28041719)",
+    "ParentDropDown": "Allow updates to status bar via script",
+    "ParentDropDownOption": "Enabled",
+    "ChildDropDown": "Status bar updates via script",
+    "ChildDropDownOption": "On"
+  },
+  {
+    "PolicyName": "Automation_20260227_121144",
+    "BaselineType": "Windows 365 Security Baseline",
+    "CreatedDateTime": "2026-02-27 12:13:12",
+    "TestName": "Execute(TC_28041749)",
+    "ParentDropDown": "Allow VBScript to run in Internet Explorer",
+    "ParentDropDownOption": "Enabled",
+    "ChildDropDown": "Allow VBScript to run in Internet Explorer",
+    "ChildDropDownOption": "Enable"
+  },
+  {
+    "PolicyName": "Automation_20260227_121410",
+    "BaselineType": "Windows 365 Security Baseline",
+    "CreatedDateTime": "2026-02-27 12:15:43",
+    "TestName": "Execute(TC_28041775)",
+    "ParentDropDown": "Automatic prompting for file downloads",
+    "ParentDropDownOption": "Enabled",
+    "ChildDropDown": "Automatic prompting for file downloads",
+    "ChildDropDownOption": "On"
+  },
+  {
+    "PolicyName": "Automation_20260227_121652",
+    "BaselineType": "Windows 365 Security Baseline",
+    "CreatedDateTime": "2026-02-27 12:18:30",
+    "TestName": "Execute(TC_28041786)",
+    "ParentDropDown": "Don't run antimalware programs against ActiveX controls",
+    "ParentDropDownOption": "Enabled",
+    "ChildDropDown": "Don't run antimalware programs against ActiveX controls",
+    "ChildDropDownOption": "On"
+  },
+  {
+    "PolicyName": "Automation_20260227_122218",
+    "BaselineType": "Windows 365 Security Baseline",
+    "CreatedDateTime": "2026-02-27 12:24:17",
+    "TestName": "Execute(TC_28041849)",
+    "ParentDropDown": "Enable dragging of content from different domains across windows",
+    "ParentDropDownOption": "Enabled",
+    "ChildDropDown": "Enable dragging of content from different domains across windows",
+    "ChildDropDownOption": "On"
+  },
+  {
+    "PolicyName": "Automation_20260227_122851",
+    "BaselineType": "Windows 365 Security Baseline",
+    "CreatedDateTime": "2026-02-27 12:31:00",
+    "TestName": "Execute(TC_28041902)",
+    "ParentDropDown": "Include local path when user is uploading files to a server",
+    "ParentDropDownOption": "Enabled",
+    "ChildDropDown": "Include local directory path when uploading files to a server",
+    "ChildDropDownOption": "On"
+  },
+  {
+    "PolicyName": "Automation_20260227_123201",
+    "BaselineType": "Windows 365 Security Baseline",
+    "CreatedDateTime": "2026-02-27 12:33:54",
+    "TestName": "Execute(TC_28041954)",
+    "ParentDropDown": "Initialize and script ActiveX controls not marked as safe",
+    "ParentDropDownOption": "Enabled",
+    "ChildDropDown": "Initialize and script ActiveX controls not marked as safe",
+    "ChildDropDownOption": "Enable"
+  },
+  {
+    "PolicyName": "Automation_20260227_123449",
+    "BaselineType": "Windows 365 Security Baseline",
+    "CreatedDateTime": "2026-02-27 12:37:32",
+    "TestName": "Execute(TC_28041994)",
+    "ParentDropDown": "Java permissions",
+    "ParentDropDownOption": "Enabled",
+    "ChildDropDown": "Java permissions",
+    "ChildDropDownOption": "High safety"
+  },
+  {
+    "PolicyName": "Automation_20260227_124111",
+    "BaselineType": "Windows 365 Security Baseline",
+    "CreatedDateTime": "2026-02-27 12:42:41",
+    "TestName": "Execute(TC_28042156)",
+    "ParentDropDown": "Logon options",
+    "ParentDropDownOption": "Enabled",
+    "ChildDropDown": "Logon options",
+    "ChildDropDownOption": "Prompt for user name and password"
+  },
+  {
+    "PolicyName": "Automation_20260227_124421",
+    "BaselineType": "Windows 365 Security Baseline",
+    "CreatedDateTime": "2026-02-27 12:46:21",
+    "TestName": "Execute(TC_28042306)",
+    "ParentDropDown": "Run .NET Framework-reliant components not signed with Authenticode",
+    "ParentDropDownOption": "Enabled",
+    "ChildDropDown": "Run .NET Framework-reliant components not signed with Authenticode",
+    "ChildDropDownOption": "Enable"
+  },
+  {
+    "PolicyName": "Automation_20260227_124719",
+    "BaselineType": "Windows 365 Security Baseline",
+    "CreatedDateTime": "2026-02-27 12:49:02",
+    "TestName": "Execute(TC_28042322)",
+    "ParentDropDown": "Run .NET Framework-reliant components signed with Authenticode",
+    "ParentDropDownOption": "Enabled",
+    "ChildDropDown": "Run .NET Framework-reliant components signed with Authenticode",
+    "ChildDropDownOption": "Enable"
+  },
+  {
+    "PolicyName": "Automation_20260227_125003",
+    "BaselineType": "Windows 365 Security Baseline",
+    "CreatedDateTime": "2026-02-27 12:51:37",
+    "TestName": "Execute(TC_28042406)",
+    "ParentDropDown": "Turn on Cross-Site Scripting Filter",
+    "ParentDropDownOption": "Enabled",
+    "ChildDropDown": "Turn on Cross-Site Scripting (XSS) Filter",
+    "ChildDropDownOption": "On"
+  },
+  {
+    "PolicyName": "Automation_20260227_125232",
+    "BaselineType": "Windows 365 Security Baseline",
+    "CreatedDateTime": "2026-02-27 12:53:52",
+    "TestName": "Execute(TC_28042470)",
+    "ParentDropDown": "Turn on Protected Mode",
+    "ParentDropDownOption": "Enabled",
+    "ChildDropDown": "Protected Mode",
+    "ChildDropDownOption": "On"
+  },
+  {
+    "PolicyName": "Automation_20260227_125454",
+    "BaselineType": "Windows 365 Security Baseline",
+    "CreatedDateTime": "2026-02-27 12:56:23",
+    "TestName": "Execute(TC_28042485)",
+    "ParentDropDown": "Turn on SmartScreen Filter scan",
+    "ParentDropDownOption": "Enabled",
+    "ChildDropDown": "Use SmartScreen Filter",
+    "ChildDropDownOption": "On"
+  },
+  {
+    "PolicyName": "Automation_20260227_125726",
+    "BaselineType": "Windows 365 Security Baseline",
+    "CreatedDateTime": "2026-02-27 12:58:45",
+    "TestName": "Execute(TC_28042554)",
+    "ParentDropDown": "Use Pop-up Blocker",
+    "ParentDropDownOption": "Enabled",
+    "ChildDropDown": "Use Pop-up Blocker",
+    "ChildDropDownOption": "On"
+  },
+  {
+    "PolicyName": "Automation_20260227_125937",
+    "BaselineType": "Windows 365 Security Baseline",
+    "CreatedDateTime": "2026-02-27 13:00:57",
+    "TestName": "Execute(TC_28042614)",
+    "ParentDropDown": "Userdata persistence",
+    "ParentDropDownOption": "Enabled",
+    "ChildDropDown": "Userdata persistence",
+    "ChildDropDownOption": "On"
+  },
+  {
+    "PolicyName": "Automation_20260227_130200",
+    "BaselineType": "Windows 365 Security Baseline",
+    "CreatedDateTime": "2026-02-27 13:03:33",
+    "TestName": "Execute(TC_28042670)",
+    "ParentDropDown": "Web sites in less privileged Web content zones can navigate into this zone",
+    "ParentDropDownOption": "Enabled",
+    "ChildDropDown": "Web sites in less privileged Web content zones can navigate into this zone",
+    "ChildDropDownOption": "Enable"
+  },
+  {
+    "PolicyName": "Automation_20260227_130449",
+    "BaselineType": "Windows 365 Security Baseline",
+    "CreatedDateTime": "2026-02-27 13:06:31",
+    "TestName": "Execute(TC_28069444)",
+    "ParentDropDown": "Download unsigned ActiveX controls",
+    "ParentDropDownOption": "Enabled",
+    "ChildDropDown": "Download unsigned ActiveX controls",
+    "ChildDropDownOption": "Enable"
+  },
+  {
+    "PolicyName": "Automation_20260227_130729",
+    "BaselineType": "Windows 365 Security Baseline",
+    "CreatedDateTime": "2026-02-27 13:08:58",
+    "TestName": "Execute(TC_28069484)",
+    "ParentDropDown": "Allow script-initiated windows without size or position constraints",
+    "ParentDropDownOption": "Enabled",
+    "ChildDropDown": "Allow script-initiated windows without size or position constraints",
+    "ChildDropDownOption": "On"
+  },
+  {
+    "PolicyName": "Automation_20260227_130957",
+    "BaselineType": "Windows 365 Security Baseline",
+    "CreatedDateTime": "2026-02-27 13:11:29",
+    "TestName": "Execute(TC_28069512)",
+    "ParentDropDown": "Show security warning for potentially unsafe files",
+    "ParentDropDownOption": "Enabled",
+    "ChildDropDown": "Launching programs and unsafe files",
+    "ChildDropDownOption": "Enable"
+  },
+  {
+    "PolicyName": "Automation_20260227_131229",
+    "BaselineType": "Windows 365 Security Baseline",
+    "CreatedDateTime": "2026-02-27 13:13:58",
+    "TestName": "Execute(TC_28041070)",
+    "ParentDropDown": "Allow script-initiated windows without size or position constraints",
+    "ParentDropDownOption": "Enabled",
+    "ChildDropDown": "Allow script-initiated windows without size or position constraints",
+    "ChildDropDownOption": "On"
+  },
+  {
+    "PolicyName": "Automation_20260227_131452",
+    "BaselineType": "Windows 365 Security Baseline",
+    "CreatedDateTime": "2026-02-27 13:16:24",
+    "TestName": "Execute(TC_28041812)",
+    "ParentDropDown": "Download unsigned ActiveX controls",
+    "ParentDropDownOption": "Enabled",
+    "ChildDropDown": "Download unsigned ActiveX controls",
+    "ChildDropDownOption": "Enable"
+  },
+  {
+    "PolicyName": "Automation_20260227_131728",
+    "BaselineType": "Windows 365 Security Baseline",
+    "CreatedDateTime": "2026-02-27 13:19:01",
+    "TestName": "Execute(TC_28042347)",
+    "ParentDropDown": "Show security warning for potentially unsafe files",
+    "ParentDropDownOption": "Enabled",
+    "ChildDropDown": "Show security warning for potentially unsafe files",
+    "ChildDropDownOption": "On"
+  },
+  {
+    "PolicyName": "Automation_20260227_131959",
+    "BaselineType": "Windows 365 Security Baseline",
+    "CreatedDateTime": "2026-02-27 13:21:22",
+    "TestName": "Execute(TC_28042679)",
+    "ParentDropDown": "Access data sources across domains",
+    "ParentDropDownOption": "Enabled",
+    "ChildDropDown": "Access data sources across domains",
+    "ChildDropDownOption": "Enable"
+  },
+  {
+    "PolicyName": "Automation_20260227_132218",
+    "BaselineType": "Windows 365 Security Baseline",
+    "CreatedDateTime": "2026-02-27 13:24:00",
+    "TestName": "Execute(TC_28042822)",
+    "ParentDropDown": "Allow active scripting",
+    "ParentDropDownOption": "Enabled",
+    "ChildDropDown": "Allow active scripting",
+    "ChildDropDownOption": "Enable"
+  },
+  {
+    "PolicyName": "Automation_20260227_132457",
+    "BaselineType": "Windows 365 Security Baseline",
+    "CreatedDateTime": "2026-02-27 13:26:46",
+    "TestName": "Execute(TC_28042838)",
+    "ParentDropDown": "Allow binary and script behaviors",
+    "ParentDropDownOption": "Enabled",
+    "ChildDropDown": "Allow Binary and Script Behaviors",
+    "ChildDropDownOption": "Enable"
+  },
+  {
+    "PolicyName": "Automation_20260227_132741",
+    "BaselineType": "Windows 365 Security Baseline",
+    "CreatedDateTime": "2026-02-27 13:29:19",
+    "TestName": "Execute(TC_28042848)",
+    "ParentDropDown": "Allow cut, copy or paste operations from the clipboard via script",
+    "ParentDropDownOption": "Enabled",
+    "ChildDropDown": "Allow paste operations via script",
+    "ChildDropDownOption": "Enable"
+  },
+  {
+    "PolicyName": "Automation_20260227_133019",
+    "BaselineType": "Windows 365 Security Baseline",
+    "CreatedDateTime": "2026-02-27 13:31:54",
+    "TestName": "Execute(TC_28042855)",
+    "ParentDropDown": "Allow drag and drop or copy and paste files",
+    "ParentDropDownOption": "Enabled",
+    "ChildDropDown": "Allow drag and drop or copy and paste files",
+    "ChildDropDownOption": "Enable"
+  },
+  {
+    "PolicyName": "Automation_20260227_133256",
+    "BaselineType": "Windows 365 Security Baseline",
+    "CreatedDateTime": "2026-02-27 13:34:26",
+    "TestName": "Execute(TC_28042872)",
+    "ParentDropDown": "Allow file downloads",
+    "ParentDropDownOption": "Enabled",
+    "ChildDropDown": "Allow file downloads",
+    "ChildDropDownOption": "On"
+  },
+  {
+    "PolicyName": "Automation_20260227_133521",
+    "BaselineType": "Windows 365 Security Baseline",
+    "CreatedDateTime": "2026-02-27 13:36:58",
+    "TestName": "Execute(TC_28042902)",
+    "ParentDropDown": "Allow loading of XAML files",
+    "ParentDropDownOption": "Enabled",
+    "ChildDropDown": "XAML Files",
+    "ChildDropDownOption": "Enable"
+  },
+  {
+    "PolicyName": "Automation_20260227_133807",
+    "BaselineType": "Windows 365 Security Baseline",
+    "CreatedDateTime": "2026-02-27 13:39:35",
+    "TestName": "Execute(TC_28052783)",
+    "ParentDropDown": "Allow META REFRESH",
+    "ParentDropDownOption": "Enabled",
+    "ChildDropDown": "Allow META REFRESH",
+    "ChildDropDownOption": "On"
+  },
+  {
+    "PolicyName": "Automation_20260227_134029",
+    "BaselineType": "Windows 365 Security Baseline",
+    "CreatedDateTime": "2026-02-27 13:41:55",
+    "TestName": "Execute(TC_28052791)",
+    "ParentDropDown": "Allow only approved domains to use ActiveX controls without prompt",
+    "ParentDropDownOption": "Enabled",
+    "ChildDropDown": "Only allow approved domains to use ActiveX controls without prompt",
+    "ChildDropDownOption": "On"
+  },
+  {
+    "PolicyName": "Automation_20260227_134256",
+    "BaselineType": "Windows 365 Security Baseline",
+    "CreatedDateTime": "2026-02-27 13:44:14",
+    "TestName": "Execute(TC_28052794)",
+    "ParentDropDown": "Allow only approved domains to use the TDC ActiveX control",
+    "ParentDropDownOption": "Enabled",
+    "ChildDropDown": "Allow only approved domains to use the TDC ActiveX control",
+    "ChildDropDownOption": "On"
+  },
+  {
+    "PolicyName": "Automation_20260227_134508",
+    "BaselineType": "Windows 365 Security Baseline",
+    "CreatedDateTime": "2026-02-27 13:46:28",
+    "TestName": "Execute(TC_28052816)",
+    "ParentDropDown": "Allow scripting of Internet Explorer WebBrowser controls",
+    "ParentDropDownOption": "Enabled",
+    "ChildDropDown": "Internet Explorer web browser control",
+    "ChildDropDownOption": "On"
+  },
+  {
+    "PolicyName": "Automation_20260227_134727",
+    "BaselineType": "Windows 365 Security Baseline",
+    "CreatedDateTime": "2026-02-27 13:48:46",
+    "TestName": "Execute(TC_28052828)",
+    "ParentDropDown": "Allow scriptlets",
+    "ParentDropDownOption": "Enabled",
+    "ChildDropDown": "Scriptlets",
+    "ChildDropDownOption": "On"
+  },
+  {
+    "PolicyName": "Automation_20260227_134940",
+    "BaselineType": "Windows 365 Security Baseline",
+    "CreatedDateTime": "2026-02-27 13:50:59",
+    "TestName": "Execute(TC_28052844)",
+    "ParentDropDown": "Allow updates to status bar via script",
+    "ParentDropDownOption": "Enabled",
+    "ChildDropDown": "Status bar updates via script",
+    "ChildDropDownOption": "On"
+  },
+  {
+    "PolicyName": "Automation_20260227_135158",
+    "BaselineType": "Windows 365 Security Baseline",
+    "CreatedDateTime": "2026-02-27 13:53:24",
+    "TestName": "Execute(TC_28052848)",
+    "ParentDropDown": "Allow VBScript to run in Internet Explorer",
+    "ParentDropDownOption": "Enabled",
+    "ChildDropDown": "Allow VBScript to run in Internet Explorer",
+    "ChildDropDownOption": "Enable"
+  },
+  {
+    "PolicyName": "Automation_20260227_135418",
+    "BaselineType": "Windows 365 Security Baseline",
+    "CreatedDateTime": "2026-02-27 13:55:46",
+    "TestName": "Execute(TC_28052861)",
+    "ParentDropDown": "Automatic prompting for file downloads",
+    "ParentDropDownOption": "Enabled",
+    "ChildDropDown": "Automatic prompting for file downloads",
+    "ChildDropDownOption": "On"
+  },
+  {
+    "PolicyName": "Automation_20260227_135646",
+    "BaselineType": "Windows 365 Security Baseline",
+    "CreatedDateTime": "2026-02-27 13:58:14",
+    "TestName": "Execute(TC_28052876)",
+    "ParentDropDown": "Don't run antimalware programs against ActiveX controls",
+    "ParentDropDownOption": "Enabled",
+    "ChildDropDown": "Don't run antimalware programs against ActiveX controls",
+    "ChildDropDownOption": "On"
+  },
+  {
+    "PolicyName": "Automation_20260227_135919",
+    "BaselineType": "Windows 365 Security Baseline",
+    "CreatedDateTime": "2026-02-27 14:00:54",
+    "TestName": "Execute(TC_28052882)",
+    "ParentDropDown": "Download signed ActiveX controls",
+    "ParentDropDownOption": "Enabled",
+    "ChildDropDown": "Download signed ActiveX controls",
+    "ChildDropDownOption": "Enable"
+  },
+  {
+    "PolicyName": "Automation_20260227_140542",
+    "BaselineType": "Windows 365 Security Baseline",
+    "CreatedDateTime": "2026-02-27 14:07:16",
+    "TestName": "Execute(TC_28052971)",
+    "ParentDropDown": "Enable dragging of content from different domains within a window",
+    "ParentDropDownOption": "Enabled",
+    "ChildDropDown": "Enable dragging of content from different domains within a window",
+    "ChildDropDownOption": "On"
+  },
+  {
+    "PolicyName": "Automation_20260227_140821",
+    "BaselineType": "Windows 365 Security Baseline",
+    "CreatedDateTime": "2026-02-27 14:10:00",
+    "TestName": "Execute(TC_28052980)",
+    "ParentDropDown": "Include local path when user is uploading files to a server",
+    "ParentDropDownOption": "Enabled",
+    "ChildDropDown": "Include local directory path when uploading files to a server",
+    "ChildDropDownOption": "On"
+  },
+  {
+    "PolicyName": "Automation_20260227_142544",
+    "BaselineType": "Windows 365 Security Baseline",
+    "CreatedDateTime": "2026-02-27 14:28:08",
+    "TestName": "Execute(TC_28053016)",
+    "ParentDropDown": "Navigate windows and frames across different domains",
+    "ParentDropDownOption": "Enabled",
+    "ChildDropDown": "Navigate windows and frames across different domains",
+    "ChildDropDownOption": "Enable"
+  },
+  {
+    "PolicyName": "Automation_20260227_142934",
+    "BaselineType": "Windows 365 Security Baseline",
+    "CreatedDateTime": "2026-02-27 14:31:50",
+    "TestName": "Execute(TC_28053058)",
+    "ParentDropDown": "Run .NET Framework-reliant components not signed with Authenticode",
+    "ParentDropDownOption": "Enabled",
+    "ChildDropDown": "Run .NET Framework-reliant components not signed with Authenticode",
+    "ChildDropDownOption": "Enable"
+  },
+  {
+    "PolicyName": "Automation_20260227_143250",
+    "BaselineType": "Windows 365 Security Baseline",
+    "CreatedDateTime": "2026-02-27 14:34:55",
+    "TestName": "Execute(TC_28053061)",
+    "ParentDropDown": "Run .NET Framework-reliant components signed with Authenticode",
+    "ParentDropDownOption": "Enabled",
+    "ChildDropDown": "Run .NET Framework-reliant components signed with Authenticode",
+    "ChildDropDownOption": "Enable"
+  },
+  {
+    "PolicyName": "Automation_20260227_143548",
+    "BaselineType": "Windows 365 Security Baseline",
+    "CreatedDateTime": "2026-02-27 14:37:56",
+    "TestName": "Execute(TC_28053192)",
+    "ParentDropDown": "Run ActiveX controls and plugins",
+    "ParentDropDownOption": "Enabled",
+    "ChildDropDown": "Run ActiveX controls and plugins",
+    "ChildDropDownOption": "Enable"
+  },
+  {
+    "PolicyName": "Automation_20260227_143904",
+    "BaselineType": "Windows 365 Security Baseline",
+    "CreatedDateTime": "2026-02-27 14:41:10",
+    "TestName": "Execute(TC_28053202)",
+    "ParentDropDown": "Script ActiveX controls marked safe for scripting",
+    "ParentDropDownOption": "Enabled",
+    "ChildDropDown": "Script ActiveX controls marked safe for scripting",
+    "ChildDropDownOption": "Enable"
+  },
+  {
+    "PolicyName": "Automation_20260227_144215",
+    "BaselineType": "Windows 365 Security Baseline",
+    "CreatedDateTime": "2026-02-27 14:44:29",
+    "TestName": "Execute(TC_28054078)",
+    "ParentDropDown": "Scripting of Java applets",
+    "ParentDropDownOption": "Enabled",
+    "ChildDropDown": "Scripting of Java applets",
+    "ChildDropDownOption": "Enable"
+  },
+  {
+    "PolicyName": "Automation_20260227_144529",
+    "BaselineType": "Windows 365 Security Baseline",
+    "CreatedDateTime": "2026-02-27 14:47:12",
+    "TestName": "Execute(TC_28054113)",
+    "ParentDropDown": "Turn on Cross-Site Scripting Filter",
+    "ParentDropDownOption": "Enabled",
+    "ChildDropDown": "Turn on Cross-Site Scripting (XSS) Filter",
+    "ChildDropDownOption": "On"
+  },
+  {
+    "PolicyName": "Automation_20260227_144808",
+    "BaselineType": "Windows 365 Security Baseline",
+    "CreatedDateTime": "2026-02-27 14:49:33",
+    "TestName": "Execute(TC_28054119)",
+    "ParentDropDown": "Turn on Protected Mode",
+    "ParentDropDownOption": "Enabled",
+    "ChildDropDown": "Protected Mode",
+    "ChildDropDownOption": "On"
+  },
+  {
+    "PolicyName": "Automation_20260227_145032",
+    "BaselineType": "Windows 365 Security Baseline",
+    "CreatedDateTime": "2026-02-27 14:51:58",
+    "TestName": "Execute(TC_28054129)",
+    "ParentDropDown": "Turn on SmartScreen Filter scan",
+    "ParentDropDownOption": "Enabled",
+    "ChildDropDown": "Use SmartScreen Filter",
+    "ChildDropDownOption": "On"
+  },
+  {
+    "PolicyName": "Automation_20260227_145257",
+    "BaselineType": "Windows 365 Security Baseline",
+    "CreatedDateTime": "2026-02-27 14:54:24",
+    "TestName": "Execute(TC_28054146)",
+    "ParentDropDown": "Use Pop-up Blocker",
+    "ParentDropDownOption": "Enabled",
+    "ChildDropDown": "Use Pop-up Blocker",
+    "ChildDropDownOption": "On"
+  },
+  {
+    "PolicyName": "Automation_20260227_145519",
+    "BaselineType": "Windows 365 Security Baseline",
+    "CreatedDateTime": "2026-02-27 14:56:40",
+    "TestName": "Execute(TC_28054163)",
+    "ParentDropDown": "Userdata persistence",
+    "ParentDropDownOption": "Enabled",
+    "ChildDropDown": "Userdata persistence",
+    "ChildDropDownOption": "On"
+  },
+  {
+    "PolicyName": "Automation_20260227_145745",
+    "BaselineType": "Windows 365 Security Baseline",
+    "CreatedDateTime": "2026-02-27 14:59:20",
+    "TestName": "Execute(TC_28054177)",
+    "ParentDropDown": "Web sites in less privileged Web content zones can navigate into this zone",
+    "ParentDropDownOption": "Enabled",
+    "ChildDropDown": "Web sites in less privileged Web content zones can navigate into this zone",
+    "ChildDropDownOption": "Enable"
+  },
+  {
+    "PolicyName": "Automation_20260227_150105",
+    "BaselineType": "Windows 365 Security Baseline",
+    "CreatedDateTime": "2026-02-27 15:02:32",
+    "TestName": "Execute(TC_28013230)",
+    "ParentDropDown": "Allow software to run or install even if the signature is invalid",
+    "ParentDropDownOption": "Enabled",
+    "ChildDropDown": "",
+    "ChildDropDownOption": ""
+  },
+  {
+    "PolicyName": "Automation_20260227_150328",
+    "BaselineType": "Windows 365 Security Baseline",
+    "CreatedDateTime": "2026-02-27 15:04:55",
+    "TestName": "Execute(TC_28013438)",
+    "ParentDropDown": "Intranet Sites: Include all network paths (UNCs)",
+    "ParentDropDownOption": "Enabled",
+    "ChildDropDown": "Turn on certificate address mismatch warning",
+    "ChildDropDownOption": "Enabled"
+  },
+  {
+    "PolicyName": "Automation_20260227_150550",
+    "BaselineType": "Windows 365 Security Baseline",
+    "CreatedDateTime": "2026-02-27 15:07:09",
+    "TestName": "Execute(TC_28013606)",
+    "ParentDropDown": "Don't run antimalware programs against ActiveX controls",
+    "ParentDropDownOption": "Enabled",
+    "ChildDropDown": "Don't run antimalware programs against ActiveX controls",
+    "ChildDropDownOption": "On"
+  },
+  {
+    "PolicyName": "Automation_20260227_150809",
+    "BaselineType": "Windows 365 Security Baseline",
+    "CreatedDateTime": "2026-02-27 15:10:15",
+    "TestName": "Execute(TC_28014391)",
+    "ParentDropDown": "Don't run antimalware programs against ActiveX controls",
+    "ParentDropDownOption": "Enabled",
+    "ChildDropDown": "Don't run antimalware programs against ActiveX controls",
+    "ChildDropDownOption": "Off"
+  },
+  {
+    "PolicyName": "Automation_20260227_151110",
+    "BaselineType": "Windows 365 Security Baseline",
+    "CreatedDateTime": "2026-02-27 15:12:36",
+    "TestName": "Execute(TC_28037138)",
+    "ParentDropDown": "Prevent ignoring certificate errors",
+    "ParentDropDownOption": "Enabled",
+    "ChildDropDown": "",
+    "ChildDropDownOption": ""
+  },
+  {
+    "PolicyName": "Automation_20260227_151401",
+    "BaselineType": "Windows 365 Security Baseline",
+    "CreatedDateTime": "2026-02-27 15:15:24",
+    "TestName": "Execute(TC_28037152)",
+    "ParentDropDown": "Turn on SmartScreen Filter scan",
+    "ParentDropDownOption": "Enabled",
+    "ChildDropDown": "Use SmartScreen Filter",
+    "ChildDropDownOption": "On"
+  },
+  {
+    "PolicyName": "Automation_20260227_151817",
+    "BaselineType": "Windows 365 Security Baseline",
+    "CreatedDateTime": "2026-02-27 15:19:48",
+    "TestName": "Execute(TC_28037225)",
+    "ParentDropDown": "Turn on SmartScreen Filter scan",
+    "ParentDropDownOption": "Enabled",
+    "ChildDropDown": "Use SmartScreen Filter",
+    "ChildDropDownOption": "On"
+  },
+  {
+    "PolicyName": "Automation_20260227_152040",
+    "BaselineType": "Windows 365 Security Baseline",
+    "CreatedDateTime": "2026-02-27 15:22:02",
+    "TestName": "Execute(TC_28037231)",
+    "ParentDropDown": "Java permissions",
+    "ParentDropDownOption": "Enabled",
+    "ChildDropDown": "Java permissions",
+    "ChildDropDownOption": "High safety"
+  },
+  {
+    "PolicyName": "Automation_20260227_152257",
+    "BaselineType": "Windows 365 Security Baseline",
+    "CreatedDateTime": "2026-02-27 15:24:22",
+    "TestName": "Execute(TC_28037233)",
+    "ParentDropDown": "Java permissions",
+    "ParentDropDownOption": "Enabled",
+    "ChildDropDown": "Java permissions",
+    "ChildDropDownOption": "High safety"
+  },
+  {
+    "PolicyName": "Automation_20260227_152743",
+    "BaselineType": "Windows 365 Security Baseline",
+    "CreatedDateTime": "2026-02-27 15:29:40",
+    "TestName": "Execute(TC_28037340)",
+    "ParentDropDown": "Do not allow users to add/delete sites",
+    "ParentDropDownOption": "Enabled",
+    "ChildDropDown": "",
+    "ChildDropDownOption": ""
+  },
+  {
+    "PolicyName": "Automation_20260227_153042",
+    "BaselineType": "Windows 365 Security Baseline",
+    "CreatedDateTime": "2026-02-27 15:32:20",
+    "TestName": "Execute(TC_28037372)",
+    "ParentDropDown": "Remove \"Run this time\" button for outdated ActiveX controls in Internet Explorer",
+    "ParentDropDownOption": "Enabled",
+    "ChildDropDown": "Turn off blocking of outdated ActiveX controls for Internet Explorer",
+    "ChildDropDownOption": "Enabled"
+  },
+  {
+    "PolicyName": "Automation_20260227_153317",
+    "BaselineType": "Windows 365 Security Baseline",
+    "CreatedDateTime": "2026-02-27 15:34:41",
+    "TestName": "Execute(TC_28037410)",
+    "ParentDropDown": "Internet Explorer Processes",
+    "ParentDropDownOption": "Enabled",
+    "ChildDropDown": "",
+    "ChildDropDownOption": ""
+  },
+  {
+    "PolicyName": "Automation_20260227_153530",
+    "BaselineType": "Windows 365 Security Baseline",
+    "CreatedDateTime": "2026-02-27 15:36:51",
+    "TestName": "Execute(TC_28037442)",
+    "ParentDropDown": "Internet Explorer Processes",
+    "ParentDropDownOption": "Enabled",
+    "ChildDropDown": "",
+    "ChildDropDownOption": ""
+  },
+  {
+    "PolicyName": "Automation_20260227_153755",
+    "BaselineType": "Windows 365 Security Baseline",
+    "CreatedDateTime": "2026-02-27 15:39:11",
+    "TestName": "Execute(TC_28037444)",
+    "ParentDropDown": "Internet Explorer Processes",
+    "ParentDropDownOption": "Enabled",
+    "ChildDropDown": "",
+    "ChildDropDownOption": ""
+  },
+  {
+    "PolicyName": "Automation_20260227_154010",
+    "BaselineType": "Windows 365 Security Baseline",
+    "CreatedDateTime": "2026-02-27 15:41:40",
+    "TestName": "Execute(TC_28037448)",
+    "ParentDropDown": "Internet Explorer Processes",
+    "ParentDropDownOption": "Enabled",
+    "ChildDropDown": "",
+    "ChildDropDownOption": ""
+  },
+  {
+    "PolicyName": "Automation_20260227_154643",
+    "BaselineType": "Windows 365 Security Baseline",
+    "CreatedDateTime": "2026-02-27 15:48:48",
+    "TestName": "Execute(TC_28766165)",
+    "ParentDropDown": "Allow fallback to SSL 3.0 (Internet Explorer)",
+    "ParentDropDownOption": "Enabled",
+    "ChildDropDown": "Allow insecure fallback for:",
+    "ChildDropDownOption": "No Sites"
+  },
+  {
+    "PolicyName": "Automation_20260227_154951",
+    "BaselineType": "Windows 365 Security Baseline",
+    "CreatedDateTime": "2026-02-27 15:51:46",
+    "TestName": "Execute(TC_29889962)",
+    "ParentDropDown": "Check for server certificate revocation",
+    "ParentDropDownOption": "Enabled",
+    "ChildDropDown": "Check for server certificate revocation",
+    "ChildDropDownOption": "Enable"
+  },
+  {
+    "PolicyName": "Automation_20260227_155243",
+    "BaselineType": "Windows 365 Security Baseline",
+    "CreatedDateTime": "2026-02-27 15:54:22",
+    "TestName": "Execute(TC_29890079)",
+    "ParentDropDown": "Check for signatures on downloaded programs",
+    "ParentDropDownOption": "Enabled",
+    "ChildDropDown": "",
+    "ChildDropDownOption": ""
+  },
+  {
+    "PolicyName": "Automation_20260227_155524",
+    "BaselineType": "Windows 365 Security Baseline",
+    "CreatedDateTime": "2026-02-27 15:56:43",
+    "TestName": "Execute(TC_29890111)",
+    "ParentDropDown": "Do not allow ActiveX controls to run in Protected Mode when Enhanced Protected Mode is enabled",
+    "ParentDropDownOption": "Enabled",
+    "ChildDropDown": "",
+    "ChildDropDownOption": ""
+  },
+  {
+    "PolicyName": "Automation_20260227_155751",
+    "BaselineType": "Windows 365 Security Baseline",
+    "CreatedDateTime": "2026-02-27 15:59:13",
+    "TestName": "Execute(TC_29903229)",
+    "ParentDropDown": "Turn off encryption support",
+    "ParentDropDownOption": "Enabled",
+    "ChildDropDown": "Secure Protocol combinations",
+    "ChildDropDownOption": "Use TLS 1.1 and TLS 1.2"
+  },
+  {
+    "PolicyName": "Automation_20260227_160014",
+    "BaselineType": "Windows 365 Security Baseline",
+    "CreatedDateTime": "2026-02-27 16:01:43",
+    "TestName": "Execute(TC_29903238)",
+    "ParentDropDown": "Turn on 64-bit tab processes when running in Enhanced Protected Mode on 64-bit versions of Windows",
+    "ParentDropDownOption": "Enabled",
+    "ChildDropDown": "",
+    "ChildDropDownOption": ""
+  },
+  {
+    "PolicyName": "Automation_20260227_160244",
+    "BaselineType": "Windows 365 Security Baseline",
+    "CreatedDateTime": "2026-02-27 16:04:08",
+    "TestName": "Execute(TC_29903271)",
+    "ParentDropDown": "Turn on Enhanced Protected Mode",
+    "ParentDropDownOption": "Enabled",
+    "ChildDropDown": "",
+    "ChildDropDownOption": ""
+  },
+  {
+    "PolicyName": "Automation_20260227_160500",
+    "BaselineType": "Windows 365 Security Baseline",
+    "CreatedDateTime": "2026-02-27 16:06:23",
+    "TestName": "Execute(TC_29903504)",
+    "ParentDropDown": "Prevent bypassing SmartScreen Filter warnings about files that are not commonly downloaded from the Internet",
+    "ParentDropDownOption": "Enabled",
+    "ChildDropDown": "",
+    "ChildDropDownOption": ""
+  },
+  {
+    "PolicyName": "Automation_20260227_162135",
+    "BaselineType": "Windows 365 Security Baseline",
+    "CreatedDateTime": "2026-02-27 16:22:59",
+    "TestName": "Execute(TC_29920636)",
+    "ParentDropDown": "Turn off Crash Detection",
+    "ParentDropDownOption": "Enabled",
+    "ChildDropDown": "",
+    "ChildDropDownOption": ""
+  },
+  {
+    "PolicyName": "Automation_20260227_162554",
+    "BaselineType": "Windows 365 Security Baseline",
+    "CreatedDateTime": "2026-02-27 16:27:29",
+    "TestName": "Execute(TC_29920650)",
+    "ParentDropDown": "Turn on the auto-complete feature for user names and passwords on forms (User)",
+    "ParentDropDownOption": "Enabled",
+    "ChildDropDown": "",
+    "ChildDropDownOption": ""
+  },
+  {
+    "PolicyName": "Automation_20260227_162830",
+    "BaselineType": "Windows 365 Security Baseline",
+    "CreatedDateTime": "2026-02-27 16:29:51",
+    "TestName": "Execute(TC_29949389)",
+    "ParentDropDown": "Initialize and script ActiveX controls not marked as safe",
+    "ParentDropDownOption": "Enabled",
+    "ChildDropDown": "Initialize and script ActiveX controls not marked as safe",
+    "ChildDropDownOption": "Disable"
+  },
+  {
+    "PolicyName": "Automation_20260227_163043",
+    "BaselineType": "Windows 365 Security Baseline",
+    "CreatedDateTime": "2026-02-27 16:32:15",
+    "TestName": "Execute(TC_29949431)",
+    "ParentDropDown": "Java permissions",
+    "ParentDropDownOption": "Enabled",
+    "ChildDropDown": "Java permissions",
+    "ChildDropDownOption": "High safety"
+  },
+  {
+    "PolicyName": "Automation_20260227_163320",
+    "BaselineType": "Windows 365 Security Baseline",
+    "CreatedDateTime": "2026-02-27 16:34:48",
+    "TestName": "Execute(TC_29949521)",
+    "ParentDropDown": "Java permissions",
+    "ParentDropDownOption": "Enabled",
+    "ChildDropDown": "Java permissions",
+    "ChildDropDownOption": "High safety"
+  },
+  {
+    "PolicyName": "Automation_20260227_163546",
+    "BaselineType": "Windows 365 Security Baseline",
+    "CreatedDateTime": "2026-02-27 16:37:12",
+    "TestName": "Execute(TC_29949657)",
+    "ParentDropDown": "Java permissions",
+    "ParentDropDownOption": "Enabled",
+    "ChildDropDown": "Java permissions",
+    "ChildDropDownOption": "High safety"
+  },
+  {
+    "PolicyName": "Automation_20260227_163809",
+    "BaselineType": "Windows 365 Security Baseline",
+    "CreatedDateTime": "2026-02-27 16:39:37",
+    "TestName": "Execute(TC_29949711)",
+    "ParentDropDown": "Initialize and script ActiveX controls not marked as safe",
+    "ParentDropDownOption": "Enabled",
+    "ChildDropDown": "Initialize and script ActiveX controls not marked as safe",
+    "ChildDropDownOption": "Enable"
+  },
+  {
+    "PolicyName": "Automation_20260227_164035",
+    "BaselineType": "Windows 365 Security Baseline",
+    "CreatedDateTime": "2026-02-27 16:42:00",
+    "TestName": "Execute(TC_29949760)",
+    "ParentDropDown": "Java permissions",
+    "ParentDropDownOption": "Enabled",
+    "ChildDropDown": "Java permissions",
+    "ChildDropDownOption": "High safety"
+  },
+  {
+    "PolicyName": "Automation_20260227_190113",
+    "BaselineType": "Windows 365 Security Baseline",
+    "CreatedDateTime": "2026-02-27 19:02:49",
+    "TestName": "Execute(TC_28040995)",
+    "ParentDropDown": "Allow loading of XAML files",
+    "ParentDropDownOption": "Enabled",
+    "ChildDropDown": "XAML Files",
+    "ChildDropDownOption": "Enable"
+  },
+  {
+    "PolicyName": "Automation_20260227_195728",
+    "BaselineType": "Windows 365 Security Baseline",
+    "CreatedDateTime": "2026-02-27 19:59:00",
+    "TestName": "Execute(TC_28041010)",
+    "ParentDropDown": "Allow only approved domains to use ActiveX controls without prompt",
+    "ParentDropDownOption": "Enabled",
+    "ChildDropDown": "Only allow approved domains to use ActiveX controls without prompt",
+    "ChildDropDownOption": "On"
+  },
+  {
+    "PolicyName": "Automation_20260227_200029",
+    "BaselineType": "Windows 365 Security Baseline",
+    "CreatedDateTime": "2026-02-27 20:01:59",
+    "TestName": "Execute(TC_28041023)",
+    "ParentDropDown": "Allow only approved domains to use the TDC ActiveX control",
+    "ParentDropDownOption": "Enabled",
+    "ChildDropDown": "Only allow approved domains to use the TDC ActiveX control",
+    "ChildDropDownOption": "On"
+  },
+  {
+    "PolicyName": "Automation_20260227_200307",
+    "BaselineType": "Windows 365 Security Baseline",
+    "CreatedDateTime": "2026-02-27 20:04:34",
+    "TestName": "Execute(TC_28041077)",
+    "ParentDropDown": "Allow scripting of Internet Explorer WebBrowser controls",
+    "ParentDropDownOption": "Enabled",
+    "ChildDropDown": "Internet Explorer web browser control",
+    "ChildDropDownOption": "On"
+  },
+  {
+    "PolicyName": "Automation_20260227_203101",
+    "BaselineType": "Windows 365 Security Baseline",
+    "CreatedDateTime": "2026-02-27 20:32:52",
+    "TestName": "Execute(TC_28041010)",
+    "ParentDropDown": "Allow only approved domains to use ActiveX controls without prompt",
+    "ParentDropDownOption": "Enabled",
+    "ChildDropDown": "Only allow approved domains to use ActiveX controls without prompt",
+    "ChildDropDownOption": "On"
+  },
+  {
+    "PolicyName": "Automation_20260227_203801",
+    "BaselineType": "Windows 365 Security Baseline",
+    "CreatedDateTime": "2026-02-27 20:39:34",
+    "TestName": "Execute(TC_28041077)",
+    "ParentDropDown": "Allow scripting of Internet Explorer WebBrowser controls",
+    "ParentDropDownOption": "Enabled",
+    "ChildDropDown": "Internet Explorer web browser control",
+    "ChildDropDownOption": "On"
+  },
+  {
+    "PolicyName": "Automation_20260227_203909",
+    "BaselineType": "Windows 365 Security Baseline",
+    "CreatedDateTime": "2026-02-27 20:40:46",
+    "TestName": "Execute(TC_28041023)",
+    "ParentDropDown": "Allow only approved domains to use the TDC ActiveX control",
+    "ParentDropDownOption": "Enabled",
+    "ChildDropDown": "Only allow approved domains to use the TDC ActiveX control",
+    "ChildDropDownOption": "On"
+  },
+  {
+    "PolicyName": "Automation_20260227_205428",
+    "BaselineType": "Windows 365 Security Baseline",
+    "CreatedDateTime": "2026-02-27 20:56:26",
+    "TestName": "Execute(TC_28042034)",
+    "ParentDropDown": "Launching applications and files in an IFRAME",
+    "ParentDropDownOption": "Enabled",
+    "ChildDropDown": "Launching applications and files in an IFRAME",
+    "ChildDropDownOption": "Enable"
+  },
+  {
+    "PolicyName": "Automation_20260227_205431",
+    "BaselineType": "Windows 365 Security Baseline",
+    "CreatedDateTime": "2026-02-27 20:57:08",
+    "TestName": "Execute(TC_28052992)",
+    "ParentDropDown": "Java permissions",
+    "ParentDropDownOption": "Enabled",
+    "ChildDropDown": "Java permissions",
+    "ChildDropDownOption": "High safety"
+  },
+  {
+    "PolicyName": "Automation_20260227_205740",
+    "BaselineType": "Windows 365 Security Baseline",
+    "CreatedDateTime": "2026-02-27 20:59:28",
+    "TestName": "Execute(TC_28042269)",
+    "ParentDropDown": "Navigate windows and frames across different domains",
+    "ParentDropDownOption": "Enabled",
+    "ChildDropDown": "Navigate windows and frames across different domains",
+    "ChildDropDownOption": "Enable"
+  },
+  {
+    "PolicyName": "Automation_20260227_205815",
+    "BaselineType": "Windows 365 Security Baseline",
+    "CreatedDateTime": "2026-02-27 21:00:10",
+    "TestName": "Execute(TC_28053005)",
+    "ParentDropDown": "Launching applications and files in an IFRAME",
+    "ParentDropDownOption": "Enabled",
+    "ChildDropDown": "Launching applications and files in an IFRAME",
+    "ChildDropDownOption": "Enable"
+  },
+  {
+    "PolicyName": "Automation_20260227_210042",
+    "BaselineType": "Windows 365 Security Baseline",
+    "CreatedDateTime": "2026-02-27 21:02:30",
+    "TestName": "Execute(TC_28052962)",
+    "ParentDropDown": "Enable dragging of content from different domains across windows",
+    "ParentDropDownOption": "Enabled",
+    "ChildDropDown": "Enable dragging of content from different domains across windows",
+    "ChildDropDownOption": "On"
+  },
+  {
+    "PolicyName": "Automation_20260227_210115",
+    "BaselineType": "Windows 365 Security Baseline",
+    "CreatedDateTime": "2026-02-27 21:03:13",
+    "TestName": "Execute(TC_28053009)",
+    "ParentDropDown": "Logon options",
+    "ParentDropDownOption": "Enabled",
+    "ChildDropDown": "Logon options",
+    "ChildDropDownOption": "Prompt for user name and password"
+  },
+  {
+    "PolicyName": "Automation_20260227_210423",
+    "BaselineType": "Windows 365 Security Baseline",
+    "CreatedDateTime": "2026-02-27 21:06:23",
+    "TestName": "Execute(TC_28037240)",
+    "ParentDropDown": "Don't run antimalware programs against ActiveX controls",
+    "ParentDropDownOption": "Enabled",
+    "ChildDropDown": "Don't run antimalware programs against ActiveX controls",
+    "ChildDropDownOption": "On"
+  },
+  {
+    "PolicyName": "Automation_20260227_210745",
+    "BaselineType": "Windows 365 Security Baseline",
+    "CreatedDateTime": "2026-02-27 21:10:12",
+    "TestName": "Execute(TC_28037340)",
+    "ParentDropDown": "Do not allow users to add/delete sites",
+    "ParentDropDownOption": "Enabled",
+    "ChildDropDown": "",
+    "ChildDropDownOption": ""
+  },
+  {
+    "PolicyName": "Automation_20260227_210848",
+    "BaselineType": "Windows 365 Security Baseline",
+    "CreatedDateTime": "2026-02-27 21:10:42",
+    "TestName": "Execute(TC_28053005)",
+    "ParentDropDown": "Launching applications and files in an IFRAME",
+    "ParentDropDownOption": "Enabled",
+    "ChildDropDown": "Launching applications and files in an IFRAME",
+    "ChildDropDownOption": "Enable"
+  },
+  {
+    "PolicyName": "Automation_20260227_211115",
+    "BaselineType": "Windows 365 Security Baseline",
+    "CreatedDateTime": "2026-02-27 21:13:27",
+    "TestName": "Execute(TC_28037518)",
+    "ParentDropDown": "Internet Explorer Processes",
+    "ParentDropDownOption": "Enabled",
+    "ChildDropDown": "",
+    "ChildDropDownOption": ""
+  },
+  {
+    "PolicyName": "Automation_20260227_211148",
+    "BaselineType": "Windows 365 Security Baseline",
+    "CreatedDateTime": "2026-02-27 21:14:19",
+    "TestName": "Execute(TC_28053009)",
+    "ParentDropDown": "Logon options",
+    "ParentDropDownOption": "Enabled",
+    "ChildDropDown": "Logon options",
+    "ChildDropDownOption": "Prompt for user name and password"
+  },
+  {
+    "PolicyName": "Automation_20260227_211441",
+    "BaselineType": "Windows 365 Security Baseline",
+    "CreatedDateTime": "2026-02-27 21:16:31",
+    "TestName": "Execute(TC_28037520)",
+    "ParentDropDown": "Internet Explorer Processes",
+    "ParentDropDownOption": "Enabled",
+    "ChildDropDown": "",
+    "ChildDropDownOption": ""
+  },
+  {
+    "PolicyName": "Automation_20260227_211529",
+    "BaselineType": "Windows 365 Security Baseline",
+    "CreatedDateTime": "2026-02-27 21:17:36",
+    "TestName": "Execute(TC_28037240)",
+    "ParentDropDown": "Don't run antimalware programs against ActiveX controls",
+    "ParentDropDownOption": "Enabled",
+    "ChildDropDown": "Don't run antimalware programs against ActiveX controls",
+    "ChildDropDownOption": "On"
+  },
+  {
+    "PolicyName": "Automation_20260227_211742",
+    "BaselineType": "Windows 365 Security Baseline",
+    "CreatedDateTime": "2026-02-27 21:19:57",
+    "TestName": "Execute(TC_28037524)",
+    "ParentDropDown": "Internet Explorer Processes",
+    "ParentDropDownOption": "Enabled",
+    "ChildDropDown": "",
+    "ChildDropDownOption": ""
+  },
+  {
+    "PolicyName": "Automation_20260227_211903",
+    "BaselineType": "Windows 365 Security Baseline",
+    "CreatedDateTime": "2026-02-27 21:21:34",
+    "TestName": "Execute(TC_28037340)",
+    "ParentDropDown": "Do not allow users to add/delete sites",
+    "ParentDropDownOption": "Enabled",
+    "ChildDropDown": "",
+    "ChildDropDownOption": ""
+  },
+  {
+    "PolicyName": "Automation_20260227_212102",
+    "BaselineType": "Windows 365 Security Baseline",
+    "CreatedDateTime": "2026-02-27 21:23:16",
+    "TestName": "Execute(TC_28037525)",
+    "ParentDropDown": "Internet Explorer Processes",
+    "ParentDropDownOption": "Enabled",
+    "ChildDropDown": "",
+    "ChildDropDownOption": ""
+  },
+  {
+    "PolicyName": "Automation_20260227_212234",
+    "BaselineType": "Windows 365 Security Baseline",
+    "CreatedDateTime": "2026-02-27 21:24:24",
+    "TestName": "Execute(TC_28037518)",
+    "ParentDropDown": "Internet Explorer Processes",
+    "ParentDropDownOption": "Enabled",
+    "ChildDropDown": "",
+    "ChildDropDownOption": ""
+  },
+  {
+    "PolicyName": "Automation_20260227_212451",
+    "BaselineType": "Windows 365 Security Baseline",
+    "CreatedDateTime": "2026-02-27 21:27:24",
+    "TestName": "Execute(TC_29903530)",
+    "ParentDropDown": "Prevent managing SmartScreen Filter",
+    "ParentDropDownOption": "Enabled",
+    "ChildDropDown": "Select SmartScreen Filter mode",
+    "ChildDropDownOption": "On"
+  },
+  {
+    "PolicyName": "Automation_20260227_212843",
+    "BaselineType": "Windows 365 Security Baseline",
+    "CreatedDateTime": "2026-02-27 21:30:49",
+    "TestName": "Execute(TC_29904546)",
+    "ParentDropDown": "Prevent per-user installation of ActiveX controls",
+    "ParentDropDownOption": "Enabled",
+    "ChildDropDown": "",
+    "ChildDropDownOption": ""
+  },
+  {
+    "PolicyName": "Automation_20260227_213208",
+    "BaselineType": "Windows 365 Security Baseline",
+    "CreatedDateTime": "2026-02-27 21:34:20",
+    "TestName": "Execute(TC_29904641)",
+    "ParentDropDown": "Prevent bypassing SmartScreen Filter warnings",
+    "ParentDropDownOption": "Enabled",
+    "ChildDropDown": "",
+    "ChildDropDownOption": ""
+  },
+  {
+    "PolicyName": "Automation_20260227_213331",
+    "BaselineType": "Windows 365 Security Baseline",
+    "CreatedDateTime": "2026-02-27 21:35:57",
+    "TestName": "Execute(TC_29904546)",
+    "ParentDropDown": "Prevent per-user installation of ActiveX controls",
+    "ParentDropDownOption": "Enabled",
+    "ChildDropDown": "",
+    "ChildDropDownOption": ""
+  },
+  {
+    "PolicyName": "Automation_20260227_213706",
+    "BaselineType": "Windows 365 Security Baseline",
+    "CreatedDateTime": "2026-02-27 21:39:04",
+    "TestName": "Execute(TC_29904641)",
+    "ParentDropDown": "Prevent bypassing SmartScreen Filter warnings",
+    "ParentDropDownOption": "Enabled",
+    "ChildDropDown": "",
+    "ChildDropDownOption": ""
+  },
+  {
+    "PolicyName": "Automation_20260227_214006",
+    "BaselineType": "Windows 365 Security Baseline",
+    "CreatedDateTime": "2026-02-27 21:41:51",
+    "TestName": "Execute(TC_29904661)",
+    "ParentDropDown": "Security Zones: Do not allow users to change policies",
+    "ParentDropDownOption": "Enabled",
+    "ChildDropDown": "",
+    "ChildDropDownOption": ""
+  },
+  {
+    "PolicyName": "Automation_20260227_214236",
+    "BaselineType": "Windows 365 Security Baseline",
+    "CreatedDateTime": "2026-02-27 21:44:17",
+    "TestName": "Execute(TC_29920390)",
+    "ParentDropDown": "Security Zones: Use only machine settings",
+    "ParentDropDownOption": "Enabled",
+    "ChildDropDown": "",
+    "ChildDropDownOption": ""
+  },
+  {
+    "PolicyName": "Automation_20260227_214300",
+    "BaselineType": "Windows 365 Security Baseline",
+    "CreatedDateTime": "2026-02-27 21:45:01",
+    "TestName": "Execute(TC_29920390)",
+    "ParentDropDown": "Security Zones: Use only machine settings",
+    "ParentDropDownOption": "Enabled",
+    "ChildDropDown": "",
+    "ChildDropDownOption": ""
+  },
+  {
+    "PolicyName": "Automation_20260227_214528",
+    "BaselineType": "Windows 365 Security Baseline",
+    "CreatedDateTime": "2026-02-27 21:47:50",
+    "TestName": "Execute(TC_29920438)",
+    "ParentDropDown": "Specify use of ActiveX Installer Service for installation of ActiveX controls",
+    "ParentDropDownOption": "Enabled",
+    "ChildDropDown": "",
+    "ChildDropDownOption": ""
+  },
+  {
+    "PolicyName": "Automation_20260227_214602",
+    "BaselineType": "Windows 365 Security Baseline",
+    "CreatedDateTime": "2026-02-27 21:48:00",
+    "TestName": "Execute(TC_29920438)",
+    "ParentDropDown": "Specify use of ActiveX Installer Service for installation of ActiveX controls",
+    "ParentDropDownOption": "Enabled",
+    "ChildDropDown": "",
+    "ChildDropDownOption": ""
+  },
+  {
+    "PolicyName": "Automation_20260227_214851",
+    "BaselineType": "Windows 365 Security Baseline",
+    "CreatedDateTime": "2026-02-27 21:51:12",
+    "TestName": "Execute(TC_29920643)",
+    "ParentDropDown": "Turn off the Security Settings Check feature",
+    "ParentDropDownOption": "Enabled",
+    "ChildDropDown": "",
+    "ChildDropDownOption": ""
+  },
+  {
+    "PolicyName": "Automation_20260227_214910",
+    "BaselineType": "Windows 365 Security Baseline",
+    "CreatedDateTime": "2026-02-27 21:51:28",
+    "TestName": "Execute(TC_29920643)",
+    "ParentDropDown": "Turn off the Security Settings Check feature",
+    "ParentDropDownOption": "Enabled",
+    "ChildDropDown": "",
+    "ChildDropDownOption": ""
+  },
+  {
+    "PolicyName": "Automation_20260227_215237",
+    "BaselineType": "Windows 365 Security Baseline",
+    "CreatedDateTime": "2026-02-27 21:54:32",
+    "TestName": "Execute(TC_29950029)",
+    "ParentDropDown": "Allow fallback to SSL 3.0 (Internet Explorer)",
+    "ParentDropDownOption": "Enabled",
+    "ChildDropDown": "Allow insecure fallback for:",
+    "ChildDropDownOption": "No Sites"
+  },
+  {
+    "PolicyName": "Automation_20260227_215255",
+    "BaselineType": "Windows 365 Security Baseline",
+    "CreatedDateTime": "2026-02-27 21:55:02",
+    "TestName": "Execute(TC_29950029)",
+    "ParentDropDown": "Allow fallback to SSL 3.0 (Internet Explorer)",
+    "ParentDropDownOption": "Enabled",
+    "ChildDropDown": "Allow insecure fallback for:",
+    "ChildDropDownOption": "No Sites"
+  },
+  {
+    "PolicyName": "Automation_20260227_221102",
+    "BaselineType": "Windows 365 Security Baseline",
+    "CreatedDateTime": "2026-02-27 22:12:26",
+    "TestName": "Execute(TC_28041010)",
+    "ParentDropDown": "Allow only approved domains to use ActiveX controls without prompt",
+    "ParentDropDownOption": "Enabled",
+    "ChildDropDown": "Only allow approved domains to use ActiveX controls without prompt",
+    "ChildDropDownOption": "On"
+  },
+  {
+    "PolicyName": "Automation_20260227_221333",
+    "BaselineType": "Windows 365 Security Baseline",
+    "CreatedDateTime": "2026-02-27 22:14:55",
+    "TestName": "Execute(TC_28041077)",
+    "ParentDropDown": "Allow scripting of Internet Explorer WebBrowser controls",
+    "ParentDropDownOption": "Enabled",
+    "ChildDropDown": "Internet Explorer web browser control",
+    "ChildDropDownOption": "On"
+  },
+  {
+    "PolicyName": "Automation_20260227_221548",
+    "BaselineType": "Windows 365 Security Baseline",
+    "CreatedDateTime": "2026-02-27 22:17:06",
+    "TestName": "Execute(TC_28041148)",
+    "ParentDropDown": "Allow scriptlets",
+    "ParentDropDownOption": "Enabled",
+    "ChildDropDown": "Scriptlets",
+    "ChildDropDownOption": "On"
+  },
+  {
+    "PolicyName": "Automation_20260227_221755",
+    "BaselineType": "Windows 365 Security Baseline",
+    "CreatedDateTime": "2026-02-27 22:19:25",
+    "TestName": "Execute(TC_28041794)",
+    "ParentDropDown": "Download signed ActiveX controls",
+    "ParentDropDownOption": "Enabled",
+    "ChildDropDown": "Download signed ActiveX controls",
+    "ChildDropDownOption": "Enable"
+  },
+  {
+    "PolicyName": "Automation_20260227_222017",
+    "BaselineType": "Windows 365 Security Baseline",
+    "CreatedDateTime": "2026-02-27 22:21:41",
+    "TestName": "Execute(TC_28041879)",
+    "ParentDropDown": "Enable dragging of content from different domains within a window",
+    "ParentDropDownOption": "Enabled",
+    "ChildDropDown": "Enable dragging of content from different domains within a window",
+    "ChildDropDownOption": "On"
+  },
+  {
+    "PolicyName": "Automation_20260227_222238",
+    "BaselineType": "Windows 365 Security Baseline",
+    "CreatedDateTime": "2026-02-27 22:24:23",
+    "TestName": "Execute(TC_28052985)",
+    "ParentDropDown": "Initialize and script ActiveX controls not marked as safe",
+    "ParentDropDownOption": "Enabled",
+    "ChildDropDown": "Initialize and script ActiveX controls not marked as safe",
+    "ChildDropDownOption": "Enable"
+  },
+  {
+    "PolicyName": "Automation_20260227_222523",
+    "BaselineType": "Windows 365 Security Baseline",
+    "CreatedDateTime": "2026-02-27 22:27:06",
+    "TestName": "Execute(TC_28052992)",
+    "ParentDropDown": "Java permissions",
+    "ParentDropDownOption": "Enabled",
+    "ChildDropDown": "Java permissions",
+    "ChildDropDownOption": "High safety"
+  },
+  {
+    "PolicyName": "Automation_20260227_222839",
+    "BaselineType": "Windows 365 Security Baseline",
+    "CreatedDateTime": "2026-02-27 22:30:02",
+    "TestName": "Execute(TC_28037524)",
+    "ParentDropDown": "Internet Explorer Processes",
+    "ParentDropDownOption": "Enabled",
+    "ChildDropDown": "",
+    "ChildDropDownOption": ""
+  },
+  {
+    "PolicyName": "Automation_20260227_223107",
+    "BaselineType": "Windows 365 Security Baseline",
+    "CreatedDateTime": "2026-02-27 22:32:31",
+    "TestName": "Execute(TC_28037525)",
+    "ParentDropDown": "Internet Explorer Processes",
+    "ParentDropDownOption": "Enabled",
+    "ChildDropDown": "",
+    "ChildDropDownOption": ""
+  },
+  {
+    "PolicyName": "Automation_20260227_223326",
+    "BaselineType": "Windows 365 Security Baseline",
+    "CreatedDateTime": "2026-02-27 22:35:25",
+    "TestName": "Execute(TC_29903530)",
+    "ParentDropDown": "Prevent managing SmartScreen Filter",
+    "ParentDropDownOption": "Enabled",
+    "ChildDropDown": "Select SmartScreen Filter mode",
+    "ChildDropDownOption": "On"
+  },
+  {
+    "PolicyName": "Automation_20260227_223916",
+    "BaselineType": "Windows 365 Security Baseline",
+    "CreatedDateTime": "2026-02-27 22:40:38",
+    "TestName": "Execute(TC_28037520)",
+    "ParentDropDown": "Internet Explorer Processes",
+    "ParentDropDownOption": "Enabled",
+    "ChildDropDown": "",
+    "ChildDropDownOption": ""
+  }
+]

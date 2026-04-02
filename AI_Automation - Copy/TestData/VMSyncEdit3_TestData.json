@@ -1,0 +1,80 @@
+{
+  "_comment": "VMSync Test Data - Full MDM Report Validation (Optimized)",
+  "_documentation": {
+    "purpose": "Test cases for VMSync validation with full MDM diagnostic report capture",
+    "optimization": "VMSync executes ONLY ONCE - all tests search the same MDMReport.txt file",
+    "process": [
+      "1. VMSync executes ONCE during test setup to capture COMPLETE MDM diagnostic report",
+      "2. Full HTML report saved to ExpectedResults/MDMReport.txt (plain text format)",
+      "3. ALL test cases search within the SAME MDMReport.txt file for their specific settings",
+      "4. Each test validates its searchTerm and expectedValue from the shared report",
+      "5. Pass if value matches, Fail if not found or mismatched - NO repeated VMSync execution"
+    ],
+    "validation": "Tests validate policy presence anywhere in the shared MDM diagnostic report",
+    "parallelExecution": "Tests execute in 3 parallel batches (VMSync_Batch1, Batch2, Batch3)",
+    "reportLocation": "ExpectedResults/MDMReport.txt (plain text with header + HTML content)",
+    "performance": "Significant improvement: VMSync runs once instead of N times (N = number of test cases)"
+  },
+  "testCases": [
+    {
+      "testCaseId": "TC_28041994",
+      "testName": "Java permissions",
+      "description": "Windows 365 Security Baseline - Java permissions",
+      "category": "VM Validation",
+      "priority": "Low",
+      "enabled": true,
+      "parameters": {
+        "searchTerm": "InternetZoneJavaPermissions",
+        "expectedValue": "<enabled /><data id=\"IZ_Partname1C00\" value=\"0\" />"
+      }
+    },
+     {
+      "testCaseId": "TC_28042156",
+      "testName": "Logon options",
+      "description": "Windows 365 Security Baseline - Logon options",
+      "category": "VM Validation",
+      "priority": "Low",
+      "enabled": true,
+      "parameters": {
+        "searchTerm": "InternetZoneLogonOptions",
+        "expectedValue": "<disabled/>"
+      }
+    },
+     {
+      "testCaseId": "TC_28052992",
+      "testName": "Java permissions",
+      "description": "Windows 365 Security Baseline - Java permissions",
+      "category": "VM Validation",
+      "priority": "High",
+      "enabled": true,
+      "parameters": {
+        "searchTerm": "RestrictedSitesZoneJavaPermissions",
+        "expectedValue": "<enabled /><data id=\"IZ_Partname1C00\" value=\"0\" />"
+      }
+    },
+     {
+      "testCaseId": "TC_28053009",
+      "testName": "Logon options",
+      "description": "Windows 365 Security Baseline - Logon options",
+      "category": "VM Validation",
+      "priority": "High",
+      "enabled": true,
+      "parameters": {
+        "searchTerm": "RestrictedSitesZoneLogonOptions",
+        "expectedValue": "<disabled/>"
+      }
+    },
+    {
+      "testCaseId": "TC_28053192",
+      "testName": "Run ActiveX controls and plugins",
+      "description": "Windows 365 Security Baseline - Run ActiveX controls and plugins",
+      "category": "VM Validation",
+      "priority": "High",
+      "enabled": true,
+      "parameters": {
+        "searchTerm": "RestrictedSitesZoneRunActiveXControlsAndPlugins",
+        "expectedValue": "<disabled/>"
+      }
+    }
+  ]
+}

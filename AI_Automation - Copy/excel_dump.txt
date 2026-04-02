@@ -1,0 +1,247 @@
+﻿Row 1: ID | Work Item Type | Title | Test Step | Step Action | Step Expected | Area Path | Assigned To | State
+Row 2: 26308260 | Test Case | [Shanghai Vendor][DC][Email] Eamil server |  |  |  | Intune\Mgmt\Device Configuration\DCv1 | Osborn Hou (Centific Technologies Inc) <v-osbornhou@microsoft.com> | Design
+Row 3: 1 |  |  | 1 | Navigate to Create Profile blade on Intune Device Configuration |  |  |  | 
+Row 4:  |  |  | 1.1 | Login to  MEM admin center with your admin account: <NL> DF: https://aka.ms/intunedf <NL> SH: https://aka.ms/IntuneSH <NL> Canary: https://aka.ms/IntuneCanary <NL> PE: https://aka.ms/intune <NL> Fairfax: https://aka.ms/intuneFF <NL> Mooncake: https://aka.ms/intuneMC |  <NL>  |  |  | 
+Row 5:  |  |  | 1.2 | Click the "Device" in the left list column <NL>  |  <NL>  |  |  | 
+Row 6:  |  |  | 1.3 | Click the "configuration profile" feature in "Device" <NL>  |  <NL>  |  |  | 
+Row 7:  |  |  | 1.4 | Click "Create profile", and select Platform : "Windows 10 and later" <NL>  |  <NL>  |  |  | 
+Row 8:  |  |  | 2 | Selected the "Eamil" in Profile and click the "Create" button. <NL>  |  <NL>  |  |  | 
+Row 9:  |  |  | 3 | Enter "test1" for "Name" and click the "Next" button. <NL>  |  <NL>  |  |  | 
+Row 10:  |  |  | 4 | Add a value（eg：outlook.office365.com） in the Email Server  and click "Next" <NL>  |  <NL>  |  |  | 
+Row 11:  |  |  | 5 | Assign the profile to User/Device group and complete the creation of the DC profile |  |  |  | 
+Row 12:  |  |  | 5.1 | Click the "Selected groups to include" in "Included groups" <NL>  |  <NL>  |  |  | 
+Row 13:  |  |  | 5.2 | search your group and select group, and click "Select" button <NL>  |  <NL>  |  |  | 
+Row 14:  |  |  | 5.3 | Click "Next"--"Next"--"Next"--"Create" <NL>  |  <NL>  |  |  | 
+Row 15:  |  |  | 5.4 | the profile will be created successful <NL>  |  <NL>  |  |  | 
+Row 16:  |  |  | 6 | Enroll a windows 10 device to intune and Trigger a manual sync of MDM policies in Windows 10 Device |  |  |  | 
+Row 17:  |  |  | 6.1 | Open the "Settings" App |  <NL>  |  |  | 
+Row 18:  |  |  | 6.2 | Click "Accounts" |  <NL>  |  |  | 
+Row 19:  |  |  | 6.3 | Click "Access work or School" |  <NL>  |  |  | 
+Row 20:  |  |  | 6.4 | Click"Connect“  and enter the IW User email address that you want to deploy the Windows Profiles against. If you haven't created IW User or put the user into a group that is used to assign the Profile (policy), do it from Azure portal's "Users and Groups" blade before this step. Click "Next" after entering the account email. |  <NL>  |  |  | 
+Row 21:  |  |  | 6.5 | Repeat Step4 and Step5 one more time to complete the MDM enrollment. First time "Connect" adds the "Connected to Microsoft MDM" icon. Enter the password for the user when prompted. |  <NL>  |  |  | 
+Row 22:  |  |  | 6.6 | Click the "Info" button and click "Sync" button |  <NL>  |  |  | 
+Row 23:  |  |  | 6.7 | Wait 5-10 minutes to allow profile assign to device |  <NL>  |  |  | 
+Row 24:  |  |  | 7 | check the result in Registry <NL>  | Verify that Server is the value you add <NL> Computer\HKEY_CURRENT_USER\Software\Microsoft\ActiveSync\Partners\{ADA20CE1-DD1E-4412-8322-9DCC4F8BB1FB} <NL>  |  |  | 
+Row 25:  |  |  | 8 |  <NL>  |  <NL>  |  |  | 
+Row 26: 26308303 | Test Case | [Shanghai Vendor][DC][Email] Account name |  |  |  | Intune\Mgmt\Device Configuration\DCv1 | Osborn Hou (Centific Technologies Inc) <v-osbornhou@microsoft.com> | Design
+Row 27: 2 |  |  | 1 | Navigate to Create Profile blade on Intune Device Configuration |  |  |  | 
+Row 28:  |  |  | 1.1 | Login to  MEM admin center with your admin account: <NL> DF: https://aka.ms/intunedf <NL> SH: https://aka.ms/IntuneSH <NL> Canary: https://aka.ms/IntuneCanary <NL> PE: https://aka.ms/intune <NL> Fairfax: https://aka.ms/intuneFF <NL> Mooncake: https://aka.ms/intuneMC |  <NL>  |  |  | 
+Row 29:  |  |  | 1.2 | Click the "Device" in the left list column <NL>  |  <NL>  |  |  | 
+Row 30:  |  |  | 1.3 | Click the "configuration profile" feature in "Device" <NL>  |  <NL>  |  |  | 
+Row 31:  |  |  | 1.4 | Click "Create profile", and select Platform : "Windows 10 and later" <NL>  |  <NL>  |  |  | 
+Row 32:  |  |  | 2 | Selected the "Eamil" in Profile and click the "Create" button. <NL>  |  <NL>  |  |  | 
+Row 33:  |  |  | 3 | Enter "test1" for "Name" and click the "Next" button. <NL>  |  <NL>  |  |  | 
+Row 34:  |  |  | 4 | Add a value in the Account name  and click "Next" <NL>  |  <NL>  |  |  | 
+Row 35:  |  |  | 5 | Assign the profile to User/Device group and complete the creation of the DC profile |  |  |  | 
+Row 36:  |  |  | 5.1 | Click the "Selected groups to include" in "Included groups" <NL>  |  <NL>  |  |  | 
+Row 37:  |  |  | 5.2 | search your group and select group, and click "Select" button <NL>  |  <NL>  |  |  | 
+Row 38:  |  |  | 5.3 | Click "Next"--"Next"--"Next"--"Create" <NL>  |  <NL>  |  |  | 
+Row 39:  |  |  | 5.4 | the profile will be created successful <NL>  |  <NL>  |  |  | 
+Row 40:  |  |  | 6 | Enroll a windows 10 device to intune and Trigger a manual sync of MDM policies in Windows 10 Device |  |  |  | 
+Row 41:  |  |  | 6.1 | Open the "Settings" App |  <NL>  |  |  | 
+Row 42:  |  |  | 6.2 | Click "Accounts" |  <NL>  |  |  | 
+Row 43:  |  |  | 6.3 | Click "Access work or School" |  <NL>  |  |  | 
+Row 44:  |  |  | 6.4 | Click"Connect“  and enter the IW User email address that you want to deploy the Windows Profiles against. If you haven't created IW User or put the user into a group that is used to assign the Profile (policy), do it from Azure portal's "Users and Groups" blade before this step. Click "Next" after entering the account email. |  <NL>  |  |  | 
+Row 45:  |  |  | 6.5 | Repeat Step4 and Step5 one more time to complete the MDM enrollment. First time "Connect" adds the "Connected to Microsoft MDM" icon. Enter the password for the user when prompted. |  <NL>  |  |  | 
+Row 46:  |  |  | 6.6 | Click the "Info" button and click "Sync" button |  <NL>  |  |  | 
+Row 47:  |  |  | 6.7 | Wait 5-10 minutes to allow profile assign to device |  <NL>  |  |  | 
+Row 48:  |  |  | 7 | check the result in Registry <NL>  | Verify that Name is the value you add <NL> Computer\HKEY_CURRENT_USER\Software\Microsoft\ActiveSync\Partners\{ADA20CE1-DD1E-4412-8322-9DCC4F8BB1FB} |  |  | 
+Row 49: 26308352 | Test Case | [Shanghai Vendor][DC][Email] SSL |  |  |  | Intune\Mgmt\Device Configuration\DCv1 | Osborn Hou (Centific Technologies Inc) <v-osbornhou@microsoft.com> | Design
+Row 50: 3 |  |  | 1 | Navigate to Create Profile blade on Intune Device Configuration |  |  |  | 
+Row 51:  |  |  | 1.1 | Login to  MEM admin center with your admin account: <NL> DF: https://aka.ms/intunedf <NL> SH: https://aka.ms/IntuneSH <NL> Canary: https://aka.ms/IntuneCanary <NL> PE: https://aka.ms/intune <NL> Fairfax: https://aka.ms/intuneFF <NL> Mooncake: https://aka.ms/intuneMC |  <NL>  |  |  | 
+Row 52:  |  |  | 1.2 | Click the "Device" in the left list column <NL>  |  <NL>  |  |  | 
+Row 53:  |  |  | 1.3 | Click the "configuration profile" feature in "Device" <NL>  |  <NL>  |  |  | 
+Row 54:  |  |  | 1.4 | Click "Create profile", and select Platform : "Windows 10 and later" <NL>  |  <NL>  |  |  | 
+Row 55:  |  |  | 2 | Selected the "Eamil" in Profile and click the "Create" button. <NL>  |  <NL>  |  |  | 
+Row 56:  |  |  | 3 | Enter "test1" for "Name" and click the "Next" button. <NL>  |  <NL>  |  |  | 
+Row 57:  |  |  | 4 | Set SSL to Enable |  <NL>  |  |  | 
+Row 58:  |  |  | 5 | Assign the profile to User/Device group and complete the creation of the DC profile |  |  |  | 
+Row 59:  |  |  | 5.1 | Click the "Selected groups to include" in "Included groups" <NL>  |  <NL>  |  |  | 
+Row 60:  |  |  | 5.2 | search your group and select group, and click "Select" button <NL>  |  <NL>  |  |  | 
+Row 61:  |  |  | 5.3 | Click "Next"--"Next"--"Next"--"Create" <NL>  |  <NL>  |  |  | 
+Row 62:  |  |  | 5.4 | the profile will be created successful <NL>  |  <NL>  |  |  | 
+Row 63:  |  |  | 6 | Enroll a windows 10 device to intune and Trigger a manual sync of MDM policies in Windows 10 Device |  |  |  | 
+Row 64:  |  |  | 6.1 | Open the "Settings" App |  <NL>  |  |  | 
+Row 65:  |  |  | 6.2 | Click "Accounts" |  <NL>  |  |  | 
+Row 66:  |  |  | 6.3 | Click "Access work or School" |  <NL>  |  |  | 
+Row 67:  |  |  | 6.4 | Click"Connect“  and enter the IW User email address that you want to deploy the Windows Profiles against. If you haven't created IW User or put the user into a group that is used to assign the Profile (policy), do it from Azure portal's "Users and Groups" blade before this step. Click "Next" after entering the account email. |  <NL>  |  |  | 
+Row 68:  |  |  | 6.5 | Repeat Step4 and Step5 one more time to complete the MDM enrollment. First time "Connect" adds the "Connected to Microsoft MDM" icon. Enter the password for the user when prompted. |  <NL>  |  |  | 
+Row 69:  |  |  | 6.6 | Click the "Info" button and click "Sync" button |  <NL>  |  |  | 
+Row 70:  |  |  | 6.7 | Wait 5-10 minutes to allow profile assign to device |  <NL>  |  |  | 
+Row 71:  |  |  | 7 | check the result in Registry <NL>  | Verify that UseSSL should be 1 <NL> Computer\HKEY_CURRENT_USER\Software\Microsoft\ActiveSync\Partners\{ADA20CE1-DD1E-4412-8322-9DCC4F8BB1FB} |  |  | 
+Row 72:  |  |  | 8 | Reopen the profile and changed the settings to "Disable" and "Save" the change and "Sync" the Device  <NL>  | check the value UseSSL should be 0 <NL>  |  |  | 
+Row 73: 26308534 | Test Case | [Shanghai Vendor][DC][Email] Sync schedule |  |  |  | Intune\Mgmt\Device Configuration\DCv1 | Osborn Hou (Centific Technologies Inc) <v-osbornhou@microsoft.com> | Design
+Row 74: 4 |  |  | 1 | Navigate to Create Profile blade on Intune Device Configuration |  |  |  | 
+Row 75:  |  |  | 1.1 | Login to  MEM admin center with your admin account: <NL> DF: https://aka.ms/intunedf <NL> SH: https://aka.ms/IntuneSH <NL> Canary: https://aka.ms/IntuneCanary <NL> PE: https://aka.ms/intune <NL> Fairfax: https://aka.ms/intuneFF <NL> Mooncake: https://aka.ms/intuneMC |  <NL>  |  |  | 
+Row 76:  |  |  | 1.2 | Click the "Device" in the left list column <NL>  |  <NL>  |  |  | 
+Row 77:  |  |  | 1.3 | Click the "configuration profile" feature in "Device" <NL>  |  <NL>  |  |  | 
+Row 78:  |  |  | 1.4 | Click "Create profile", and select Platform : "Windows 10 and later" <NL>  |  <NL>  |  |  | 
+Row 79:  |  |  | 2 | Selected the "Email" in Profile and click the "Create" button. <NL>  |  <NL>  |  |  | 
+Row 80:  |  |  | 3 | Enter "test1" for "Name" and click the "Next" button. <NL>  |  <NL>  |  |  | 
+Row 81:  |  |  | 4 | Set "Sync schedule" to "As messages arrive" <NL>  |  <NL>  |  |  | 
+Row 82:  |  |  | 5 | Assign the profile to User/Device group and complete the creation of the DC profile |  |  |  | 
+Row 83:  |  |  | 5.1 | Click the "Selected groups to include" in "Included groups" <NL>  |  <NL>  |  |  | 
+Row 84:  |  |  | 5.2 | search your group and select group, and click "Select" button <NL>  |  <NL>  |  |  | 
+Row 85:  |  |  | 5.3 | Click "Next"--"Next"--"Next"--"Create" <NL>  |  <NL>  |  |  | 
+Row 86:  |  |  | 5.4 | the profile will be created successful <NL>  |  <NL>  |  |  | 
+Row 87:  |  |  | 6 | Enroll a windows 10 device to intune and Trigger a manual sync of MDM policies in Windows 10 Device |  |  |  | 
+Row 88:  |  |  | 6.1 | Open the "Settings" App |  <NL>  |  |  | 
+Row 89:  |  |  | 6.2 | Click "Accounts" |  <NL>  |  |  | 
+Row 90:  |  |  | 6.3 | Click "Access work or School" |  <NL>  |  |  | 
+Row 91:  |  |  | 6.4 | Click"Connect“  and enter the IW User email address that you want to deploy the Windows Profiles against. If you haven't created IW User or put the user into a group that is used to assign the Profile (policy), do it from Azure portal's "Users and Groups" blade before this step. Click "Next" after entering the account email. |  <NL>  |  |  | 
+Row 92:  |  |  | 6.5 | Repeat Step4 and Step5 one more time to complete the MDM enrollment. First time "Connect" adds the "Connected to Microsoft MDM" icon. Enter the password for the user when prompted. |  <NL>  |  |  | 
+Row 93:  |  |  | 6.6 | Click the "Info" button and click "Sync" button |  <NL>  |  |  | 
+Row 94:  |  |  | 6.7 | Wait 5-10 minutes to allow profile assign to device |  <NL>  |  |  | 
+Row 95:  |  |  | 7 | check the result in Registry <NL>  | Verify that ScheduledSyncPeriod should be 4294967295 <NL> Computer\HKEY_CURRENT_USER\Software\Microsoft\ActiveSync\Partners\{ADA20CE1-DD1E-4412-8322-9DCC4F8BB1FB} |  |  | 
+Row 96:  |  |  | 8 | Reopen the profile and changed the settings to "Manual" and "Save" the change and "Sync" the Device  <NL>  | Verify that ScheduledSyncPeriod should be 0 <NL>  |  |  | 
+Row 97:  |  |  | 9 | Reopen the profile and changed the settings to "15 minutes" and "Save" the change and "Sync" the Device  <NL>  | Verify that ScheduledSyncPeriod should be 15 <NL>  |  |  | 
+Row 98:  |  |  | 10 | Reopen the profile and changed the settings to "30 minutes" and "Save" the change and "Sync" the Device  <NL>  | Verify that ScheduledSyncPeriod should be 30 <NL>  |  |  | 
+Row 99:  |  |  | 11 | Reopen the profile and changed the settings to "60 minutes" and "Save" the change and "Sync" the Device  <NL>  | Verify that ScheduledSyncPeriod should be 60 <NL>  |  |  | 
+Row 100:  |  |  | 12 | Reopen the profile and changed the settings to "Not configured" and "Save" the change and "Sync" the Device  <NL>  | Verify that ScheduledSyncPeriod should be 2415919103 <NL>  |  |  | 
+Row 101: 26310144 | Test Case | [Shanghai Vendor][DC][Email][UX validation] Username attribute from Microsoft Entra ID |  |  |  | Intune\Mgmt\Device Configuration\DCv1 | Osborn Hou (Centific Technologies Inc) <v-osbornhou@microsoft.com> | Design
+Row 102: 5 |  |  | 1 | Navigate to Create Profile blade on Intune Device Configuration |  |  |  | 
+Row 103:  |  |  | 1.1 | Login to  MEM admin center with your admin account: <NL> DF: https://aka.ms/intunedf <NL> SH: https://aka.ms/IntuneSH <NL> Canary: https://aka.ms/IntuneCanary <NL> PE: https://aka.ms/intune <NL> Fairfax: https://aka.ms/intuneFF <NL> Mooncake: https://aka.ms/intuneMC |  <NL>  |  |  | 
+Row 104:  |  |  | 1.2 | Click the "Device" in the left list column <NL>  |  <NL>  |  |  | 
+Row 105:  |  |  | 1.3 | Click the "configuration profile" feature in "Device" <NL>  |  <NL>  |  |  | 
+Row 106:  |  |  | 1.4 | Click "Create profile", and select Platform : "Windows 10 and later" <NL>  |  <NL>  |  |  | 
+Row 107:  |  |  | 2 | Selected the "Eamil" in Profile and click the "Create" button. <NL>  |  <NL>  |  |  | 
+Row 108:  |  |  | 3 | Enter "test1" for "Name" and click the "Next" button. <NL>  |  <NL>  |  |  | 
+Row 109:  |  |  | 4 | Set "Username attribute from Microsoft Entra ID" settings to "User principal name" and "Next" <NL>  |  <NL>  |  |  | 
+Row 110:  |  |  | 5 | Assign the profile to User/Device group and complete the creation of the DC profile |  |  |  | 
+Row 111:  |  |  | 5.1 | Click the "Selected groups to include" in "Included groups" <NL>  |  <NL>  |  |  | 
+Row 112:  |  |  | 5.2 | search your group and select group, and click "Select" button <NL>  |  <NL>  |  |  | 
+Row 113:  |  |  | 5.3 | Click "Next"--"Next"--"Next"--"Create" <NL>  |  <NL>  |  |  | 
+Row 114:  |  |  | 5.4 | the profile will be created successful <NL>  |  <NL>  |  |  | 
+Row 115:  |  |  | 6 | Enroll a windows 10 device to intune and Trigger a manual sync of MDM policies in Windows 10 Device |  |  |  | 
+Row 116:  |  |  | 6.1 | Open the "Settings" App |  <NL>  |  |  | 
+Row 117:  |  |  | 6.2 | Click "Accounts" |  <NL>  |  |  | 
+Row 118:  |  |  | 6.3 | Click "Access work or School" |  <NL>  |  |  | 
+Row 119:  |  |  | 6.4 | Click"Connect“  and enter the IW User email address that you want to deploy the Windows Profiles against. If you haven't created IW User or put the user into a group that is used to assign the Profile (policy), do it from Azure portal's "Users and Groups" blade before this step. Click "Next" after entering the account email. |  <NL>  |  |  | 
+Row 120:  |  |  | 6.5 | Repeat Step4 and Step5 one more time to complete the MDM enrollment. First time "Connect" adds the "Connected to Microsoft MDM" icon. Enter the password for the user when prompted. |  <NL>  |  |  | 
+Row 121:  |  |  | 6.6 | Click the "Info" button and click "Sync" button |  <NL>  |  |  | 
+Row 122:  |  |  | 6.7 | Wait 5-10 minutes to allow profile assign to device |  <NL>  |  |  | 
+Row 123:  |  |  | 7 | The page has no UX errors. <NL>  | The setting may be error , this is the expect result. |  |  | 
+Row 124: 26310163 | Test Case | [Shanghai Vendor][DC][Email][UX validation]Email address attribute from Microsoft Entra ID |  |  |  | Intune\Mgmt\Device Configuration\DCv1 | Osborn Hou (Centific Technologies Inc) <v-osbornhou@microsoft.com> | Design
+Row 125: 6 |  |  | 1 | Navigate to Create Profile blade on Intune Device Configuration |  |  |  | 
+Row 126:  |  |  | 1.1 | Login to  MEM admin center with your admin account: <NL> DF: https://aka.ms/intunedf <NL> SH: https://aka.ms/IntuneSH <NL> Canary: https://aka.ms/IntuneCanary <NL> PE: https://aka.ms/intune <NL> Fairfax: https://aka.ms/intuneFF <NL> Mooncake: https://aka.ms/intuneMC |  <NL>  |  |  | 
+Row 127:  |  |  | 1.2 | Click the "Device" in the left list column <NL>  |  <NL>  |  |  | 
+Row 128:  |  |  | 1.3 | Click the "configuration profile" feature in "Device" <NL>  |  <NL>  |  |  | 
+Row 129:  |  |  | 1.4 | Click "Create profile", and select Platform : "Windows 10 and later" <NL>  |  <NL>  |  |  | 
+Row 130:  |  |  | 2 | Selected the "Eamil" in Profile and click the "Create" button. <NL>  |  <NL>  |  |  | 
+Row 131:  |  |  | 3 | Enter "test1" for "Name" and click the "Next" button. <NL>  |  <NL>  |  |  | 
+Row 132:  |  |  | 4 | Set "Email address attribute from Microsoft Entra ID" settings to "User principal name" and "Next" <NL>  |  <NL>  |  |  | 
+Row 133:  |  |  | 5 | Assign the profile to User/Device group and complete the creation of the DC profile |  |  |  | 
+Row 134:  |  |  | 5.1 | Click the "Selected groups to include" in "Included groups" <NL>  |  <NL>  |  |  | 
+Row 135:  |  |  | 5.2 | search your group and select group, and click "Select" button <NL>  |  <NL>  |  |  | 
+Row 136:  |  |  | 5.3 | Click "Next"--"Next"--"Next"--"Create" <NL>  |  <NL>  |  |  | 
+Row 137:  |  |  | 5.4 | the profile will be created successful <NL>  |  <NL>  |  |  | 
+Row 138:  |  |  | 6 | Enroll a windows 10 device to intune and Trigger a manual sync of MDM policies in Windows 10 Device |  |  |  | 
+Row 139:  |  |  | 6.1 | Open the "Settings" App |  <NL>  |  |  | 
+Row 140:  |  |  | 6.2 | Click "Accounts" |  <NL>  |  |  | 
+Row 141:  |  |  | 6.3 | Click "Access work or School" |  <NL>  |  |  | 
+Row 142:  |  |  | 6.4 | Click"Connect“  and enter the IW User email address that you want to deploy the Windows Profiles against. If you haven't created IW User or put the user into a group that is used to assign the Profile (policy), do it from Azure portal's "Users and Groups" blade before this step. Click "Next" after entering the account email. |  <NL>  |  |  | 
+Row 143:  |  |  | 6.5 | Repeat Step4 and Step5 one more time to complete the MDM enrollment. First time "Connect" adds the "Connected to Microsoft MDM" icon. Enter the password for the user when prompted. |  <NL>  |  |  | 
+Row 144:  |  |  | 6.6 | Click the "Info" button and click "Sync" button |  <NL>  |  |  | 
+Row 145:  |  |  | 6.7 | Wait 5-10 minutes to allow profile assign to device |  <NL>  |  |  | 
+Row 146:  |  |  | 7 | The page has no UX errors. <NL>  | The setting may be error , this is the expect result. <NL>  |  |  | 
+Row 147: 26310432 | Test Case | [Shanghai Vendor][DC][Email][UX validation]Amount of email to synchronize |  |  |  | Intune\Mgmt\Device Configuration\DCv1 | Osborn Hou (Centific Technologies Inc) <v-osbornhou@microsoft.com> | Design
+Row 148: 7 |  |  | 1 | Navigate to Create Profile blade on Intune Device Configuration |  |  |  | 
+Row 149:  |  |  | 1.1 | Login to  MEM admin center with your admin account: <NL> DF: https://aka.ms/intunedf <NL> SH: https://aka.ms/IntuneSH <NL> Canary: https://aka.ms/IntuneCanary <NL> PE: https://aka.ms/intune <NL> Fairfax: https://aka.ms/intuneFF <NL> Mooncake: https://aka.ms/intuneMC |  <NL>  |  |  | 
+Row 150:  |  |  | 1.2 | Click the "Device" in the left list column <NL>  |  <NL>  |  |  | 
+Row 151:  |  |  | 1.3 | Click the "configuration profile" feature in "Device" <NL>  |  <NL>  |  |  | 
+Row 152:  |  |  | 1.4 | Click "Create profile", and select Platform : "Windows 10 and later" <NL>  |  <NL>  |  |  | 
+Row 153:  |  |  | 2 | Selected the "Email" in Profile and click the "Create" button. <NL>  |  <NL>  |  |  | 
+Row 154:  |  |  | 3 | Enter "test1" for "Name" and click the "Next" button. <NL>  |  <NL>  |  |  | 
+Row 155:  |  |  | 4 | Selected "Synchronization" Feature and Set "Amount of email to synchronize" to "One day" |  <NL>  |  |  | 
+Row 156:  |  |  | 5 | Set the 'Scope tags' - 'Assignments' - 'applicability Rules' and save the profile. <NL>  |  <NL>  |  |  | 
+Row 157:  |  |  | 6 | Assign the profile to User/Device group and complete the creation of the DC profile |  |  |  | 
+Row 158:  |  |  | 6.1 | Click the "Selected groups to include" in "Included groups" <NL>  |  <NL>  |  |  | 
+Row 159:  |  |  | 6.2 | search your group and select group, and click "Select" button <NL>  |  <NL>  |  |  | 
+Row 160:  |  |  | 6.3 | Click "Next"--"Next"--"Next"--"Create" <NL>  |  <NL>  |  |  | 
+Row 161:  |  |  | 6.4 | the profile will be created successful <NL>  |  <NL>  |  |  | 
+Row 162:  |  |  | 7 | Enroll a windows 10 device to intune and Trigger a manual sync of MDM policies in Windows 10 Device |  |  |  | 
+Row 163:  |  |  | 7.1 | Open the "Settings" App |  <NL>  |  |  | 
+Row 164:  |  |  | 7.2 | Click "Accounts" |  <NL>  |  |  | 
+Row 165:  |  |  | 7.3 | Click "Access work or School" |  <NL>  |  |  | 
+Row 166:  |  |  | 7.4 | Click"Connect“  and enter the IW User email address that you want to deploy the Windows Profiles against. If you haven't created IW User or put the user into a group that is used to assign the Profile (policy), do it from Azure portal's "Users and Groups" blade before this step. Click "Next" after entering the account email. |  <NL>  |  |  | 
+Row 167:  |  |  | 7.5 | Repeat Step4 and Step5 one more time to complete the MDM enrollment. First time "Connect" adds the "Connected to Microsoft MDM" icon. Enter the password for the user when prompted. |  <NL>  |  |  | 
+Row 168:  |  |  | 7.6 | Click the "Info" button and click "Sync" button |  <NL>  |  |  | 
+Row 169:  |  |  | 7.7 | Wait 5-10 minutes to allow profile assign to device |  <NL>  |  |  | 
+Row 170:  |  |  | 8 | Open the profile. <NL>  | Verify that no UX issue with the profile and the profile is what you set.  <NL>  |  |  | 
+Row 171:  |  |  | 9 | Reopen the profile and changed the settings to "Three day and "Save" the change and sync <NL>  | Verify that no UX issue with the profile and the profile is what you set.  <NL>  |  |  | 
+Row 172:  |  |  | 10 | Reopen the profile and changed the settings to "One week" and "Save" the change and sync <NL>  | Verify that no UX issue with the profile and the profile is what you set.  <NL>  |  |  | 
+Row 173:  |  |  | 11 | Reopen the profile and changed the settings to "Two week" and "Save" the change and sync <NL>  | Verify that no UX issue with the profile and the profile is what you set.  <NL>  |  |  | 
+Row 174:  |  |  | 12 | Reopen the profile and changed the settings to "One month" and "Save" the change and sync <NL>  | Verify that no UX issue with the profile and the profile is what you set.  <NL>  |  |  | 
+Row 175:  |  |  | 13 | Reopen the profile and changed the settings to "Unlimited" and "Save" the change and sync <NL>  | Verify that no UX issue with the profile and the profile is what you set.  <NL>  |  |  | 
+Row 176: 26310456 | Test Case | [Shanghai Vendor][DC][Email][UX validation]Contacts |  |  |  | Intune\Mgmt\Device Configuration\DCv1 | Osborn Hou (Centific Technologies Inc) <v-osbornhou@microsoft.com> | Design
+Row 177: 8 |  |  | 1 | Navigate to Create Profile blade on Intune Device Configuration |  |  |  | 
+Row 178:  |  |  | 1.1 | Login to  MEM admin center with your admin account: <NL> DF: https://aka.ms/intunedf <NL> SH: https://aka.ms/IntuneSH <NL> Canary: https://aka.ms/IntuneCanary <NL> PE: https://aka.ms/intune <NL> Fairfax: https://aka.ms/intuneFF <NL> Mooncake: https://aka.ms/intuneMC |  <NL>  |  |  | 
+Row 179:  |  |  | 1.2 | Click the "Device" in the left list column <NL>  |  <NL>  |  |  | 
+Row 180:  |  |  | 1.3 | Click the "configuration profile" feature in "Device" <NL>  |  <NL>  |  |  | 
+Row 181:  |  |  | 1.4 | Click "Create profile", and select Platform : "Windows 10 and later" <NL>  |  <NL>  |  |  | 
+Row 182:  |  |  | 2 | Selected the "Email" in Profile and click the "Create" button. <NL>  |  <NL>  |  |  | 
+Row 183:  |  |  | 3 | Enter "test1" for "Name" and click the "Next" button. <NL>  |  <NL>  |  |  | 
+Row 184:  |  |  | 4 | Selected "Content type to sync" Feature and Set "Contacts" settings to "On"  <NL>  |  <NL>  |  |  | 
+Row 185:  |  |  | 5 | Assign the profile to User/Device group and complete the creation of the DC profile |  |  |  | 
+Row 186:  |  |  | 5.1 | Click the "Selected groups to include" in "Included groups" <NL>  |  <NL>  |  |  | 
+Row 187:  |  |  | 5.2 | search your group and select group, and click "Select" button <NL>  |  <NL>  |  |  | 
+Row 188:  |  |  | 5.3 | Click "Next"--"Next"--"Next"--"Create" <NL>  |  <NL>  |  |  | 
+Row 189:  |  |  | 5.4 | the profile will be created successful <NL>  |  <NL>  |  |  | 
+Row 190:  |  |  | 6 | Enroll a windows 10 device to intune and Trigger a manual sync of MDM policies in Windows 10 Device |  |  |  | 
+Row 191:  |  |  | 6.1 | Open the "Settings" App |  <NL>  |  |  | 
+Row 192:  |  |  | 6.2 | Click "Accounts" |  <NL>  |  |  | 
+Row 193:  |  |  | 6.3 | Click "Access work or School" |  <NL>  |  |  | 
+Row 194:  |  |  | 6.4 | Click"Connect“  and enter the IW User email address that you want to deploy the Windows Profiles against. If you haven't created IW User or put the user into a group that is used to assign the Profile (policy), do it from Azure portal's "Users and Groups" blade before this step. Click "Next" after entering the account email. |  <NL>  |  |  | 
+Row 195:  |  |  | 6.5 | Repeat Step4 and Step5 one more time to complete the MDM enrollment. First time "Connect" adds the "Connected to Microsoft MDM" icon. Enter the password for the user when prompted. |  <NL>  |  |  | 
+Row 196:  |  |  | 6.6 | Click the "Info" button and click "Sync" button |  <NL>  |  |  | 
+Row 197:  |  |  | 6.7 | Wait 5-10 minutes to allow profile assign to device |  <NL>  |  |  | 
+Row 198:  |  |  | 7 | Open the profile. <NL>  | Verify that no UX issue with the profile and the profile is what you set.  <NL>  |  |  | 
+Row 199:  |  |  | 8 | Reopen the profile and changed the settings to "OFF" and "Save" the change. <NL>  | Verify that no UX issue with the profile and the profile is what you set.  <NL>  |  |  | 
+Row 200: 26310465 | Test Case | [Shanghai Vendor][DC][Email][UX validation]Calendar |  |  |  | Intune\Mgmt\Device Configuration\DCv1 | Osborn Hou (Centific Technologies Inc) <v-osbornhou@microsoft.com> | Design
+Row 201: 9 |  |  | 1 | Navigate to Create Profile blade on Intune Device Configuration |  |  |  | 
+Row 202:  |  |  | 1.1 | Login to  MEM admin center with your admin account: <NL> DF: https://aka.ms/intunedf <NL> SH: https://aka.ms/IntuneSH <NL> Canary: https://aka.ms/IntuneCanary <NL> PE: https://aka.ms/intune <NL> Fairfax: https://aka.ms/intuneFF <NL> Mooncake: https://aka.ms/intuneMC |  <NL>  |  |  | 
+Row 203:  |  |  | 1.2 | Click the "Device" in the left list column <NL>  |  <NL>  |  |  | 
+Row 204:  |  |  | 1.3 | Click the "configuration profile" feature in "Device" <NL>  |  <NL>  |  |  | 
+Row 205:  |  |  | 1.4 | Click "Create profile", and select Platform : "Windows 10 and later" <NL>  |  <NL>  |  |  | 
+Row 206:  |  |  | 2 | Selected the "Email" in Profile and click the "Create" button. <NL>  |  <NL>  |  |  | 
+Row 207:  |  |  | 3 | Enter "test1" for "Name" and click the "Next" button. <NL>  |  <NL>  |  |  | 
+Row 208:  |  |  | 4 | Selected "Content type to sync" Feature and Set "Calendar" settings to "On"  <NL>  |  <NL>  |  |  | 
+Row 209:  |  |  | 5 | Assign the profile to User/Device group and complete the creation of the DC profile |  |  |  | 
+Row 210:  |  |  | 5.1 | Click the "Selected groups to include" in "Included groups" <NL>  |  <NL>  |  |  | 
+Row 211:  |  |  | 5.2 | search your group and select group, and click "Select" button <NL>  |  <NL>  |  |  | 
+Row 212:  |  |  | 5.3 | Click "Next"--"Next"--"Next"--"Create" <NL>  |  <NL>  |  |  | 
+Row 213:  |  |  | 5.4 | the profile will be created successful <NL>  |  <NL>  |  |  | 
+Row 214:  |  |  | 6 | Enroll a windows 10 device to intune and Trigger a manual sync of MDM policies in Windows 10 Device |  |  |  | 
+Row 215:  |  |  | 6.1 | Open the "Settings" App |  <NL>  |  |  | 
+Row 216:  |  |  | 6.2 | Click "Accounts" |  <NL>  |  |  | 
+Row 217:  |  |  | 6.3 | Click "Access work or School" |  <NL>  |  |  | 
+Row 218:  |  |  | 6.4 | Click"Connect“  and enter the IW User email address that you want to deploy the Windows Profiles against. If you haven't created IW User or put the user into a group that is used to assign the Profile (policy), do it from Azure portal's "Users and Groups" blade before this step. Click "Next" after entering the account email. |  <NL>  |  |  | 
+Row 219:  |  |  | 6.5 | Repeat Step4 and Step5 one more time to complete the MDM enrollment. First time "Connect" adds the "Connected to Microsoft MDM" icon. Enter the password for the user when prompted. |  <NL>  |  |  | 
+Row 220:  |  |  | 6.6 | Click the "Info" button and click "Sync" button |  <NL>  |  |  | 
+Row 221:  |  |  | 6.7 | Wait 5-10 minutes to allow profile assign to device |  <NL>  |  |  | 
+Row 222:  |  |  | 7 | Open the profile. <NL>  | Verify that no UX issue with the profile and the profile is what you set.  <NL>  |  |  | 
+Row 223:  |  |  | 8 | Reopen the profile and changed the settings to "OFF" and "Save" the change. <NL>  | Verify that no UX issue with the profile and the profile is what you set.  <NL>  |  |  | 
+Row 224: 26310478 | Test Case | [Shanghai Vendor][DC][Email][UX validation]Tasks |  |  |  | Intune\Mgmt\Device Configuration\DCv1 | Osborn Hou (Centific Technologies Inc) <v-osbornhou@microsoft.com> | Design
+Row 225: 10 |  |  | 1 | Navigate to Create Profile blade on Intune Device Configuration |  |  |  | 
+Row 226:  |  |  | 1.1 | Login to  MEM admin center with your admin account: <NL> DF: https://aka.ms/intunedf <NL> SH: https://aka.ms/IntuneSH <NL> Canary: https://aka.ms/IntuneCanary <NL> PE: https://aka.ms/intune <NL> Fairfax: https://aka.ms/intuneFF <NL> Mooncake: https://aka.ms/intuneMC |  <NL>  |  |  | 
+Row 227:  |  |  | 1.2 | Click the "Device" in the left list column <NL>  |  <NL>  |  |  | 
+Row 228:  |  |  | 1.3 | Click the "configuration profile" feature in "Device" <NL>  |  <NL>  |  |  | 
+Row 229:  |  |  | 1.4 | Click "Create profile", and select Platform : "Windows 10 and later" <NL>  |  <NL>  |  |  | 
+Row 230:  |  |  | 2 | Selected the "Email" in Profile and click the "Create" button. <NL>  |  <NL>  |  |  | 
+Row 231:  |  |  | 3 | Enter "test1" for "Name" and click the "Next" button. <NL>  |  <NL>  |  |  | 
+Row 232:  |  |  | 4 | Selected "Content type to sync" Feature and Set "Tasks" settings to "On"  <NL>  |  <NL>  |  |  | 
+Row 233:  |  |  | 5 | Assign the profile to User/Device group and complete the creation of the DC profile |  |  |  | 
+Row 234:  |  |  | 5.1 | Click the "Selected groups to include" in "Included groups" <NL>  |  <NL>  |  |  | 
+Row 235:  |  |  | 5.2 | search your group and select group, and click "Select" button <NL>  |  <NL>  |  |  | 
+Row 236:  |  |  | 5.3 | Click "Next"--"Next"--"Next"--"Create" <NL>  |  <NL>  |  |  | 
+Row 237:  |  |  | 5.4 | the profile will be created successful <NL>  |  <NL>  |  |  | 
+Row 238:  |  |  | 6 | Enroll a windows 10 device to intune and Trigger a manual sync of MDM policies in Windows 10 Device |  |  |  | 
+Row 239:  |  |  | 6.1 | Open the "Settings" App |  <NL>  |  |  | 
+Row 240:  |  |  | 6.2 | Click "Accounts" |  <NL>  |  |  | 
+Row 241:  |  |  | 6.3 | Click "Access work or School" |  <NL>  |  |  | 
+Row 242:  |  |  | 6.4 | Click"Connect“  and enter the IW User email address that you want to deploy the Windows Profiles against. If you haven't created IW User or put the user into a group that is used to assign the Profile (policy), do it from Azure portal's "Users and Groups" blade before this step. Click "Next" after entering the account email. |  <NL>  |  |  | 
+Row 243:  |  |  | 6.5 | Repeat Step4 and Step5 one more time to complete the MDM enrollment. First time "Connect" adds the "Connected to Microsoft MDM" icon. Enter the password for the user when prompted. |  <NL>  |  |  | 
+Row 244:  |  |  | 6.6 | Click the "Info" button and click "Sync" button |  <NL>  |  |  | 
+Row 245:  |  |  | 6.7 | Wait 5-10 minutes to allow profile assign to device |  <NL>  |  |  | 
+Row 246:  |  |  | 7 | Open the profile. <NL>  | Verify that no UX issue with the profile and the profile is what you set.  <NL>  |  |  | 
+Row 247:  |  |  | 8 | Reopen the profile and changed the settings to "OFF" and "Save" the change <NL>  | Verify that no UX issue with the profile and the profile is what you set.  <NL>  |  |  | 

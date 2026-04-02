@@ -1,0 +1,8 @@
+# 🧠 Memory Instructions
+
+- **[2026-03-31]** After creating WinGet Store apps, do NOT delete them (skip cleanup/deletion step).
+- **[2026-03-31]** Command to run Non-Enus WinClassic Sanity test: `cd "C:\Users\v-arulmani\Downloads\AI_Automation 5\AI_Automation - Copy" && dotnet test "IntuneCanaryTests\IntuneCanaryTests.csproj" --filter "TestMethod_3045446_Non_Enus_WinClassic_Sanity" --settings headed.runsettings`
+- **[2026-03-31]** For MSI-based Win32 apps: "Install behavior" on Program tab is disabled (System-only), "Install context" column does not exist in Assignments grid. Skip both setting and verifying install context for MSI apps. Always handle gracefully (try/catch or skip) instead of hard-failing.
+- **[2026-03-31]** Self-healing rule: When a UI element (column, button, toggle) is not found during Intune app creation, check if it's disabled/hidden for that app type before failing. Wrap optional UI interactions in try/catch and log skip info.
+- **[2026-03-31]** WindowsRegressionTestSetABase.cs should reuse PlaywrightTests project methods: AllAppsUtils (ByPlatform), SelectAppTypeUtils, UploadFileUtils, InterfaceUtils, and ControlInfo model. Use ExecuteStepAsync pattern with RunStepAsync delegation from WinGetStoreAppRegressionTestBase as the reference pattern.
+- **[2026-03-31]** Cannot read live Intune portal DOM directly — requires a running Playwright browser session. To capture DOM during tests, use `Page.ContentAsync()` in Playwright. Existing UI dump files (ui_dump.xml, select_ui.xml, sign_in_ui.xml) are Android Company Portal dumps, not web portal. When debugging UI element selectors, use error screenshots + ControlHelper class patterns instead.

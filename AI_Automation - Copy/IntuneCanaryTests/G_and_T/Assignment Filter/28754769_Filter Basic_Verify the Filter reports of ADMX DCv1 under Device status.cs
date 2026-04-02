@@ -1,0 +1,50 @@
+using Microsoft.Playwright;
+using Microsoft.Playwright.NUnit;
+using NUnit.Framework;
+using System;
+using System.IO;
+using System.Threading.Tasks;
+using DotNetEnv;
+
+namespace IntuneCanaryTests.G_and_T.AssignmentFilter
+{
+    public class Test_28754769_Filter_Basic_Verify_the_Filter_reports_of_ADMX_DCv1_under_Device_status : PageTest
+    {
+        private SecurityBaseline _securityBaseline;
+
+        public override BrowserNewContextOptions ContextOptions()
+        {
+            var certPath = Path.GetFullPath(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "..", "..", "..", "..", "auth-cert", "AIAutoPE_3.pfx"));
+            Console.WriteLine($"Certificate path: {certPath}");
+            return new BrowserNewContextOptions 
+            {
+                ClientCertificates = new[] {
+                    new ClientCertificate {
+                        Origin = "https://certauth.login.microsoftonline.com",
+                        PfxPath = certPath,
+                        Passphrase = "Admin@123"
+                    }
+                }
+            };
+        }
+
+        [SetUp]
+        public void Setup()
+        {
+            _securityBaseline = new SecurityBaseline();
+        }
+
+        [Test]
+        public async Task FilterBasic_VerifyTheFilterReportsOfADMXDCv1UnderDeviceStatus()
+        {
+            Console.WriteLine("Starting test: 28754769_Filter Basic_Verify the Filter reports of ADMX DCv1 under Device status");
+            
+            // Call IPLogin function
+            await _securityBaseline.IPLogin(Page);
+            
+            // Add your test implementation here
+            
+            Console.WriteLine("Test completed successfully!");
+        }
+    }
+}

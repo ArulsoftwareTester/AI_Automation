@@ -1,0 +1,528 @@
+{
+    "testCases": [
+        {
+            "testCaseId": "TC_952276",
+            "testName": "Android_LOB_Required_UserGroup_Install",
+            "description": "[IntuneSA]:[Android]:[Required]:[UserGroup][Apk]:Verify Install is success for all Android devices of user",
+            "category": "AndroidLOB",
+            "priority": "High",
+            "enabled": true,
+            "parameters": {
+                "firstLink": "Apps",
+                "secondLink": "Android",
+                "AppType": "Line-of-business app",
+                "select app package file": "A_Online_Radio_1.0.5.4.apk",
+                "Name": "TC_952276_A_Online_Radio_1.0.5.4.apk",
+                "Description": "TC_952276_A_Online_Radio_1.0.5.4.apk",
+                "Publisher": "AIAuto ddmmyyyymmss",
+                "Targeted platform": "",
+                "Minimum operating system": "Android 5.0 (Lollipop)",
+                "Category": "",
+                "Show this as a featured app": "No",
+                "Information URL": "",
+                "Privacy URL": "",
+                "Developer": "",
+                "Owner": "",
+                "Notes": "",
+                "Logo": "",
+                "Assignments": {
+                    "Required": "Add group",
+                    "Available for enrolled devices": "",
+                    "uninstall": "",
+                    "select groups": "AI_Automation_User_group"
+                },
+                "API parameters": {},
+                "Device Validation": {
+                    "pre-requisite on device": "Enroll one Android device",
+                    "App Installation Validation": "Verify Install is success for all Android devices of user",
+                    "searchTerm": "",
+                    "expectedValue": ""
+                }
+            }
+        },
+        {
+            "testCaseId": "TC_952284",
+            "testName": "Android_LOB_Required_DeviceGroup_Install",
+            "description": "[IntuneSA]:[Android]:[Required]:[DeviceGroup][Apk]:Verify Install is success for all Android devices in group",
+            "category": "AndroidLOB",
+            "priority": "High",
+            "enabled": true,
+            "parameters": {
+                "firstLink": "Apps",
+                "secondLink": "Android",
+                "AppType": "Line-of-business app",
+                "select app package file": "Adobe_Flash_Player_10.3.185.23.apk",
+                "Name": "TC_952284_Adobe_Flash_Player_10.3.185.23.apk",
+                "Description": "TC_952284_Adobe_Flash_Player_10.3.185.23.apk",
+                "Publisher": "AIAuto ddmmyyyymmss",
+                "Targeted platform": "",
+                "Minimum operating system": "Android 5.0 (Lollipop)",
+                "Category": "",
+                "Show this as a featured app": "No",
+                "Information URL": "",
+                "Privacy URL": "",
+                "Developer": "",
+                "Owner": "",
+                "Notes": "",
+                "Logo": "",
+                "Assignments": {
+                    "Required": "Add group",
+                    "Available for enrolled devices": "",
+                    "uninstall": "",
+                    "select groups": "AI_Automation_Device_group"
+                },
+                "API parameters": {},
+                "Device Validation": {
+                    "pre-requisite on device": "Enroll one Android device",
+                    "App Installation Validation": "Verify Install is success for all Android devices in group",
+                    "searchTerm": "",
+                    "expectedValue": ""
+                }
+            }
+        },
+        {
+            "testCaseId": "TC_952918",
+            "testName": "Android_LOB_Uninstall_DeviceGroup",
+            "description": "[IntuneSA]:[Android]:[Uninstall]:[Apk]:[DeviceGroup]:Verify Uninstall is success for all Android devices in Group",
+            "category": "AndroidLOB",
+            "priority": "High",
+            "enabled": true,
+            "parameters": {
+                "firstLink": "Apps",
+                "secondLink": "Android",
+                "AppType": "Line-of-business app",
+                "select app package file": "Adobe_Flash_Player_10.3.185.24.apk",
+                "Name": "TC_952918_Adobe_Flash_Player_10.3.185.24.apk",
+                "Description": "TC_952918_Adobe_Flash_Player_10.3.185.24.apk",
+                "Publisher": "AIAuto ddmmyyyymmss",
+                "Targeted platform": "",
+                "Minimum operating system": "Android 5.0 (Lollipop)",
+                "Category": "",
+                "Show this as a featured app": "No",
+                "Information URL": "",
+                "Privacy URL": "",
+                "Developer": "",
+                "Owner": "",
+                "Notes": "",
+                "Logo": "",
+                "Assignments": {
+                    "Required": "Add group",
+                    "Available for enrolled devices": "",
+                    "uninstall": "Add group",
+                    "select groups": "AI_Automation_Device_group"
+                },
+                "API parameters": {},
+                "Device Validation": {
+                    "pre-requisite on device": "Enroll one Android device",
+                    "App Installation Validation": "Verify Install first, then change targeting to Uninstall and verify Uninstall is success for all Android devices in Group",
+                    "searchTerm": "",
+                    "expectedValue": ""
+                }
+            }
+        },
+        {
+            "testCaseId": "TC_952919",
+            "testName": "Android_LOB_Available_UserGroup_IWPortal",
+            "description": "[IntuneSA]:[Android]:[Available]:[Apk][UserGroup]:Verify App is displayed on IWPortal/SSP and Install is success when IWUser install from SSP/IWPortal",
+            "category": "AndroidLOB",
+            "priority": "High",
+            "enabled": true,
+            "parameters": {
+                "firstLink": "Apps",
+                "secondLink": "Android",
+                "AppType": "Line-of-business app",
+                "select app package file": "Bluetooth Chat.apk",
+                "Name": "TC_952919_Bluetooth Chat.apk",
+                "Description": "TC_952919_Bluetooth Chat.apk",
+                "Publisher": "AIAuto ddmmyyyymmss",
+                "Targeted platform": "",
+                "Minimum operating system": "Android 5.0 (Lollipop)",
+                "Category": "",
+                "Show this as a featured app": "No",
+                "Information URL": "",
+                "Privacy URL": "",
+                "Developer": "",
+                "Owner": "",
+                "Notes": "",
+                "Logo": "",
+                "Assignments": {
+                    "Required": "",
+                    "Available for enrolled devices": "Add group",
+                    "uninstall": "",
+                    "select groups": "AI_Automation_User_group"
+                },
+                "API parameters": {},
+                "Device Validation": {
+                    "pre-requisite on device": "Enroll one Android device",
+                    "App Installation Validation": "Verify App is displayed on IWPortal/SSP and Install is success when IWUser install from SSP/IWPortal",
+                    "searchTerm": "",
+                    "expectedValue": ""
+                }
+            }
+        },
+        {
+            "testCaseId": "TC_952925",
+            "testName": "Android_LOB_Appupdate_Available_UserGroup_V1toV2",
+            "description": "[IntuneSA]:[Android]:[Appupdate]:[Apk][Available][UserGroup]:App V1 is installed on device. Now V1 is updated to V2. Verify V1 is updated to V2.",
+            "category": "AndroidLOB",
+            "priority": "High",
+            "enabled": true,
+            "parameters": {
+                "firstLink": "Apps",
+                "secondLink": "Android",
+                "AppType": "Line-of-business app",
+                "select app package file": "Talking_Caller_ID_Free_2.6.apk",
+                "select app package file V2": "Talking_Caller_ID_Free_2.7.apk",
+                "Name": "TC_952925_Talking_Caller_ID_Free_2.6.apk",
+                "Description": "TC_952925_Talking_Caller_ID_Free_2.6.apk",
+                "Publisher": "AIAuto ddmmyyyymmss",
+                "Targeted platform": "",
+                "Minimum operating system": "Android 5.0 (Lollipop)",
+                "Category": "",
+                "Show this as a featured app": "No",
+                "Information URL": "",
+                "Privacy URL": "",
+                "Developer": "",
+                "Owner": "",
+                "Notes": "",
+                "Logo": "",
+                "Assignments": {
+                    "Required": "",
+                    "Available for enrolled devices": "Add group",
+                    "uninstall": "",
+                    "select groups": "AI_Automation_User_group"
+                },
+                "API parameters": {},
+                "Device Validation": {
+                    "pre-requisite on device": "Enroll one Android device",
+                    "App Installation Validation": "Verify Install V1, then update app from V1 to V2 and verify installed app is updated to V2",
+                    "searchTerm": "",
+                    "expectedValue": ""
+                }
+            }
+        },
+        {
+            "testCaseId": "TC_952934",
+            "testName": "Android_LOB_InstallStatus_Required_DeviceGroup",
+            "description": "[IntuneSA]:[Android]:[InstallStatus]:[Apk]:[Required][DeviceGroup]:IT Pro can see installation status summary for app deployed for Device group as required",
+            "category": "AndroidLOB",
+            "priority": "High",
+            "enabled": true,
+            "parameters": {
+                "firstLink": "Apps",
+                "secondLink": "Android",
+                "AppType": "Line-of-business app",
+                "select app package file": "AppcentreDemo 131.apk",
+                "Name": "TC_952934_AppcentreDemo 131.apk",
+                "Description": "TC_952934_AppcentreDemo 131.apk",
+                "Publisher": "AIAuto ddmmyyyymmss",
+                "Targeted platform": "",
+                "Minimum operating system": "Android 5.0 (Lollipop)",
+                "Category": "",
+                "Show this as a featured app": "No",
+                "Information URL": "",
+                "Privacy URL": "",
+                "Developer": "",
+                "Owner": "",
+                "Notes": "",
+                "Logo": "",
+                "Assignments": {
+                    "Required": "Add group",
+                    "Available for enrolled devices": "",
+                    "uninstall": "",
+                    "select groups": "AI_Automation_Device_group"
+                },
+                "API parameters": {},
+                "Device Validation": {
+                    "pre-requisite on device": "Create Android enrollment",
+                    "App Installation Validation": "IT Pro can see installation status summary for app deployed for Device group as required",
+                    "searchTerm": "",
+                    "expectedValue": ""
+                }
+            }
+        },
+        {
+            "testCaseId": "TC_997399",
+            "testName": "Android_LOB_Requirements_Required_DeviceGroup_OSVersion",
+            "description": "[IntuneSA]:[Android]:[Requirements]:[Apk][Required][DeviceGroup]:Verify Install is success for all Android devices of group which are compliant/meet requirements. Requirements- OS Version",
+            "category": "AndroidLOB",
+            "priority": "High",
+            "enabled": true,
+            "parameters": {
+                "firstLink": "Apps",
+                "secondLink": "Android",
+                "AppType": "Line-of-business app",
+                "select app package file": "com.microsoft.azure.alpha.apk",
+                "Name": "TC_997399_com.microsoft.azure.alpha.apk",
+                "Description": "TC_997399_com.microsoft.azure.alpha.apk",
+                "Publisher": "AIAuto ddmmyyyymmss",
+                "Targeted platform": "",
+                "Minimum operating system": "Android 5.0 (Lollipop)",
+                "Category": "",
+                "Show this as a featured app": "No",
+                "Information URL": "",
+                "Privacy URL": "",
+                "Developer": "",
+                "Owner": "",
+                "Notes": "",
+                "Logo": "",
+                "Create Assignment Filters": true,
+                "Assignments": {
+                    "Required": "Add group",
+                    "Available for enrolled devices": "",
+                    "uninstall": "",
+                    "select groups": "AI_Automation_Device_group"
+                },
+                "API parameters": {},
+                "Device Validation": {
+                    "pre-requisite on device": "Create Android enrollment",
+                    "App Installation Validation": "Verify Install is success for all Android devices of group which are compliant/meet requirements. Requirements- OS Version",
+                    "searchTerm": "",
+                    "expectedValue": ""
+                }
+            }
+        },
+        {
+            "testCaseId": "TC_1306608",
+            "testName": "Android_LOB_Appupdate_Required_DeviceGroup_V1toV2",
+            "description": "[IntuneSA]:[Android]:[Appupdate]:[Apk]:[Required][DeviceGroup]:Verify that App V1 deployed as required is installed for all devices of group. When App V1 is updated to V2, V2 is updated on all devices with V1 installed.",
+            "category": "AndroidLOB",
+            "priority": "High",
+            "enabled": true,
+            "parameters": {
+                "firstLink": "Apps",
+                "secondLink": "Android",
+                "AppType": "Line-of-business app",
+                "select app package file": "HashmapsDogfood 153.apk",
+                "select app package file V2": "HashmapsDogfood 154.apk",
+                "Name": "TC_1306608_HashmapsDogfood 153.apk",
+                "Description": "TC_1306608_HashmapsDogfood 153.apk",
+                "Publisher": "AIAuto ddmmyyyymmss",
+                "Targeted platform": "",
+                "Minimum operating system": "Android 5.0 (Lollipop)",
+                "Category": "",
+                "Show this as a featured app": "No",
+                "Information URL": "",
+                "Privacy URL": "",
+                "Developer": "",
+                "Owner": "",
+                "Notes": "",
+                "Logo": "",
+                "Assignments": {
+                    "Required": "Add group",
+                    "Available for enrolled devices": "",
+                    "uninstall": "",
+                    "select groups": "AI_Automation_Device_group"
+                },
+                "API parameters": {},
+                "Device Validation": {
+                    "pre-requisite on device": "Create Android enrollment",
+                    "App Installation Validation": "Verify V1 installed, then update V1 to V2 and verify V2 is updated on all devices with V1 installed",
+                    "searchTerm": "",
+                    "expectedValue": ""
+                }
+            }
+        },
+        {
+            "testCaseId": "TC_1306612",
+            "testName": "Android_LOB_Appupdate_UninstallOOB_Required_UserGroup_V1toV2",
+            "description": "[IntuneSA]:[Android]:[Appupdate][UninstallOOB]:[Apk]:[Required][UserGroup]:Verify App V1 is installed on devices for user. Uninstall V1 OOB and update V1 to V2 and Verify that V2 is installed on the device.",
+            "category": "AndroidLOB",
+            "priority": "High",
+            "enabled": true,
+            "parameters": {
+                "firstLink": "Apps",
+                "secondLink": "Android",
+                "AppType": "Line-of-business app",
+                "select app package file": "AppcentreDemo 140.apk",
+                "select app package file V2": "AppcentreDemo 143.apk",
+                "Name": "TC_1306612_AppcentreDemo 140.apk",
+                "Description": "TC_1306612_AppcentreDemo 140.apk",
+                "Publisher": "AIAuto ddmmyyyymmss",
+                "Targeted platform": "",
+                "Minimum operating system": "Android 5.0 (Lollipop)",
+                "Category": "",
+                "Show this as a featured app": "No",
+                "Information URL": "",
+                "Privacy URL": "",
+                "Developer": "",
+                "Owner": "",
+                "Notes": "",
+                "Logo": "",
+                "Assignments": {
+                    "Required": "Add group",
+                    "Available for enrolled devices": "",
+                    "uninstall": "",
+                    "select groups": "AI_Automation_User_group"
+                },
+                "API parameters": {},
+                "Device Validation": {
+                    "pre-requisite on device": "Create Android enrollment",
+                    "App Installation Validation": "Verify V1 installed, manually uninstall V1 OOB from device, update V1 to V2, verify V2 is installed on the device",
+                    "searchTerm": "",
+                    "expectedValue": ""
+                }
+            }
+        },
+        {
+            "testCaseId": "TC_3778151",
+            "testName": "Android_LOB_AppDelete_Apk",
+            "description": "[IntuneSA]:[Android]:[AppDelete]:[Apk]:IT Pro can delete app from admin console and app is removed from SSP/IWPortal and not uninstalled from device if already installed",
+            "category": "AndroidLOB",
+            "priority": "High",
+            "enabled": true,
+            "parameters": {
+                "firstLink": "Apps",
+                "secondLink": "Android",
+                "AppType": "Line-of-business app",
+                "select app package file": "demo-app-release.apk",
+                "Name": "TC_3778151_demo-app-release.apk",
+                "Description": "TC_3778151_demo-app-release.apk",
+                "Publisher": "AIAuto ddmmyyyymmss",
+                "Targeted platform": "",
+                "Minimum operating system": "Android 5.0 (Lollipop)",
+                "Category": "",
+                "Show this as a featured app": "No",
+                "Information URL": "",
+                "Privacy URL": "",
+                "Developer": "",
+                "Owner": "",
+                "Notes": "",
+                "Logo": "",
+                "Assignments": {
+                    "Required": "Add group",
+                    "Available for enrolled devices": "",
+                    "uninstall": "",
+                    "select groups": "AI_Automation_User_group"
+                },
+                "API parameters": {},
+                "Device Validation": {
+                    "pre-requisite on device": "Create Android enrollment",
+                    "App Installation Validation": "IT Pro can delete app from admin console and app is removed from SSP/IWPortal and not uninstalled from device if already installed",
+                    "searchTerm": "",
+                    "expectedValue": ""
+                }
+            }
+        },
+        {
+            "testCaseId": "TC_3778332",
+            "testName": "Android_LOB_InstallStatus_Required_UserGroup_InstallFailed",
+            "description": "[IntuneSA]:[Android]:[InstallStatus]:[Apk]:[Required][UserGroup]:[InstallFailed]:IT Pro can see installation status summary with error code for app deployed for User group as required as failed with error",
+            "category": "AndroidLOB",
+            "priority": "High",
+            "enabled": true,
+            "parameters": {
+                "firstLink": "Apps",
+                "secondLink": "Android",
+                "AppType": "Line-of-business app",
+                "select app package file": "Flappy_Bird_v1.3.apk",
+                "Name": "TC_3778332_Flappy_Bird_v1.3.apk",
+                "Description": "TC_3778332_Flappy_Bird_v1.3.apk",
+                "Publisher": "AIAuto ddmmyyyymmss",
+                "Targeted platform": "",
+                "Minimum operating system": "Android 5.0 (Lollipop)",
+                "Category": "",
+                "Show this as a featured app": "No",
+                "Information URL": "",
+                "Privacy URL": "",
+                "Developer": "",
+                "Owner": "",
+                "Notes": "",
+                "Logo": "",
+                "Assignments": {
+                    "Required": "Add group",
+                    "Available for enrolled devices": "",
+                    "uninstall": "",
+                    "select groups": "AI_Automation_User_group"
+                },
+                "API parameters": {},
+                "Device Validation": {
+                    "pre-requisite on device": "Create Android enrollment",
+                    "App Installation Validation": "IT Pro can see installation status summary with error code for app deployed for User group as required as failed with error",
+                    "searchTerm": "",
+                    "expectedValue": ""
+                }
+            }
+        },
+        {
+            "testCaseId": "TC_3778344",
+            "testName": "Android_LOB_Requirements_Required_UserGroup_OSVersion",
+            "description": "[IntuneSA]:[Android]:[Requirements]:[Apk][Required][UserGroup]:Verify Install is success for all Android devices of user which are compliant/meet requirements. Requirements- OS Version",
+            "category": "AndroidLOB",
+            "priority": "High",
+            "enabled": true,
+            "parameters": {
+                "firstLink": "Apps",
+                "secondLink": "Android",
+                "AppType": "Line-of-business app",
+                "select app package file": "NoGravity.apk",
+                "Name": "TC_3778344_NoGravity.apk",
+                "Description": "TC_3778344_NoGravity.apk",
+                "Publisher": "AIAuto ddmmyyyymmss",
+                "Targeted platform": "",
+                "Minimum operating system": "Android 5.0 (Lollipop)",
+                "Category": "",
+                "Show this as a featured app": "No",
+                "Information URL": "",
+                "Privacy URL": "",
+                "Developer": "",
+                "Owner": "",
+                "Notes": "",
+                "Logo": "",
+                "Assignments": {
+                    "Required": "Add group",
+                    "Available for enrolled devices": "",
+                    "uninstall": "",
+                    "select groups": "AI_Automation_User_group"
+                },
+                "API parameters": {},
+                "Device Validation": {
+                    "pre-requisite on device": "Create Android enrollment",
+                    "App Installation Validation": "Verify Install is success for all Android devices of user which are compliant/meet requirements. Requirements- OS Version",
+                    "searchTerm": "",
+                    "expectedValue": ""
+                }
+            }
+        },
+        {
+            "testCaseId": "TC_3778361",
+            "testName": "Android_LOB_Publish_Apk",
+            "description": "[IntuneSA]:[Android]:[Publish][Apk]:Verify admin can publish an apk using ibiza",
+            "category": "AndroidLOB",
+            "priority": "High",
+            "enabled": true,
+            "parameters": {
+                "firstLink": "Apps",
+                "secondLink": "Android",
+                "AppType": "Line-of-business app",
+                "select app package file": "GoogleTranslate.apk",
+                "Name": "TC_3778361_GoogleTranslate.apk",
+                "Description": "TC_3778361_GoogleTranslate.apk",
+                "Publisher": "AIAuto ddmmyyyymmss",
+                "Targeted platform": "",
+                "Minimum operating system": "Android 5.0 (Lollipop)",
+                "Category": "",
+                "Show this as a featured app": "No",
+                "Information URL": "",
+                "Privacy URL": "",
+                "Developer": "",
+                "Owner": "",
+                "Notes": "",
+                "Logo": "",
+                "Assignments": {
+                    "Required": "Add group",
+                    "Available for enrolled devices": "",
+                    "uninstall": "",
+                    "select groups": "AI_Automation_User_group"
+                },
+                "API parameters": {},
+                "Device Validation": {
+                    "pre-requisite on device": "Enroll one Android device",
+                    "App Installation Validation": "Verify admin can publish an apk using ibiza",
+                    "searchTerm": "",
+                    "expectedValue": ""
+                }
+            }
+        }
+    ]
+}

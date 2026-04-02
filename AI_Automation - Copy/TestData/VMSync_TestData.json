@@ -1,0 +1,1412 @@
+{
+  "_comment": "VMSync Test Data - Full MDM Report Validation (Optimized)",
+  "_documentation": {
+    "purpose": "Test cases for VMSync validation with full MDM diagnostic report capture",
+    "optimization": "VMSync executes ONLY ONCE - all tests search the same MDMReport.txt file",
+    "process": [
+      "1. VMSync executes ONCE during test setup to capture COMPLETE MDM diagnostic report",
+      "2. Full HTML report saved to ExpectedResults/MDMReport.txt (plain text format)",
+      "3. ALL test cases search within the SAME MDMReport.txt file for their specific settings",
+      "4. Each test validates its searchTerm and expectedValue from the shared report",
+      "5. Pass if value matches, Fail if not found or mismatched - NO repeated VMSync execution"
+    ],
+    "validation": "Tests validate policy presence anywhere in the shared MDM diagnostic report",
+    "parallelExecution": "Tests execute in 3 parallel batches (VMSync_Batch1, Batch2, Batch3)",
+    "reportLocation": "ExpectedResults/MDMReport.txt (plain text with header + HTML content)",
+    "performance": "Significant improvement: VMSync runs once instead of N times (N = number of test cases)"
+  },
+  "testCases": [
+    {
+      "testCaseId": "TC_28040921",
+      "testName": "Access data sources across domains",
+      "description": "Windows 365 Security Baseline - Access Data Sources Across Domains",
+      "category": "Windows 365 Security Baseline",
+      "priority": "High",
+      "enabled": true,
+      "parameters": {
+        "searchTerm": "InternetZoneAllowAccessToDataSources",
+        "expectedValue": "<enabled /><data id=\"IZ_Partname1406\" value=\"0\" />"
+      }
+    },
+    {
+      "testCaseId": "TC_28040953",
+      "testName": "Allow cut, copy or paste operations from the clipboard via script",
+      "description": "Windows 365 Security Baseline - Allow cut, copy or paste operations from the clipboard via script",
+      "category": "Windows 365 Security Baseline",
+      "priority": "High",
+      "enabled": true,
+      "parameters": {
+        "searchTerm": "InternetZoneAllowCopyPasteViaScript",
+        "expectedValue": "<enabled /><data id=\"IZ_Partname1407\" value=\"0\" />"
+      }
+    },
+    {
+      "testCaseId": "TC_28040969",
+      "testName": "Allow drag and drop or copy and paste files",
+      "description": "Windows 365 Security Baseline - Allow drag and drop or copy and paste files",
+      "category": "Windows 365 Security Baseline",
+      "priority": "High",
+      "enabled": true,
+      "parameters": {
+        "searchTerm": "InternetZoneAllowDragAndDropCopyAndPasteFiles",
+        "expectedValue": "<enabled /><data id=\"IZ_Partname1802\" value=\"0\" />"
+      }
+    },
+    {
+      "testCaseId": "TC_28040995",
+      "testName": "Allow loading of XAML files",
+      "description": "Windows 365 Security Baseline - Allow loading of XAML files",
+      "category": "Windows 365 Security Baseline",
+      "priority": "High",
+      "enabled": true,
+      "parameters": {
+        "searchTerm": "InternetZoneAllowLoadingOfXAMLFiles",
+        "expectedValue": "<enabled /><data id=\"IZ_Partname2402\" value=\"0\" />"
+      }
+    },
+    {
+      "testCaseId": "TC_28041010",
+      "testName": "Allow only approved domains to use ActiveX controls without prompt",
+      "description": "Windows 365 Security Baseline - Allow only approved domains to use ActiveX controls without prompt",
+      "category": "Windows 365 Security Baseline",
+      "priority": "High",
+      "enabled": true,
+      "parameters": {
+        "searchTerm": "InternetZoneAllowOnlyApprovedDomainsToUseActiveXControls",
+        "expectedValue": "<enabled /><data id=\"IZ_Partname120b\" value=\"3\" />"
+      }
+    },
+    {
+      "testCaseId": "TC_28041023",
+      "testName": "Allow only approved domains to use the TDC ActiveX control",
+      "description": "Windows 365 Security Baseline - Allow only approved domains to use the TDC ActiveX control",
+      "category": "Windows 365 Security Baseline",
+      "priority": "Low",
+      "enabled": true,
+      "parameters": {
+        "searchTerm": "InternetZoneAllowOnlyApprovedDomainsToUseTDCActiveXControl",
+        "expectedValue": "<enabled /><data id=\"IZ_Partname120c\" value=\"3\" />"
+      }
+    },
+    {
+      "testCaseId": "TC_28041077",
+      "testName": "Allow scripting of Internet Explorer WebBrowser controls",
+      "description": "Windows 365 Security Baseline - Allow scripting of Internet Explorer WebBrowser controls",
+      "category": "Windows 365 Security Baseline",
+      "priority": "Low",
+      "enabled": true,
+      "parameters": {
+        "searchTerm": "InternetZoneAllowScriptingOfInternetExplorerWebBrowserControls",
+        "expectedValue": "<enabled /><data id=\"IZ_Partname1206\" value=\"0\" />"
+      }
+    },
+    {
+      "testCaseId": "TC_28041148",
+      "testName": "Allow scriptlets",
+      "description": "Windows 365 Security Baseline - Allow scriptlets",
+      "category": "Windows 365 Security Baseline",
+      "priority": "Low",
+      "enabled": true,
+      "parameters": {
+        "searchTerm": "InternetZoneAllowScriptlets",
+        "expectedValue": " <enabled /><data id=\"IZ_Partname1209\" value=\"0\" />"
+      }
+    },
+    {
+      "testCaseId": "TC_28041719",
+      "testName": "Allow updates to status bar via script",
+      "description": "Windows 365 Security Baseline - Allow updates to status bar via script",
+      "category": "Windows 365 Security Baseline",
+      "priority": "Low",
+      "enabled": true,
+      "parameters": {
+        "searchTerm": "InternetZoneAllowUpdatesToStatusBarViaScript",
+        "expectedValue": "<enabled /><data id=\"IZ_Partname2103\" value=\"0\" />"
+      }
+    },
+    {
+      "testCaseId": "TC_28041749",
+      "testName": "Allow VBScript to run in Internet Explorer",
+      "description": "Windows 365 Security Baseline - Allow VBScript to run in Internet Explorer",
+      "category": "Windows 365 Security Baseline",
+      "priority": "Low",
+      "enabled": true,
+      "parameters": {
+        "searchTerm": "InternetZoneAllowVBScriptToRunInInternetExplorer",
+        "expectedValue": "<enabled /><data id=\"IZ_Partname140C\" value=\"0\" />"
+      }
+    },
+    {
+      "testCaseId": "TC_28041775",
+      "testName": "Automatic prompting for file downloads",
+      "description": "Windows 365 Security Baseline - Automatic prompting for file downloads",
+      "category": "Windows 365 Security Baseline",
+      "priority": "Low",
+      "enabled": true,
+      "parameters": {
+        "searchTerm": "InternetZoneAllowAutomaticPromptingForFileDownloads",
+        "expectedValue": "<enabled /><data id=\"IZ_Partname2200\" value=\"0\" />"
+      }
+    },
+    {
+      "testCaseId": "TC_28041786",
+      "testName": "Don't run antimalware programs against ActiveX controls",
+      "description": "Windows 365 Security Baseline - Don't run antimalware programs against ActiveX controls",
+      "category": "Windows 365 Security Baseline",
+      "priority": "Low",
+      "enabled": true,
+      "parameters": {
+        "searchTerm": "InternetZoneDoNotRunAntimalwareAgainstActiveXControls",
+        "expectedValue": "<enabled /><data id=\"IZ_Partname270C\" value=\"3\" />"
+      }
+    },
+    {
+      "testCaseId": "TC_28041794",
+      "testName": "Download signed ActiveX controls",
+      "description": "Windows 365 Security Baseline - Download signed ActiveX controls",
+      "category": "Windows 365 Security Baseline",
+      "priority": "Low",
+      "enabled": true,
+      "parameters": {
+        "searchTerm": "InternetZoneDownloadSignedActiveXControls",
+        "expectedValue": "<enabled /><data id=\"IZ_Partname1001\" value=\"0\" />"
+      }
+    },
+    {
+      "testCaseId": "TC_28041849",
+      "testName": "Enable dragging of content from different domains across windows",
+      "description": "Windows 365 Security Baseline - Enable dragging of content from different domains across windows",
+      "category": "Windows 365 Security Baseline",
+      "priority": "Low",
+      "enabled": true,
+      "parameters": {
+        "searchTerm": "InternetZoneEnableDraggingOfContentFromDifferentDomainsAcrossWindows",
+        "expectedValue": "<enabled /><data id=\"IZ_Partname2709\" value=\"0\" />"
+      }
+    },
+    {
+      "testCaseId": "TC_28041879",
+      "testName": "Enable dragging of content from different domains within a window",
+      "description": "Windows 365 Security Baseline - Enable dragging of content from different domains within a window",
+      "category": "Windows 365 Security Baseline",
+      "priority": "Low",
+      "enabled": true,
+      "parameters": {
+        "searchTerm": "InternetZoneEnableDraggingOfContentFromDifferentDomainsWithinWindows",
+        "expectedValue": "<enabled /><data id=\"IZ_Partname2708\" value=\"0\" />"
+      }
+    },
+    {
+      "testCaseId": "TC_28041902",
+      "testName": "Include local path when user is uploading files to a server",
+      "description": "Windows 365 Security Baseline - Include local path when user is uploading files to a server",
+      "category": "Windows 365 Security Baseline",
+      "priority": "Low",
+      "enabled": true,
+      "parameters": {
+        "searchTerm": "InternetZoneIncludeLocalPathWhenUploadingFilesToServer",
+        "expectedValue": "<enabled /><data id=\"IZ_Partname160A\" value=\"0\" />"
+      }
+    },
+    {
+      "testCaseId": "TC_28041954",
+      "testName": "Initialize and script ActiveX controls not marked as safe",
+      "description": "Windows 365 Security Baseline - Initialize and script ActiveX controls not marked as safe",
+      "category": "Windows 365 Security Baseline",
+      "priority": "Low",
+      "enabled": true,
+      "parameters": {
+        "searchTerm": "InternetZoneInitializeAndScriptActiveXControls",
+        "expectedValue": "<enabled /><data id=\"IZ_Partname1201\" value=\"0\" />"
+      }
+    },
+    {
+      "testCaseId": "TC_28041994",
+      "testName": "Java permissions",
+      "description": "Windows 365 Security Baseline - Java permissions",
+      "category": "Windows 365 Security Baseline",
+      "priority": "Low",
+      "enabled": true,
+      "parameters": {
+        "searchTerm": "InternetZoneJavaPermissions",
+        "expectedValue": "<enabled /><data id=\"IZ_Partname1C00\" value=\"65536\" />"
+      }
+    },
+    {
+      "testCaseId": "TC_28042034",
+      "testName": "Launching applications and files in an IFRAME",
+      "description": "Windows 365 Security Baseline - Launching applications and files in an IFRAME",
+      "category": "Windows 365 Security Baseline",
+      "priority": "Low",
+      "enabled": true,
+      "parameters": {
+        "searchTerm": "InternetZoneLaunchingApplicationsAndFilesInIFRAME",
+        "expectedValue": "<enabled /><data id=\"IZ_Partname1804\" value=\"0\" />"
+      }
+    },
+    {
+      "testCaseId": "TC_28042156",
+      "testName": "Logon options",
+      "description": "Windows 365 Security Baseline - Logon options",
+      "category": "Windows 365 Security Baseline",
+      "priority": "Low",
+      "enabled": true,
+      "parameters": {
+        "searchTerm": "InternetZoneLogonOptions",
+        "expectedValue": "<enabled /><data id=\"IZ_Partname1C00\" value=\"65536\" />"
+      }
+    },
+    {
+      "testCaseId": "TC_28042269",
+      "testName": "Navigate windows and frames across different domains",
+      "description": "Windows 365 Security Baseline - Navigate windows and frames across different domains",
+      "category": "Windows 365 Security Baseline",
+      "priority": "Low",
+      "enabled": true,
+      "parameters": {
+        "searchTerm": "InternetZoneNavigateWindowsAndFrames",
+        "expectedValue": "<enabled /><data id=\"IZ_Partname1607\" value=\"0\" />"
+      }
+    },
+    {
+      "testCaseId": "TC_28042306",
+      "testName": "Run .NET Framework-reliant components not signed with Authenticode",
+      "description": "Windows 365 Security Baseline - Run .NET Framework-reliant components not signed with Authenticode",
+      "category": "Windows 365 Security Baseline",
+      "priority": "Low",
+      "enabled": true,
+      "parameters": {
+        "searchTerm": "InternetZoneAllowNETFrameworkReliantComponents",
+        "expectedValue": "<enabled/><data id=\"IZ_Partname2004\" value=\"0\" />"
+      }
+    },
+    {
+      "testCaseId": "TC_28042322",
+      "testName": "Run .NET Framework-reliant components signed with Authenticode",
+      "description": "Windows 365 Security Baseline - Run .NET Framework-reliant components signed with Authenticode",
+      "category": "Windows 365 Security Baseline",
+      "priority": "Low",
+      "enabled": true,
+      "parameters": {
+        "searchTerm": "InternetZoneRunNETFrameworkReliantComponentsSignedWithAuthenticode",
+        "expectedValue": "<enabled /><data id=\"IZ_Partname2001\" value=\"0\" />"
+      }
+    },
+    {
+      "testCaseId": "TC_28042406",
+      "testName": "Turn on Cross-Site Scripting Filter",
+      "description": "Windows 365 Security Baseline - Turn on Cross-Site Scripting Filter",
+      "category": "Windows 365 Security Baseline",
+      "priority": "Low",
+      "enabled": true,
+      "parameters": {
+        "searchTerm": "InternetZoneEnableCrossSiteScriptingFilter",
+        "expectedValue": "<enabled /><data id=\"IZ_Partname1409\" value=\"0\" />"
+      }
+    },
+    {
+      "testCaseId": "TC_28042470",
+      "testName": "Turn on Protected Mode",
+      "description": "Windows 365 Security Baseline - Turn on Protected Mode",
+      "category": "Windows 365 Security Baseline",
+      "priority": "Low",
+      "enabled": true,
+      "parameters": {
+        "searchTerm": "InternetZoneEnableProtectedMode",
+        "expectedValue": "<enabled /><data id=\"IZ_Partname2500\" value=\"0\" />"
+      }
+    },
+    {
+      "testCaseId": "TC_28042485",
+      "testName": "Turn on SmartScreen Filter scan",
+      "description": "Windows 365 Security Baseline - Turn on SmartScreen Filter scan",
+      "category": "Windows 365 Security Baseline",
+      "priority": "Low",
+      "enabled": true,
+      "parameters": {
+        "searchTerm": "InternetZoneAllowSmartScreenIE",
+        "expectedValue": "<enabled /><data id=\"IZ_Partname2301\" value=\"0\" />"
+      }
+    },
+    {
+      "testCaseId": "TC_28042554",
+      "testName": "Use Pop-up Blocker",
+      "description": "Windows 365 Security Baseline - Use Pop-up Blocker",
+      "category": "Windows 365 Security Baseline",
+      "priority": "Low",
+      "enabled": true,
+      "parameters": {
+        "searchTerm": "InternetZoneUsePopupBlocker",
+        "expectedValue": "<enabled /><data id=\"IZ_Partname1809\" value=\"0\" />"
+      }
+    },
+    {
+      "testCaseId": "TC_28042614",
+      "testName": "Userdata persistence",
+      "description": "Windows 365 Security Baseline - Userdata persistence",
+      "category": "Windows 365 Security Baseline",
+      "priority": "Low",
+      "enabled": true,
+      "parameters": {
+        "searchTerm": "InternetZoneAllowUserDataPersistence",
+        "expectedValue": "<enabled /><data id=\"IZ_Partname1606\" value=\"0\" />"
+      }
+    },
+    {
+      "testCaseId": "TC_28042670",
+      "testName": "Web sites in less privileged Web content zones can navigate into this zone",
+      "description": "Windows 365 Security Baseline - Web sites in less privileged Web content zones can navigate into this zone",
+      "category": "Windows 365 Security Baseline",
+      "priority": "Low",
+      "enabled": true,
+      "parameters": {
+        "searchTerm": "InternetZoneAllowLessPrivilegedSites",
+        "expectedValue": "<enabled /><data id=\"IZ_Partname2101\" value=\"0\" />"
+      }
+    },
+    {
+      "testCaseId": "TC_28069444",
+      "testName": "Download unsigned ActiveX controls",
+      "description": "Windows 365 Security Baseline - Download unsigned ActiveX controls",
+      "category": "Windows 365 Security Baseline",
+      "priority": "Low",
+      "enabled": true,
+      "parameters": {
+        "searchTerm": "InternetZoneDownloadUnsignedActiveXControls",
+        "expectedValue": "<enabled /><data id=\"IZ_Partname1004\" value=\"0\" />"
+      }
+    },
+    {
+      "testCaseId": "TC_28069484",
+      "testName": "Allow script-initiated windows without size or position constraints",
+      "description": "Windows 365 Security Baseline - Allow script-initiated windows without size or position constraints",
+      "category": "Windows 365 Security Baseline",
+      "priority": "Low",
+      "enabled": true,
+      "parameters": {
+        "searchTerm": "InternetZoneAllowScriptInitiatedWindows",
+        "expectedValue": "<enabled /><data id=\"IZ_Partname2102\" value=\"0\" />"
+      }
+    },
+    {
+      "testCaseId": "TC_28069512",
+      "testName": "Show security warning for potentially unsafe files",
+      "description": "Windows 365 Security Baseline - Show security warning for potentially unsafe files",
+      "category": "Windows 365 Security Baseline",
+      "priority": "Low",
+      "enabled": true,
+      "parameters": {
+        "searchTerm": "InternetZoneShowSecurityWarningForPotentiallyUnsafeFiles",
+        "expectedValue": "<enabled /><data id=\"IZ_Partname1806\" value=\"0\" />"
+      }
+    },
+    {
+      "testCaseId": "TC_28041070",
+      "testName": "Allow script-initiated windows without size or position constraints",
+      "description": "Windows 365 Security Baseline - Allow script-initiated windows without size or position constraints",
+      "category": "Windows 365 Security Baseline",
+      "priority": "Low",
+      "enabled": true,
+      "parameters": {
+        "searchTerm": "RestrictedSitesZoneAllowScriptInitiatedWindows",
+        "expectedValue": "<enabled /><data id=\"IZ_Partname2102\" value=\"0\" />"
+      }
+    },
+    {
+      "testCaseId": "TC_28041812",
+      "testName": "Download unsigned ActiveX controls",
+      "description": "Windows 365 Security Baseline - Download unsigned ActiveX controls",
+      "category": "Windows 365 Security Baseline",
+      "priority": "Low",
+      "enabled": true,
+      "parameters": {
+        "searchTerm": "RestrictedSitesZoneDownloadUnsignedActiveXControls",
+        "expectedValue": "<enabled /><data id=\"IZ_Partname1004\" value=\"0\" />"
+      }
+    },
+    {
+      "testCaseId": "TC_28042347",
+      "testName": "Show security warning for potentially unsafe files",
+      "description": "Windows 365 Security Baseline - Show security warning for potentially unsafe files",
+      "category": "Windows 365 Security Baseline",
+      "priority": "Low",
+      "enabled": true,
+      "parameters": {
+        "searchTerm": "RestrictedSitesZoneShowSecurityWarningForPotentiallyUnsafeFiles",
+        "expectedValue": "<enabled /><data id=\"IZ_Partname1806\" value=\"0\" />"
+      }
+    },
+    {
+      "testCaseId": "TC_28042679",
+      "testName": "Access data sources across domains",
+      "description": "Windows 365 Security Baseline - Access data sources across domains",
+      "category": "Windows 365 Security Baseline",
+      "priority": "High",
+      "enabled": true,
+      "parameters": {
+        "searchTerm": "RestrictedSitesZoneAllowAccessToDataSources",
+        "expectedValue": "<enabled /><data id=\"IZ_Partname1406\" value=\"0\" />"
+      }
+    },
+    {
+      "testCaseId": "TC_28042822",
+      "testName": "Allow active scripting",
+      "description": "Windows 365 Security Baseline - Allow active scripting",
+      "category": "Windows 365 Security Baseline",
+      "priority": "High",
+      "enabled": true,
+      "parameters": {
+        "searchTerm": "RestrictedSitesZoneAllowActiveScripting",
+        "expectedValue": "<enabled /><data id=\"IZ_Partname1400\" value=\"0\" />"
+      }
+    },
+    {
+      "testCaseId": "TC_28042838",
+      "testName": "Allow binary and script behaviors",
+      "description": "Windows 365 Security Baseline - Allow binary and script behaviors",
+      "category": "Windows 365 Security Baseline",
+      "priority": "High",
+      "enabled": true,
+      "parameters": {
+        "searchTerm": "RestrictedSitesZoneAllowBinaryAndScriptBehaviors",
+        "expectedValue": "<enabled /><data id=\"IZ_Partname2000\" value=\"0\" />"
+      }
+    },
+    {
+      "testCaseId": "TC_28042848",
+      "testName": "Allow cut, copy or paste operations from the clipboard via script",
+      "description": "Windows 365 Security Baseline - Allow cut, copy or paste operations from the clipboard via script",
+      "category": "Windows 365 Security Baseline",
+      "priority": "High",
+      "enabled": true,
+      "parameters": {
+        "searchTerm": "RestrictedSitesZoneAllowCopyPasteViaScript",
+        "expectedValue": "<enabled /><data id=\"IZ_Partname1407\" value=\"0\" />"
+      }
+    },
+    {
+      "testCaseId": "TC_28042855",
+      "testName": "Allow drag and drop or copy and paste files",
+      "description": "Windows 365 Security Baseline - Allow drag and drop or copy and paste files",
+      "category": "Windows 365 Security Baseline",
+      "priority": "High",
+      "enabled": true,
+      "parameters": {
+        "searchTerm": "RestrictedSitesZoneAllowDragAndDropCopyAndPasteFiles",
+        "expectedValue": "<enabled /><data id=\"IZ_Partname1802\" value=\"0\" />"
+      }
+    },
+    {
+      "testCaseId": "TC_28042872",
+      "testName": "Allow file downloads",
+      "description": "Windows 365 Security Baseline - Allow file downloads",
+      "category": "Windows 365 Security Baseline",
+      "priority": "High",
+      "enabled": true,
+      "parameters": {
+        "searchTerm": "RestrictedSitesZoneAllowFileDownloads",
+        "expectedValue": "<enabled /><data id=\"IZ_Partname1803\" value=\"0\" />"
+      }
+    },
+    {
+      "testCaseId": "TC_28042902",
+      "testName": "Allow loading of XAML files",
+      "description": "Windows 365 Security Baseline - Allow loading of XAML files",
+      "category": "Windows 365 Security Baseline",
+      "priority": "High",
+      "enabled": true,
+      "parameters": {
+        "searchTerm": "RestrictedSitesZoneAllowLoadingOfXAMLFiles",
+        "expectedValue": "<enabled /><data id=\"IZ_Partname2402\" value=\"0\" />"
+      }
+    },
+    {
+      "testCaseId": "TC_28052783",
+      "testName": "Allow META REFRESH",
+      "description": "Windows 365 Security Baseline - Allow META REFRESH",
+      "category": "Windows 365 Security Baseline",
+      "priority": "High",
+      "enabled": true,
+      "parameters": {
+        "searchTerm": "RestrictedSitesZoneAllowMETAREFRESH",
+        "expectedValue": "<enabled /><data id=\"IZ_Partname1608\" value=\"0\" />"
+      }
+    },
+    {
+      "testCaseId": "TC_28052791",
+      "testName": "Allow only approved domains to use ActiveX controls without prompt",
+      "description": "Windows 365 Security Baseline - Allow only approved domains to use ActiveX controls without prompt",
+      "category": "Windows 365 Security Baseline",
+      "priority": "High",
+      "enabled": true,
+      "parameters": {
+        "searchTerm": "RestrictedSitesZoneAllowOnlyApprovedDomainsToUseActiveXControls",
+        "expectedValue": "<enabled /><data id=\"IZ_Partname120b\" value=\"3\" />"
+      }
+    },
+    {
+      "testCaseId": "TC_28052794",
+      "testName": "Allow only approved domains to use the TDC ActiveX control",
+      "description": "Windows 365 Security Baseline - Allow only approved domains to use the TDC ActiveX control",
+      "category": "Windows 365 Security Baseline",
+      "priority": "High",
+      "enabled": true,
+      "parameters": {
+        "searchTerm": "RestrictedSitesZoneAllowOnlyApprovedDomainsToUseTDCActiveXControl",
+        "expectedValue": "<enabled /><data id=\"IZ_Partname120c\" value=\"3\" />"
+      }
+    },
+    {
+      "testCaseId": "TC_28052816",
+      "testName": "Allow scripting of Internet Explorer WebBrowser controls",
+      "description": "Windows 365 Security Baseline - Allow scripting of Internet Explorer WebBrowser controls",
+      "category": "Windows 365 Security Baseline",
+      "priority": "High",
+      "enabled": true,
+      "parameters": {
+        "searchTerm": "RestrictedSitesZoneAllowScriptingOfInternetExplorerWebBrowserControls",
+        "expectedValue": "<enabled /><data id=\"IZ_Partname1206\" value=\"0\" />"
+      }
+    },
+    {
+      "testCaseId": "TC_28052828",
+      "testName": "Allow scriptlets",
+      "description": "Windows 365 Security Baseline - Allow scriptlets",
+      "category": "Windows 365 Security Baseline",
+      "priority": "High",
+      "enabled": true,
+      "parameters": {
+        "searchTerm": "RestrictedSitesZoneAllowScriptlets",
+        "expectedValue": "<enabled /><data id=\"IZ_Partname1209\" value=\"0\" />"
+      }
+    },
+    {
+      "testCaseId": "TC_28052844",
+      "testName": "Allow updates to status bar via script",
+      "description": "Windows 365 Security Baseline - Allow updates to status bar via script",
+      "category": "Windows 365 Security Baseline",
+      "priority": "High",
+      "enabled": true,
+      "parameters": {
+        "searchTerm": "RestrictedSitesZoneAllowUpdatesToStatusBarViaScript",
+        "expectedValue": "<enabled /><data id=\"IZ_Partname2103\" value=\"0\" />"
+      }
+    },
+    {
+      "testCaseId": "TC_28052848",
+      "testName": "Allow VBScript to run in Internet Explorer",
+      "description": "Windows 365 Security Baseline - Allow VBScript to run in Internet Explorer",
+      "category": "Windows 365 Security Baseline",
+      "priority": "High",
+      "enabled": true,
+      "parameters": {
+        "searchTerm": "RestrictedSitesZoneAllowVBScriptToRunInInternetExplorer",
+        "expectedValue": "<enabled /><data id=\"IZ_Partname140C\" value=\"0\" />"
+      }
+    },
+    {
+      "testCaseId": "TC_28052861",
+      "testName": "Automatic prompting for file downloads",
+      "description": "Windows 365 Security Baseline - Automatic prompting for file downloads",
+      "category": "Windows 365 Security Baseline",
+      "priority": "High",
+      "enabled": true,
+      "parameters": {
+        "searchTerm": "RestrictedSitesZoneAllowAutomaticPromptingForFileDownloads",
+        "expectedValue": "<enabled /><data id=\"IZ_Partname2200\" value=\"0\" />"
+      }
+    },
+    {
+      "testCaseId": "TC_28052876",
+      "testName": "Don't run antimalware programs against ActiveX controls",
+      "description": "Windows 365 Security Baseline - Don't run antimalware programs against ActiveX controls",
+      "category": "Windows 365 Security Baseline",
+      "priority": "High",
+      "enabled": true,
+      "parameters": {
+        "searchTerm": "RestrictedSitesZoneDoNotRunAntimalwareAgainstActiveXControls",
+        "expectedValue": "<enabled /><data id=\"IZ_Partname270C\" value=\"3\" />"
+      }
+    },
+    {
+      "testCaseId": "TC_28052882",
+      "testName": "Download signed ActiveX controls",
+      "description": "Windows 365 Security Baseline - Download signed ActiveX controls",
+      "category": "Windows 365 Security Baseline",
+      "priority": "High",
+      "enabled": true,
+      "parameters": {
+        "searchTerm": "RestrictedSitesZoneDownloadSignedActiveXControls",
+        "expectedValue": "<enabled /><data id=\"IZ_Partname1001\" value=\"0\" />"
+      }
+    },
+    {
+      "testCaseId": "TC_28052962",
+      "testName": "Enable dragging of content from different domains across windows",
+      "description": "Windows 365 Security Baseline - Enable dragging of content from different domains across windows",
+      "category": "Windows 365 Security Baseline",
+      "priority": "High",
+      "enabled": true,
+      "parameters": {
+        "searchTerm": "RestrictedSitesZoneEnableDraggingOfContentFromDifferentDomainsAcrossWindows",
+        "expectedValue": "<enabled /><data id=\"IZ_Partname2709\" value=\"0\" />"
+      }
+    },
+    {
+      "testCaseId": "TC_28052971",
+      "testName": "Enable dragging of content from different domains within a window",
+      "description": "Windows 365 Security Baseline - Enable dragging of content from different domains within a window",
+      "category": "Windows 365 Security Baseline",
+      "priority": "High",
+      "enabled": true,
+      "parameters": {
+        "searchTerm": "RestrictedSitesZoneEnableDraggingOfContentFromDifferentDomainsWithinWindows",
+        "expectedValue": "<enabled /><data id=\"IZ_Partname2708\" value=\"0\" />"
+      }
+    },
+    {
+      "testCaseId": "TC_28052980",
+      "testName": "Include local path when user is uploading files to a server",
+      "description": "Windows 365 Security Baseline - Include local path when user is uploading files to a server",
+      "category": "Windows 365 Security Baseline",
+      "priority": "High",
+      "enabled": true,
+      "parameters": {
+        "searchTerm": "RestrictedSitesZoneIncludeLocalPathWhenUploadingFilesToServer",
+        "expectedValue": "<enabled /><data id=\"IZ_Partname160A\" value=\"0\" />"
+      }
+    },
+    {
+      "testCaseId": "TC_28052985",
+      "testName": "Initialize and script ActiveX controls not marked as safe",
+      "description": "Windows 365 Security Baseline - Initialize and script ActiveX controls not marked as safe",
+      "category": "Windows 365 Security Baseline",
+      "priority": "High",
+      "enabled": true,
+      "parameters": {
+        "searchTerm": "RestrictedSitesZoneInitializeAndScriptActiveXControls",
+        "expectedValue": "<enabled /><data id=\"IZ_Partname1201\" value=\"0\" />"
+      }
+    },
+    {
+      "testCaseId": "TC_28052992",
+      "testName": "Java permissions",
+      "description": "Windows 365 Security Baseline - Java permissions",
+      "category": "Windows 365 Security Baseline",
+      "priority": "High",
+      "enabled": true,
+      "parameters": {
+        "searchTerm": "RestrictedSitesZoneJavaPermissions",
+        "expectedValue": "<enabled /><data id=\"IZ_Partname1C00\" value=\"65536\" />"
+      }
+    },
+    {
+      "testCaseId": "TC_28053005",
+      "testName": "Launching applications and files in an IFRAME",
+      "description": "Windows 365 Security Baseline - Launching applications and files in an IFRAME",
+      "category": "Windows 365 Security Baseline",
+      "priority": "High",
+      "enabled": true,
+      "parameters": {
+        "searchTerm": "RestrictedSitesZoneLaunchingApplicationsAndFilesInIFRAME",
+        "expectedValue": "<enabled /><data id=\"IZ_Partname1804\" value=\"0\" />"
+      }
+    },
+    {
+      "testCaseId": "TC_28053009",
+      "testName": "Logon options",
+      "description": "Windows 365 Security Baseline - Logon options",
+      "category": "Windows 365 Security Baseline",
+      "priority": "High",
+      "enabled": true,
+      "parameters": {
+        "searchTerm": "RestrictedSitesZoneLogonOptions",
+        "expectedValue": "<enabled /><data id=\"IZ_Partname1A00\" value=\"65536\" />"
+      }
+    },
+    {
+      "testCaseId": "TC_28053016",
+      "testName": "Navigate windows and frames across different domains",
+      "description": "Windows 365 Security Baseline - Navigate windows and frames across different domains",
+      "category": "Windows 365 Security Baseline",
+      "priority": "High",
+      "enabled": true,
+      "parameters": {
+        "searchTerm": "RestrictedSitesZoneNavigateWindowsAndFrames",
+        "expectedValue": "<enabled /><data id=\"IZ_Partname1607\" value=\"0\" />"
+      }
+    },
+    {
+      "testCaseId": "TC_28053058",
+      "testName": "Run .NET Framework-reliant components not signed with Authenticode",
+      "description": "Windows 365 Security Baseline - Run .NET Framework-reliant components not signed with Authenticode",
+      "category": "Windows 365 Security Baseline",
+      "priority": "High",
+      "enabled": true,
+      "parameters": {
+        "searchTerm": "RestrictedSitesZoneAllowNETFrameworkReliantComponents",
+        "expectedValue": "<enabled/><data id=\"IZ_Partname2004\" value=\"0\" />"
+      }
+    },
+    {
+      "testCaseId": "TC_28053061",
+      "testName": "Run .NET Framework-reliant components signed with Authenticode",
+      "description": "Windows 365 Security Baseline - Run .NET Framework-reliant components signed with Authenticode",
+      "category": "Windows 365 Security Baseline",
+      "priority": "High",
+      "enabled": true,
+      "parameters": {
+        "searchTerm": "RestrictedSitesZoneRunNETFrameworkReliantComponentsSignedWithAuthenticode",
+        "expectedValue": "<enabled /><data id=\"IZ_Partname2001\" value=\"0\" />"
+      }
+    },
+    {
+      "testCaseId": "TC_28053192",
+      "testName": "Run ActiveX controls and plugins",
+      "description": "Windows 365 Security Baseline - Run ActiveX controls and plugins",
+      "category": "Windows 365 Security Baseline",
+      "priority": "High",
+      "enabled": true,
+      "parameters": {
+        "searchTerm": "RestrictedSitesZoneRunActiveXControlsAndPlugins",
+        "expectedValue": "<enabled /><data id=\"IZ_Partname1409\" value=\"0\" />"
+      }
+    },
+    {
+      "testCaseId": "TC_28053202",
+      "testName": "Script ActiveX controls marked safe for scripting",
+      "description": "Windows 365 Security Baseline - Script ActiveX controls marked safe for scripting",
+      "category": "Windows 365 Security Baseline",
+      "priority": "High",
+      "enabled": true,
+      "parameters": {
+        "searchTerm": "RestrictedSitesZoneScriptActiveXControlsMarkedSafeForScripting",
+        "expectedValue": "<enabled /><data id=\"IZ_Partname1405\" value=\"0\" />"
+      }
+    },
+    {
+      "testCaseId": "TC_28054078",
+      "testName": "Scripting of Java applets",
+      "description": "Windows 365 Security Baseline - Scripting of Java applets",
+      "category": "Windows 365 Security Baseline",
+      "priority": "High",
+      "enabled": true,
+      "parameters": {
+        "searchTerm": "RestrictedSitesZoneScriptingOfJavaApplets",
+        "expectedValue": "<enabled /><data id=\"IZ_Partname1402\" value=\"0\" />"
+      }
+    },
+    {
+      "testCaseId": "TC_28054113",
+      "testName": "Turn on Cross-Site Scripting Filter",
+      "description": "Windows 365 Security Baseline - Turn on Cross-Site Scripting Filter",
+      "category": "Windows 365 Security Baseline",
+      "priority": "High",
+      "enabled": true,
+      "parameters": {
+        "searchTerm": "RestrictedSitesZoneEnableCrossSiteScriptingFilter",
+        "expectedValue": "<enabled /><data id=\"IZ_Partname1409\" value=\"0\" />"
+      }
+    },
+    {
+      "testCaseId": "TC_28054119",
+      "testName": "Turn on Protected Mode",
+      "description": "Windows 365 Security Baseline - Turn on Protected Mode",
+      "category": "Windows 365 Security Baseline",
+      "priority": "High",
+      "enabled": true,
+      "parameters": {
+        "searchTerm": "RestrictedSitesZoneTurnOnProtectedMode",
+        "expectedValue": "<enabled /><data id=\"IZ_Partname2500\" value=\"0\" />"
+      }
+    },
+    {
+      "testCaseId": "TC_28054129",
+      "testName": "Turn on SmartScreen Filter scan",
+      "description": "Windows 365 Security Baseline - Turn on SmartScreen Filter scan",
+      "category": "Windows 365 Security Baseline",
+      "priority": "High",
+      "enabled": true,
+      "parameters": {
+        "searchTerm": "RestrictedSitesZoneAllowSmartScreenIE",
+        "expectedValue": "<enabled /><data id=\"IZ_Partname2301\" value=\"0\" />"
+      }
+    },
+    {
+      "testCaseId": "TC_28054146",
+      "testName": "Use Pop-up Blocker",
+      "description": "Windows 365 Security Baseline - Use Pop-up Blocker",
+      "category": "Windows 365 Security Baseline",
+      "priority": "High",
+      "enabled": true,
+      "parameters": {
+        "searchTerm": "RestrictedSitesZoneUsePopupBlocker",
+        "expectedValue": "<enabled /><data id=\"IZ_Partname1809\" value=\"0\" />"
+      }
+    },
+    {
+      "testCaseId": "TC_28054163",
+      "testName": "Userdata persistence",
+      "description": "Windows 365 Security Baseline - Userdata persistence",
+      "category": "Windows 365 Security Baseline",
+      "priority": "High",
+      "enabled": true,
+      "parameters": {
+        "searchTerm": "RestrictedSitesZoneAllowUserDataPersistence",
+        "expectedValue": "<enabled /><data id=\"IZ_Partname1606\" value=\"0\" />"
+      }
+    },
+    {
+      "testCaseId": "TC_28054177",
+      "testName": "Web sites in less privileged Web content zones can navigate into this zone",
+      "description": "Windows 365 Security Baseline - Web sites in less privileged Web content zones can navigate into this zone",
+      "category": "Windows 365 Security Baseline",
+      "priority": "High",
+      "enabled": true,
+      "parameters": {
+        "searchTerm": "RestrictedSitesZoneAllowLessPrivilegedSites",
+        "expectedValue": "<enabled /><data id=\"IZ_Partname2101\" value=\"0\" />"
+      }
+    },
+    {
+      "testCaseId": "TC_28013230",
+      "testName": "AdministrativeTemplates_InternetExplorer_AdvancedPageAllowSoftwareToRunOrInstallEvenIfTheSignatureIsInvalid",
+      "description": "Windows 365 Security Baseline - Allow software to run or install even if the signature is invalid Test",
+      "category": "Windows 365 Security Baseline",
+      "priority": "High",
+      "enabled": true,
+      "parameters": {
+        "searchTerm": "AllowSoftwareWhenSignatureIsInvalid",
+        "expectedValue": "<enabled />"
+      }
+    },
+    {
+      "testCaseId": "TC_28013438",
+      "testName": "AdministrativeTemplates_InternetExplorer_SecurityPage",
+      "description": "Windows 365 Security Baseline - Security Page Test",
+      "category": "Windows 365 Security Baseline",
+      "priority": "High",
+      "enabled": true,
+      "parameters": {
+        "searchTerm": "IncludeAllNetworkPaths",
+        "expectedValue": "<enabled />"
+      }
+    },
+    {
+      "testCaseId": "TC_28013606",
+      "testName": "AdministrativeTemplates_InternetExplorer_IntranetZoneDontRunAntimalwareProgramsAgainstActiveXControls",
+      "description": "Windows 365 Security Baseline - Don't run antimalware programs against ActiveX controls Test",
+      "category": "Windows 365 Security Baseline",
+      "priority": "High",
+      "enabled": true,
+      "parameters": {
+        "searchTerm": "IntranetZoneDoNotRunAntimalwareAgainstActiveXControls",
+        "expectedValue": "<enabled />"
+      }
+    },
+    {
+      "testCaseId": "TC_28014391",
+      "testName": "AdministrativeTemplates_InternetExplorer_LocalMachineZoneDontRunAntimalwareProgramsAgainstActiveXControls",
+      "description": "Windows 365 Security Baseline - Don't run antimalware programs against ActiveX controls Test",
+      "category": "Windows 365 Security Baseline",
+      "priority": "High",
+      "enabled": true,
+      "parameters": {
+        "searchTerm": "LocalMachineZoneDoNotRunAntimalwareAgainstActiveXControls",
+        "expectedValue": "<enabled />"
+      }
+    },
+    {
+      "testCaseId": "TC_28037138",
+      "testName": "AdministrativeTemplates_InternetExplorer_InternetControlPanel",
+      "description": "Windows 365 Security Baseline - Internet Control Panel Test",
+      "category": "Windows 365 Security Baseline",
+      "priority": "High",
+      "enabled": true,
+      "parameters": {
+        "searchTerm": "DisableIgnoringCertificateErrors",
+        "expectedValue": "<enabled />"
+      }
+    },
+    {
+      "testCaseId": "TC_28037152",
+      "testName": "AdministrativeTemplates_InternetExplorer_LockedDownInternetZone",
+      "description": "Windows 365 Security Baseline - Locked-Down Internet Zone Test",
+      "category": "Windows 365 Security Baseline",
+      "priority": "High",
+      "enabled": true,
+      "parameters": {
+        "searchTerm": "LockedDownInternetZoneAllowSmartScreenIE",
+        "expectedValue": "<enabled />"
+      }
+    },
+    {
+      "testCaseId": "TC_28037201",
+      "testName": "AdministrativeTemplates_InternetExplorer_LockedDownIntranetZone",
+      "description": "Windows 365 Security Baseline - Locked-Down Intranet Zone Test",
+      "category": "Windows 365 Security Baseline",
+      "priority": "High",
+      "enabled": true,
+      "parameters": {
+        "searchTerm": "LockedDownIntranetJavaPermissions",
+        "expectedValue": "<enabled />"
+      }
+    },
+    {
+      "testCaseId": "TC_28037225",
+      "testName": "AdministrativeTemplates_InternetExplorer_LockedDownRestrictedSitesZoneTurnOnSmartScreenFilterScan",
+      "description": "Windows 365 Security Baseline - Turn on SmartScreen Filter scan Test",
+      "category": "Windows 365 Security Baseline",
+      "priority": "High",
+      "enabled": true,
+      "parameters": {
+        "searchTerm": "LockedDownRestrictedSitesZoneAllowSmartScreenIE",
+        "expectedValue": "<enabled />"
+      }
+    },
+    {
+      "testCaseId": "TC_28037231",
+      "testName": "AdministrativeTemplates_InternetExplorer_LockedDownLocalMachineZone",
+      "description": "Windows 365 Security Baseline - Locked-Down Local Machine Zone Test",
+      "category": "Windows 365 Security Baseline",
+      "priority": "High",
+      "enabled": true,
+      "parameters": {
+        "searchTerm": "LockedDownLocalMachineZoneJavaPermissions",
+        "expectedValue": "<enabled />"
+      }
+    },
+    {
+      "testCaseId": "TC_28037233",
+      "testName": "AdministrativeTemplates_InternetExplorer_LockedDownTrustedSitesZone",
+      "description": "Windows 365 Security Baseline - Locked-Down Trusted Sites Zone Test",
+      "category": "Windows 365 Security Baseline",
+      "priority": "High",
+      "enabled": true,
+      "parameters": {
+        "searchTerm": "LockedDownTrustedSitesZoneJavaPermissions",
+        "expectedValue": "<enabled />"
+      }
+    },
+    {
+      "testCaseId": "TC_28037240",
+      "testName": "AdministrativeTemplates_InternetExplorer_TrustedSitesZoneDontRunAntimalwareProgramsAgainstActiveXControls",
+      "description": "Windows 365 Security Baseline - Don't run antimalware programs against ActiveX controls Test",
+      "category": "Windows 365 Security Baseline",
+      "priority": "High",
+      "enabled": true,
+      "parameters": {
+        "searchTerm": "TrustedSitesZoneDoNotRunAntimalwareAgainstActiveXControls",
+        "expectedValue": "<enabled />"
+      }
+    },
+    {
+      "testCaseId": "TC_28037340",
+      "testName": "AdministrativeTemplates_InternetExplorer_SecurityZonesDoNotAllowUsersToAddDeleteSites",
+      "description": "Windows 365 Security Baseline - Do not allow users to add/delete sites Test",
+      "category": "Windows 365 Security Baseline",
+      "priority": "High",
+      "enabled": true,
+      "parameters": {
+        "searchTerm": "DoNotAllowUsersToAddSites",
+        "expectedValue": "<enabled />"
+      }
+    },
+    {
+      "testCaseId": "TC_28037372",
+      "testName": "AdministrativeTemplates_InternetExplorer_AddonManagement",
+      "description": "Windows 365 Security Baseline - Add-on Management Test",
+      "category": "Windows 365 Security Baseline",
+      "priority": "High",
+      "enabled": true,
+      "parameters": {
+        "searchTerm": "RemoveRunThisTimeButtonForOutdatedActiveXControls",
+        "expectedValue": "<enabled />"
+      }
+    },
+    {
+      "testCaseId": "TC_28037410",
+      "testName": "AdministrativeTemplates_InternetExplorer_ConsistentMimeHandling",
+      "description": "Windows 365 Security Baseline - Consistent Mime Handling Test",
+      "category": "Windows 365 Security Baseline",
+      "priority": "High",
+      "enabled": true,
+      "parameters": {
+        "searchTerm": "ConsistentMimeHandlingInternetExplorerProcesses",
+        "expectedValue": "<enabled />"
+      }
+    },
+    {
+      "testCaseId": "TC_28037442",
+      "testName": "AdministrativeTemplates_InternetExplorer_MimeSniffingSafetyFeature",
+      "description": "Windows 365 Security Baseline - Mime Sniffing Safety Feature Test",
+      "category": "Windows 365 Security Baseline",
+      "priority": "High",
+      "enabled": true,
+      "parameters": {
+        "searchTerm": "MimeSniffingSafetyFeatureInternetExplorerProcesses",
+        "expectedValue": "<enabled />"
+      }
+    },
+    {
+      "testCaseId": "TC_28037444",
+      "testName": "AdministrativeTemplates_InternetExplorer_MKProtocolSecurityRestriction",
+      "description": "Windows 365 Security Baseline - MK Protocol Security Restriction Test",
+      "category": "Windows 365 Security Baseline",
+      "priority": "High",
+      "enabled": true,
+      "parameters": {
+        "searchTerm": "MKProtocolSecurityRestrictionInternetExplorerProcesses",
+        "expectedValue": "<enabled />"
+      }
+    },
+    {
+      "testCaseId": "TC_28037448",
+      "testName": "AdministrativeTemplates_InternetExplorer_NotificationBar",
+      "description": "Windows 365 Security Baseline - Notification bar Test",
+      "category": "Windows 365 Security Baseline",
+      "priority": "High",
+      "enabled": true,
+      "parameters": {
+        "searchTerm": "NotificationBarInternetExplorerProcesses",
+        "expectedValue": "<enabled />"
+      }
+    },
+    {
+      "testCaseId": "TC_28037518",
+      "testName": "AdministrativeTemplates_InternetExplorer_ProtectionFromZoneElevation",
+      "description": "Windows 365 Security Baseline - Protection From Zone Elevation Test",
+      "category": "Windows 365 Security Baseline",
+      "priority": "High",
+      "enabled": true,
+      "parameters": {
+        "searchTerm": "ProtectionFromZoneElevationInternetExplorerProcesses",
+        "expectedValue": "<enabled />"
+      }
+    },
+    {
+      "testCaseId": "TC_28037520",
+      "testName": "AdministrativeTemplates_InternetExplorer_RestrictActiveXInstall",
+      "description": "Windows 365 Security Baseline - Restrict ActiveX Install Test",
+      "category": "Windows 365 Security Baseline",
+      "priority": "High",
+      "enabled": true,
+      "parameters": {
+        "searchTerm": "RestrictActiveXInstallInternetExplorerProcesses",
+        "expectedValue": "<enabled />"
+      }
+    },
+    {
+      "testCaseId": "TC_28037524",
+      "testName": "AdministrativeTemplates_InternetExplorer_RestrictFileDownload",
+      "description": "Windows 365 Security Baseline - Restrict File Download Test",
+      "category": "Windows 365 Security Baseline",
+      "priority": "High",
+      "enabled": true,
+      "parameters": {
+        "searchTerm": "RestrictFileDownloadInternetExplorerProcesses",
+        "expectedValue": "<enabled />"
+      }
+    },
+    {
+      "testCaseId": "TC_28037525",
+      "testName": "AdministrativeTemplates_InternetExplorer_ScriptedWindowSecurityRestrictions",
+      "description": "Windows 365 Security Baseline - Scripted Window Security Restrictions Test",
+      "category": "Windows 365 Security Baseline",
+      "priority": "High",
+      "enabled": true,
+      "parameters": {
+        "searchTerm": "ScriptedWindowSecurityRestrictionsInternetExplorerProcesses",
+        "expectedValue": "<enabled />"
+      }
+    },
+    {
+      "testCaseId": "TC_29889962",
+      "testName": "AdministrativeTemplates_InternetExplorer_AdvancedPageCheckForServerCertificateRevocation",
+      "description": "Windows 365 Security Baseline - Check for server certificate revocation Test",
+      "category": "Windows 365 Security Baseline",
+      "priority": "High",
+      "enabled": true,
+      "parameters": {
+        "searchTerm": "CheckServerCertificateRevocation",
+        "expectedValue": "<enabled />"
+      }
+    },
+    {
+      "testCaseId": "TC_29890079",
+      "testName": "AdministrativeTemplates_InternetExplorer_AdvancedPageCheckForSignaturesOnDownloadedPrograms",
+      "description": "Windows 365 Security Baseline - Check for signatures on downloaded programs Test",
+      "category": "Windows 365 Security Baseline",
+      "priority": "High",
+      "enabled": true,
+      "parameters": {
+        "searchTerm": "CheckSignaturesOnDownloadedPrograms",
+        "expectedValue": "<enabled />"
+      }
+    },
+    {
+      "testCaseId": "TC_29890111",
+      "testName": "AdministrativeTemplates_InternetExplorer_AdvancedPageDoNotAllowActiveXControlsToRunInProtectedModeWhenEnhancedProtectedModeIsEnabled",
+      "description": "Windows 365 Security Baseline - Do not allow ActiveX controls to run in Protected Mode when Enhanced Protected Mode is enabled Test",
+      "category": "Windows 365 Security Baseline",
+      "priority": "High",
+      "enabled": true,
+      "parameters": {
+        "searchTerm": "DoNotAllowActiveXControlsInProtectedMode",
+        "expectedValue": "<enabled />"
+      }
+    },
+    {
+      "testCaseId": "TC_29903229",
+      "testName": "AdministrativeTemplates_InternetExplorer_AdvancedPageTurnOffEncryptionSupport",
+      "description": "Windows 365 Security Baseline - Turn off encryption support Test",
+      "category": "Windows 365 Security Baseline",
+      "priority": "High",
+      "enabled": true,
+      "parameters": {
+        "searchTerm": "DisableEncryptionSupport",
+        "expectedValue": "<enabled />"
+      }
+    },
+    {
+      "testCaseId": "TC_29903238",
+      "testName": "AdministrativeTemplates_InternetExplorer_AdvancedPageTurnOn64BitTabProcessesWhenRunningInEnhancedProtectedModeOn64BitVersionsOfWindows",
+      "description": "Windows 365 Security Baseline - Turn on 64-bit tab processes when running in Enhanced Protected Mode on 64-bit versions of Windows Test",
+      "category": "Windows 365 Security Baseline",
+      "priority": "High",
+      "enabled": true,
+      "parameters": {
+        "searchTerm": "DisableProcessesInEnhancedProtectedMode",
+        "expectedValue": "<enabled />"
+      }
+    },
+    {
+      "testCaseId": "TC_29903271",
+      "testName": "AdministrativeTemplates_InternetExplorer_AdvancedPageTurnOnEnhancedProtectedMode",
+      "description": "Windows 365 Security Baseline - Turn on Enhanced Protected Mode Test",
+      "category": "Windows 365 Security Baseline",
+      "priority": "High",
+      "enabled": true,
+      "parameters": {
+        "searchTerm": "AllowEnhancedProtectedMode",
+        "expectedValue": "<enabled />"
+      }
+    },
+    {
+      "testCaseId": "TC_29903504",
+      "testName": "AdministrativeTemplates_InternetExplorer_PreventBypassingSmartScreenFilterWarningsAboutFilesThatAreNotCommonlyDownloadedFromTheInternet",
+      "description": "Windows 365 Security Baseline - Prevent bypassing SmartScreen Filter warnings about files that are not commonly downloaded from the Internet Test",
+      "category": "Windows 365 Security Baseline",
+      "priority": "High",
+      "enabled": true,
+      "parameters": {
+        "searchTerm": "DisableBypassOfSmartScreenWarningsAboutUncommonFiles",
+        "expectedValue": "<enabled />"
+      }
+    },
+    {
+      "testCaseId": "TC_29903530",
+      "testName": "AdministrativeTemplates_InternetExplorer_PreventManagingSmartScreenFilter",
+      "description": "Windows 365 Security Baseline - Prevent managing SmartScreen Filter Test",
+      "category": "Windows 365 Security Baseline",
+      "priority": "High",
+      "enabled": true,
+      "parameters": {
+        "searchTerm": "PreventManagingSmartScreenFilter",
+        "expectedValue": "<enabled />"
+      }
+    },
+    {
+      "testCaseId": "TC_29904546",
+      "testName": "AdministrativeTemplates_InternetExplorer_PreventPerUserInstallationOfActiveXControls",
+      "description": "Windows 365 Security Baseline - Prevent per-user installation of ActiveX controls Test",
+      "category": "Windows 365 Security Baseline",
+      "priority": "High",
+      "enabled": true,
+      "parameters": {
+        "searchTerm": "PreventPerUserInstallationOfActiveXControls",
+        "expectedValue": "<enabled />"
+      }
+    },
+    {
+      "testCaseId": "TC_29904641",
+      "testName": "AdministrativeTemplates_InternetExplorer_PreventBypassingSmartScreenFilterWarnings",
+      "description": "Windows 365 Security Baseline - Prevent bypassing SmartScreen Filter warnings Test",
+      "category": "Windows 365 Security Baseline",
+      "priority": "High",
+      "enabled": true,
+      "parameters": {
+        "searchTerm": "DisableBypassOfSmartScreenWarnings",
+        "expectedValue": "<enabled />"
+      }
+    },
+    {
+      "testCaseId": "TC_29904661",
+      "testName": "AdministrativeTemplates_InternetExplorer_SecurityZonesDoNotAllowUsersToChangePolicies",
+      "description": "Windows 365 Security Baseline - Do not allow users to change policies Test",
+      "category": "Windows 365 Security Baseline",
+      "priority": "High",
+      "enabled": true,
+      "parameters": {
+        "searchTerm": "DoNotAllowUsersToChangePolicies",
+        "expectedValue": "<enabled />"
+      }
+    },
+    {
+      "testCaseId": "TC_29920390",
+      "testName": "AdministrativeTemplates_InternetExplorer_SecurityZonesUseOnlyMachineSettings",
+      "description": "Windows 365 Security Baseline - Use only machine settings Test",
+      "category": "Windows 365 Security Baseline",
+      "priority": "High",
+      "enabled": true,
+      "parameters": {
+        "searchTerm": "SecurityZonesUseOnlyMachineSettings",
+        "expectedValue": "<enabled />"
+      }
+    },
+    {
+      "testCaseId": "TC_29920438",
+      "testName": "AdministrativeTemplates_InternetExplorer_SpecifyUseOfActiveXInstallerServiceForInstallationOfActiveXControls",
+      "description": "Windows 365 Security Baseline - Specify use of ActiveX Installer Service for installation of ActiveX controls Test",
+      "category": "Windows 365 Security Baseline",
+      "priority": "High",
+      "enabled": true,
+      "parameters": {
+        "searchTerm": "SpecifyUseOfActiveXInstallerService",
+        "expectedValue": "<enabled />"
+      }
+    },
+    {
+      "testCaseId": "TC_29920636",
+      "testName": "AdministrativeTemplates_InternetExplorer_TurnOffCrashDetection",
+      "description": "Windows 365 Security Baseline - Turn off Crash Detection Test",
+      "category": "Windows 365 Security Baseline",
+      "priority": "High",
+      "enabled": true,
+      "parameters": {
+        "searchTerm": "DisableCrashDetection",
+        "expectedValue": "<enabled />"
+      }
+    },
+    {
+      "testCaseId": "TC_29920643",
+      "testName": "AdministrativeTemplates_InternetExplorer_TurnOffTheSecuritySettingsCheckFeature",
+      "description": "Windows 365 Security Baseline - Turn off the Security Settings Check feature Test",
+      "category": "Windows 365 Security Baseline",
+      "priority": "High",
+      "enabled": true,
+      "parameters": {
+        "searchTerm": "DisableSecuritySettingsCheck",
+        "expectedValue": "<enabled />"
+      }
+    },
+    {
+      "testCaseId": "TC_29920650",
+      "testName": "AdministrativeTemplates_InternetExplorer_TurnOnTheAutoCompleteFeatureForUserNamesAndPasswordsOnFormsUser",
+      "description": "Windows 365 Security Baseline - Turn on the auto-complete feature for user names and passwords on forms (User) Test",
+      "category": "Windows 365 Security Baseline",
+      "priority": "High",
+      "enabled": true,
+      "parameters": {
+        "searchTerm": "AllowAutoComplete",
+        "expectedValue": "<enabled />"
+      }
+    },
+    {
+      "testCaseId": "TC_29949389",
+      "testName": "AdministrativeTemplates_InternetExplorer_TrustedSitesZoneInitializeAndScriptActiveXControlsNotMarkedAsSafe",
+      "description": "Windows 365 Security Baseline - Initialize and script ActiveX controls not marked as safe Test",
+      "category": "Windows 365 Security Baseline",
+      "priority": "High",
+      "enabled": true,
+      "parameters": {
+        "searchTerm": "TrustedSitesZoneInitializeAndScriptActiveXControls",
+        "expectedValue": "<enabled />"
+      }
+    },
+    {
+      "testCaseId": "TC_29949431",
+      "testName": "AdministrativeTemplates_InternetExplorer_TrustedSitesZoneJavaPermissions",
+      "description": "Windows 365 Security Baseline - Java permissions Test",
+      "category": "Windows 365 Security Baseline",
+      "priority": "High",
+      "enabled": true,
+      "parameters": {
+        "searchTerm": "TrustedSitesZoneJavaPermissions",
+        "expectedValue": "<enabled />"
+      }
+    },
+    {
+      "testCaseId": "TC_29949521",
+      "testName": "AdministrativeTemplates_InternetExplorer_LockedDownRestrictedSitesZoneJavaPermissions",
+      "description": "Windows 365 Security Baseline - Java permissions Test",
+      "category": "Windows 365 Security Baseline",
+      "priority": "High",
+      "enabled": true,
+      "parameters": {
+        "searchTerm": "LockedDownRestrictedSitesZoneJavaPermissions",
+        "expectedValue": "<enabled />"
+      }
+    },
+    {
+      "testCaseId": "TC_29949657",
+      "testName": "AdministrativeTemplates_InternetExplorer_LocalMachineZoneJavaPermissions",
+      "description": "Windows 365 Security Baseline - Java permissions Test",
+      "category": "Windows 365 Security Baseline",
+      "priority": "High",
+      "enabled": true,
+      "parameters": {
+        "searchTerm": "LocalMachineZoneJavaPermissions",
+        "expectedValue": "<enabled />"
+      }
+    },
+    {
+      "testCaseId": "TC_29949711",
+      "testName": "AdministrativeTemplates_InternetExplorer_IntranetZoneInitializeAndScriptActiveXControlsNotMarkedAsSafe",
+      "description": "Windows 365 Security Baseline - Initialize and script ActiveX controls not marked as safe Test",
+      "category": "Windows 365 Security Baseline",
+      "priority": "High",
+      "enabled": true,
+      "parameters": {
+        "searchTerm": "IntranetZoneInitializeAndScriptActiveXControls",
+        "expectedValue": "<enabled />"
+      }
+    },
+    {
+      "testCaseId": "TC_29949760",
+      "testName": "AdministrativeTemplates_InternetExplorer_IntranetZoneJavaPermissions",
+      "description": "Windows 365 Security Baseline - Java permissions Test",
+      "category": "Windows 365 Security Baseline",
+      "priority": "High",
+      "enabled": true,
+      "parameters": {
+        "searchTerm": "IntranetZoneJavaPermissions",
+        "expectedValue": "<enabled />"
+      }
+    },
+      {
+                          "testCaseId":  "TC_28766165",
+                          "testName":  "AdministrativeTemplates_InternetExplorer_AllowfallbacktoSSL3InternetExplorer_Win365",
+                          "description":  "Windows 365 Security Baseline - Allow fallback to SSL 3.0 (Internet Explorer)",
+                          "category":  "Windows 365 Security Baseline",
+                          "priority":  "High",
+                          "enabled":  true,
+                          "parameters":  {
+                                          "searchTerm": "AllowFallbackToSSL3",
+                                           "expectedValue": "<enabled />"
+                                         }
+                      },
+    {
+      "testCaseId": "TC_29950029",
+      "testName": "AdministrativeTemplates_InternetExplorer_AllowFallbackToSSL30InternetExplorer",
+      "description": "Windows 365 Security Baseline - Allow fallback to SSL 3.0 (Internet Explorer) Test",
+      "category": "Windows 365 Security Baseline",
+      "priority": "High",
+      "enabled": true,
+      "parameters": {
+        "searchTerm": "AllowFallbackToSSL3",
+        "expectedValue": "<enabled />"
+      }
+    }
+  ]
+}

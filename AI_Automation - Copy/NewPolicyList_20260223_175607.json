@@ -1,0 +1,62 @@
+[
+  {
+    "PolicyName": "Automation_20260223_175140",
+    "BaselineType": "Windows 365 Security Baseline",
+    "CreatedDateTime": "2026-02-23 17:56:07",
+    "TestName": "ExecuteSampleTest",
+    "ParentDropDown": "Access data sources across domains",
+    "ParentDropDownOption": "Enabled",
+    "ChildDropDown": "Access data sources across domains",
+    "ChildDropDownOption": "Enable"
+  },
+  {
+    "PolicyName": "Automation_20260223_180429",
+    "BaselineType": "Windows 365 Security Baseline",
+    "CreatedDateTime": "2026-02-23 18:08:53",
+    "TestName": "ExecuteSampleTest",
+    "ParentDropDown": "Access data sources across domains",
+    "ParentDropDownOption": "Enabled",
+    "ChildDropDown": "Access data sources across domains",
+    "ChildDropDownOption": "Enable"
+  },
+  {
+    "PolicyName": "Automation_20260223_182606",
+    "BaselineType": "Windows 365 Security Baseline",
+    "CreatedDateTime": "2026-02-23 18:30:36",
+    "TestName": "ExecuteSampleTest",
+    "ParentDropDown": "Access data sources across domains",
+    "ParentDropDownOption": "Enabled",
+    "ChildDropDown": "Access data sources across domains",
+    "ChildDropDownOption": "Enable"
+  },
+  {
+    "PolicyName": "Automation_20260223_184902",
+    "BaselineType": "Windows 365 Security Baseline",
+    "CreatedDateTime": "2026-02-23 18:52:39",
+    "TestName": "ExecuteSampleTest",
+    "ParentDropDown": "Access data sources across domains",
+    "ParentDropDownOption": "Enabled",
+    "ChildDropDown": "Access data sources across domains",
+    "ChildDropDownOption": "Enable"
+  },
+  {
+    "PolicyName": "Automation_20260223_190345",
+    "BaselineType": "Windows 365 Security Baseline",
+    "CreatedDateTime": "2026-02-23 19:08:34",
+    "TestName": "ExecuteSampleTest",
+    "ParentDropDown": "Access data sources across domains",
+    "ParentDropDownOption": "Enabled",
+    "ChildDropDown": "Access data sources across domains",
+    "ChildDropDownOption": "Enable"
+  },
+  {
+    "PolicyName": "Automation_20260223_194227",
+    "BaselineType": "Windows 365 Security Baseline",
+    "CreatedDateTime": "2026-02-23 19:45:55",
+    "TestName": "Execute(TC_28040953)",
+    "ParentDropDown": "Allow cut, copy or paste operations from the clipboard via script",
+    "ParentDropDownOption": "Enabled",
+    "ChildDropDown": "Allow paste operations via script",
+    "ChildDropDownOption": "Enable"
+  }
+]

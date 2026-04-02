@@ -1,0 +1,264 @@
+﻿{
+    "testCases":  [
+                      {
+                          "testCaseId":  "TC_28041994",
+                          "testName":  "Edit_AdministrativeTemplates_InternetZone_Javapermissions_Win365",
+                          "description":  "Edit profile - Java permissions (IZ Internet Zone) - 5th edit instance",
+                          "category":  "Windows 365 Security Baseline",
+                          "priority":  "High",
+                          "enabled":  true,
+                          "parameters":  {
+                                             "firstLink":  "Endpoint security",
+                                             "secondLink":  "Security baselines",
+                                             "secBaselineName":  "Windows 365 Security Baseline",
+                                             "configurationSettings":  "Administrative Templates",
+                                             "parentDropDown":  "Java permissions",
+                                             "parentDropDownOption":  "Disabled",
+                                             "childDropDown":  "Java permissions",
+                                             "childDropDownOption":  "",
+                                             "parentSectionPath":  "Windows Components > Internet Explorer > Internet Control Panel > Security Page > Internet Zone",
+                                             "childSectionPath":  "Windows Components > Internet Explorer > Internet Control Panel > Security Page > Internet Zone"
+                                         }
+                      },
+                      {
+                          "testCaseId":  "TC_28042156",
+                          "testName":  "Edit_AdministrativeTemplates_InternetZone_Logonoptions_Win365",
+                          "description":  "Edit profile - Logon options (IZ Internet Zone) - 5th edit instance",
+                          "category":  "Windows 365 Security Baseline",
+                          "priority":  "High",
+                          "enabled":  true,
+                          "parameters":  {
+                                             "firstLink":  "Endpoint security",
+                                             "secondLink":  "Security baselines",
+                                             "secBaselineName":  "Windows 365 Security Baseline",
+                                             "configurationSettings":  "Administrative Templates",
+                                             "parentDropDown":  "Logon options",
+                                             "parentDropDownOption":  "Not configured",
+                                             "childDropDown":  "Logon options",
+                                             "childDropDownOption":  "",
+                                             "parentSectionPath":  "Windows Components > Internet Explorer > Internet Control Panel > Security Page > Internet Zone",
+                                             "childSectionPath":  "Windows Components > Internet Explorer > Internet Control Panel > Security Page > Internet Zone"
+                                         }
+                      },
+                      {
+                          "testCaseId":  "TC_28052992",
+                          "testName":  "Edit_AdministrativeTemplates_RestrictedSitesZone_Javapermissions_Win365",
+                          "description":  "Edit profile - Java permissions (RSZ Restricted Sites Zone) - 5th edit instance",
+                          "category":  "Windows 365 Security Baseline",
+                          "priority":  "High",
+                          "enabled":  true,
+                          "parameters":  {
+                                             "firstLink":  "Endpoint security",
+                                             "secondLink":  "Security baselines",
+                                             "secBaselineName":  "Windows 365 Security Baseline",
+                                             "configurationSettings":  "Administrative Templates",
+                                             "parentDropDown":  "Java permissions",
+                                             "parentDropDownOption":  "Disabled",
+                                             "childDropDown":  "",
+                                             "childDropDownOption":  "",
+                                             "parentSectionPath":  "Windows Components > Internet Explorer > Internet Control Panel > Security Page > Restricted Sites Zone",
+                                             "childSectionPath":  "Windows Components > Internet Explorer > Internet Control Panel > Security Page > Restricted Sites Zone"
+                                         }
+                      },
+                      {
+                          "testCaseId":  "TC_28053009",
+                          "testName":  "Edit_AdministrativeTemplates_RestrictedSitesZone_Logonoptions_Win365",
+                          "description":  "Edit profile - Logon options (RSZ Restricted Sites Zone) - 5th edit instance",
+                          "category":  "Windows 365 Security Baseline",
+                          "priority":  "High",
+                          "enabled":  true,
+                          "parameters":  {
+                                             "firstLink":  "Endpoint security",
+                                             "secondLink":  "Security baselines",
+                                             "secBaselineName":  "Windows 365 Security Baseline",
+                                             "configurationSettings":  "Administrative Templates",
+                                             "parentDropDown":  "Logon options",
+                                             "parentDropDownOption":  "Not configured",
+                                             "childDropDown":  "",
+                                             "childDropDownOption":  "",
+                                             "parentSectionPath":  "Windows Components > Internet Explorer > Internet Control Panel > Security Page > Restricted Sites Zone",
+                                             "childSectionPath":  "Windows Components > Internet Explorer > Internet Control Panel > Security Page > Restricted Sites Zone"
+                                         }
+                      },
+                      {
+                          "testCaseId":  "TC_28053192",
+                          "testName":  "Edit_AdministrativeTemplates_RestrictedSitesZone_RunActiveXcontrolsandplugins_Win365",
+                          "description":  "Edit profile - Run ActiveX controls and plugins (RSZ Restricted Sites Zone) - 5th edit instance",
+                          "category":  "Windows 365 Security Baseline",
+                          "priority":  "High",
+                          "enabled":  true,
+                          "parameters":  {
+                                             "firstLink":  "Endpoint security",
+                                             "secondLink":  "Security baselines",
+                                             "secBaselineName":  "Windows 365 Security Baseline",
+                                             "configurationSettings":  "Administrative Templates",
+                                             "parentDropDown":  "Run ActiveX controls and plugins",
+                                             "parentDropDownOption":  "Not configured",
+                                             "childDropDown":  "",
+                                             "childDropDownOption":  "",
+                                             "parentSectionPath":  "Windows Components > Internet Explorer > Internet Control Panel > Security Page > Restricted Sites Zone",
+                                             "childSectionPath":  "Windows Components > Internet Explorer > Internet Control Panel > Security Page > Restricted Sites Zone"
+                                         }
+                      },
+                      {
+                          "testCaseId":  "TC_28037201",
+                          "testName":  "Edit_AdministrativeTemplates_InternetExplorer_LockedDownIntranetZone_JavaPermissions_Win365",
+                          "description":  "Edit profile - Java permissions (IE Locked-Down Intranet Zone) - 5th edit instance",
+                          "category":  "Windows 365 Security Baseline",
+                          "priority":  "High",
+                          "enabled":  true,
+                          "parameters":  {
+                                             "firstLink":  "Endpoint security",
+                                             "secondLink":  "Security baselines",
+                                             "secBaselineName":  "Windows 365 Security Baseline",
+                                             "configurationSettings":  "Administrative Templates",
+                                             "parentDropDown":  "Java permissions",
+                                             "parentDropDownOption":  "Disabled",
+                                             "childDropDown":  "Java permissions",
+                                             "childDropDownOption":  "",
+                                             "parentSectionPath":  "Windows Components > Internet Explorer > Internet Control Panel > Security Page > Locked-Down Intranet Zone",
+                                             "childSectionPath":  "Windows Components > Internet Explorer > Internet Control Panel > Security Page > Locked-Down Intranet Zone"
+                                         }
+                      },
+                      {
+                          "testCaseId":  "TC_28037231",
+                          "testName":  "Edit_AdministrativeTemplates_InternetExplorer_LockedDownLocalMachineZone_JavaPermissions_Win365",
+                          "description":  "Edit profile - Java permissions (IE Locked-Down Local Machine Zone) - 5th edit instance",
+                          "category":  "Windows 365 Security Baseline",
+                          "priority":  "High",
+                          "enabled":  true,
+                          "parameters":  {
+                                             "firstLink":  "Endpoint security",
+                                             "secondLink":  "Security baselines",
+                                             "secBaselineName":  "Windows 365 Security Baseline",
+                                             "configurationSettings":  "Administrative Templates",
+                                             "parentDropDown":  "Java permissions",
+                                             "parentDropDownOption":  "Disabled",
+                                             "childDropDown":  "Java permissions",
+                                             "childDropDownOption":  "",
+                                             "parentSectionPath":  "Windows Components > Internet Explorer > Internet Control Panel > Security Page > Locked-Down Local Machine Zone",
+                                             "childSectionPath":  "Windows Components > Internet Explorer > Internet Control Panel > Security Page > Locked-Down Local Machine Zone"
+                                         }
+                      },
+                      {
+                          "testCaseId":  "TC_28037233",
+                          "testName":  "Edit_AdministrativeTemplates_InternetExplorer_LockedDownTrustedSitesZone_JavaPermissions_Win365",
+                          "description":  "Edit profile - Java permissions (IE Locked-Down Trusted Sites Zone) - 5th edit instance",
+                          "category":  "Windows 365 Security Baseline",
+                          "priority":  "High",
+                          "enabled":  true,
+                          "parameters":  {
+                                             "firstLink":  "Endpoint security",
+                                             "secondLink":  "Security baselines",
+                                             "secBaselineName":  "Windows 365 Security Baseline",
+                                             "configurationSettings":  "Administrative Templates",
+                                             "parentDropDown":  "Java permissions",
+                                             "parentDropDownOption":  "Disabled",
+                                             "childDropDown":  "Java permissions",
+                                             "childDropDownOption":  "",
+                                             "parentSectionPath":  "Windows Components > Internet Explorer > Internet Control Panel > Security Page > Locked-Down Trusted Sites Zone",
+                                             "childSectionPath":  "Windows Components > Internet Explorer > Internet Control Panel > Security Page > Locked-Down Trusted Sites Zone"
+                                         }
+                      },
+                      {
+                          "testCaseId":  "TC_29903229",
+                          "testName":  "Edit_AdministrativeTemplates_InternetExplorer_AdvancedPage_TurnOffEncryptionSupport_Win365",
+                          "description":  "Edit profile - Turn off encryption support (IE Advanced Page) - 5th edit instance",
+                          "category":  "Windows 365 Security Baseline",
+                          "priority":  "High",
+                          "enabled":  true,
+                          "parameters":  {
+                                             "firstLink":  "Endpoint security",
+                                             "secondLink":  "Security baselines",
+                                             "secBaselineName":  "Windows 365 Security Baseline",
+                                             "configurationSettings":  "Administrative Templates",
+                                             "parentDropDown":  "Turn off encryption support",
+                                             "parentDropDownOption":  "Not configured",
+                                             "childDropDown":  "",
+                                             "childDropDownOption":  "",
+                                             "parentSectionPath":  "Windows Components > Internet Explorer > Internet Settings > Advanced Page",
+                                             "childSectionPath":  "Windows Components > Internet Explorer > Internet Settings > Advanced Page"
+                                         }
+                      },
+                      {
+                          "testCaseId":  "TC_29949431",
+                          "testName":  "Edit_AdministrativeTemplates_InternetExplorer_TrustedSitesZone_JavaPermissions_Win365",
+                          "description":  "Edit profile - Java permissions (IE Trusted Sites Zone) - 5th edit instance",
+                          "category":  "Windows 365 Security Baseline",
+                          "priority":  "High",
+                          "enabled":  true,
+                          "parameters":  {
+                                             "firstLink":  "Endpoint security",
+                                             "secondLink":  "Security baselines",
+                                             "secBaselineName":  "Windows 365 Security Baseline",
+                                             "configurationSettings":  "Administrative Templates",
+                                             "parentDropDown":  "Java permissions",
+                                             "parentDropDownOption":  "Disabled",
+                                             "childDropDown":  "Java permissions",
+                                             "childDropDownOption":  "",
+                                             "parentSectionPath":  "Windows Components > Internet Explorer > Internet Control Panel > Security Page > Trusted Sites Zone",
+                                             "childSectionPath":  "Windows Components > Internet Explorer > Internet Control Panel > Security Page > Trusted Sites Zone"
+                                         }
+                      },
+                      {
+                          "testCaseId":  "TC_29949521",
+                          "testName":  "Edit_AdministrativeTemplates_InternetExplorer_LockedDownRestrictedSitesZone_JavaPermissions_Win365",
+                          "description":  "Edit profile - Java permissions (IE Locked-Down Restricted Sites Zone) - 5th edit instance",
+                          "category":  "Windows 365 Security Baseline",
+                          "priority":  "High",
+                          "enabled":  true,
+                          "parameters":  {
+                                             "firstLink":  "Endpoint security",
+                                             "secondLink":  "Security baselines",
+                                             "secBaselineName":  "Windows 365 Security Baseline",
+                                             "configurationSettings":  "Administrative Templates",
+                                             "parentDropDown":  "Java permissions",
+                                             "parentDropDownOption":  "Disabled",
+                                             "childDropDown":  "Java permissions",
+                                             "childDropDownOption":  "",
+                                             "parentSectionPath":  "Windows Components > Internet Explorer > Internet Control Panel > Security Page > Locked-Down Restricted Sites Zone",
+                                             "childSectionPath":  "Windows Components > Internet Explorer > Internet Control Panel > Security Page > Locked-Down Restricted Sites Zone"
+                                         }
+                      },
+                      {
+                          "testCaseId":  "TC_29949657",
+                          "testName":  "Edit_AdministrativeTemplates_InternetExplorer_LocalMachineZone_JavaPermissions_Win365",
+                          "description":  "Edit profile - Java permissions (IE Local Machine Zone) - 5th edit instance",
+                          "category":  "Windows 365 Security Baseline",
+                          "priority":  "High",
+                          "enabled":  true,
+                          "parameters":  {
+                                             "firstLink":  "Endpoint security",
+                                             "secondLink":  "Security baselines",
+                                             "secBaselineName":  "Windows 365 Security Baseline",
+                                             "configurationSettings":  "Administrative Templates",
+                                             "parentDropDown":  "Java permissions",
+                                             "parentDropDownOption":  "Disabled",
+                                             "childDropDown":  "Java permissions",
+                                             "childDropDownOption":  "",
+                                             "parentSectionPath":  "Windows Components > Internet Explorer > Internet Control Panel > Security Page > Local Machine Zone",
+                                             "childSectionPath":  "Windows Components > Internet Explorer > Internet Control Panel > Security Page > Local Machine Zone"
+                                         }
+                      },
+                      {
+                          "testCaseId":  "TC_29949760",
+                          "testName":  "Edit_AdministrativeTemplates_InternetExplorer_IntranetZone_JavaPermissions_Win365",
+                          "description":  "Edit profile - Java permissions (IE Intranet Zone) - 5th edit instance",
+                          "category":  "Windows 365 Security Baseline",
+                          "priority":  "High",
+                          "enabled":  true,
+                          "parameters":  {
+                                             "firstLink":  "Endpoint security",
+                                             "secondLink":  "Security baselines",
+                                             "secBaselineName":  "Windows 365 Security Baseline",
+                                             "configurationSettings":  "Administrative Templates",
+                                             "parentDropDown":  "Java permissions",
+                                             "parentDropDownOption":  "Disabled",
+                                             "childDropDown":  "Java permissions",
+                                             "childDropDownOption":  "",
+                                             "parentSectionPath":  "Windows Components > Internet Explorer > Internet Control Panel > Security Page > Intranet Zone",
+                                             "childSectionPath":  "Windows Components > Internet Explorer > Internet Control Panel > Security Page > Intranet Zone"
+                                         }
+                      }
+                  ]
+}

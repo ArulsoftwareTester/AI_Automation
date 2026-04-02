@@ -1,0 +1,29 @@
+﻿# Build outputs
+**/bin/
+**/obj/
+**/TestResults/
+**/ExtentReports/
+
+# Node modules
+**/node_modules/
+
+# Auth/certs
+**/auth-cert/
+
+# IDE
+.vs/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# OS
+Thumbs.db
+desktop.ini
+.DS_Store
+
+# NuGet
+**/packages/
+
+# Playwright
+**/playwright/.cache/

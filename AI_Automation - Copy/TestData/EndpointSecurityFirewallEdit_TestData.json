@@ -1,0 +1,255 @@
+{
+  "testCases": [
+    {
+      "testCaseId": "TC_9025364",
+      "testName": "Edit_Endpoint security_Firewall_Windows Firewall_Disable Stateful Ftp",
+      "description": "Endpoint Security - Edit Firewall policy and verify Disable Stateful Ftp",
+      "category": "Endpoint Security Firewall Edit",
+      "priority": "High",
+      "enabled": true,
+      "parameters": {
+        "firstLink": "Endpoint security",
+        "secondLink": "Firewall",
+        "settingsValue": "Disable Stateful Ftp",
+        "dropDownValue": "True"
+      }
+    },
+    {
+      "testCaseId": "TC_9025376",
+      "testName": "Edit_Endpoint security_Firewall_Microsoft Defender Firewall_Preshared key encoding",
+      "description": "Endpoint Security - Edit Firewall policy and verify Preshared key encoding",
+      "category": "Endpoint Security Firewall Edit",
+      "priority": "High",
+      "enabled": true,
+      "parameters": {
+        "firstLink": "Endpoint security",
+        "secondLink": "Firewall",
+        "settingsValue": "Preshared Key Encoding",
+        "dropDownValue": "None"
+      }
+    },
+    {
+      "testCaseId": "TC_9025421",
+      "testName": "Edit_Endpoint security_Firewall_Microsoft Defender Firewall_Enabled Packet queuing",
+      "description": "Endpoint Security - Edit Firewall policy and verify Enable Packet Queue checkboxes",
+      "category": "Endpoint Security Firewall Edit",
+      "priority": "High",
+      "enabled": true,
+      "parameters": {
+        "firstLink": "Endpoint security",
+        "secondLink": "Firewall",
+        "settingsValue": "Enable Packet Queue",
+        "checkboxValues": ["Queue Outbound"]
+      }
+    },
+    {
+      "testCaseId": "TC_9025426",
+      "testName": "Edit_Endpoint security_Firewall_Turn on Microsoft Defender Firewall for domain networks",
+      "description": "Endpoint Security - Edit Firewall policy and verify Enable Domain Network Firewall with additional settings",
+      "category": "Endpoint Security Firewall Edit",
+      "priority": "High",
+      "enabled": true,
+      "parameters": {
+        "firstLink": "Endpoint security",
+        "secondLink": "Firewall",
+        "settingsValue": "Enable Domain Network Firewall",
+        "dropDownValue": "True (Default)",
+        "additionalSettings": [
+          { "settingsValue": "Allow Local Ipsec Policy Merge",                     "dropDownValue": "False" },
+          { "settingsValue": "Allow Local Policy Merge",                            "dropDownValue": "False" },
+          { "settingsValue": "Auth Apps Allow User Pref Merge",                     "dropDownValue": "False" },
+          { "settingsValue": "Default Inbound Action for Domain Profile",           "dropDownValue": "Block" },
+          { "settingsValue": "Default Outbound Action",                             "dropDownValue": "Block" },
+          { "settingsValue": "Disable Inbound Notifications",                       "dropDownValue": "False" },
+          { "settingsValue": "Disable Stealth Mode",                                "dropDownValue": "False" },
+          { "settingsValue": "Disable Stealth Mode Ipsec Secured Packet Exemption", "dropDownValue": "False" },
+          { "settingsValue": "Disable Unicast Responses To Multicast Broadcast",    "dropDownValue": "False" },
+          { "settingsValue": "Enable Log Dropped Packets",                          "dropDownValue": "Disable Logging Of Dropped Packets" },
+          { "settingsValue": "Enable Log Ignored Rules",                            "dropDownValue": "Disable Logging Of Ignored Rules" },
+          { "settingsValue": "Enable Log Success Connections",                      "dropDownValue": "Disable Logging Of Successful Connections" },
+          { "settingsValue": "Global Ports Allow User Pref Merge",                  "dropDownValue": "False" },
+          { "settingsValue": "Log File Path",    "numericValue": "%systemroot%\\system32\\LogFiles\\Firewall\\pfirewall.log" },
+          { "settingsValue": "Log Max File Size", "numericValue": "1024" },
+          { "settingsValue": "Shielded",                                            "dropDownValue": "False" }
+        ]
+      }
+    },
+    {
+      "testCaseId": "TC_9028506",
+      "testName": "Edit_Endpoint security_Firewall_Turn on Microsoft Defender Firewall for private networks",
+      "description": "Endpoint Security - Edit Firewall policy and verify Enable Private Network Firewall with additional settings",
+      "category": "Endpoint Security Firewall Edit",
+      "priority": "High",
+      "enabled": true,
+      "parameters": {
+        "firstLink": "Endpoint security",
+        "secondLink": "Firewall",
+        "settingsValue": "Enable Private Network Firewall",
+        "dropDownValue": "True (Default)",
+        "additionalSettings": [
+          { "settingsValue": "Allow Local Ipsec Policy Merge",                      "dropDownValue": "False" },
+          { "settingsValue": "Allow Local Policy Merge",                             "dropDownValue": "False" },
+          { "settingsValue": "Auth Apps Allow User Pref Merge",                      "dropDownValue": "False" },
+          { "settingsValue": "Default Inbound Action for Private Profile",           "dropDownValue": "Block" },
+          { "settingsValue": "Default Outbound Action",                              "dropDownValue": "Block" },
+          { "settingsValue": "Disable Inbound Notifications",                        "dropDownValue": "False" },
+          { "settingsValue": "Disable Stealth Mode",                                 "dropDownValue": "False" },
+          { "settingsValue": "Disable Stealth Mode Ipsec Secured Packet Exemption",  "dropDownValue": "False" },
+          { "settingsValue": "Disable Unicast Responses To Multicast Broadcast",     "dropDownValue": "False" },
+          { "settingsValue": "Enable Log Dropped Packets",                           "dropDownValue": "Disable Logging Of Dropped Packets" },
+          { "settingsValue": "Enable Log Ignored Rules",                             "dropDownValue": "Disable Logging Of Ignored Rules" },
+          { "settingsValue": "Enable Log Success Connections",                       "dropDownValue": "Disable Logging Of Successful Connections" },
+          { "settingsValue": "Global Ports Allow User Pref Merge",                   "dropDownValue": "False" },
+          { "settingsValue": "Log File Path",    "numericValue": "%systemroot%\\system32\\LogFiles\\Firewall\\pfirewall.log" },
+          { "settingsValue": "Log Max File Size", "numericValue": "1024" },
+          { "settingsValue": "Shielded",                                             "dropDownValue": "False" }
+        ]
+      }
+    },
+    {
+      "testCaseId": "TC_9028527",
+      "testName": "Edit_Endpoint security_Firewall_Turn on Microsoft Defender Firewall for public networks",
+      "description": "Endpoint Security - Edit Firewall policy and verify Enable Public Network Firewall with additional settings",
+      "category": "Endpoint Security Firewall Edit",
+      "priority": "High",
+      "enabled": true,
+      "parameters": {
+        "firstLink": "Endpoint security",
+        "secondLink": "Firewall",
+        "settingsValue": "Enable Public Network Firewall",
+        "dropDownValue": "True (Default)",
+        "additionalSettings": [
+          { "settingsValue": "Allow Local Ipsec Policy Merge",                      "dropDownValue": "Not configured" },
+          { "settingsValue": "Allow Local Policy Merge",                             "dropDownValue": "Not configured" },
+          { "settingsValue": "Auth Apps Allow User Pref Merge",                      "dropDownValue": "Not configured" },
+          { "settingsValue": "Default Inbound Action for Public Profile",            "dropDownValue": "Not configured" },
+          { "settingsValue": "Default Outbound Action",                              "dropDownValue": "Not configured" },
+          { "settingsValue": "Disable Inbound Notifications",                        "dropDownValue": "Not configured" },
+          { "settingsValue": "Disable Stealth Mode",                                 "dropDownValue": "Not configured" },
+          { "settingsValue": "Disable Stealth Mode Ipsec Secured Packet Exemption",  "dropDownValue": "Not configured" },
+          { "settingsValue": "Disable Unicast Responses To Multicast Broadcast",     "dropDownValue": "Not configured" },
+          { "settingsValue": "Enable Log Dropped Packets",                           "dropDownValue": "Not configured" },
+          { "settingsValue": "Enable Log Ignored Rules",                             "dropDownValue": "Not configured" },
+          { "settingsValue": "Enable Log Success Connections",                       "dropDownValue": "Not configured" },
+          { "settingsValue": "Global Ports Allow User Pref Merge",                   "dropDownValue": "Not configured" },
+          { "settingsValue": "Log File Path",                                        "dropDownValue": "Not configured" },
+          { "settingsValue": "Log Max File Size",                                    "dropDownValue": "Not configured" },
+          { "settingsValue": "Shielded",                                             "dropDownValue": "Not configured" }
+        ]
+      }
+    },
+    {
+      "testCaseId": "TC_15639424",
+      "testName": "Edit_Endpoint security_Firewall_Windows Firewall_Auditing_Object Access Audit Filtering Platform Connection",
+      "description": "Endpoint Security - Edit Firewall policy and verify Auditing: Object Access Audit Filtering Platform Connection and Packet Drop",
+      "category": "Endpoint Security Firewall Edit",
+      "priority": "High",
+      "enabled": true,
+      "parameters": {
+        "firstLink": "Endpoint security",
+        "secondLink": "Firewall",
+        "settingsValue": "Object Access Audit Filtering Platform Connection",
+        "dropDownValue": "Failure",
+        "additionalSettings": [
+          { "settingsValue": "Object Access Audit Filtering Platform Packet Drop", "dropDownValue": "Success and failure" }
+        ]
+      }
+    },
+    {
+      "testCaseId": "TC_21997155",
+      "testName": "Edit_Endpoint security_Firewall_Windows Firewall_verify the Network List Manager policy can work well",
+      "description": "Endpoint Security - Edit Firewall policy and verify the Network List Manager policy",
+      "category": "Endpoint Security Firewall Edit",
+      "priority": "High",
+      "enabled": true,
+      "parameters": {
+        "firstLink": "Endpoint security",
+        "secondLink": "Firewall",
+        "settingsValue": "Allowed Tls Authentication Endpoints",
+        "dropDownValue": "Success",
+        "additionalSettings": [
+          { "settingsValue": "Object Access Audit Filtering Platform Packet Drop", "dropDownValue": "Success" }
+        ]
+      }
+    },
+    {
+      "testCaseId": "TC_9028540",
+      "testName": "Edit_Endpoint security_Firewall_Windows Firewall_Allowed Tls Authentication Endpoints",
+      "description": "Endpoint Security - Edit Firewall policy and verify Allowed Tls Authentication Endpoints and Network Name",
+      "category": "Endpoint Security Firewall Edit",
+      "priority": "High",
+      "enabled": true,
+      "parameters": {
+        "firstLink": "Endpoint security",
+        "secondLink": "Firewall",
+        "settingsValue": "Allowed Tls Authentication Endpoints",
+        "listValues": ["test1"],
+        "additionalSettings": [
+          { "settingsValue": "Configured Tls Authentication Network Name", "numericValue": "test2" }
+        ]
+      }
+    },
+    {
+      "testCaseId": "TC_24410598",
+      "testName": "Edit_Endpoint security_Firewall_Windows Firewall_Security association idle time",
+      "description": "Endpoint Security - Edit Firewall policy and verify Security association idle time",
+      "category": "Endpoint Security Firewall Edit",
+      "priority": "High",
+      "enabled": true,
+      "parameters": {
+        "firstLink": "Endpoint security",
+        "secondLink": "Firewall",
+        "settingsValue": "Security association idle time",
+        "toggleValue": "Not configured"
+      }
+    },
+    {
+      "testCaseId": "TC_24410737",
+      "testName": "Edit_Endpoint security_Firewall_Windows Firewall_IPsec Exceptions",
+      "description": "Endpoint Security - Edit Firewall policy and verify IPsec Exceptions checkboxes",
+      "category": "Endpoint Security Firewall Edit",
+      "priority": "High",
+      "enabled": true,
+      "parameters": {
+        "firstLink": "Endpoint security",
+        "secondLink": "Firewall",
+        "settingsValue": "IPsec Exceptions",
+        "checkboxValues": [
+          "FWGLOBALCONFIGIPSECEXEMPTNONE:No IPsec exemptions.",
+          "Exempt neighbor discover IPv6 ICMP type-codes from IPsec",
+          "Exempt ICMP from IPsec",
+          "Exempt router discover IPv6 ICMP type-codes from IPsec",
+          "Exempt both IPv4 and IPv6 DHCP traffic from IPsec"
+        ]
+      }
+    },
+    {
+      "testCaseId": "TC_24410762",
+      "testName": "Edit_Endpoint security_Certificate revocation list verification",
+      "description": "Endpoint Security - Edit Firewall policy and verify Certificate revocation list verification",
+      "category": "Endpoint Security Firewall Edit",
+      "priority": "High",
+      "enabled": true,
+      "parameters": {
+        "firstLink": "Endpoint security",
+        "secondLink": "Firewall",
+        "settingsValue": "Certificate revocation list verification",
+        "dropDownValue": "Require"
+      }
+    },
+    {
+      "testCaseId": "TC_24410777",
+      "testName": "Edit_Endpoint security_Opportunistically Match Auth Set Per KM",
+      "description": "Endpoint Security - Edit Firewall policy and verify Opportunistically Match Auth Set Per KM",
+      "category": "Endpoint Security Firewall Edit",
+      "priority": "High",
+      "enabled": true,
+      "parameters": {
+        "firstLink": "Endpoint security",
+        "secondLink": "Firewall",
+        "settingsValue": "Opportunistically Match Auth Set Per KM",
+        "dropDownValue": "True"
+      }
+    }
+  ]
+}

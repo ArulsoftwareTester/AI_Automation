@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RunSettings>
+  <RunConfiguration>
+    <TestSessionTimeout>21600000</TestSessionTimeout>
+    <EnvironmentVariables>
+      <HEADED>0</HEADED>
+      <BROWSER>chromium</BROWSER>
+      <SKIP_SYNC>true</SKIP_SYNC>
+    </EnvironmentVariables>
+  </RunConfiguration>
+  <NUnit>
+    <NumberOfTestWorkers>25</NumberOfTestWorkers>
+    <DefaultTimeout>600000</DefaultTimeout>
+    <DefaultTestNamePattern>{m}</DefaultTestNamePattern>
+  </NUnit>
+  <Playwright>
+    <BrowserName>chromium</BrowserName>
+    <LaunchOptions>
+      <Headless>true</Headless>
+      <Timeout>600000</Timeout>
+    </LaunchOptions>
+  </Playwright>
+</RunSettings>

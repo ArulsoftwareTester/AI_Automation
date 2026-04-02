@@ -1,0 +1,984 @@
+﻿{
+    "testCases":  [
+                      {
+                          "testCaseId":  "TC_28040921",
+                          "testName":  "Edit_AdministrativeTemplates_InternetZone_Accessdatasourcesacrossdomains_Win365",
+                          "description":  "Edit profile - Access data sources across domains (IZ Internet Zone) - 4th edit instance",
+                          "category":  "Windows 365 Security Baseline",
+                          "priority":  "High",
+                          "enabled":  true,
+                          "parameters":  {
+                                             "firstLink":  "Endpoint security",
+                                             "secondLink":  "Security baselines",
+                                             "secBaselineName":  "Windows 365 Security Baseline",
+                                             "configurationSettings":  "Administrative Templates",
+                                             "parentDropDown":  "Access data sources across domains",
+                                             "parentDropDownOption":  "Not configured",
+                                             "childDropDown":  "Access data sources across domains",
+                                             "childDropDownOption":  "",
+                                             "parentSectionPath":  "Windows Components > Internet Explorer > Internet Control Panel > Security Page > Internet Zone",
+                                             "childSectionPath":  "Windows Components > Internet Explorer > Internet Control Panel > Security Page > Internet Zone"
+                                         }
+                      },
+                      {
+                          "testCaseId":  "TC_28040953",
+                          "testName":  "Edit_AdministrativeTemplates_InternetZone_Allowcutcopyorpasteoperationsfromtheclipboardviascript_Win365",
+                          "description":  "Edit profile - Allow cut, copy or paste operations from the clipboard via script (IZ Internet Zone) - 4th edit instance",
+                          "category":  "Windows 365 Security Baseline",
+                          "priority":  "High",
+                          "enabled":  true,
+                          "parameters":  {
+                                             "firstLink":  "Endpoint security",
+                                             "secondLink":  "Security baselines",
+                                             "secBaselineName":  "Windows 365 Security Baseline",
+                                             "configurationSettings":  "Administrative Templates",
+                                             "parentDropDown":  "Allow cut, copy or paste operations from the clipboard via script",
+                                             "parentDropDownOption":  "Not configured",
+                                             "childDropDown":  "Allow paste operations via script",
+                                             "childDropDownOption":  "",
+                                             "parentSectionPath":  "Windows Components > Internet Explorer > Internet Control Panel > Security Page > Internet Zone",
+                                             "childSectionPath":  "Windows Components > Internet Explorer > Internet Control Panel > Security Page > Internet Zone"
+                                         }
+                      },
+                      {
+                          "testCaseId":  "TC_28040969",
+                          "testName":  "Edit_AdministrativeTemplates_InternetZone_Allowdraganddroporcopyandpastefiles_Win365",
+                          "description":  "Edit profile - Allow drag and drop or copy and paste files (IZ Internet Zone) - 4th edit instance",
+                          "category":  "Windows 365 Security Baseline",
+                          "priority":  "High",
+                          "enabled":  true,
+                          "parameters":  {
+                                             "firstLink":  "Endpoint security",
+                                             "secondLink":  "Security baselines",
+                                             "secBaselineName":  "Windows 365 Security Baseline",
+                                             "configurationSettings":  "Administrative Templates",
+                                             "parentDropDown":  "Allow drag and drop or copy and paste files",
+                                             "parentDropDownOption":  "Not configured",
+                                             "childDropDown":  "Allow drag and drop or copy and paste files",
+                                             "childDropDownOption":  "",
+                                             "parentSectionPath":  "Windows Components > Internet Explorer > Internet Control Panel > Security Page > Internet Zone",
+                                             "childSectionPath":  "Windows Components > Internet Explorer > Internet Control Panel > Security Page > Internet Zone"
+                                         }
+                      },
+                      {
+                          "testCaseId":  "TC_28040995",
+                          "testName":  "Edit_AdministrativeTemplates_InternetZone_AllowloadingofXAMLfiles_Win365",
+                          "description":  "Edit profile - Allow loading of XAML files (IZ Internet Zone) - 4th edit instance",
+                          "category":  "Windows 365 Security Baseline",
+                          "priority":  "High",
+                          "enabled":  true,
+                          "parameters":  {
+                                             "firstLink":  "Endpoint security",
+                                             "secondLink":  "Security baselines",
+                                             "secBaselineName":  "Windows 365 Security Baseline",
+                                             "configurationSettings":  "Administrative Templates",
+                                             "parentDropDown":  "Allow loading of XAML files",
+                                             "parentDropDownOption":  "Not configured",
+                                             "childDropDown":  "XAML Files",
+                                             "childDropDownOption":  "",
+                                             "parentSectionPath":  "Windows Components > Internet Explorer > Internet Control Panel > Security Page > Internet Zone",
+                                             "childSectionPath":  "Windows Components > Internet Explorer > Internet Control Panel > Security Page > Internet Zone"
+                                         }
+                      },
+                      {
+                          "testCaseId":  "TC_28041749",
+                          "testName":  "Edit_AdministrativeTemplates_InternetZone_AllowVBScripttoruninInternetExplorer_Win365",
+                          "description":  "Edit profile - Allow VBScript to run in Internet Explorer (IZ Internet Zone) - 4th edit instance",
+                          "category":  "Windows 365 Security Baseline",
+                          "priority":  "High",
+                          "enabled":  true,
+                          "parameters":  {
+                                             "firstLink":  "Endpoint security",
+                                             "secondLink":  "Security baselines",
+                                             "secBaselineName":  "Windows 365 Security Baseline",
+                                             "configurationSettings":  "Administrative Templates",
+                                             "parentDropDown":  "Allow VBScript to run in Internet Explorer",
+                                             "parentDropDownOption":  "Not configured",
+                                             "childDropDown":  "Allow VBScript to run in Internet Explorer",
+                                             "childDropDownOption":  "",
+                                             "parentSectionPath":  "Windows Components > Internet Explorer > Internet Control Panel > Security Page > Internet Zone",
+                                             "childSectionPath":  "Windows Components > Internet Explorer > Internet Control Panel > Security Page > Internet Zone"
+                                         }
+                      },
+                      {
+                          "testCaseId":  "TC_28041794",
+                          "testName":  "Edit_AdministrativeTemplates_InternetZone_DownloadsignedActiveXcontrols_Win365",
+                          "description":  "Edit profile - Download signed ActiveX controls (IZ Internet Zone) - 4th edit instance",
+                          "category":  "Windows 365 Security Baseline",
+                          "priority":  "High",
+                          "enabled":  true,
+                          "parameters":  {
+                                             "firstLink":  "Endpoint security",
+                                             "secondLink":  "Security baselines",
+                                             "secBaselineName":  "Windows 365 Security Baseline",
+                                             "configurationSettings":  "Administrative Templates",
+                                             "parentDropDown":  "Download signed ActiveX controls",
+                                             "parentDropDownOption":  "Not configured",
+                                             "childDropDown":  "Download signed ActiveX controls",
+                                             "childDropDownOption":  "",
+                                             "parentSectionPath":  "Windows Components > Internet Explorer > Internet Control Panel > Security Page > Internet Zone",
+                                             "childSectionPath":  "Windows Components > Internet Explorer > Internet Control Panel > Security Page > Internet Zone"
+                                         }
+                      },
+                      {
+                          "testCaseId":  "TC_28041954",
+                          "testName":  "Edit_AdministrativeTemplates_InternetZone_InitializeandscriptActiveXcontrolsnotmarkedassafe_Win365",
+                          "description":  "Edit profile - Initialize and script ActiveX controls not marked as safe (IZ Internet Zone) - 4th edit instance",
+                          "category":  "Windows 365 Security Baseline",
+                          "priority":  "High",
+                          "enabled":  true,
+                          "parameters":  {
+                                             "firstLink":  "Endpoint security",
+                                             "secondLink":  "Security baselines",
+                                             "secBaselineName":  "Windows 365 Security Baseline",
+                                             "configurationSettings":  "Administrative Templates",
+                                             "parentDropDown":  "Initialize and script ActiveX controls not marked as safe",
+                                             "parentDropDownOption":  "Not configured",
+                                             "childDropDown":  "Initialize and script ActiveX controls not marked as safe",
+                                             "childDropDownOption":  "",
+                                             "parentSectionPath":  "Windows Components > Internet Explorer > Internet Control Panel > Security Page > Internet Zone",
+                                             "childSectionPath":  "Windows Components > Internet Explorer > Internet Control Panel > Security Page > Internet Zone"
+                                         }
+                      },
+                      {
+                          "testCaseId":  "TC_28041994",
+                          "testName":  "Edit_AdministrativeTemplates_InternetZone_Javapermissions_Win365",
+                          "description":  "Edit profile - Java permissions (IZ Internet Zone) - 4th edit instance",
+                          "category":  "Windows 365 Security Baseline",
+                          "priority":  "High",
+                          "enabled":  true,
+                          "parameters":  {
+                                             "firstLink":  "Endpoint security",
+                                             "secondLink":  "Security baselines",
+                                             "secBaselineName":  "Windows 365 Security Baseline",
+                                             "configurationSettings":  "Administrative Templates",
+                                             "parentDropDown":  "Java permissions",
+                                             "parentDropDownOption":  "Enabled",
+                                             "childDropDown":  "Java permissions",
+                                             "childDropDownOption":  "Disable Java",
+                                             "parentSectionPath":  "Windows Components > Internet Explorer > Internet Control Panel > Security Page > Internet Zone",
+                                             "childSectionPath":  "Windows Components > Internet Explorer > Internet Control Panel > Security Page > Internet Zone"
+                                         }
+                      },
+                      {
+                          "testCaseId":  "TC_28042034",
+                          "testName":  "Edit_AdministrativeTemplates_InternetZone_LaunchingapplicationsandfilesinanIFRAME_Win365",
+                          "description":  "Edit profile - Launching applications and files in an IFRAME (IZ Internet Zone) - 4th edit instance",
+                          "category":  "Windows 365 Security Baseline",
+                          "priority":  "High",
+                          "enabled":  true,
+                          "parameters":  {
+                                             "firstLink":  "Endpoint security",
+                                             "secondLink":  "Security baselines",
+                                             "secBaselineName":  "Windows 365 Security Baseline",
+                                             "configurationSettings":  "Administrative Templates",
+                                             "parentDropDown":  "Launching applications and files in an IFRAME",
+                                             "parentDropDownOption":  "Not configured",
+                                             "childDropDown":  "Launching applications and files in an IFRAME",
+                                             "childDropDownOption":  "",
+                                             "parentSectionPath":  "Windows Components > Internet Explorer > Internet Control Panel > Security Page > Internet Zone",
+                                             "childSectionPath":  "Windows Components > Internet Explorer > Internet Control Panel > Security Page > Internet Zone"
+                                         }
+                      },
+                      {
+                          "testCaseId":  "TC_28042156",
+                          "testName":  "Edit_AdministrativeTemplates_InternetZone_Logonoptions_Win365",
+                          "description":  "Edit profile - Logon options (IZ Internet Zone) - 4th edit instance",
+                          "category":  "Windows 365 Security Baseline",
+                          "priority":  "High",
+                          "enabled":  true,
+                          "parameters":  {
+                                             "firstLink":  "Endpoint security",
+                                             "secondLink":  "Security baselines",
+                                             "secBaselineName":  "Windows 365 Security Baseline",
+                                             "configurationSettings":  "Administrative Templates",
+                                             "parentDropDown":  "Logon options",
+                                             "parentDropDownOption":  "Disabled",
+                                             "childDropDown":  "Logon options",
+                                             "childDropDownOption":  "",
+                                             "parentSectionPath":  "Windows Components > Internet Explorer > Internet Control Panel > Security Page > Internet Zone",
+                                             "childSectionPath":  "Windows Components > Internet Explorer > Internet Control Panel > Security Page > Internet Zone"
+                                         }
+                      },
+                      {
+                          "testCaseId":  "TC_28042269",
+                          "testName":  "Edit_AdministrativeTemplates_InternetZone_Navigatewindowsandframesacrossdifferentdomains_Win365",
+                          "description":  "Edit profile - Navigate windows and frames across different domains (IZ Internet Zone) - 4th edit instance",
+                          "category":  "Windows 365 Security Baseline",
+                          "priority":  "High",
+                          "enabled":  true,
+                          "parameters":  {
+                                             "firstLink":  "Endpoint security",
+                                             "secondLink":  "Security baselines",
+                                             "secBaselineName":  "Windows 365 Security Baseline",
+                                             "configurationSettings":  "Administrative Templates",
+                                             "parentDropDown":  "Navigate windows and frames across different domains",
+                                             "parentDropDownOption":  "Not configured",
+                                             "childDropDown":  "Navigate windows and frames across different domains",
+                                             "childDropDownOption":  "",
+                                             "parentSectionPath":  "Windows Components > Internet Explorer > Internet Control Panel > Security Page > Internet Zone",
+                                             "childSectionPath":  "Windows Components > Internet Explorer > Internet Control Panel > Security Page > Internet Zone"
+                                         }
+                      },
+                      {
+                          "testCaseId":  "TC_28042306",
+                          "testName":  "Edit_AdministrativeTemplates_InternetZone_RunNETFrameworkreliantcomponentsnotsignedwithAuthenticode_Win365",
+                          "description":  "Edit profile - Run .NET Framework-reliant components not signed with Authenticode (IZ Internet Zone) - 4th edit instance",
+                          "category":  "Windows 365 Security Baseline",
+                          "priority":  "High",
+                          "enabled":  true,
+                          "parameters":  {
+                                             "firstLink":  "Endpoint security",
+                                             "secondLink":  "Security baselines",
+                                             "secBaselineName":  "Windows 365 Security Baseline",
+                                             "configurationSettings":  "Administrative Templates",
+                                             "parentDropDown":  "Run .NET Framework-reliant components not signed with Authenticode",
+                                             "parentDropDownOption":  "Not configured",
+                                             "childDropDown":  "Run .NET Framework-reliant components not signed with Authenticode",
+                                             "childDropDownOption":  "",
+                                             "parentSectionPath":  "Windows Components > Internet Explorer > Internet Control Panel > Security Page > Internet Zone",
+                                             "childSectionPath":  "Windows Components > Internet Explorer > Internet Control Panel > Security Page > Internet Zone"
+                                         }
+                      },
+                      {
+                          "testCaseId":  "TC_28042322",
+                          "testName":  "Edit_AdministrativeTemplates_InternetZone_RunNETFrameworkreliantcomponentssignedwithAuthenticode_Win365",
+                          "description":  "Edit profile - Run .NET Framework-reliant components signed with Authenticode (IZ Internet Zone) - 4th edit instance",
+                          "category":  "Windows 365 Security Baseline",
+                          "priority":  "High",
+                          "enabled":  true,
+                          "parameters":  {
+                                             "firstLink":  "Endpoint security",
+                                             "secondLink":  "Security baselines",
+                                             "secBaselineName":  "Windows 365 Security Baseline",
+                                             "configurationSettings":  "Administrative Templates",
+                                             "parentDropDown":  "Run .NET Framework-reliant components signed with Authenticode",
+                                             "parentDropDownOption":  "Not configured",
+                                             "childDropDown":  "Run .NET Framework-reliant components signed with Authenticode",
+                                             "childDropDownOption":  "",
+                                             "parentSectionPath":  "Windows Components > Internet Explorer > Internet Control Panel > Security Page > Internet Zone",
+                                             "childSectionPath":  "Windows Components > Internet Explorer > Internet Control Panel > Security Page > Internet Zone"
+                                         }
+                      },
+                      {
+                          "testCaseId":  "TC_28042670",
+                          "testName":  "Edit_AdministrativeTemplates_InternetZone_WebsitesinlessprivilegedWebcontentzonescannavigateintothiszone_Win365",
+                          "description":  "Edit profile - Web sites in less privileged Web content zones can navigate into this zone (IZ Internet Zone) - 4th edit instance",
+                          "category":  "Windows 365 Security Baseline",
+                          "priority":  "High",
+                          "enabled":  true,
+                          "parameters":  {
+                                             "firstLink":  "Endpoint security",
+                                             "secondLink":  "Security baselines",
+                                             "secBaselineName":  "Windows 365 Security Baseline",
+                                             "configurationSettings":  "Administrative Templates",
+                                             "parentDropDown":  "Web sites in less privileged Web content zones can navigate into this zone",
+                                             "parentDropDownOption":  "Not configured",
+                                             "childDropDown":  "Web sites in less privileged Web content zones can navigate into this zone",
+                                             "childDropDownOption":  "",
+                                             "parentSectionPath":  "Windows Components > Internet Explorer > Internet Control Panel > Security Page > Internet Zone",
+                                             "childSectionPath":  "Windows Components > Internet Explorer > Internet Control Panel > Security Page > Internet Zone"
+                                         }
+                      },
+                      {
+                          "testCaseId":  "TC_28069444",
+                          "testName":  "Edit_AdministrativeTemplates_InternetZone_DownloadunsignedActiveXcontrols_Win365",
+                          "description":  "Edit profile - Download unsigned ActiveX controls (IZ Internet Zone) - 4th edit instance",
+                          "category":  "Windows 365 Security Baseline",
+                          "priority":  "High",
+                          "enabled":  true,
+                          "parameters":  {
+                                             "firstLink":  "Endpoint security",
+                                             "secondLink":  "Security baselines",
+                                             "secBaselineName":  "Windows 365 Security Baseline",
+                                             "configurationSettings":  "Administrative Templates",
+                                             "parentDropDown":  "Download unsigned ActiveX controls",
+                                             "parentDropDownOption":  "Not configured",
+                                             "childDropDown":  "Download unsigned ActiveX controls",
+                                             "childDropDownOption":  "",
+                                             "parentSectionPath":  "Windows Components > Internet Explorer > Internet Control Panel > Security Page > Internet Zone",
+                                             "childSectionPath":  "Windows Components > Internet Explorer > Internet Control Panel > Security Page > Internet Zone"
+                                         }
+                      },
+                      {
+                          "testCaseId":  "TC_28069512",
+                          "testName":  "Edit_AdministrativeTemplates_InternetZone_Showsecuritywarningforpotentiallyunsafefiles_Win365",
+                          "description":  "Edit profile - Show security warning for potentially unsafe files (IZ Internet Zone) - 4th edit instance",
+                          "category":  "Windows 365 Security Baseline",
+                          "priority":  "High",
+                          "enabled":  true,
+                          "parameters":  {
+                                             "firstLink":  "Endpoint security",
+                                             "secondLink":  "Security baselines",
+                                             "secBaselineName":  "Windows 365 Security Baseline",
+                                             "configurationSettings":  "Administrative Templates",
+                                             "parentDropDown":  "Show security warning for potentially unsafe files",
+                                             "parentDropDownOption":  "Not configured",
+                                             "childDropDown":  "Launching programs and unsafe files",
+                                             "childDropDownOption":  "",
+                                             "parentSectionPath":  "Windows Components > Internet Explorer > Internet Control Panel > Security Page > Internet Zone",
+                                             "childSectionPath":  "Windows Components > Internet Explorer > Internet Control Panel > Security Page > Internet Zone"
+                                         }
+                      },
+                      {
+                          "testCaseId":  "TC_28041812",
+                          "testName":  "Edit_AdministrativeTemplates_RestrictedSitesZone_DownloadunsignedActiveXcontrols_Win365",
+                          "description":  "Edit profile - Download unsigned ActiveX controls (RSZ Restricted Sites Zone) - 4th edit instance",
+                          "category":  "Windows 365 Security Baseline",
+                          "priority":  "High",
+                          "enabled":  true,
+                          "parameters":  {
+                                             "firstLink":  "Endpoint security",
+                                             "secondLink":  "Security baselines",
+                                             "secBaselineName":  "Windows 365 Security Baseline",
+                                             "configurationSettings":  "Administrative Templates",
+                                             "parentDropDown":  "Download unsigned ActiveX controls",
+                                             "parentDropDownOption":  "Not configured",
+                                             "childDropDown":  "",
+                                             "childDropDownOption":  "",
+                                             "parentSectionPath":  "Windows Components > Internet Explorer > Internet Control Panel > Security Page > Restricted Sites Zone",
+                                             "childSectionPath":  "Windows Components > Internet Explorer > Internet Control Panel > Security Page > Restricted Sites Zone"
+                                         }
+                      },
+                      {
+                          "testCaseId":  "TC_28042347",
+                          "testName":  "Edit_AdministrativeTemplates_RestrictedSitesZone_Showsecuritywarningforpotentiallyunsafefiles_Win365",
+                          "description":  "Edit profile - Show security warning for potentially unsafe files (RSZ Restricted Sites Zone) - 4th edit instance",
+                          "category":  "Windows 365 Security Baseline",
+                          "priority":  "High",
+                          "enabled":  true,
+                          "parameters":  {
+                                             "firstLink":  "Endpoint security",
+                                             "secondLink":  "Security baselines",
+                                             "secBaselineName":  "Windows 365 Security Baseline",
+                                             "configurationSettings":  "Administrative Templates",
+                                             "parentDropDown":  "Show security warning for potentially unsafe files",
+                                             "parentDropDownOption":  "Not configured",
+                                             "childDropDown":  "",
+                                             "childDropDownOption":  "",
+                                             "parentSectionPath":  "Windows Components > Internet Explorer > Internet Control Panel > Security Page > Restricted Sites Zone",
+                                             "childSectionPath":  "Windows Components > Internet Explorer > Internet Control Panel > Security Page > Restricted Sites Zone"
+                                         }
+                      },
+                      {
+                          "testCaseId":  "TC_28042679",
+                          "testName":  "Edit_AdministrativeTemplates_RestrictedSitesZone_Accessdatasourcesacrossdomains_Win365",
+                          "description":  "Edit profile - Access data sources across domains (RSZ Restricted Sites Zone) - 4th edit instance",
+                          "category":  "Windows 365 Security Baseline",
+                          "priority":  "High",
+                          "enabled":  true,
+                          "parameters":  {
+                                             "firstLink":  "Endpoint security",
+                                             "secondLink":  "Security baselines",
+                                             "secBaselineName":  "Windows 365 Security Baseline",
+                                             "configurationSettings":  "Administrative Templates",
+                                             "parentDropDown":  "Access data sources across domains",
+                                             "parentDropDownOption":  "Not configured",
+                                             "childDropDown":  "",
+                                             "childDropDownOption":  "",
+                                             "parentSectionPath":  "Windows Components > Internet Explorer > Internet Control Panel > Security Page > Restricted Sites Zone",
+                                             "childSectionPath":  "Windows Components > Internet Explorer > Internet Control Panel > Security Page > Restricted Sites Zone"
+                                         }
+                      },
+                      {
+                          "testCaseId":  "TC_28042822",
+                          "testName":  "Edit_AdministrativeTemplates_RestrictedSitesZone_Allowactivescripting_Win365",
+                          "description":  "Edit profile - Allow active scripting (RSZ Restricted Sites Zone) - 4th edit instance",
+                          "category":  "Windows 365 Security Baseline",
+                          "priority":  "High",
+                          "enabled":  true,
+                          "parameters":  {
+                                             "firstLink":  "Endpoint security",
+                                             "secondLink":  "Security baselines",
+                                             "secBaselineName":  "Windows 365 Security Baseline",
+                                             "configurationSettings":  "Administrative Templates",
+                                             "parentDropDown":  "Allow active scripting",
+                                             "parentDropDownOption":  "Not configured",
+                                             "childDropDown":  "",
+                                             "childDropDownOption":  "",
+                                             "parentSectionPath":  "Windows Components > Internet Explorer > Internet Control Panel > Security Page > Restricted Sites Zone",
+                                             "childSectionPath":  "Windows Components > Internet Explorer > Internet Control Panel > Security Page > Restricted Sites Zone"
+                                         }
+                      },
+                      {
+                          "testCaseId":  "TC_28042838",
+                          "testName":  "Edit_AdministrativeTemplates_RestrictedSitesZone_Allowbinaryandscriptbehaviors_Win365",
+                          "description":  "Edit profile - Allow Binary and Script Behaviors (RSZ Restricted Sites Zone) - 4th edit instance",
+                          "category":  "Windows 365 Security Baseline",
+                          "priority":  "High",
+                          "enabled":  true,
+                          "parameters":  {
+                                             "firstLink":  "Endpoint security",
+                                             "secondLink":  "Security baselines",
+                                             "secBaselineName":  "Windows 365 Security Baseline",
+                                             "configurationSettings":  "Administrative Templates",
+                                             "parentDropDown":  "Allow Binary and Script Behaviors",
+                                             "parentDropDownOption":  "Not configured",
+                                             "childDropDown":  "",
+                                             "childDropDownOption":  "",
+                                             "parentSectionPath":  "Windows Components > Internet Explorer > Internet Control Panel > Security Page > Restricted Sites Zone",
+                                             "childSectionPath":  "Windows Components > Internet Explorer > Internet Control Panel > Security Page > Restricted Sites Zone"
+                                         }
+                      },
+                      {
+                          "testCaseId":  "TC_28042848",
+                          "testName":  "Edit_AdministrativeTemplates_RestrictedSitesZone_Allowcutcopyorpasteoperationsfromtheclipboardviascript_Win365",
+                          "description":  "Edit profile - Allow cut, copy or paste operations from the clipboard via script (RSZ Restricted Sites Zone) - 4th edit instance",
+                          "category":  "Windows 365 Security Baseline",
+                          "priority":  "High",
+                          "enabled":  true,
+                          "parameters":  {
+                                             "firstLink":  "Endpoint security",
+                                             "secondLink":  "Security baselines",
+                                             "secBaselineName":  "Windows 365 Security Baseline",
+                                             "configurationSettings":  "Administrative Templates",
+                                             "parentDropDown":  "Allow cut, copy or paste operations from the clipboard via script",
+                                             "parentDropDownOption":  "Not configured",
+                                             "childDropDown":  "",
+                                             "childDropDownOption":  "",
+                                             "parentSectionPath":  "Windows Components > Internet Explorer > Internet Control Panel > Security Page > Restricted Sites Zone",
+                                             "childSectionPath":  "Windows Components > Internet Explorer > Internet Control Panel > Security Page > Restricted Sites Zone"
+                                         }
+                      },
+                      {
+                          "testCaseId":  "TC_28042855",
+                          "testName":  "Edit_AdministrativeTemplates_RestrictedSitesZone_Allowdraganddroporcopyandpastefiles_Win365",
+                          "description":  "Edit profile - Allow drag and drop or copy and paste files (RSZ Restricted Sites Zone) - 4th edit instance",
+                          "category":  "Windows 365 Security Baseline",
+                          "priority":  "High",
+                          "enabled":  true,
+                          "parameters":  {
+                                             "firstLink":  "Endpoint security",
+                                             "secondLink":  "Security baselines",
+                                             "secBaselineName":  "Windows 365 Security Baseline",
+                                             "configurationSettings":  "Administrative Templates",
+                                             "parentDropDown":  "Allow drag and drop or copy and paste files",
+                                             "parentDropDownOption":  "Not configured",
+                                             "childDropDown":  "",
+                                             "childDropDownOption":  "",
+                                             "parentSectionPath":  "Windows Components > Internet Explorer > Internet Control Panel > Security Page > Restricted Sites Zone",
+                                             "childSectionPath":  "Windows Components > Internet Explorer > Internet Control Panel > Security Page > Restricted Sites Zone"
+                                         }
+                      },
+                      {
+                          "testCaseId":  "TC_28042902",
+                          "testName":  "Edit_AdministrativeTemplates_RestrictedSitesZone_AllowloadingofXAMLfiles_Win365",
+                          "description":  "Edit profile - Allow loading of XAML files (RSZ Restricted Sites Zone) - 4th edit instance",
+                          "category":  "Windows 365 Security Baseline",
+                          "priority":  "High",
+                          "enabled":  true,
+                          "parameters":  {
+                                             "firstLink":  "Endpoint security",
+                                             "secondLink":  "Security baselines",
+                                             "secBaselineName":  "Windows 365 Security Baseline",
+                                             "configurationSettings":  "Administrative Templates",
+                                             "parentDropDown":  "Allow loading of XAML files",
+                                             "parentDropDownOption":  "Not configured",
+                                             "childDropDown":  "",
+                                             "childDropDownOption":  "",
+                                             "parentSectionPath":  "Windows Components > Internet Explorer > Internet Control Panel > Security Page > Restricted Sites Zone",
+                                             "childSectionPath":  "Windows Components > Internet Explorer > Internet Control Panel > Security Page > Restricted Sites Zone"
+                                         }
+                      },
+                      {
+                          "testCaseId":  "TC_28052848",
+                          "testName":  "Edit_AdministrativeTemplates_RestrictedSitesZone_AllowVBScripttoruninInternetExplorer_Win365",
+                          "description":  "Edit profile - Allow VBScript to run in Internet Explorer (RSZ Restricted Sites Zone) - 4th edit instance",
+                          "category":  "Windows 365 Security Baseline",
+                          "priority":  "High",
+                          "enabled":  true,
+                          "parameters":  {
+                                             "firstLink":  "Endpoint security",
+                                             "secondLink":  "Security baselines",
+                                             "secBaselineName":  "Windows 365 Security Baseline",
+                                             "configurationSettings":  "Administrative Templates",
+                                             "parentDropDown":  "Allow VBScript to run in Internet Explorer",
+                                             "parentDropDownOption":  "Not configured",
+                                             "childDropDown":  "",
+                                             "childDropDownOption":  "",
+                                             "parentSectionPath":  "Windows Components > Internet Explorer > Internet Control Panel > Security Page > Restricted Sites Zone",
+                                             "childSectionPath":  "Windows Components > Internet Explorer > Internet Control Panel > Security Page > Restricted Sites Zone"
+                                         }
+                      },
+                      {
+                          "testCaseId":  "TC_28052882",
+                          "testName":  "Edit_AdministrativeTemplates_RestrictedSitesZone_DownloadsignedActiveXcontrols_Win365",
+                          "description":  "Edit profile - Download signed ActiveX controls (RSZ Restricted Sites Zone) - 4th edit instance",
+                          "category":  "Windows 365 Security Baseline",
+                          "priority":  "High",
+                          "enabled":  true,
+                          "parameters":  {
+                                             "firstLink":  "Endpoint security",
+                                             "secondLink":  "Security baselines",
+                                             "secBaselineName":  "Windows 365 Security Baseline",
+                                             "configurationSettings":  "Administrative Templates",
+                                             "parentDropDown":  "Download signed ActiveX controls",
+                                             "parentDropDownOption":  "Not configured",
+                                             "childDropDown":  "",
+                                             "childDropDownOption":  "",
+                                             "parentSectionPath":  "Windows Components > Internet Explorer > Internet Control Panel > Security Page > Restricted Sites Zone",
+                                             "childSectionPath":  "Windows Components > Internet Explorer > Internet Control Panel > Security Page > Restricted Sites Zone"
+                                         }
+                      },
+                      {
+                          "testCaseId":  "TC_28052985",
+                          "testName":  "Edit_AdministrativeTemplates_RestrictedSitesZone_InitializeandscriptActiveXcontrolsnotmarkedassafe_Win365",
+                          "description":  "Edit profile - Initialize and script ActiveX controls not marked as safe (RSZ Restricted Sites Zone) - 4th edit instance",
+                          "category":  "Windows 365 Security Baseline",
+                          "priority":  "High",
+                          "enabled":  true,
+                          "parameters":  {
+                                             "firstLink":  "Endpoint security",
+                                             "secondLink":  "Security baselines",
+                                             "secBaselineName":  "Windows 365 Security Baseline",
+                                             "configurationSettings":  "Administrative Templates",
+                                             "parentDropDown":  "Initialize and script ActiveX controls not marked as safe",
+                                             "parentDropDownOption":  "Not configured",
+                                             "childDropDown":  "",
+                                             "childDropDownOption":  "",
+                                             "parentSectionPath":  "Windows Components > Internet Explorer > Internet Control Panel > Security Page > Restricted Sites Zone",
+                                             "childSectionPath":  "Windows Components > Internet Explorer > Internet Control Panel > Security Page > Restricted Sites Zone"
+                                         }
+                      },
+                      {
+                          "testCaseId":  "TC_28052992",
+                          "testName":  "Edit_AdministrativeTemplates_RestrictedSitesZone_Javapermissions_Win365",
+                          "description":  "Edit profile - Java permissions (RSZ Restricted Sites Zone) - 4th edit instance",
+                          "category":  "Windows 365 Security Baseline",
+                          "priority":  "High",
+                          "enabled":  true,
+                          "parameters":  {
+                                             "firstLink":  "Endpoint security",
+                                             "secondLink":  "Security baselines",
+                                             "secBaselineName":  "Windows 365 Security Baseline",
+                                             "configurationSettings":  "Administrative Templates",
+                                             "parentDropDown":  "Java permissions",
+                                             "parentDropDownOption":  "Enabled",
+                                             "childDropDown":  "Java permissions",
+                                             "childDropDownOption":  "Disable Java",
+                                             "parentSectionPath":  "Windows Components > Internet Explorer > Internet Control Panel > Security Page > Restricted Sites Zone",
+                                             "childSectionPath":  "Windows Components > Internet Explorer > Internet Control Panel > Security Page > Restricted Sites Zone"
+                                         }
+                      },
+                      {
+                          "testCaseId":  "TC_28053005",
+                          "testName":  "Edit_AdministrativeTemplates_RestrictedSitesZone_LaunchingapplicationsandfilesinanIFRAME_Win365",
+                          "description":  "Edit profile - Launching applications and files in an IFRAME (RSZ Restricted Sites Zone) - 4th edit instance",
+                          "category":  "Windows 365 Security Baseline",
+                          "priority":  "High",
+                          "enabled":  true,
+                          "parameters":  {
+                                             "firstLink":  "Endpoint security",
+                                             "secondLink":  "Security baselines",
+                                             "secBaselineName":  "Windows 365 Security Baseline",
+                                             "configurationSettings":  "Administrative Templates",
+                                             "parentDropDown":  "Launching applications and files in an IFRAME",
+                                             "parentDropDownOption":  "Not configured",
+                                             "childDropDown":  "",
+                                             "childDropDownOption":  "",
+                                             "parentSectionPath":  "Windows Components > Internet Explorer > Internet Control Panel > Security Page > Restricted Sites Zone",
+                                             "childSectionPath":  "Windows Components > Internet Explorer > Internet Control Panel > Security Page > Restricted Sites Zone"
+                                         }
+                      },
+                      {
+                          "testCaseId":  "TC_28053009",
+                          "testName":  "Edit_AdministrativeTemplates_RestrictedSitesZone_Logonoptions_Win365",
+                          "description":  "Edit profile - Logon options (RSZ Restricted Sites Zone) - 4th edit instance",
+                          "category":  "Windows 365 Security Baseline",
+                          "priority":  "High",
+                          "enabled":  true,
+                          "parameters":  {
+                                             "firstLink":  "Endpoint security",
+                                             "secondLink":  "Security baselines",
+                                             "secBaselineName":  "Windows 365 Security Baseline",
+                                             "configurationSettings":  "Administrative Templates",
+                                             "parentDropDown":  "Logon options",
+                                             "parentDropDownOption":  "Disabled",
+                                             "childDropDown":  "",
+                                             "childDropDownOption":  "",
+                                             "parentSectionPath":  "Windows Components > Internet Explorer > Internet Control Panel > Security Page > Restricted Sites Zone",
+                                             "childSectionPath":  "Windows Components > Internet Explorer > Internet Control Panel > Security Page > Restricted Sites Zone"
+                                         }
+                      },
+                      {
+                          "testCaseId":  "TC_28053016",
+                          "testName":  "Edit_AdministrativeTemplates_RestrictedSitesZone_Navigatewindowsandframesacrossdifferentdomains_Win365",
+                          "description":  "Edit profile - Navigate windows and frames across different domains (RSZ Restricted Sites Zone) - 4th edit instance",
+                          "category":  "Windows 365 Security Baseline",
+                          "priority":  "High",
+                          "enabled":  true,
+                          "parameters":  {
+                                             "firstLink":  "Endpoint security",
+                                             "secondLink":  "Security baselines",
+                                             "secBaselineName":  "Windows 365 Security Baseline",
+                                             "configurationSettings":  "Administrative Templates",
+                                             "parentDropDown":  "Navigate windows and frames across different domains",
+                                             "parentDropDownOption":  "Not configured",
+                                             "childDropDown":  "",
+                                             "childDropDownOption":  "",
+                                             "parentSectionPath":  "Windows Components > Internet Explorer > Internet Control Panel > Security Page > Restricted Sites Zone",
+                                             "childSectionPath":  "Windows Components > Internet Explorer > Internet Control Panel > Security Page > Restricted Sites Zone"
+                                         }
+                      },
+                      {
+                          "testCaseId":  "TC_28053058",
+                          "testName":  "Edit_AdministrativeTemplates_RestrictedSitesZone_RunNETFrameworkreliantcomponentsnotsignedwithAuthenticode_Win365",
+                          "description":  "Edit profile - Run .NET Framework-reliant components not signed with Authenticode (RSZ Restricted Sites Zone) - 4th edit instance",
+                          "category":  "Windows 365 Security Baseline",
+                          "priority":  "High",
+                          "enabled":  true,
+                          "parameters":  {
+                                             "firstLink":  "Endpoint security",
+                                             "secondLink":  "Security baselines",
+                                             "secBaselineName":  "Windows 365 Security Baseline",
+                                             "configurationSettings":  "Administrative Templates",
+                                             "parentDropDown":  "Run .NET Framework-reliant components not signed with Authenticode",
+                                             "parentDropDownOption":  "Not configured",
+                                             "childDropDown":  "",
+                                             "childDropDownOption":  "",
+                                             "parentSectionPath":  "Windows Components > Internet Explorer > Internet Control Panel > Security Page > Restricted Sites Zone",
+                                             "childSectionPath":  "Windows Components > Internet Explorer > Internet Control Panel > Security Page > Restricted Sites Zone"
+                                         }
+                      },
+                      {
+                          "testCaseId":  "TC_28053061",
+                          "testName":  "Edit_AdministrativeTemplates_RestrictedSitesZone_RunNETFrameworkreliantcomponentssignedwithAuthenticode_Win365",
+                          "description":  "Edit profile - Run .NET Framework-reliant components signed with Authenticode (RSZ Restricted Sites Zone) - 4th edit instance",
+                          "category":  "Windows 365 Security Baseline",
+                          "priority":  "High",
+                          "enabled":  true,
+                          "parameters":  {
+                                             "firstLink":  "Endpoint security",
+                                             "secondLink":  "Security baselines",
+                                             "secBaselineName":  "Windows 365 Security Baseline",
+                                             "configurationSettings":  "Administrative Templates",
+                                             "parentDropDown":  "Run .NET Framework-reliant components signed with Authenticode",
+                                             "parentDropDownOption":  "Not configured",
+                                             "childDropDown":  "",
+                                             "childDropDownOption":  "",
+                                             "parentSectionPath":  "Windows Components > Internet Explorer > Internet Control Panel > Security Page > Restricted Sites Zone",
+                                             "childSectionPath":  "Windows Components > Internet Explorer > Internet Control Panel > Security Page > Restricted Sites Zone"
+                                         }
+                      },
+                      {
+                          "testCaseId":  "TC_28053192",
+                          "testName":  "Edit_AdministrativeTemplates_RestrictedSitesZone_RunActiveXcontrolsandplugins_Win365",
+                          "description":  "Edit profile - Run ActiveX controls and plugins (RSZ Restricted Sites Zone) - 4th edit instance",
+                          "category":  "Windows 365 Security Baseline",
+                          "priority":  "High",
+                          "enabled":  true,
+                          "parameters":  {
+                                             "firstLink":  "Endpoint security",
+                                             "secondLink":  "Security baselines",
+                                             "secBaselineName":  "Windows 365 Security Baseline",
+                                             "configurationSettings":  "Administrative Templates",
+                                             "parentDropDown":  "Run ActiveX controls and plugins",
+                                             "parentDropDownOption":  "Disabled",
+                                             "childDropDown":  "",
+                                             "childDropDownOption":  "",
+                                             "parentSectionPath":  "Windows Components > Internet Explorer > Internet Control Panel > Security Page > Restricted Sites Zone",
+                                             "childSectionPath":  "Windows Components > Internet Explorer > Internet Control Panel > Security Page > Restricted Sites Zone"
+                                         }
+                      },
+                      {
+                          "testCaseId":  "TC_28053202",
+                          "testName":  "Edit_AdministrativeTemplates_RestrictedSitesZone_ScriptActiveXcontrolsmarkedsafeforscripting_Win365",
+                          "description":  "Edit profile - Script ActiveX controls marked safe for scripting (RSZ Restricted Sites Zone) - 4th edit instance",
+                          "category":  "Windows 365 Security Baseline",
+                          "priority":  "High",
+                          "enabled":  true,
+                          "parameters":  {
+                                             "firstLink":  "Endpoint security",
+                                             "secondLink":  "Security baselines",
+                                             "secBaselineName":  "Windows 365 Security Baseline",
+                                             "configurationSettings":  "Administrative Templates",
+                                             "parentDropDown":  "Script ActiveX controls marked safe for scripting",
+                                             "parentDropDownOption":  "Not configured",
+                                             "childDropDown":  "",
+                                             "childDropDownOption":  "",
+                                             "parentSectionPath":  "Windows Components > Internet Explorer > Internet Control Panel > Security Page > Restricted Sites Zone",
+                                             "childSectionPath":  "Windows Components > Internet Explorer > Internet Control Panel > Security Page > Restricted Sites Zone"
+                                         }
+                      },
+                      {
+                          "testCaseId":  "TC_28054078",
+                          "testName":  "Edit_AdministrativeTemplates_RestrictedSitesZone_ScriptingofJavaapplets_Win365",
+                          "description":  "Edit profile - Scripting of Java applets (RSZ Restricted Sites Zone) - 4th edit instance",
+                          "category":  "Windows 365 Security Baseline",
+                          "priority":  "High",
+                          "enabled":  true,
+                          "parameters":  {
+                                             "firstLink":  "Endpoint security",
+                                             "secondLink":  "Security baselines",
+                                             "secBaselineName":  "Windows 365 Security Baseline",
+                                             "configurationSettings":  "Administrative Templates",
+                                             "parentDropDown":  "Scripting of Java applets",
+                                             "parentDropDownOption":  "Not configured",
+                                             "childDropDown":  "",
+                                             "childDropDownOption":  "",
+                                             "parentSectionPath":  "Windows Components > Internet Explorer > Internet Control Panel > Security Page > Restricted Sites Zone",
+                                             "childSectionPath":  "Windows Components > Internet Explorer > Internet Control Panel > Security Page > Restricted Sites Zone"
+                                         }
+                      },
+                      {
+                          "testCaseId":  "TC_28054177",
+                          "testName":  "Edit_AdministrativeTemplates_RestrictedSitesZone_WebsitesinlessprivilegedWebcontentzonescannavigateintothiszone_Win365",
+                          "description":  "Edit profile - Web sites in less privileged Web content zones can navigate into this zone (RSZ Restricted Sites Zone) - 4th edit instance",
+                          "category":  "Windows 365 Security Baseline",
+                          "priority":  "High",
+                          "enabled":  true,
+                          "parameters":  {
+                                             "firstLink":  "Endpoint security",
+                                             "secondLink":  "Security baselines",
+                                             "secBaselineName":  "Windows 365 Security Baseline",
+                                             "configurationSettings":  "Administrative Templates",
+                                             "parentDropDown":  "Web sites in less privileged Web content zones can navigate into this zone",
+                                             "parentDropDownOption":  "Not configured",
+                                             "childDropDown":  "",
+                                             "childDropDownOption":  "",
+                                             "parentSectionPath":  "Windows Components > Internet Explorer > Internet Control Panel > Security Page > Restricted Sites Zone",
+                                             "childSectionPath":  "Windows Components > Internet Explorer > Internet Control Panel > Security Page > Restricted Sites Zone"
+                                         }
+                      },
+                      {
+                          "testCaseId":  "TC_28037201",
+                          "testName":  "Edit_AdministrativeTemplates_InternetExplorer_LockedDownIntranetZone_JavaPermissions_Win365",
+                          "description":  "Edit profile - Java permissions (Locked-Down Intranet Zone) - 4th edit instance",
+                          "category":  "Windows 365 Security Baseline",
+                          "priority":  "High",
+                          "enabled":  true,
+                          "parameters":  {
+                                             "firstLink":  "Endpoint security",
+                                             "secondLink":  "Security baselines",
+                                             "secBaselineName":  "Windows 365 Security Baseline",
+                                             "configurationSettings":  "Administrative Templates",
+                                             "parentDropDown":  "Java permissions",
+                                             "parentDropDownOption":  "Enabled",
+                                             "childDropDown":  "Java permissions",
+                                             "childDropDownOption":  "Disable Java",
+                                             "parentSectionPath":  "Windows Components > Internet Explorer > Internet Control Panel > Security Page > Locked-Down Intranet Zone",
+                                             "childSectionPath":  "Windows Components > Internet Explorer > Internet Control Panel > Security Page > Locked-Down Intranet Zone"
+                                         }
+                      },
+                      {
+                          "testCaseId":  "TC_28037231",
+                          "testName":  "Edit_AdministrativeTemplates_InternetExplorer_LockedDownLocalMachineZone_JavaPermissions_Win365",
+                          "description":  "Edit profile - Java permissions (Locked-Down Local Machine Zone) - 4th edit instance",
+                          "category":  "Windows 365 Security Baseline",
+                          "priority":  "High",
+                          "enabled":  true,
+                          "parameters":  {
+                                             "firstLink":  "Endpoint security",
+                                             "secondLink":  "Security baselines",
+                                             "secBaselineName":  "Windows 365 Security Baseline",
+                                             "configurationSettings":  "Administrative Templates",
+                                             "parentDropDown":  "Java permissions",
+                                             "parentDropDownOption":  "Enabled",
+                                             "childDropDown":  "Java permissions",
+                                             "childDropDownOption":  "Disable Java",
+                                             "parentSectionPath":  "Windows Components > Internet Explorer > Internet Control Panel > Security Page > Locked-Down Local Machine Zone",
+                                             "childSectionPath":  "Windows Components > Internet Explorer > Internet Control Panel > Security Page > Locked-Down Local Machine Zone"
+                                         }
+                      },
+                      {
+                          "testCaseId":  "TC_28037233",
+                          "testName":  "Edit_AdministrativeTemplates_InternetExplorer_LockedDownTrustedSitesZone_JavaPermissions_Win365",
+                          "description":  "Edit profile - Java permissions (Locked-Down Trusted Sites Zone) - 4th edit instance",
+                          "category":  "Windows 365 Security Baseline",
+                          "priority":  "High",
+                          "enabled":  true,
+                          "parameters":  {
+                                             "firstLink":  "Endpoint security",
+                                             "secondLink":  "Security baselines",
+                                             "secBaselineName":  "Windows 365 Security Baseline",
+                                             "configurationSettings":  "Administrative Templates",
+                                             "parentDropDown":  "Java permissions",
+                                             "parentDropDownOption":  "Enabled",
+                                             "childDropDown":  "Java permissions",
+                                             "childDropDownOption":  "Disable Java",
+                                             "parentSectionPath":  "Windows Components > Internet Explorer > Internet Control Panel > Security Page > Locked-Down Trusted Sites Zone",
+                                             "childSectionPath":  "Windows Components > Internet Explorer > Internet Control Panel > Security Page > Locked-Down Trusted Sites Zone"
+                                         }
+                      },
+                      {
+                          "testCaseId":  "TC_28766165",
+                          "testName":  "Edit_AdministrativeTemplates_InternetExplorer_AllowFallbackToSSL3InternetExplorer_Win365",
+                          "description":  "Edit profile - Allow fallback to SSL 3.0 (Internet Explorer) - 4th edit instance",
+                          "category":  "Windows 365 Security Baseline",
+                          "priority":  "High",
+                          "enabled":  true,
+                          "parameters":  {
+                                             "firstLink":  "Endpoint security",
+                                             "secondLink":  "Security baselines",
+                                             "secBaselineName":  "Windows 365 Security Baseline",
+                                             "configurationSettings":  "Administrative Templates",
+                                             "parentDropDown":  "Allow fallback to SSL 3.0 (Internet Explorer)",
+                                             "parentDropDownOption":  "Not configured",
+                                             "childDropDown":  "",
+                                             "childDropDownOption":  "",
+                                             "parentSectionPath":  "Windows Components > Internet Explorer",
+                                             "childSectionPath":  "Windows Components > Internet Explorer"
+                                         }
+                      },
+                      {
+                          "testCaseId":  "TC_29903229",
+                          "testName":  "Edit_AdministrativeTemplates_InternetExplorer_AdvancedPage_TurnOffEncryptionSupport_Win365",
+                          "description":  "Edit profile - Turn off encryption support - 4th edit instance",
+                          "category":  "Windows 365 Security Baseline",
+                          "priority":  "High",
+                          "enabled":  true,
+                          "parameters":  {
+                                             "firstLink":  "Endpoint security",
+                                             "secondLink":  "Security baselines",
+                                             "secBaselineName":  "Windows 365 Security Baseline",
+                                             "configurationSettings":  "Administrative Templates",
+                                             "parentDropDown":  "Turn off encryption support",
+                                             "parentDropDownOption":  "Disabled",
+                                             "childDropDown":  "",
+                                             "childDropDownOption":  "",
+                                             "parentSectionPath":  "Windows Components > Internet Explorer > Internet Settings > Advanced Page",
+                                             "childSectionPath":  "Windows Components > Internet Explorer > Internet Settings > Advanced Page"
+                                         }
+                      },
+                      {
+                          "testCaseId":  "TC_29949389",
+                          "testName":  "Edit_AdministrativeTemplates_InternetExplorer_TrustedSitesZone_InitializeAndScriptActiveXControlsNotMarkedAsSafe_Win365",
+                          "description":  "Edit profile - Initialize and script ActiveX controls not marked as safe (Trusted Sites Zone) - 4th edit instance",
+                          "category":  "Windows 365 Security Baseline",
+                          "priority":  "High",
+                          "enabled":  true,
+                          "parameters":  {
+                                             "firstLink":  "Endpoint security",
+                                             "secondLink":  "Security baselines",
+                                             "secBaselineName":  "Windows 365 Security Baseline",
+                                             "configurationSettings":  "Administrative Templates",
+                                             "parentDropDown":  "Initialize and script ActiveX controls not marked as safe",
+                                             "parentDropDownOption":  "Not configured",
+                                             "childDropDown":  "",
+                                             "childDropDownOption":  "",
+                                             "parentSectionPath":  "Windows Components > Internet Explorer > Internet Control Panel > Security Page > Trusted Sites Zone",
+                                             "childSectionPath":  "Windows Components > Internet Explorer > Internet Control Panel > Security Page > Trusted Sites Zone"
+                                         }
+                      },
+                      {
+                          "testCaseId":  "TC_29949431",
+                          "testName":  "Edit_AdministrativeTemplates_InternetExplorer_TrustedSitesZone_JavaPermissions_Win365",
+                          "description":  "Edit profile - Java permissions (Trusted Sites Zone) - 4th edit instance",
+                          "category":  "Windows 365 Security Baseline",
+                          "priority":  "High",
+                          "enabled":  true,
+                          "parameters":  {
+                                             "firstLink":  "Endpoint security",
+                                             "secondLink":  "Security baselines",
+                                             "secBaselineName":  "Windows 365 Security Baseline",
+                                             "configurationSettings":  "Administrative Templates",
+                                             "parentDropDown":  "Java permissions",
+                                             "parentDropDownOption":  "Enabled",
+                                             "childDropDown":  "Java permissions",
+                                             "childDropDownOption":  "Disable Java",
+                                             "parentSectionPath":  "Windows Components > Internet Explorer > Internet Control Panel > Security Page > Trusted Sites Zone",
+                                             "childSectionPath":  "Windows Components > Internet Explorer > Internet Control Panel > Security Page > Trusted Sites Zone"
+                                         }
+                      },
+                      {
+                          "testCaseId":  "TC_29949521",
+                          "testName":  "Edit_AdministrativeTemplates_InternetExplorer_LockedDownRestrictedSitesZone_JavaPermissions_Win365",
+                          "description":  "Edit profile - Java permissions (Locked-Down Restricted Sites Zone) - 4th edit instance",
+                          "category":  "Windows 365 Security Baseline",
+                          "priority":  "High",
+                          "enabled":  true,
+                          "parameters":  {
+                                             "firstLink":  "Endpoint security",
+                                             "secondLink":  "Security baselines",
+                                             "secBaselineName":  "Windows 365 Security Baseline",
+                                             "configurationSettings":  "Administrative Templates",
+                                             "parentDropDown":  "Java permissions",
+                                             "parentDropDownOption":  "Enabled",
+                                             "childDropDown":  "Java permissions",
+                                             "childDropDownOption":  "Disable Java",
+                                             "parentSectionPath":  "Windows Components > Internet Explorer > Internet Control Panel > Security Page > Locked-Down Restricted Sites Zone",
+                                             "childSectionPath":  "Windows Components > Internet Explorer > Internet Control Panel > Security Page > Locked-Down Restricted Sites Zone"
+                                         }
+                      },
+                      {
+                          "testCaseId":  "TC_29949657",
+                          "testName":  "Edit_AdministrativeTemplates_InternetExplorer_LocalMachineZone_JavaPermissions_Win365",
+                          "description":  "Edit profile - Java permissions (Local Machine Zone) - 4th edit instance",
+                          "category":  "Windows 365 Security Baseline",
+                          "priority":  "High",
+                          "enabled":  true,
+                          "parameters":  {
+                                             "firstLink":  "Endpoint security",
+                                             "secondLink":  "Security baselines",
+                                             "secBaselineName":  "Windows 365 Security Baseline",
+                                             "configurationSettings":  "Administrative Templates",
+                                             "parentDropDown":  "Java permissions",
+                                             "parentDropDownOption":  "Enabled",
+                                             "childDropDown":  "Java permissions",
+                                             "childDropDownOption":  "Disable Java",
+                                             "parentSectionPath":  "Windows Components > Internet Explorer > Internet Control Panel > Security Page > Local Machine Zone",
+                                             "childSectionPath":  "Windows Components > Internet Explorer > Internet Control Panel > Security Page > Local Machine Zone"
+                                         }
+                      },
+                      {
+                          "testCaseId":  "TC_29949711",
+                          "testName":  "Edit_AdministrativeTemplates_InternetExplorer_IntranetZone_InitializeAndScriptActiveXControlsNotMarkedAsSafe_Win365",
+                          "description":  "Edit profile - Initialize and script ActiveX controls not marked as safe (Intranet Zone) - 4th edit instance",
+                          "category":  "Windows 365 Security Baseline",
+                          "priority":  "High",
+                          "enabled":  true,
+                          "parameters":  {
+                                             "firstLink":  "Endpoint security",
+                                             "secondLink":  "Security baselines",
+                                             "secBaselineName":  "Windows 365 Security Baseline",
+                                             "configurationSettings":  "Administrative Templates",
+                                             "parentDropDown":  "Initialize and script ActiveX controls not marked as safe",
+                                             "parentDropDownOption":  "Not configured",
+                                             "childDropDown":  "",
+                                             "childDropDownOption":  "",
+                                             "parentSectionPath":  "Windows Components > Internet Explorer > Internet Control Panel > Security Page > Intranet Zone",
+                                             "childSectionPath":  "Windows Components > Internet Explorer > Internet Control Panel > Security Page > Intranet Zone"
+                                         }
+                      },
+                      {
+                          "testCaseId":  "TC_29949760",
+                          "testName":  "Edit_AdministrativeTemplates_InternetExplorer_IntranetZone_JavaPermissions_Win365",
+                          "description":  "Edit profile - Java permissions (Intranet Zone) - 4th edit instance",
+                          "category":  "Windows 365 Security Baseline",
+                          "priority":  "High",
+                          "enabled":  true,
+                          "parameters":  {
+                                             "firstLink":  "Endpoint security",
+                                             "secondLink":  "Security baselines",
+                                             "secBaselineName":  "Windows 365 Security Baseline",
+                                             "configurationSettings":  "Administrative Templates",
+                                             "parentDropDown":  "Java permissions",
+                                             "parentDropDownOption":  "Enabled",
+                                             "childDropDown":  "Java permissions",
+                                             "childDropDownOption":  "Disable Java",
+                                             "parentSectionPath":  "Windows Components > Internet Explorer > Internet Control Panel > Security Page > Intranet Zone",
+                                             "childSectionPath":  "Windows Components > Internet Explorer > Internet Control Panel > Security Page > Intranet Zone"
+                                         }
+                      },
+                      {
+                          "testCaseId":  "TC_29950029",
+                          "testName":  "Edit_AdministrativeTemplates_InternetExplorer_AllowFallbackToSSL3SecurityFeatures_Win365",
+                          "description":  "Edit profile - Allow fallback to SSL 3.0 (Internet Explorer) - 4th edit instance",
+                          "category":  "Windows 365 Security Baseline",
+                          "priority":  "High",
+                          "enabled":  true,
+                          "parameters":  {
+                                             "firstLink":  "Endpoint security",
+                                             "secondLink":  "Security baselines",
+                                             "secBaselineName":  "Windows 365 Security Baseline",
+                                             "configurationSettings":  "Administrative Templates",
+                                             "parentDropDown":  "Allow fallback to SSL 3.0 (Internet Explorer)",
+                                             "parentDropDownOption":  "Not configured",
+                                             "childDropDown":  "",
+                                             "childDropDownOption":  "",
+                                             "parentSectionPath":  "Windows Components > Internet Explorer > Security Features",
+                                             "childSectionPath":  "Windows Components > Internet Explorer > Security Features"
+                                         }
+                      }
+                  ]
+}

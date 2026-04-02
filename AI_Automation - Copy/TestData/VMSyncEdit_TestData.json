@@ -1,0 +1,1604 @@
+{
+  "_comment": "VMSync Test Data - Full MDM Report Validation (Optimized)",
+  "_documentation": {
+    "purpose": "Test cases for VMSync validation with full MDM diagnostic report capture",
+    "optimization": "VMSync executes ONLY ONCE - all tests search the same MDMReport.txt file",
+    "process": [
+      "1. VMSync executes ONCE during test setup to capture COMPLETE MDM diagnostic report",
+      "2. Full HTML report saved to ExpectedResults/MDMReport.txt (plain text format)",
+      "3. ALL test cases search within the SAME MDMReport.txt file for their specific settings",
+      "4. Each test validates its searchTerm and expectedValue from the shared report",
+      "5. Pass if value matches, Fail if not found or mismatched - NO repeated VMSync execution"
+    ],
+    "validation": "Tests validate policy presence anywhere in the shared MDM diagnostic report",
+    "parallelExecution": "Tests execute in 3 parallel batches (VMSync_Batch1, Batch2, Batch3)",
+    "reportLocation": "ExpectedResults/MDMReport.txt (plain text with header + HTML content)",
+    "performance": "Significant improvement: VMSync runs once instead of N times (N = number of test cases)"
+  },
+  "testCases": [
+    {
+      "testCaseId": "TC_28040921",
+      "testName": "Access data sources across domains",
+      "description": "Security Baseline for Windows 10 and later - Access Data Sources Across Domains",
+      "category": "VM Validation",
+      "priority": "High",
+      "enabled": true,
+      "parameters": {
+        "searchTerm": "InternetZoneAllowAccessToDataSources",
+        "expectedValue": "<enabled /><data id=\"IZ_Partname1406\" value=\"3\" />"
+      }
+    },
+    {
+      "testCaseId": "TC_28040953",
+      "testName": "Allow cut, copy or paste operations from the clipboard via script",
+      "description": "Security Baseline for Windows 10 and later - Allow cut, copy or paste operations from the clipboard via script",
+      "category": "VM Validation",
+      "priority": "High",
+      "enabled": true,
+      "parameters": {
+        "searchTerm": "InternetZoneAllowCopyPasteViaScript",
+        "expectedValue": "<enabled /><data id=\"IZ_Partname1407\" value=\"3\" />"
+      }
+    },
+    {
+      "testCaseId": "TC_28040969",
+      "testName": "Allow drag and drop or copy and paste files",
+      "description": "Security Baseline for Windows 10 and later - Allow drag and drop or copy and paste files",
+      "category": "VM Validation",
+      "priority": "High",
+      "enabled": true,
+      "parameters": {
+        "searchTerm": "InternetZoneAllowDragAndDropCopyAndPasteFiles",
+        "expectedValue": "<enabled /><data id=\"IZ_Partname1802\" value=\"3\" />"
+      }
+    },
+    {
+      "testCaseId": "TC_28040995",
+      "testName": "Allow loading of XAML files",
+      "description": "Security Baseline for Windows 10 and later - Allow loading of XAML files",
+      "category": "VM Validation",
+      "priority": "High",
+      "enabled": true,
+      "parameters": {
+        "searchTerm": "InternetZoneAllowLoadingOfXAMLFiles",
+        "expectedValue": "<enabled /><data id=\"IZ_Partname2402\" value=\"3\" />"
+      }
+    },
+    {
+      "testCaseId": "TC_28041010",
+      "testName": "Allow only approved domains to use ActiveX controls without prompt",
+      "description": "Security Baseline for Windows 10 and later - Allow only approved domains to use ActiveX controls without prompt",
+      "category": "VM Validation",
+      "priority": "High",
+      "enabled": true,
+      "parameters": {
+        "searchTerm": "InternetZoneAllowOnlyApprovedDomainsToUseActiveXControls",
+        "expectedValue": "<enabled /><data id=\"IZ_Partname120b\" value=\"0\" />"
+      }
+    },
+    {
+      "testCaseId": "TC_28041023",
+      "testName": "Allow only approved domains to use the TDC ActiveX control",
+      "description": "Security Baseline for Windows 10 and later - Allow only approved domains to use the TDC ActiveX control",
+      "category": "VM Validation",
+      "priority": "Low",
+      "enabled": true,
+      "parameters": {
+        "searchTerm": "InternetZoneAllowOnlyApprovedDomainsToUseTDCActiveXControl",
+        "expectedValue": "<enabled /><data id=\"IZ_Partname120c\" value=\"0\" />"
+      }
+    },
+    {
+      "testCaseId": "TC_28041077",
+      "testName": "Allow scripting of Internet Explorer WebBrowser controls",
+      "description": "Security Baseline for Windows 10 and later - Allow scripting of Internet Explorer WebBrowser controls",
+      "category": "VM Validation",
+      "priority": "Low",
+      "enabled": true,
+      "parameters": {
+        "searchTerm": "InternetZoneAllowScriptingOfInternetExplorerWebBrowserControls",
+        "expectedValue": "<enabled /><data id=\"IZ_Partname1206\" value=\"3\" />"
+      }
+    },
+    {
+      "testCaseId": "TC_28041148",
+      "testName": "Allow scriptlets",
+      "description": "Security Baseline for Windows 10 and later - Allow scriptlets",
+      "category": "VM Validation",
+      "priority": "Low",
+      "enabled": true,
+      "parameters": {
+        "searchTerm": "InternetZoneAllowScriptlets",
+        "expectedValue": " <enabled /><data id=\"IZ_Partname1209\" value=\"3\" />"
+      }
+    },
+    {
+      "testCaseId": "TC_28041719",
+      "testName": "Allow updates to status bar via script",
+      "description": "Security Baseline for Windows 10 and later - Allow updates to status bar via script",
+      "category": "VM Validation",
+      "priority": "Low",
+      "enabled": true,
+      "parameters": {
+        "searchTerm": "InternetZoneAllowUpdatesToStatusBarViaScript",
+        "expectedValue": "<enabled /><data id=\"IZ_Partname2103\" value=\"3\" />"
+      }
+    },
+    {
+      "testCaseId": "TC_28041749",
+      "testName": "Allow VBScript to run in Internet Explorer",
+      "description": "Security Baseline for Windows 10 and later - Allow VBScript to run in Internet Explorer",
+      "category": "VM Validation",
+      "priority": "Low",
+      "enabled": true,
+      "parameters": {
+        "searchTerm": "InternetZoneAllowVBScriptToRunInInternetExplorer",
+        "expectedValue": "<enabled /><data id=\"IZ_Partname140C\" value=\"3\" />"
+      }
+    },
+    {
+      "testCaseId": "TC_28041775",
+      "testName": "Automatic prompting for file downloads",
+      "description": "Security Baseline for Windows 10 and later - Automatic prompting for file downloads",
+      "category": "VM Validation",
+      "priority": "Low",
+      "enabled": true,
+      "parameters": {
+        "searchTerm": "InternetZoneAllowAutomaticPromptingForFileDownloads",
+        "expectedValue": "<enabled /><data id=\"IZ_Partname2200\" value=\"3\" />"
+      }
+    },
+    {
+      "testCaseId": "TC_28041786",
+      "testName": "Don't run antimalware programs against ActiveX controls",
+      "description": "Security Baseline for Windows 10 and later - Don't run antimalware programs against ActiveX controls",
+      "category": "VM Validation",
+      "priority": "Low",
+      "enabled": true,
+      "parameters": {
+        "searchTerm": "InternetZoneDoNotRunAntimalwareAgainstActiveXControls",
+        "expectedValue": "<enabled /><data id=\"IZ_Partname270C\" value=\"0\" />"
+      }
+    },
+    {
+      "testCaseId": "TC_28041794",
+      "testName": "Download signed ActiveX controls",
+      "description": "Security Baseline for Windows 10 and later - Download signed ActiveX controls",
+      "category": "VM Validation",
+      "priority": "Low",
+      "enabled": true,
+      "parameters": {
+        "searchTerm": "InternetZoneDownloadSignedActiveXControls",
+        "expectedValue": "<enabled /><data id=\"IZ_Partname1001\" value=\"3\" />"
+      }
+    },
+    {
+      "testCaseId": "TC_28041849",
+      "testName": "Enable dragging of content from different domains across windows",
+      "description": "Security Baseline for Windows 10 and later - Enable dragging of content from different domains across windows",
+      "category": "VM Validation",
+      "priority": "Low",
+      "enabled": true,
+      "parameters": {
+        "searchTerm": "InternetZoneEnableDraggingOfContentFromDifferentDomainsAcrossWindows",
+        "expectedValue": "<enabled /><data id=\"IZ_Partname2709\" value=\"3\" />"
+      }
+    },
+    {
+      "testCaseId": "TC_28041879",
+      "testName": "Enable dragging of content from different domains within a window",
+      "description": "Security Baseline for Windows 10 and later - Enable dragging of content from different domains within a window",
+      "category": "VM Validation",
+      "priority": "Low",
+      "enabled": true,
+      "parameters": {
+        "searchTerm": "InternetZoneEnableDraggingOfContentFromDifferentDomainsWithinWindows",
+        "expectedValue": "<enabled /><data id=\"IZ_Partname2708\" value=\"3\" />"
+      }
+    },
+    {
+      "testCaseId": "TC_28041902",
+      "testName": "Include local path when user is uploading files to a server",
+      "description": "Security Baseline for Windows 10 and later - Include local path when user is uploading files to a server",
+      "category": "VM Validation",
+      "priority": "Low",
+      "enabled": true,
+      "parameters": {
+        "searchTerm": "InternetZoneIncludeLocalPathWhenUploadingFilesToServer",
+        "expectedValue": "<enabled /><data id=\"IZ_Partname160A\" value=\"3\" />"
+      }
+    },
+    {
+      "testCaseId": "TC_28041954",
+      "testName": "Initialize and script ActiveX controls not marked as safe",
+      "description": "Security Baseline for Windows 10 and later - Initialize and script ActiveX controls not marked as safe",
+      "category": "VM Validation",
+      "priority": "Low",
+      "enabled": true,
+      "parameters": {
+        "searchTerm": "InternetZoneInitializeAndScriptActiveXControls",
+        "expectedValue": "<enabled /><data id=\"IZ_Partname1201\" value=\"3\" />"
+      }
+    },
+    {
+      "testCaseId": "TC_28041994",
+      "testName": "Java permissions",
+      "description": "Security Baseline for Windows 10 and later - Java permissions",
+      "category": "VM Validation",
+      "priority": "Low",
+      "enabled": true,
+      "parameters": {
+        "searchTerm": "InternetZoneJavaPermissions",
+        "expectedValue": "<enabled /><data id=\"IZ_Partname1C00\" value=\"131072\" />"
+      }
+    },
+    {
+      "testCaseId": "TC_28042034",
+      "testName": "Launching applications and files in an IFRAME",
+      "description": "Security Baseline for Windows 10 and later - Launching applications and files in an IFRAME",
+      "category": "VM Validation",
+      "priority": "Low",
+      "enabled": true,
+      "parameters": {
+        "searchTerm": "InternetZoneLaunchingApplicationsAndFilesInIFRAME",
+        "expectedValue": "<enabled /><data id=\"IZ_Partname1804\" value=\"3\" />"
+      }
+    },
+    {
+      "testCaseId": "TC_28042156",
+      "testName": "Logon options",
+      "description": "Security Baseline for Windows 10 and later - Logon options",
+      "category": "VM Validation",
+      "priority": "Low",
+      "enabled": true,
+      "parameters": {
+        "searchTerm": "InternetZoneLogonOptions",
+        "expectedValue": "<enabled /><data id=\"IZ_Partname1A00\" value=\"196608\" />"
+      }
+    },
+    {
+      "testCaseId": "TC_28042269",
+      "testName": "Navigate windows and frames across different domains",
+      "description": "Security Baseline for Windows 10 and later - Navigate windows and frames across different domains",
+      "category": "VM Validation",
+      "priority": "Low",
+      "enabled": true,
+      "parameters": {
+        "searchTerm": "InternetZoneNavigateWindowsAndFrames",
+        "expectedValue": "<enabled /><data id=\"IZ_Partname1607\" value=\"3\" />"
+      }
+    },
+    {
+      "testCaseId": "TC_28042306",
+      "testName": "Run .NET Framework-reliant components not signed with Authenticode",
+      "description": "Security Baseline for Windows 10 and later - Run .NET Framework-reliant components not signed with Authenticode",
+      "category": "VM Validation",
+      "priority": "Low",
+      "enabled": true,
+      "parameters": {
+        "searchTerm": "InternetZoneAllowNETFrameworkReliantComponents",
+        "expectedValue": "<enabled/><data id=\"IZ_Partname2004\" value=\"3\" />"
+      }
+    },
+    {
+      "testCaseId": "TC_28042322",
+      "testName": "Run .NET Framework-reliant components signed with Authenticode",
+      "description": "Security Baseline for Windows 10 and later - Run .NET Framework-reliant components signed with Authenticode",
+      "category": "VM Validation",
+      "priority": "Low",
+      "enabled": true,
+      "parameters": {
+        "searchTerm": "InternetZoneRunNETFrameworkReliantComponentsSignedWithAuthenticode",
+        "expectedValue": "<enabled /><data id=\"IZ_Partname2001\" value=\"3\" />"
+      }
+    },
+    {
+      "testCaseId": "TC_28042406",
+      "testName": "Turn on Cross-Site Scripting Filter",
+      "description": "Security Baseline for Windows 10 and later - Turn on Cross-Site Scripting Filter",
+      "category": "VM Validation",
+      "priority": "Low",
+      "enabled": true,
+      "parameters": {
+        "searchTerm": "InternetZoneEnableCrossSiteScriptingFilter",
+        "expectedValue": "<enabled /><data id=\"IZ_Partname1409\" value=\"3\" />"
+      }
+    },
+    {
+      "testCaseId": "TC_28042470",
+      "testName": "Turn on Protected Mode",
+      "description": "Security Baseline for Windows 10 and later - Turn on Protected Mode",
+      "category": "VM Validation",
+      "priority": "Low",
+      "enabled": true,
+      "parameters": {
+        "searchTerm": "InternetZoneEnableProtectedMode",
+        "expectedValue": "<enabled /><data id=\"IZ_Partname2500\" value=\"3\" />"
+      }
+    },
+    {
+      "testCaseId": "TC_28042485",
+      "testName": "Turn on SmartScreen Filter scan",
+      "description": "Security Baseline for Windows 10 and later - Turn on SmartScreen Filter scan",
+      "category": "VM Validation",
+      "priority": "Low",
+      "enabled": true,
+      "parameters": {
+        "searchTerm": "InternetZoneAllowSmartScreenIE",
+        "expectedValue": "<enabled /><data id=\"IZ_Partname2301\" value=\"3\" />"
+      }
+    },
+    {
+      "testCaseId": "TC_28042554",
+      "testName": "Use Pop-up Blocker",
+      "description": "Security Baseline for Windows 10 and later - Use Pop-up Blocker",
+      "category": "VM Validation",
+      "priority": "Low",
+      "enabled": true,
+      "parameters": {
+        "searchTerm": "InternetZoneUsePopupBlocker",
+        "expectedValue": "<enabled /><data id=\"IZ_Partname1809\" value=\"3\" />"
+      }
+    },
+    {
+      "testCaseId": "TC_28042614",
+      "testName": "Userdata persistence",
+      "description": "Security Baseline for Windows 10 and later - Userdata persistence",
+      "category": "VM Validation",
+      "priority": "Low",
+      "enabled": true,
+      "parameters": {
+        "searchTerm": "InternetZoneAllowUserDataPersistence",
+        "expectedValue": "<enabled /><data id=\"IZ_Partname1606\" value=\"3\" />"
+      }
+    },
+    {
+      "testCaseId": "TC_28042670",
+      "testName": "Web sites in less privileged Web content zones can navigate into this zone",
+      "description": "Security Baseline for Windows 10 and later - Web sites in less privileged Web content zones can navigate into this zone",
+      "category": "VM Validation",
+      "priority": "Low",
+      "enabled": true,
+      "parameters": {
+        "searchTerm": "InternetZoneAllowLessPrivilegedSites",
+        "expectedValue": "<enabled /><data id=\"IZ_Partname2101\" value=\"3\" />"
+      }
+    },
+    {
+      "testCaseId": "TC_28069444",
+      "testName": "Download unsigned ActiveX controls",
+      "description": "Security Baseline for Windows 10 and later - Download unsigned ActiveX controls",
+      "category": "VM Validation",
+      "priority": "Low",
+      "enabled": true,
+      "parameters": {
+        "searchTerm": "InternetZoneDownloadUnsignedActiveXControls",
+        "expectedValue": "<enabled /><data id=\"IZ_Partname1004\" value=\"3\" />"
+      }
+    },
+    {
+      "testCaseId": "TC_28069484",
+      "testName": "Allow script-initiated windows without size or position constraints",
+      "description": "Security Baseline for Windows 10 and later - Allow script-initiated windows without size or position constraints",
+      "category": "VM Validation",
+      "priority": "Low",
+      "enabled": true,
+      "parameters": {
+        "searchTerm": "InternetZoneAllowScriptInitiatedWindows",
+        "expectedValue": "<enabled /><data id=\"IZ_Partname2102\" value=\"3\" />"
+      }
+    },
+    {
+      "testCaseId": "TC_28069512",
+      "testName": "Show security warning for potentially unsafe files",
+      "description": "Security Baseline for Windows 10 and later - Show security warning for potentially unsafe files",
+      "category": "VM Validation",
+      "priority": "Low",
+      "enabled": true,
+      "parameters": {
+        "searchTerm": "InternetZoneShowSecurityWarningForPotentiallyUnsafeFiles",
+        "expectedValue": "<enabled /><data id=\"IZ_Partname1806\" value=\"3\" />"
+      }
+    },
+    {
+      "testCaseId": "TC_28041070",
+      "testName": "Allow script-initiated windows without size or position constraints",
+      "description": "Security Baseline for Windows 10 and later - Allow script-initiated windows without size or position constraints",
+      "category": "VM Validation",
+      "priority": "Low",
+      "enabled": true,
+      "parameters": {
+        "searchTerm": "RestrictedSitesZoneAllowScriptInitiatedWindows",
+        "expectedValue": "<enabled /><data id=\"IZ_Partname2102\" value=\"3\" />"
+      }
+    },
+    {
+      "testCaseId": "TC_28041812",
+      "testName": "Download unsigned ActiveX controls",
+      "description": "Security Baseline for Windows 10 and later - Download unsigned ActiveX controls",
+      "category": "VM Validation",
+      "priority": "Low",
+      "enabled": true,
+      "parameters": {
+        "searchTerm": "RestrictedSitesZoneDownloadUnsignedActiveXControls",
+        "expectedValue": "<enabled /><data id=\"IZ_Partname1004\" value=\"3\" />"
+      }
+    },
+    {
+      "testCaseId": "TC_28042347",
+      "testName": "Show security warning for potentially unsafe files",
+      "description": "Security Baseline for Windows 10 and later - Show security warning for potentially unsafe files",
+      "category": "VM Validation",
+      "priority": "Low",
+      "enabled": true,
+      "parameters": {
+        "searchTerm": "RestrictedSitesZoneShowSecurityWarningForPotentiallyUnsafeFiles",
+        "expectedValue": "<enabled /><data id=\"IZ_Partname1806\" value=\"3\" />"
+      }
+    },
+    {
+      "testCaseId": "TC_28042679",
+      "testName": "Access data sources across domains",
+      "description": "Security Baseline for Windows 10 and later - Access data sources across domains",
+      "category": "VM Validation",
+      "priority": "High",
+      "enabled": true,
+      "parameters": {
+        "searchTerm": "RestrictedSitesZoneAllowAccessToDataSources",
+        "expectedValue": "<enabled /><data id=\"IZ_Partname1406\" value=\"3\" />"
+      }
+    },
+    {
+      "testCaseId": "TC_28042822",
+      "testName": "Allow active scripting",
+      "description": "Security Baseline for Windows 10 and later - Allow active scripting",
+      "category": "VM Validation",
+      "priority": "High",
+      "enabled": true,
+      "parameters": {
+        "searchTerm": "RestrictedSitesZoneAllowActiveScripting",
+        "expectedValue": "<enabled /><data id=\"IZ_Partname1400\" value=\"3\" />"
+      }
+    },
+    {
+      "testCaseId": "TC_28042838",
+      "testName": "Allow binary and script behaviors",
+      "description": "Security Baseline for Windows 10 and later - Allow binary and script behaviors",
+      "category": "VM Validation",
+      "priority": "High",
+      "enabled": true,
+      "parameters": {
+        "searchTerm": "RestrictedSitesZoneAllowBinaryAndScriptBehaviors",
+        "expectedValue": "<enabled /><data id=\"IZ_Partname2000\" value=\"3\" />"
+      }
+    },
+    {
+      "testCaseId": "TC_28042848",
+      "testName": "Allow cut, copy or paste operations from the clipboard via script",
+      "description": "Security Baseline for Windows 10 and later - Allow cut, copy or paste operations from the clipboard via script",
+      "category": "VM Validation",
+      "priority": "High",
+      "enabled": true,
+      "parameters": {
+        "searchTerm": "RestrictedSitesZoneAllowCopyPasteViaScript",
+        "expectedValue": "<enabled /><data id=\"IZ_Partname1407\" value=\"3\" />"
+      }
+    },
+    {
+      "testCaseId": "TC_28042855",
+      "testName": "Allow drag and drop or copy and paste files",
+      "description": "Security Baseline for Windows 10 and later - Allow drag and drop or copy and paste files",
+      "category": "VM Validation",
+      "priority": "High",
+      "enabled": true,
+      "parameters": {
+        "searchTerm": "RestrictedSitesZoneAllowDragAndDropCopyAndPasteFiles",
+        "expectedValue": "<enabled /><data id=\"IZ_Partname1802\" value=\"3\" />"
+      }
+    },
+    {
+      "testCaseId": "TC_28042872",
+      "testName": "Allow file downloads",
+      "description": "Security Baseline for Windows 10 and later - Allow file downloads",
+      "category": "VM Validation",
+      "priority": "High",
+      "enabled": true,
+      "parameters": {
+        "searchTerm": "RestrictedSitesZoneAllowFileDownloads",
+        "expectedValue": "<enabled /><data id=\"IZ_Partname1803\" value=\"3\" />"
+      }
+    },
+    {
+      "testCaseId": "TC_28042902",
+      "testName": "Allow loading of XAML files",
+      "description": "Security Baseline for Windows 10 and later - Allow loading of XAML files",
+      "category": "VM Validation",
+      "priority": "High",
+      "enabled": true,
+      "parameters": {
+        "searchTerm": "RestrictedSitesZoneAllowLoadingOfXAMLFiles",
+        "expectedValue": "<enabled /><data id=\"IZ_Partname2402\" value=\"3\" />"
+      }
+    },
+    {
+      "testCaseId": "TC_28052783",
+      "testName": "Allow META REFRESH",
+      "description": "Security Baseline for Windows 10 and later - Allow META REFRESH",
+      "category": "VM Validation",
+      "priority": "High",
+      "enabled": true,
+      "parameters": {
+        "searchTerm": "RestrictedSitesZoneAllowMETAREFRESH",
+        "expectedValue": "<enabled /><data id=\"IZ_Partname1608\" value=\"3\" />"
+      }
+    },
+    {
+      "testCaseId": "TC_28052791",
+      "testName": "Allow only approved domains to use ActiveX controls without prompt",
+      "description": "Security Baseline for Windows 10 and later - Allow only approved domains to use ActiveX controls without prompt",
+      "category": "VM Validation",
+      "priority": "High",
+      "enabled": true,
+      "parameters": {
+        "searchTerm": "RestrictedSitesZoneAllowOnlyApprovedDomainsToUseActiveXControls",
+        "expectedValue": "<enabled /><data id=\"IZ_Partname120b\" value=\"0\" />"
+      }
+    },
+    {
+      "testCaseId": "TC_28052794",
+      "testName": "Allow only approved domains to use the TDC ActiveX control",
+      "description": "Security Baseline for Windows 10 and later - Allow only approved domains to use the TDC ActiveX control",
+      "category": "VM Validation",
+      "priority": "High",
+      "enabled": true,
+      "parameters": {
+        "searchTerm": "RestrictedSitesZoneAllowOnlyApprovedDomainsToUseTDCActiveXControl",
+        "expectedValue": "<enabled /><data id=\"IZ_Partname120c\" value=\"0\" />"
+      }
+    },
+    {
+      "testCaseId": "TC_28052816",
+      "testName": "Allow scripting of Internet Explorer WebBrowser controls",
+      "description": "Security Baseline for Windows 10 and later - Allow scripting of Internet Explorer WebBrowser controls",
+      "category": "VM Validation",
+      "priority": "High",
+      "enabled": true,
+      "parameters": {
+        "searchTerm": "RestrictedSitesZoneAllowScriptingOfInternetExplorerWebBrowserControls",
+        "expectedValue": "<enabled /><data id=\"IZ_Partname1206\" value=\"3\" />"
+      }
+    },
+    {
+      "testCaseId": "TC_28052828",
+      "testName": "Allow scriptlets",
+      "description": "Security Baseline for Windows 10 and later - Allow scriptlets",
+      "category": "VM Validation",
+      "priority": "High",
+      "enabled": true,
+      "parameters": {
+        "searchTerm": "RestrictedSitesZoneAllowScriptlets",
+        "expectedValue": "<enabled /><data id=\"IZ_Partname1209\" value=\"3\" />"
+      }
+    },
+    {
+      "testCaseId": "TC_28052844",
+      "testName": "Allow updates to status bar via script",
+      "description": "Security Baseline for Windows 10 and later - Allow updates to status bar via script",
+      "category": "VM Validation",
+      "priority": "High",
+      "enabled": true,
+      "parameters": {
+        "searchTerm": "RestrictedSitesZoneAllowUpdatesToStatusBarViaScript",
+        "expectedValue": "<enabled /><data id=\"IZ_Partname2103\" value=\"3\" />"
+      }
+    },
+    {
+      "testCaseId": "TC_28052848",
+      "testName": "Allow VBScript to run in Internet Explorer",
+      "description": "Security Baseline for Windows 10 and later - Allow VBScript to run in Internet Explorer",
+      "category": "VM Validation",
+      "priority": "High",
+      "enabled": true,
+      "parameters": {
+        "searchTerm": "RestrictedSitesZoneAllowVBScriptToRunInInternetExplorer",
+        "expectedValue": "<enabled /><data id=\"IZ_Partname140C\" value=\"3\" />"
+      }
+    },
+    {
+      "testCaseId": "TC_28052861",
+      "testName": "Automatic prompting for file downloads",
+      "description": "Security Baseline for Windows 10 and later - Automatic prompting for file downloads",
+      "category": "VM Validation",
+      "priority": "High",
+      "enabled": true,
+      "parameters": {
+        "searchTerm": "RestrictedSitesZoneAllowAutomaticPromptingForFileDownloads",
+        "expectedValue": "<enabled /><data id=\"IZ_Partname2200\" value=\"3\" />"
+      }
+    },
+    {
+      "testCaseId": "TC_28052876",
+      "testName": "Don't run antimalware programs against ActiveX controls",
+      "description": "Security Baseline for Windows 10 and later - Don't run antimalware programs against ActiveX controls",
+      "category": "VM Validation",
+      "priority": "High",
+      "enabled": true,
+      "parameters": {
+        "searchTerm": "RestrictedSitesZoneDoNotRunAntimalwareAgainstActiveXControls",
+        "expectedValue": "<enabled /><data id=\"IZ_Partname270C\" value=\"0\" />"
+      }
+    },
+    {
+      "testCaseId": "TC_28052882",
+      "testName": "Download signed ActiveX controls",
+      "description": "Security Baseline for Windows 10 and later - Download signed ActiveX controls",
+      "category": "VM Validation",
+      "priority": "High",
+      "enabled": true,
+      "parameters": {
+        "searchTerm": "RestrictedSitesZoneDownloadSignedActiveXControls",
+        "expectedValue": "<enabled /><data id=\"IZ_Partname1001\" value=\"3\" />"
+      }
+    },
+    {
+      "testCaseId": "TC_28052962",
+      "testName": "Enable dragging of content from different domains across windows",
+      "description": "Security Baseline for Windows 10 and later - Enable dragging of content from different domains across windows",
+      "category": "VM Validation",
+      "priority": "High",
+      "enabled": true,
+      "parameters": {
+        "searchTerm": "RestrictedSitesZoneEnableDraggingOfContentFromDifferentDomainsAcrossWindows",
+        "expectedValue": "<enabled /><data id=\"IZ_Partname2709\" value=\"3\" />"
+      }
+    },
+    {
+      "testCaseId": "TC_28052971",
+      "testName": "Enable dragging of content from different domains within a window",
+      "description": "Security Baseline for Windows 10 and later - Enable dragging of content from different domains within a window",
+      "category": "VM Validation",
+      "priority": "High",
+      "enabled": true,
+      "parameters": {
+        "searchTerm": "RestrictedSitesZoneEnableDraggingOfContentFromDifferentDomainsWithinWindows",
+        "expectedValue": "<enabled /><data id=\"IZ_Partname2708\" value=\"3\" />"
+      }
+    },
+    {
+      "testCaseId": "TC_28052980",
+      "testName": "Include local path when user is uploading files to a server",
+      "description": "Security Baseline for Windows 10 and later - Include local path when user is uploading files to a server",
+      "category": "VM Validation",
+      "priority": "High",
+      "enabled": true,
+      "parameters": {
+        "searchTerm": "RestrictedSitesZoneIncludeLocalPathWhenUploadingFilesToServer",
+        "expectedValue": "<enabled /><data id=\"IZ_Partname160A\" value=\"3\" />"
+      }
+    },
+    {
+      "testCaseId": "TC_28052985",
+      "testName": "Initialize and script ActiveX controls not marked as safe",
+      "description": "Security Baseline for Windows 10 and later - Initialize and script ActiveX controls not marked as safe",
+      "category": "VM Validation",
+      "priority": "High",
+      "enabled": true,
+      "parameters": {
+        "searchTerm": "RestrictedSitesZoneInitializeAndScriptActiveXControls",
+        "expectedValue": "<enabled /><data id=\"IZ_Partname1201\" value=\"3\" />"
+      }
+    },
+    {
+      "testCaseId": "TC_28052992",
+      "testName": "Java permissions",
+      "description": "Security Baseline for Windows 10 and later - Java permissions",
+      "category": "VM Validation",
+      "priority": "High",
+      "enabled": true,
+      "parameters": {
+        "searchTerm": "RestrictedSitesZoneJavaPermissions",
+        "expectedValue": "<enabled /><data id=\"IZ_Partname1C00\" value=\"131072\" />"
+      }
+    },
+    {
+      "testCaseId": "TC_28053005",
+      "testName": "Launching applications and files in an IFRAME",
+      "description": "Security Baseline for Windows 10 and later - Launching applications and files in an IFRAME",
+      "category": "VM Validation",
+      "priority": "High",
+      "enabled": true,
+      "parameters": {
+        "searchTerm": "RestrictedSitesZoneLaunchingApplicationsAndFilesInIFRAME",
+        "expectedValue": "<enabled /><data id=\"IZ_Partname1804\" value=\"3\" />"
+      }
+    },
+    {
+      "testCaseId": "TC_28053009",
+      "testName": "Logon options",
+      "description": "Security Baseline for Windows 10 and later - Logon options",
+      "category": "VM Validation",
+      "priority": "High",
+      "enabled": true,
+      "parameters": {
+        "searchTerm": "RestrictedSitesZoneLogonOptions",
+        "expectedValue": "<enabled /><data id=\"IZ_Partname1A00\" value=\"196608\" />"
+      }
+    },
+    {
+      "testCaseId": "TC_28053016",
+      "testName": "Navigate windows and frames across different domains",
+      "description": "Security Baseline for Windows 10 and later - Navigate windows and frames across different domains",
+      "category": "VM Validation",
+      "priority": "High",
+      "enabled": true,
+      "parameters": {
+        "searchTerm": "RestrictedSitesZoneNavigateWindowsAndFrames",
+        "expectedValue": "<enabled /><data id=\"IZ_Partname1607\" value=\"3\" />"
+      }
+    },
+    {
+      "testCaseId": "TC_28053058",
+      "testName": "Run .NET Framework-reliant components not signed with Authenticode",
+      "description": "Security Baseline for Windows 10 and later - Run .NET Framework-reliant components not signed with Authenticode",
+      "category": "VM Validation",
+      "priority": "High",
+      "enabled": true,
+      "parameters": {
+        "searchTerm": "RestrictedSitesZoneAllowNETFrameworkReliantComponents",
+        "expectedValue": "<enabled/><data id=\"IZ_Partname2004\" value=\"3\" />"
+      }
+    },
+    {
+      "testCaseId": "TC_28053061",
+      "testName": "Run .NET Framework-reliant components signed with Authenticode",
+      "description": "Security Baseline for Windows 10 and later - Run .NET Framework-reliant components signed with Authenticode",
+      "category": "VM Validation",
+      "priority": "High",
+      "enabled": true,
+      "parameters": {
+        "searchTerm": "RestrictedSitesZoneRunNETFrameworkReliantComponentsSignedWithAuthenticode",
+        "expectedValue": "<enabled /><data id=\"IZ_Partname2001\" value=\"3\" />"
+      }
+    },
+    {
+      "testCaseId": "TC_28053192",
+      "testName": "Run ActiveX controls and plugins",
+      "description": "Security Baseline for Windows 10 and later - Run ActiveX controls and plugins",
+      "category": "VM Validation",
+      "priority": "High",
+      "enabled": true,
+      "parameters": {
+        "searchTerm": "RestrictedSitesZoneRunActiveXControlsAndPlugins",
+        "expectedValue": "<enabled /><data id=\"IZ_Partname1409\" value=\"3\" />"
+      }
+    },
+    {
+      "testCaseId": "TC_28053202",
+      "testName": "Script ActiveX controls marked safe for scripting",
+      "description": "Security Baseline for Windows 10 and later - Script ActiveX controls marked safe for scripting",
+      "category": "VM Validation",
+      "priority": "High",
+      "enabled": true,
+      "parameters": {
+        "searchTerm": "RestrictedSitesZoneScriptActiveXControlsMarkedSafeForScripting",
+        "expectedValue": "<enabled /><data id=\"IZ_Partname1405\" value=\"3\" />"
+      }
+    },
+    {
+      "testCaseId": "TC_28054078",
+      "testName": "Scripting of Java applets",
+      "description": "Security Baseline for Windows 10 and later - Scripting of Java applets",
+      "category": "VM Validation",
+      "priority": "High",
+      "enabled": true,
+      "parameters": {
+        "searchTerm": "RestrictedSitesZoneScriptingOfJavaApplets",
+        "expectedValue": "<enabled /><data id=\"IZ_Partname1402\" value=\"3\" />"
+      }
+    },
+    {
+      "testCaseId": "TC_28054113",
+      "testName": "Turn on Cross-Site Scripting Filter",
+      "description": "Security Baseline for Windows 10 and later - Turn on Cross-Site Scripting Filter",
+      "category": "VM Validation",
+      "priority": "High",
+      "enabled": true,
+      "parameters": {
+        "searchTerm": "RestrictedSitesZoneEnableCrossSiteScriptingFilter",
+        "expectedValue": "<enabled /><data id=\"IZ_Partname1409\" value=\"3\" />"
+      }
+    },
+    {
+      "testCaseId": "TC_28054119",
+      "testName": "Turn on Protected Mode",
+      "description": "Security Baseline for Windows 10 and later - Turn on Protected Mode",
+      "category": "VM Validation",
+      "priority": "High",
+      "enabled": true,
+      "parameters": {
+        "searchTerm": "RestrictedSitesZoneTurnOnProtectedMode",
+        "expectedValue": "<enabled /><data id=\"IZ_Partname2500\" value=\"3\" />"
+      }
+    },
+    {
+      "testCaseId": "TC_28054129",
+      "testName": "Turn on SmartScreen Filter scan",
+      "description": "Security Baseline for Windows 10 and later - Turn on SmartScreen Filter scan",
+      "category": "VM Validation",
+      "priority": "High",
+      "enabled": true,
+      "parameters": {
+        "searchTerm": "RestrictedSitesZoneAllowSmartScreenIE",
+        "expectedValue": "<enabled /><data id=\"IZ_Partname2301\" value=\"3\" />"
+      }
+    },
+    {
+      "testCaseId": "TC_28054146",
+      "testName": "Use Pop-up Blocker",
+      "description": "Security Baseline for Windows 10 and later - Use Pop-up Blocker",
+      "category": "VM Validation",
+      "priority": "High",
+      "enabled": true,
+      "parameters": {
+        "searchTerm": "RestrictedSitesZoneUsePopupBlocker",
+        "expectedValue": "<enabled /><data id=\"IZ_Partname1809\" value=\"3\" />"
+      }
+    },
+    {
+      "testCaseId": "TC_28054163",
+      "testName": "Userdata persistence",
+      "description": "Security Baseline for Windows 10 and later - Userdata persistence",
+      "category": "VM Validation",
+      "priority": "High",
+      "enabled": true,
+      "parameters": {
+        "searchTerm": "RestrictedSitesZoneAllowUserDataPersistence",
+        "expectedValue": "<enabled /><data id=\"IZ_Partname1606\" value=\"3\" />"
+      }
+    },
+    {
+      "testCaseId": "TC_28054177",
+      "testName": "Web sites in less privileged Web content zones can navigate into this zone",
+      "description": "Security Baseline for Windows 10 and later - Web sites in less privileged Web content zones can navigate into this zone",
+      "category": "VM Validation",
+      "priority": "High",
+      "enabled": true,
+      "parameters": {
+        "searchTerm": "RestrictedSitesZoneAllowLessPrivilegedSites",
+        "expectedValue": "<enabled /><data id=\"IZ_Partname2101\" value=\"3\" />"
+      }
+    },
+    {
+      "testCaseId": "TC_27997413",
+      "testName": "Configure the 'Block at First Sight' feature",
+      "description": "Security Baseline for Windows 10 and later - Configure the 'Block at First Sight' feature",
+      "category": "VM Validation",
+      "priority": "High",
+      "enabled": true,
+      "parameters": {
+        "searchTerm": "DisableBlockAtFirstSeen ",
+        "expectedValue": "<disabled />"
+      }
+    },
+    {
+      "testCaseId": "TC_27997517",
+      "testName": "Turn on process scanning whenever real-time protection is enabled",
+      "description": "Security Baseline for Windows 10 and later - Turn on process scanning whenever real-time protection is enabled",
+      "category": "VM Validation",
+      "priority": "High",
+      "enabled": true,
+      "parameters": {
+        "searchTerm": "RealtimeProtection_DisableScanOnRealtimeEnable ",
+        "expectedValue": "<disabled />"
+      }
+    },
+    {
+      "testCaseId": "TC_27997533",
+      "testName": "Scan packed executables",
+      "description": "Security Baseline for Windows 10 and later - Scan packed executables",
+      "category": "VM Validation",
+      "priority": "High",
+      "enabled": true,
+      "parameters": {
+        "searchTerm": "Scan_DisablePackedExeScanning ",
+        "expectedValue": "<disabled />"
+      }
+    },
+    {
+      "testCaseId": "TC_27997546",
+      "testName": "Turn off routine remediation",
+      "description": "Security Baseline for Windows 10 and later - Turn off routine remediation",
+      "category": "VM Validation",
+      "priority": "High",
+      "enabled": true,
+      "parameters": {
+        "searchTerm": "DisableRoutinelyTakingAction",
+        "expectedValue": "<disabled />"
+      }
+    },
+    {
+      "testCaseId": "TC_27996266",
+      "testName": "Set client connection encryption level",
+      "description": "Security Baseline for Windows 10 and later - Set client connection encryption level",
+      "category": "VM Validation",
+      "priority": "High",
+      "enabled": true,
+      "parameters": {
+        "searchTerm": "ClientConnectionEncryptionLevel",
+        "expectedValue": "<enabled /><data id=\"TS_ENCRYPTION_LEVEL\" value=\"2\" />"
+      }
+    },
+    {
+      "testCaseId": "TC_27996890",
+      "testName": "Do not allow drive redirection",
+      "description": "Security Baseline for Windows 10 and later - Do not allow drive redirection",
+      "category": "VM Validation",
+      "priority": "High",
+      "enabled": true,
+      "parameters": {
+        "searchTerm": "DoNotAllowDriveRedirection",
+        "expectedValue": "<disabled />"
+      }
+    },
+    {
+      "testCaseId": "TC_27996902",
+      "testName": "Do not allow passwords to be saved",
+      "description": "Security Baseline for Windows 10 and later - Do not allow passwords to be saved",
+      "category": "VM Validation",
+      "priority": "High",
+      "enabled": true,
+      "parameters": {
+        "searchTerm": "DoNotAllowPasswordSaving",
+        "expectedValue": "<disabled />"
+      }
+    },
+    {
+      "testCaseId": "TC_27996912",
+      "testName": "Always prompt for password upon connection",
+      "description": "Security Baseline for Windows 10 and later - Always prompt for password upon connection",
+      "category": "VM Validation",
+      "priority": "High",
+      "enabled": true,
+      "parameters": {
+        "searchTerm": "PromptForPasswordUponConnection",
+        "expectedValue": "<disabled />"
+      }
+    },
+    {
+      "testCaseId": "TC_27996922",
+      "testName": "Require secure RPC communication",
+      "description": "Security Baseline for Windows 10 and later - Require secure RPC communication",
+      "category": "VM Validation",
+      "priority": "High",
+      "enabled": true,
+      "parameters": {
+        "searchTerm": "RequireSecureRPCCommunication",
+        "expectedValue": "<disabled />"
+      }
+    },
+    {
+      "testCaseId": "TC_28037588",
+      "testName": "Prevent downloading of enclosures",
+      "description": "Security Baseline for Windows 10 and later - Prevent downloading of enclosures",
+      "category": "VM Validation",
+      "priority": "High",
+      "enabled": true,
+      "parameters": {
+        "searchTerm": "DisableEnclosureDownloading",
+        "expectedValue": "<disabled />"
+      }
+    },
+    {
+      "testCaseId": "TC_28037604",
+      "testName": "Sign-in and lock last interactive user automatically after a restart",
+      "description": "Security Baseline for Windows 10 and later - Sign-in and lock last interactive user automatically after a restart",
+      "category": "VM Validation",
+      "priority": "High",
+      "enabled": true,
+      "parameters": {
+        "searchTerm": "AllowAutomaticRestartSignOn",
+        "expectedValue": "<disabled />"
+      }
+    },
+    {
+      "testCaseId": "TC_28087036",
+      "testName": "Enable MPR notifications for the system",
+      "description": "Security Baseline for Windows 10 and later - Enable MPR notifications for the system",
+      "category": "VM Validation",
+      "priority": "High",
+      "enabled": true,
+      "parameters": {
+        "searchTerm": "EnableMPRNotifications",
+        "expectedValue": "<disabled />"
+      }
+    },
+    {
+      "testCaseId": "TC_27980024",
+      "testName": "PowerShell script block logging",
+      "description": "Security Baseline for Windows 10 and later - PowerShell script block logging",
+      "category": "VM Validation",
+      "priority": "High",
+      "enabled": true,
+      "parameters": {
+        "searchTerm": "TurnOnPowerShellScriptBlockLogging ",
+        "expectedValue": "<enabled /><data id=\"EnableScriptBlockInvocationLogging\" value=\"true\" />"
+      }
+    },
+    {
+      "testCaseId": "TC_27984348",
+      "testName": "Disallow Digest authentication",
+      "description": "Security Baseline for Windows 10 and later - Disallow Digest authentication",
+      "category": "VM Validation",
+      "priority": "High",
+      "enabled": true,
+      "parameters": {
+        "searchTerm": "DisallowDigestAuthentication",
+        "expectedValue": "<disabled />"
+      }
+    },
+    {
+      "testCaseId": "TC_27984753",
+      "testName": "Disallow WinRM from storing RunAs credentials",
+      "description": "Security Baseline for Windows 10 and later - Disallow WinRM from storing RunAs credentials",
+      "category": "VM Validation",
+      "priority": "High",
+      "enabled": true,
+      "parameters": {
+        "searchTerm": "DisallowStoringOfRunAsCredentials",
+        "expectedValue": "<disabled />"
+      }
+    },
+    {
+      "testCaseId": "TC_27996180",
+      "testName": "Client Allow Basic authentication",
+      "description": "Security Baseline for Windows 10 and later - Client Allow Basic authentication",
+      "category": "VM Validation",
+      "priority": "High",
+      "enabled": true,
+      "parameters": {
+        "searchTerm": "AllowBasicAuthentication_Client",
+        "expectedValue": "<disabled />"
+      }
+    },
+    {
+      "testCaseId": "TC_27996194",
+      "testName": "Service Allow Basic authentication",
+      "description": "Security Baseline for Windows 10 and later - Service Allow Basic authentication",
+      "category": "VM Validation",
+      "priority": "High",
+      "enabled": true,
+      "parameters": {
+        "searchTerm": "AllowBasicAuthentication_Service",
+        "expectedValue": "<disabled />"
+      }
+    },
+    {
+      "testCaseId": "TC_27996201",
+      "testName": "Client Allow unencrypted traffic",
+      "description": "Security Baseline for Windows 10 and later - Client Allow unencrypted traffic",
+      "category": "VM Validation",
+      "priority": "High",
+      "enabled": true,
+      "parameters": {
+        "searchTerm": "AllowUnencryptedTraffic_Client",
+        "expectedValue": "<disabled />"
+      }
+    },
+     {
+      "testCaseId": "TC_27996209",
+      "testName": "Service Allow unencrypted traffic",
+      "description": "Security Baseline for Windows 10 and later - Service Allow unencrypted traffic",
+      "category": "VM Validation",
+      "priority": "High",
+      "enabled": true,
+      "parameters": {
+        "searchTerm": "AllowUnencryptedTraffic_Service",
+        "expectedValue": "<disabled />"
+      }
+    },
+    {
+      "testCaseId": "TC_27866829",
+      "testName": "Audit Authentication Policy Change",
+      "description": "Security Baseline for Windows 10 and later - Audit Authentication Policy Change",
+      "category": "VM Validation",
+      "priority": "High",
+      "enabled": true,
+      "parameters": {
+        "searchTerm": "AllowUnencryptedTraffic_Service",
+        "expectedValue": "2"
+      }
+    },
+    {
+      "testCaseId": "TC_27867139",
+      "testName": "Account Logon Audit Credential Validation",
+      "description": "Security Baseline for Windows 10 and later - Account Logon Audit Credential Validation",
+      "category": "VM Validation",
+      "priority": "High",
+      "enabled": true,
+      "parameters": {
+        "searchTerm": "AccountLogon_AuditCredentialValidation",
+        "expectedValue": "2"
+      }
+    },
+    {
+      "testCaseId": "TC_27868491",
+      "testName": "Audit File Share Access",
+      "description": "Security Baseline for Windows 10 and later - Audit File Share Access",
+      "category": "VM Validation",
+      "priority": "High",
+      "enabled": true,
+      "parameters": {
+        "searchTerm": "ObjectAccess_AuditFileShare",
+        "expectedValue": "2"
+      }
+    },
+    {
+      "testCaseId": "TC_27868588",
+      "testName": "Audit Changes to Audit Policy",
+      "description": "Security Baseline for Windows 10 and later - Audit Changes to Audit Policy",
+      "category": "VM Validation",
+      "priority": "High",
+      "enabled": true,
+      "parameters": {
+        "searchTerm": "PolicyChange_AuditPolicyChange",
+        "expectedValue": "2"
+      }
+    },
+    {
+      "testCaseId": "TC_27895505",
+      "testName": "Account Logon Logoff Audit Account Lockout",
+      "description": "Security Baseline for Windows 10 and later - Account Logon Logoff Audit Account Lockout",
+      "category": "VM Validation",
+      "priority": "High",
+      "enabled": true,
+      "parameters": {
+        "searchTerm": "AccountLogonLogoff_AuditAccountLockout",
+        "expectedValue": "2"
+      }
+    },
+    {
+      "testCaseId": "TC_27895528",
+      "testName": "Account Logon Logoff Audit Group Membership",
+      "description": "Security Baseline for Windows 10 and later - Account Logon Logoff Audit Group Membership",
+      "category": "VM Validation",
+      "priority": "High",
+      "enabled": true,
+      "parameters": {
+        "searchTerm": "AccountLogonLogoff_AuditGroupMembership",
+        "expectedValue": "2"
+      }
+    },
+    {
+      "testCaseId": "TC_27895551",
+      "testName": "Account Logon Logoff Audit Logon",
+      "description": "Security Baseline for Windows 10 and later - Account Logon Logoff Audit Logon",
+      "category": "VM Validation",
+      "priority": "High",
+      "enabled": true,
+      "parameters": {
+        "searchTerm": "AccountLogonLogoff_AuditLogon",
+        "expectedValue": "2"
+      }
+    },
+    {
+      "testCaseId": "TC_27975539",
+      "testName": "Audit Other Logon Logoff Events",
+      "description": "Security Baseline for Windows 10 and later - Audit Other Logon Logoff Events",
+      "category": "VM Validation",
+      "priority": "High",
+      "enabled": true,
+      "parameters": {
+        "searchTerm": "AccountLogonLogoff_AuditOtherLogonLogoffEvents",
+        "expectedValue": "2"
+      }
+    },
+    {
+      "testCaseId": "TC_27975548",
+      "testName": "Audit Security Group Management",
+      "description": "Security Baseline for Windows 10 and later - Audit Security Group Management",
+      "category": "VM Validation",
+      "priority": "High",
+      "enabled": true,
+      "parameters": {
+        "searchTerm": "AccountManagement_AuditSecurityGroupManagement",
+        "expectedValue": "2"
+      }
+    },
+    {
+      "testCaseId": "TC_27975553",
+      "testName": "Audit Security System Extension",
+      "description": "Security Baseline for Windows 10 and later - Audit Security System Extension",
+      "category": "VM Validation",
+      "priority": "High",
+      "enabled": true,
+      "parameters": {
+        "searchTerm": "System_AuditSecuritySystemExtension",
+        "expectedValue": "2"
+      }
+    },
+    {
+      "testCaseId": "TC_27975565",
+      "testName": "Audit Special Logon",
+      "description": "Security Baseline for Windows 10 and later - Audit Special Logon",
+      "category": "VM Validation",
+      "priority": "High",
+      "enabled": true,
+      "parameters": {
+        "searchTerm": "AccountLogonLogoff_AuditSpecialLogon",
+        "expectedValue": "2"
+      }
+    },
+    {
+      "testCaseId": "TC_27975572",
+      "testName": "Audit User Account Management",
+      "description": "Security Baseline for Windows 10 and later - Audit User Account Management",
+      "category": "VM Validation",
+      "priority": "High",
+      "enabled": true,
+      "parameters": {
+        "searchTerm": "AccountManagement_AuditUserAccountManagement",
+        "expectedValue": "2"
+      }
+    },
+    {
+      "testCaseId": "TC_27975584",
+      "testName": "Detailed Tracking Audit PNP Activity",
+      "description": "Security Baseline for Windows 10 and later - Detailed Tracking Audit PNP Activity",
+      "category": "VM Validation",
+      "priority": "High",
+      "enabled": true,
+      "parameters": {
+        "searchTerm": "DetailedTracking_AuditPNPActivity",
+        "expectedValue": "2"
+      }
+    },
+    {
+      "testCaseId": "TC_27975587",
+      "testName": "Detailed Tracking Audit Process Creation",
+      "description": "Security Baseline for Windows 10 and later - Detailed Tracking Audit Process Creation",
+      "category": "VM Validation",
+      "priority": "High",
+      "enabled": true,
+      "parameters": {
+        "searchTerm": "DetailedTracking_AuditProcessCreation",
+        "expectedValue": "2"
+      }
+    },
+    {
+      "testCaseId": "TC_27975600",
+      "testName": "Object Access Audit Detailed File Share",
+      "description": "Security Baseline for Windows 10 and later - Object Access Audit Detailed File Share",
+      "category": "VM Validation",
+      "priority": "High",
+      "enabled": true,
+      "parameters": {
+        "searchTerm": "ObjectAccess_AuditDetailedFileShare",
+        "expectedValue": "2"
+      }
+    },
+    {
+      "testCaseId": "TC_27975605",
+      "testName": "Object Access Audit Other Object Access Events",
+      "description": "Security Baseline for Windows 10 and later - Object Access Audit Other Object Access Events",
+      "category": "VM Validation",
+      "priority": "High",
+      "enabled": true,
+      "parameters": {
+        "searchTerm": "ObjectAccess_AuditOtherObjectAccessEvents",
+        "expectedValue": "2"
+      }
+    },
+    {
+      "testCaseId": "TC_27975611",
+      "testName": "Object Access Audit Removable Storage",
+      "description": "Security Baseline for Windows 10 and later - Object Access Audit Removable Storage",
+      "category": "VM Validation",
+      "priority": "High",
+      "enabled": true,
+      "parameters": {
+        "searchTerm": "ObjectAccess_AuditRemovableStorage",
+        "expectedValue": "2"
+      }
+    },
+    {
+      "testCaseId": "TC_27975613",
+      "testName": "Policy Change Audit MPSSVC Rule Level Policy Change",
+      "description": "Security Baseline for Windows 10 and later - Policy Change Audit MPSSVC Rule Level Policy Change",
+      "category": "VM Validation",
+      "priority": "High",
+      "enabled": true,
+      "parameters": {
+        "searchTerm": "PolicyChange_AuditMPSSVCRuleLevelPolicyChange",
+        "expectedValue": "2"
+      }
+    },
+    {
+      "testCaseId": "TC_27975620",
+      "testName": "Policy Change Audit Other Policy Change Events",
+      "description": "Security Baseline for Windows 10 and later - Policy Change Audit Other Policy Change Events",
+      "category": "VM Validation",
+      "priority": "High",
+      "enabled": true,
+      "parameters": {
+        "searchTerm": "PolicyChange_AuditOtherPolicyChangeEvents",
+        "expectedValue": "2"
+      }
+    },
+    {
+      "testCaseId": "TC_27975621",
+      "testName": "Privilege Use Audit Sensitive Privilege Use",
+      "description": "Security Baseline for Windows 10 and later - Privilege Use Audit Sensitive Privilege Use",
+      "category": "VM Validation",
+      "priority": "High",
+      "enabled": true,
+      "parameters": {
+        "searchTerm": "PrivilegeUse_AuditSensitivePrivilegeUse",
+        "expectedValue": "2"
+      }
+    },
+    {
+      "testCaseId": "TC_27975623",
+      "testName": "System Audit Other System Events",
+      "description": "Security Baseline for Windows 10 and later - System Audit Other System Events",
+      "category": "VM Validation",
+      "priority": "High",
+      "enabled": true,
+      "parameters": {
+        "searchTerm": "System_AuditOtherSystemEvents",
+        "expectedValue": "2"
+      }
+    },
+    {
+      "testCaseId": "TC_27975628",
+      "testName": "System Audit Security State Change",
+      "description": "Security Baseline for Windows 10 and later - System Audit Security State Change",
+      "category": "VM Validation",
+      "priority": "High",
+      "enabled": true,
+      "parameters": {
+        "searchTerm": "System_AuditSecurityStateChange",
+        "expectedValue": "2"
+      }
+    },
+    {
+      "testCaseId": "TC_27975631",
+      "testName": "System Audit System Integrity",
+      "description": "Security Baseline for Windows 10 and later - System Audit System Integrity",
+      "category": "VM Validation",
+      "priority": "High",
+      "enabled": true,
+      "parameters": {
+        "searchTerm": "System_AuditSystemIntegrity",
+        "expectedValue": "2"
+      }
+    },
+    {
+      "testCaseId": "TC_28008721",
+      "testName": "Configure Lsa Protected Process",
+      "description": "Security Baseline for Windows 10 and later - Configure Lsa Protected Process",
+      "category": "VM Validation",
+      "priority": "High",
+      "enabled": true,
+      "parameters": {
+        "searchTerm": "Configure_LsaProtectedProcess",
+        "expectedValue": "2"
+      }
+    },
+    {
+      "testCaseId": "TC_28008729",
+      "testName": "Allow Game DVR",
+      "description": "Security Baseline for Windows 10 and later - Allow Game DVR",
+      "category": "VM Validation",
+      "priority": "High",
+      "enabled": true,
+      "parameters": {
+        "searchTerm": "Allow_GameDVR",
+        "expectedValue": "0"
+      }
+    },
+    {
+      "testCaseId": "TC_28008850",
+      "testName": "MSI Allow User Control Over Install",
+      "description": "Security Baseline for Windows 10 and later - MSI Allow User Control Over Install",
+      "category": "VM Validation",
+      "priority": "High",
+      "enabled": true,
+      "parameters": {
+        "searchTerm": "MSIAllowUserControlOverInstall",
+        "expectedValue": "0"
+      }
+    },
+    {
+      "testCaseId": "TC_28008855",
+      "testName": "MSI Always Install With Elevated Privileges",
+      "description": "Security Baseline for Windows 10 and later - MSI Always Install With Elevated Privileges",
+      "category": "VM Validation",
+      "priority": "High",
+      "enabled": true,
+      "parameters": {
+        "searchTerm": "MSIAlwaysInstallWithElevatedPrivileges",
+        "expectedValue": "0"
+      }
+    },
+    {
+      "testCaseId": "TC_28008735",
+      "testName": "Configure Microsoft Defender SmartScreen",
+      "description": "Security Baseline for Windows 10 and later - Configure Microsoft Defender SmartScreen",
+      "category": "VM Validation",
+      "priority": "High",
+      "enabled": true,
+      "parameters": {
+        "searchTerm": "SmartScreenEnabled",
+        "expectedValue": "disabled"
+      }
+    },
+    {
+      "testCaseId": "TC_28008802",
+      "testName": "Prevent bypassing Microsoft Defender SmartScreen prompts for sites",
+      "description": "Security Baseline for Windows 10 and later - Prevent bypassing Microsoft Defender SmartScreen prompts for sites",
+      "category": "VM Validation",
+      "priority": "High",
+      "enabled": true,
+      "parameters": {
+        "searchTerm": "PreventSmartScreenPromptOverride",
+        "expectedValue": "disabled"
+      }
+    },
+    {
+      "testCaseId": "TC_28012810",
+      "testName": "Let Apps Activate With Voice Above Lock",
+      "description": "Security Baseline for Windows 10 and later - Let Apps Activate With Voice Above Lock",
+      "category": "VM Validation",
+      "priority": "High",
+      "enabled": true,
+      "parameters": {
+        "searchTerm": "LetAppsActivateWithVoiceAboveLock",
+        "expectedValue": "1"
+      }
+    },
+    {
+      "testCaseId": "TC_28013698",
+      "testName": "Allow Indexing Encrypted Stores Or Items",
+      "description": "Security Baseline for Windows 10 and later - Allow Indexing Encrypted Stores Or Items",
+      "category": "VM Validation",
+      "priority": "High",
+      "enabled": true,
+      "parameters": {
+        "searchTerm": "AllowIndexingEncryptedStoresOrItems",
+        "expectedValue": "1"
+      }
+    },
+    {
+      "testCaseId": "TC_28085688",
+      "testName": "Enable Smart Screen In Shell",
+      "description": "Security Baseline for Windows 10 and later - Enable Smart Screen In Shell",
+      "category": "VM Validation",
+      "priority": "High",
+      "enabled": true,
+      "parameters": {
+        "searchTerm": "EnableSmartScreenInShell",
+        "expectedValue": "0"
+      }
+    },
+    {
+      "testCaseId": "TC_28085738",
+      "testName": "Prevent Override For Files In Shell",
+      "description": "Security Baseline for Windows 10 and later - Prevent Override For Files In Shell",
+      "category": "VM Validation",
+      "priority": "High",
+      "enabled": true,
+      "parameters": {
+        "searchTerm": "PreventOverrideForFilesInShell",
+        "expectedValue": "0"
+      }
+    },
+    {
+      "testCaseId": "TC_28085767",
+      "testName": "Notify Malicious",
+      "description": "Security Baseline for Windows 10 and later - Notify Malicious",
+      "category": "VM Validation",
+      "priority": "High",
+      "enabled": true,
+      "parameters": {
+        "searchTerm": "NotifyMalicious",
+        "expectedValue": "0"
+      }
+    },
+    {
+      "testCaseId": "TC_28085789",
+      "testName": "Notify Password Reuse",
+      "description": "Security Baseline for Windows 10 and later - Notify Password Reuse",
+      "category": "VM Validation",
+      "priority": "High",
+      "enabled": true,
+      "parameters": {
+        "searchTerm": "NotifyPasswordReuse",
+        "expectedValue": "0"
+      }
+    },
+    {
+      "testCaseId": "TC_28085832",
+      "testName": "Notify Unsafe App",
+      "description": "Security Baseline for Windows 10 and later - Notify Unsafe App",
+      "category": "VM Validation",
+      "priority": "High",
+      "enabled": true,
+      "parameters": {
+        "searchTerm": "NotifyUnsafeApp",
+        "expectedValue": "0"
+      }
+    },
+    {
+      "testCaseId": "TC_28085864",
+      "testName": "Service Enabled",
+      "description": "Security Baseline for Windows 10 and later - Service Enabled",
+      "category": "VM Validation",
+      "priority": "High",
+      "enabled": true,
+      "parameters": {
+        "searchTerm": "ServiceEnabled",
+        "expectedValue": "0"
+      }
+    },
+    {
+      "testCaseId": "TC_28037578",
+      "testName": "Configure Xbox Accessory Management Service Startup Mode",
+      "description": "Security Baseline for Windows 10 and later - Configure Xbox Accessory Management Service Startup Mode",
+      "category": "VM Validation",
+      "priority": "High",
+      "enabled": true,
+      "parameters": {
+        "searchTerm": "ConfigureXboxAccessory ManagementServiceStartupMode",
+        "expectedValue": "3"
+      }
+    },
+    {
+      "testCaseId": "TC_28042394",
+      "testName": "Configure Xbox Live Auth Manager Service Startup Mode",
+      "description": "Security Baseline for Windows 10 and later - Configure Xbox Live Auth Manager Service Startup Mode",
+      "category": "VM Validation",
+      "priority": "High",
+      "enabled": true,
+      "parameters": {
+        "searchTerm": "ConfigureXboxLiveAuthManagerServiceStartupMode",
+        "expectedValue": "3"
+      }
+    },
+    {
+      "testCaseId": "TC_28053184",
+      "testName": "Configure Xbox Live Game Save Service Startup Mode",
+      "description": "Security Baseline for Windows 10 and later - Configure Xbox Live Game Save Service Startup Mode",
+      "category": "VM Validation",
+      "priority": "High",
+      "enabled": true,
+      "parameters": {
+        "searchTerm": "ConfigureXboxLiveGameSaveServiceStartupMode",
+        "expectedValue": "3"
+      }
+    },
+    {
+      "testCaseId": "TC_28053194",
+      "testName": "Xbox Live Networking Service Startup Mode",
+      "description": "Security Baseline for Windows 10 and later - Xbox Live Networking Service Startup Mode",
+      "category": "VM Validation",
+      "priority": "High",
+      "enabled": true,
+      "parameters": {
+        "searchTerm": "ConfigureXboxLiveNetworkingServiceStartupMode",
+        "expectedValue": "3"
+      }
+    },
+      {
+        "testCaseId": "TC_31491613",
+        "testName": "Enable Sudo",
+        "description": "Security Baseline for Windows 10 and later - Enable Sudo",
+        "category": "VM Validation",
+        "priority": "High",
+        "enabled": true,
+        "parameters": {
+          "searchTerm": "EnableSudo",
+          "expectedValue": "1"
+        }
+      }
+  ]
+}

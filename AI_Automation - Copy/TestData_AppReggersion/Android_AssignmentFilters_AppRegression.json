@@ -1,0 +1,396 @@
+{
+    "testCases": [
+        {
+            "testCaseId": "TC_7365631",
+            "testName": "Android_AssignmentFilter_Match_DeepLink_Required_UserGroup",
+            "description": "[IntuneSA]:[Android]:[Assignment Filters][Match][E2E]:[DeepLink]:[Required][UserGroup]: Verify Store App is installed successfully on the device",
+            "category": "AndroidAssignmentFilters",
+            "priority": "High",
+            "enabled": true,
+            "parameters": {
+                "firstLink": "Apps",
+                "secondLink": "Android",
+                "AppType": "Android store app",
+                "Name": "TC_7365631_Calculator_Filter_Match",
+                "Description": "TC_7365631_Calculator_Filter_Match",
+                "Publisher": "AIAuto ddmmyyyymmss",
+                "Appstore URL": "https://play.google.com/store/apps/details?id=de.underflow.calc",
+                "Minimum operating system": "Android 4.0 (Ice Cream Sandwich)",
+                "Category": "",
+                "Show this as a featured app": "No",
+                "Information URL": "",
+                "Privacy URL": "",
+                "Developer": "",
+                "Owner": "",
+                "Notes": "",
+                "Logo": "",
+                "Create Matching Assignment Filters": true,
+                "Assignments": {
+                    "Required": {
+                        "Add group": "AI_Automation_User_group",
+                        "Filter mode": "Include filtered devices in assignment",
+                        "Search by name": "Matching Filter", "select filter": "Matching Filter"
+                    },
+                    "Available for enrolled devices": "",
+                    "uninstall": ""
+                },
+                "API parameters": {},
+                "Device Validation": {
+                    "pre-requisite on device": "Create Android enrollment, Create Matching Assignment Filters",
+                    "App Installation Validation": "Verify The DeepLink app installs on device. In Admin UI check Device install status and verify correct filters were evaluated correctly",
+                    "searchTerm": "",
+                    "expectedValue": ""
+                }
+            }
+        },
+        {
+            "testCaseId": "TC_7365632",
+            "testName": "Android_AssignmentFilter_Match_DeepLink_Available_UserGroup",
+            "description": "[IntuneSA]:[Android]:[Assignment Filters][Match][E2E]:[DeepLink]:[Available][UserGroup]:Verify Store App shows in CP and IWP and can be installed successfully on the device",
+            "category": "AndroidAssignmentFilters",
+            "priority": "High",
+            "enabled": true,
+            "parameters": {
+                "firstLink": "Apps",
+                "secondLink": "Android",
+                "AppType": "Android store app",
+                "Name": "TC_7365632_GoogleDocs_Filter_Match",
+                "Description": "TC_7365632_GoogleDocs_Filter_Match",
+                "Publisher": "AIAuto ddmmyyyymmss",
+                "Appstore URL": "https://play.google.com/store/apps/details?id=com.google.android.apps.docs",
+                "Minimum operating system": "Android 4.0 (Ice Cream Sandwich)",
+                "Category": "",
+                "Show this as a featured app": "No",
+                "Information URL": "",
+                "Privacy URL": "",
+                "Developer": "",
+                "Owner": "",
+                "Notes": "",
+                "Logo": "",
+                "Create Matching Assignment Filters": true,
+                "Assignments": {
+                    "Required": "",
+                    "Available for enrolled devices": {
+                        "Add group": "AI_Automation_User_group",
+                        "Filter mode": "Include filtered devices in assignment",
+                        "Search by name": "Matching Filter", "select filter": "Matching Filter"
+                    },
+                    "uninstall": ""
+                },
+                "API parameters": {},
+                "Device Validation": {
+                    "pre-requisite on device": "Create Android enrollment, Create Matching Assignment Filters",
+                    "App Installation Validation": "On device run IWP or Company Portal. App should display. Click Install. App installs successfully. Check Admin UI reporting and filter evaluation",
+                    "searchTerm": "",
+                    "expectedValue": ""
+                }
+            }
+        },
+        {
+            "testCaseId": "TC_7365634",
+            "testName": "Android_AssignmentFilter_Match_APK_Required_UserGroup",
+            "description": "[IntuneSA]:[Android]:[Assignment Filters][Match][E2E]:[APK]:[Required][UserGroup]: Verify LOB App is installed successfully on the device",
+            "category": "AndroidAssignmentFilters",
+            "priority": "High",
+            "enabled": true,
+            "parameters": {
+                "firstLink": "Apps",
+                "secondLink": "Android",
+                "AppType": "Line-of-business app",
+                "select app package file": "LinkedIn_Beta_4.1.141_104900.apk",
+                "Name": "TC_7365634_LinkedIn_Beta_Filter_Match",
+                "Description": "TC_7365634_LinkedIn_Beta_Filter_Match",
+                "Publisher": "AIAuto ddmmyyyymmss",
+                "Targeted platform": "",
+                "Minimum operating system": "Android 5.0 (Lollipop)",
+                "Category": "",
+                "Show this as a featured app": "No",
+                "Information URL": "",
+                "Privacy URL": "",
+                "Developer": "",
+                "Owner": "",
+                "Notes": "",
+                "Logo": "",
+                "Create Matching Assignment Filters": true,
+                "Assignments": {
+                    "Required": {
+                        "Add group": "AI_Automation_User_group",
+                        "Filter mode": "Include filtered devices in assignment",
+                        "Search by name": "Matching Filter", "select filter": "Matching Filter"
+                    },
+                    "Available for enrolled devices": "",
+                    "uninstall": ""
+                },
+                "API parameters": {},
+                "Device Validation": {
+                    "pre-requisite on device": "Create Android enrollment, Create Matching Assignment Filters",
+                    "App Installation Validation": "Verify on Device. App should be installed on the device. Check Admin UI reporting and filter evaluation",
+                    "searchTerm": "",
+                    "expectedValue": ""
+                }
+            }
+        },
+        {
+            "testCaseId": "TC_7365635",
+            "testName": "Android_AssignmentFilter_Match_APK_Available_UserGroup",
+            "description": "[IntuneSA]:[Android]:[Assignment Filters][Match][E2E]:[APK]:[Available][UserGroup]:Verify LOB App shows in CP and IWP and can be installed successfully on the device",
+            "category": "AndroidAssignmentFilters",
+            "priority": "High",
+            "enabled": true,
+            "parameters": {
+                "firstLink": "Apps",
+                "secondLink": "Android",
+                "AppType": "Line-of-business app",
+                "select app package file": "Word_16.0.9120.1000_2001471355.apk",
+                "Name": "TC_7365635_Word_Filter_Match",
+                "Description": "TC_7365635_Word_Filter_Match",
+                "Publisher": "AIAuto ddmmyyyymmss",
+                "Targeted platform": "",
+                "Minimum operating system": "Android 5.0 (Lollipop)",
+                "Category": "",
+                "Show this as a featured app": "No",
+                "Information URL": "",
+                "Privacy URL": "",
+                "Developer": "",
+                "Owner": "",
+                "Notes": "",
+                "Logo": "",
+                "Create Matching Assignment Filters": true,
+                "Assignments": {
+                    "Required": "",
+                    "Available for enrolled devices": {
+                        "Add group": "AI_Automation_User_group",
+                        "Filter mode": "Include filtered devices in assignment",
+                        "Search by name": "Matching Filter", "select filter": "Matching Filter"
+                    },
+                    "uninstall": ""
+                },
+                "API parameters": {},
+                "Device Validation": {
+                    "pre-requisite on device": "Create Android enrollment, Create Matching Assignment Filters",
+                    "App Installation Validation": "On device run IWP or Company Portal. App should be listed. Click on the App and choose install. App should be installed on the device. Check Admin UI reporting",
+                    "searchTerm": "",
+                    "expectedValue": ""
+                }
+            }
+        },
+        {
+            "testCaseId": "TC_7365636",
+            "testName": "Android_AssignmentFilter_Match_APK_Uninstall_UserGroup",
+            "description": "[IntuneSA]:[Android]:[Assignment Filters][Match][E2E]:[APK]:[Uninstall][UserGroup]:Verify LOB App is uninstalled successfully on the device",
+            "category": "AndroidAssignmentFilters",
+            "priority": "High",
+            "enabled": true,
+            "parameters": {
+                "firstLink": "Apps",
+                "secondLink": "Android",
+                "AppType": "Line-of-business app",
+                "select app package file": "Adobe_Flash_Player_10.3.185.24.apk",
+                "Name": "TC_7365636_AdobeFlash_Filter_Uninstall",
+                "Description": "TC_7365636_AdobeFlash_Filter_Uninstall",
+                "Publisher": "AIAuto ddmmyyyymmss",
+                "Targeted platform": "",
+                "Minimum operating system": "Android 5.0 (Lollipop)",
+                "Category": "",
+                "Show this as a featured app": "No",
+                "Information URL": "",
+                "Privacy URL": "",
+                "Developer": "",
+                "Owner": "",
+                "Notes": "Reuses Adobe_Flash_Player_10.3.185.24.apk which was uninstalled in TC_952918",
+                "Logo": "",
+                "Create Matching Assignment Filters": true,
+                "Assignments": {
+                    "Required": "",
+                    "Available for enrolled devices": "",
+                    "uninstall": {
+                        "Add group": "AI_Automation_User_group",
+                        "Filter mode": "Include filtered devices in assignment",
+                        "Search by name": "Matching Filter", "select filter": "Matching Filter"
+                    }
+                },
+                "API parameters": {},
+                "Device Validation": {
+                    "pre-requisite on device": "App should be previously published and installed on the device. Change deployment to Uninstall. Create Matching Assignment Filters",
+                    "App Installation Validation": "Verify on the device. App should uninstall. Check Admin UI reporting and filter evaluation",
+                    "searchTerm": "",
+                    "expectedValue": ""
+                }
+            }
+        },
+        {
+            "testCaseId": "TC_7365637",
+            "testName": "Android_AssignmentFilter_NoMatch_DeepLink_Required_UserGroup",
+            "description": "[IntuneSA]:[Android]:[Assignment Filters][No Match][E2E]:[DeepLink]:[Required][UserGroup]: Verify Store App is not installed on the device",
+            "category": "AndroidAssignmentFilters",
+            "priority": "High",
+            "enabled": true,
+            "parameters": {
+                "firstLink": "Apps",
+                "secondLink": "Android",
+                "AppType": "Android store app",
+                "Name": "TC_7365637_Calculator_Filter_NoMatch",
+                "Description": "TC_7365637_Calculator_Filter_NoMatch",
+                "Publisher": "AIAuto ddmmyyyymmss",
+                "Appstore URL": "https://play.google.com/store/apps/details?id=de.underflow.calc",
+                "Minimum operating system": "Android 4.0 (Ice Cream Sandwich)",
+                "Category": "",
+                "Show this as a featured app": "No",
+                "Information URL": "",
+                "Privacy URL": "",
+                "Developer": "",
+                "Owner": "",
+                "Notes": "",
+                "Logo": "",
+                "Create Non-Matching Assignment Filters": true,
+                "Assignments": {
+                    "Required": {
+                        "Add group": "AI_Automation_User_group",
+                        "Filter mode": "Include filtered devices in assignment",
+                        "Search by name": "Non-Matching Filter", "select filter": "Non-Matching Filter"
+                    },
+                    "Available for enrolled devices": "",
+                    "uninstall": ""
+                },
+                "API parameters": {},
+                "Device Validation": {
+                    "pre-requisite on device": "Create Android enrollment, Create Non-Matching Assignment Filters",
+                    "App Installation Validation": "Verify on the device. Verify the app is not installed. Check Admin UI reporting and filter evaluation",
+                    "searchTerm": "",
+                    "expectedValue": ""
+                }
+            }
+        },
+        {
+            "testCaseId": "TC_7365638",
+            "testName": "Android_AssignmentFilter_NoMatch_DeepLink_Available_UserGroup",
+            "description": "[IntuneSA]:[Android]:[Assignment Filters][No Match]:[DeepLink]:[Available][UserGroup]:Verify Store App does not show in CP or IWP",
+            "category": "AndroidAssignmentFilters",
+            "priority": "High",
+            "enabled": true,
+            "parameters": {
+                "firstLink": "Apps",
+                "secondLink": "Android",
+                "AppType": "Android store app",
+                "Name": "TC_7365638_GooglePhotos_Filter_NoMatch",
+                "Description": "TC_7365638_GooglePhotos_Filter_NoMatch",
+                "Publisher": "AIAuto ddmmyyyymmss",
+                "Appstore URL": "https://play.google.com/store/apps/details?id=com.google.android.apps.photos",
+                "Minimum operating system": "Android 4.0 (Ice Cream Sandwich)",
+                "Category": "",
+                "Show this as a featured app": "No",
+                "Information URL": "",
+                "Privacy URL": "",
+                "Developer": "",
+                "Owner": "",
+                "Notes": "",
+                "Logo": "",
+                "Create Non-Matching Assignment Filters": true,
+                "Assignments": {
+                    "Required": "",
+                    "Available for enrolled devices": {
+                        "Add group": "AI_Automation_User_group",
+                        "Filter mode": "Include filtered devices in assignment",
+                        "Search by name": "Non-Matching Filter", "select filter": "Non-Matching Filter"
+                    },
+                    "uninstall": ""
+                },
+                "API parameters": {},
+                "Device Validation": {
+                    "pre-requisite on device": "Create Android enrollment, Create Non-Matching Assignment Filters",
+                    "App Installation Validation": "On device run IWP or Company Portal. App should not be listed",
+                    "searchTerm": "",
+                    "expectedValue": ""
+                }
+            }
+        },
+        {
+            "testCaseId": "TC_7365639",
+            "testName": "Android_AssignmentFilter_NoMatch_APK_Required_UserGroup",
+            "description": "[IntuneSA]:[Android]:[Assignment Filters][No Match][E2E]:[APK]:[Required][UserGroup]: Verify LOB App is not installed on the device",
+            "category": "AndroidAssignmentFilters",
+            "priority": "High",
+            "enabled": true,
+            "parameters": {
+                "firstLink": "Apps",
+                "secondLink": "Android",
+                "AppType": "Line-of-business app",
+                "select app package file": "HashmapsDogfood 156.apk",
+                "Name": "TC_7365639_HashmapsDogfood_Filter_NoMatch",
+                "Description": "TC_7365639_HashmapsDogfood_Filter_NoMatch",
+                "Publisher": "AIAuto ddmmyyyymmss",
+                "Targeted platform": "",
+                "Minimum operating system": "Android 5.0 (Lollipop)",
+                "Category": "",
+                "Show this as a featured app": "No",
+                "Information URL": "",
+                "Privacy URL": "",
+                "Developer": "",
+                "Owner": "",
+                "Notes": "",
+                "Logo": "",
+                "Create Non-Matching Assignment Filters": true,
+                "Assignments": {
+                    "Required": {
+                        "Add group": "AI_Automation_User_group",
+                        "Filter mode": "Include filtered devices in assignment",
+                        "Search by name": "Non-Matching Filter", "select filter": "Non-Matching Filter"
+                    },
+                    "Available for enrolled devices": "",
+                    "uninstall": ""
+                },
+                "API parameters": {},
+                "Device Validation": {
+                    "pre-requisite on device": "Create Android enrollment, Create Non-Matching Assignment Filters",
+                    "App Installation Validation": "Verify on the device. App should not be listed",
+                    "searchTerm": "",
+                    "expectedValue": ""
+                }
+            }
+        },
+        {
+            "testCaseId": "TC_7365640",
+            "testName": "Android_AssignmentFilter_NoMatch_APK_Available_UserGroup",
+            "description": "[IntuneSA]:[Android]:[Assignment Filters][No Match]:[APK]:[Available][UserGroup]:Verify LOB App does not show in CP or IWP",
+            "category": "AndroidAssignmentFilters",
+            "priority": "High",
+            "enabled": true,
+            "parameters": {
+                "firstLink": "Apps",
+                "secondLink": "Android",
+                "AppType": "Line-of-business app",
+                "select app package file": "Talking_Caller_ID_Free_2.8.apk",
+                "Name": "TC_7365640_TalkingCallerID_Filter_NoMatch",
+                "Description": "TC_7365640_TalkingCallerID_Filter_NoMatch",
+                "Publisher": "AIAuto ddmmyyyymmss",
+                "Targeted platform": "",
+                "Minimum operating system": "Android 5.0 (Lollipop)",
+                "Category": "",
+                "Show this as a featured app": "No",
+                "Information URL": "",
+                "Privacy URL": "",
+                "Developer": "",
+                "Owner": "",
+                "Notes": "",
+                "Logo": "",
+                "Create Non-Matching Assignment Filters": true,
+                "Assignments": {
+                    "Required": "",
+                    "Available for enrolled devices": {
+                        "Add group": "AI_Automation_User_group",
+                        "Filter mode": "Include filtered devices in assignment",
+                        "Search by name": "Non-Matching Filter", "select filter": "Non-Matching Filter"
+                    },
+                    "uninstall": ""
+                },
+                "API parameters": {},
+                "Device Validation": {
+                    "pre-requisite on device": "Create Android enrollment, Create Non-Matching Assignment Filters",
+                    "App Installation Validation": "On device run IWP or Company Portal. App should not be listed",
+                    "searchTerm": "",
+                    "expectedValue": ""
+                }
+            }
+        }
+    ]
+}

@@ -1,0 +1,12 @@
+[
+  {
+    "PolicyName": "Automation_20260228_223419",
+    "BaselineType": "Windows 365 Security Baseline",
+    "CreatedDateTime": "2026-02-28 22:35:38",
+    "TestName": "Execute(TC_28037201)",
+    "ParentDropDown": "Java permissions",
+    "ParentDropDownOption": "Enabled",
+    "ChildDropDown": "Java permissions",
+    "ChildDropDownOption": "High safety"
+  }
+]

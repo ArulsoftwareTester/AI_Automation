@@ -1,0 +1,332 @@
+[
+  {
+    "PolicyName": "Automation_20260309_144617",
+    "BaselineType": "Security Baseline for Windows 10 and later",
+    "CreatedDateTime": "2026-03-09 14:48:11",
+    "TestName": "Execute(TC_27868588)",
+    "ParentDropDown": "Audit Changes to Audit Policy",
+    "ParentDropDownOption": "Success",
+    "ChildDropDown": "",
+    "ChildDropDownOption": ""
+  },
+  {
+    "PolicyName": "Automation_20260309_145127",
+    "BaselineType": "Security Baseline for Windows 10 and later",
+    "CreatedDateTime": "2026-03-09 14:53:06",
+    "TestName": "Execute(TC_27895528)",
+    "ParentDropDown": "Account Logon Logoff Audit Group Membership",
+    "ParentDropDownOption": "Success",
+    "ChildDropDown": "",
+    "ChildDropDownOption": ""
+  },
+  {
+    "PolicyName": "Automation_20260309_145607",
+    "BaselineType": "Security Baseline for Windows 10 and later",
+    "CreatedDateTime": "2026-03-09 14:57:59",
+    "TestName": "Execute(TC_27975539)",
+    "ParentDropDown": "Audit Other Logon Logoff Events",
+    "ParentDropDownOption": "Success",
+    "ChildDropDown": "",
+    "ChildDropDownOption": ""
+  },
+  {
+    "PolicyName": "Automation_20260309_145943",
+    "BaselineType": "Security Baseline for Windows 10 and later",
+    "CreatedDateTime": "2026-03-09 15:01:09",
+    "TestName": "Execute(TC_27975553)",
+    "ParentDropDown": "Audit Security System Extension",
+    "ParentDropDownOption": "Success",
+    "ChildDropDown": "",
+    "ChildDropDownOption": ""
+  },
+  {
+    "PolicyName": "Automation_20260309_150152",
+    "BaselineType": "Security Baseline for Windows 10 and later",
+    "CreatedDateTime": "2026-03-09 15:03:19",
+    "TestName": "Execute(TC_27975565)",
+    "ParentDropDown": "Audit Special Logon",
+    "ParentDropDownOption": "Success",
+    "ChildDropDown": "",
+    "ChildDropDownOption": ""
+  },
+  {
+    "PolicyName": "Automation_20260309_150405",
+    "BaselineType": "Security Baseline for Windows 10 and later",
+    "CreatedDateTime": "2026-03-09 15:05:26",
+    "TestName": "Execute(TC_27975572)",
+    "ParentDropDown": "Audit User Account Management",
+    "ParentDropDownOption": "Success",
+    "ChildDropDown": "",
+    "ChildDropDownOption": ""
+  },
+  {
+    "PolicyName": "Automation_20260309_150617",
+    "BaselineType": "Security Baseline for Windows 10 and later",
+    "CreatedDateTime": "2026-03-09 15:07:47",
+    "TestName": "Execute(TC_27975584)",
+    "ParentDropDown": "Detailed Tracking Audit PNP Activity",
+    "ParentDropDownOption": "Success",
+    "ChildDropDown": "",
+    "ChildDropDownOption": ""
+  },
+  {
+    "PolicyName": "Automation_20260309_150839",
+    "BaselineType": "Security Baseline for Windows 10 and later",
+    "CreatedDateTime": "2026-03-09 15:10:02",
+    "TestName": "Execute(TC_27975587)",
+    "ParentDropDown": "Detailed Tracking Audit Process Creation",
+    "ParentDropDownOption": "Success",
+    "ChildDropDown": "",
+    "ChildDropDownOption": ""
+  },
+  {
+    "PolicyName": "Automation_20260309_151127",
+    "BaselineType": "Security Baseline for Windows 10 and later",
+    "CreatedDateTime": "2026-03-09 15:12:51",
+    "TestName": "Execute(TC_27975600)",
+    "ParentDropDown": "Object Access Audit Detailed File Share",
+    "ParentDropDownOption": "Success",
+    "ChildDropDown": "",
+    "ChildDropDownOption": ""
+  },
+  {
+    "PolicyName": "Automation_20260309_151924",
+    "BaselineType": "Security Baseline for Windows 10 and later",
+    "CreatedDateTime": "2026-03-09 15:20:46",
+    "TestName": "Execute(TC_27975628)",
+    "ParentDropDown": "System Audit Security State Change",
+    "ParentDropDownOption": "Success",
+    "ChildDropDown": "",
+    "ChildDropDownOption": ""
+  },
+  {
+    "PolicyName": "Automation_20260309_152145",
+    "BaselineType": "Security Baseline for Windows 10 and later",
+    "CreatedDateTime": "2026-03-09 15:22:59",
+    "TestName": "Execute(TC_27975631)",
+    "ParentDropDown": "System Audit System Integrity",
+    "ParentDropDownOption": "Success",
+    "ChildDropDown": "",
+    "ChildDropDownOption": ""
+  },
+  {
+    "PolicyName": "Automation_20260309_152341",
+    "BaselineType": "Security Baseline for Windows 10 and later",
+    "CreatedDateTime": "2026-03-09 15:25:10",
+    "TestName": "Execute(TC_28041070)",
+    "ParentDropDown": "Allow script-initiated windows without size or position constraints",
+    "ParentDropDownOption": "Enabled",
+    "ChildDropDown": "Allow script-initiated windows without size or position constraints",
+    "ChildDropDownOption": "On"
+  },
+  {
+    "PolicyName": "Automation_20260309_152555",
+    "BaselineType": "Security Baseline for Windows 10 and later",
+    "CreatedDateTime": "2026-03-09 15:27:55",
+    "TestName": "Execute(TC_28041812)",
+    "ParentDropDown": "Download unsigned ActiveX controls",
+    "ParentDropDownOption": "Enabled",
+    "ChildDropDown": "Download unsigned ActiveX controls",
+    "ChildDropDownOption": "Enable"
+  },
+  {
+    "PolicyName": "Automation_20260309_160926",
+    "BaselineType": "Security Baseline for Windows 10 and later",
+    "CreatedDateTime": "2026-03-09 16:10:45",
+    "TestName": "Execute(TC_27866829)",
+    "ParentDropDown": "Audit Authentication Policy Change",
+    "ParentDropDownOption": "Success",
+    "ChildDropDown": "",
+    "ChildDropDownOption": ""
+  },
+  {
+    "PolicyName": "Automation_20260309_161128",
+    "BaselineType": "Security Baseline for Windows 10 and later",
+    "CreatedDateTime": "2026-03-09 16:12:49",
+    "TestName": "Execute(TC_27867139)",
+    "ParentDropDown": "Account Logon Audit Credential Validation",
+    "ParentDropDownOption": "Success",
+    "ChildDropDown": "",
+    "ChildDropDownOption": ""
+  },
+  {
+    "PolicyName": "Automation_20260309_162047",
+    "BaselineType": "Security Baseline for Windows 10 and later",
+    "CreatedDateTime": "2026-03-09 16:22:22",
+    "TestName": "Execute(TC_27895505)",
+    "ParentDropDown": "Account Logon Logoff Audit Account Lockout",
+    "ParentDropDownOption": "Success",
+    "ChildDropDown": "",
+    "ChildDropDownOption": ""
+  },
+  {
+    "PolicyName": "Automation_20260309_162346",
+    "BaselineType": "Security Baseline for Windows 10 and later",
+    "CreatedDateTime": "2026-03-09 16:24:59",
+    "TestName": "Execute(TC_27975548)",
+    "ParentDropDown": "Audit Security Group Management",
+    "ParentDropDownOption": "Success",
+    "ChildDropDown": "",
+    "ChildDropDownOption": ""
+  },
+  {
+    "PolicyName": "Automation_20260309_162610",
+    "BaselineType": "Security Baseline for Windows 10 and later",
+    "CreatedDateTime": "2026-03-09 16:27:32",
+    "TestName": "Execute(TC_27975605)",
+    "ParentDropDown": "Object Access Audit Other Object Access Events",
+    "ParentDropDownOption": "Success",
+    "ChildDropDown": "",
+    "ChildDropDownOption": ""
+  },
+  {
+    "PolicyName": "Automation_20260309_162821",
+    "BaselineType": "Security Baseline for Windows 10 and later",
+    "CreatedDateTime": "2026-03-09 16:30:02",
+    "TestName": "Execute(TC_27975611)",
+    "ParentDropDown": "Object Access Audit Removable Storage",
+    "ParentDropDownOption": "Success",
+    "ChildDropDown": "",
+    "ChildDropDownOption": ""
+  },
+  {
+    "PolicyName": "Automation_20260309_163053",
+    "BaselineType": "Security Baseline for Windows 10 and later",
+    "CreatedDateTime": "2026-03-09 16:32:17",
+    "TestName": "Execute(TC_27975613)",
+    "ParentDropDown": "Policy Change Audit MPSSVC Rule Level Policy Change",
+    "ParentDropDownOption": "Success",
+    "ChildDropDown": "",
+    "ChildDropDownOption": ""
+  },
+  {
+    "PolicyName": "Automation_20260309_163305",
+    "BaselineType": "Security Baseline for Windows 10 and later",
+    "CreatedDateTime": "2026-03-09 16:34:38",
+    "TestName": "Execute(TC_27975620)",
+    "ParentDropDown": "Policy Change Audit Other Policy Change Events",
+    "ParentDropDownOption": "Success",
+    "ChildDropDown": "",
+    "ChildDropDownOption": ""
+  },
+  {
+    "PolicyName": "Automation_20260309_163517",
+    "BaselineType": "Security Baseline for Windows 10 and later",
+    "CreatedDateTime": "2026-03-09 16:36:38",
+    "TestName": "Execute(TC_27975621)",
+    "ParentDropDown": "Privilege Use Audit Sensitive Privilege Use",
+    "ParentDropDownOption": "Success",
+    "ChildDropDown": "",
+    "ChildDropDownOption": ""
+  },
+  {
+    "PolicyName": "Automation_20260309_163724",
+    "BaselineType": "Security Baseline for Windows 10 and later",
+    "CreatedDateTime": "2026-03-09 16:38:45",
+    "TestName": "Execute(TC_27975623)",
+    "ParentDropDown": "System Audit Other System Events",
+    "ParentDropDownOption": "Success",
+    "ChildDropDown": "",
+    "ChildDropDownOption": ""
+  },
+  {
+    "PolicyName": "Automation_20260309_163925",
+    "BaselineType": "Security Baseline for Windows 10 and later",
+    "CreatedDateTime": "2026-03-09 16:41:12",
+    "TestName": "Execute(TC_28042347)",
+    "ParentDropDown": "Show security warning for potentially unsafe files",
+    "ParentDropDownOption": "Enabled",
+    "ChildDropDown": "Launching programs and unsafe files",
+    "ChildDropDownOption": "Enable"
+  },
+  {
+    "PolicyName": "Automation_20260309_164205",
+    "BaselineType": "Security Baseline for Windows 10 and later",
+    "CreatedDateTime": "2026-03-09 16:43:38",
+    "TestName": "Execute(TC_28042679)",
+    "ParentDropDown": "Access data sources across domains",
+    "ParentDropDownOption": "Enabled",
+    "ChildDropDown": "Access data sources across domains",
+    "ChildDropDownOption": "Enable"
+  },
+  {
+    "PolicyName": "Automation_20260309_164423",
+    "BaselineType": "Security Baseline for Windows 10 and later",
+    "CreatedDateTime": "2026-03-09 16:45:55",
+    "TestName": "Execute(TC_28042822)",
+    "ParentDropDown": "Allow active scripting",
+    "ParentDropDownOption": "Enabled",
+    "ChildDropDown": "Allow active scripting",
+    "ChildDropDownOption": "Enable"
+  },
+  {
+    "PolicyName": "Automation_20260309_165601",
+    "BaselineType": "Security Baseline for Windows 10 and later",
+    "CreatedDateTime": "2026-03-09 16:57:41",
+    "TestName": "Execute(TC_28069512)",
+    "ParentDropDown": "Show security warning for potentially unsafe files",
+    "ParentDropDownOption": "Enabled",
+    "ChildDropDown": "Launching programs and unsafe files",
+    "ChildDropDownOption": "Enable"
+  },
+  {
+    "PolicyName": "Automation_20260309_171122",
+    "BaselineType": "Security Baseline for Windows 10 and later",
+    "CreatedDateTime": "2026-03-09 17:12:37",
+    "TestName": "Execute(TC_28069484)",
+    "ParentDropDown": "Allow script-initiated windows without size or position constraints",
+    "ParentDropDownOption": "Enabled",
+    "ChildDropDown": "Allow script-initiated windows without size or position constraints",
+    "ChildDropDownOption": "On"
+  },
+  {
+    "PolicyName": "Automation_20260309_171558",
+    "BaselineType": "Security Baseline for Windows 10 and later",
+    "CreatedDateTime": "2026-03-09 17:17:27",
+    "TestName": "Execute(TC_27895551)",
+    "ParentDropDown": "Account Logon Logoff Audit Logon",
+    "ParentDropDownOption": "Success",
+    "ChildDropDown": "",
+    "ChildDropDownOption": ""
+  },
+  {
+    "PolicyName": "Automation_20260309_171603",
+    "BaselineType": "Security Baseline for Windows 10 and later",
+    "CreatedDateTime": "2026-03-09 17:17:43",
+    "TestName": "Execute(TC_27895551)",
+    "ParentDropDown": "Account Logon Logoff Audit Logon",
+    "ParentDropDownOption": "Success",
+    "ChildDropDown": "",
+    "ChildDropDownOption": ""
+  },
+  {
+    "PolicyName": "Automation_20260309_182550",
+    "BaselineType": "Security Baseline for Windows 10 and later",
+    "CreatedDateTime": "2026-03-09 18:27:14",
+    "TestName": "Execute(TC_27895551)",
+    "ParentDropDown": "Account Logon Logoff Audit Logon",
+    "ParentDropDownOption": "Success",
+    "ChildDropDown": "",
+    "ChildDropDownOption": ""
+  },
+  {
+    "PolicyName": "Automation_20260309_183030",
+    "BaselineType": "Security Baseline for Windows 10 and later",
+    "CreatedDateTime": "2026-03-09 18:32:04",
+    "TestName": "Execute(TC_28069484)",
+    "ParentDropDown": "Allow script-initiated windows without size or position constraints",
+    "ParentDropDownOption": "Enabled",
+    "ChildDropDown": "Allow script-initiated windows without size or position constraints",
+    "ChildDropDownOption": "On"
+  },
+  {
+    "PolicyName": "Automation_20260309_183959",
+    "BaselineType": "Security Baseline for Windows 10 and later",
+    "CreatedDateTime": "2026-03-09 18:41:15",
+    "TestName": "Execute(TC_27895551)",
+    "ParentDropDown": "Account Logon Logoff Audit Logon",
+    "ParentDropDownOption": "Success",
+    "ChildDropDown": "",
+    "ChildDropDownOption": ""
+  }
+]
