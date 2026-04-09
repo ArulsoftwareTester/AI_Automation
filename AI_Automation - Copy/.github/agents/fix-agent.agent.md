@@ -107,6 +107,34 @@ await locator.ClickAsync();
 
 ---
 
+# Mid-Flight Healing Workflow (Agent-Level)
+
+When the Orchestrator detects a failure **during** a running test (via `[HEAL_REQUEST]` or `[HEAL_SIGNAL]` logs), the Fix Agent can apply code fixes between re-runs:
+
+## Step 1: Classify the failure from structured logs
+Parse `[HEAL_REQUEST] step=X controlType=Y error=Z` to determine:
+- Which method in AllAppsUtils failed (map controlType → method)
+- Whether SelfHealingLocator was already tried (check for `[SelfHealing]` logs preceding the failure)
+- Whether the locator is in HealingHintsRegistry (check if `[HEAL_SIGNAL]` was emitted)
+
+## Step 2: Apply the right fix level
+
+| Scenario | Fix |
+|----------|-----|
+| Locator failed, NO `[SelfHealing]` logs → hints missing | Add `HealingHints` entry to `HealingHintsRegistry.cs` for the failing element |
+| Locator failed, `[SelfHealing] Healing failed` → all 15 strategies exhausted | Use live DOM to discover new selector, add to page object |
+| Locator failed at IsExistAsync (no healing) → method uses plain `IsExistAsync` | Replace with `IsExistWithHealingAsync` in the specific call site |
+| Grid row not found (Try 150 exhausted) | Check search box value, verify app was actually created, add refresh before retry |
+| `[SelfHealing] *** PERMANENT FIX RECOMMENDED ***` | Update the primary locator in the page object using the healed strategy |
+
+## Step 3: Re-run immediately after fix
+- Apply fix to the code file
+- Build to verify no compilation errors
+- Re-run the specific test
+- Monitor via Orchestrator's Phase 1
+
+---
+
 # Fix Checklist
 
 - [ ] Searched PlaywrightTests for existing locators/helpers

@@ -1,4 +1,4 @@
-{
+﻿{
     "testCases":  [
                       {
                           "testCaseId":  "TC_3045446",
@@ -43,8 +43,8 @@
                                              "Device Validation":  {
                                                                        "pre-requisite on device":  "",
                                                                        "App Installation Validation":  "Verify App A should be installed on the device",
-                                                                       "searchTerm":  "",
-                                                                       "expectedValue":  ""
+                                                                       "searchTerm":  "Test MSI #1",
+                                                                       "expectedValue":  "installed"
                                                                    }
                                          }
                       },
@@ -91,8 +91,8 @@
                                              "Device Validation":  {
                                                                        "pre-requisite on device":  "",
                                                                        "App Installation Validation":  "Verify Install is success for all Windows Users in group",
-                                                                       "searchTerm":  "",
-                                                                       "expectedValue":  ""
+                                                                       "searchTerm":  "Test MSI #2",
+                                                                       "expectedValue":  "installed"
                                                                    }
                                          }
                       },
@@ -139,8 +139,8 @@
                                              "Device Validation":  {
                                                                        "pre-requisite on device":  "",
                                                                        "App Installation Validation":  "Verify App A should be installed on the device",
-                                                                       "searchTerm":  "",
-                                                                       "expectedValue":  ""
+                                                                       "searchTerm":  "Test MSI #3",
+                                                                       "expectedValue":  "installed"
                                                                    }
                                          }
                       },
@@ -187,8 +187,8 @@
                                              "Device Validation":  {
                                                                        "pre-requisite on device":  "",
                                                                        "App Installation Validation":  "Verify App A should be installed on the device",
-                                                                       "searchTerm":  "",
-                                                                       "expectedValue":  ""
+                                                                       "searchTerm":  "Test MSI #7",
+                                                                       "expectedValue":  "installed"
                                                                    }
                                          }
                       },
@@ -235,8 +235,8 @@
                                              "Device Validation":  {
                                                                        "pre-requisite on device":  "",
                                                                        "App Installation Validation":  "Verify App A should be installed on the device",
-                                                                       "searchTerm":  "",
-                                                                       "expectedValue":  ""
+                                                                       "searchTerm":  "Test MSI #8",
+                                                                       "expectedValue":  "installed"
                                                                    }
                                          }
                       },
@@ -283,8 +283,8 @@
                                              "Device Validation":  {
                                                                        "pre-requisite on device":  "",
                                                                        "App Installation Validation":  "Verify App A should not be installed on the device",
-                                                                       "searchTerm":  "",
-                                                                       "expectedValue":  ""
+                                                                       "searchTerm":  "Test MSI #9",
+                                                                       "expectedValue":  "not installed"
                                                                    }
                                          }
                       },
@@ -331,8 +331,8 @@
                                              "Device Validation":  {
                                                                        "pre-requisite on device":  "",
                                                                        "App Installation Validation":  "Verify App A should be installed on the device",
-                                                                       "searchTerm":  "",
-                                                                       "expectedValue":  ""
+                                                                       "searchTerm":  "Test MSI #10",
+                                                                       "expectedValue":  "installed"
                                                                    }
                                          }
                       },
@@ -379,8 +379,8 @@
                                              "Device Validation":  {
                                                                        "pre-requisite on device":  "",
                                                                        "App Installation Validation":  "Verify App A should be installed on the device",
-                                                                       "searchTerm":  "",
-                                                                       "expectedValue":  ""
+                                                                       "searchTerm":  "Test MSI #11",
+                                                                       "expectedValue":  "installed"
                                                                    }
                                          }
                       },
@@ -427,8 +427,8 @@
                                              "Device Validation":  {
                                                                        "pre-requisite on device":  "",
                                                                        "App Installation Validation":  "Verify App A should  be installed on the device",
-                                                                       "searchTerm":  "",
-                                                                       "expectedValue":  ""
+                                                                       "searchTerm":  "Test MSI #13",
+                                                                       "expectedValue":  "not installed"
                                                                    }
                                          }
                       },
@@ -475,8 +475,8 @@
                                              "Device Validation":  {
                                                                        "pre-requisite on device":  "",
                                                                        "App Installation Validation":  "Verify app should be deleted successfully",
-                                                                       "searchTerm":  "",
-                                                                       "expectedValue":  ""
+                                                                       "searchTerm":  "Test MSI #2",
+                                                                       "expectedValue":  "installed"
                                                                    }
                                          }
                       },
@@ -523,12 +523,12 @@
                                              "Device Validation":  {
                                                                        "pre-requisite on device":  "",
                                                                        "App Installation Validation":  "Verify App A should be installed on the device",
-                                                                       "searchTerm":  "",
-                                                                       "expectedValue":  ""
+                                                                       "searchTerm":  "Test MSI #14",
+                                                                       "expectedValue":  "installed"
                                                                    }
                                          }
                       },
-                        {
+                      {
                           "testCaseId":  "TC_4180340B",
                           "testName":  "Win32App_DependentApp_4180340B",
                           "description":  "[IntuneSA]:[Windows][Win10]:[DependentApp]:[WinClassicApp]:[Available][UserGroup]: A -\u003e B, both applicable to client, deploy A to user",
@@ -571,8 +571,8 @@
                                              "Device Validation":  {
                                                                        "pre-requisite on device":  "",
                                                                        "App Installation Validation":  "Verify App A should be installed on the device",
-                                                                       "searchTerm":  "",
-                                                                       "expectedValue":  ""
+                                                                       "searchTerm":  "Test MSI #15",
+                                                                       "expectedValue":  "installed"
                                                                    }
                                          }
                       },
@@ -605,10 +605,18 @@
                                                                                 "Rule type":  "MSI",
                                                                                 "Rules format":  "Manually configure detection rules"
                                                                             },
-                                             "dependencies": [
-          { "appName": "B", "autoInstall": false, "alreadyInstalled": false },
-          { "appName": "C", "autoInstall": true,  "alreadyInstalled": false }
-        ],
+                                             "dependencies":  [
+                                                                  {
+                                                                      "appName":  "B",
+                                                                      "autoInstall":  false,
+                                                                      "alreadyInstalled":  false
+                                                                  },
+                                                                  {
+                                                                      "appName":  "C",
+                                                                      "autoInstall":  true,
+                                                                      "alreadyInstalled":  false
+                                                                  }
+                                                              ],
                                              "Supercedence":  "",
                                              "Assignments":  {
                                                                  "Required":  "Add group",
@@ -622,13 +630,12 @@
                                              "Device Validation":  {
                                                                        "pre-requisite on device":  "",
                                                                        "App Installation Validation":  "Verify App A should be installed on the device",
-                                                                       "searchTerm":  "",
-                                                                       "expectedValue":  ""
+                                                                       "searchTerm":  "Test MSI #16",
+                                                                       "expectedValue":  "installed"
                                                                    }
                                          }
                       },
-
-                     {
+                      {
                           "testCaseId":  "TC_4180341B",
                           "testName":  "Win32App_DependentApp_4180341B",
                           "description":  "[IntuneSA]:[Windows][Win10]:[DependentApp]:[WinClassicApp]:[Required][DeviceGroup]:A -\u003e B. A is deployed, B is installed then A. Then dependency is changed to A -\u003e C. At global re-eval, C is installed",
@@ -671,13 +678,12 @@
                                              "Device Validation":  {
                                                                        "pre-requisite on device":  "",
                                                                        "App Installation Validation":  "Verify App A should be installed on the device",
-                                                                       "searchTerm":  "",
-                                                                       "expectedValue":  ""
+                                                                       "searchTerm":  "Test MSI #17",
+                                                                       "expectedValue":  "installed"
                                                                    }
                                          }
                       },
-                     
-{
+                      {
                           "testCaseId":  "TC_4180341C",
                           "testName":  "Win32App_DependentApp_4180341C",
                           "description":  "[IntuneSA]:[Windows][Win10]:[DependentApp]:[WinClassicApp]:[Required][DeviceGroup]:A -\u003e B. A is deployed, B is installed then A. Then dependency is changed to A -\u003e C. At global re-eval, C is installed",
@@ -720,15 +726,11 @@
                                              "Device Validation":  {
                                                                        "pre-requisite on device":  "",
                                                                        "App Installation Validation":  "Verify App A should be installed on the device",
-                                                                       "searchTerm":  "",
-                                                                       "expectedValue":  ""
+                                                                       "searchTerm":  "Test MSI #18",
+                                                                       "expectedValue":  "installed"
                                                                    }
                                          }
                       },
-                     
-
-
-
                       {
                           "testCaseId":  "TC_4180343A",
                           "testName":  "Win32App_DependentApp_4180343",
@@ -772,12 +774,12 @@
                                              "Device Validation":  {
                                                                        "pre-requisite on device":  "",
                                                                        "App Installation Validation":  "Verify App A should be installed on the device",
-                                                                       "searchTerm":  "",
-                                                                       "expectedValue":  ""
+                                                                       "searchTerm":  "Test MSI #1",
+                                                                       "expectedValue":  "installed"
                                                                    }
                                          }
                       },
-                       {
+                      {
                           "testCaseId":  "TC_4180343B",
                           "testName":  "Win32App_DependentApp_4180343",
                           "description":  "[IntuneSA]:[Windows][Win10]:[DependentApp]:[WinClassicApp]:[Required][UserGroup]: Dependency Loop",
@@ -820,8 +822,8 @@
                                              "Device Validation":  {
                                                                        "pre-requisite on device":  "",
                                                                        "App Installation Validation":  "Verify App A should be installed on the device",
-                                                                       "searchTerm":  "",
-                                                                       "expectedValue":  ""
+                                                                       "searchTerm":  "Test MSI #1",
+                                                                       "expectedValue":  "installed"
                                                                    }
                                          }
                       },
@@ -868,8 +870,8 @@
                                              "Device Validation":  {
                                                                        "pre-requisite on device":  "",
                                                                        "App Installation Validation":  "Verify App A should be installed on the device",
-                                                                       "searchTerm":  "",
-                                                                       "expectedValue":  ""
+                                                                       "searchTerm":  "Test MSI #2",
+                                                                       "expectedValue":  "installed"
                                                                    }
                                          }
                       },
@@ -916,12 +918,12 @@
                                              "Device Validation":  {
                                                                        "pre-requisite on device":  "",
                                                                        "App Installation Validation":  "Verify App A should be installed on the device",
-                                                                       "searchTerm":  "",
-                                                                       "expectedValue":  ""
+                                                                       "searchTerm":  "Test MSI #3",
+                                                                       "expectedValue":  "installed"
                                                                    }
                                          }
                       },
-                     {
+                      {
                           "testCaseId":  "TC_4180345C",
                           "testName":  "Win32App_DependentApp_4180345C",
                           "description":  "[IntuneSA]:[Windows][Win10]:[DependentApp][Dependencies]:[WinClassicApp]: Create an application with 2 different Win32 app types as dependent apps A -\u003e B (EXE), A -\u003e C (MSI)",
@@ -964,15 +966,11 @@
                                              "Device Validation":  {
                                                                        "pre-requisite on device":  "",
                                                                        "App Installation Validation":  "Verify App A should be installed on the device",
-                                                                       "searchTerm":  "",
-                                                                       "expectedValue":  ""
+                                                                       "searchTerm":  "Test MSI #3",
+                                                                       "expectedValue":  "installed"
                                                                    }
                                          }
                       },
-                     
-                     
-                     
-                     
                       {
                           "testCaseId":  "TC_4180346",
                           "testName":  "Win32App_DependentApp_4180346",
@@ -1016,8 +1014,8 @@
                                              "Device Validation":  {
                                                                        "pre-requisite on device":  "",
                                                                        "App Installation Validation":  "Verify App A should not be installed on the device",
-                                                                       "searchTerm":  "",
-                                                                       "expectedValue":  ""
+                                                                       "searchTerm":  "Test MSI #1",
+                                                                       "expectedValue":  "not installed"
                                                                    }
                                          }
                       },
@@ -1064,8 +1062,8 @@
                                              "Device Validation":  {
                                                                        "pre-requisite on device":  "",
                                                                        "App Installation Validation":  "Verify App A should be installed on the device",
-                                                                       "searchTerm":  "",
-                                                                       "expectedValue":  ""
+                                                                       "searchTerm":  "Test MSI #3",
+                                                                       "expectedValue":  "installed"
                                                                    }
                                          }
                       },
@@ -1112,12 +1110,12 @@
                                              "Device Validation":  {
                                                                        "pre-requisite on device":  "",
                                                                        "App Installation Validation":  "Verify App A should not be installed on the device",
-                                                                       "searchTerm":  "",
-                                                                       "expectedValue":  ""
+                                                                       "searchTerm":  "Test MSI #4",
+                                                                       "expectedValue":  "not installed"
                                                                    }
                                          }
                       },
-                        {
+                      {
                           "testCaseId":  "TC_4180358B",
                           "testName":  "Win32App_DependentApp_4180358B",
                           "description":  "[IntuneSA]:[Windows][Win10]:[DependentApp][Dependencies][E2E]:[WinClassicApp]:[Required][UserGroup]:A-\u003eB, B-\u003eC. C not applicable. When A is deployed, A B not installed (req-not-met). Update C to v2 now applicable. At GRS, Cv2, Bv1 and Av1 installed",
@@ -1160,12 +1158,12 @@
                                              "Device Validation":  {
                                                                        "pre-requisite on device":  "",
                                                                        "App Installation Validation":  "Verify App A should not be installed on the device",
-                                                                       "searchTerm":  "",
-                                                                       "expectedValue":  ""
+                                                                       "searchTerm":  "Test MSI #5",
+                                                                       "expectedValue":  "not installed"
                                                                    }
                                          }
                       },
-                       {
+                      {
                           "testCaseId":  "TC_4180358C",
                           "testName":  "Win32App_DependentApp_4180358C",
                           "description":  "[IntuneSA]:[Windows][Win10]:[DependentApp][Dependencies][E2E]:[WinClassicApp]:[Required][UserGroup]:A-\u003eB, B-\u003eC. C not applicable. When A is deployed, A B not installed (req-not-met). Update C to v2 now applicable. At GRS, Cv2, Bv1 and Av1 installed",
@@ -1208,13 +1206,11 @@
                                              "Device Validation":  {
                                                                        "pre-requisite on device":  "",
                                                                        "App Installation Validation":  "Verify App A should not be installed on the device",
-                                                                       "searchTerm":  "",
-                                                                       "expectedValue":  ""
+                                                                       "searchTerm":  "Test MSI #6",
+                                                                       "expectedValue":  "not installed"
                                                                    }
                                          }
                       },
-                    
-                    
                       {
                           "testCaseId":  "TC_4180360A",
                           "testName":  "Win32App_DependentApp_4180360",
@@ -1258,12 +1254,12 @@
                                              "Device Validation":  {
                                                                        "pre-requisite on device":  "",
                                                                        "App Installation Validation":  "Verify App A should not be installed on the device",
-                                                                       "searchTerm":  "",
-                                                                       "expectedValue":  ""
+                                                                       "searchTerm":  "Test MSI #7",
+                                                                       "expectedValue":  "not installed"
                                                                    }
                                          }
                       },
-                       {
+                      {
                           "testCaseId":  "TC_4180360B",
                           "testName":  "Win32App_DependentApp_4180360B",
                           "description":  "[IntuneSA]:[Windows][Win10]:[DependentApp][Dependencies][E2E]:[WinClassicApp]:[Required][UserGroup]: A -\u003e B. A is already installed but not B. When A is deployed, B should be installed but A should not be attempted",
@@ -1306,12 +1302,11 @@
                                              "Device Validation":  {
                                                                        "pre-requisite on device":  "",
                                                                        "App Installation Validation":  "Verify App A should not be installed on the device",
-                                                                       "searchTerm":  "",
-                                                                       "expectedValue":  ""
+                                                                       "searchTerm":  "Test MSI #8",
+                                                                       "expectedValue":  "not installed"
                                                                    }
                                          }
                       },
-                     
                       {
                           "testCaseId":  "TC_4180361A",
                           "testName":  "Win32App_DependentApp_4180361A",
@@ -1355,12 +1350,12 @@
                                              "Device Validation":  {
                                                                        "pre-requisite on device":  "",
                                                                        "App Installation Validation":  "Verify App A should be installed on the device",
-                                                                       "searchTerm":  "",
-                                                                       "expectedValue":  ""
+                                                                       "searchTerm":  "Test MSI #9",
+                                                                       "expectedValue":  "installed"
                                                                    }
                                          }
                       },
-                       {
+                      {
                           "testCaseId":  "TC_4180361B",
                           "testName":  "Win32App_DependentApp_4180361B",
                           "description":  "[IntuneSA]:[Windows][Win10]:[DependentApp][Dependencies][E2E]:[WinClassicApp]:[Required][UserGroup]: A -\u003e B. B then A is installed. B is updated to v2. At global re-eval, Bv2 is installed.",
@@ -1403,12 +1398,11 @@
                                              "Device Validation":  {
                                                                        "pre-requisite on device":  "",
                                                                        "App Installation Validation":  "Verify App A should be installed on the device",
-                                                                       "searchTerm":  "",
-                                                                       "expectedValue":  ""
+                                                                       "searchTerm":  "Test MSI #10",
+                                                                       "expectedValue":  "installed"
                                                                    }
                                          }
                       },
-                     
                       {
                           "testCaseId":  "TC_4180362A",
                           "testName":  "Win32App_DependentApp_4180362A",
@@ -1452,11 +1446,12 @@
                                              "Device Validation":  {
                                                                        "pre-requisite on device":  "",
                                                                        "App Installation Validation":  "Verify App A should not be installed on the device",
-                                                                       "searchTerm":  "",
-                                                                       "expectedValue":  ""
+                                                                       "searchTerm":  "Test MSI #11",
+                                                                       "expectedValue":  "not installed"
                                                                    }
                                          }
-                      }, {
+                      },
+                      {
                           "testCaseId":  "TC_4180362B",
                           "testName":  "Win32App_DependentApp_4180362B",
                           "description":  "[IntuneSA]:[Windows][Win10]:[DependentApp][Dependencies][E2E]:[WinClassicApp]:[Required][UserGroup]: A -\u003e B. When A is deployed B should be installed first. If B fails, A should not be attempted",
@@ -1499,12 +1494,11 @@
                                              "Device Validation":  {
                                                                        "pre-requisite on device":  "",
                                                                        "App Installation Validation":  "Verify App A should not be installed on the device",
-                                                                       "searchTerm":  "",
-                                                                       "expectedValue":  ""
+                                                                       "searchTerm":  "Test MSI #13",
+                                                                       "expectedValue":  "not installed"
                                                                    }
                                          }
                       },
-                     
                       {
                           "testCaseId":  "TC_4180363A",
                           "testName":  "Win32App_DependentApp_4180363A",
@@ -1548,12 +1542,12 @@
                                              "Device Validation":  {
                                                                        "pre-requisite on device":  "",
                                                                        "App Installation Validation":  "Verify App A should be installed on the device",
-                                                                       "searchTerm":  "",
-                                                                       "expectedValue":  ""
+                                                                       "searchTerm":  "Test MSI #14",
+                                                                       "expectedValue":  "installed"
                                                                    }
                                          }
                       },
-                       {
+                      {
                           "testCaseId":  "TC_4180363B",
                           "testName":  "Win32App_DependentApp_4180363B",
                           "description":  "[IntuneSA]:[Windows][Win10]:[DependentApp][Dependencies][E2E]:[WinClassicApp]:[Required][UserGroup]: A -\u003e B. When A is deployed, B  then A is installed. A is updated to v2. At global re-eval, A v2 is installed",
@@ -1596,12 +1590,11 @@
                                              "Device Validation":  {
                                                                        "pre-requisite on device":  "",
                                                                        "App Installation Validation":  "Verify App A should be installed on the device",
-                                                                       "searchTerm":  "",
-                                                                       "expectedValue":  ""
+                                                                       "searchTerm":  "Test MSI #15",
+                                                                       "expectedValue":  "installed"
                                                                    }
                                          }
                       },
-
                       {
                           "testCaseId":  "TC_4185879A",
                           "testName":  "Win32App_DependentApp_4185879A",
@@ -1645,12 +1638,12 @@
                                              "Device Validation":  {
                                                                        "pre-requisite on device":  "",
                                                                        "App Installation Validation":  "Verify App A should be installed on the device",
-                                                                       "searchTerm":  "",
-                                                                       "expectedValue":  ""
+                                                                       "searchTerm":  "Test MSI #16",
+                                                                       "expectedValue":  "installed"
                                                                    }
                                          }
                       },
-                        {
+                      {
                           "testCaseId":  "TC_4185879B",
                           "testName":  "Win32App_DependentApp_4185879B",
                           "description":  "[IntuneSA]:[Windows][Win10]:[DependentApp][Dependencies][E2E]:[WinClassicApp]:[Required][UserGroup]: Verify Deployment with Dependency returns Success when both Apps successfully install",
@@ -1693,12 +1686,11 @@
                                              "Device Validation":  {
                                                                        "pre-requisite on device":  "",
                                                                        "App Installation Validation":  "Verify App A should be installed on the device",
-                                                                       "searchTerm":  "",
-                                                                       "expectedValue":  ""
+                                                                       "searchTerm":  "Test MSI #17",
+                                                                       "expectedValue":  "installed"
                                                                    }
                                          }
                       },
-                    
                       {
                           "testCaseId":  "TC_4185880A",
                           "testName":  "Win32App_DependentApp_4185880A",
@@ -1742,12 +1734,12 @@
                                              "Device Validation":  {
                                                                        "pre-requisite on device":  "",
                                                                        "App Installation Validation":  "Verify App A should not be installed on the device",
-                                                                       "searchTerm":  "",
-                                                                       "expectedValue":  ""
+                                                                       "searchTerm":  "Test MSI #18",
+                                                                       "expectedValue":  "not installed"
                                                                    }
                                          }
                       },
-                        {
+                      {
                           "testCaseId":  "TC_4185880B",
                           "testName":  "Win32App_DependentApp_4185880B",
                           "description":  "[IntuneSA]:[Windows][Win10]:[DependentApp][Dependencies][E2E][Conflict]:[WinClassicApp]:[Available][UserGroup]: A -\u003e B, A is deployed Available, B is deployed Uninstall to same group.  If A is installed, Uninstall should be ignored",
@@ -1790,8 +1782,8 @@
                                              "Device Validation":  {
                                                                        "pre-requisite on device":  "",
                                                                        "App Installation Validation":  "Verify App A should not be installed on the device",
-                                                                       "searchTerm":  "",
-                                                                       "expectedValue":  ""
+                                                                       "searchTerm":  "Test MSI #19",
+                                                                       "expectedValue":  "not installed"
                                                                    }
                                          }
                       },
@@ -1838,12 +1830,12 @@
                                              "Device Validation":  {
                                                                        "pre-requisite on device":  "",
                                                                        "App Installation Validation":  "Verify UI operation should succeed",
-                                                                       "searchTerm":  "",
-                                                                       "expectedValue":  ""
+                                                                       "searchTerm":  "Test MSI #2",
+                                                                       "expectedValue":  "installed"
                                                                    }
                                          }
                       },
-                        {
+                      {
                           "testCaseId":  "TC_4185914B",
                           "testName":  "Win32App_DependentApp_4185914B",
                           "description":  "[IntuneSA]:[Windows][Win10]:[DependentApp][UI]:[WinClassicApp]: Can add a dependency",
@@ -1886,12 +1878,11 @@
                                              "Device Validation":  {
                                                                        "pre-requisite on device":  "",
                                                                        "App Installation Validation":  "Verify UI operation should succeed",
-                                                                       "searchTerm":  "",
-                                                                       "expectedValue":  ""
+                                                                       "searchTerm":  "Test MSI #2",
+                                                                       "expectedValue":  "installed"
                                                                    }
                                          }
                       },
-                    
                       {
                           "testCaseId":  "TC_4185926A",
                           "testName":  "Win32App_Delete_4185926A",
@@ -1935,12 +1926,12 @@
                                              "Device Validation":  {
                                                                        "pre-requisite on device":  "",
                                                                        "App Installation Validation":  "Verify UI operation should succeed",
-                                                                       "searchTerm":  "",
-                                                                       "expectedValue":  ""
+                                                                       "searchTerm":  "Test MSI #1",
+                                                                       "expectedValue":  "installed"
                                                                    }
                                          }
                       },
-                        {
+                      {
                           "testCaseId":  "TC_4185926B",
                           "testName":  "Win32App_Delete_4185926B",
                           "description":  "[IntuneSA]:[Windows][Win10]:[DependentApp][UI][Delete]:[WinClassicApp]: Can delete a dependency",
@@ -1983,13 +1974,11 @@
                                              "Device Validation":  {
                                                                        "pre-requisite on device":  "",
                                                                        "App Installation Validation":  "Verify UI operation should succeed",
-                                                                       "searchTerm":  "",
-                                                                       "expectedValue":  ""
+                                                                       "searchTerm":  "Test MSI #1",
+                                                                       "expectedValue":  "installed"
                                                                    }
                                          }
                       },
-                    
-
                       {
                           "testCaseId":  "TC_4237713A",
                           "testName":  "Win32App_DependentApp_4237713A",
@@ -2033,12 +2022,12 @@
                                              "Device Validation":  {
                                                                        "pre-requisite on device":  "",
                                                                        "App Installation Validation":  "Verify App A should be installed on the device",
-                                                                       "searchTerm":  "",
-                                                                       "expectedValue":  ""
+                                                                       "searchTerm":  "Test MSI #20",
+                                                                       "expectedValue":  "installed"
                                                                    }
                                          }
                       },
-                       {
+                      {
                           "testCaseId":  "TC_4237713B",
                           "testName":  "Win32App_DependentApp_4237713B",
                           "description":  "[IntuneSA]:[Windows][Win10]:[DependentApp]:[WinClassicApp]:[Required][DeviceGroup]: A -\u003e B, both applicable to client, deploy A to device group",
@@ -2081,12 +2070,11 @@
                                              "Device Validation":  {
                                                                        "pre-requisite on device":  "",
                                                                        "App Installation Validation":  "Verify App A should be installed on the device",
-                                                                       "searchTerm":  "",
-                                                                       "expectedValue":  ""
+                                                                       "searchTerm":  "Test MSI #21",
+                                                                       "expectedValue":  "installed"
                                                                    }
                                          }
                       },
-                     
                       {
                           "testCaseId":  "TC_4237714A",
                           "testName":  "Win32App_DependentApp_4237714A",
@@ -2130,12 +2118,12 @@
                                              "Device Validation":  {
                                                                        "pre-requisite on device":  "",
                                                                        "App Installation Validation":  "Verify App A should be installed on the device",
-                                                                       "searchTerm":  "",
-                                                                       "expectedValue":  ""
+                                                                       "searchTerm":  "Test MSI #22",
+                                                                       "expectedValue":  "installed"
                                                                    }
                                          }
                       },
-                       {
+                      {
                           "testCaseId":  "TC_4237714B",
                           "testName":  "Win32App_DependentApp_4237714B",
                           "description":  "[IntuneSA]:[Windows][Win10]:[DependentApp]:[WinClassicApp]:[Available][UserGroup]:A -\u003e B. A is deployed, B is installed then A. Then dependency is changed to A -\u003e C. At global re-eval, C is installed",
@@ -2178,8 +2166,8 @@
                                              "Device Validation":  {
                                                                        "pre-requisite on device":  "",
                                                                        "App Installation Validation":  "Verify App A should be installed on the device",
-                                                                       "searchTerm":  "",
-                                                                       "expectedValue":  ""
+                                                                       "searchTerm":  "Test MSI #23",
+                                                                       "expectedValue":  "installed"
                                                                    }
                                          }
                       },
@@ -2226,12 +2214,11 @@
                                              "Device Validation":  {
                                                                        "pre-requisite on device":  "",
                                                                        "App Installation Validation":  "Verify App A should be installed on the device",
-                                                                       "searchTerm":  "",
-                                                                       "expectedValue":  ""
+                                                                       "searchTerm":  "Test MSI #24",
+                                                                       "expectedValue":  "installed"
                                                                    }
                                          }
                       },
-                     
                       {
                           "testCaseId":  "TC_4237715A",
                           "testName":  "Win32App_DependentApp_4237715A",
@@ -2275,8 +2262,8 @@
                                              "Device Validation":  {
                                                                        "pre-requisite on device":  "",
                                                                        "App Installation Validation":  "Verify App A should not be installed on the device",
-                                                                       "searchTerm":  "",
-                                                                       "expectedValue":  ""
+                                                                       "searchTerm":  "Test MSI #25",
+                                                                       "expectedValue":  "not installed"
                                                                    }
                                          }
                       },
@@ -2323,7 +2310,7 @@
                                              "Device Validation":  {
                                                                        "pre-requisite on device":  "",
                                                                        "App Installation Validation":  "Verify App A should not be installed on the device",
-                                                                       "searchTerm":  "",
+                                                                       "searchTerm":  "026Fake MSI",
                                                                        "expectedValue":  ""
                                                                    }
                                          }
@@ -2371,12 +2358,12 @@
                                              "Device Validation":  {
                                                                        "pre-requisite on device":  "",
                                                                        "App Installation Validation":  "Verify UI operation should succeed",
-                                                                       "searchTerm":  "",
-                                                                       "expectedValue":  ""
+                                                                       "searchTerm":  "Test MSI #27",
+                                                                       "expectedValue":  "installed"
                                                                    }
                                          }
                       },
-                     {
+                      {
                           "testCaseId":  "TC_8195617B",
                           "testName":  "Win32App_Delete_8195617B",
                           "description":  "[IntuneSA]:[Windows][Win10]:[Supersedence][UI][Delete]:[WinClassicApp]: Can delete a superseded app after removing related relationships",
@@ -2419,8 +2406,8 @@
                                              "Device Validation":  {
                                                                        "pre-requisite on device":  "",
                                                                        "App Installation Validation":  "Verify UI operation should succeed",
-                                                                       "searchTerm":  "",
-                                                                       "expectedValue":  ""
+                                                                       "searchTerm":  "Test MSI #1",
+                                                                       "expectedValue":  "installed"
                                                                    }
                                          }
                       },
@@ -2467,12 +2454,12 @@
                                              "Device Validation":  {
                                                                        "pre-requisite on device":  "",
                                                                        "App Installation Validation":  "Verify UI operation should succeed",
-                                                                       "searchTerm":  "",
-                                                                       "expectedValue":  ""
+                                                                       "searchTerm":  "Test MSI #2",
+                                                                       "expectedValue":  "installed"
                                                                    }
                                          }
                       },
-                       {
+                      {
                           "testCaseId":  "TC_8195618B",
                           "testName":  "Win32App_Delete_8195618B",
                           "description":  "[IntuneSA]:[Windows][Win10]:[Supersedence][UI][Delete]:[WinClassicApp]: Can delete a superseding app after removing related relationships",
@@ -2515,12 +2502,11 @@
                                              "Device Validation":  {
                                                                        "pre-requisite on device":  "",
                                                                        "App Installation Validation":  "Verify UI operation should succeed",
-                                                                       "searchTerm":  "",
-                                                                       "expectedValue":  ""
+                                                                       "searchTerm":  "Test MSI #2",
+                                                                       "expectedValue":  "installed"
                                                                    }
                                          }
                       },
-                     
                       {
                           "testCaseId":  "TC_8195638A",
                           "testName":  "Win32App_Supersedence_8195638A",
@@ -2564,62 +2550,62 @@
                                              "Device Validation":  {
                                                                        "pre-requisite on device":  "",
                                                                        "App Installation Validation":  "Verify App A should not be installed on the device",
-                                                                       "searchTerm":  "",
-                                                                       "expectedValue":  ""
+                                                                       "searchTerm":  "Test MSI #1",
+                                                                       "expectedValue":  "not installed"
                                                                    }
                                          }
                       },
                       {
-                                              "testCaseId":  "TC_8195638B",
-                                              "testName":  "Win32App_Supersedence_8195638B",
-                                              "description":  "[IntuneSA]:[Windows][Win10]:[Supersedence][AppUpdate]:[WinClassicApp]:[Required][UserGroup]: A\u003c\u003c-B; A \u0026 B Required; A not present; only B gets installed; Status: A Not Installed, B Installed",
-                                              "category":  "WinClassicApp",
-                                              "priority":  "High",
-                                              "enabled":  true,
-                                              "parameters":  {
-                                                                 "firstLink":  "Apps",
-                                                                 "secondLink":  "Windows",
-                                                                 "AppType":  "Windows app (Win32)",
-                                                                 "select app package file":  "2 Fake MSI.intunewin",
-                                                                 "Type of app install file":  "MSI",
-                                                                 "Name":  "TC_8195638B_02 Fake MSI.intunewin",
-                                                                 "Description":  "TC_8195638B_02 Fake MSI.intunewin",
-                                                                 "Publisher":  "AIAuto ddmmyyyymmss",
-                                                                 "program parameters":  {
-                                                                                            "Installation time required (mins)":  "5",
-                                                                                            "Install behavior.":  "User"
-                                                                                        },
-                                                                 "Requirements parameters":  {
-                                                                                                 "check operating system architecture":  "No. Allow this app to be installed on all systems.",
-                                                                                                 "architecture type":  "",
-                                                                                                 "Minimum operating system":  "Windows 10 1607"
-                                                                                             },
-                                                                 "Detection rules parameters":  {
-                                                                                                    "Rule type":  "MSI",
-                                                                                                    "Rules format":  "Manually configure detection rules"
-                                                                                                },
-                                                                 "Dependencies":  "",
-                                                                 "Supercedence":  "Configured as per test description",
-                                                                 "Assignments":  {
-                                                                                     "Required":  "",
-                                                                                     "Available for enrolled devices":  "",
-                                                                                     "uninstall":  "",
-                                                                                     "select groups":  ""
-                                                                                 },
-                                                                 "API parameters":  {
+                          "testCaseId":  "TC_8195638B",
+                          "testName":  "Win32App_Supersedence_8195638B",
+                          "description":  "[IntuneSA]:[Windows][Win10]:[Supersedence][AppUpdate]:[WinClassicApp]:[Required][UserGroup]: A\u003c\u003c-B; A \u0026 B Required; A not present; only B gets installed; Status: A Not Installed, B Installed",
+                          "category":  "WinClassicApp",
+                          "priority":  "High",
+                          "enabled":  true,
+                          "parameters":  {
+                                             "firstLink":  "Apps",
+                                             "secondLink":  "Windows",
+                                             "AppType":  "Windows app (Win32)",
+                                             "select app package file":  "2 Fake MSI.intunewin",
+                                             "Type of app install file":  "MSI",
+                                             "Name":  "TC_8195638B_02 Fake MSI.intunewin",
+                                             "Description":  "TC_8195638B_02 Fake MSI.intunewin",
+                                             "Publisher":  "AIAuto ddmmyyyymmss",
+                                             "program parameters":  {
+                                                                        "Installation time required (mins)":  "5",
+                                                                        "Install behavior.":  "User"
+                                                                    },
+                                             "Requirements parameters":  {
+                                                                             "check operating system architecture":  "No. Allow this app to be installed on all systems.",
+                                                                             "architecture type":  "",
+                                                                             "Minimum operating system":  "Windows 10 1607"
+                                                                         },
+                                             "Detection rules parameters":  {
+                                                                                "Rule type":  "MSI",
+                                                                                "Rules format":  "Manually configure detection rules"
+                                                                            },
+                                             "Dependencies":  "",
+                                             "Supercedence":  "Configured as per test description",
+                                             "Assignments":  {
+                                                                 "Required":  "",
+                                                                 "Available for enrolled devices":  "",
+                                                                 "uninstall":  "",
+                                                                 "select groups":  ""
+                                                             },
+                                             "API parameters":  {
 
-                                                                                    },
-                                                                 "Device Validation":  {
-                                                                                           "pre-requisite on device":  "",
-                                                                                           "App Installation Validation":  "Verify App A should not be installed on the device",
-                                                                                           "searchTerm":  "",
-                                                                                           "expectedValue":  ""
-                                                                                       }
-                                                             }
-                                          },
-                                          {
-                                              "testCaseId":  "TC_8195641A",
-                                              "testName":  "Win32App_Supersedence_8195641A",
+                                                                },
+                                             "Device Validation":  {
+                                                                       "pre-requisite on device":  "",
+                                                                       "App Installation Validation":  "Verify App A should not be installed on the device",
+                                                                       "searchTerm":  "Test MSI #2",
+                                                                       "expectedValue":  "not installed"
+                                                                   }
+                                         }
+                      },
+                      {
+                          "testCaseId":  "TC_8195641A",
+                          "testName":  "Win32App_Supersedence_8195641A",
                           "description":  "[IntuneSA]:[Windows][Win10]:[Supersedence][AppUpdate]:[WinClassicApp]:[Required][UserGroup]: A\u003c\u003c-B; A \u0026 B Required; A not present, B is present; no action; Status: A Not Installed, B Installed",
                           "category":  "WinClassicApp",
                           "priority":  "High",
@@ -2660,62 +2646,62 @@
                                              "Device Validation":  {
                                                                        "pre-requisite on device":  "",
                                                                        "App Installation Validation":  "Verify App A should not be installed on the device",
-                                                                       "searchTerm":  "",
-                                                                       "expectedValue":  ""
+                                                                       "searchTerm":  "Test MSI #3",
+                                                                       "expectedValue":  "not installed"
                                                                    }
                                          }
                       },
                       {
-                                              "testCaseId":  "TC_8195641B",
-                                              "testName":  "Win32App_Supersedence_8195641B",
-                                              "description":  "[IntuneSA]:[Windows][Win10]:[Supersedence][AppUpdate]:[WinClassicApp]:[Required][UserGroup]: A\u003c\u003c-B; A \u0026 B Required; A not present, B is present; no action; Status: A Not Installed, B Installed",
-                                              "category":  "WinClassicApp",
-                                              "priority":  "High",
-                                              "enabled":  true,
-                                              "parameters":  {
-                                                                 "firstLink":  "Apps",
-                                                                 "secondLink":  "Windows",
-                                                                 "AppType":  "Windows app (Win32)",
-                                                                 "select app package file":  "7 Fake MSI.intunewin",
-                                                                 "Type of app install file":  "MSI",
-                                                                 "Name":  "TC_8195641B_07 Fake MSI.intunewin",
-                                                                 "Description":  "TC_8195641B_07 Fake MSI.intunewin",
-                                                                 "Publisher":  "AIAuto ddmmyyyymmss",
-                                                                 "program parameters":  {
-                                                                                            "Installation time required (mins)":  "5",
-                                                                                            "Install behavior.":  "User"
-                                                                                        },
-                                                                 "Requirements parameters":  {
-                                                                                                 "check operating system architecture":  "No. Allow this app to be installed on all systems.",
-                                                                                                 "architecture type":  "",
-                                                                                                 "Minimum operating system":  "Windows 10 1607"
-                                                                                             },
-                                                                 "Detection rules parameters":  {
-                                                                                                    "Rule type":  "MSI",
-                                                                                                    "Rules format":  "Manually configure detection rules"
-                                                                                                },
-                                                                 "Dependencies":  "",
-                                                                 "Supercedence":  "Configured as per test description",
-                                                                 "Assignments":  {
-                                                                                     "Required":  "",
-                                                                                     "Available for enrolled devices":  "",
-                                                                                     "uninstall":  "",
-                                                                                     "select groups":  ""
-                                                                                 },
-                                                                 "API parameters":  {
+                          "testCaseId":  "TC_8195641B",
+                          "testName":  "Win32App_Supersedence_8195641B",
+                          "description":  "[IntuneSA]:[Windows][Win10]:[Supersedence][AppUpdate]:[WinClassicApp]:[Required][UserGroup]: A\u003c\u003c-B; A \u0026 B Required; A not present, B is present; no action; Status: A Not Installed, B Installed",
+                          "category":  "WinClassicApp",
+                          "priority":  "High",
+                          "enabled":  true,
+                          "parameters":  {
+                                             "firstLink":  "Apps",
+                                             "secondLink":  "Windows",
+                                             "AppType":  "Windows app (Win32)",
+                                             "select app package file":  "7 Fake MSI.intunewin",
+                                             "Type of app install file":  "MSI",
+                                             "Name":  "TC_8195641B_07 Fake MSI.intunewin",
+                                             "Description":  "TC_8195641B_07 Fake MSI.intunewin",
+                                             "Publisher":  "AIAuto ddmmyyyymmss",
+                                             "program parameters":  {
+                                                                        "Installation time required (mins)":  "5",
+                                                                        "Install behavior.":  "User"
+                                                                    },
+                                             "Requirements parameters":  {
+                                                                             "check operating system architecture":  "No. Allow this app to be installed on all systems.",
+                                                                             "architecture type":  "",
+                                                                             "Minimum operating system":  "Windows 10 1607"
+                                                                         },
+                                             "Detection rules parameters":  {
+                                                                                "Rule type":  "MSI",
+                                                                                "Rules format":  "Manually configure detection rules"
+                                                                            },
+                                             "Dependencies":  "",
+                                             "Supercedence":  "Configured as per test description",
+                                             "Assignments":  {
+                                                                 "Required":  "",
+                                                                 "Available for enrolled devices":  "",
+                                                                 "uninstall":  "",
+                                                                 "select groups":  ""
+                                                             },
+                                             "API parameters":  {
 
-                                                                                    },
-                                                                 "Device Validation":  {
-                                                                                           "pre-requisite on device":  "",
-                                                                                           "App Installation Validation":  "Verify App A should not be installed on the device",
-                                                                                           "searchTerm":  "",
-                                                                                           "expectedValue":  ""
-                                                                                       }
-                                                             }
-                                          },
-                                          {
-                                              "testCaseId":  "TC_8195646A",
-                                              "testName":  "Win32App_Supersedence_8195646A",
+                                                                },
+                                             "Device Validation":  {
+                                                                       "pre-requisite on device":  "",
+                                                                       "App Installation Validation":  "Verify App A should not be installed on the device",
+                                                                       "searchTerm":  "Test MSI #7",
+                                                                       "expectedValue":  "not installed"
+                                                                   }
+                                         }
+                      },
+                      {
+                          "testCaseId":  "TC_8195646A",
+                          "testName":  "Win32App_Supersedence_8195646A",
                           "description":  "[IntuneSA]:[Windows][Win10]:[Supersedence][AppReplace]:[WinClassicApp]:[Required][UserGroup]: A\u003c\u003c+B; A \u0026 B Required; A not present; Install B; Status: A Not Installed, B Installed",
                           "category":  "WinClassicApp",
                           "priority":  "High",
@@ -2756,62 +2742,62 @@
                                              "Device Validation":  {
                                                                        "pre-requisite on device":  "",
                                                                        "App Installation Validation":  "Verify App A should not be installed on the device",
-                                                                       "searchTerm":  "",
-                                                                       "expectedValue":  ""
+                                                                       "searchTerm":  "Test MSI #8",
+                                                                       "expectedValue":  "not installed"
                                                                    }
                                          }
                       },
                       {
-                                              "testCaseId":  "TC_8195646B",
-                                              "testName":  "Win32App_Supersedence_8195646B",
-                                              "description":  "[IntuneSA]:[Windows][Win10]:[Supersedence][AppReplace]:[WinClassicApp]:[Required][UserGroup]: A\u003c\u003c+B; A \u0026 B Required; A not present; Install B; Status: A Not Installed, B Installed",
-                                              "category":  "WinClassicApp",
-                                              "priority":  "High",
-                                              "enabled":  true,
-                                              "parameters":  {
-                                                                 "firstLink":  "Apps",
-                                                                 "secondLink":  "Windows",
-                                                                 "AppType":  "Windows app (Win32)",
-                                                                 "select app package file":  "09 Fake MSI.intunewin",
-                                                                 "Type of app install file":  "MSI",
-                                                                 "Name":  "TC_8195646B_01 Fake MSI.intunewin",
-                                                                 "Description":  "TC_8195646B_01 Fake MSI.intunewin",
-                                                                 "Publisher":  "AIAuto ddmmyyyymmss",
-                                                                 "program parameters":  {
-                                                                                            "Installation time required (mins)":  "5",
-                                                                                            "Install behavior.":  "User"
-                                                                                        },
-                                                                 "Requirements parameters":  {
-                                                                                                 "check operating system architecture":  "No. Allow this app to be installed on all systems.",
-                                                                                                 "architecture type":  "",
-                                                                                                 "Minimum operating system":  "Windows 10 1607"
-                                                                                             },
-                                                                 "Detection rules parameters":  {
-                                                                                                    "Rule type":  "MSI",
-                                                                                                    "Rules format":  "Manually configure detection rules"
-                                                                                                },
-                                                                 "Dependencies":  "",
-                                                                 "Supercedence":  "Configured as per test description",
-                                                                 "Assignments":  {
-                                                                                     "Required":  "",
-                                                                                     "Available for enrolled devices":  "",
-                                                                                     "uninstall":  "",
-                                                                                     "select groups":  ""
-                                                                                 },
-                                                                 "API parameters":  {
+                          "testCaseId":  "TC_8195646B",
+                          "testName":  "Win32App_Supersedence_8195646B",
+                          "description":  "[IntuneSA]:[Windows][Win10]:[Supersedence][AppReplace]:[WinClassicApp]:[Required][UserGroup]: A\u003c\u003c+B; A \u0026 B Required; A not present; Install B; Status: A Not Installed, B Installed",
+                          "category":  "WinClassicApp",
+                          "priority":  "High",
+                          "enabled":  true,
+                          "parameters":  {
+                                             "firstLink":  "Apps",
+                                             "secondLink":  "Windows",
+                                             "AppType":  "Windows app (Win32)",
+                                             "select app package file":  "09 Fake MSI.intunewin",
+                                             "Type of app install file":  "MSI",
+                                             "Name":  "TC_8195646B_01 Fake MSI.intunewin",
+                                             "Description":  "TC_8195646B_01 Fake MSI.intunewin",
+                                             "Publisher":  "AIAuto ddmmyyyymmss",
+                                             "program parameters":  {
+                                                                        "Installation time required (mins)":  "5",
+                                                                        "Install behavior.":  "User"
+                                                                    },
+                                             "Requirements parameters":  {
+                                                                             "check operating system architecture":  "No. Allow this app to be installed on all systems.",
+                                                                             "architecture type":  "",
+                                                                             "Minimum operating system":  "Windows 10 1607"
+                                                                         },
+                                             "Detection rules parameters":  {
+                                                                                "Rule type":  "MSI",
+                                                                                "Rules format":  "Manually configure detection rules"
+                                                                            },
+                                             "Dependencies":  "",
+                                             "Supercedence":  "Configured as per test description",
+                                             "Assignments":  {
+                                                                 "Required":  "",
+                                                                 "Available for enrolled devices":  "",
+                                                                 "uninstall":  "",
+                                                                 "select groups":  ""
+                                                             },
+                                             "API parameters":  {
 
-                                                                                    },
-                                                                 "Device Validation":  {
-                                                                                           "pre-requisite on device":  "",
-                                                                                           "App Installation Validation":  "Verify App A should not be installed on the device",
-                                                                                           "searchTerm":  "",
-                                                                                           "expectedValue":  ""
-                                                                                       }
-                                                             }
-                                          },
-                                          {
-                                              "testCaseId":  "TC_8195647A",
-                                              "testName":  "Win32App_Supersedence_8195647A",
+                                                                },
+                                             "Device Validation":  {
+                                                                       "pre-requisite on device":  "",
+                                                                       "App Installation Validation":  "Verify App A should not be installed on the device",
+                                                                       "searchTerm":  "Test MSI #9",
+                                                                       "expectedValue":  "not installed"
+                                                                   }
+                                         }
+                      },
+                      {
+                          "testCaseId":  "TC_8195647A",
+                          "testName":  "Win32App_Supersedence_8195647A",
                           "description":  "[IntuneSA]:[Windows][Win10]:[Supersedence][AppReplace]:[WinClassicApp]:[Required][UserGroup]: A\u003c\u003c+B; A \u0026 B Required; A is present; A uninstalled, B installed; Status: A Not Installed, B Installed",
                           "category":  "WinClassicApp",
                           "priority":  "High",
@@ -2852,58 +2838,58 @@
                                              "Device Validation":  {
                                                                        "pre-requisite on device":  "",
                                                                        "App Installation Validation":  "Verify App A should not be installed on the device",
-                                                                       "searchTerm":  "",
-                                                                       "expectedValue":  ""
+                                                                       "searchTerm":  "Test MSI #10",
+                                                                       "expectedValue":  "not installed"
                                                                    }
                                          }
-                                          },
-                                          {
-                                              "testCaseId":  "TC_8195647B",
-                                              "testName":  "Win32App_Supersedence_8195647B",
-                                              "description":  "[IntuneSA]:[Windows][Win10]:[Supersedence][AppReplace]:[WinClassicApp]:[Required][UserGroup]: A\u003c\u003c+B; A \u0026 B Required; A is present; A uninstalled, B installed; Status: A Not Installed, B Installed",
-                                              "category":  "WinClassicApp",
-                                              "priority":  "High",
-                                              "enabled":  true,
-                                              "parameters":  {
-                                                                 "firstLink":  "Apps",
-                                                                 "secondLink":  "Windows",
-                                                                 "AppType":  "Windows app (Win32)",
-                                                                 "select app package file":  "011 Fake MSI.intunewin",
-                                                                 "Type of app install file":  "MSI",
-                                                                 "Name":  "TC_8195647B_011 Fake MSI.intunewin",
-                                                                 "Description":  "TC_8195647B_011 Fake MSI.intunewin",
-                                                                 "Publisher":  "AIAuto ddmmyyyymmss",
-                                                                 "program parameters":  {
-                                                                                            "Installation time required (mins)":  "5",
-                                                                                            "Install behavior.":  "User"
-                                                                                        },
-                                                                 "Requirements parameters":  {
-                                                                                                 "check operating system architecture":  "No. Allow this app to be installed on all systems.",
-                                                                                                 "architecture type":  "",
-                                                                                                 "Minimum operating system":  "Windows 10 1607"
-                                                                                             },
-                                                                 "Detection rules parameters":  {
-                                                                                                    "Rule type":  "MSI",
-                                                                                                    "Rules format":  "Manually configure detection rules"
-                                                                                                },
-                                                                 "Dependencies":  "",
-                                                                 "Supercedence":  "Configured as per test description",
-                                                                 "Assignments":  {
-                                                                                     "Required":  "",
-                                                                                     "Available for enrolled devices":  "",
-                                                                                     "uninstall":  "",
-                                                                                     "select groups":  ""
-                                                                                 },
-                                                                 "API parameters":  {
+                      },
+                      {
+                          "testCaseId":  "TC_8195647B",
+                          "testName":  "Win32App_Supersedence_8195647B",
+                          "description":  "[IntuneSA]:[Windows][Win10]:[Supersedence][AppReplace]:[WinClassicApp]:[Required][UserGroup]: A\u003c\u003c+B; A \u0026 B Required; A is present; A uninstalled, B installed; Status: A Not Installed, B Installed",
+                          "category":  "WinClassicApp",
+                          "priority":  "High",
+                          "enabled":  true,
+                          "parameters":  {
+                                             "firstLink":  "Apps",
+                                             "secondLink":  "Windows",
+                                             "AppType":  "Windows app (Win32)",
+                                             "select app package file":  "011 Fake MSI.intunewin",
+                                             "Type of app install file":  "MSI",
+                                             "Name":  "TC_8195647B_011 Fake MSI.intunewin",
+                                             "Description":  "TC_8195647B_011 Fake MSI.intunewin",
+                                             "Publisher":  "AIAuto ddmmyyyymmss",
+                                             "program parameters":  {
+                                                                        "Installation time required (mins)":  "5",
+                                                                        "Install behavior.":  "User"
+                                                                    },
+                                             "Requirements parameters":  {
+                                                                             "check operating system architecture":  "No. Allow this app to be installed on all systems.",
+                                                                             "architecture type":  "",
+                                                                             "Minimum operating system":  "Windows 10 1607"
+                                                                         },
+                                             "Detection rules parameters":  {
+                                                                                "Rule type":  "MSI",
+                                                                                "Rules format":  "Manually configure detection rules"
+                                                                            },
+                                             "Dependencies":  "",
+                                             "Supercedence":  "Configured as per test description",
+                                             "Assignments":  {
+                                                                 "Required":  "",
+                                                                 "Available for enrolled devices":  "",
+                                                                 "uninstall":  "",
+                                                                 "select groups":  ""
+                                                             },
+                                             "API parameters":  {
 
-                                                                                    },
-                                                                 "Device Validation":  {
-                                                                                           "pre-requisite on device":  "",
-                                                                                           "App Installation Validation":  "Verify App A should not be installed on the device",
-                                                                                           "searchTerm":  "",
-                                                                                           "expectedValue":  ""
-                                                                                       }
-                                                             }
+                                                                },
+                                             "Device Validation":  {
+                                                                       "pre-requisite on device":  "",
+                                                                       "App Installation Validation":  "Verify App A should not be installed on the device",
+                                                                       "searchTerm":  "Test MSI #11",
+                                                                       "expectedValue":  "not installed"
+                                                                   }
+                                         }
                       },
                       {
                           "testCaseId":  "TC_9133729",
@@ -2948,8 +2934,8 @@
                                              "Device Validation":  {
                                                                        "pre-requisite on device":  "",
                                                                        "App Installation Validation":  "Verify App A should be installed on the device",
-                                                                       "searchTerm":  "",
-                                                                       "expectedValue":  ""
+                                                                       "searchTerm":  "Test MSI #13",
+                                                                       "expectedValue":  "installed"
                                                                    }
                                          }
                       },
@@ -2996,8 +2982,8 @@
                                              "Device Validation":  {
                                                                        "pre-requisite on device":  "",
                                                                        "App Installation Validation":  "Verify App A should be installed on the device",
-                                                                       "searchTerm":  "",
-                                                                       "expectedValue":  ""
+                                                                       "searchTerm":  "Test MSI #14",
+                                                                       "expectedValue":  "installed"
                                                                    }
                                          }
                       }

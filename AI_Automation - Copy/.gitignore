@@ -1,2 +1,22 @@
-# Ignore AIMonitoringAgent folder
+﻿# Ignore AIMonitoringAgent folder
 AIMonitoringAgent/
+
+# Sensitive files
+.env
+auth-cert/
+
+# Build outputs
+bin/
+obj/
+TestResults/
+ExtentReports/
+
+# IDE
+.vs/
+.vscode/
+
+# Archives
+*.zip
+
+# Embedded repos
+Self_Healing/

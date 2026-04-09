@@ -4,6 +4,7 @@ using NUnit.Framework;
 using global::PlaywrightTests.Common.Model;
 using global::PlaywrightTests.Common.Utils.BaseUtils.Apps.ByPlatform;
 using global::PlaywrightTests.Common.Utils.BaseUtils.UtilInterface;
+using global::PlaywrightTests.Common.Utils;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -55,6 +56,8 @@ namespace IntuneCanaryTests
         public void TestTearDown()
         {
             _test?.Info($"Test completed at: {DateTime.Now:yyyy-MM-dd HH:mm:ss}");
+            // Dump self-healing report so agent and console can see what was healed
+            SelfHealingLocator.DumpHealingReport();
         }
 
         protected async Task RunTestAsync()
@@ -346,8 +349,17 @@ namespace IntuneCanaryTests
         {
             _test?.Info(stepDescription);
             controlInfo.Parameter = parameters;
-            var result = await utils.RunStepAsync(controlInfo);
-            return result.Parameter;
+            try
+            {
+                var result = await utils.RunStepAsync(controlInfo);
+                return result.Parameter;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"[HEAL_REQUEST] step={stepDescription} controlType={controlInfo.ControlType} error={ex.Message}");
+                _test?.Fail($"Step failed: {stepDescription} — {ex.Message}");
+                throw;
+            }
         }
 
         private async Task SelectAppTypeDirectlyAsync(string appType)

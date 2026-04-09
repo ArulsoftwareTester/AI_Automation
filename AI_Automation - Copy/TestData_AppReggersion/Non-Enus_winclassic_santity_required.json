@@ -1,0 +1,1407 @@
+﻿{
+    "testCases":  [
+                      {
+                          "testCaseId":  "TC_3045446",
+                          "testName":  "Win32App_Create_Required_AllUsers_InstallSuccess",
+                          "description":  "[IntuneSA]:[Win10]:[E2E][Create]:[WinClassicApp]:[Required]:[AllUserGroup]:[IntuneWin]:Verify Install is success for all Windows Users in group",
+                          "category":  "WinClassicApp",
+                          "priority":  "High",
+                          "enabled":  true,
+                          "parameters":  {
+                                             "firstLink":  "Apps",
+                                             "secondLink":  "Windows",
+                                             "AppType":  "Windows app (Win32)",
+                                             "select app package file":  "01 Fake MSI.intunewin",
+                                             "Type of app install file":  "MSI",
+                                             "Name":  "TC_3045446_01 Fake MSI.intunewin",
+                                             "Description":  "TC_3045446_01 Fake MSI.intunewin",
+                                             "Publisher":  "AIAuto ddmmyyyymmss",
+                                             "program parameters":  {
+                                                                        "Installation time required (mins)":  "5",
+                                                                        "Install behavior.":  "User"
+                                                                    },
+                                             "Requirements parameters":  {
+                                                                             "check operating system architecture":  "No. Allow this app to be installed on all systems.",
+                                                                             "architecture type":  "",
+                                                                             "Minimum operating system":  "Windows 10 1607"
+                                                                         },
+                                             "Detection rules parameters":  {
+                                                                                "Rule type":  "MSI",
+                                                                                "Rules format":  "Manually configure detection rules"
+                                                                            },
+                                             "Dependencies":  "",
+                                             "Supercedence":  "",
+                                             "Assignments":  {
+                                                                 "Required":  "All users",
+                                                                 "Available for enrolled devices":  "",
+                                                                 "uninstall":  "",
+                                                                 "select groups":  ""
+                                                             },
+                                             "API parameters":  {
+
+                                                                },
+                                             "Device Validation":  {
+                                                                       "pre-requisite on device":  "",
+                                                                       "App Installation Validation":  "Verify App A should be installed on the device",
+                                                                       "searchTerm":  "Test MSI #1",
+                                                                       "expectedValue":  "installed"
+                                                                   }
+                                         }
+                      },
+                      {
+                          "testCaseId":  "TC_3045455",
+                          "testName":  "Win32App_Create_Required_UserGroup_InstallSuccess",
+                          "description":  "[IntuneSA]:[Win10]:[E2E][Create]:[WinClassicApp]:[Required]:[UserGroup]:[IntuneWin]:Verify Install is success for all Windows Users in group",
+                          "category":  "WinClassicApp",
+                          "priority":  "High",
+                          "enabled":  true,
+                          "parameters":  {
+                                             "firstLink":  "Apps",
+                                             "secondLink":  "Windows",
+                                             "AppType":  "Windows app (Win32)",
+                                             "select app package file":  "02 Fake MSI.intunewin",
+                                             "Type of app install file":  "MSI",
+                                             "Name":  "TC_3045455_02 Fake MSI.intunewin",
+                                             "Description":  "TC_3045455_02 Fake MSI.intunewin",
+                                             "Publisher":  "AIAuto ddmmyyyymmss",
+                                             "program parameters":  {
+                                                                        "Installation time required (mins)":  "5",
+                                                                        "Install behavior.":  "User"
+                                                                    },
+                                             "Requirements parameters":  {
+                                                                             "check operating system architecture":  "No. Allow this app to be installed on all systems.",
+                                                                             "architecture type":  "",
+                                                                             "Minimum operating system":  "Windows 10 1607"
+                                                                         },
+                                             "Detection rules parameters":  {
+                                                                                "Rule type":  "MSI",
+                                                                                "Rules format":  "Manually configure detection rules"
+                                                                            },
+                                             "Dependencies":  "",
+                                             "Supercedence":  "",
+                                             "Assignments":  {
+                                                                 "Required":  "Add group",
+                                                                 "Available for enrolled devices":  "",
+                                                                 "uninstall":  "",
+                                                                 "select groups":  "Automation_AI"
+                                                             },
+                                             "API parameters":  {
+
+                                                                },
+                                             "Device Validation":  {
+                                                                       "pre-requisite on device":  "",
+                                                                       "App Installation Validation":  "Verify Install is success for all Windows Users in group",
+                                                                       "searchTerm":  "Test MSI #2",
+                                                                       "expectedValue":  "installed"
+                                                                   }
+                                         }
+                      },
+                      {
+                          "testCaseId":  "TC_4179742",
+                          "testName":  "Win32App_Create_4179742",
+                          "description":  "[IntuneSA]:[Win10]:[E2E][Create]:[WinClassicApp]:[Required]:[AllUserGroup]:[IntuneWin]:Verify Install is success for all Windows Users in group",
+                          "category":  "WinClassicApp",
+                          "priority":  "High",
+                          "enabled":  true,
+                          "parameters":  {
+                                             "firstLink":  "Apps",
+                                             "secondLink":  "Windows",
+                                             "AppType":  "Windows app (Win32)",
+                                             "select app package file":  "10 Fake MSI.intunewin",
+                                             "Type of app install file":  "MSI",
+                                             "Name":  "TC_4179742_10 Fake MSI.intunewin",
+                                             "Description":  "TC_4179742_10 Fake MSI.intunewin",
+                                             "Publisher":  "AIAuto ddmmyyyymmss",
+                                             "program parameters":  {
+                                                                        "Installation time required (mins)":  "5",
+                                                                        "Install behavior.":  "User"
+                                                                    },
+                                             "Requirements parameters":  {
+                                                                             "check operating system architecture":  "No. Allow this app to be installed on all systems.",
+                                                                             "architecture type":  "",
+                                                                             "Minimum operating system":  "Windows 10 1607"
+                                                                         },
+                                             "Detection rules parameters":  {
+                                                                                "Rule type":  "MSI",
+                                                                                "Rules format":  "Manually configure detection rules"
+                                                                            },
+                                             "Dependencies":  "",
+                                             "Supercedence":  "",
+                                             "Assignments":  {
+                                                                 "Required":  "All users",
+                                                                 "Available for enrolled devices":  "",
+                                                                 "uninstall":  "",
+                                                                 "select groups":  ""
+                                                             },
+                                             "API parameters":  {
+
+                                                                },
+                                             "Device Validation":  {
+                                                                       "pre-requisite on device":  "",
+                                                                       "App Installation Validation":  "Verify App A should be installed on the device",
+                                                                       "searchTerm":  "Test MSI #10",
+                                                                       "expectedValue":  "installed"
+                                                                   }
+                                         }
+                      },
+                      {
+                          "testCaseId":  "TC_4179743",
+                          "testName":  "Win32App_Create_4179743",
+                          "description":  "[IntuneSA]:[Win10]:[E2E][Create]:[WinClassicApp]:[Required]:[UserGroup]:[IntuneWin]:Verify Install is success for all Windows Users in group",
+                          "category":  "WinClassicApp",
+                          "priority":  "High",
+                          "enabled":  true,
+                          "parameters":  {
+                                             "firstLink":  "Apps",
+                                             "secondLink":  "Windows",
+                                             "AppType":  "Windows app (Win32)",
+                                             "select app package file":  "11 Fake MSI.intunewin",
+                                             "Type of app install file":  "MSI",
+                                             "Name":  "TC_4179743_11 Fake MSI.intunewin",
+                                             "Description":  "TC_4179743_11 Fake MSI.intunewin",
+                                             "Publisher":  "AIAuto ddmmyyyymmss",
+                                             "program parameters":  {
+                                                                        "Installation time required (mins)":  "5",
+                                                                        "Install behavior.":  "User"
+                                                                    },
+                                             "Requirements parameters":  {
+                                                                             "check operating system architecture":  "No. Allow this app to be installed on all systems.",
+                                                                             "architecture type":  "",
+                                                                             "Minimum operating system":  "Windows 10 1607"
+                                                                         },
+                                             "Detection rules parameters":  {
+                                                                                "Rule type":  "MSI",
+                                                                                "Rules format":  "Manually configure detection rules"
+                                                                            },
+                                             "Dependencies":  "",
+                                             "Supercedence":  "",
+                                             "Assignments":  {
+                                                                 "Required":  "Add group",
+                                                                 "Available for enrolled devices":  "",
+                                                                 "uninstall":  "",
+                                                                 "select groups":  "AI_Automation_User_group"
+                                                             },
+                                             "API parameters":  {
+
+                                                                },
+                                             "Device Validation":  {
+                                                                       "pre-requisite on device":  "",
+                                                                       "App Installation Validation":  "Verify App A should be installed on the device",
+                                                                       "searchTerm":  "Test MSI #11",
+                                                                       "expectedValue":  "installed"
+                                                                   }
+                                         }
+                      },
+                      {
+                          "testCaseId":  "TC_4179745",
+                          "testName":  "Win32App_Create_4179745",
+                          "description":  "[IntuneSA]:[Win10]:[E2E][Create]:[WinClassicApp]:[Required]:[DeviceGroup]:[IntuneWin]:Verify App does not show in IWPortal/CP for all Windows devices in group",
+                          "category":  "WinClassicApp",
+                          "priority":  "High",
+                          "enabled":  true,
+                          "parameters":  {
+                                             "firstLink":  "Apps",
+                                             "secondLink":  "Windows",
+                                             "AppType":  "Windows app (Win32)",
+                                             "select app package file":  "13 Fake MSI.intunewin",
+                                             "Type of app install file":  "MSI",
+                                             "Name":  "TC_4179745_13 Fake MSI.intunewin",
+                                             "Description":  "TC_4179745_13 Fake MSI.intunewin",
+                                             "Publisher":  "AIAuto ddmmyyyymmss",
+                                             "program parameters":  {
+                                                                        "Installation time required (mins)":  "5",
+                                                                        "Install behavior.":  "System"
+                                                                    },
+                                             "Requirements parameters":  {
+                                                                             "check operating system architecture":  "No. Allow this app to be installed on all systems.",
+                                                                             "architecture type":  "",
+                                                                             "Minimum operating system":  "Windows 10 1607"
+                                                                         },
+                                             "Detection rules parameters":  {
+                                                                                "Rule type":  "MSI",
+                                                                                "Rules format":  "Manually configure detection rules"
+                                                                            },
+                                             "Dependencies":  "",
+                                             "Supercedence":  "",
+                                             "Assignments":  {
+                                                                 "Required":  "Add group",
+                                                                 "Available for enrolled devices":  "",
+                                                                 "uninstall":  "",
+                                                                 "select groups":  "Automation_AI Device group"
+                                                             },
+                                             "API parameters":  {
+
+                                                                },
+                                             "Device Validation":  {
+                                                                       "pre-requisite on device":  "",
+                                                                       "App Installation Validation":  "Verify App A should  be installed on the device",
+                                                                       "searchTerm":  "Test MSI #13",
+                                                                       "expectedValue":  "not installed"
+                                                                   }
+                                         }
+                      },
+                      {
+                          "testCaseId":  "TC_4180341A",
+                          "testName":  "Win32App_DependentApp_4180341A",
+                          "description":  "[IntuneSA]:[Windows][Win10]:[DependentApp]:[WinClassicApp]:[Required][DeviceGroup]:A -\u003e B. A is deployed, B is installed then A. Then dependency is changed to A -\u003e C. At global re-eval, C is installed",
+                          "category":  "WinClassicApp",
+                          "priority":  "High",
+                          "enabled":  true,
+                          "parameters":  {
+                                             "firstLink":  "Apps",
+                                             "secondLink":  "Windows",
+                                             "AppType":  "Windows app (Win32)",
+                                             "select app package file":  "16 Fake MSI.intunewin",
+                                             "Type of app install file":  "MSI",
+                                             "Name":  "TC_4180341A_16 Fake MSI.intunewin",
+                                             "Description":  "TC_4180341A_16 Fake MSI.intunewin",
+                                             "Publisher":  "AIAuto ddmmyyyymmss",
+                                             "program parameters":  {
+                                                                        "Installation time required (mins)":  "5",
+                                                                        "Install behavior.":  "System"
+                                                                    },
+                                             "Requirements parameters":  {
+                                                                             "check operating system architecture":  "No. Allow this app to be installed on all systems.",
+                                                                             "architecture type":  "",
+                                                                             "Minimum operating system":  "Windows 10 1607"
+                                                                         },
+                                             "Detection rules parameters":  {
+                                                                                "Rule type":  "MSI",
+                                                                                "Rules format":  "Manually configure detection rules"
+                                                                            },
+                                             "dependencies":  [
+                                                                  {
+                                                                      "appName":  "B",
+                                                                      "autoInstall":  false,
+                                                                      "alreadyInstalled":  false
+                                                                  },
+                                                                  {
+                                                                      "appName":  "C",
+                                                                      "autoInstall":  true,
+                                                                      "alreadyInstalled":  false
+                                                                  }
+                                                              ],
+                                             "Supercedence":  "",
+                                             "Assignments":  {
+                                                                 "Required":  "Add group",
+                                                                 "Available for enrolled devices":  "",
+                                                                 "uninstall":  "",
+                                                                 "select groups":  "Automation_AI"
+                                                             },
+                                             "API parameters":  {
+
+                                                                },
+                                             "Device Validation":  {
+                                                                       "pre-requisite on device":  "",
+                                                                       "App Installation Validation":  "Verify App A should be installed on the device",
+                                                                       "searchTerm":  "Test MSI #16",
+                                                                       "expectedValue":  "installed"
+                                                                   }
+                                         }
+                      },
+                      {
+                          "testCaseId":  "TC_4180341B",
+                          "testName":  "Win32App_DependentApp_4180341B",
+                          "description":  "[IntuneSA]:[Windows][Win10]:[DependentApp]:[WinClassicApp]:[Required][DeviceGroup]:A -\u003e B. A is deployed, B is installed then A. Then dependency is changed to A -\u003e C. At global re-eval, C is installed",
+                          "category":  "WinClassicApp",
+                          "priority":  "High",
+                          "enabled":  true,
+                          "parameters":  {
+                                             "firstLink":  "Apps",
+                                             "secondLink":  "Windows",
+                                             "AppType":  "Windows app (Win32)",
+                                             "select app package file":  "17 Fake MSI.intunewin",
+                                             "Type of app install file":  "MSI",
+                                             "Name":  "TC_4180341B_17 Fake MSI.intunewin",
+                                             "Description":  "TC_4180341B_17 Fake MSI.intunewin",
+                                             "Publisher":  "AIAuto ddmmyyyymmss",
+                                             "program parameters":  {
+                                                                        "Installation time required (mins)":  "5",
+                                                                        "Install behavior.":  "System"
+                                                                    },
+                                             "Requirements parameters":  {
+                                                                             "check operating system architecture":  "No. Allow this app to be installed on all systems.",
+                                                                             "architecture type":  "",
+                                                                             "Minimum operating system":  "Windows 10 1607"
+                                                                         },
+                                             "Detection rules parameters":  {
+                                                                                "Rule type":  "MSI",
+                                                                                "Rules format":  "Manually configure detection rules"
+                                                                            },
+                                             "Dependencies":  "Configured as per test description",
+                                             "Supercedence":  "",
+                                             "Assignments":  {
+                                                                 "Required":  "Add group",
+                                                                 "Available for enrolled devices":  "",
+                                                                 "uninstall":  "",
+                                                                 "select groups":  "Automation_AI"
+                                                             },
+                                             "API parameters":  {
+
+                                                                },
+                                             "Device Validation":  {
+                                                                       "pre-requisite on device":  "",
+                                                                       "App Installation Validation":  "Verify App A should be installed on the device",
+                                                                       "searchTerm":  "Test MSI #17",
+                                                                       "expectedValue":  "installed"
+                                                                   }
+                                         }
+                      },
+                      {
+                          "testCaseId":  "TC_4180341C",
+                          "testName":  "Win32App_DependentApp_4180341C",
+                          "description":  "[IntuneSA]:[Windows][Win10]:[DependentApp]:[WinClassicApp]:[Required][DeviceGroup]:A -\u003e B. A is deployed, B is installed then A. Then dependency is changed to A -\u003e C. At global re-eval, C is installed",
+                          "category":  "WinClassicApp",
+                          "priority":  "High",
+                          "enabled":  true,
+                          "parameters":  {
+                                             "firstLink":  "Apps",
+                                             "secondLink":  "Windows",
+                                             "AppType":  "Windows app (Win32)",
+                                             "select app package file":  "18 Fake MSI.intunewin",
+                                             "Type of app install file":  "MSI",
+                                             "Name":  "TC_4180341C_18 Fake MSI.intunewin",
+                                             "Description":  "TC_4180341C_18 Fake MSI.intunewin",
+                                             "Publisher":  "AIAuto ddmmyyyymmss",
+                                             "program parameters":  {
+                                                                        "Installation time required (mins)":  "5",
+                                                                        "Install behavior.":  "System"
+                                                                    },
+                                             "Requirements parameters":  {
+                                                                             "check operating system architecture":  "No. Allow this app to be installed on all systems.",
+                                                                             "architecture type":  "",
+                                                                             "Minimum operating system":  "Windows 10 1607"
+                                                                         },
+                                             "Detection rules parameters":  {
+                                                                                "Rule type":  "MSI",
+                                                                                "Rules format":  "Manually configure detection rules"
+                                                                            },
+                                             "Dependencies":  "Configured as per test description",
+                                             "Supercedence":  "",
+                                             "Assignments":  {
+                                                                 "Required":  "Add group",
+                                                                 "Available for enrolled devices":  "",
+                                                                 "uninstall":  "",
+                                                                 "select groups":  "Automation_AI"
+                                                             },
+                                             "API parameters":  {
+
+                                                                },
+                                             "Device Validation":  {
+                                                                       "pre-requisite on device":  "",
+                                                                       "App Installation Validation":  "Verify App A should be installed on the device",
+                                                                       "searchTerm":  "Test MSI #18",
+                                                                       "expectedValue":  "installed"
+                                                                   }
+                                         }
+                      },
+                      {
+                          "testCaseId":  "TC_4180345A",
+                          "testName":  "Win32App_DependentApp_4180345A",
+                          "description":  "[IntuneSA]:[Windows][Win10]:[DependentApp][Dependencies]:[WinClassicApp]: Create an application with 2 different Win32 app types as dependent apps A -\u003e B (EXE), A -\u003e C (MSI)",
+                          "category":  "WinClassicApp",
+                          "priority":  "High",
+                          "enabled":  true,
+                          "parameters":  {
+                                             "firstLink":  "Apps",
+                                             "secondLink":  "Windows",
+                                             "AppType":  "Windows app (Win32)",
+                                             "select app package file":  "02 Fake MSI.intunewin",
+                                             "Type of app install file":  "MSI",
+                                             "Name":  "TC_4180345A_02 Fake MSI.intunewin",
+                                             "Description":  "TC_4180345A_02 Fake MSI.intunewin",
+                                             "Publisher":  "AIAuto ddmmyyyymmss",
+                                             "program parameters":  {
+                                                                        "Installation time required (mins)":  "5",
+                                                                        "Install behavior.":  "User"
+                                                                    },
+                                             "Requirements parameters":  {
+                                                                             "check operating system architecture":  "No. Allow this app to be installed on all systems.",
+                                                                             "architecture type":  "",
+                                                                             "Minimum operating system":  "Windows 10 1607"
+                                                                         },
+                                             "Detection rules parameters":  {
+                                                                                "Rule type":  "MSI",
+                                                                                "Rules format":  "Manually configure detection rules"
+                                                                            },
+                                             "Dependencies":  "Configured as per test description",
+                                             "Supercedence":  "",
+                                             "Assignments":  {
+                                                                 "Required":  "Add group",
+                                                                 "Available for enrolled devices":  "",
+                                                                 "uninstall":  "",
+                                                                 "select groups":  "Automation_AI"
+                                                             },
+                                             "API parameters":  {
+
+                                                                },
+                                             "Device Validation":  {
+                                                                       "pre-requisite on device":  "",
+                                                                       "App Installation Validation":  "Verify App A should be installed on the device",
+                                                                       "searchTerm":  "Test MSI #2",
+                                                                       "expectedValue":  "installed"
+                                                                   }
+                                         }
+                      },
+                      {
+                          "testCaseId":  "TC_4180346",
+                          "testName":  "Win32App_DependentApp_4180346",
+                          "description":  "[IntuneSA]:[Windows][Win10]:[DependentApp][Dependencies][E2E][AutoInstall]:[WinClassicApp]:[Required][UserGroup]: A -\u003e B (AutoInst no). If AppB is not present, App A\u0027s installation should fail.",
+                          "category":  "WinClassicApp",
+                          "priority":  "High",
+                          "enabled":  true,
+                          "parameters":  {
+                                             "firstLink":  "Apps",
+                                             "secondLink":  "Windows",
+                                             "AppType":  "Windows app (Win32)",
+                                             "select app package file":  "01 Fake MSI.intunewin",
+                                             "Type of app install file":  "MSI",
+                                             "Name":  "TC_4180346_01 Fake MSI.intunewin",
+                                             "Description":  "TC_4180346_01 Fake MSI.intunewin",
+                                             "Publisher":  "AIAuto ddmmyyyymmss",
+                                             "program parameters":  {
+                                                                        "Installation time required (mins)":  "5",
+                                                                        "Install behavior.":  "User"
+                                                                    },
+                                             "Requirements parameters":  {
+                                                                             "check operating system architecture":  "No. Allow this app to be installed on all systems.",
+                                                                             "architecture type":  "",
+                                                                             "Minimum operating system":  "Windows 10 1607"
+                                                                         },
+                                             "Detection rules parameters":  {
+                                                                                "Rule type":  "MSI",
+                                                                                "Rules format":  "Manually configure detection rules"
+                                                                            },
+                                             "Dependencies":  "Configured as per test description",
+                                             "Supercedence":  "",
+                                             "Assignments":  {
+                                                                 "Required":  "Add group",
+                                                                 "Available for enrolled devices":  "",
+                                                                 "uninstall":  "",
+                                                                 "select groups":  "Automation_AI"
+                                                             },
+                                             "API parameters":  {
+
+                                                                },
+                                             "Device Validation":  {
+                                                                       "pre-requisite on device":  "",
+                                                                       "App Installation Validation":  "Verify App A should not be installed on the device",
+                                                                       "searchTerm":  "Test MSI #1",
+                                                                       "expectedValue":  "not installed"
+                                                                   }
+                                         }
+                      },
+                      {
+                          "testCaseId":  "TC_4180347",
+                          "testName":  "Win32App_DependentApp_4180347",
+                          "description":  "[IntuneSA]:[Windows][Win10]:[DependentApp][Dependencies][E2E][AutoInstall]:[WinClassicApp]:[Required][UserGroup]: A-\u003eB (AutoInst no), A-\u003eC (AutoInst yes) and A-\u003eD (AutoInst no) A-\u003eE (AutoInst yes). B,D already installed. A deployed,  C, E then A installed",
+                          "category":  "WinClassicApp",
+                          "priority":  "High",
+                          "enabled":  true,
+                          "parameters":  {
+                                             "firstLink":  "Apps",
+                                             "secondLink":  "Windows",
+                                             "AppType":  "Windows app (Win32)",
+                                             "select app package file":  "03 Fake MSI.intunewin",
+                                             "Type of app install file":  "MSI",
+                                             "Name":  "TC_4180347_03 Fake MSI.intunewin",
+                                             "Description":  "TC_4180347_03 Fake MSI.intunewin",
+                                             "Publisher":  "AIAuto ddmmyyyymmss",
+                                             "program parameters":  {
+                                                                        "Installation time required (mins)":  "5",
+                                                                        "Install behavior.":  "User"
+                                                                    },
+                                             "Requirements parameters":  {
+                                                                             "check operating system architecture":  "No. Allow this app to be installed on all systems.",
+                                                                             "architecture type":  "",
+                                                                             "Minimum operating system":  "Windows 10 1607"
+                                                                         },
+                                             "Detection rules parameters":  {
+                                                                                "Rule type":  "MSI",
+                                                                                "Rules format":  "Manually configure detection rules"
+                                                                            },
+                                             "Dependencies":  "Configured as per test description",
+                                             "Supercedence":  "",
+                                             "Assignments":  {
+                                                                 "Required":  "Add group",
+                                                                 "Available for enrolled devices":  "",
+                                                                 "uninstall":  "",
+                                                                 "select groups":  "Automation_AI"
+                                                             },
+                                             "API parameters":  {
+
+                                                                },
+                                             "Device Validation":  {
+                                                                       "pre-requisite on device":  "",
+                                                                       "App Installation Validation":  "Verify App A should be installed on the device",
+                                                                       "searchTerm":  "Test MSI #3",
+                                                                       "expectedValue":  "installed"
+                                                                   }
+                                         }
+                      },
+                      {
+                          "testCaseId":  "TC_4180358A",
+                          "testName":  "Win32App_DependentApp_4180358A",
+                          "description":  "[IntuneSA]:[Windows][Win10]:[DependentApp][Dependencies][E2E]:[WinClassicApp]:[Required][UserGroup]:A-\u003eB, B-\u003eC. C not applicable. When A is deployed, A B not installed (req-not-met). Update C to v2 now applicable. At GRS, Cv2, Bv1 and Av1 installed",
+                          "category":  "WinClassicApp",
+                          "priority":  "High",
+                          "enabled":  true,
+                          "parameters":  {
+                                             "firstLink":  "Apps",
+                                             "secondLink":  "Windows",
+                                             "AppType":  "Windows app (Win32)",
+                                             "select app package file":  "04 Fake MSI.intunewin",
+                                             "Type of app install file":  "MSI",
+                                             "Name":  "TC_4180358_04 Fake MSI.intunewin",
+                                             "Description":  "TC_4180358_04 Fake MSI.intunewin",
+                                             "Publisher":  "AIAuto ddmmyyyymmss",
+                                             "program parameters":  {
+                                                                        "Installation time required (mins)":  "5",
+                                                                        "Install behavior.":  "User"
+                                                                    },
+                                             "Requirements parameters":  {
+                                                                             "check operating system architecture":  "No. Allow this app to be installed on all systems.",
+                                                                             "architecture type":  "",
+                                                                             "Minimum operating system":  "Windows 10 1607"
+                                                                         },
+                                             "Detection rules parameters":  {
+                                                                                "Rule type":  "MSI",
+                                                                                "Rules format":  "Manually configure detection rules"
+                                                                            },
+                                             "Dependencies":  "Configured as per test description",
+                                             "Supercedence":  "",
+                                             "Assignments":  {
+                                                                 "Required":  "Add group",
+                                                                 "Available for enrolled devices":  "",
+                                                                 "uninstall":  "",
+                                                                 "select groups":  "Automation_AI user group"
+                                                             },
+                                             "API parameters":  {
+
+                                                                },
+                                             "Device Validation":  {
+                                                                       "pre-requisite on device":  "",
+                                                                       "App Installation Validation":  "Verify App A should not be installed on the device",
+                                                                       "searchTerm":  "Test MSI #4",
+                                                                       "expectedValue":  "not installed"
+                                                                   }
+                                         }
+                      },
+                      {
+                          "testCaseId":  "TC_4180360A",
+                          "testName":  "Win32App_DependentApp_4180360",
+                          "description":  "[IntuneSA]:[Windows][Win10]:[DependentApp][Dependencies][E2E]:[WinClassicApp]:[Required][UserGroup]: A -\u003e B. A is already installed but not B. When A is deployed, B should be installed but A should not be attempted",
+                          "category":  "WinClassicApp",
+                          "priority":  "High",
+                          "enabled":  true,
+                          "parameters":  {
+                                             "firstLink":  "Apps",
+                                             "secondLink":  "Windows",
+                                             "AppType":  "Windows app (Win32)",
+                                             "select app package file":  "07 Fake MSI.intunewin",
+                                             "Type of app install file":  "MSI",
+                                             "Name":  "TC_4180360_07 Fake MSI.intunewin",
+                                             "Description":  "TC_4180360_07 Fake MSI.intunewin",
+                                             "Publisher":  "AIAuto ddmmyyyymmss",
+                                             "program parameters":  {
+                                                                        "Installation time required (mins)":  "5",
+                                                                        "Install behavior.":  "User"
+                                                                    },
+                                             "Requirements parameters":  {
+                                                                             "check operating system architecture":  "No. Allow this app to be installed on all systems.",
+                                                                             "architecture type":  "",
+                                                                             "Minimum operating system":  "Windows 10 1607"
+                                                                         },
+                                             "Detection rules parameters":  {
+                                                                                "Rule type":  "MSI",
+                                                                                "Rules format":  "Manually configure detection rules"
+                                                                            },
+                                             "Dependencies":  "Configured as per test description",
+                                             "Supercedence":  "",
+                                             "Assignments":  {
+                                                                 "Required":  "Add group",
+                                                                 "Available for enrolled devices":  "",
+                                                                 "uninstall":  "",
+                                                                 "select groups":  "Automation_AI"
+                                                             },
+                                             "API parameters":  {
+
+                                                                },
+                                             "Device Validation":  {
+                                                                       "pre-requisite on device":  "",
+                                                                       "App Installation Validation":  "Verify App A should not be installed on the device",
+                                                                       "searchTerm":  "Test MSI #7",
+                                                                       "expectedValue":  "not installed"
+                                                                   }
+                                         }
+                      },
+                      {
+                          "testCaseId":  "TC_4180361A",
+                          "testName":  "Win32App_DependentApp_4180361A",
+                          "description":  "[IntuneSA]:[Windows][Win10]:[DependentApp][Dependencies][E2E]:[WinClassicApp]:[Required][UserGroup]: A -\u003e B. B then A is installed. B is updated to v2. At global re-eval, Bv2 is installed.",
+                          "category":  "WinClassicApp",
+                          "priority":  "High",
+                          "enabled":  true,
+                          "parameters":  {
+                                             "firstLink":  "Apps",
+                                             "secondLink":  "Windows",
+                                             "AppType":  "Windows app (Win32)",
+                                             "select app package file":  "09 Fake MSI.intunewin",
+                                             "Type of app install file":  "MSI",
+                                             "Name":  "TC_4180361_09 Fake MSI.intunewin",
+                                             "Description":  "TC_4180361_09 Fake MSI.intunewin",
+                                             "Publisher":  "AIAuto ddmmyyyymmss",
+                                             "program parameters":  {
+                                                                        "Installation time required (mins)":  "5",
+                                                                        "Install behavior.":  "User"
+                                                                    },
+                                             "Requirements parameters":  {
+                                                                             "check operating system architecture":  "No. Allow this app to be installed on all systems.",
+                                                                             "architecture type":  "",
+                                                                             "Minimum operating system":  "Windows 10 1607"
+                                                                         },
+                                             "Detection rules parameters":  {
+                                                                                "Rule type":  "MSI",
+                                                                                "Rules format":  "Manually configure detection rules"
+                                                                            },
+                                             "Dependencies":  "Configured as per test description",
+                                             "Supercedence":  "",
+                                             "Assignments":  {
+                                                                 "Required":  "Add group",
+                                                                 "Available for enrolled devices":  "",
+                                                                 "uninstall":  "",
+                                                                 "select groups":  "Automation_AI"
+                                                             },
+                                             "API parameters":  {
+
+                                                                },
+                                             "Device Validation":  {
+                                                                       "pre-requisite on device":  "",
+                                                                       "App Installation Validation":  "Verify App A should be installed on the device",
+                                                                       "searchTerm":  "Test MSI #9",
+                                                                       "expectedValue":  "installed"
+                                                                   }
+                                         }
+                      },
+                      {
+                          "testCaseId":  "TC_4180361B",
+                          "testName":  "Win32App_DependentApp_4180361B",
+                          "description":  "[IntuneSA]:[Windows][Win10]:[DependentApp][Dependencies][E2E]:[WinClassicApp]:[Required][UserGroup]: A -\u003e B. B then A is installed. B is updated to v2. At global re-eval, Bv2 is installed.",
+                          "category":  "WinClassicApp",
+                          "priority":  "High",
+                          "enabled":  true,
+                          "parameters":  {
+                                             "firstLink":  "Apps",
+                                             "secondLink":  "Windows",
+                                             "AppType":  "Windows app (Win32)",
+                                             "select app package file":  "10 Fake MSI.intunewin",
+                                             "Type of app install file":  "MSI",
+                                             "Name":  "TC_4180361_10 Fake MSI.intunewin",
+                                             "Description":  "TC_4180361_10 Fake MSI.intunewin",
+                                             "Publisher":  "AIAuto ddmmyyyymmss",
+                                             "program parameters":  {
+                                                                        "Installation time required (mins)":  "5",
+                                                                        "Install behavior.":  "User"
+                                                                    },
+                                             "Requirements parameters":  {
+                                                                             "check operating system architecture":  "No. Allow this app to be installed on all systems.",
+                                                                             "architecture type":  "",
+                                                                             "Minimum operating system":  "Windows 10 1607"
+                                                                         },
+                                             "Detection rules parameters":  {
+                                                                                "Rule type":  "MSI",
+                                                                                "Rules format":  "Manually configure detection rules"
+                                                                            },
+                                             "Dependencies":  "Configured as per test description",
+                                             "Supercedence":  "",
+                                             "Assignments":  {
+                                                                 "Required":  "Add group",
+                                                                 "Available for enrolled devices":  "",
+                                                                 "uninstall":  "",
+                                                                 "select groups":  "Automation_AI"
+                                                             },
+                                             "API parameters":  {
+
+                                                                },
+                                             "Device Validation":  {
+                                                                       "pre-requisite on device":  "",
+                                                                       "App Installation Validation":  "Verify App A should be installed on the device",
+                                                                       "searchTerm":  "Test MSI #10",
+                                                                       "expectedValue":  "installed"
+                                                                   }
+                                         }
+                      },
+                      {
+                          "testCaseId":  "TC_4180362A",
+                          "testName":  "Win32App_DependentApp_4180362A",
+                          "description":  "[IntuneSA]:[Windows][Win10]:[DependentApp][Dependencies][E2E]:[WinClassicApp]:[Required][UserGroup]: A -\u003e B. When A is deployed B should be installed first. If B fails, A should not be attempted",
+                          "category":  "WinClassicApp",
+                          "priority":  "High",
+                          "enabled":  true,
+                          "parameters":  {
+                                             "firstLink":  "Apps",
+                                             "secondLink":  "Windows",
+                                             "AppType":  "Windows app (Win32)",
+                                             "select app package file":  "11 Fake MSI.intunewin",
+                                             "Type of app install file":  "MSI",
+                                             "Name":  "TC_4180362A_11 Fake MSI.intunewin",
+                                             "Description":  "TC_4180362A_11 Fake MSI.intunewin",
+                                             "Publisher":  "AIAuto ddmmyyyymmss",
+                                             "program parameters":  {
+                                                                        "Installation time required (mins)":  "5",
+                                                                        "Install behavior.":  "User"
+                                                                    },
+                                             "Requirements parameters":  {
+                                                                             "check operating system architecture":  "No. Allow this app to be installed on all systems.",
+                                                                             "architecture type":  "",
+                                                                             "Minimum operating system":  "Windows 10 1607"
+                                                                         },
+                                             "Detection rules parameters":  {
+                                                                                "Rule type":  "MSI",
+                                                                                "Rules format":  "Manually configure detection rules"
+                                                                            },
+                                             "Dependencies":  "Configured as per test description",
+                                             "Supercedence":  "",
+                                             "Assignments":  {
+                                                                 "Required":  "Add group",
+                                                                 "Available for enrolled devices":  "",
+                                                                 "uninstall":  "",
+                                                                 "select groups":  "Automation_AI"
+                                                             },
+                                             "API parameters":  {
+
+                                                                },
+                                             "Device Validation":  {
+                                                                       "pre-requisite on device":  "",
+                                                                       "App Installation Validation":  "Verify App A should not be installed on the device",
+                                                                       "searchTerm":  "Test MSI #11",
+                                                                       "expectedValue":  "not installed"
+                                                                   }
+                                         }
+                      },
+                      {
+                          "testCaseId":  "TC_4180362B",
+                          "testName":  "Win32App_DependentApp_4180362B",
+                          "description":  "[IntuneSA]:[Windows][Win10]:[DependentApp][Dependencies][E2E]:[WinClassicApp]:[Required][UserGroup]: A -\u003e B. When A is deployed B should be installed first. If B fails, A should not be attempted",
+                          "category":  "WinClassicApp",
+                          "priority":  "High",
+                          "enabled":  true,
+                          "parameters":  {
+                                             "firstLink":  "Apps",
+                                             "secondLink":  "Windows",
+                                             "AppType":  "Windows app (Win32)",
+                                             "select app package file":  "13 Fake MSI.intunewin",
+                                             "Type of app install file":  "MSI",
+                                             "Name":  "TC_4180362B_13 Fake MSI.intunewin",
+                                             "Description":  "TC_4180362B_13 Fake MSI.intunewin",
+                                             "Publisher":  "AIAuto ddmmyyyymmss",
+                                             "program parameters":  {
+                                                                        "Installation time required (mins)":  "5",
+                                                                        "Install behavior.":  "User"
+                                                                    },
+                                             "Requirements parameters":  {
+                                                                             "check operating system architecture":  "No. Allow this app to be installed on all systems.",
+                                                                             "architecture type":  "",
+                                                                             "Minimum operating system":  "Windows 10 1607"
+                                                                         },
+                                             "Detection rules parameters":  {
+                                                                                "Rule type":  "MSI",
+                                                                                "Rules format":  "Manually configure detection rules"
+                                                                            },
+                                             "Dependencies":  "Configured as per test description",
+                                             "Supercedence":  "",
+                                             "Assignments":  {
+                                                                 "Required":  "Add group",
+                                                                 "Available for enrolled devices":  "",
+                                                                 "uninstall":  "",
+                                                                 "select groups":  "Automation_AI"
+                                                             },
+                                             "API parameters":  {
+
+                                                                },
+                                             "Device Validation":  {
+                                                                       "pre-requisite on device":  "",
+                                                                       "App Installation Validation":  "Verify App A should not be installed on the device",
+                                                                       "searchTerm":  "Test MSI #13",
+                                                                       "expectedValue":  "not installed"
+                                                                   }
+                                         }
+                      },
+                      {
+                          "testCaseId":  "TC_4180363A",
+                          "testName":  "Win32App_DependentApp_4180363A",
+                          "description":  "[IntuneSA]:[Windows][Win10]:[DependentApp][Dependencies][E2E]:[WinClassicApp]:[Required][UserGroup]: A -\u003e B. When A is deployed, B  then A is installed. A is updated to v2. At global re-eval, A v2 is installed",
+                          "category":  "WinClassicApp",
+                          "priority":  "High",
+                          "enabled":  true,
+                          "parameters":  {
+                                             "firstLink":  "Apps",
+                                             "secondLink":  "Windows",
+                                             "AppType":  "Windows app (Win32)",
+                                             "select app package file":  "14 Fake MSI.intunewin",
+                                             "Type of app install file":  "MSI",
+                                             "Name":  "TC_4180363A_14 Fake MSI.intunewin",
+                                             "Description":  "TC_4180363A_14 Fake MSI.intunewin",
+                                             "Publisher":  "AIAuto ddmmyyyymmss",
+                                             "program parameters":  {
+                                                                        "Installation time required (mins)":  "5",
+                                                                        "Install behavior.":  "User"
+                                                                    },
+                                             "Requirements parameters":  {
+                                                                             "check operating system architecture":  "No. Allow this app to be installed on all systems.",
+                                                                             "architecture type":  "",
+                                                                             "Minimum operating system":  "Windows 10 1607"
+                                                                         },
+                                             "Detection rules parameters":  {
+                                                                                "Rule type":  "MSI",
+                                                                                "Rules format":  "Manually configure detection rules"
+                                                                            },
+                                             "Dependencies":  "Configured as per test description",
+                                             "Supercedence":  "",
+                                             "Assignments":  {
+                                                                 "Required":  "Add group",
+                                                                 "Available for enrolled devices":  "",
+                                                                 "uninstall":  "",
+                                                                 "select groups":  "Automation_AI"
+                                                             },
+                                             "API parameters":  {
+
+                                                                },
+                                             "Device Validation":  {
+                                                                       "pre-requisite on device":  "",
+                                                                       "App Installation Validation":  "Verify App A should be installed on the device",
+                                                                       "searchTerm":  "Test MSI #14",
+                                                                       "expectedValue":  "installed"
+                                                                   }
+                                         }
+                      },
+                      {
+                          "testCaseId":  "TC_4185879A",
+                          "testName":  "Win32App_DependentApp_4185879A",
+                          "description":  "[IntuneSA]:[Windows][Win10]:[DependentApp][Dependencies][E2E]:[WinClassicApp]:[Required][UserGroup]: Verify Deployment with Dependency returns Success when both Apps successfully install",
+                          "category":  "WinClassicApp",
+                          "priority":  "High",
+                          "enabled":  true,
+                          "parameters":  {
+                                             "firstLink":  "Apps",
+                                             "secondLink":  "Windows",
+                                             "AppType":  "Windows app (Win32)",
+                                             "select app package file":  "16 Fake MSI.intunewin",
+                                             "Type of app install file":  "MSI",
+                                             "Name":  "TC_4185879A_16 Fake MSI.intunewin",
+                                             "Description":  "TC_4185879A_16 Fake MSI.intunewin",
+                                             "Publisher":  "AIAuto ddmmyyyymmss",
+                                             "program parameters":  {
+                                                                        "Installation time required (mins)":  "5",
+                                                                        "Install behavior.":  "User"
+                                                                    },
+                                             "Requirements parameters":  {
+                                                                             "check operating system architecture":  "No. Allow this app to be installed on all systems.",
+                                                                             "architecture type":  "",
+                                                                             "Minimum operating system":  "Windows 10 1607"
+                                                                         },
+                                             "Detection rules parameters":  {
+                                                                                "Rule type":  "MSI",
+                                                                                "Rules format":  "Manually configure detection rules"
+                                                                            },
+                                             "Dependencies":  "Configured as per test description",
+                                             "Supercedence":  "",
+                                             "Assignments":  {
+                                                                 "Required":  "Add group",
+                                                                 "Available for enrolled devices":  "",
+                                                                 "uninstall":  "",
+                                                                 "select groups":  "Automation_AI"
+                                                             },
+                                             "API parameters":  {
+
+                                                                },
+                                             "Device Validation":  {
+                                                                       "pre-requisite on device":  "",
+                                                                       "App Installation Validation":  "Verify App A should be installed on the device",
+                                                                       "searchTerm":  "Test MSI #16",
+                                                                       "expectedValue":  "installed"
+                                                                   }
+                                         }
+                      },
+                      {
+                          "testCaseId":  "TC_4185880B",
+                          "testName":  "Win32App_DependentApp_4185880B",
+                          "description":  "[IntuneSA]:[Windows][Win10]:[DependentApp][Dependencies][E2E][Conflict]:[WinClassicApp]:[Available][UserGroup]: A -\u003e B, A is deployed Available, B is deployed Uninstall to same group.  If A is installed, Uninstall should be ignored",
+                          "category":  "WinClassicApp",
+                          "priority":  "High",
+                          "enabled":  true,
+                          "parameters":  {
+                                             "firstLink":  "Apps",
+                                             "secondLink":  "Windows",
+                                             "AppType":  "Windows app (Win32)",
+                                             "select app package file":  "19 Fake MSI.intunewin",
+                                             "Type of app install file":  "MSI",
+                                             "Name":  "TC_4185880B_19 Fake MSI.intunewin",
+                                             "Description":  "TC_4185880B_19 Fake MSI.intunewin",
+                                             "Publisher":  "AIAuto ddmmyyyymmss",
+                                             "program parameters":  {
+                                                                        "Installation time required (mins)":  "5",
+                                                                        "Install behavior.":  "User"
+                                                                    },
+                                             "Requirements parameters":  {
+                                                                             "check operating system architecture":  "No. Allow this app to be installed on all systems.",
+                                                                             "architecture type":  "",
+                                                                             "Minimum operating system":  "Windows 10 1607"
+                                                                         },
+                                             "Detection rules parameters":  {
+                                                                                "Rule type":  "MSI",
+                                                                                "Rules format":  "Manually configure detection rules"
+                                                                            },
+                                             "Dependencies":  "Configured as per test description",
+                                             "Supercedence":  "",
+                                             "Assignments":  {
+                                                                 "Required":  "Add group",
+                                                                 "Available for enrolled devices":  "",
+                                                                 "uninstall":  "Add group",
+                                                                 "select groups":  "Automation_AI"
+                                                             },
+                                             "API parameters":  {
+
+                                                                },
+                                             "Device Validation":  {
+                                                                       "pre-requisite on device":  "",
+                                                                       "App Installation Validation":  "Verify App A should not be installed on the device",
+                                                                       "searchTerm":  "Test MSI #19",
+                                                                       "expectedValue":  "not installed"
+                                                                   }
+                                         }
+                      },
+                      {
+                          "testCaseId":  "TC_4237713A",
+                          "testName":  "Win32App_DependentApp_4237713A",
+                          "description":  "[IntuneSA]:[Windows][Win10]:[DependentApp]:[WinClassicApp]:[Required][DeviceGroup]: A -\u003e B, both applicable to client, deploy A to device group",
+                          "category":  "WinClassicApp",
+                          "priority":  "High",
+                          "enabled":  true,
+                          "parameters":  {
+                                             "firstLink":  "Apps",
+                                             "secondLink":  "Windows",
+                                             "AppType":  "Windows app (Win32)",
+                                             "select app package file":  "20 Fake MSI.intunewin",
+                                             "Type of app install file":  "MSI",
+                                             "Name":  "TC_4237713_20 Fake MSI.intunewin",
+                                             "Description":  "TC_4237713_20 Fake MSI.intunewin",
+                                             "Publisher":  "AIAuto ddmmyyyymmss",
+                                             "program parameters":  {
+                                                                        "Installation time required (mins)":  "5",
+                                                                        "Install behavior.":  "System"
+                                                                    },
+                                             "Requirements parameters":  {
+                                                                             "check operating system architecture":  "No. Allow this app to be installed on all systems.",
+                                                                             "architecture type":  "",
+                                                                             "Minimum operating system":  "Windows 10 1607"
+                                                                         },
+                                             "Detection rules parameters":  {
+                                                                                "Rule type":  "MSI",
+                                                                                "Rules format":  "Manually configure detection rules"
+                                                                            },
+                                             "Dependencies":  "Configured as per test description",
+                                             "Supercedence":  "",
+                                             "Assignments":  {
+                                                                 "Required":  "Add group",
+                                                                 "Available for enrolled devices":  "",
+                                                                 "uninstall":  "",
+                                                                 "select groups":  "Automation_AI Device group"
+                                                             },
+                                             "API parameters":  {
+
+                                                                },
+                                             "Device Validation":  {
+                                                                       "pre-requisite on device":  "",
+                                                                       "App Installation Validation":  "Verify App A should be installed on the device",
+                                                                       "searchTerm":  "Test MSI #20",
+                                                                       "expectedValue":  "installed"
+                                                                   }
+                                         }
+                      },
+                      {
+                          "testCaseId":  "TC_4237714A",
+                          "testName":  "Win32App_DependentApp_4237714A",
+                          "description":  "[IntuneSA]:[Windows][Win10]:[DependentApp]:[WinClassicApp]:[Available][UserGroup]:A -\u003e B. A is deployed, B is installed then A. Then dependency is changed to A -\u003e C. At global re-eval, C is installed",
+                          "category":  "WinClassicApp",
+                          "priority":  "High",
+                          "enabled":  true,
+                          "parameters":  {
+                                             "firstLink":  "Apps",
+                                             "secondLink":  "Windows",
+                                             "AppType":  "Windows app (Win32)",
+                                             "select app package file":  "22 Fake MSI.intunewin",
+                                             "Type of app install file":  "MSI",
+                                             "Name":  "TC_4237714_22 Fake MSI.intunewin",
+                                             "Description":  "TC_4237714_22 Fake MSI.intunewin",
+                                             "Publisher":  "AIAuto ddmmyyyymmss",
+                                             "program parameters":  {
+                                                                        "Installation time required (mins)":  "5",
+                                                                        "Install behavior.":  "User"
+                                                                    },
+                                             "Requirements parameters":  {
+                                                                             "check operating system architecture":  "No. Allow this app to be installed on all systems.",
+                                                                             "architecture type":  "",
+                                                                             "Minimum operating system":  "Windows 10 1607"
+                                                                         },
+                                             "Detection rules parameters":  {
+                                                                                "Rule type":  "MSI",
+                                                                                "Rules format":  "Manually configure detection rules"
+                                                                            },
+                                             "Dependencies":  "Configured as per test description",
+                                             "Supercedence":  "",
+                                             "Assignments":  {
+                                                                 "Required":  "Add group",
+                                                                 "Available for enrolled devices":  "",
+                                                                 "uninstall":  "",
+                                                                 "select groups":  "Automation_AI"
+                                                             },
+                                             "API parameters":  {
+
+                                                                },
+                                             "Device Validation":  {
+                                                                       "pre-requisite on device":  "",
+                                                                       "App Installation Validation":  "Verify App A should be installed on the device",
+                                                                       "searchTerm":  "Test MSI #22",
+                                                                       "expectedValue":  "installed"
+                                                                   }
+                                         }
+                      },
+                      {
+                          "testCaseId":  "TC_4237715A",
+                          "testName":  "Win32App_DependentApp_4237715A",
+                          "description":  "[IntuneSA]:[Windows][Win10]:[DependentApp][Dependencies][E2E]:[WinClassicApp]:[Available][UserGroup]: A -\u003e B. When A is deployed B should be installed first. If B fails, A should not be attempted",
+                          "category":  "WinClassicApp",
+                          "priority":  "High",
+                          "enabled":  true,
+                          "parameters":  {
+                                             "firstLink":  "Apps",
+                                             "secondLink":  "Windows",
+                                             "AppType":  "Windows app (Win32)",
+                                             "select app package file":  "25 Fake MSI.intunewin",
+                                             "Type of app install file":  "MSI",
+                                             "Name":  "TC_4237715_25 Fake MSI.intunewin",
+                                             "Description":  "TC_4237715_25 Fake MSI.intunewin",
+                                             "Publisher":  "AIAuto ddmmyyyymmss",
+                                             "program parameters":  {
+                                                                        "Installation time required (mins)":  "5",
+                                                                        "Install behavior.":  "User"
+                                                                    },
+                                             "Requirements parameters":  {
+                                                                             "check operating system architecture":  "No. Allow this app to be installed on all systems.",
+                                                                             "architecture type":  "",
+                                                                             "Minimum operating system":  "Windows 10 1607"
+                                                                         },
+                                             "Detection rules parameters":  {
+                                                                                "Rule type":  "MSI",
+                                                                                "Rules format":  "Manually configure detection rules"
+                                                                            },
+                                             "Dependencies":  "Configured as per test description",
+                                             "Supercedence":  "",
+                                             "Assignments":  {
+                                                                 "Required":  "Add group",
+                                                                 "Available for enrolled devices":  "",
+                                                                 "uninstall":  "",
+                                                                 "select groups":  "Automation_AI user group"
+                                                             },
+                                             "API parameters":  {
+
+                                                                },
+                                             "Device Validation":  {
+                                                                       "pre-requisite on device":  "",
+                                                                       "App Installation Validation":  "Verify App A should not be installed on the device",
+                                                                       "searchTerm":  "Test MSI #25",
+                                                                       "expectedValue":  "not installed"
+                                                                   }
+                                         }
+                      },
+                      {
+                          "testCaseId":  "TC_8195638A",
+                          "testName":  "Win32App_Supersedence_8195638A",
+                          "description":  "[IntuneSA]:[Windows][Win10]:[Supersedence][AppUpdate]:[WinClassicApp]:[Required][UserGroup]: A\u003c\u003c-B; A \u0026 B Required; A not present; only B gets installed; Status: A Not Installed, B Installed",
+                          "category":  "WinClassicApp",
+                          "priority":  "High",
+                          "enabled":  true,
+                          "parameters":  {
+                                             "firstLink":  "Apps",
+                                             "secondLink":  "Windows",
+                                             "AppType":  "Windows app (Win32)",
+                                             "select app package file":  "01 Fake MSI.intunewin",
+                                             "Type of app install file":  "MSI",
+                                             "Name":  "TC_8195638A_01 Fake MSI.intunewin",
+                                             "Description":  "TC_8195638A_01 Fake MSI.intunewin",
+                                             "Publisher":  "AIAuto ddmmyyyymmss",
+                                             "program parameters":  {
+                                                                        "Installation time required (mins)":  "5",
+                                                                        "Install behavior.":  "User"
+                                                                    },
+                                             "Requirements parameters":  {
+                                                                             "check operating system architecture":  "No. Allow this app to be installed on all systems.",
+                                                                             "architecture type":  "",
+                                                                             "Minimum operating system":  "Windows 10 1607"
+                                                                         },
+                                             "Detection rules parameters":  {
+                                                                                "Rule type":  "MSI",
+                                                                                "Rules format":  "Manually configure detection rules"
+                                                                            },
+                                             "Dependencies":  "",
+                                             "Supercedence":  "Configured as per test description",
+                                             "Assignments":  {
+                                                                 "Required":  "Add group",
+                                                                 "Available for enrolled devices":  "",
+                                                                 "uninstall":  "",
+                                                                 "select groups":  "Automation_AI"
+                                                             },
+                                             "API parameters":  {
+
+                                                                },
+                                             "Device Validation":  {
+                                                                       "pre-requisite on device":  "",
+                                                                       "App Installation Validation":  "Verify App A should not be installed on the device",
+                                                                       "searchTerm":  "Test MSI #1",
+                                                                       "expectedValue":  "not installed"
+                                                                   }
+                                         }
+                      },
+                      {
+                          "testCaseId":  "TC_8195641A",
+                          "testName":  "Win32App_Supersedence_8195641A",
+                          "description":  "[IntuneSA]:[Windows][Win10]:[Supersedence][AppUpdate]:[WinClassicApp]:[Required][UserGroup]: A\u003c\u003c-B; A \u0026 B Required; A not present, B is present; no action; Status: A Not Installed, B Installed",
+                          "category":  "WinClassicApp",
+                          "priority":  "High",
+                          "enabled":  true,
+                          "parameters":  {
+                                             "firstLink":  "Apps",
+                                             "secondLink":  "Windows",
+                                             "AppType":  "Windows app (Win32)",
+                                             "select app package file":  "3 Fake MSI.intunewin",
+                                             "Type of app install file":  "MSI",
+                                             "Name":  "TC_8195641A_03 Fake MSI.intunewin",
+                                             "Description":  "TC_8195641A_03 Fake MSI.intunewin",
+                                             "Publisher":  "AIAuto ddmmyyyymmss",
+                                             "program parameters":  {
+                                                                        "Installation time required (mins)":  "5",
+                                                                        "Install behavior.":  "User"
+                                                                    },
+                                             "Requirements parameters":  {
+                                                                             "check operating system architecture":  "No. Allow this app to be installed on all systems.",
+                                                                             "architecture type":  "",
+                                                                             "Minimum operating system":  "Windows 10 1607"
+                                                                         },
+                                             "Detection rules parameters":  {
+                                                                                "Rule type":  "MSI",
+                                                                                "Rules format":  "Manually configure detection rules"
+                                                                            },
+                                             "Dependencies":  "",
+                                             "Supercedence":  "Configured as per test description",
+                                             "Assignments":  {
+                                                                 "Required":  "Add group",
+                                                                 "Available for enrolled devices":  "",
+                                                                 "uninstall":  "",
+                                                                 "select groups":  "Automation_AI"
+                                                             },
+                                             "API parameters":  {
+
+                                                                },
+                                             "Device Validation":  {
+                                                                       "pre-requisite on device":  "",
+                                                                       "App Installation Validation":  "Verify App A should not be installed on the device",
+                                                                       "searchTerm":  "Test MSI #3",
+                                                                       "expectedValue":  "not installed"
+                                                                   }
+                                         }
+                      },
+                      {
+                          "testCaseId":  "TC_8195646A",
+                          "testName":  "Win32App_Supersedence_8195646A",
+                          "description":  "[IntuneSA]:[Windows][Win10]:[Supersedence][AppReplace]:[WinClassicApp]:[Required][UserGroup]: A\u003c\u003c+B; A \u0026 B Required; A not present; Install B; Status: A Not Installed, B Installed",
+                          "category":  "WinClassicApp",
+                          "priority":  "High",
+                          "enabled":  true,
+                          "parameters":  {
+                                             "firstLink":  "Apps",
+                                             "secondLink":  "Windows",
+                                             "AppType":  "Windows app (Win32)",
+                                             "select app package file":  "08 Fake MSI.intunewin",
+                                             "Type of app install file":  "MSI",
+                                             "Name":  "TC_8195646A_08 Fake MSI.intunewin",
+                                             "Description":  "TC_8195646A_08 Fake MSI.intunewin",
+                                             "Publisher":  "AIAuto ddmmyyyymmss",
+                                             "program parameters":  {
+                                                                        "Installation time required (mins)":  "5",
+                                                                        "Install behavior.":  "User"
+                                                                    },
+                                             "Requirements parameters":  {
+                                                                             "check operating system architecture":  "No. Allow this app to be installed on all systems.",
+                                                                             "architecture type":  "",
+                                                                             "Minimum operating system":  "Windows 10 1607"
+                                                                         },
+                                             "Detection rules parameters":  {
+                                                                                "Rule type":  "MSI",
+                                                                                "Rules format":  "Manually configure detection rules"
+                                                                            },
+                                             "Dependencies":  "",
+                                             "Supercedence":  "Configured as per test description",
+                                             "Assignments":  {
+                                                                 "Required":  "Add group",
+                                                                 "Available for enrolled devices":  "",
+                                                                 "uninstall":  "",
+                                                                 "select groups":  "Automation_AI"
+                                                             },
+                                             "API parameters":  {
+
+                                                                },
+                                             "Device Validation":  {
+                                                                       "pre-requisite on device":  "",
+                                                                       "App Installation Validation":  "Verify App A should not be installed on the device",
+                                                                       "searchTerm":  "Test MSI #8",
+                                                                       "expectedValue":  "not installed"
+                                                                   }
+                                         }
+                      },
+                      {
+                          "testCaseId":  "TC_8195647A",
+                          "testName":  "Win32App_Supersedence_8195647A",
+                          "description":  "[IntuneSA]:[Windows][Win10]:[Supersedence][AppReplace]:[WinClassicApp]:[Required][UserGroup]: A\u003c\u003c+B; A \u0026 B Required; A is present; A uninstalled, B installed; Status: A Not Installed, B Installed",
+                          "category":  "WinClassicApp",
+                          "priority":  "High",
+                          "enabled":  true,
+                          "parameters":  {
+                                             "firstLink":  "Apps",
+                                             "secondLink":  "Windows",
+                                             "AppType":  "Windows app (Win32)",
+                                             "select app package file":  "010 Fake MSI.intunewin",
+                                             "Type of app install file":  "MSI",
+                                             "Name":  "TC_8195647A_010 Fake MSI.intunewin",
+                                             "Description":  "TC_8195647A_010 Fake MSI.intunewin",
+                                             "Publisher":  "AIAuto ddmmyyyymmss",
+                                             "program parameters":  {
+                                                                        "Installation time required (mins)":  "5",
+                                                                        "Install behavior.":  "User"
+                                                                    },
+                                             "Requirements parameters":  {
+                                                                             "check operating system architecture":  "No. Allow this app to be installed on all systems.",
+                                                                             "architecture type":  "",
+                                                                             "Minimum operating system":  "Windows 10 1607"
+                                                                         },
+                                             "Detection rules parameters":  {
+                                                                                "Rule type":  "MSI",
+                                                                                "Rules format":  "Manually configure detection rules"
+                                                                            },
+                                             "Dependencies":  "",
+                                             "Supercedence":  "Configured as per test description",
+                                             "Assignments":  {
+                                                                 "Required":  "Add group",
+                                                                 "Available for enrolled devices":  "",
+                                                                 "uninstall":  "",
+                                                                 "select groups":  "Automation_AI"
+                                                             },
+                                             "API parameters":  {
+
+                                                                },
+                                             "Device Validation":  {
+                                                                       "pre-requisite on device":  "",
+                                                                       "App Installation Validation":  "Verify App A should not be installed on the device",
+                                                                       "searchTerm":  "Test MSI #10",
+                                                                       "expectedValue":  "not installed"
+                                                                   }
+                                         }
+                      },
+                      {
+                          "testCaseId":  "TC_9133729",
+                          "testName":  "Win32App_Create_9133729",
+                          "description":  "[IntuneSA]:[Win10]:[E2E][Create]:[WinClassicApp]:[Required]:[AllDeviceGroup]:[IntuneWin]:Verify app is Installed for all Windows devices in group",
+                          "category":  "WinClassicApp",
+                          "priority":  "High",
+                          "enabled":  true,
+                          "parameters":  {
+                                             "firstLink":  "Apps",
+                                             "secondLink":  "Windows",
+                                             "AppType":  "Windows app (Win32)",
+                                             "select app package file":  "13 Fake MSI.intunewin",
+                                             "Type of app install file":  "MSI",
+                                             "Name":  "TC_9133729_13 Fake MSI.intunewin",
+                                             "Description":  "TC_9133729_13 Fake MSI.intunewin",
+                                             "Publisher":  "AIAuto ddmmyyyymmss",
+                                             "program parameters":  {
+                                                                        "Installation time required (mins)":  "5",
+                                                                        "Install behavior.":  "System"
+                                                                    },
+                                             "Requirements parameters":  {
+                                                                             "check operating system architecture":  "No. Allow this app to be installed on all systems.",
+                                                                             "architecture type":  "",
+                                                                             "Minimum operating system":  "Windows 10 1607"
+                                                                         },
+                                             "Detection rules parameters":  {
+                                                                                "Rule type":  "MSI",
+                                                                                "Rules format":  "Manually configure detection rules"
+                                                                            },
+                                             "Dependencies":  "",
+                                             "Supercedence":  "",
+                                             "Assignments":  {
+                                                                 "Required":  "All devices",
+                                                                 "Available for enrolled devices":  "",
+                                                                 "uninstall":  "",
+                                                                 "select groups":  ""
+                                                             },
+                                             "API parameters":  {
+
+                                                                },
+                                             "Device Validation":  {
+                                                                       "pre-requisite on device":  "",
+                                                                       "App Installation Validation":  "Verify App A should be installed on the device",
+                                                                       "searchTerm":  "Test MSI #13",
+                                                                       "expectedValue":  "installed"
+                                                                   }
+                                         }
+                      },
+                      {
+                          "testCaseId":  "TC_16135393",
+                          "testName":  "Win32App_Create_16135393",
+                          "description":  "[IntuneSA]:[Win10]:[E2E][Create]:[WinClassicApp]:[Required]:[DeviceGroup]:[IntuneWin]: Verify Install is success in the next scheduled check-in",
+                          "category":  "WinClassicApp",
+                          "priority":  "High",
+                          "enabled":  true,
+                          "parameters":  {
+                                             "firstLink":  "Apps",
+                                             "secondLink":  "Windows",
+                                             "AppType":  "Windows app (Win32)",
+                                             "select app package file":  "14 Fake MSI.intunewin",
+                                             "Type of app install file":  "MSI",
+                                             "Name":  "TC_16135393_14 Fake MSI.intunewin",
+                                             "Description":  "TC_16135393_14 Fake MSI.intunewin",
+                                             "Publisher":  "AIAuto ddmmyyyymmss",
+                                             "program parameters":  {
+                                                                        "Installation time required (mins)":  "5",
+                                                                        "Install behavior.":  "System"
+                                                                    },
+                                             "Requirements parameters":  {
+                                                                             "check operating system architecture":  "No. Allow this app to be installed on all systems.",
+                                                                             "architecture type":  "",
+                                                                             "Minimum operating system":  "Windows 10 1607"
+                                                                         },
+                                             "Detection rules parameters":  {
+                                                                                "Rule type":  "MSI",
+                                                                                "Rules format":  "Manually configure detection rules"
+                                                                            },
+                                             "Dependencies":  "",
+                                             "Supercedence":  "",
+                                             "Assignments":  {
+                                                                 "Required":  "Add group",
+                                                                 "Available for enrolled devices":  "",
+                                                                 "uninstall":  "",
+                                                                 "select groups":  "Automation_AI"
+                                                             },
+                                             "API parameters":  {
+
+                                                                },
+                                             "Device Validation":  {
+                                                                       "pre-requisite on device":  "",
+                                                                       "App Installation Validation":  "Verify App A should be installed on the device",
+                                                                       "searchTerm":  "Test MSI #14",
+                                                                       "expectedValue":  "installed"
+                                                                   }
+                                         }
+                      }
+                  ]
+}

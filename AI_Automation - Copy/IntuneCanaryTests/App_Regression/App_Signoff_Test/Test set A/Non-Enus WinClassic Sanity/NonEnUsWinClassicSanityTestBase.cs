@@ -3,6 +3,7 @@ using Microsoft.Playwright;
 using Microsoft.Playwright.NUnit;
 using NUnit.Framework;
 using global::PlaywrightTests.Common.Helper;
+using global::PlaywrightTests.Common.Utils;
 using global::PlaywrightTests.Common.Model;
 using global::PlaywrightTests.Common.Utils.BaseUtils.Apps.ByPlatform;
 using global::PlaywrightTests.Common.Utils.BaseUtils.PopUp;
@@ -13,6 +14,7 @@ using System.IO;
 using System.Linq;
 using System.Text.Json;
 using System.Text.Json.Serialization;
+using System.Diagnostics;
 using System.Threading.Tasks;
 
 namespace IntuneCanaryTests
@@ -295,13 +297,6 @@ namespace IntuneCanaryTests
 
                 throw;
             }
-            finally
-            {
-                if (!string.IsNullOrWhiteSpace(createdAppName))
-                {
-                    await TryCleanupCreatedAppAsync(createdAppName);
-                }
-            }
         }
 
         private async Task<Dictionary<string, string>> ConfigureAssignmentsAsync(
@@ -498,6 +493,87 @@ namespace IntuneCanaryTests
 
             await Page.WaitForLoadStateAsync(LoadState.DOMContentLoaded);
             await Page.WaitForTimeoutAsync(3000);
+        }
+
+        private async Task ValidateAppInstallationOnDeviceAsync(NonEnUsWinClassicDeviceValidation deviceValidation)
+        {
+            if (string.IsNullOrWhiteSpace(deviceValidation.SearchTerm))
+            {
+                _test?.Info("No searchTerm configured — skipping device installation validation.");
+                return;
+            }
+
+            _test?.Info($"Waiting 10 minutes for policy to sync to device before validating installation...");
+            Console.WriteLine($"[{DateTime.Now:HH:mm:ss}] Starting 10-minute wait for policy sync...");
+
+            for (int i = 1; i <= 10; i++)
+            {
+                await Task.Delay(TimeSpan.FromMinutes(1));
+                var msg = $"[{DateTime.Now:HH:mm:ss}] Waited {i}/10 minutes...";
+                Console.WriteLine(msg);
+                _test?.Info(msg);
+            }
+
+            _test?.Info($"Running winget validation: winget list --name \"{deviceValidation.SearchTerm}\"");
+            Console.WriteLine($"[{DateTime.Now:HH:mm:ss}] Executing: winget list --name \"{deviceValidation.SearchTerm}\"");
+
+            var processInfo = new ProcessStartInfo
+            {
+                FileName = "winget",
+                Arguments = $"list --name \"{deviceValidation.SearchTerm}\"",
+                RedirectStandardOutput = true,
+                RedirectStandardError = true,
+                UseShellExecute = false,
+                CreateNoWindow = true
+            };
+
+            string output;
+            string error;
+            try
+            {
+                using var process = Process.Start(processInfo);
+                output = await process!.StandardOutput.ReadToEndAsync();
+                error = await process.StandardError.ReadToEndAsync();
+                await process.WaitForExitAsync();
+            }
+            catch (Exception ex)
+            {
+                _test?.Warning($"Failed to run winget command: {ex.Message}");
+                Console.WriteLine($"[{DateTime.Now:HH:mm:ss}] winget command failed: {ex.Message}");
+                return;
+            }
+
+            Console.WriteLine($"[{DateTime.Now:HH:mm:ss}] winget output:\n{output}");
+            if (!string.IsNullOrWhiteSpace(error))
+                Console.WriteLine($"[{DateTime.Now:HH:mm:ss}] winget stderr:\n{error}");
+
+            _test?.Info($"winget output:\n{output}");
+
+            bool appFound = output.Contains(deviceValidation.SearchTerm, StringComparison.OrdinalIgnoreCase);
+            bool expectInstalled = deviceValidation.ExpectedValue.Equals("installed", StringComparison.OrdinalIgnoreCase);
+
+            if (expectInstalled && appFound)
+            {
+                _test?.Pass($"VALIDATION PASSED: \"{deviceValidation.SearchTerm}\" found in winget list — app is installed as expected.");
+                Console.WriteLine($"[{DateTime.Now:HH:mm:ss}] VALIDATION PASSED: App installed as expected.");
+            }
+            else if (!expectInstalled && !appFound)
+            {
+                _test?.Pass($"VALIDATION PASSED: \"{deviceValidation.SearchTerm}\" not found in winget list — app is not installed as expected.");
+                Console.WriteLine($"[{DateTime.Now:HH:mm:ss}] VALIDATION PASSED: App not installed as expected.");
+            }
+            else if (expectInstalled && !appFound)
+            {
+                _test?.Fail($"VALIDATION FAILED: Expected \"{deviceValidation.SearchTerm}\" to be installed, but it was NOT found in winget list.");
+                Console.WriteLine($"[{DateTime.Now:HH:mm:ss}] VALIDATION FAILED: App expected but not found.");
+                Assert.Fail($"App \"{deviceValidation.SearchTerm}\" expected to be installed but was not found.");
+            }
+            else
+            {
+                _test?.Fail($"VALIDATION FAILED: Expected \"{deviceValidation.SearchTerm}\" to NOT be installed, but it WAS found in winget list.");
+                Console.WriteLine($"[{DateTime.Now:HH:mm:ss}] VALIDATION FAILED: App found but should not be installed.");
+                Assert.Fail($"App \"{deviceValidation.SearchTerm}\" expected to not be installed but was found.");
+            }
         }
 
         private async Task TryCleanupCreatedAppAsync(string createdAppName)
@@ -770,13 +846,24 @@ namespace IntuneCanaryTests
 
         protected sealed class NonEnUsWinClassicDeviceValidation
         {
+            [JsonPropertyName("pre-requisite on device")]
+            public string PreRequisiteOnDevice { get; set; } = string.Empty;
+
             [JsonPropertyName("App Installation Validation")]
             public string AppInstallationValidation { get; set; } = string.Empty;
+
+            [JsonPropertyName("searchTerm")]
+            public string SearchTerm { get; set; } = string.Empty;
+
+            [JsonPropertyName("expectedValue")]
+            public string ExpectedValue { get; set; } = string.Empty;
         }
 
         [TearDown]
         public void TestTearDown()
         {
+            // Dump self-healing report at end of each test
+            SelfHealingLocator.DumpHealingReport();
             TestInitialize.LogTestResult(TestContext.CurrentContext);
             _test?.Info($"Test ended at: {DateTime.Now:yyyy-MM-dd HH:mm:ss}");
             _test = null;

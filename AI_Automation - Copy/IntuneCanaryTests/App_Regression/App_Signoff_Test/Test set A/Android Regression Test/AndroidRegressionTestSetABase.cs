@@ -1,4 +1,4 @@
-﻿using Microsoft.Playwright;
+using Microsoft.Playwright;
 using Microsoft.Playwright.NUnit;
 using NUnit.Framework;
 using global::PlaywrightTests.Common.Model;
@@ -169,10 +169,10 @@ namespace IntuneCanaryTests
                 parameters = await ExecuteStepAsync(allAppsUtils, parameters, "Click Next to Review + Create",
                     new ControlInfo { ControlType = "ClickNextButtonAsync" });
 
-                // Step 11: Create the app
+                // Step 11: Create the app (store app uses "created successfully" notification)
                 _test?.Info("Step 11: Creating the app");
                 parameters = await ExecuteStepAsync(allAppsUtils, parameters, "Click Create",
-                    new ControlInfo { ControlType = "ClickCreateButtonAsync" });
+                    new ControlInfo { ControlType = "ClickCreateButtonWithoutWaitForUploadAsync" });
                 await Page.WaitForLoadStateAsync(LoadState.DOMContentLoaded);
 
                 var createScreenshot = await ExtentReportHelper.CaptureScreenshot(Page, $"Create_Complete_{NumericTestId}");

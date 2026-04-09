@@ -80,7 +80,32 @@ Run this as a **background terminal command** so you can monitor output while it
 
 #### Step 2: Poll console output CONTINUOUSLY
 Use `get_terminal_output` to read the streaming output every few seconds.
-Look for these **real-time failure signals** in the console:
+
+**CRITICAL: ACTIVE PARSING ON EVERY POLL — not passive "is it still running" checks.**
+
+On **each poll**, scan the full output and look for these patterns:
+
+**STRUCTURED SELF-HEALING SIGNALS (framework emits these automatically):**
+```
+- "[HEAL_SIGNAL] retryCount=N locator=..." — N>30 means locator struggling, N>100 means critical
+- "[SelfHealing] Auto-healed at retry N" — In-test healing SUCCEEDED, note the strategy
+- "[SelfHealing] Healing failed at retry N" — In-test healing tried but FAILED, prepare code fix
+- "[SelfHealing] Primary locator FAILED" — SelfHealingLocator cascade started
+- "[SelfHealing] HEALED 'key' via strategy" — Specific strategy that worked
+- "[SelfHealing] *** PERMANENT FIX RECOMMENDED ***" — 3+ heals for same locator
+- "[SelfHealingRetry] Attempt N/M failed" — SelfHealingControlHelper retry loop active
+- "[HEAL_REQUEST] step=X controlType=Y error=Z" — Test step failed, structured for parsing
+```
+
+**RETRY COUNT THRESHOLDS (from IsExistAsync Try `N` pattern):**
+```
+- Try `30` — WARNING: locator is struggling, self-healing will trigger if hints available
+- Try `60` — CRITICAL: self-healing likely failed, prepare Debug Agent diagnosis
+- Try `100` — EMERGENCY: element likely doesn't exist on page, portal may have changed
+- Try `150` — TERMINAL: 150 retries exhausted, test will fail
+```
+
+**When you see retry count > 30:** Check if `[SelfHealing]` logs followed. If YES → healing worked, continue monitoring. If NO → no HealingHints were available for this locator, prepare to add them.
 
 **IMMEDIATE FAILURE INDICATORS (act NOW):**
 ```
@@ -108,8 +133,12 @@ Look for these **real-time failure signals** in the console:
 - "Screenshot captured:"
 ```
 
-#### Step 3: On detecting ANY failure signal  STOP WAITING, start Phase 2 immediately
+#### Step 3: On detecting ANY failure signal → STOP WAITING, start Phase 2 immediately
 Do NOT wait for the full test to finish. The failure has already happened.
+
+**If you see `[SelfHealing] Auto-healed` → The framework healed itself. Continue monitoring. Log the healing for Phase 6.**
+
+**If you see `[HEAL_REQUEST]` → The step failed AFTER in-test healing. Proceed to Phase 2 for agent-level fix.**
 
 ---
 

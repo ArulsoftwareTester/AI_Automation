@@ -1,0 +1,45 @@
+﻿TC_7365651	False	7365651_Windows_Win10RS2+_Assignment Filters_Match_E2E_OfficeCSP_ProPlus_Required_UserGroup_Verify ProPlus  , Single Language can all install successfully
+TC_7365652	False	7365652_Windows_Win10RS2+_Assignment Filters_Match_E2E_OfficeCSP_ProPlus_Uninstall_UserGroup_Verify ProPlus  , Single Language all uninstall successfully
+TC_7365653	False	7365653_Windows_Win10RS2+_Assignment Filters_Match_E2E_OfficeCSP_ProPlus_Available_UserGroup_Verify ProPlus  , Single Language shows in CP and IWP and can all install successfully
+TC_7365654	False	7365654_Windows_Win10RS2+_Assignment Filters_No Match_E2E_OfficeCSP_ProPlus_Required_UserGroup_Verify ProPlus  , Single Language is not installed on the device
+TC_7365655	False	7365655_Windows_Win10RS2+_Assignment Filters_No Match_OfficeCSP_ProPlus_Available_UserGroup_Verify ProPlus  , Single Language does not show in CP and IWP
+TC_7365656	False	7365656_Windows_Win10_Assignment Filters_Match_E2E_Appx_Universal_Required_UserGroup_Verify LOB App is install successfully on the device
+TC_7365657	False	7365657_Windows_Win10_Assignment Filters_Match_E2E_Appx_Universal_Uninstall_UserGroup_Verify LOB App is uninstalled on the device
+TC_7365658	False	7365658_Windows_Win10_Assignment Filters_Match_E2E_Appx_Universal_Available_UserGroup_Verify LOB App shows in CP and IWP and can all install successfully on the device
+TC_7365659	False	7365659_Windows_Win10_Assignment Filters_No Match_E2E_Appx_Universal_Required_UserGroup_Verify LOB App is not installed on the device
+TC_7365660	False	7365660_Windows_Win10_Assignment Filters_No Match_Appx_Universal_Available_UserGroup_Verify LOB App does not show in CP and IWP
+TC_7482751	False	7482751_Assignment Filters_Conflict_Required_Available_Include_UserGroup_G1 Required F1 Match, G2 Available F2 Match, Verify Successful Install and show in CP and IWP
+TC_7482752	False	7482752_Assignment Filters_Conflict_Required_Available_Include_UserGroup_G1 Required F1 Match, G2 Available F2 No Match, App will show up in the company portal if at least one filter is matched and also shows in CP and IWP
+TC_7482753	False	7482753_Assignment Filters_Conflict_Required_Available_Include_UserGroup_G1 Required F1 No Match, G2 Available F2 Match, Verify app gets Installed and it shows in CP and IWP
+TC_7482754	False	7482754_Assignment Filters_Conflict_Required_Available_Include_UserGroup_G1 Required F1 No Match, G2 Available F2 No Match, Verify app does not get Installed and does not show in CP and IWP
+TC_7482755	False	7482755_Assignment Filters_Conflict_Required_Uninstall_Include_UserGroup_G1 Required F1 Match, G2 Uninstall F2 Match, Verify app gets Installed
+TC_7482756	False	7482756_Assignment Filters_Conflict_Required_Available_Include_DeviceGroup_G1 Required F1 Match, G2 Available F2 Match, Verify Successful Install and does not show in IWP  CP will show only if affiliated user
+TC_7482757	False	7482757_Assignment Filters_Conflict_Required_Available_Include_DeviceGroup_G1 Required F1 Match, G2 Available F2 No Match, Verify Successful Install and does show in CP and IWP
+TC_7482758	False	7482758_Assignment Filters_Conflict_Required_Available_Include_DeviceGroup_G1 Required F1 No Match, G2 Available F2 Match, Verify Successful Install and does show in CP and IWP
+TC_7482759	False	7482759_Assignment Filters_Conflict_Required_Available_Include_DeviceGroup_G1 Required F1 No Match, G2 Available F2 No Match, Verify app does not get Installed and does not show in CP and IWP
+TC_7817262	False	7817262_Assignment Filters_Conflict_Available_Uninstall_Include_UserGroup_G1 Available F1 Match, G2 Uninstall F2 Match, Verify app gets uninstalled  App does not show in IWP or CP
+TC_7817265	False	7817265_Assignment Filters_Conflict_Available_Uninstall_Include_UserGroup_G1 Available F1 Match, G2 Uninstall F2 NoMatch, Verify app does not get uninstalled  App does not show in IWP or CP
+TC_7817268	False	7817268_Assignment Filters_Conflict_Available_Uninstall_Include_UserGroup_G1 Available F1 NoMatch, G2 Uninstall F2 Match, Verify app gets uninstalled  App does not show in IWP or CP
+TC_7817271	False	7817271_Assignment Filters_Conflict_Available_Uninstall_Include_UserGroup_G1 Available F1 NoMatch, G2 Uninstall F2 NoMatch, Verify app does not get uninstalled  App does not show in IWP or CP
+TC_7817276	False	7817276_Assignment Filters_Conflict_Required_Uninstall_Include_DeviceGroup_G1 Required F1 Match, G2 Uninstall F2 NoMatch, Verify Successful Install
+TC_7817279	False	7817279_Assignment Filters_Conflict_Required_Uninstall_Include_DeviceGroup_G1 Required F1 No Match, G2 Uninstall F2 Match, Verify app does not Install on device
+TC_7817282	False	7817282_Assignment Filters_Conflict_Required_Uninstall_Include_DeviceGroup_G1 Required F1 NoMatch, G2 Uninstall F2 NoMatch, verify no install, no uninstall
+TC_8829034	False	8829034_Assignment Filters_Conflict_Available_Uninstall_Exclude_UserGroup_G1 Available F1 Match, G2 Uninstall F2 Match, App should be uninstalled -in case if it is installed before -  App does not show in IWP or CP
+TC_8829037	False	8829037_Assignment Filters_Conflict_Available_Uninstall_Exclude_UserGroup_G1 Available F1 Match, G2 Uninstall F2 NoMatch, App should be uninstalled -in case if it is installed before -  App does not show in IWP or CP
+TC_8829040	False	8829040_Assignment Filters_Conflict_Available_Uninstall_Exclude_UserGroup_G1 Available F1 NoMatch, G2 Uninstall F2 Match, Verify app does not get uninstalled  App does not show in IWP or CP
+TC_8829043	False	8829043_Assignment Filters_Conflict_Available_Uninstall_Exclude_UserGroup_G1 Available F1 NoMatch, G2 Uninstall F2 NoMatch,  uninstall shouldn't happen
+TC_8829046	False	8829046_Assignment Filters_Conflict_Required_Available_Exclude_DeviceGroup_G1 Required F1 Match, G2 Available F2 Match, Verify does not Install and does not show in IWP or CP
+TC_8829049	False	8829049_Assignment Filters_Conflict_Required_Available_Exclude_DeviceGroup_G1 Required F1 Match, G2 Available F2 No Match, Verify not Installed and does not show in CP and IWP
+TC_8829052	False	8829052_Assignment Filters_Conflict_Required_Available_Exclude_DeviceGroup_G1 Required F1 No Match, G2 Available F2 Match, Verify not Installed and does not show in CP and IWP
+TC_8829055	False	8829055_Assignment Filters_Conflict_Required_Available_Exclude_DeviceGroup_G1 Required F1 No Match, G2 Available F2 No Match, Verify Successful Install and will show in CP and IWP
+TC_8829058	False	8829058_Assignment Filters_Conflict_Required_Available_Exclude_UserGroup_G1 Required F1 Match, G2 Available F2 Match, Verify does not Install and does not show in CP and IWP
+TC_8829061	False	8829061_Assignment Filters_Conflict_Required_Available_Exclude_UserGroup_G1 Required F1 Match, G1 Required F1 Match Verify does not Install and does not show in CP and IWP
+TC_8829064	False	8829064_Assignment Filters_Conflict_Required_Available_Exclude_UserGroup_G1 Required F1 No Match, G2 Available F2 Match, Verify does not Install and does not show in CP and IWP
+TC_8829067	False	8829067_Assignment Filters_Conflict_Required_Available_Exclude_UserGroup_G1 Required F1 No Match, G2 Available F2 No Match, Verify Successfully Installs and shows in CP and IWP
+TC_8829072	False	8829072_Assignment Filters_Conflict_Required_Uninstall_Exclude_DeviceGroup_G1 Required F1 Match, G2 Uninstall F2 Match, Verify app does not Install
+TC_8829075	False	8829075_Assignment Filters_Conflict_Required_Uninstall_Exclude_DeviceGroup_G1 Required F1 Match, G2 Uninstall F2 NoMatch, Verify app should Install
+TC_8829078	False	8829078_Assignment Filters_Conflict_Required_Uninstall_Exclude_DeviceGroup_G1 Required F1 No Match, G2 Uninstall F2 Match, Verify Successful Install
+TC_8829081	False	8829081_Assignment Filters_Conflict_Required_Uninstall_Exclude_DeviceGroup_G1 Required F1 NoMatch, G2 Uninstall F2 NoMatch, Verify Successful Install
+TC_8829084	False	8829084_Assignment Filters_Conflict_Required_Uninstall_Exclude_UserGroup_G1 Required F1 Match, G2 Uninstall F2 Match, Verify app does not get Installed
+TC_8829085	False	8829085_Assignment Filters_Conflict_Required_Available_Include-Exclude_DeviceGroup_G1 Required F1 Exclude Match, G2 Available F2 Include Match, Verify App is Installed and shows in IWP or CP
+TC_8829088	False	8829088_Assignment Filters_Conflict_Required_Available_Include-Exclude_DeviceGroup_G1 Required F1 Exclude Match, G2 Available F2 Include No Match, Verify not Installed and does not show in CP and IWP

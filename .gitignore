@@ -10,8 +10,12 @@
 # Auth/certs
 **/auth-cert/
 
+# Sensitive files
+**/.env
+
 # IDE
 .vs/
+.vscode/
 *.suo
 *.user
 *.userosscache
@@ -27,3 +31,12 @@ desktop.ini
 
 # Playwright
 **/playwright/.cache/
+
+# Archives
+*.zip
+
+# Embedded repos
+**/Self_Healing/
+
+# Temp folders
+New folder/

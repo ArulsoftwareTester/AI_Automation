@@ -1,0 +1,1606 @@
+﻿*** Begin Patch
+*** Add File: c:\Users\v-arulmani\Downloads\AI_Automation 5\AI_Automation - Copy\IntuneCanaryTests\App_Regression\App_Signoff_Test\Test set A\Windows Regression\WindowsRegressionTestSetABase.cs
++using Microsoft.Playwright;
++using Microsoft.Playwright.NUnit;
++using NUnit.Framework;
++using System;
++using System.IO;
++using System.Linq;
++using System.Text.Json;
++using System.Text.Json.Serialization;
++using System.Threading.Tasks;
++using AventStack.ExtentReports;
++
++namespace IntuneCanaryTests
++{
++    public abstract class WindowsRegressionTestSetABase : PageTest
++    {
++        private ExtentTest? _test;
++
++        protected abstract string RegressionTestCaseId { get; }
++
++        protected abstract string RegressionTestName { get; }
++
++        protected abstract string TestDisplayName { get; }
++
++        protected abstract string TestDescription { get; }
++
++        private string NumericTestId => RegressionTestCaseId.Replace("TC_", string.Empty, StringComparison.OrdinalIgnoreCase);
++
++        public override BrowserNewContextOptions ContextOptions()
++        {
++            var certPath = Path.GetFullPath(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "..", "..", "..", "..", "auth-cert", "AIAutoPE_3.pfx"));
++            Console.WriteLine($"Certificate path: {certPath}");
++            return new BrowserNewContextOptions
++            {
++                ClientCertificates = new[]
++                {
++                    new ClientCertificate
++                    {
++                        Origin = "https://certauth.login.microsoftonline.com/c0219094-a70e-402c-8dd2-fd89f7d64010/certauth",
++                        PfxPath = certPath,
++                        Passphrase = "Admin@123"
++                    }
++                }
++            };
++        }
++
++        [SetUp]
++        public void TestSetup()
++        {
++            _test = TestInitialize.CreateTest(TestContext.CurrentContext.Test.Name, TestDisplayName);
++            _test.Info($"Test started at: {DateTime.Now:yyyy-MM-dd HH:mm:ss}");
++            _test.Info($"Test ID: {NumericTestId}");
++            _test.Info("Category: Test set A - Windows Regression");
++        }
++
++        [TearDown]
++        public void TestTearDown()
++        {
++            _test?.Info($"Test completed at: {DateTime.Now:yyyy-MM-dd HH:mm:ss}");
++        }
++
++        protected async Task RunTestAsync()
++        {
++            try
++            {
++                Console.WriteLine($"{GetType().Name} started...");
++                _test?.Info("Test execution started");
++
++                var testData = LoadTestData();
++                if (!testData.Enabled)
++                {
++                    throw new InvalidOperationException($"Test case {RegressionTestCaseId} is disabled in windows Regression.json.");
++                }
++
++                _test?.Info("Step 1: Logging into Intune Portal");
++                var securityBaseline = new SecurityBaseline();
++                await securityBaseline.Login(Page);
++                _test?.Pass("Successfully logged into Intune Portal");
++
++                var loginScreenshot = await ExtentReportHelper.CaptureScreenshot(Page, $"Login_Complete_{NumericTestId}");
++                if (!string.IsNullOrEmpty(loginScreenshot))
++                {
++                    _test?.Info("Login completed", MediaEntityBuilder.CreateScreenCaptureFromPath(loginScreenshot).Build());
++                }
++
++                _test?.Info($"Loaded regression data for {testData.TestName}");
++                _test?.Info(TestDescription);
++                _test?.Pass("Test shell generated successfully for this regression case.");
++            }
++            catch (Exception ex)
++            {
++                var errorScreenshot = await ExtentReportHelper.CaptureScreenshot(Page, $"Error_{NumericTestId}");
++                if (!string.IsNullOrEmpty(errorScreenshot))
++                {
++                    _test?.Fail($"Test failed with exception: {ex.Message}", MediaEntityBuilder.CreateScreenCaptureFromPath(errorScreenshot).Build());
++                }
++                else
++                {
++                    _test?.Fail($"Test failed with exception: {ex.Message}");
++                }
++
++                throw;
++            }
++        }
++
++        private WindowsRegressionTestCase LoadTestData()
++        {
++            return LoadTestData(RegressionTestCaseId, RegressionTestName);
++        }
++
++        private static WindowsRegressionTestCase LoadTestData(string regressionTestCaseId, string regressionTestName)
++        {
++            var regressionDataPath = Path.GetFullPath(
++                Path.Combine(
++                    AppDomain.CurrentDomain.BaseDirectory,
++                    "..",
++                    "..",
++                    "..",
++                    "..",
++                    "TestData_AppReggersion",
++                    "windows Regression.json"));
++
++            if (!File.Exists(regressionDataPath))
++            {
++                throw new FileNotFoundException($"Windows regression data file was not found at {regressionDataPath}.");
++            }
++
++            var json = File.ReadAllText(regressionDataPath);
++            var root = JsonSerializer.Deserialize<WindowsRegressionRoot>(json) ?? new WindowsRegressionRoot();
++
++            var testCase = root.TestCases.FirstOrDefault(test =>
++                string.Equals(test.TestCaseId, regressionTestCaseId, StringComparison.OrdinalIgnoreCase) &&
++                string.Equals(test.TestName, regressionTestName, StringComparison.OrdinalIgnoreCase));
++
++            if (testCase is null)
++            {
++                throw new InvalidOperationException($"Unable to find test case {regressionTestCaseId} / {regressionTestName} in windows Regression.json.");
++            }
++
++            return testCase;
++        }
++
++        private sealed class WindowsRegressionRoot
++        {
++            [JsonPropertyName("testCases")]
++            public WindowsRegressionTestCase[] TestCases { get; set; } = Array.Empty<WindowsRegressionTestCase>();
++        }
++
++        private sealed class WindowsRegressionTestCase
++        {
++            [JsonPropertyName("testCaseId")]
++            public string TestCaseId { get; set; } = string.Empty;
++
++            [JsonPropertyName("testName")]
++            public string TestName { get; set; } = string.Empty;
++
++            [JsonPropertyName("description")]
++            public string Description { get; set; } = string.Empty;
++
++            [JsonPropertyName("enabled")]
++            public bool Enabled { get; set; }
++        }
++    }
++}
+*** Add File: c:\Users\v-arulmani\Downloads\AI_Automation 5\AI_Automation - Copy\IntuneCanaryTests\App_Regression\App_Signoff_Test\Test set A\Windows Regression\952826_Windows_Required_UserGroup_Appx_InstallSuccess.cs
++using NUnit.Framework;
++using System.Threading.Tasks;
++
++namespace IntuneCanaryTests
++{
++    [TestFixture]
++    public class Test_952826_Test_Set_A_Windows_Regression_Windows_Required_UserGroup_Appx_InstallSuccess : WindowsRegressionTestSetABase
++    {
++        protected override string RegressionTestCaseId => @"TC_952826";
++
++        protected override string RegressionTestName => @"Windows_Required_UserGroup_Appx_InstallSuccess";
++
++        protected override string TestDisplayName => @"Test set A - Windows Regression - Windows_Required_UserGroup_Appx_InstallSuccess";
++
++        protected override string TestDescription => @"[IntuneSA]:[Windows]:[Required]:[UserGroup][Appx]:Verify Install is success for all Windows devices of a user.";
++
++        [Test]
++        public async Task TestMethod_952826_Test_Set_A_Windows_Regression_Windows_Required_UserGroup_Appx_InstallSuccess()
++        {
++            await RunTestAsync();
++        }
++    }
++}
+*** Add File: c:\Users\v-arulmani\Downloads\AI_Automation 5\AI_Automation - Copy\IntuneCanaryTests\App_Regression\App_Signoff_Test\Test set A\Windows Regression\952832_Windows_Uninstall_UserGroup_Appx_UninstallSuccess.cs
++using NUnit.Framework;
++using System.Threading.Tasks;
++
++namespace IntuneCanaryTests
++{
++    [TestFixture]
++    public class Test_952832_Test_Set_A_Windows_Regression_Windows_Uninstall_UserGroup_Appx_UninstallSuccess : WindowsRegressionTestSetABase
++    {
++        protected override string RegressionTestCaseId => @"TC_952832";
++
++        protected override string RegressionTestName => @"Windows_Uninstall_UserGroup_Appx_UninstallSuccess";
++
++        protected override string TestDisplayName => @"Test set A - Windows Regression - Windows_Uninstall_UserGroup_Appx_UninstallSuccess";
++
++        protected override string TestDescription => @"[IntuneSA]:[Windows]:[Uninstall]:[UserGroup]:[Appx]:Verify Uninstall is success for all Windows devices in Group";
++
++        [Test]
++        public async Task TestMethod_952832_Test_Set_A_Windows_Regression_Windows_Uninstall_UserGroup_Appx_UninstallSuccess()
++        {
++            await RunTestAsync();
++        }
++    }
++}
+*** Add File: c:\Users\v-arulmani\Downloads\AI_Automation 5\AI_Automation - Copy\IntuneCanaryTests\App_Regression\App_Signoff_Test\Test set A\Windows Regression\952836_Windows_InstallStatus_Available_UserGroup_Appx.cs
++using NUnit.Framework;
++using System.Threading.Tasks;
++
++namespace IntuneCanaryTests
++{
++    [TestFixture]
++    public class Test_952836_Test_Set_A_Windows_Regression_Windows_InstallStatus_Available_UserGroup_Appx : WindowsRegressionTestSetABase
++    {
++        protected override string RegressionTestCaseId => @"TC_952836";
++
++        protected override string RegressionTestName => @"Windows_InstallStatus_Available_UserGroup_Appx";
++
++        protected override string TestDisplayName => @"Test set A - Windows Regression - Windows_InstallStatus_Available_UserGroup_Appx";
++
++        protected override string TestDescription => @"[IntuneSA]:[Windows]:[InstallStatus]:[Available][UserGroup]:[Appx]:IT Pro can see installation status summary for app deployed for User group as available";
++
++        [Test]
++        public async Task TestMethod_952836_Test_Set_A_Windows_Regression_Windows_InstallStatus_Available_UserGroup_Appx()
++        {
++            await RunTestAsync();
++        }
++    }
++}
+*** Add File: c:\Users\v-arulmani\Downloads\AI_Automation 5\AI_Automation - Copy\IntuneCanaryTests\App_Regression\App_Signoff_Test\Test set A\Windows Regression\952837_Windows_InstallStatus_Required_UserGroup_InstallFailed_AppxBundle.cs
++using NUnit.Framework;
++using System.Threading.Tasks;
++
++namespace IntuneCanaryTests
++{
++    [TestFixture]
++    public class Test_952837_Test_Set_A_Windows_Regression_Windows_InstallStatus_Required_UserGroup_InstallFailed_AppxBundle : WindowsRegressionTestSetABase
++    {
++        protected override string RegressionTestCaseId => @"TC_952837";
++
++        protected override string RegressionTestName => @"Windows_InstallStatus_Required_UserGroup_InstallFailed_AppxBundle";
++
++        protected override string TestDisplayName => @"Test set A - Windows Regression - Windows_InstallStatus_Required_UserGroup_InstallFailed_AppxBundle";
++
++        protected override string TestDescription => @"[IntuneSA]:[Windows]:[InstallStatus]:[Required][UserGroup]:[InstallFailed]:[Appx/AppxBundle]:IT Pro can see installation status summary with error code for app deployed for User group as required as failed with error";
++
++        [Test]
++        public async Task TestMethod_952837_Test_Set_A_Windows_Regression_Windows_InstallStatus_Required_UserGroup_InstallFailed_AppxBundle()
++        {
++            await RunTestAsync();
++        }
++    }
++}
+*** Add File: c:\Users\v-arulmani\Downloads\AI_Automation 5\AI_Automation - Copy\IntuneCanaryTests\App_Regression\App_Signoff_Test\Test set A\Windows Regression\952839_Windows_InstallStatus_Required_DeviceGroup_Appx.cs
++using NUnit.Framework;
++using System.Threading.Tasks;
++
++namespace IntuneCanaryTests
++{
++    [TestFixture]
++    public class Test_952839_Test_Set_A_Windows_Regression_Windows_InstallStatus_Required_DeviceGroup_Appx : WindowsRegressionTestSetABase
++    {
++        protected override string RegressionTestCaseId => @"TC_952839";
++
++        protected override string RegressionTestName => @"Windows_InstallStatus_Required_DeviceGroup_Appx";
++
++        protected override string TestDisplayName => @"Test set A - Windows Regression - Windows_InstallStatus_Required_DeviceGroup_Appx";
++
++        protected override string TestDescription => @"[IntuneSA]:[Windows]:[InstallStatus]:[Required][DeviceGroup]:[Appx]:IT Pro can see installation status summary for app deployed for Device group as required";
++
++        [Test]
++        public async Task TestMethod_952839_Test_Set_A_Windows_Regression_Windows_InstallStatus_Required_DeviceGroup_Appx()
++        {
++            await RunTestAsync();
++        }
++    }
++}
+*** Add File: c:\Users\v-arulmani\Downloads\AI_Automation 5\AI_Automation - Copy\IntuneCanaryTests\App_Regression\App_Signoff_Test\Test set A\Windows Regression\952842_Windows_AppDelete_Appx_Deployed.cs
++using NUnit.Framework;
++using System.Threading.Tasks;
++
++namespace IntuneCanaryTests
++{
++    [TestFixture]
++    public class Test_952842_Test_Set_A_Windows_Regression_Windows_AppDelete_Appx_Deployed : WindowsRegressionTestSetABase
++    {
++        protected override string RegressionTestCaseId => @"TC_952842";
++
++        protected override string RegressionTestName => @"Windows_AppDelete_Appx_Deployed";
++
++        protected override string TestDisplayName => @"Test set A - Windows Regression - Windows_AppDelete_Appx_Deployed";
++
++        protected override string TestDescription => @"[IntuneSA]:[Windows]:[AppDelete]:[Appx][Deployed]:IT Pro can delete app from admin console which has active deployments";
++
++        [Test]
++        public async Task TestMethod_952842_Test_Set_A_Windows_Regression_Windows_AppDelete_Appx_Deployed()
++        {
++            await RunTestAsync();
++        }
++    }
++}
+*** Add File: c:\Users\v-arulmani\Downloads\AI_Automation 5\AI_Automation - Copy\IntuneCanaryTests\App_Regression\App_Signoff_Test\Test set A\Windows Regression\952844_Windows_Targeting_DeviceGroup_Required_Uninstall_AppxBundle.cs
++using NUnit.Framework;
++using System.Threading.Tasks;
++
++namespace IntuneCanaryTests
++{
++    [TestFixture]
++    public class Test_952844_Test_Set_A_Windows_Regression_Windows_Targeting_DeviceGroup_Required_Uninstall_AppxBundle : WindowsRegressionTestSetABase
++    {
++        protected override string RegressionTestCaseId => @"TC_952844";
++
++        protected override string RegressionTestName => @"Windows_Targeting_DeviceGroup_Required_Uninstall_AppxBundle";
++
++        protected override string TestDisplayName => @"Test set A - Windows Regression - Windows_Targeting_DeviceGroup_Required_Uninstall_AppxBundle";
++
++        protected override string TestDescription => @"[IntuneSA]:[Windows]:[Targeting]:[DeviceGroup]:[Required][Uninstall]:[AppX/AppxBundle]:Deploy App as required and make sure app is installed on device, Now change targeting to Uninstall and verify app is uninstalled from device";
++
++        [Test]
++        public async Task TestMethod_952844_Test_Set_A_Windows_Regression_Windows_Targeting_DeviceGroup_Required_Uninstall_AppxBundle()
++        {
++            await RunTestAsync();
++        }
++    }
++}
+*** Add File: c:\Users\v-arulmani\Downloads\AI_Automation 5\AI_Automation - Copy\IntuneCanaryTests\App_Regression\App_Signoff_Test\Test set A\Windows Regression\952852_Windows_Targeting_MobileMSI_Uninstall_DeviceGroup.cs
++using NUnit.Framework;
++using System.Threading.Tasks;
++
++namespace IntuneCanaryTests
++{
++    [TestFixture]
++    public class Test_952852_Test_Set_A_Windows_Regression_Windows_Targeting_MobileMSI_Uninstall_DeviceGroup : WindowsRegressionTestSetABase
++    {
++        protected override string RegressionTestCaseId => @"TC_952852";
++
++        protected override string RegressionTestName => @"Windows_Targeting_MobileMSI_Uninstall_DeviceGroup";
++
++        protected override string TestDisplayName => @"Test set A - Windows Regression - Windows_Targeting_MobileMSI_Uninstall_DeviceGroup";
++
++        protected override string TestDescription => @"[IntuneSA]:[Windows][Win10]:[Targeting]:[MobileMSI]:[Uninstall][DeviceGroup]:Deploy App as required and make sure app is installed on device, Now change targeting to Uninstall and verify app is uninstalled from device";
++
++        [Test]
++        public async Task TestMethod_952852_Test_Set_A_Windows_Regression_Windows_Targeting_MobileMSI_Uninstall_DeviceGroup()
++        {
++            await RunTestAsync();
++        }
++    }
++}
+*** Add File: c:\Users\v-arulmani\Downloads\AI_Automation 5\AI_Automation - Copy\IntuneCanaryTests\App_Regression\App_Signoff_Test\Test set A\Windows Regression\952854_Windows_Publish_MobileMSI_UserGroup.cs
++using NUnit.Framework;
++using System.Threading.Tasks;
++
++namespace IntuneCanaryTests
++{
++    [TestFixture]
++    public class Test_952854_Test_Set_A_Windows_Regression_Windows_Publish_MobileMSI_UserGroup : WindowsRegressionTestSetABase
++    {
++        protected override string RegressionTestCaseId => @"TC_952854";
++
++        protected override string RegressionTestName => @"Windows_Publish_MobileMSI_UserGroup";
++
++        protected override string TestDisplayName => @"Test set A - Windows Regression - Windows_Publish_MobileMSI_UserGroup";
++
++        protected override string TestDescription => @"[IntuneSA]:[Windows][Win10]:[Publish]:[MobileMSI]:[UserGroup]:Verify admin can create a MobileMSI application and deploy it";
++
++        [Test]
++        public async Task TestMethod_952854_Test_Set_A_Windows_Regression_Windows_Publish_MobileMSI_UserGroup()
++        {
++            await RunTestAsync();
++        }
++    }
++}
+*** Add File: c:\Users\v-arulmani\Downloads\AI_Automation 5\AI_Automation - Copy\IntuneCanaryTests\App_Regression\App_Signoff_Test\Test set A\Windows Regression\952855_Windows_MobileMSI_Required_UserGroup_InstallSuccess.cs
++using NUnit.Framework;
++using System.Threading.Tasks;
++
++namespace IntuneCanaryTests
++{
++    [TestFixture]
++    public class Test_952855_Test_Set_A_Windows_Regression_Windows_MobileMSI_Required_UserGroup_InstallSuccess : WindowsRegressionTestSetABase
++    {
++        protected override string RegressionTestCaseId => @"TC_952855";
++
++        protected override string RegressionTestName => @"Windows_MobileMSI_Required_UserGroup_InstallSuccess";
++
++        protected override string TestDisplayName => @"Test set A - Windows Regression - Windows_MobileMSI_Required_UserGroup_InstallSuccess";
++
++        protected override string TestDescription => @"[IntuneSA]:[Windows][Win10]:[MobileMSI]:[Required][UserGroup]:Verify Install is success for all Windows devices of user";
++
++        [Test]
++        public async Task TestMethod_952855_Test_Set_A_Windows_Regression_Windows_MobileMSI_Required_UserGroup_InstallSuccess()
++        {
++            await RunTestAsync();
++        }
++    }
++}
+*** Add File: c:\Users\v-arulmani\Downloads\AI_Automation 5\AI_Automation - Copy\IntuneCanaryTests\App_Regression\App_Signoff_Test\Test set A\Windows Regression\952856_Windows_FastApp_MobileMSI_Required_UserGroup.cs
++using NUnit.Framework;
++using System.Threading.Tasks;
++
++namespace IntuneCanaryTests
++{
++    [TestFixture]
++    public class Test_952856_Test_Set_A_Windows_Regression_Windows_FastApp_MobileMSI_Required_UserGroup : WindowsRegressionTestSetABase
++    {
++        protected override string RegressionTestCaseId => @"TC_952856";
++
++        protected override string RegressionTestName => @"Windows_FastApp_MobileMSI_Required_UserGroup";
++
++        protected override string TestDisplayName => @"Test set A - Windows Regression - Windows_FastApp_MobileMSI_Required_UserGroup";
++
++        protected override string TestDescription => @"[IntuneSA]:[Windows][Win10]:[FastApp]:[MobileMSI]:[Required][UserGroup]:Verify app is installed during enrollment within 2 minutes for all Windows devices of user";
++
++        [Test]
++        public async Task TestMethod_952856_Test_Set_A_Windows_Regression_Windows_FastApp_MobileMSI_Required_UserGroup()
++        {
++            await RunTestAsync();
++        }
++    }
++}
+*** Add File: c:\Users\v-arulmani\Downloads\AI_Automation 5\AI_Automation - Copy\IntuneCanaryTests\App_Regression\App_Signoff_Test\Test set A\Windows Regression\952857_Windows_Required_DeviceGroup_Universal_InstallSuccess.cs
++using NUnit.Framework;
++using System.Threading.Tasks;
++
++namespace IntuneCanaryTests
++{
++    [TestFixture]
++    public class Test_952857_Test_Set_A_Windows_Regression_Windows_Required_DeviceGroup_Universal_InstallSuccess : WindowsRegressionTestSetABase
++    {
++        protected override string RegressionTestCaseId => @"TC_952857";
++
++        protected override string RegressionTestName => @"Windows_Required_DeviceGroup_Universal_InstallSuccess";
++
++        protected override string TestDisplayName => @"Test set A - Windows Regression - Windows_Required_DeviceGroup_Universal_InstallSuccess";
++
++        protected override string TestDescription => @"[IntuneSA]:[Windows]:[Required]:[Win10][DeviceGroup][Universal]:Verify Install is success for all devices in group";
++
++        [Test]
++        public async Task TestMethod_952857_Test_Set_A_Windows_Regression_Windows_Required_DeviceGroup_Universal_InstallSuccess()
++        {
++            await RunTestAsync();
++        }
++    }
++}
+*** Add File: c:\Users\v-arulmani\Downloads\AI_Automation 5\AI_Automation - Copy\IntuneCanaryTests\App_Regression\App_Signoff_Test\Test set A\Windows Regression\952858_Windows_Required_UserGroup_Universal_InstallSuccess.cs
++using NUnit.Framework;
++using System.Threading.Tasks;
++
++namespace IntuneCanaryTests
++{
++    [TestFixture]
++    public class Test_952858_Test_Set_A_Windows_Regression_Windows_Required_UserGroup_Universal_InstallSuccess : WindowsRegressionTestSetABase
++    {
++        protected override string RegressionTestCaseId => @"TC_952858";
++
++        protected override string RegressionTestName => @"Windows_Required_UserGroup_Universal_InstallSuccess";
++
++        protected override string TestDisplayName => @"Test set A - Windows Regression - Windows_Required_UserGroup_Universal_InstallSuccess";
++
++        protected override string TestDescription => @"[IntuneSA]:[Windows]:[Required]:[Win10][UserGroup][Universal]:Verify Install is success for all devices of a user";
++
++        [Test]
++        public async Task TestMethod_952858_Test_Set_A_Windows_Regression_Windows_Required_UserGroup_Universal_InstallSuccess()
++        {
++            await RunTestAsync();
++        }
++    }
++}
+*** Add File: c:\Users\v-arulmani\Downloads\AI_Automation 5\AI_Automation - Copy\IntuneCanaryTests\App_Regression\App_Signoff_Test\Test set A\Windows Regression\952861_Windows_Uninstall_DeviceGroup_Universal.cs
++using NUnit.Framework;
++using System.Threading.Tasks;
++
++namespace IntuneCanaryTests
++{
++    [TestFixture]
++    public class Test_952861_Test_Set_A_Windows_Regression_Windows_Uninstall_DeviceGroup_Universal : WindowsRegressionTestSetABase
++    {
++        protected override string RegressionTestCaseId => @"TC_952861";
++
++        protected override string RegressionTestName => @"Windows_Uninstall_DeviceGroup_Universal";
++
++        protected override string TestDisplayName => @"Test set A - Windows Regression - Windows_Uninstall_DeviceGroup_Universal";
++
++        protected override string TestDescription => @"[IntuneSA]:[Windows]:[Uninstall]:[Win10]:[DeviceGroup]:[Universal]:Verify Uninstall is success for all devices in a group";
++
++        [Test]
++        public async Task TestMethod_952861_Test_Set_A_Windows_Regression_Windows_Uninstall_DeviceGroup_Universal()
++        {
++            await RunTestAsync();
++        }
++    }
++}
+*** Add File: c:\Users\v-arulmani\Downloads\AI_Automation 5\AI_Automation - Copy\IntuneCanaryTests\App_Regression\App_Signoff_Test\Test set A\Windows Regression\952862_Windows_Uninstall_UserGroup_Universal.cs
++using NUnit.Framework;
++using System.Threading.Tasks;
++
++namespace IntuneCanaryTests
++{
++    [TestFixture]
++    public class Test_952862_Test_Set_A_Windows_Regression_Windows_Uninstall_UserGroup_Universal : WindowsRegressionTestSetABase
++    {
++        protected override string RegressionTestCaseId => @"TC_952862";
++
++        protected override string RegressionTestName => @"Windows_Uninstall_UserGroup_Universal";
++
++        protected override string TestDisplayName => @"Test set A - Windows Regression - Windows_Uninstall_UserGroup_Universal";
++
++        protected override string TestDescription => @"[IntuneSA]:[Windows]:[Uninstall]:[Win10]:[UserGroup]:[Universal]:Verify Uninstall is success for all devices of a user";
++
++        [Test]
++        public async Task TestMethod_952862_Test_Set_A_Windows_Regression_Windows_Uninstall_UserGroup_Universal()
++        {
++            await RunTestAsync();
++        }
++    }
++}
+*** Add File: c:\Users\v-arulmani\Downloads\AI_Automation 5\AI_Automation - Copy\IntuneCanaryTests\App_Regression\App_Signoff_Test\Test set A\Windows Regression\952865_Windows_MobileMSI_Available_UserGroup_InstallSuccess.cs
++using NUnit.Framework;
++using System.Threading.Tasks;
++
++namespace IntuneCanaryTests
++{
++    [TestFixture]
++    public class Test_952865_Test_Set_A_Windows_Regression_Windows_MobileMSI_Available_UserGroup_InstallSuccess : WindowsRegressionTestSetABase
++    {
++        protected override string RegressionTestCaseId => @"TC_952865";
++
++        protected override string RegressionTestName => @"Windows_MobileMSI_Available_UserGroup_InstallSuccess";
++
++        protected override string TestDisplayName => @"Test set A - Windows Regression - Windows_MobileMSI_Available_UserGroup_InstallSuccess";
++
++        protected override string TestDescription => @"[IntuneSA]:[Windows][Win10]:[MobileMSI]:[Available][UserGroup]:Verify Install is success for all Windows devices of user";
++
++        [Test]
++        public async Task TestMethod_952865_Test_Set_A_Windows_Regression_Windows_MobileMSI_Available_UserGroup_InstallSuccess()
++        {
++            await RunTestAsync();
++        }
++    }
++}
+*** Add File: c:\Users\v-arulmani\Downloads\AI_Automation 5\AI_Automation - Copy\IntuneCanaryTests\App_Regression\App_Signoff_Test\Test set A\Windows Regression\1351419_Windows_Publish_MSI.cs
++using NUnit.Framework;
++using System.Threading.Tasks;
++
++namespace IntuneCanaryTests
++{
++    [TestFixture]
++    public class Test_1351419_Test_Set_A_Windows_Regression_Windows_Publish_MSI : WindowsRegressionTestSetABase
++    {
++        protected override string RegressionTestCaseId => @"TC_1351419";
++
++        protected override string RegressionTestName => @"Windows_Publish_MSI";
++
++        protected override string TestDisplayName => @"Test set A - Windows Regression - Windows_Publish_MSI";
++
++        protected override string TestDescription => @"[IntuneSA]:[Windows]:[Publish][MSI]:Verify admin can publish an MSI";
++
++        [Test]
++        public async Task TestMethod_1351419_Test_Set_A_Windows_Regression_Windows_Publish_MSI()
++        {
++            await RunTestAsync();
++        }
++    }
++}
+*** Add File: c:\Users\v-arulmani\Downloads\AI_Automation 5\AI_Automation - Copy\IntuneCanaryTests\App_Regression\App_Signoff_Test\Test set A\Windows Regression\1351428_Windows_Publish_Appx.cs
++using NUnit.Framework;
++using System.Threading.Tasks;
++
++namespace IntuneCanaryTests
++{
++    [TestFixture]
++    public class Test_1351428_Test_Set_A_Windows_Regression_Windows_Publish_Appx : WindowsRegressionTestSetABase
++    {
++        protected override string RegressionTestCaseId => @"TC_1351428";
++
++        protected override string RegressionTestName => @"Windows_Publish_Appx";
++
++        protected override string TestDisplayName => @"Test set A - Windows Regression - Windows_Publish_Appx";
++
++        protected override string TestDescription => @"[IntuneSA]:[Windows]:[Publish][Appx]:Verify admin can publish an appx";
++
++        [Test]
++        public async Task TestMethod_1351428_Test_Set_A_Windows_Regression_Windows_Publish_Appx()
++        {
++            await RunTestAsync();
++        }
++    }
++}
+*** Add File: c:\Users\v-arulmani\Downloads\AI_Automation 5\AI_Automation - Copy\IntuneCanaryTests\App_Regression\App_Signoff_Test\Test set A\Windows Regression\1351430_Windows_Publish_AppxBundle.cs
++using NUnit.Framework;
++using System.Threading.Tasks;
++
++namespace IntuneCanaryTests
++{
++    [TestFixture]
++    public class Test_1351430_Test_Set_A_Windows_Regression_Windows_Publish_AppxBundle : WindowsRegressionTestSetABase
++    {
++        protected override string RegressionTestCaseId => @"TC_1351430";
++
++        protected override string RegressionTestName => @"Windows_Publish_AppxBundle";
++
++        protected override string TestDisplayName => @"Test set A - Windows Regression - Windows_Publish_AppxBundle";
++
++        protected override string TestDescription => @"[IntuneSA]:[Windows]:[Publish][Appx Bundle]:Verify admin can publish an appx bundle";
++
++        [Test]
++        public async Task TestMethod_1351430_Test_Set_A_Windows_Regression_Windows_Publish_AppxBundle()
++        {
++            await RunTestAsync();
++        }
++    }
++}
+*** Add File: c:\Users\v-arulmani\Downloads\AI_Automation 5\AI_Automation - Copy\IntuneCanaryTests\App_Regression\App_Signoff_Test\Test set A\Windows Regression\1351437_Windows_AppUpdate_Uninstall_Appx_AppxBundle_Required_UserGroup.cs
++using NUnit.Framework;
++using System.Threading.Tasks;
++
++namespace IntuneCanaryTests
++{
++    [TestFixture]
++    public class Test_1351437_Test_Set_A_Windows_Regression_Windows_AppUpdate_Uninstall_Appx_AppxBundle_Required_UserGroup : WindowsRegressionTestSetABase
++    {
++        protected override string RegressionTestCaseId => @"TC_1351437";
++
++        protected override string RegressionTestName => @"Windows_AppUpdate_Uninstall_Appx_AppxBundle_Required_UserGroup";
++
++        protected override string TestDisplayName => @"Test set A - Windows Regression - Windows_AppUpdate_Uninstall_Appx_AppxBundle_Required_UserGroup";
++
++        protected override string TestDescription => @"[IntuneSA]:[Windows]:[AppUpdate][Uninstall]:[Appx/AppxBundle]:[Required][UserGroup]:Verify App V1 is installed on devices for user. Uninstall V1 OOB and update V1 to V2 and Verify that V2 is installed on the device.";
++
++        [Test]
++        public async Task TestMethod_1351437_Test_Set_A_Windows_Regression_Windows_AppUpdate_Uninstall_Appx_AppxBundle_Required_UserGroup()
++        {
++            await RunTestAsync();
++        }
++    }
++}
+*** Add File: c:\Users\v-arulmani\Downloads\AI_Automation 5\AI_Automation - Copy\IntuneCanaryTests\App_Regression\App_Signoff_Test\Test set A\Windows Regression\1351438_Windows_AppUpdate_Appx_Required_UserGroup.cs
++using NUnit.Framework;
++using System.Threading.Tasks;
++
++namespace IntuneCanaryTests
++{
++    [TestFixture]
++    public class Test_1351438_Test_Set_A_Windows_Regression_Windows_AppUpdate_Appx_Required_UserGroup : WindowsRegressionTestSetABase
++    {
++        protected override string RegressionTestCaseId => @"TC_1351438";
++
++        protected override string RegressionTestName => @"Windows_AppUpdate_Appx_Required_UserGroup";
++
++        protected override string TestDisplayName => @"Test set A - Windows Regression - Windows_AppUpdate_Appx_Required_UserGroup";
++
++        protected override string TestDescription => @"[IntuneSA]:[Windows]:[AppUpdate]:[Appx]:[Required][UserGroup]:Verify that App V1 deployed as required is installed for all devices of User. When App V1 is updated to V2, V2 is updated on all devices with V1 installed.";
++
++        [Test]
++        public async Task TestMethod_1351438_Test_Set_A_Windows_Regression_Windows_AppUpdate_Appx_Required_UserGroup()
++        {
++            await RunTestAsync();
++        }
++    }
++}
+*** Add File: c:\Users\v-arulmani\Downloads\AI_Automation 5\AI_Automation - Copy\IntuneCanaryTests\App_Regression\App_Signoff_Test\Test set A\Windows Regression\1351441_Windows_AppUpdate_Universal_Required_DeviceGroup.cs
++using NUnit.Framework;
++using System.Threading.Tasks;
++
++namespace IntuneCanaryTests
++{
++    [TestFixture]
++    public class Test_1351441_Test_Set_A_Windows_Regression_Windows_AppUpdate_Universal_Required_DeviceGroup : WindowsRegressionTestSetABase
++    {
++        protected override string RegressionTestCaseId => @"TC_1351441";
++
++        protected override string RegressionTestName => @"Windows_AppUpdate_Universal_Required_DeviceGroup";
++
++        protected override string TestDisplayName => @"Test set A - Windows Regression - Windows_AppUpdate_Universal_Required_DeviceGroup";
++
++        protected override string TestDescription => @"[IntuneSA]:[Windows]:[Appupdate]:[Universal]:[Required][DeviceGroup]:App V1 is installed on device. Now V1 is updated to V2. Verify V1 is updated to V2";
++
++        [Test]
++        public async Task TestMethod_1351441_Test_Set_A_Windows_Regression_Windows_AppUpdate_Universal_Required_DeviceGroup()
++        {
++            await RunTestAsync();
++        }
++    }
++}
+*** Add File: c:\Users\v-arulmani\Downloads\AI_Automation 5\AI_Automation - Copy\IntuneCanaryTests\App_Regression\App_Signoff_Test\Test set A\Windows Regression\1351442_Windows_AppUpdate_Universal_Required_UserGroup.cs
++using NUnit.Framework;
++using System.Threading.Tasks;
++
++namespace IntuneCanaryTests
++{
++    [TestFixture]
++    public class Test_1351442_Test_Set_A_Windows_Regression_Windows_AppUpdate_Universal_Required_UserGroup : WindowsRegressionTestSetABase
++    {
++        protected override string RegressionTestCaseId => @"TC_1351442";
++
++        protected override string RegressionTestName => @"Windows_AppUpdate_Universal_Required_UserGroup";
++
++        protected override string TestDisplayName => @"Test set A - Windows Regression - Windows_AppUpdate_Universal_Required_UserGroup";
++
++        protected override string TestDescription => @"[IntuneSA]:[Windows]:[Appupdate]:[Universal]:[Required][UserGroup]:App V1 is installed on device. Now V1 is updated to V2. Verify V1 is updated to V2";
++
++        [Test]
++        public async Task TestMethod_1351442_Test_Set_A_Windows_Regression_Windows_AppUpdate_Universal_Required_UserGroup()
++        {
++            await RunTestAsync();
++        }
++    }
++}
+*** Add File: c:\Users\v-arulmani\Downloads\AI_Automation 5\AI_Automation - Copy\IntuneCanaryTests\App_Regression\App_Signoff_Test\Test set A\Windows Regression\1731029_Windows_OfficeCSP_UI_LearnMore_Hyperlinks.cs
++using NUnit.Framework;
++using System.Threading.Tasks;
++
++namespace IntuneCanaryTests
++{
++    [TestFixture]
++    public class Test_1731029_Test_Set_A_Windows_Regression_Windows_OfficeCSP_UI_LearnMore_Hyperlinks : WindowsRegressionTestSetABase
++    {
++        protected override string RegressionTestCaseId => @"TC_1731029";
++
++        protected override string RegressionTestName => @"Windows_OfficeCSP_UI_LearnMore_Hyperlinks";
++
++        protected override string TestDisplayName => @"Test set A - Windows Regression - Windows_OfficeCSP_UI_LearnMore_Hyperlinks";
++
++        protected override string TestDescription => @"[IntuneSA]:[Ibiza]:[Windows][Win10RS2+]:[OfficeCSP][UI]:Verify that ""Learn more"" hyperlinks on the ""Add app"" and ""Configure app suite"" blades work and are directed to the correct place";
++
++        [Test]
++        public async Task TestMethod_1731029_Test_Set_A_Windows_Regression_Windows_OfficeCSP_UI_LearnMore_Hyperlinks()
++        {
++            await RunTestAsync();
++        }
++    }
++}
+*** Add File: c:\Users\v-arulmani\Downloads\AI_Automation 5\AI_Automation - Copy\IntuneCanaryTests\App_Regression\App_Signoff_Test\Test set A\Windows Regression\1731055_Windows_OfficeCSP_InstallStatus_ProPlus_Required_DeviceGroup.cs
++using NUnit.Framework;
++using System.Threading.Tasks;
++
++namespace IntuneCanaryTests
++{
++    [TestFixture]
++    public class Test_1731055_Test_Set_A_Windows_Regression_Windows_OfficeCSP_InstallStatus_ProPlus_Required_DeviceGroup : WindowsRegressionTestSetABase
++    {
++        protected override string RegressionTestCaseId => @"TC_1731055";
++
++        protected override string RegressionTestName => @"Windows_OfficeCSP_InstallStatus_ProPlus_Required_DeviceGroup";
++
++        protected override string TestDisplayName => @"Test set A - Windows Regression - Windows_OfficeCSP_InstallStatus_ProPlus_Required_DeviceGroup";
++
++        protected override string TestDescription => @"[IntuneSA]:[Ibiza]:[Windows][Win10RS2+]:[OfficeCSP][InstallStatus]:[ProPlus]:[Required][DeviceGroup]:Verify successful ProPlus (multiple apps) installation is reported successfully in the UI for all Devices in the Group";
++
++        [Test]
++        public async Task TestMethod_1731055_Test_Set_A_Windows_Regression_Windows_OfficeCSP_InstallStatus_ProPlus_Required_DeviceGroup()
++        {
++            await RunTestAsync();
++        }
++    }
++}
+*** Add File: c:\Users\v-arulmani\Downloads\AI_Automation 5\AI_Automation - Copy\IntuneCanaryTests\App_Regression\App_Signoff_Test\Test set A\Windows Regression\1731059_Windows_OfficeCSP_InstallStatus_Visio_Required_DeviceGroup.cs
++using NUnit.Framework;
++using System.Threading.Tasks;
++
++namespace IntuneCanaryTests
++{
++    [TestFixture]
++    public class Test_1731059_Test_Set_A_Windows_Regression_Windows_OfficeCSP_InstallStatus_Visio_Required_DeviceGroup : WindowsRegressionTestSetABase
++    {
++        protected override string RegressionTestCaseId => @"TC_1731059";
++
++        protected override string RegressionTestName => @"Windows_OfficeCSP_InstallStatus_Visio_Required_DeviceGroup";
++
++        protected override string TestDisplayName => @"Test set A - Windows Regression - Windows_OfficeCSP_InstallStatus_Visio_Required_DeviceGroup";
++
++        protected override string TestDescription => @"[IntuneSA]:[Ibiza]:[Windows][Win10RS2+]:[OfficeCSP][InstallStatus]:[Visio]:[Required][DeviceGroup]:Verify successful Visio installation is reported successfully in the UI for all Devices in the Group";
++
++        [Test]
++        public async Task TestMethod_1731059_Test_Set_A_Windows_Regression_Windows_OfficeCSP_InstallStatus_Visio_Required_DeviceGroup()
++        {
++            await RunTestAsync();
++        }
++    }
++}
+*** Add File: c:\Users\v-arulmani\Downloads\AI_Automation 5\AI_Automation - Copy\IntuneCanaryTests\App_Regression\App_Signoff_Test\Test set A\Windows Regression\1731063_Windows_OfficeCSP_InstallStatus_Project_Required_DeviceGroup.cs
++using NUnit.Framework;
++using System.Threading.Tasks;
++
++namespace IntuneCanaryTests
++{
++    [TestFixture]
++    public class Test_1731063_Test_Set_A_Windows_Regression_Windows_OfficeCSP_InstallStatus_Project_Required_DeviceGroup : WindowsRegressionTestSetABase
++    {
++        protected override string RegressionTestCaseId => @"TC_1731063";
++
++        protected override string RegressionTestName => @"Windows_OfficeCSP_InstallStatus_Project_Required_DeviceGroup";
++
++        protected override string TestDisplayName => @"Test set A - Windows Regression - Windows_OfficeCSP_InstallStatus_Project_Required_DeviceGroup";
++
++        protected override string TestDescription => @"[IntuneSA]:[Ibiza]:[Windows][Win10RS2+]:[OfficeCSP][InstallStatus]:[Project]:[Required][DeviceGroup]:Verify successful Project installation is reported successfully in the UI for all Devices in the Group";
++
++        [Test]
++        public async Task TestMethod_1731063_Test_Set_A_Windows_Regression_Windows_OfficeCSP_InstallStatus_Project_Required_DeviceGroup()
++        {
++            await RunTestAsync();
++        }
++    }
++}
+*** Add File: c:\Users\v-arulmani\Downloads\AI_Automation 5\AI_Automation - Copy\IntuneCanaryTests\App_Regression\App_Signoff_Test\Test set A\Windows Regression\1731079_Windows_OfficeCSP_Uninstall_Visio_Required_DeviceAndUserGroup.cs
++using NUnit.Framework;
++using System.Threading.Tasks;
++
++namespace IntuneCanaryTests
++{
++    [TestFixture]
++    public class Test_1731079_Test_Set_A_Windows_Regression_Windows_OfficeCSP_Uninstall_Visio_Required_DeviceAndUserGroup : WindowsRegressionTestSetABase
++    {
++        protected override string RegressionTestCaseId => @"TC_1731079";
++
++        protected override string RegressionTestName => @"Windows_OfficeCSP_Uninstall_Visio_Required_DeviceAndUserGroup";
++
++        protected override string TestDisplayName => @"Test set A - Windows Regression - Windows_OfficeCSP_Uninstall_Visio_Required_DeviceAndUserGroup";
++
++        protected override string TestDescription => @"[IntuneSA]:[Ibiza]:[Windows][Win10RS2+]:[OfficeCSP][Uninstall]:[Visio]:[Required][DeviceGroup][UserGroup]:Verify Visio can be uninstalled successfully";
++
++        [Test]
++        public async Task TestMethod_1731079_Test_Set_A_Windows_Regression_Windows_OfficeCSP_Uninstall_Visio_Required_DeviceAndUserGroup()
++        {
++            await RunTestAsync();
++        }
++    }
++}
+*** Add File: c:\Users\v-arulmani\Downloads\AI_Automation 5\AI_Automation - Copy\IntuneCanaryTests\App_Regression\App_Signoff_Test\Test set A\Windows Regression\1731080_Windows_OfficeCSP_Uninstall_Project_Required_UserGroup.cs
++using NUnit.Framework;
++using System.Threading.Tasks;
++
++namespace IntuneCanaryTests
++{
++    [TestFixture]
++    public class Test_1731080_Test_Set_A_Windows_Regression_Windows_OfficeCSP_Uninstall_Project_Required_UserGroup : WindowsRegressionTestSetABase
++    {
++        protected override string RegressionTestCaseId => @"TC_1731080";
++
++        protected override string RegressionTestName => @"Windows_OfficeCSP_Uninstall_Project_Required_UserGroup";
++
++        protected override string TestDisplayName => @"Test set A - Windows Regression - Windows_OfficeCSP_Uninstall_Project_Required_UserGroup";
++
++        protected override string TestDescription => @"[IntuneSA]:[Ibiza]:[Windows][Win10RS2+]:[OfficeCSP][Uninstall]:[Project]:[Required][UserGroup]:Verify Project can be uninstalled successfully";
++
++        [Test]
++        public async Task TestMethod_1731080_Test_Set_A_Windows_Regression_Windows_OfficeCSP_Uninstall_Project_Required_UserGroup()
++        {
++            await RunTestAsync();
++        }
++    }
++}
+*** Add File: c:\Users\v-arulmani\Downloads\AI_Automation 5\AI_Automation - Copy\IntuneCanaryTests\App_Regression\App_Signoff_Test\Test set A\Windows Regression\1731088_Windows_OfficeCSP_Uninstall_ProPlus_Visio_Project_Required_UserGroup.cs
++using NUnit.Framework;
++using System.Threading.Tasks;
++
++namespace IntuneCanaryTests
++{
++    [TestFixture]
++    public class Test_1731088_Test_Set_A_Windows_Regression_Windows_OfficeCSP_Uninstall_ProPlus_Visio_Project_Required_UserGroup : WindowsRegressionTestSetABase
++    {
++        protected override string RegressionTestCaseId => @"TC_1731088";
++
++        protected override string RegressionTestName => @"Windows_OfficeCSP_Uninstall_ProPlus_Visio_Project_Required_UserGroup";
++
++        protected override string TestDisplayName => @"Test set A - Windows Regression - Windows_OfficeCSP_Uninstall_ProPlus_Visio_Project_Required_UserGroup";
++
++        protected override string TestDescription => @"[IntuneSA]:[Windows][Win10RS2+]:[OfficeCSP][Uninstall]:[ProPlus][Visio][Project]:[Required][UserGroup]:Verify ProPlus (multiple apps), Visio and Project can all be uninstall successfully";
++
++        [Test]
++        public async Task TestMethod_1731088_Test_Set_A_Windows_Regression_Windows_OfficeCSP_Uninstall_ProPlus_Visio_Project_Required_UserGroup()
++        {
++            await RunTestAsync();
++        }
++    }
++}
+*** Add File: c:\Users\v-arulmani\Downloads\AI_Automation 5\AI_Automation - Copy\IntuneCanaryTests\App_Regression\App_Signoff_Test\Test set A\Windows Regression\1731090_Windows_OfficeCSP_Install_Language_ProPlus_Required_DeviceGroup.cs
++using NUnit.Framework;
++using System.Threading.Tasks;
++
++namespace IntuneCanaryTests
++{
++    [TestFixture]
++    public class Test_1731090_Test_Set_A_Windows_Regression_Windows_OfficeCSP_Install_Language_ProPlus_Required_DeviceGroup : WindowsRegressionTestSetABase
++    {
++        protected override string RegressionTestCaseId => @"TC_1731090";
++
++        protected override string RegressionTestName => @"Windows_OfficeCSP_Install_Language_ProPlus_Required_DeviceGroup";
++
++        protected override string TestDisplayName => @"Test set A - Windows Regression - Windows_OfficeCSP_Install_Language_ProPlus_Required_DeviceGroup";
++
++        protected override string TestDescription => @"[IntuneSA]:[Ibiza]:[Windows][Win10RS2+]:[OfficeCSP][Install][Language]:[ProPlus]:[Required][DeviceGroup]:Verify ProPlus (multiple apps), Single Language can all install successfully";
++
++        [Test]
++        public async Task TestMethod_1731090_Test_Set_A_Windows_Regression_Windows_OfficeCSP_Install_Language_ProPlus_Required_DeviceGroup()
++        {
++            await RunTestAsync();
++        }
++    }
++}
+*** Add File: c:\Users\v-arulmani\Downloads\AI_Automation 5\AI_Automation - Copy\IntuneCanaryTests\App_Regression\App_Signoff_Test\Test set A\Windows Regression\1731093_Windows_OfficeCSP_Install_ProPlus_Visio_Project_Required_DeviceAndUserGroup.cs
++using NUnit.Framework;
++using System.Threading.Tasks;
++
++namespace IntuneCanaryTests
++{
++    [TestFixture]
++    public class Test_1731093_Test_Set_A_Windows_Regression_Windows_OfficeCSP_Install_ProPlus_Visio_Project_Required_DeviceAndUserGroup : WindowsRegressionTestSetABase
++    {
++        protected override string RegressionTestCaseId => @"TC_1731093";
++
++        protected override string RegressionTestName => @"Windows_OfficeCSP_Install_ProPlus_Visio_Project_Required_DeviceAndUserGroup";
++
++        protected override string TestDisplayName => @"Test set A - Windows Regression - Windows_OfficeCSP_Install_ProPlus_Visio_Project_Required_DeviceAndUserGroup";
++
++        protected override string TestDescription => @"[IntuneSA]:[Windows][Win10RS2+]:[OfficeCSP][Install]:[ProPlus][Visio][Project]:[Required][DeviceGroup][UserGroup]:Verify ProPlus (multiple apps), Visio and Project can all install successfully";
++
++        [Test]
++        public async Task TestMethod_1731093_Test_Set_A_Windows_Regression_Windows_OfficeCSP_Install_ProPlus_Visio_Project_Required_DeviceAndUserGroup()
++        {
++            await RunTestAsync();
++        }
++    }
++}
+*** Add File: c:\Users\v-arulmani\Downloads\AI_Automation 5\AI_Automation - Copy\IntuneCanaryTests\App_Regression\App_Signoff_Test\Test set A\Windows Regression\3778549_Windows_AppUpdate_InstallStatus_Appx_Required_UserGroup.cs
++using NUnit.Framework;
++using System.Threading.Tasks;
++
++namespace IntuneCanaryTests
++{
++    [TestFixture]
++    public class Test_3778549_Test_Set_A_Windows_Regression_Windows_AppUpdate_InstallStatus_Appx_Required_UserGroup : WindowsRegressionTestSetABase
++    {
++        protected override string RegressionTestCaseId => @"TC_3778549";
++
++        protected override string RegressionTestName => @"Windows_AppUpdate_InstallStatus_Appx_Required_UserGroup";
++
++        protected override string TestDisplayName => @"Test set A - Windows Regression - Windows_AppUpdate_InstallStatus_Appx_Required_UserGroup";
++
++        protected override string TestDescription => @"[IntuneSA]:[Windows]:[AppUpdate]:[InstallStatus]:[Appx]:[Required]:[UserGroup]:IT Pro can view application status summary change for V1 of app when V2 is updated. Existing status moves to Unknown.";
++
++        [Test]
++        public async Task TestMethod_3778549_Test_Set_A_Windows_Regression_Windows_AppUpdate_InstallStatus_Appx_Required_UserGroup()
++        {
++            await RunTestAsync();
++        }
++    }
++}
+*** Add File: c:\Users\v-arulmani\Downloads\AI_Automation 5\AI_Automation - Copy\IntuneCanaryTests\App_Regression\App_Signoff_Test\Test set A\Windows Regression\3778601_Windows_AppUpdate_UninstallOOB_Appx_AppxBundle_Required_UserGroup.cs
++using NUnit.Framework;
++using System.Threading.Tasks;
++
++namespace IntuneCanaryTests
++{
++    [TestFixture]
++    public class Test_3778601_Test_Set_A_Windows_Regression_Windows_AppUpdate_UninstallOOB_Appx_AppxBundle_Required_UserGroup : WindowsRegressionTestSetABase
++    {
++        protected override string RegressionTestCaseId => @"TC_3778601";
++
++        protected override string RegressionTestName => @"Windows_AppUpdate_UninstallOOB_Appx_AppxBundle_Required_UserGroup";
++
++        protected override string TestDisplayName => @"Test set A - Windows Regression - Windows_AppUpdate_UninstallOOB_Appx_AppxBundle_Required_UserGroup";
++
++        protected override string TestDescription => @"[IntuneSA]:[Windows]:[AppUpdate][UninstallOOB]:[Appx/AppxBundle]:[Required][UserGroup]:Verify App V1 is installed on devices for user. Uninstall V1 OOB and update V1 to V2 and Verify that V2 is installed on the device.";
++
++        [Test]
++        public async Task TestMethod_3778601_Test_Set_A_Windows_Regression_Windows_AppUpdate_UninstallOOB_Appx_AppxBundle_Required_UserGroup()
++        {
++            await RunTestAsync();
++        }
++    }
++}
+*** Add File: c:\Users\v-arulmani\Downloads\AI_Automation 5\AI_Automation - Copy\IntuneCanaryTests\App_Regression\App_Signoff_Test\Test set A\Windows Regression\5657696_Windows_Win10RS3_Publish_E2E_Edge_Dev_Channel_Deployment.cs
++using NUnit.Framework;
++using System.Threading.Tasks;
++
++namespace IntuneCanaryTests
++{
++    [TestFixture]
++    public class Test_5657696_Test_Set_A_Windows_Regression_Windows_Win10RS3_Publish_E2E_Edge_Dev_Channel_Deployment : WindowsRegressionTestSetABase
++    {
++        protected override string RegressionTestCaseId => @"TC_5657696";
++
++        protected override string RegressionTestName => @"Windows_Win10RS3_Publish_E2E_Edge_Dev_Channel_Deployment";
++
++        protected override string TestDisplayName => @"Test set A - Windows Regression - Windows_Win10RS3_Publish_E2E_Edge_Dev_Channel_Deployment";
++
++        protected override string TestDescription => @"[IntuneSA]:[Windows][Win10RS3+]:[Publish][E2E]:Verify Microsoft Edge Dev channel app deployment for user group.";
++
++        [Test]
++        public async Task TestMethod_5657696_Test_Set_A_Windows_Regression_Windows_Win10RS3_Publish_E2E_Edge_Dev_Channel_Deployment()
++        {
++            await RunTestAsync();
++        }
++    }
++}
+*** Add File: c:\Users\v-arulmani\Downloads\AI_Automation 5\AI_Automation - Copy\IntuneCanaryTests\App_Regression\App_Signoff_Test\Test set A\Windows Regression\5657697_Windows_Win10RS3_Publish_E2E_Verify_Edge_Dev_and_Edge_Beta_app_can_be_installed_side_by_side.cs
++using NUnit.Framework;
++using System.Threading.Tasks;
++
++namespace IntuneCanaryTests
++{
++    [TestFixture]
++    public class Test_5657697_Test_Set_A_Windows_Regression_Windows_Win10RS3_Publish_E2E_Verify_Edge_Dev_and_Edge_Beta_app_can_be_installed_side_by_side : WindowsRegressionTestSetABase
++    {
++        protected override string RegressionTestCaseId => @"TC_5657697";
++
++        protected override string RegressionTestName => @"Windows_Win10RS3_Publish_E2E_Verify_Edge_Dev_and_Edge_Beta_app_can_be_installed_side_by_side";
++
++        protected override string TestDisplayName => @"Test set A - Windows Regression - Windows_Win10RS3_Publish_E2E_Verify_Edge_Dev_and_Edge_Beta_app_can_be_installed_side_by_side";
++
++        protected override string TestDescription => @"[IntuneSA]:[Windows][Win10RS3+]:[Publish][E2E]:Verify Edge Dev and Edge Beta app can be installed side by side.";
++
++        [Test]
++        public async Task TestMethod_5657697_Test_Set_A_Windows_Regression_Windows_Win10RS3_Publish_E2E_Verify_Edge_Dev_and_Edge_Beta_app_can_be_installed_side_by_side()
++        {
++            await RunTestAsync();
++        }
++    }
++}
+*** Add File: c:\Users\v-arulmani\Downloads\AI_Automation 5\AI_Automation - Copy\IntuneCanaryTests\App_Regression\App_Signoff_Test\Test set A\Windows Regression\7365651_Windows_Windows_Win10RS2_Assignment_Filters_Match_E2E_OfficeCSP_ProPlus_Required_UserGroup_Verify_ProPlus_Single_Language_can_all_install_successfully.cs
++using NUnit.Framework;
++using System.Threading.Tasks;
++
++namespace IntuneCanaryTests
++{
++    [TestFixture]
++    public class Test_7365651_Test_Set_A_Windows_Regression_Windows_Windows_Win10RS2_Assignment_Filters_Match_E2E_OfficeCSP_ProPlus_Required_UserGroup_Verify_ProPlus_Single_Language_can_all_install_successfully : WindowsRegressionTestSetABase
++    {
++        protected override string RegressionTestCaseId => @"TC_7365651";
++
++        protected override string RegressionTestName => @"Windows_Windows_Win10RS2_Assignment_Filters_Match_E2E_OfficeCSP_ProPlus_Required_UserGroup_Verify_ProPlus_Single_Language_can_all_install_successfully";
++
++        protected override string TestDisplayName => @"Test set A - Windows Regression - Windows_Windows_Win10RS2_Assignment_Filters_Match_E2E_OfficeCSP_ProPlus_Required_UserGroup_Verify_ProPlus_Single_Language_can_all_install_successfully";
++
++        protected override string TestDescription => @"[IntuneSA]:[Windows]:[Assignment Filters]:Windows Win10RS2+ Assignment Filters Match E2E OfficeCSP ProPlus Required UserGroup Verify ProPlus  , Single Language can all install successfully";
++
++        [Test]
++        public async Task TestMethod_7365651_Test_Set_A_Windows_Regression_Windows_Windows_Win10RS2_Assignment_Filters_Match_E2E_OfficeCSP_ProPlus_Required_UserGroup_Verify_ProPlus_Single_Language_can_all_install_successfully()
++        {
++            await RunTestAsync();
++        }
++    }
++}
+*** Add File: c:\Users\v-arulmani\Downloads\AI_Automation 5\AI_Automation - Copy\IntuneCanaryTests\App_Regression\App_Signoff_Test\Test set A\Windows Regression\7365652_Windows_Windows_Win10RS2_Assignment_Filters_Match_E2E_OfficeCSP_ProPlus_Uninstall_UserGroup_Verify_ProPlus_Single_Language_all_uninstall_successfully.cs
++using NUnit.Framework;
++using System.Threading.Tasks;
++
++namespace IntuneCanaryTests
++{
++    [TestFixture]
++    public class Test_7365652_Test_Set_A_Windows_Regression_Windows_Windows_Win10RS2_Assignment_Filters_Match_E2E_OfficeCSP_ProPlus_Uninstall_UserGroup_Verify_ProPlus_Single_Language_all_uninstall_successfully : WindowsRegressionTestSetABase
++    {
++        protected override string RegressionTestCaseId => @"TC_7365652";
++
++        protected override string RegressionTestName => @"Windows_Windows_Win10RS2_Assignment_Filters_Match_E2E_OfficeCSP_ProPlus_Uninstall_UserGroup_Verify_ProPlus_Single_Language_all_uninstall_successfully";
++
++        protected override string TestDisplayName => @"Test set A - Windows Regression - Windows_Windows_Win10RS2_Assignment_Filters_Match_E2E_OfficeCSP_ProPlus_Uninstall_UserGroup_Verify_ProPlus_Single_Language_all_uninstall_successfully";
++
++        protected override string TestDescription => @"[IntuneSA]:[Windows]:[Assignment Filters]:Windows Win10RS2+ Assignment Filters Match E2E OfficeCSP ProPlus Uninstall UserGroup Verify ProPlus  , Single Language all uninstall successfully";
++
++        [Test]
++        public async Task TestMethod_7365652_Test_Set_A_Windows_Regression_Windows_Windows_Win10RS2_Assignment_Filters_Match_E2E_OfficeCSP_ProPlus_Uninstall_UserGroup_Verify_ProPlus_Single_Language_all_uninstall_successfully()
++        {
++            await RunTestAsync();
++        }
++    }
++}
+*** Add File: c:\Users\v-arulmani\Downloads\AI_Automation 5\AI_Automation - Copy\IntuneCanaryTests\App_Regression\App_Signoff_Test\Test set A\Windows Regression\7365653_Windows_Windows_Win10RS2_Assignment_Filters_Match_E2E_OfficeCSP_ProPlus_Available_UserGroup_Verify_ProPlus_Single_Language_shows_in_CP_and_IWP_and_can_all_install_successfully.cs
++using NUnit.Framework;
++using System.Threading.Tasks;
++
++namespace IntuneCanaryTests
++{
++    [TestFixture]
++    public class Test_7365653_Test_Set_A_Windows_Regression_Windows_Windows_Win10RS2_Assignment_Filters_Match_E2E_OfficeCSP_ProPlus_Available_UserGroup_Verify_ProPlus_Single_Language_shows_in_CP_and_IWP_and_can_all_install_successfully : WindowsRegressionTestSetABase
++    {
++        protected override string RegressionTestCaseId => @"TC_7365653";
++
++        protected override string RegressionTestName => @"Windows_Windows_Win10RS2_Assignment_Filters_Match_E2E_OfficeCSP_ProPlus_Available_UserGroup_Verify_ProPlus_Single_Language_shows_in_CP_and_IWP_and_can_all_install_successfully";
++
++        protected override string TestDisplayName => @"Test set A - Windows Regression - Windows_Windows_Win10RS2_Assignment_Filters_Match_E2E_OfficeCSP_ProPlus_Available_UserGroup_Verify_ProPlus_Single_Language_shows_in_CP_and_IWP_and_can_all_install_successfully";
++
++        protected override string TestDescription => @"[IntuneSA]:[Windows]:[Assignment Filters]:Windows Win10RS2+ Assignment Filters Match E2E OfficeCSP ProPlus Available UserGroup Verify ProPlus  , Single Language shows in CP and IWP and can all install successfully";
++
++        [Test]
++        public async Task TestMethod_7365653_Test_Set_A_Windows_Regression_Windows_Windows_Win10RS2_Assignment_Filters_Match_E2E_OfficeCSP_ProPlus_Available_UserGroup_Verify_ProPlus_Single_Language_shows_in_CP_and_IWP_and_can_all_install_successfully()
++        {
++            await RunTestAsync();
++        }
++    }
++}
+*** Add File: c:\Users\v-arulmani\Downloads\AI_Automation 5\AI_Automation - Copy\IntuneCanaryTests\App_Regression\App_Signoff_Test\Test set A\Windows Regression\7365654_Windows_Windows_Win10RS2_Assignment_Filters_No_Match_E2E_OfficeCSP_ProPlus_Required_UserGroup_Verify_ProPlus_Single_Language_is_not_installed_on_the_device.cs
++using NUnit.Framework;
++using System.Threading.Tasks;
++
++namespace IntuneCanaryTests
++{
++    [TestFixture]
++    public class Test_7365654_Test_Set_A_Windows_Regression_Windows_Windows_Win10RS2_Assignment_Filters_No_Match_E2E_OfficeCSP_ProPlus_Required_UserGroup_Verify_ProPlus_Single_Language_is_not_installed_on_the_device : WindowsRegressionTestSetABase
++    {
++        protected override string RegressionTestCaseId => @"TC_7365654";
++
++        protected override string RegressionTestName => @"Windows_Windows_Win10RS2_Assignment_Filters_No_Match_E2E_OfficeCSP_ProPlus_Required_UserGroup_Verify_ProPlus_Single_Language_is_not_installed_on_the_device";
++
++        protected override string TestDisplayName => @"Test set A - Windows Regression - Windows_Windows_Win10RS2_Assignment_Filters_No_Match_E2E_OfficeCSP_ProPlus_Required_UserGroup_Verify_ProPlus_Single_Language_is_not_installed_on_the_device";
++
++        protected override string TestDescription => @"[IntuneSA]:[Windows]:[Assignment Filters]:Windows Win10RS2+ Assignment Filters No Match E2E OfficeCSP ProPlus Required UserGroup Verify ProPlus  , Single Language is not installed on the device";
++
++        [Test]
++        public async Task TestMethod_7365654_Test_Set_A_Windows_Regression_Windows_Windows_Win10RS2_Assignment_Filters_No_Match_E2E_OfficeCSP_ProPlus_Required_UserGroup_Verify_ProPlus_Single_Language_is_not_installed_on_the_device()
++        {
++            await RunTestAsync();
++        }
++    }
++}
+*** Add File: c:\Users\v-arulmani\Downloads\AI_Automation 5\AI_Automation - Copy\IntuneCanaryTests\App_Regression\App_Signoff_Test\Test set A\Windows Regression\7365655_Windows_Windows_Win10RS2_Assignment_Filters_No_Match_OfficeCSP_ProPlus_Available_UserGroup_Verify_ProPlus_Single_Language_does_not_show_in_CP_and_IWP.cs
++using NUnit.Framework;
++using System.Threading.Tasks;
++
++namespace IntuneCanaryTests
++{
++    [TestFixture]
++    public class Test_7365655_Test_Set_A_Windows_Regression_Windows_Windows_Win10RS2_Assignment_Filters_No_Match_OfficeCSP_ProPlus_Available_UserGroup_Verify_ProPlus_Single_Language_does_not_show_in_CP_and_IWP : WindowsRegressionTestSetABase
++    {
++        protected override string RegressionTestCaseId => @"TC_7365655";
++
++        protected override string RegressionTestName => @"Windows_Windows_Win10RS2_Assignment_Filters_No_Match_OfficeCSP_ProPlus_Available_UserGroup_Verify_ProPlus_Single_Language_does_not_show_in_CP_and_IWP";
++
++        protected override string TestDisplayName => @"Test set A - Windows Regression - Windows_Windows_Win10RS2_Assignment_Filters_No_Match_OfficeCSP_ProPlus_Available_UserGroup_Verify_ProPlus_Single_Language_does_not_show_in_CP_and_IWP";
++
++        protected override string TestDescription => @"[IntuneSA]:[Windows]:[Assignment Filters]:Windows Win10RS2+ Assignment Filters No Match OfficeCSP ProPlus Available UserGroup Verify ProPlus  , Single Language does not show in CP and IWP";
++
++        [Test]
++        public async Task TestMethod_7365655_Test_Set_A_Windows_Regression_Windows_Windows_Win10RS2_Assignment_Filters_No_Match_OfficeCSP_ProPlus_Available_UserGroup_Verify_ProPlus_Single_Language_does_not_show_in_CP_and_IWP()
++        {
++            await RunTestAsync();
++        }
++    }
++}
+*** Add File: c:\Users\v-arulmani\Downloads\AI_Automation 5\AI_Automation - Copy\IntuneCanaryTests\App_Regression\App_Signoff_Test\Test set A\Windows Regression\7365656_Windows_Windows_Win10_Assignment_Filters_Match_E2E_Appx_Universal_Required_UserGroup_Verify_LOB_App_is_install_successfully_on_the_device.cs
++using NUnit.Framework;
++using System.Threading.Tasks;
++
++namespace IntuneCanaryTests
++{
++    [TestFixture]
++    public class Test_7365656_Test_Set_A_Windows_Regression_Windows_Windows_Win10_Assignment_Filters_Match_E2E_Appx_Universal_Required_UserGroup_Verify_LOB_App_is_install_successfully_on_the_device : WindowsRegressionTestSetABase
++    {
++        protected override string RegressionTestCaseId => @"TC_7365656";
++
++        protected override string RegressionTestName => @"Windows_Windows_Win10_Assignment_Filters_Match_E2E_Appx_Universal_Required_UserGroup_Verify_LOB_App_is_install_successfully_on_the_device";
++
++        protected override string TestDisplayName => @"Test set A - Windows Regression - Windows_Windows_Win10_Assignment_Filters_Match_E2E_Appx_Universal_Required_UserGroup_Verify_LOB_App_is_install_successfully_on_the_device";
++
++        protected override string TestDescription => @"[IntuneSA]:[Windows]:[Assignment Filters]:Windows Win10 Assignment Filters Match E2E Appx Universal Required UserGroup Verify LOB App is install successfully on the device";
++
++        [Test]
++        public async Task TestMethod_7365656_Test_Set_A_Windows_Regression_Windows_Windows_Win10_Assignment_Filters_Match_E2E_Appx_Universal_Required_UserGroup_Verify_LOB_App_is_install_successfully_on_the_device()
++        {
++            await RunTestAsync();
++        }
++    }
++}
+*** Add File: c:\Users\v-arulmani\Downloads\AI_Automation 5\AI_Automation - Copy\IntuneCanaryTests\App_Regression\App_Signoff_Test\Test set A\Windows Regression\7365657_Windows_Windows_Win10_Assignment_Filters_Match_E2E_Appx_Universal_Uninstall_UserGroup_Verify_LOB_App_is_uninstalled_on_the_device.cs
++using NUnit.Framework;
++using System.Threading.Tasks;
++
++namespace IntuneCanaryTests
++{
++    [TestFixture]
++    public class Test_7365657_Test_Set_A_Windows_Regression_Windows_Windows_Win10_Assignment_Filters_Match_E2E_Appx_Universal_Uninstall_UserGroup_Verify_LOB_App_is_uninstalled_on_the_device : WindowsRegressionTestSetABase
++    {
++        protected override string RegressionTestCaseId => @"TC_7365657";
++
++        protected override string RegressionTestName => @"Windows_Windows_Win10_Assignment_Filters_Match_E2E_Appx_Universal_Uninstall_UserGroup_Verify_LOB_App_is_uninstalled_on_the_device";
++
++        protected override string TestDisplayName => @"Test set A - Windows Regression - Windows_Windows_Win10_Assignment_Filters_Match_E2E_Appx_Universal_Uninstall_UserGroup_Verify_LOB_App_is_uninstalled_on_the_device";
++
++        protected override string TestDescription => @"[IntuneSA]:[Windows]:[Assignment Filters]:Windows Win10 Assignment Filters Match E2E Appx Universal Uninstall UserGroup Verify LOB App is uninstalled on the device";
++
++        [Test]
++        public async Task TestMethod_7365657_Test_Set_A_Windows_Regression_Windows_Windows_Win10_Assignment_Filters_Match_E2E_Appx_Universal_Uninstall_UserGroup_Verify_LOB_App_is_uninstalled_on_the_device()
++        {
++            await RunTestAsync();
++        }
++    }
++}
+*** Add File: c:\Users\v-arulmani\Downloads\AI_Automation 5\AI_Automation - Copy\IntuneCanaryTests\App_Regression\App_Signoff_Test\Test set A\Windows Regression\7365658_Windows_Windows_Win10_Assignment_Filters_Match_E2E_Appx_Universal_Available_UserGroup_Verify_LOB_App_shows_in_CP_and_IWP_and_can_all_install_successfully_on_the_device.cs
++using NUnit.Framework;
++using System.Threading.Tasks;
++
++namespace IntuneCanaryTests
++{
++    [TestFixture]
++    public class Test_7365658_Test_Set_A_Windows_Regression_Windows_Windows_Win10_Assignment_Filters_Match_E2E_Appx_Universal_Available_UserGroup_Verify_LOB_App_shows_in_CP_and_IWP_and_can_all_install_successfully_on_the_device : WindowsRegressionTestSetABase
++    {
++        protected override string RegressionTestCaseId => @"TC_7365658";
++
++        protected override string RegressionTestName => @"Windows_Windows_Win10_Assignment_Filters_Match_E2E_Appx_Universal_Available_UserGroup_Verify_LOB_App_shows_in_CP_and_IWP_and_can_all_install_successfully_on_the_device";
++
++        protected override string TestDisplayName => @"Test set A - Windows Regression - Windows_Windows_Win10_Assignment_Filters_Match_E2E_Appx_Universal_Available_UserGroup_Verify_LOB_App_shows_in_CP_and_IWP_and_can_all_install_successfully_on_the_device";
++
++        protected override string TestDescription => @"[IntuneSA]:[Windows]:[Assignment Filters]:Windows Win10 Assignment Filters Match E2E Appx Universal Available UserGroup Verify LOB App shows in CP and IWP and can all install successfully on the device";
++
++        [Test]
++        public async Task TestMethod_7365658_Test_Set_A_Windows_Regression_Windows_Windows_Win10_Assignment_Filters_Match_E2E_Appx_Universal_Available_UserGroup_Verify_LOB_App_shows_in_CP_and_IWP_and_can_all_install_successfully_on_the_device()
++        {
++            await RunTestAsync();
++        }
++    }
++}
+*** Add File: c:\Users\v-arulmani\Downloads\AI_Automation 5\AI_Automation - Copy\IntuneCanaryTests\App_Regression\App_Signoff_Test\Test set A\Windows Regression\7365659_Windows_Windows_Win10_Assignment_Filters_No_Match_E2E_Appx_Universal_Required_UserGroup_Verify_LOB_App_is_not_installed_on_the_device.cs
++using NUnit.Framework;
++using System.Threading.Tasks;
++
++namespace IntuneCanaryTests
++{
++    [TestFixture]
++    public class Test_7365659_Test_Set_A_Windows_Regression_Windows_Windows_Win10_Assignment_Filters_No_Match_E2E_Appx_Universal_Required_UserGroup_Verify_LOB_App_is_not_installed_on_the_device : WindowsRegressionTestSetABase
++    {
++        protected override string RegressionTestCaseId => @"TC_7365659";
++
++        protected override string RegressionTestName => @"Windows_Windows_Win10_Assignment_Filters_No_Match_E2E_Appx_Universal_Required_UserGroup_Verify_LOB_App_is_not_installed_on_the_device";
++
++        protected override string TestDisplayName => @"Test set A - Windows Regression - Windows_Windows_Win10_Assignment_Filters_No_Match_E2E_Appx_Universal_Required_UserGroup_Verify_LOB_App_is_not_installed_on_the_device";
++
++        protected override string TestDescription => @"[IntuneSA]:[Windows]:[Assignment Filters]:Windows Win10 Assignment Filters No Match E2E Appx Universal Required UserGroup Verify LOB App is not installed on the device";
++
++        [Test]
++        public async Task TestMethod_7365659_Test_Set_A_Windows_Regression_Windows_Windows_Win10_Assignment_Filters_No_Match_E2E_Appx_Universal_Required_UserGroup_Verify_LOB_App_is_not_installed_on_the_device()
++        {
++            await RunTestAsync();
++        }
++    }
++}
+*** Add File: c:\Users\v-arulmani\Downloads\AI_Automation 5\AI_Automation - Copy\IntuneCanaryTests\App_Regression\App_Signoff_Test\Test set A\Windows Regression\7365660_Windows_Windows_Win10_Assignment_Filters_No_Match_Appx_Universal_Available_UserGroup_Verify_LOB_App_does_not_show_in_CP_and_IWP.cs
++using NUnit.Framework;
++using System.Threading.Tasks;
++
++namespace IntuneCanaryTests
++{
++    [TestFixture]
++    public class Test_7365660_Test_Set_A_Windows_Regression_Windows_Windows_Win10_Assignment_Filters_No_Match_Appx_Universal_Available_UserGroup_Verify_LOB_App_does_not_show_in_CP_and_IWP : WindowsRegressionTestSetABase
++    {
++        protected override string RegressionTestCaseId => @"TC_7365660";
++
++        protected override string RegressionTestName => @"Windows_Windows_Win10_Assignment_Filters_No_Match_Appx_Universal_Available_UserGroup_Verify_LOB_App_does_not_show_in_CP_and_IWP";
++
++        protected override string TestDisplayName => @"Test set A - Windows Regression - Windows_Windows_Win10_Assignment_Filters_No_Match_Appx_Universal_Available_UserGroup_Verify_LOB_App_does_not_show_in_CP_and_IWP";
++
++        protected override string TestDescription => @"[IntuneSA]:[Windows]:[Assignment Filters]:Windows Win10 Assignment Filters No Match Appx Universal Available UserGroup Verify LOB App does not show in CP and IWP";
++
++        [Test]
++        public async Task TestMethod_7365660_Test_Set_A_Windows_Regression_Windows_Windows_Win10_Assignment_Filters_No_Match_Appx_Universal_Available_UserGroup_Verify_LOB_App_does_not_show_in_CP_and_IWP()
++        {
++            await RunTestAsync();
++        }
++    }
++}
+*** Add File: c:\Users\v-arulmani\Downloads\AI_Automation 5\AI_Automation - Copy\IntuneCanaryTests\App_Regression\App_Signoff_Test\Test set A\Windows Regression\9495531_Windows_Verify_App_is_install_successfully_on_the_device.cs
++using NUnit.Framework;
++using System.Threading.Tasks;
++
++namespace IntuneCanaryTests
++{
++    [TestFixture]
++    public class Test_9495531_Test_Set_A_Windows_Regression_Windows_Verify_App_is_install_successfully_on_the_device : WindowsRegressionTestSetABase
++    {
++        protected override string RegressionTestCaseId => @"TC_9495531";
++
++        protected override string RegressionTestName => @"Windows_Verify_App_is_install_successfully_on_the_device";
++
++        protected override string TestDisplayName => @"Test set A - Windows Regression - Windows_Verify_App_is_install_successfully_on_the_device";
++
++        protected override string TestDescription => @"[IntuneSA]:[Windows][Win10]:[Assignment Filters][Include][Match][E2E]:[Edge]:[Required][UserGroup]:Verify App is install successfully on the device";
++
++        [Test]
++        public async Task TestMethod_9495531_Test_Set_A_Windows_Regression_Windows_Verify_App_is_install_successfully_on_the_device()
++        {
++            await RunTestAsync();
++        }
++    }
++}
+*** Add File: c:\Users\v-arulmani\Downloads\AI_Automation 5\AI_Automation - Copy\IntuneCanaryTests\App_Regression\App_Signoff_Test\Test set A\Windows Regression\9495532_Windows_Verify_App_is_uninstalled_on_the_device.cs
++using NUnit.Framework;
++using System.Threading.Tasks;
++
++namespace IntuneCanaryTests
++{
++    [TestFixture]
++    public class Test_9495532_Test_Set_A_Windows_Regression_Windows_Verify_App_is_uninstalled_on_the_device : WindowsRegressionTestSetABase
++    {
++        protected override string RegressionTestCaseId => @"TC_9495532";
++
++        protected override string RegressionTestName => @"Windows_Verify_App_is_uninstalled_on_the_device";
++
++        protected override string TestDisplayName => @"Test set A - Windows Regression - Windows_Verify_App_is_uninstalled_on_the_device";
++
++        protected override string TestDescription => @"[IntuneSA]:[Windows][Win10]:[Assignment Filters][Include][Match][E2E]:[Edge]:[Uninstall][UserGroup]:Verify App is uninstalled on the device";
++
++        [Test]
++        public async Task TestMethod_9495532_Test_Set_A_Windows_Regression_Windows_Verify_App_is_uninstalled_on_the_device()
++        {
++            await RunTestAsync();
++        }
++    }
++}
+*** Add File: c:\Users\v-arulmani\Downloads\AI_Automation 5\AI_Automation - Copy\IntuneCanaryTests\App_Regression\App_Signoff_Test\Test set A\Windows Regression\9495533_Windows_Verify_App_shows_in_CP_and_IWP_and_can_all_install_successfully_on_the_device.cs
++using NUnit.Framework;
++using System.Threading.Tasks;
++
++namespace IntuneCanaryTests
++{
++    [TestFixture]
++    public class Test_9495533_Test_Set_A_Windows_Regression_Windows_Verify_App_shows_in_CP_and_IWP_and_can_all_install_successfully_on_the_device : WindowsRegressionTestSetABase
++    {
++        protected override string RegressionTestCaseId => @"TC_9495533";
++
++        protected override string RegressionTestName => @"Windows_Verify_App_shows_in_CP_and_IWP_and_can_all_install_successfully_on_the_device";
++
++        protected override string TestDisplayName => @"Test set A - Windows Regression - Windows_Verify_App_shows_in_CP_and_IWP_and_can_all_install_successfully_on_the_device";
++
++        protected override string TestDescription => @"[IntuneSA]:[Windows][Win10]:[Assignment Filters][Include][Match][E2E]:[Edge]:[Available][UserGroup]:Verify App shows in CP and IWP and can all install successfully on the device";
++
++        [Test]
++        public async Task TestMethod_9495533_Test_Set_A_Windows_Regression_Windows_Verify_App_shows_in_CP_and_IWP_and_can_all_install_successfully_on_the_device()
++        {
++            await RunTestAsync();
++        }
++    }
++}
+*** Add File: c:\Users\v-arulmani\Downloads\AI_Automation 5\AI_Automation - Copy\IntuneCanaryTests\App_Regression\App_Signoff_Test\Test set A\Windows Regression\9495534_Windows_Verify_App_is_not_installed_on_the_device.cs
++using NUnit.Framework;
++using System.Threading.Tasks;
++
++namespace IntuneCanaryTests
++{
++    [TestFixture]
++    public class Test_9495534_Test_Set_A_Windows_Regression_Windows_Verify_App_is_not_installed_on_the_device : WindowsRegressionTestSetABase
++    {
++        protected override string RegressionTestCaseId => @"TC_9495534";
++
++        protected override string RegressionTestName => @"Windows_Verify_App_is_not_installed_on_the_device";
++
++        protected override string TestDisplayName => @"Test set A - Windows Regression - Windows_Verify_App_is_not_installed_on_the_device";
++
++        protected override string TestDescription => @"[IntuneSA]:[Windows][Win10]:[Assignment Filters][Exclude][Match][E2E]:[Edge]:[Required][UserGroup]:Verify App is not installed on the device";
++
++        [Test]
++        public async Task TestMethod_9495534_Test_Set_A_Windows_Regression_Windows_Verify_App_is_not_installed_on_the_device()
++        {
++            await RunTestAsync();
++        }
++    }
++}
+*** Add File: c:\Users\v-arulmani\Downloads\AI_Automation 5\AI_Automation - Copy\IntuneCanaryTests\App_Regression\App_Signoff_Test\Test set A\Windows Regression\9495535_Windows_Verify_App_does_not_show_in_CP_and_IWP_and_does_not_install_on_the_device.cs
++using NUnit.Framework;
++using System.Threading.Tasks;
++
++namespace IntuneCanaryTests
++{
++    [TestFixture]
++    public class Test_9495535_Test_Set_A_Windows_Regression_Windows_Verify_App_does_not_show_in_CP_and_IWP_and_does_not_install_on_the_device : WindowsRegressionTestSetABase
++    {
++        protected override string RegressionTestCaseId => @"TC_9495535";
++
++        protected override string RegressionTestName => @"Windows_Verify_App_does_not_show_in_CP_and_IWP_and_does_not_install_on_the_device";
++
++        protected override string TestDisplayName => @"Test set A - Windows Regression - Windows_Verify_App_does_not_show_in_CP_and_IWP_and_does_not_install_on_the_device";
++
++        protected override string TestDescription => @"[IntuneSA]:[Windows][Win10]:[Assignment Filters][Exclude][Match]:[Edge]:[Available][UserGroup]:Verify App does not show in CP and IWP and does not install on the device";
++
++        [Test]
++        public async Task TestMethod_9495535_Test_Set_A_Windows_Regression_Windows_Verify_App_does_not_show_in_CP_and_IWP_and_does_not_install_on_the_device()
++        {
++            await RunTestAsync();
++        }
++    }
++}
+*** Add File: c:\Users\v-arulmani\Downloads\AI_Automation 5\AI_Automation - Copy\IntuneCanaryTests\App_Regression\App_Signoff_Test\Test set A\Windows Regression\5657696_Windows_Verify_Edge_Beta_app_is_installed_and_correct_version_is_reported_in_status.cs
++using NUnit.Framework;
++using System.Threading.Tasks;
++
++namespace IntuneCanaryTests
++{
++    [TestFixture]
++    public class Test_5657696_Test_Set_A_Windows_Regression_Windows_Verify_Edge_Beta_app_is_installed_and_correct_version_is_reported_in_status : WindowsRegressionTestSetABase
++    {
++        protected override string RegressionTestCaseId => @"TC_5657696";
++
++        protected override string RegressionTestName => @"Windows_Verify_Edge_Beta_app_is_installed_and_correct_version_is_reported_in_status";
++
++        protected override string TestDisplayName => @"Test set A - Windows Regression - Windows_Verify_Edge_Beta_app_is_installed_and_correct_version_is_reported_in_status";
++
++        protected override string TestDescription => @"[IntuneSA]:[Windows][Win10RS3+]:[Publish][E2E]:[Available]:Verify Edge Beta app is installed and correct version is reported in status";
++
++        [Test]
++        public async Task TestMethod_5657696_Test_Set_A_Windows_Regression_Windows_Verify_Edge_Beta_app_is_installed_and_correct_version_is_reported_in_status()
++        {
++            await RunTestAsync();
++        }
++    }
++}
+*** Add File: c:\Users\v-arulmani\Downloads\AI_Automation 5\AI_Automation - Copy\IntuneCanaryTests\App_Regression\App_Signoff_Test\Test set A\Windows Regression\5657697_Windows_Verify_Edge_Dev_and_Edge_Beta_app_can_be_installed_side_by_side.cs
++using NUnit.Framework;
++using System.Threading.Tasks;
++
++namespace IntuneCanaryTests
++{
++    [TestFixture]
++    public class Test_5657697_Test_Set_A_Windows_Regression_Windows_Verify_Edge_Dev_and_Edge_Beta_app_can_be_installed_side_by_side : WindowsRegressionTestSetABase
++    {
++        protected override string RegressionTestCaseId => @"TC_5657697";
++
++        protected override string RegressionTestName => @"Windows_Verify_Edge_Dev_and_Edge_Beta_app_can_be_installed_side_by_side";
++
++        protected override string TestDisplayName => @"Test set A - Windows Regression - Windows_Verify_Edge_Dev_and_Edge_Beta_app_can_be_installed_side_by_side";
++
++        protected override string TestDescription => @"[IntuneSA]:[Windows][Win10RS3+]:[Publish][E2E]:Verify Edge Dev and Edge Beta app can be installed side by side";
++
++        [Test]
++        public async Task TestMethod_5657697_Test_Set_A_Windows_Regression_Windows_Verify_Edge_Dev_and_Edge_Beta_app_can_be_installed_side_by_side()
++        {
++            await RunTestAsync();
++        }
++    }
++}
+*** Add File: c:\Users\v-arulmani\Downloads\AI_Automation 5\AI_Automation - Copy\IntuneCanaryTests\App_Regression\App_Signoff_Test\Test set A\Windows Regression\8982222_Windows_Verify_Edge_Dev_can_be_uninstalled.cs
++using NUnit.Framework;
++using System.Threading.Tasks;
++
++namespace IntuneCanaryTests
++{
++    [TestFixture]
++    public class Test_8982222_Test_Set_A_Windows_Regression_Windows_Verify_Edge_Dev_can_be_uninstalled : WindowsRegressionTestSetABase
++    {
++        protected override string RegressionTestCaseId => @"TC_8982222";
++
++        protected override string RegressionTestName => @"Windows_Verify_Edge_Dev_can_be_uninstalled";
++
++        protected override string TestDisplayName => @"Test set A - Windows Regression - Windows_Verify_Edge_Dev_can_be_uninstalled";
++
++        protected override string TestDescription => @"[IntuneSA]:[Windows][Win10RS3+]:[Publish][E2E]:[Uninstall]:Verify Edge Dev can be uninstalled";
++
++        [Test]
++        public async Task TestMethod_8982222_Test_Set_A_Windows_Regression_Windows_Verify_Edge_Dev_can_be_uninstalled()
++        {
++            await RunTestAsync();
++        }
++    }
++}
+*** Add File: c:\Users\v-arulmani\Downloads\AI_Automation 5\AI_Automation - Copy\IntuneCanaryTests\App_Regression\App_Signoff_Test\Test set A\Windows Regression\8982257_Windows_Verify_Edge_Stable_app_is_installed_and_correct_version_is_reported_in_status.cs
++using NUnit.Framework;
++using System.Threading.Tasks;
++
++namespace IntuneCanaryTests
++{
++    [TestFixture]
++    public class Test_8982257_Test_Set_A_Windows_Regression_Windows_Verify_Edge_Stable_app_is_installed_and_correct_version_is_reported_in_status : WindowsRegressionTestSetABase
++    {
++        protected override string RegressionTestCaseId => @"TC_8982257";
++
++        protected override string RegressionTestName => @"Windows_Verify_Edge_Stable_app_is_installed_and_correct_version_is_reported_in_status";
++
++        protected override string TestDisplayName => @"Test set A - Windows Regression - Windows_Verify_Edge_Stable_app_is_installed_and_correct_version_is_reported_in_status";
++
++        protected override string TestDescription => @"[IntuneSA]:[Windows][Win10RS3+]:[Publish][E2E]:[Required]:Verify Edge Stable app is installed and correct version is reported in status";
++
++        [Test]
++        public async Task TestMethod_8982257_Test_Set_A_Windows_Regression_Windows_Verify_Edge_Stable_app_is_installed_and_correct_version_is_reported_in_status()
++        {
++            await RunTestAsync();
++        }
++    }
++}
+*** Add File: c:\Users\v-arulmani\Downloads\AI_Automation 5\AI_Automation - Copy\IntuneCanaryTests\App_Regression\App_Signoff_Test\Test set A\Windows Regression\952863_Windows_Required_DeepLink_UserGroup_Verify_Store_App_is_installed_successfully_on_the_device.cs
++using NUnit.Framework;
++using System.Threading.Tasks;
++
++namespace IntuneCanaryTests
++{
++    [TestFixture]
++    public class Test_952863_Test_Set_A_Windows_Regression_Windows_Required_DeepLink_UserGroup_Verify_Store_App_is_installed_successfully_on_the_device : WindowsRegressionTestSetABase
++    {
++        protected override string RegressionTestCaseId => @"TC_952863";
++
++        protected override string RegressionTestName => @"Windows_Required_DeepLink_UserGroup_Verify_Store_App_is_installed_successfully_on_the_device";
++
++        protected override string TestDisplayName => @"Test set A - Windows Regression - Windows_Required_DeepLink_UserGroup_Verify_Store_App_is_installed_successfully_on_the_device";
++
++        protected override string TestDescription => @"[IntuneSA]:[Windows]:[Required]:[DeepLink][UserGroup]:Verify Store App is installed successfully on the device";
++
++        [Test]
++        public async Task TestMethod_952863_Test_Set_A_Windows_Regression_Windows_Required_DeepLink_UserGroup_Verify_Store_App_is_installed_successfully_on_the_device()
++        {
++            await RunTestAsync();
++        }
++    }
++}
+*** Add File: c:\Users\v-arulmani\Downloads\AI_Automation 5\AI_Automation - Copy\IntuneCanaryTests\App_Regression\App_Signoff_Test\Test set A\Windows Regression\3778593_Windows_AppDelete_DeepLink_Verify_App_is_removed_from_SSP_and_IWPortal_and_not_uninstalled_from_device.cs
++using NUnit.Framework;
++using System.Threading.Tasks;
++
++namespace IntuneCanaryTests
++{
++    [TestFixture]
++    public class Test_3778593_Test_Set_A_Windows_Regression_Windows_AppDelete_DeepLink_Verify_App_is_removed_from_SSP_and_IWPortal_and_not_uninstalled_from_device : WindowsRegressionTestSetABase
++    {
++        protected override string RegressionTestCaseId => @"TC_3778593";
++
++        protected override string RegressionTestName => @"Windows_AppDelete_DeepLink_Verify_App_is_removed_from_SSP_and_IWPortal_and_not_uninstalled_from_device";
++
++        protected override string TestDisplayName => @"Test set A - Windows Regression - Windows_AppDelete_DeepLink_Verify_App_is_removed_from_SSP_and_IWPortal_and_not_uninstalled_from_device";
++
++        protected override string TestDescription => @"[IntuneSA]:[Windows]:[AppDelete]:[Deeplink]:IT Pro can delete app from admin console and app is removed from SSP/IWPortal and not uninstalled from device if already installed";
++
++        [Test]
++        public async Task TestMethod_3778593_Test_Set_A_Windows_Regression_Windows_AppDelete_DeepLink_Verify_App_is_removed_from_SSP_and_IWPortal_and_not_uninstalled_from_device()
++        {
++            await RunTestAsync();
++        }
++    }
++}
+*** Add File: c:\Users\v-arulmani\Downloads\AI_Automation 5\AI_Automation - Copy\IntuneCanaryTests\App_Regression\App_Signoff_Test\Test set A\Windows Regression\14716382_Windows_WebApp_UI_Admin_can_update_the_application_metadata.cs
++using NUnit.Framework;
++using System.Threading.Tasks;
++
++namespace IntuneCanaryTests
++{
++    [TestFixture]
++    public class Test_14716382_Test_Set_A_Windows_Regression_Windows_WebApp_UI_Admin_can_update_the_application_metadata : WindowsRegressionTestSetABase
++    {
++        protected override string RegressionTestCaseId => @"TC_14716382";
++
++        protected override string RegressionTestName => @"Windows_WebApp_UI_Admin_can_update_the_application_metadata";
++
++        protected override string TestDisplayName => @"Test set A - Windows Regression - Windows_WebApp_UI_Admin_can_update_the_application_metadata";
++
++        protected override string TestDescription => @"[IntuneSA]:[Windows]:[WebApp][UI]:Admin can update the application metadata";
++
++        [Test]
++        public async Task TestMethod_14716382_Test_Set_A_Windows_Regression_Windows_WebApp_UI_Admin_can_update_the_application_metadata()
++        {
++            await RunTestAsync();
++        }
++    }
++}
+*** Add File: c:\Users\v-arulmani\Downloads\AI_Automation 5\AI_Automation - Copy\IntuneCanaryTests\App_Regression\App_Signoff_Test\Test set A\Windows Regression\14716397_Windows_WebApp_UI_Admin_can_delete_the_application.cs
++using NUnit.Framework;
++using System.Threading.Tasks;
++
++namespace IntuneCanaryTests
++{
++    [TestFixture]
++    public class Test_14716397_Test_Set_A_Windows_Regression_Windows_WebApp_UI_Admin_can_delete_the_application : WindowsRegressionTestSetABase
++    {
++        protected override string RegressionTestCaseId => @"TC_14716397";
++
++        protected override string RegressionTestName => @"Windows_WebApp_UI_Admin_can_delete_the_application";
++
++        protected override string TestDisplayName => @"Test set A - Windows Regression - Windows_WebApp_UI_Admin_can_delete_the_application";
++
++        protected override string TestDescription => @"[IntuneSA]:[Windows]:[WebApp][UI]:Admin can delete the application";
++
++        [Test]
++        public async Task TestMethod_14716397_Test_Set_A_Windows_Regression_Windows_WebApp_UI_Admin_can_delete_the_application()
++        {
++            await RunTestAsync();
++        }
++    }
++}
+*** Add File: c:\Users\v-arulmani\Downloads\AI_Automation 5\AI_Automation - Copy\IntuneCanaryTests\App_Regression\App_Signoff_Test\Test set A\Windows Regression\14775098_Windows_Appinfo_WebApp_UI_Verify_common_properties_are_properly_saved.cs
++using NUnit.Framework;
++using System.Threading.Tasks;
++
++namespace IntuneCanaryTests
++{
++    [TestFixture]
++    public class Test_14775098_Test_Set_A_Windows_Regression_Windows_Appinfo_WebApp_UI_Verify_common_properties_are_properly_saved : WindowsRegressionTestSetABase
++    {
++        protected override string RegressionTestCaseId => @"TC_14775098";
++
++        protected override string RegressionTestName => @"Windows_Appinfo_WebApp_UI_Verify_common_properties_are_properly_saved";
++
++        protected override string TestDisplayName => @"Test set A - Windows Regression - Windows_Appinfo_WebApp_UI_Verify_common_properties_are_properly_saved";
++
++        protected override string TestDescription => @"[IntuneSA]:[Windows]:[Appinfo]:[WebApp][UI]:Verify common properties (Description/Publisher/Category/etc) are properly saved";
++
++        [Test]
++        public async Task TestMethod_14775098_Test_Set_A_Windows_Regression_Windows_Appinfo_WebApp_UI_Verify_common_properties_are_properly_saved()
++        {
++            await RunTestAsync();
++        }
++    }
++}
+*** End Patch
