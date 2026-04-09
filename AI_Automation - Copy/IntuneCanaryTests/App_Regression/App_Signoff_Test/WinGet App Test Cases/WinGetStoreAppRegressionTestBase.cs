@@ -1,3 +1,4 @@
+using LogService;
 using Microsoft.Playwright;
 using Microsoft.Playwright.NUnit;
 using NUnit.Framework;
@@ -357,7 +358,10 @@ namespace IntuneCanaryTests
             catch (Exception ex)
             {
                 Console.WriteLine($"[HEAL_REQUEST] step={stepDescription} controlType={controlInfo.ControlType} error={ex.Message}");
-                _test?.Fail($"Step failed: {stepDescription} — {ex.Message}");
+                // === LIVE DOM CAPTURE: Capture page source at moment of failure ===
+                await CaptureDomAndAnalyzeAsync(stepDescription, controlInfo.ControlType, ex.Message);
+
+                _test?.Fail($"Step failed: {stepDescription} \u2014 {ex.Message}");
                 throw;
             }
         }
@@ -366,9 +370,27 @@ namespace IntuneCanaryTests
         {
             _test?.Info($"Select app type {appType}");
 
-            var appTypeComboBox = Page.GetByRole(AriaRole.Combobox, new() { Name = "App type", Exact = true });
-            await appTypeComboBox.WaitForAsync(new LocatorWaitForOptions { State = WaitForSelectorState.Visible, Timeout = 30000 });
-            await appTypeComboBox.ClickAsync();
+            try
+            {
+                var appTypeComboBox = Page.GetByRole(AriaRole.Combobox, new() { Name = "App type", Exact = true });
+                await appTypeComboBox.WaitForAsync(new LocatorWaitForOptions { State = WaitForSelectorState.Visible, Timeout = 15000 });
+                await appTypeComboBox.ClickAsync();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"[HEAL_SIGNAL] SelectAppTypeDirectlyAsync: App type combobox not found: {ex.Message}");
+                // Capture live DOM and ask Gemini for correct locator
+                var domHtml = await CaptureDomOnFailureAsync("SelectAppType_ComboBox");
+                var hints = new HealingHints
+                {
+                    Identifier = "AppTypeCombobox",
+                    Text = "App type",
+                    Role = AriaRole.Combobox,
+                    AriaLabel = "App type"
+                };
+                var healed = await SelfHealingLocator.ResolveAsync(Page, Page.GetByRole(AriaRole.Combobox, new() { Name = "App type" }), hints, iframeName: null, timeoutMs: 15000);
+                await healed.ClickAsync();
+            }
 
             var option = Page.GetByText(new Regex($"^{Regex.Escape(appType)}$", RegexOptions.IgnoreCase)).First;
             await option.WaitForAsync(new LocatorWaitForOptions { State = WaitForSelectorState.Visible, Timeout = 30000 });
@@ -379,6 +401,77 @@ namespace IntuneCanaryTests
             await selectButton.ClickAsync();
         }
 
+        /// <summary>
+        /// Captures live DOM page source at moment of failure and saves to file.
+        /// Like driver.getPageSource() in the Java Self_Healing project.
+        /// </summary>
+        private async Task<string> CaptureDomOnFailureAsync(string contextName)
+        {
+            try
+            {
+                string pageHtml = await Page.ContentAsync();
+                var timestamp = DateTime.Now.ToString("yyyyMMdd_HHmmss");
+                var domDir = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "..", "..", "..", "..", "ExtentReports", "DomCaptures");
+                Directory.CreateDirectory(domDir);
+                var filePath = Path.Combine(domDir, $"DOM_{NumericTestId}_{contextName}_{timestamp}.html");
+                await File.WriteAllTextAsync(filePath, pageHtml);
+                Console.WriteLine($"[DOM_CAPTURE] Saved live DOM to: {filePath} ({pageHtml.Length} chars)");
+                _test?.Info($"DOM captured at failure point: {contextName} ({pageHtml.Length} chars)");
+                return pageHtml;
+            }
+            catch (Exception domEx)
+            {
+                Console.WriteLine($"[DOM_CAPTURE] Failed to capture DOM: {domEx.Message}");
+                return string.Empty;
+            }
+        }
+
+        /// <summary>
+        /// Captures DOM and sends to Gemini AI to analyze what's on the page
+        /// and suggest correct locators — same pattern as OpenAIHelper.GetLocatorsForPageAsJson()
+        /// in the Java Self_Healing project.
+        /// </summary>
+        private async Task CaptureDomAndAnalyzeAsync(string stepDescription, string controlType, string errorMessage)
+        {
+            try
+            {
+                string pageHtml = await CaptureDomOnFailureAsync(controlType);
+                if (string.IsNullOrEmpty(pageHtml)) return;
+
+                // Send to Gemini AI for analysis if available
+                if (AILocatorHelper.IsAvailable())
+                {
+                    var hints = HealingHintsRegistry.Get(controlType) ?? new HealingHints
+                    {
+                        Identifier = controlType,
+                        Text = stepDescription
+                    };
+
+                    Console.WriteLine($"[AI_DOM_ANALYSIS] Sending DOM ({pageHtml.Length} chars) to Gemini for step '{stepDescription}'...");
+                    var aiResult = await AILocatorHelper.FindLocatorAsync(pageHtml, hints);
+                    if (aiResult.HasValue)
+                    {
+                        var (response, elapsedMs) = aiResult.Value;
+                        Console.WriteLine($"[AI_DOM_ANALYSIS] Gemini found: {response.LocatorType}='{response.Locator}' in {elapsedMs}ms for step '{stepDescription}'");
+                        _test?.Info($"AI DOM Analysis: Gemini suggests {response.LocatorType}='{response.Locator}' for '{controlType}'");
+                    }
+                    else
+                    {
+                        Console.WriteLine($"[AI_DOM_ANALYSIS] Gemini returned no result for step '{stepDescription}'");
+                    }
+                }
+                else
+                {
+                    Console.WriteLine("[AI_DOM_ANALYSIS] GOOGLE_AI_API_KEY not set — skipping Gemini analysis");
+                }
+            }
+            catch (Exception analysisEx)
+            {
+                Console.WriteLine($"[AI_DOM_ANALYSIS] Analysis failed: {analysisEx.Message}");
+            }
+        }
+
+        /// <summary>
         private async Task TryCleanupCreatedAppAsync(string createdAppName)
         {
             try
