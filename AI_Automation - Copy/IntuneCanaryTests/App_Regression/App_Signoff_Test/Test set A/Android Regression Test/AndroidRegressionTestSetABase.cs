@@ -13,12 +13,14 @@ using System.Text.Json;
 using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 using AventStack.ExtentReports;
+using global::PlaywrightTests.Common.Utils;
 
 namespace IntuneCanaryTests
 {
     public abstract class AndroidRegressionTestSetABase : PageTest
     {
         private ExtentTest? _test;
+        private SmartStepExecutor? _smartStep;
 
         protected abstract string RegressionTestCaseId { get; }
         protected abstract string RegressionTestName { get; }
@@ -88,6 +90,7 @@ namespace IntuneCanaryTests
 
                 var environment = ResolveEnvironment(Page.Url);
                 var allAppsUtils = new AllAppsUtils(Page, environment);
+                _smartStep = new SmartStepExecutor(allAppsUtils, testData.Parameters.AppType);
                 var parameters = new Dictionary<string, string>(StringComparer.OrdinalIgnoreCase);
 
                 // Step 2: Navigate to All Apps
@@ -230,6 +233,14 @@ namespace IntuneCanaryTests
         {
             _test?.Info(desc);
             info.Parameter = parameters;
+
+            // Use SmartStepExecutor when available (tab pre-check & retry on wrong-page)
+            if (_smartStep != null && utils is AllAppsUtils)
+            {
+                var smartResult = await _smartStep.ExecuteWithGuardsAsync(info);
+                return smartResult.Parameter;
+            }
+
             var result = await utils.RunStepAsync(info);
             return result.Parameter;
         }

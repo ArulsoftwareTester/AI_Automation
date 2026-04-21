@@ -13,6 +13,7 @@ tools:
   - mcp_microsoft_learn_search
   - mcp_microsoft_learn_fetch
   - mcp_intune_query
+  - intune-playwright/*
 agents: []
 user-invocable: false
 ---

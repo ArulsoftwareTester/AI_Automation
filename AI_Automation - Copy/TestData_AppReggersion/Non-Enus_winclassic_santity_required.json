@@ -107,10 +107,10 @@
                                              "firstLink":  "Apps",
                                              "secondLink":  "Windows",
                                              "AppType":  "Windows app (Win32)",
-                                             "select app package file":  "10 Fake MSI.intunewin",
+                                             "select app package file":  "03 Fake MSI.intunewin",
                                              "Type of app install file":  "MSI",
-                                             "Name":  "TC_4179742_10 Fake MSI.intunewin",
-                                             "Description":  "TC_4179742_10 Fake MSI.intunewin",
+                                             "Name":  "TC_4179742_03 Fake MSI.intunewin",
+                                             "Description":  "TC_4179742_03 Fake MSI.intunewin",
                                              "Publisher":  "AIAuto ddmmyyyymmss",
                                              "program parameters":  {
                                                                         "Installation time required (mins)":  "5",
@@ -139,7 +139,7 @@
                                              "Device Validation":  {
                                                                        "pre-requisite on device":  "",
                                                                        "App Installation Validation":  "Verify App A should be installed on the device",
-                                                                       "searchTerm":  "Test MSI #10",
+                                                                       "searchTerm":  "Test MSI #03",
                                                                        "expectedValue":  "installed"
                                                                    }
                                          }
@@ -155,10 +155,10 @@
                                              "firstLink":  "Apps",
                                              "secondLink":  "Windows",
                                              "AppType":  "Windows app (Win32)",
-                                             "select app package file":  "11 Fake MSI.intunewin",
+                                             "select app package file":  "04 Fake MSI.intunewin",
                                              "Type of app install file":  "MSI",
-                                             "Name":  "TC_4179743_11 Fake MSI.intunewin",
-                                             "Description":  "TC_4179743_11 Fake MSI.intunewin",
+                                             "Name":  "TC_4179743_04 Fake MSI.intunewin",
+                                             "Description":  "TC_4179743_04 Fake MSI.intunewin",
                                              "Publisher":  "AIAuto ddmmyyyymmss",
                                              "program parameters":  {
                                                                         "Installation time required (mins)":  "5",
@@ -187,7 +187,7 @@
                                              "Device Validation":  {
                                                                        "pre-requisite on device":  "",
                                                                        "App Installation Validation":  "Verify App A should be installed on the device",
-                                                                       "searchTerm":  "Test MSI #11",
+                                                                       "searchTerm":  "Test MSI #04",
                                                                        "expectedValue":  "installed"
                                                                    }
                                          }
@@ -203,10 +203,10 @@
                                              "firstLink":  "Apps",
                                              "secondLink":  "Windows",
                                              "AppType":  "Windows app (Win32)",
-                                             "select app package file":  "13 Fake MSI.intunewin",
+                                             "select app package file":  "05 Fake MSI.intunewin",
                                              "Type of app install file":  "MSI",
-                                             "Name":  "TC_4179745_13 Fake MSI.intunewin",
-                                             "Description":  "TC_4179745_13 Fake MSI.intunewin",
+                                             "Name":  "TC_4179745_05 Fake MSI.intunewin",
+                                             "Description":  "TC_4179745_05 Fake MSI.intunewin",
                                              "Publisher":  "AIAuto ddmmyyyymmss",
                                              "program parameters":  {
                                                                         "Installation time required (mins)":  "5",
@@ -235,7 +235,7 @@
                                              "Device Validation":  {
                                                                        "pre-requisite on device":  "",
                                                                        "App Installation Validation":  "Verify App A should  be installed on the device",
-                                                                       "searchTerm":  "Test MSI #13",
+                                                                       "searchTerm":  "Test MSI #05",
                                                                        "expectedValue":  "not installed"
                                                                    }
                                          }

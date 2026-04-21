@@ -13,12 +13,14 @@ using System.Text.Json;
 using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 using AventStack.ExtentReports;
+using global::PlaywrightTests.Common.Utils;
 
 namespace IntuneCanaryTests
 {
     public abstract class WindowsRegressionTestSetABase : PageTest
     {
         private ExtentTest? _test;
+        private SmartStepExecutor? _smartStep;
 
         protected abstract string RegressionTestCaseId { get; }
 
@@ -51,6 +53,15 @@ namespace IntuneCanaryTests
         [SetUp]
         public void TestSetup()
         {
+            // Load .env file so GOOGLE_AI_API_KEY is available for AI-powered healing
+            var envPath = Path.GetFullPath(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "..", "..", "..", "..", ".env"));
+            if (File.Exists(envPath))
+            {
+                DotNetEnv.Env.Load(envPath);
+                Console.WriteLine($"[ENV] Loaded .env from: {envPath}");
+                Console.WriteLine($"[ENV] GOOGLE_AI_API_KEY set: {!string.IsNullOrEmpty(Environment.GetEnvironmentVariable("GOOGLE_AI_API_KEY"))}");
+            }
+
             _test = TestInitialize.CreateTest(TestContext.CurrentContext.Test.Name, TestDisplayName);
             _test.Info($"Test started at: {DateTime.Now:yyyy-MM-dd HH:mm:ss}");
             _test.Info($"Test ID: {NumericTestId}");
@@ -66,6 +77,7 @@ namespace IntuneCanaryTests
         protected async Task RunTestAsync()
         {
             string createdAppName = string.Empty;
+            bool shouldDeleteApp = true;
 
             try
             {
@@ -73,13 +85,14 @@ namespace IntuneCanaryTests
                 _test?.Info("Test execution started");
 
                 var testData = LoadTestData();
+                shouldDeleteApp = testData.Parameters.DeleteApp;
                 if (!testData.Enabled)
                 {
                     throw new InvalidOperationException($"Test case {RegressionTestCaseId} is disabled in windows Regression.json.");
                 }
 
                 var assignmentMode = GetAssignmentMode(testData.Parameters.Assignments);
-                ValidateTestData(testData);
+                ValidateTestData(testData, assignmentMode);
 
                 _test?.Info($"Loaded regression data for {testData.TestName} (AppType: {testData.Parameters.AppType})");
 
@@ -88,7 +101,6 @@ namespace IntuneCanaryTests
                 var securityBaseline = new SecurityBaseline();
                 await securityBaseline.Login(Page);
                 _test?.Pass("Successfully logged into Intune Portal");
-
                 var loginScreenshot = await ExtentReportHelper.CaptureScreenshot(Page, $"Login_Complete_{NumericTestId}");
                 if (!string.IsNullOrEmpty(loginScreenshot))
                 {
@@ -97,6 +109,7 @@ namespace IntuneCanaryTests
 
                 var environment = ResolveEnvironment(Page.Url);
                 var allAppsUtils = new AllAppsUtils(Page, environment);
+                _smartStep = new SmartStepExecutor(allAppsUtils, testData.Parameters.AppType);
                 var parameters = new Dictionary<string, string>(StringComparer.OrdinalIgnoreCase);
 
                 // Step 2: Navigate to All Apps
@@ -106,7 +119,6 @@ namespace IntuneCanaryTests
                     parameters,
                     "Navigate to All Apps",
                     new ControlInfo { ControlType = "GoToMainPageAsync" });
-
                 // Step 3: Click Add button
                 _test?.Info("Step 3: Clicking Add button");
                 parameters = await ExecuteStepAsync(
@@ -181,6 +193,219 @@ namespace IntuneCanaryTests
                         OperationValue = testData.Parameters.Publisher
                     });
 
+                // Step 8a: Set App URL (for Web Link apps)
+                if (!string.IsNullOrWhiteSpace(testData.Parameters.AppURL))
+                {
+                    _test?.Info($"Step 8a: Setting App URL: {testData.Parameters.AppURL}");
+                    parameters = await ExecuteStepAsync(
+                        allAppsUtils,
+                        parameters,
+                        "Set App URL",
+                        new ControlInfo
+                        {
+                            ControlType = "SetAppInformationAppURLAsync",
+                            OperationValue = testData.Parameters.AppURL
+                        });
+                }
+
+
+                // Step 8a2: Set Appstore URL (for Microsoft Store app legacy)
+                if (!string.IsNullOrWhiteSpace(testData.Parameters.AppstoreURL))
+                {
+                    _test?.Info($"Step 8a2: Setting Appstore URL: {testData.Parameters.AppstoreURL}");
+                    parameters = await ExecuteStepAsync(
+                        allAppsUtils,
+                        parameters,
+                        "Set Appstore URL",
+                        new ControlInfo
+                        {
+                            ControlType = "SetAppInformationAppstoreUrlAsync",
+                            OperationValue = testData.Parameters.AppstoreURL
+                        });
+                }
+
+                // Step 8b: Configure M365 App Suite (Default file format, Update channel, etc.)
+                bool isEdgeApp = testData.Parameters.AppType.Contains("Microsoft Edge", StringComparison.OrdinalIgnoreCase);
+                bool isM365App = !string.IsNullOrEmpty(testData.Parameters.OfficeSuiteAppDefaultFileFormat) ||
+                    !string.IsNullOrEmpty(testData.Parameters.UpdateChannel);
+
+                // Step 8a: Handle Microsoft Edge App Settings tab (Channel/Language between App Info and Assignments)
+                if (isEdgeApp)
+                {
+                    _test?.Info("Step 8a: Navigating through Edge App Settings tab");
+
+                    // Click Next from App Information to App Settings
+                    parameters = await ExecuteStepAsync(
+                        allAppsUtils,
+                        parameters,
+                        "Click Next to Edge App Settings",
+                        new ControlInfo { ControlType = "ClickNextButtonAsync" });
+
+                    // Set channel if specified (e.g. "dev", "beta", "stable")
+                    if (!string.IsNullOrWhiteSpace(testData.Parameters.Channel))
+                    {
+                        var channelDisplayName = MapEdgeChannelToDisplayName(testData.Parameters.Channel);
+                        _test?.Info($"Setting Edge channel: {channelDisplayName}");
+                        parameters = await ExecuteStepAsync(
+                            allAppsUtils,
+                            parameters,
+                            $"Set Edge channel to {channelDisplayName}",
+                            new ControlInfo
+                            {
+                                ControlType = "SetAppSettingChannelAsync",
+                                OperationValue = channelDisplayName
+                            });
+                    }
+
+                    // Click Next from App Settings to Assignments
+                    parameters = await ExecuteStepAsync(
+                        allAppsUtils,
+                        parameters,
+                        "Click Next after Edge App Settings",
+                        new ControlInfo { ControlType = "ClickNextButtonAsync" });
+                }
+
+                // Step 8b: Configure M365 App Suite (Default file format, Update channel, etc.)
+                if (isM365App)
+                {
+                    _test?.Info("Step 8b: Configuring M365 App Suite settings");
+
+                    // Click Next to navigate from App suite information (Tab 1) to Configure app suite (Tab 2)
+                    parameters = await ExecuteStepAsync(
+                        allAppsUtils,
+                        parameters,
+                        "Click Next to Configure App Suite",
+                        new ControlInfo { ControlType = "ClickNextButtonAsync" });
+
+                    // Excluded apps selection
+                    if (testData.Parameters.ExcludedApps != null && testData.Parameters.ExcludedApps.Count > 0)
+                    {
+                        var excludedAppNames = testData.Parameters.ExcludedApps
+                            .Where(kv => kv.Value)
+                            .Select(kv => MapExcludedAppToDisplayName(kv.Key))
+                            .Where(name => !string.IsNullOrEmpty(name))
+                            .ToList()!;
+
+                        if (excludedAppNames.Count > 0)
+                        {
+                            parameters = await ExecuteStepAsync(
+                                allAppsUtils,
+                                parameters,
+                                $"Exclude Office apps: {string.Join(", ", excludedAppNames)}",
+                                new ControlInfo
+                                {
+                                    ControlType = "SelectOfficeAppsByExcludeAsync",
+                                    Value = excludedAppNames
+                                });
+                        }
+                    }
+
+                    // Architecture
+                    if (!string.IsNullOrEmpty(testData.Parameters.OfficePlatformArchitecture))
+                    {
+                        parameters = await ExecuteStepAsync(
+                            allAppsUtils,
+                            parameters,
+                            $"Set architecture to {testData.Parameters.OfficePlatformArchitecture}",
+                            new ControlInfo
+                            {
+                                ControlType = "SetArchitectureAsync",
+                                OperationValue = MapArchitectureToDisplayName(testData.Parameters.OfficePlatformArchitecture)
+                            });
+                    }
+
+                    // Default file format
+                    if (!string.IsNullOrEmpty(testData.Parameters.OfficeSuiteAppDefaultFileFormat))
+                    {
+                        parameters = await ExecuteStepAsync(
+                            allAppsUtils,
+                            parameters,
+                            "Set default file format",
+                            new ControlInfo
+                            {
+                                ControlType = "SetdefaultFileFormatAsync",
+                                OperationValue = MapFileFormatToDisplayName(testData.Parameters.OfficeSuiteAppDefaultFileFormat)
+                            });
+                    }
+
+                    // Update channel
+                    if (!string.IsNullOrEmpty(testData.Parameters.UpdateChannel))
+                    {
+                        parameters = await ExecuteStepAsync(
+                            allAppsUtils,
+                            parameters,
+                            "Set update channel",
+                            new ControlInfo
+                            {
+                                ControlType = "SetUpdatechannelAsync",
+                                OperationValue = MapUpdateChannelToDisplayName(testData.Parameters.UpdateChannel)
+                            });
+                    }
+
+                    // Remove other versions of Office
+                    if (testData.Parameters.ShouldUninstallOlderVersionsOfOffice)
+                    {
+                        parameters = await ExecuteStepAsync(
+                            allAppsUtils,
+                            parameters,
+                            "Set remove other versions to Yes",
+                            new ControlInfo
+                            {
+                                ControlType = "SetRemoveOtherVersionsAsync",
+                                OperationValue = "Yes"
+                            });
+                    }
+
+                    // Use shared computer activation
+                    if (testData.Parameters.UseSharedComputerActivation)
+                    {
+                        parameters = await ExecuteStepAsync(
+                            allAppsUtils,
+                            parameters,
+                            "Set use shared computer activation to Yes",
+                            new ControlInfo
+                            {
+                                ControlType = "SetUseSharedComputerActivationAsync",
+                                OperationValue = "Yes"
+                            });
+                    }
+
+                    // Accept EULA
+                    if (testData.Parameters.AutoAcceptEula)
+                    {
+                        parameters = await ExecuteStepAsync(
+                            allAppsUtils,
+                            parameters,
+                            "Set accept EULA to Yes",
+                            new ControlInfo
+                            {
+                                ControlType = "SetAcceptEulaAsync",
+                                OperationValue = "Yes"
+                            });
+                    }
+
+                    // Languages
+                    if (testData.Parameters.LocalesToInstall != null && testData.Parameters.LocalesToInstall.Count > 0)
+                    {
+                        parameters = await ExecuteStepAsync(
+                            allAppsUtils,
+                            parameters,
+                            $"Set languages: {string.Join(", ", testData.Parameters.LocalesToInstall)}",
+                            new ControlInfo
+                            {
+                                ControlType = "SetLanguagesAsync",
+                                Value = testData.Parameters.LocalesToInstall
+                            });
+                    }
+
+                    // Click Next to proceed from Configure App Suite to Assignments
+                    parameters = await ExecuteStepAsync(
+                        allAppsUtils,
+                        parameters,
+                        "Click Next after Configure App Suite",
+                        new ControlInfo { ControlType = "ClickNextButtonAsync" });
+                }
+
                 // Step 9: Handle Win32 specific parameters (program, requirements, detection rules)
                 if (testData.Parameters.ProgramParameters != null)
                 {
@@ -189,11 +414,16 @@ namespace IntuneCanaryTests
                 }
 
                 // Click Next to proceed to Requirements (for Win32 apps) or Assignments
-                parameters = await ExecuteStepAsync(
-                    allAppsUtils,
-                    parameters,
-                    "Click Next",
-                    new ControlInfo { ControlType = "ClickNextButtonAsync" });
+                // Skip for M365 apps ï¿½ Step 8b already navigated from Configure App Suite to Assignments
+                // Skip for Edge apps ï¿½ Step 8a already navigated from App Settings to Assignments
+                if (!isM365App && !isEdgeApp)
+                {
+                    parameters = await ExecuteStepAsync(
+                        allAppsUtils,
+                        parameters,
+                        "Click Next",
+                        new ControlInfo { ControlType = "ClickNextButtonAsync" });
+                }
 
                 if (testData.Parameters.RequirementsParameters != null)
                 {
@@ -239,14 +469,21 @@ namespace IntuneCanaryTests
                 }
 
                 // Step 10: Configure assignments
-                _test?.Info("Step 10: Configuring assignments");
-                parameters = await ConfigureAssignmentsAsync(allAppsUtils, parameters, testData, assignmentMode);
+                if (assignmentMode != AssignmentMode.None)
+                {
+                    _test?.Info("Step 10: Configuring assignments");
+                    parameters = await ConfigureAssignmentsAsync(allAppsUtils, parameters, testData, assignmentMode);
 
-                parameters = await ExecuteStepAsync(
-                    allAppsUtils,
-                    parameters,
-                    "Mark assignments complete",
-                    new ControlInfo { ControlType = "MarkAssignmentsCompleteAsync" });
+                    parameters = await ExecuteStepAsync(
+                        allAppsUtils,
+                        parameters,
+                        "Mark assignments complete",
+                        new ControlInfo { ControlType = "MarkAssignmentsCompleteAsync" });
+                }
+                else
+                {
+                    _test?.Info("Step 10: No assignments configured ï¿½ skipping");
+                }
 
                 // Click Next to go to Review + Create
                 parameters = await ExecuteStepAsync(
@@ -255,13 +492,14 @@ namespace IntuneCanaryTests
                     "Click Next to Review + Create",
                     new ControlInfo { ControlType = "ClickNextButtonAsync" });
 
-                // Step 11: Create the app
+                // Step 11: Create the app (SmartCreate adapts wait strategy per app type)
                 _test?.Info("Step 11: Creating the app");
+                var createControlType = WizardFlowRegistry.GetCreateVariant(testData.Parameters.AppType);
                 parameters = await ExecuteStepAsync(
                     allAppsUtils,
                     parameters,
-                    "Click Create",
-                    new ControlInfo { ControlType = "ClickCreateButtonAsync" });
+                    $"Click Create ({createControlType})",
+                    new ControlInfo { ControlType = createControlType });
 
                 await Page.WaitForLoadStateAsync(LoadState.DOMContentLoaded);
 
@@ -283,7 +521,10 @@ namespace IntuneCanaryTests
                         Value = new List<string> { "Name", createdAppName }
                     });
 
-                parameters = await VerifyAssignmentsAsync(allAppsUtils, parameters, testData, assignmentMode);
+                if (assignmentMode != AssignmentMode.None)
+                {
+                    parameters = await VerifyAssignmentsAsync(allAppsUtils, parameters, testData, assignmentMode);
+                }
 
                 parameters = await ExecuteStepAsync(
                     allAppsUtils,
@@ -311,9 +552,13 @@ namespace IntuneCanaryTests
             }
             finally
             {
-                if (!string.IsNullOrWhiteSpace(createdAppName))
+                if (shouldDeleteApp && !string.IsNullOrWhiteSpace(createdAppName))
                 {
                     await TryCleanupCreatedAppAsync(createdAppName);
+                }
+                else if (!shouldDeleteApp && !string.IsNullOrWhiteSpace(createdAppName))
+                {
+                    _test?.Info($"Skipping cleanup: DeleteApp=false for '{createdAppName}'");
                 }
             }
         }
@@ -522,8 +767,16 @@ namespace IntuneCanaryTests
         {
             _test?.Info(stepDescription);
             controlInfo.Parameter = parameters;
-            var result = await utils.RunStepAsync(controlInfo);
-            return result.Parameter;
+
+            // Use SmartStepExecutor when available (provides tab pre-check & retry on wrong-page)
+            if (_smartStep != null && utils is AllAppsUtils)
+            {
+                var result = await _smartStep.ExecuteWithGuardsAsync(controlInfo);
+                return result.Parameter;
+            }
+
+            var directResult = await utils.RunStepAsync(controlInfo);
+            return directResult.Parameter;
         }
 
         private async Task TryCleanupCreatedAppAsync(string createdAppName)
@@ -573,7 +826,7 @@ namespace IntuneCanaryTests
             return "PE";
         }
 
-        private static void ValidateTestData(WindowsRegressionTestCase testData)
+        private static void ValidateTestData(WindowsRegressionTestCase testData, AssignmentMode assignmentMode)
         {
             if (string.IsNullOrWhiteSpace(testData.Parameters.AppType))
             {
@@ -585,7 +838,7 @@ namespace IntuneCanaryTests
                 throw new InvalidOperationException($"Name is missing for test case {testData.TestCaseId}.");
             }
 
-            if (string.IsNullOrWhiteSpace(testData.Parameters.Assignments.SelectGroups))
+            if (assignmentMode != AssignmentMode.None && string.IsNullOrWhiteSpace(testData.Parameters.Assignments.SelectGroups))
             {
                 throw new InvalidOperationException($"Assignment groups not configured for test case {testData.TestCaseId}.");
             }
@@ -612,7 +865,7 @@ namespace IntuneCanaryTests
 
             if (modes.Count == 0)
             {
-                throw new InvalidOperationException("No assignment mode configured.");
+                return AssignmentMode.None;
             }
 
             // Return the first configured mode (some tests configure multiple, e.g. Required + Uninstall)
@@ -627,6 +880,81 @@ namespace IntuneCanaryTests
                 AssignmentMode.Available => "Available for enrolled devices",
                 AssignmentMode.Uninstall => "Uninstall",
                 _ => throw new ArgumentOutOfRangeException(nameof(assignmentMode), assignmentMode, null)
+            };
+        }
+
+        /// <summary>
+        /// Maps Graph API excluded app key names to Intune portal UI display names.
+        /// Returns null for deprecated apps no longer shown in the portal dropdown.
+        /// </summary>
+        private static string? MapExcludedAppToDisplayName(string apiName)
+        {
+            return apiName.ToLowerInvariant() switch
+            {
+                "access" => "Access",
+                "excel" => "Excel",
+                "onenote" => "OneNote",
+                "outlook" => "Outlook",
+                "powerpoint" => "PowerPoint",
+                "publisher" => "Publisher",
+                "lync" => "Skype for Business",
+                "teams" => "Teams",
+                "word" => "Word",
+                // Deprecated / not in current portal dropdown
+                "groove" => null,        // OneDrive for Business - removed from M365 suite selector
+                "infopath" => null,  // InfoPath - removed
+                "sharepointdesigner" => null, // SharePoint Designer - removed
+                "bing" => null,          // Bing News - not in dropdown
+                "onedrive" => null, // OneDrive - not in dropdown
+                "visio" => null,         // Visio - separate license app
+                _ => apiName            // Fallback: pass as-is
+            };
+        }
+
+        private static string MapArchitectureToDisplayName(string apiValue)
+        {
+            return apiValue.ToLowerInvariant() switch
+            {
+                "x64" => "64-bit",
+                "x86" => "32-bit",
+                "both" => "64-bit",
+                _ => apiValue
+            };
+        }
+
+        private static string MapFileFormatToDisplayName(string apiValue)
+        {
+            return apiValue.ToLowerInvariant() switch
+            {
+                "officeopendocumentformat" => "Office Open Document Format",
+                "officeopenxmlformat" => "Office Open XML Format",
+                _ => apiValue
+            };
+        }
+
+        private static string MapUpdateChannelToDisplayName(string apiValue)
+        {
+            return apiValue.ToLowerInvariant() switch
+            {
+                "current" => "Current Channel",
+                "monthlyenterprise" => "Monthly Enterprise Channel",
+                "semiannual" => "Semi-Annual Enterprise Channel",
+                "deferred" => "Semi-Annual Enterprise Channel",
+                "firstcurrent" => "Current Channel (Preview)",
+                "firstdeferred" => "Semi-Annual Enterprise Channel (Preview)",
+                _ => apiValue
+            };
+        }
+
+        private static string MapEdgeChannelToDisplayName(string channel)
+        {
+            return channel.ToLowerInvariant() switch
+            {
+                "stable" => "Stable",
+                "beta" => "Beta",
+                "dev" => "Dev",
+                "canary" => "Canary",
+                _ => channel
             };
         }
 
@@ -672,6 +1000,7 @@ namespace IntuneCanaryTests
 
         private enum AssignmentMode
         {
+            None,
             Required,
             Available,
             Uninstall
@@ -733,6 +1062,15 @@ namespace IntuneCanaryTests
             [JsonPropertyName("Publisher")]
             public string Publisher { get; set; } = string.Empty;
 
+            [JsonPropertyName("App URL")]
+            public string AppURL { get; set; } = string.Empty;
+
+            [JsonPropertyName("appStoreUrl")]
+            public string AppstoreURL { get; set; } = string.Empty;
+
+            [JsonPropertyName("channel")]
+            public string Channel { get; set; } = string.Empty;
+
             [JsonPropertyName("program parameters")]
             public WindowsRegressionProgramParameters? ProgramParameters { get; set; }
 
@@ -753,6 +1091,44 @@ namespace IntuneCanaryTests
 
             [JsonPropertyName("Device Validation")]
             public WindowsRegressionDeviceValidation? DeviceValidation { get; set; }
+
+            // M365 Office Suite configuration
+            [JsonPropertyName("officeSuiteAppDefaultFileFormat")]
+            public string OfficeSuiteAppDefaultFileFormat { get; set; } = string.Empty;
+
+            [JsonPropertyName("updateChannel")]
+            public string UpdateChannel { get; set; } = string.Empty;
+
+            [JsonPropertyName("officePlatformArchitecture")]
+            public string OfficePlatformArchitecture { get; set; } = string.Empty;
+
+            [JsonPropertyName("autoAcceptEula")]
+            public bool AutoAcceptEula { get; set; }
+
+            [JsonPropertyName("useSharedComputerActivation")]
+            public bool UseSharedComputerActivation { get; set; }
+
+            [JsonPropertyName("localesToInstall")]
+            public List<string>? LocalesToInstall { get; set; }
+
+            [JsonPropertyName("installProgressDisplayLevel")]
+            public string InstallProgressDisplayLevel { get; set; } = string.Empty;
+
+            [JsonPropertyName("shouldUninstallOlderVersionsOfOffice")]
+            public bool ShouldUninstallOlderVersionsOfOffice { get; set; }
+
+            [JsonPropertyName("targetVersion")]
+            public string TargetVersion { get; set; } = string.Empty;
+
+            [JsonPropertyName("updateVersion")]
+            public string UpdateVersion { get; set; } = string.Empty;
+
+            [JsonPropertyName("excludedApps")]
+            public Dictionary<string, bool>? ExcludedApps { get; set; }
+
+            [JsonPropertyName("DeleteApp")]
+            public bool DeleteApp { get; set; } = true;
+
         }
 
         private sealed class WindowsRegressionProgramParameters

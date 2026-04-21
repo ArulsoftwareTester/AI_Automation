@@ -8,6 +8,7 @@ tools:
   - execute
   - playwright/*
   - microsoft-learn/*
+  - intune-playwright/*
 agents: []
 user-invocable: false
 ---

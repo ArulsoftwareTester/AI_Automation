@@ -4,6 +4,7 @@ description: "Use when: storing failure patterns, updating DOM knowledge base, t
 tools:
   - read
   - edit
+  - intune-playwright/*
 agents: []
 user-invocable: false
 ---

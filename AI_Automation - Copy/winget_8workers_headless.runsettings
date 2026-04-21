@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RunSettings>
+  <!-- Configuration for WinGet App parallel test execution with 8 workers (headless) -->
+
+  <RunConfiguration>
+    <EnvironmentVariables>
+      <HEADED>0</HEADED>
+      <BROWSER>chromium</BROWSER>
+    </EnvironmentVariables>
+    <!-- Maximum number of cores to use in parallel -->
+    <MaxCpuCount>8</MaxCpuCount>
+    <!-- Results directory -->
+    <ResultsDirectory>.\TestResults</ResultsDirectory>
+    <!-- Target platform -->
+    <TargetPlatform>x64</TargetPlatform>
+    <!-- Target framework -->
+    <TargetFrameworkVersion>net10.0-windows</TargetFrameworkVersion>
+    <!-- Enable parallelization at runner level -->
+    <DisableParallelization>false</DisableParallelization>
+    <!-- 2-hour total session timeout safeguard -->
+    <TestSessionTimeout>7200000</TestSessionTimeout>
+  </RunConfiguration>
+
+  <NUnit>
+    <!-- 8 parallel workers for 16 WinGet tests -->
+    <NumberOfTestWorkers>8</NumberOfTestWorkers>
+    <DefaultTestNamePattern>{m}</DefaultTestNamePattern>
+    <!-- 20-minute per-test timeout (app install/uninstall + Intune sync) -->
+    <DefaultTimeout>1200000</DefaultTimeout>
+  </NUnit>
+
+  <Playwright>
+    <BrowserName>chromium</BrowserName>
+    <LaunchOptions>
+      <Headless>true</Headless>
+    </LaunchOptions>
+    <!-- 20-minute Expect timeout -->
+    <ExpectTimeout>1200000</ExpectTimeout>
+  </Playwright>
+</RunSettings>

@@ -1,0 +1,45 @@
+{
+  "runs": {
+    "2026-04-16_10:30": {
+      "Manually configure detection rules": 0,
+      "Select one": 3,
+      "App install may force a device restart": 3,
+      "Home": 0,
+      "{488ADCAF-51ED-4E33-936D-114E0B87EAB5}": 0,
+      "Soft reboot": 3,
+      "Apps | All Apps": 0,
+      "Retry": 3,
+      "Program": 3,
+      "Command line": 3,
+      "Success": 3,
+      "Hard reboot": 3,
+      "Requirements": 3
+    },
+    "2026-04-16_10:42": {
+      "App install may force a device restart": 3,
+      "Home": 3,
+      "Soft reboot": 3,
+      "Apps | All Apps": 3,
+      "Retry": 3,
+      "Program": 3,
+      "Command line": 3,
+      "Success": 3,
+      "Hard reboot": 3,
+      "Requirements": 3,
+      "Detection rules": 3
+    },
+    "2026-04-16_10:48": {
+      "App install may force a device restart": 3,
+      "Home": 3,
+      "Soft reboot": 3,
+      "Apps | All Apps": 3,
+      "Retry": 3,
+      "Program": 3,
+      "Command line": 3,
+      "Success": 3,
+      "Hard reboot": 3,
+      "Requirements": 3,
+      "Detection rules": 3
+    }
+  }
+}

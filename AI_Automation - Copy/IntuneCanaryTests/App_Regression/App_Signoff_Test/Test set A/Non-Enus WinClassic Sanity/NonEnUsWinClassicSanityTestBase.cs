@@ -65,7 +65,7 @@ namespace IntuneCanaryTests
                 _test?.Info("Test execution started");
 
                 var testData = LoadTestData();
-                var assignmentMode = GetAssignmentMode(testData.Parameters.Assignments);
+                AssignmentMode? assignmentMode = GetAssignmentMode(testData.Parameters.Assignments);
                 ValidateTestData(testData);
 
                 _test?.Info("Step 1: Logging into Intune Portal");
@@ -205,6 +205,35 @@ namespace IntuneCanaryTests
                     "Continue to dependencies",
                     new ControlInfo { ControlType = "ClickNextButtonAsync" });
 
+                if (!string.IsNullOrWhiteSpace(testData.Parameters.Dependencies))
+                {
+                    _test?.Info($"Adding dependency: {testData.Parameters.Dependencies}");
+                    Console.WriteLine($"[Dependency] Adding dependency app: {testData.Parameters.Dependencies}");
+
+                    parameters = await ExecuteStepAsync(
+                        allAppsUtils,
+                        parameters,
+                        "Click Add dependency button",
+                        new ControlInfo { ControlType = "ClickDependenciesAddButtonAsync" });
+
+                    parameters = await ExecuteStepAsync(
+                        allAppsUtils,
+                        parameters,
+                        $"Select dependency app {testData.Parameters.Dependencies}",
+                        new ControlInfo
+                        {
+                            ControlType = "SelectDependencyAppsAsync",
+                            Value = new List<string> { testData.Parameters.Dependencies, "No" }
+                        });
+
+                    Console.WriteLine($"[Dependency] Dependency added successfully: {testData.Parameters.Dependencies}");
+                    _test?.Pass($"Dependency added: {testData.Parameters.Dependencies}");
+                }
+                else
+                {
+                    _test?.Info("No dependencies configured — skipping");
+                }
+
                 parameters = await ExecuteStepAsync(
                     allAppsUtils,
                     parameters,
@@ -217,13 +246,20 @@ namespace IntuneCanaryTests
                     "Continue to assignments",
                     new ControlInfo { ControlType = "ClickNextButtonAsync" });
 
-                parameters = await ConfigureAssignmentsAsync(allAppsUtils, parameters, testData, assignmentMode);
+                if (assignmentMode.HasValue)
+                {
+                    parameters = await ConfigureAssignmentsAsync(allAppsUtils, parameters, testData, assignmentMode.Value);
 
-                parameters = await ExecuteStepAsync(
-                    allAppsUtils,
-                    parameters,
-                    "Mark assignment stage complete",
-                    new ControlInfo { ControlType = "MarkAssignmentsCompleteAsync" });
+                    parameters = await ExecuteStepAsync(
+                        allAppsUtils,
+                        parameters,
+                        "Mark assignment stage complete",
+                        new ControlInfo { ControlType = "MarkAssignmentsCompleteAsync" });
+                }
+                else
+                {
+                    _test?.Info("No assignment mode configured (Delete test)  skipping assignment configuration");
+                }
 
                 parameters = await ExecuteStepAsync(
                     allAppsUtils,
@@ -276,7 +312,14 @@ namespace IntuneCanaryTests
                         Value = new List<string> { "Publisher", publisherName }
                     });
 
-                parameters = await VerifyAssignmentsAsync(allAppsUtils, parameters, testData, assignmentMode);
+                if (assignmentMode.HasValue)
+                {
+                    parameters = await VerifyAssignmentsAsync(allAppsUtils, parameters, testData, assignmentMode.Value);
+                }
+                else
+                {
+                    _test?.Info("No assignment mode  skipping assignment verification");
+                }
 
                 _test?.Info(testData.Parameters.DeviceValidation.AppInstallationValidation);
 
@@ -687,7 +730,7 @@ namespace IntuneCanaryTests
             }
         }
 
-        private static AssignmentMode GetAssignmentMode(NonEnUsWinClassicAssignments assignments)
+        private static AssignmentMode? GetAssignmentMode(NonEnUsWinClassicAssignments assignments)
         {
             var modes = new List<AssignmentMode>();
 
@@ -709,7 +752,7 @@ namespace IntuneCanaryTests
             return modes.Count switch
             {
                 1 => modes[0],
-                0 => throw new InvalidOperationException("No assignment mode configured in regression data."),
+                0 => null,
                 _ => throw new InvalidOperationException("Multiple assignment modes are configured in regression data.")
             };
         }
@@ -797,6 +840,17 @@ namespace IntuneCanaryTests
 
             [JsonPropertyName("Detection rules parameters")]
             public NonEnUsWinClassicDetectionRulesParameters DetectionRulesParameters { get; set; } = new();
+
+            [JsonPropertyName("Dependencies")]
+            public JsonElement? DependenciesRaw { get; set; }
+
+            [JsonIgnore]
+            public string Dependencies => DependenciesRaw?.ValueKind == JsonValueKind.String
+                ? DependenciesRaw.Value.GetString() ?? string.Empty
+                : string.Empty;
+
+            [JsonPropertyName("Supercedence")]
+            public string Supercedence { get; set; } = string.Empty;
 
             [JsonPropertyName("Assignments")]
             public NonEnUsWinClassicAssignments Assignments { get; set; } = new();

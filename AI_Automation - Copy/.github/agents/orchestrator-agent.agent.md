@@ -10,7 +10,9 @@ tools:
   - web
   - playwright/*
   - microsoft-learn/*
+  - intune-playwright/*
 agents:
+  - Monitor Agent
   - Debug Agent
   - Fix Agent
   - Memory Agent
@@ -31,6 +33,28 @@ ALL agents MUST reuse:
 - SelfHealingLocator (`PlaywrightTests/Playwright/Common/Utils/SelfHealingLocator.cs`)
 
 DO NOT create new selectors, methods, or frameworks unless absolutely unavoidable.
+
+## GENERIC STRATEGIES PRINCIPLE
+
+All self-healing strategies, DomScanner methods, and Fix Agent changes MUST be **GENERIC** — they must work for ALL Intune element types, not just one specific element.
+
+**DO:**
+- Write strategies that handle any role (treeitem, menuitem, option, button, link, etc.)
+- Use data-driven matching (ARIA roles, text, labels, sections, overlays)
+- Let DomScanner detect overlays/popups/dropdowns universally (combobox, context menu, dialog, flyout, tooltip)
+- Use HealingHints properties (Text, AriaLabel, Role, Title, etc.) for matching — not hardcoded selectors
+
+**DO NOT:**
+- Hardcode logic for specific element types (e.g., "if treeitem then...")
+- Write strategies that only work for one control pattern
+- Add element-type-specific CSS selectors or XPath patterns in healing strategies
+- Create fallback logic that assumes a particular DOM structure
+
+**Key Classes:**
+- `DomScanner.ScanActiveOverlaysAsync()` — detects ANY active overlay type generically
+- `DomScanner.FindInActiveOverlays()` — matches hints against overlay elements using priority matching
+- `SelfHealingLocator` Strategy 1.1 — generic grouped parent-child resolution
+- `SelfHealingLocator` Strategy 1.2 — generic overlay element match via DomScanner
 
 ---
 
@@ -70,15 +94,35 @@ Before running tests:
 
 ---
 
-### Phase 1: TEST EXECUTION  Run as Background + Monitor Live
+### Phase 1: TEST EXECUTION  Run as Background + Delegate to Monitor Agent
 
 #### Step 1: Launch test as a BACKGROUND process
 ```
 dotnet test --filter "FullyQualifiedName~TestName" --settings headed.runsettings --logger "console;verbosity=detailed"
 ```
-Run this as a **background terminal command** so you can monitor output while it runs.
+Run this as a **background terminal command** (async mode) so you get a terminal ID.
 
-#### Step 2: Poll console output CONTINUOUSLY
+#### Step 2: Delegate real-time monitoring to Monitor Agent
+
+**DELEGATE to Monitor Agent** with the terminal ID. The Monitor Agent will:
+- Poll `get_terminal_output` every ~10 seconds
+- Actively parse ALL console output using the test-monitoring skill
+- Track test state machine (BUILDING → DISCOVERING → EXECUTING → STEP_N → CLEANUP → COMPLETE)
+- Extract DOM knowledge (locators, iframes, elements, retry counts)
+- Detect failure signals IMMEDIATELY (Priority 0-1 patterns)
+- Track self-healing events (Priority 2 patterns)
+- Monitor retry count thresholds (Try `N` where N>30 = warning)
+- Return a structured Monitor Report with: result, steps, locators discovered, healing events, failure details
+
+**The Monitor Agent handles the detailed parsing. You handle the workflow decisions based on its report.**
+
+When the Monitor Agent returns:
+- **PASSED** → Skip to Phase 6 (Learn) with the DOM knowledge from the report
+- **FAILED** → Proceed to Phase 2 (Intercept) with the failure details from the report
+- **HEALING occurred** → Proceed to Phase 6 (Learn) with healing events from the report
+
+#### Fallback: Direct monitoring (if Monitor Agent unavailable)
+If the Monitor Agent is not available, fall back to direct polling.
 Use `get_terminal_output` to read the streaming output every few seconds.
 
 **CRITICAL: ACTIVE PARSING ON EVERY POLL — not passive "is it still running" checks.**

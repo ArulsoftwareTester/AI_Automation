@@ -1,13 +1,25 @@
-{
-  "servers": {
-    "playwright": {
-      "command": "npx",
-      "args": ["@playwright/mcp@latest"],
-      "env": {}
-    },
-    "microsoft-learn": {
-      "type": "http",
-      "url": "https://learn.microsoft.com/api/mcp"
-    }
-  }
+﻿{
+    "servers":  {
+                    "playwright":  {
+                                       "command":  "npx",
+                                       "args":  [
+                                                    "@playwright/mcp@latest"
+                                                ],
+                                       "env":  {
+
+                                               }
+                                   },
+                    "microsoft-learn":  {
+                                            "type":  "http",
+                                            "url":  "https://learn.microsoft.com/api/mcp"
+                                        },
+                    "intune-playwright":  {
+                                              "type":  "stdio",
+                                              "command":  "PlaywrightTests/McpServer/dist/McpServer.exe",
+                                              "env":  {
+                                                          "HEADED":  "true",
+                                                          "INTUNE_PROJECT_DIR":  "."
+                                                      }
+                                          }
+                }
 }

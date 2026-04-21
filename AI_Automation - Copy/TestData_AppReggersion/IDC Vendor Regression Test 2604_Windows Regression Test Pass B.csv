@@ -1,0 +1,1605 @@
+﻿ID,Work Item Type,Title,Test Step,Step Action,Step Expected,Area Path,Assigned To,State
+"952826","Test Case","[IntuneSA]:[Windows]:[Required]:[UserGroup][Appx]:Verify Install is success for all Windows devices of a user.",,,,"Intune\Mgmt\Apps","Wei Li (Centific Technologies Inc) <v-vivli@microsoft.com>","Design"
+,,,"1","Go Apps->Windows then click Create button","
+",,,
+,,,"2","Create a lob app(Appx type) and deploy it as required.","
+",,,
+,,,"3","Verify Install is success for all Windows devices of a user.","Appx should be installed successfully on device and status returned to UI",,,
+"952828","Test Case","[IntuneSA]:[Windows]:[UninstallOOB]:[Required][UserGroup]:[Appx]:Verify Install is success for required deployment and app is  pushed back after user uninstalled app OOB for all Windows devices of user",,,,"Intune\Mgmt\Apps","Wei Li (Centific Technologies Inc) <v-vivli@microsoft.com>","Design"
+,,,"1"," Deploy App as Required	
+
+","App should be installed ",,,
+,,,"2"," Manually uninstall app on device	
+
+"," ",,,
+,,,"3"," Modify App property (like description)	
+
+"," ",,,
+,,,"4","Sync on Device
+ "," App should be re-installed
+
+",,,
+"952829","Test Case","[IntuneSA]:[Windows]:[FastApp]:[Required][UserGroup][Appx/AppxBundle]:Verify app is installed during enrollment within 2 minutes for all Windows devices of user",,,,"Intune\Mgmt\Apps","Wei Li (Centific Technologies Inc) <v-vivli@microsoft.com>","Design"
+"0","Shared Steps",,"1",,,,,
+,,,"2","Publish and deploy an Appx or AppxBundle to a User Group",,,,
+,,,"3","Enroll a device for a user of the user group","App should be installed within 2 minute after enrollment is complete",,,
+"952831","Test Case","[IntuneSA]:[Windows]:[ReEnroll]:[Appx/AppxBundle]:[Required][DeviceGroup]:Verify Install is success after requried deployment and app is removed during unenroll and app is pushed back after reenroll for all Windows devices in group",,,,"Intune\Mgmt\Apps","Wei Li (Centific Technologies Inc) <v-vivli@microsoft.com>","Design"
+,,,"1"," Deploy app to All Devices or All Mobile Devices as required","App should install on devices and success should show in the Admin UI ",,,
+,,,"2","Unenroll device 
+","App should be uninstalled and status for that device should be removed from the Admin UI",,,
+,,,"3","Re-enroll device 
+","App should install on devices and success should show in the Admin UI ",,,
+"952832","Test Case","[IntuneSA]:[Windows]:[Uninstall]:[UserGroup]:[Appx]:Verify Uninstall is success for all Windows devices in Group",,,,"Intune\Mgmt\Apps","Wei Li (Centific Technologies Inc) <v-vivli@microsoft.com>","Design"
+,,,"1","Go Apps->Windows then click Create button","
+",,,
+,,,"2","Create a lob app (Appx type) and deploy it as required.","
+",,,
+,,,"3","Verify Install is success for all Windows devices of a user.","Appx should be installed successfully on device and status returned to UI",,,
+,,,"4","Change the deployment intent to Uninstall","App should be removed from the device",,,
+"952836","Test Case","[IntuneSA]:[Windows]:[InstallStatus]:[Available][UserGroup]:[Appx]:IT Pro can see installation status summary for app deployed for User group as available",,,,"Intune\Mgmt\Apps","Wei Li (Centific Technologies Inc) <v-vivli@microsoft.com>","Design"
+,,,"1","Go Apps->Windows then click Create button","
+",,,
+,,,"2","Create a lob app(Appx type) and deploy it as available.",,,,
+,,,"3","Login IWP page, find the lob app and clicking install button.
+","
+",,,
+,,,"4","Verify the app can be installed on device and the installation status shows correctly.","
+",,,
+"952839","Test Case","[IntuneSA]:[Windows]:[InstallStatus]:[Required][DeviceGroup]:[Appx]:IT Pro can see installation status summary for app deployed for Device group as required",,,,"Intune\Mgmt\Apps","Wei Li (Centific Technologies Inc) <v-vivli@microsoft.com>","Design"
+,,,"1","Go Apps->Windows then click Create button","
+",,,
+,,,"2","Create a line-of-business (LOB) app of type ""appx"" and deploy it as a required installation to a device group.","
+",,,
+,,,"3","Verify the app is installed on device and the installation status is displayed correctly.","
+",,,
+"952842","Test Case","[IntuneSA]:[Windows]:[AppDelete]:[Appx][Deployed]:IT Pro can delete app from admin console which has active deployments",,,,"Intune\Mgmt\Apps","Wei Li (Centific Technologies Inc) <v-vivli@microsoft.com>","Design"
+,,,"1","Go Apps->Windows then click Create button","
+",,,
+,,,"2","Create and deploy a lob app as available. ","
+",,,
+,,,"3","Login IWP page, find the app and clicking install button.
+","
+",,,
+,,,"4","Make sure the app has been installed on device.","
+",,,
+,,,"5","Delete the app from Ibiza page.","
+",,,
+"952843","Test Case","[IntuneSA]:[Windows]:[AppDelete]:[Appx]:IT Pro can delete app from admin console and app is removed from SSP/IWPortal and not uninstalled from device if already installed",,,,"Intune\Mgmt\Apps","Wei Li (Centific Technologies Inc) <v-vivli@microsoft.com>","Design"
+,,,"1","Create and deploy a lob app as available. 
+","
+",,,
+,,,"2","Login IWP page, find the app and clicking install button.
+","
+",,,
+,,,"3","Make sure the app has been installed on device.
+","
+",,,
+,,,"4","Delete the app from Ibiza page.
+","
+",,,
+,,,"5","Re-login IWP/SSP, to verify the app is removed from SSP/IWPortal and not uninstalled from device. ","
+",,,
+"952854","Test Case","[IntuneSA]:[Windows][Win10]:[Publish]:[MobileMSI]:[UserGroup]:Verify admin can create a MobileMSI application and deploy it",,,,"Intune\Mgmt\Apps","Wei Li (Centific Technologies Inc) <v-vivli@microsoft.com>","Design"
+,,,"1","Go Apps->Windows then click Create button","
+",,,
+,,,"2","Create a Lob app of type ""MSI"" and deploy it.","Admin can create a MobileMSI application and deploy it",,,
+"952855","Test Case","[IntuneSA]:[Windows][Win10]:[MobileMSI]:[Required][UserGroup]:Verify Install is success for all Windows devices of user",,,,"Intune\Mgmt\Apps","Wei Li (Centific Technologies Inc) <v-vivli@microsoft.com>","Design"
+,,,"1","Go Apps->Windows then click Create button","
+",,,
+,,,"2","Create a Lob app of type ""MSI"" and deploy it.
+","
+",,,
+,,,"3","Verify the app is installed on device.
+","
+",,,
+"952857","Test Case","[IntuneSA]:[Windows]:[Required]:[Win10][DeviceGroup][Universal]:Verify Install is success for all devices in group",,,,"Intune\Mgmt\Apps","Wei Li (Centific Technologies Inc) <v-vivli@microsoft.com>","Design"
+,,,"1","Go Apps->Windows then click Create button","
+",,,
+,,,"2","Create a Lob app of type ""UWP"" and deploy it to device group.
+","
+",,,
+,,,"3","Make sure the UWP app is installed on device.","
+",,,
+,,,"4",,,,,
+"952858","Test Case","[IntuneSA]:[Windows]:[Required]:[Win10][UserGroup][Universal]:Verify Install is success for all devices of a user",,,,"Intune\Mgmt\Apps","Wei Li (Centific Technologies Inc) <v-vivli@microsoft.com>","Design"
+,,,"1","Go Apps->Windows then click Create button","
+",,,
+,,,"2","Create a Lob app of type ""UWP"" and deploy it to user group.
+","
+",,,
+,,,"3","Verify the UWP app is Installed on device.
+","
+",,,
+"952861","Test Case","[IntuneSA]:[Windows]:[Uninstall]:[Win10]:[DeviceGroup]:[Universal]:Verify Uninstall is success for all devices in a group",,,,"Intune\Mgmt\Apps","Wei Li (Centific Technologies Inc) <v-vivli@microsoft.com>","Design"
+,,,"1","Go Apps->Windows then click Create button","
+",,,
+,,,"2","Create a Lob app of type ""UWP"" and deploy it to device group.
+","
+",,,
+,,,"3","Verify that the app has been successfully installed.
+","
+",,,
+,,,"4","Change deployment of A to uninstall
+","
+",,,
+,,,"5","The existing App is uninstalled successfully on device.
+","
+",,,
+"952862","Test Case","[IntuneSA]:[Windows]:[Uninstall]:[Win10]:[UserGroup]:[Universal]:Verify Uninstall is success for all devices of a user",,,,"Intune\Mgmt\Apps","Wei Li (Centific Technologies Inc) <v-vivli@microsoft.com>","Design"
+,,,"1","Go Apps->Windows then click Create button","
+",,,
+,,,"2","Create a Lob app of type ""UWP"" and deploy it to device group.
+","
+",,,
+,,,"3","Verify that the app has been successfully installed.
+","
+",,,
+,,,"4","Change deployment of A to uninstall.","
+",,,
+,,,"5","The existing App is uninstalled successfully on device.
+","
+",,,
+"952863","Test Case","[IntuneSA]:[Windows]:[Required]:[DeepLink][UserGroup]:Verify Store App is installed successfully on the device",,,,"Intune\Mgmt\Apps","Wei Li (Centific Technologies Inc) <v-vivli@microsoft.com>","Design"
+,,,"1","Go Apps->Windows then click Create button","
+",,,
+,,,"2","Select Microsoft Store app (legacy) in Select app type page.","
+",,,
+,,,"3","Fill in the required fields. 
+","
+",,,
+,,,"4","Save and deploy it as available.","
+",,,
+,,,"5","Login IWP page, find the Microsoft Store app and clicking install button.
+","
+",,,
+,,,"6","Verify Store App is installed successfully.
+","
+",,,
+"952865","Test Case","[IntuneSA]:[Windows][Win10]:[MobileMSI]:[Available][UserGroup]:Verify Install is success for all Windows devices of user",,,,"Intune\Mgmt\Apps","Wei Li (Centific Technologies Inc) <v-vivli@microsoft.com>","Design"
+,,,"1","Go Apps->Windows then click Create button","
+",,,
+,,,"2","Create a Lob app of type ""MSI"" and deploy it as available.","
+",,,
+,,,"3","Login IWP page, find the app and clicking install button.
+","
+",,,
+,,,"4","Verify the App is installed successfully on the device.
+","
+",,,
+"952866","Test Case","[IntuneSA]:[Windows][Win10]:[InstallStatus][InstallFailed]:[MobileMSI]:[Available][UserGroup]:IT Pro can see installation status summary with error code for app deployed for User group as Available as failed with error",,,,"Intune\Mgmt\Apps","Wei Li (Centific Technologies Inc) <v-vivli@microsoft.com>","Design"
+,,,"1","Go Apps->Windows then click Create button","
+",,,
+,,,"2","Upload a higher version MSI and then deploy as available ( e.g. SimpleMSI 2)","
+",,,
+,,,"3","Login IWP page and click the higher version app to install.","Higer version MSI is installed on device",,,
+,,,"4","Upload a lower version MSI and then deploy it as available to the same user group or device group ( e.g. SimpleMSI ) ","
+",,,
+,,,"5","Login IWP page and click the lower version app to install.","Lower version MSI is not installed on device and the error code should show in UI",,,
+,,,"6","Two MSI apps have been attached. you can download them.","
+",,,
+"1351419","Test Case","[IntuneSA]:[Windows]:[Publish][MSI]:Verify admin can publish an MSI",,,,"Intune\Mgmt\Apps","Wei Li (Centific Technologies Inc) <v-vivli@microsoft.com>","Design"
+,,,"1","Go Apps->Windows then click Create button","
+",,,
+,,,"2"," Publish an MSI "," Admin can publish an MSI ",,,
+"1351428","Test Case","[IntuneSA]:[Windows]:[Publish][Appx]:Verify admin can publish an appx",,,,"Intune\Mgmt\Apps","Wei Li (Centific Technologies Inc) <v-vivli@microsoft.com>","Design"
+,,,"1","Go Apps->Windows then click Create button","
+",,,
+,,,"2","Create a Lob app of type ""Appx"" and deploy it.
+
+","
+",,,
+"1351430","Test Case","[IntuneSA]:[Windows]:[Publish][Appx Bundle]:Verify admin can publish an appx bundle",,,,"Intune\Mgmt\Apps","Wei Li (Centific Technologies Inc) <v-vivli@microsoft.com>","Design"
+,,,"1","Go Apps->Windows then click Create button","
+",,,
+,,,"2","Create a Lob app of type ""AppxBundle"" and deploy it.","
+",,,
+"1351438","Test Case","[IntuneSA]:[Windows]:[AppUpdate]:[Appx]:[Required][UserGroup]:Verify that App V1  deployed as required is installed for all devices of User. When App V1 is updated to V2, V2 is updated on all devices with V1 installed.",,,,"Intune\Mgmt\Apps","Wei Li (Centific Technologies Inc) <v-vivli@microsoft.com>","Design"
+"1347086","Shared Steps",,"1","Publish LOB App",,,,
+,,,"1.1","Click Apps","Apps listing blade opens",,,
+,,,"1.2","Click macOS"," macOS  blade opens ",,,
+,,,"1.3"," Click ""+ Create"""," Add App blade opens",,,
+,,,"1.4"," Click ""Select app type""","dropdown list opens",,,
+,,,"1.5","Select ""Line-of-business app"" from
+dropdown list "," ""App package file"" and ""App
+information"" options are added to the blade",,,
+,,,"1.6","Click ""Select"" in the ""App
+package file"" option "," ""App package file"" blade opens",,,
+,,,"1.7","Click ""Select app package file"" in the ""App
+package file"" option "," ""Select app package file"" blade opens",,,
+,,,"1.8","Click ""Select a file"" in the ""App
+package file"" option "," ""Select a file"" blade opens",,,
+,,,"1.9","Select ""Line-of-business app"" from
+"," LOB App show in ""App package file"" blade ",,,
+,,,"1.1","Click ""OK"" in the ""App
+package file"" option "," ""App information"" blade opens",,,
+,,,"1.11"," Fill out required fields","
+",,,
+,,,"1.12"," If the test case calls for it add info to
+optional fields","
+",,,
+,,,"1.13"," Click OK at the bottom","""App information"" blade closes ",,,
+,,,"1.1400000000000001","Click ""Add"" button at the bottom of
+""Add app"" ","App is successfully Published, success toast
+message is shown ",,,
+"1347081","Shared Steps",,"2","Deploy App",,,,
+,,,"2.1","On the Assignments tab in create app
+or
+In Mobile Apps -> Apps click on the app you wish to deploy -> Properties - Click Edit next to Assignments","""Assignments"" blade will open showing any current assignments
+",,,
+,,,"2.2"," Click ""+ Select groups"" button","""Select groups"" blade will open showing a list of previously created groups
+",,,
+,,,"2.3","Select 1 or more goups as per test case
+requirements ","Check box next to group will show a check mark ",,,
+,,,"2.4","Click ""Select"" button at the bottom of
+the ""Select groups"" blade ","New groups selected will show in the ""Assignments"" blade",,,
+,,,"2.5"," For each selected group, in the ""Type""
+column select the intent as per the test case requirements"," ""Save"" button at the top is enabled",,,
+,,,"2.6"," Click ""Save"" button at the top of the
+""Assignments"" blade"," Successful toast message",,,
+"1347106","Shared Steps",,"3","Update App Binary",,,,
+,,,"3.1"," In Mobile Apps -> Apps click on the app you wish to deploy"," App blade for that app will open",,,
+,,,"3.2"," Click ""Properties"""," ""Properties"" blade will open",,,
+,,,"3.3"," Click ""App package file"" option"," ""App package file"" blade opens",,,
+,,,"3.4"," Select a file using the browse button","Once selected the filename will appear in the ""Select a file"" text box 
+ Name, Platform, App Version and Size should be filled out correctly",,,
+,,,"3.5"," Click OK at the bottom"," ""App package file"" blade closes",,,
+,,,"3.6"," Click ""App information"" option"," ""App information"" blade opens",,,
+,,,"3.7"," If the test case calls for it, make changes to specified fields "," ",,,
+,,,"3.8"," Click OK at the bottom","""App information"" blade closes ",,,
+,,,"3.9"," Click ""Save"" button at the bottom of ""Add app""
+"," App is successfully updated, you should see successful toast messages that new binary was uploaded",,,
+,,,"4","V2 of app should be successfully saved ","All devices with App v1 should be upgraded to App V2 ",,,
+"1351441","Test Case","[IntuneSA]:[Windows]:[Appupdate]:[Universal]:[Required][DeviceGroup]:App V1 is installed on device. Now V1 is updated to V2. Verify V1 is updated to V2",,,,"Intune\Mgmt\Apps","Wei Li (Centific Technologies Inc) <v-vivli@microsoft.com>","Design"
+"1347086","Shared Steps",,"1","Publish LOB App",,,,
+,,,"1.1","Click Apps","Apps listing blade opens",,,
+,,,"1.2","Click macOS"," macOS  blade opens ",,,
+,,,"1.3"," Click ""+ Create"""," Add App blade opens",,,
+,,,"1.4"," Click ""Select app type""","dropdown list opens",,,
+,,,"1.5","Select ""Line-of-business app"" from
+dropdown list "," ""App package file"" and ""App
+information"" options are added to the blade",,,
+,,,"1.6","Click ""Select"" in the ""App
+package file"" option "," ""App package file"" blade opens",,,
+,,,"1.7","Click ""Select app package file"" in the ""App
+package file"" option "," ""Select app package file"" blade opens",,,
+,,,"1.8","Click ""Select a file"" in the ""App
+package file"" option "," ""Select a file"" blade opens",,,
+,,,"1.9","Select ""Line-of-business app"" from
+"," LOB App show in ""App package file"" blade ",,,
+,,,"1.1","Click ""OK"" in the ""App
+package file"" option "," ""App information"" blade opens",,,
+,,,"1.11"," Fill out required fields","
+",,,
+,,,"1.12"," If the test case calls for it add info to
+optional fields","
+",,,
+,,,"1.13"," Click OK at the bottom","""App information"" blade closes ",,,
+,,,"1.1400000000000001","Click ""Add"" button at the bottom of
+""Add app"" ","App is successfully Published, success toast
+message is shown ",,,
+"1347081","Shared Steps",,"2","Deploy App",,,,
+,,,"2.1","On the Assignments tab in create app
+or
+In Mobile Apps -> Apps click on the app you wish to deploy -> Properties - Click Edit next to Assignments","""Assignments"" blade will open showing any current assignments
+",,,
+,,,"2.2"," Click ""+ Select groups"" button","""Select groups"" blade will open showing a list of previously created groups
+",,,
+,,,"2.3","Select 1 or more goups as per test case
+requirements ","Check box next to group will show a check mark ",,,
+,,,"2.4","Click ""Select"" button at the bottom of
+the ""Select groups"" blade ","New groups selected will show in the ""Assignments"" blade",,,
+,,,"2.5"," For each selected group, in the ""Type""
+column select the intent as per the test case requirements"," ""Save"" button at the top is enabled",,,
+,,,"2.6"," Click ""Save"" button at the top of the
+""Assignments"" blade"," Successful toast message",,,
+"1347106","Shared Steps",,"3","Update App Binary",,,,
+,,,"3.1"," In Mobile Apps -> Apps click on the app you wish to deploy"," App blade for that app will open",,,
+,,,"3.2"," Click ""Properties"""," ""Properties"" blade will open",,,
+,,,"3.3"," Click ""App package file"" option"," ""App package file"" blade opens",,,
+,,,"3.4"," Select a file using the browse button","Once selected the filename will appear in the ""Select a file"" text box 
+ Name, Platform, App Version and Size should be filled out correctly",,,
+,,,"3.5"," Click OK at the bottom"," ""App package file"" blade closes",,,
+,,,"3.6"," Click ""App information"" option"," ""App information"" blade opens",,,
+,,,"3.7"," If the test case calls for it, make changes to specified fields "," ",,,
+,,,"3.8"," Click OK at the bottom","""App information"" blade closes ",,,
+,,,"3.9"," Click ""Save"" button at the bottom of ""Add app""
+"," App is successfully updated, you should see successful toast messages that new binary was uploaded",,,
+,,,"4","V2 of app should be successfully saved  "," All devices with App V1 should be upgraded to App V2",,,
+"1351442","Test Case","[IntuneSA]:[Windows]:[Appupdate]:[Universal]:[Required][UserGroup]:App V1 is installed on device. Now V1 is updated to V2. Verify V1 is updated to V2",,,,"Intune\Mgmt\Apps","Wei Li (Centific Technologies Inc) <v-vivli@microsoft.com>","Design"
+"1347086","Shared Steps",,"1","Publish LOB App",,,,
+,,,"1.1","Click Apps","Apps listing blade opens",,,
+,,,"1.2","Click macOS"," macOS  blade opens ",,,
+,,,"1.3"," Click ""+ Create"""," Add App blade opens",,,
+,,,"1.4"," Click ""Select app type""","dropdown list opens",,,
+,,,"1.5","Select ""Line-of-business app"" from
+dropdown list "," ""App package file"" and ""App
+information"" options are added to the blade",,,
+,,,"1.6","Click ""Select"" in the ""App
+package file"" option "," ""App package file"" blade opens",,,
+,,,"1.7","Click ""Select app package file"" in the ""App
+package file"" option "," ""Select app package file"" blade opens",,,
+,,,"1.8","Click ""Select a file"" in the ""App
+package file"" option "," ""Select a file"" blade opens",,,
+,,,"1.9","Select ""Line-of-business app"" from
+"," LOB App show in ""App package file"" blade ",,,
+,,,"1.1","Click ""OK"" in the ""App
+package file"" option "," ""App information"" blade opens",,,
+,,,"1.11"," Fill out required fields","
+",,,
+,,,"1.12"," If the test case calls for it add info to
+optional fields","
+",,,
+,,,"1.13"," Click OK at the bottom","""App information"" blade closes ",,,
+,,,"1.1400000000000001","Click ""Add"" button at the bottom of
+""Add app"" ","App is successfully Published, success toast
+message is shown ",,,
+"1347081","Shared Steps",,"2","Deploy App",,,,
+,,,"2.1","On the Assignments tab in create app
+or
+In Mobile Apps -> Apps click on the app you wish to deploy -> Properties - Click Edit next to Assignments","""Assignments"" blade will open showing any current assignments
+",,,
+,,,"2.2"," Click ""+ Select groups"" button","""Select groups"" blade will open showing a list of previously created groups
+",,,
+,,,"2.3","Select 1 or more goups as per test case
+requirements ","Check box next to group will show a check mark ",,,
+,,,"2.4","Click ""Select"" button at the bottom of
+the ""Select groups"" blade ","New groups selected will show in the ""Assignments"" blade",,,
+,,,"2.5"," For each selected group, in the ""Type""
+column select the intent as per the test case requirements"," ""Save"" button at the top is enabled",,,
+,,,"2.6"," Click ""Save"" button at the top of the
+""Assignments"" blade"," Successful toast message",,,
+,,,"3","One device go Company Portal or IW Portal and install app  "," App V1 should successfully install, verify success status shows in Ibiza Console",,,
+"1347106","Shared Steps",,"4","Update App Binary",,,,
+,,,"4.1"," In Mobile Apps -> Apps click on the app you wish to deploy"," App blade for that app will open",,,
+,,,"4.2"," Click ""Properties"""," ""Properties"" blade will open",,,
+,,,"4.3"," Click ""App package file"" option"," ""App package file"" blade opens",,,
+,,,"4.4"," Select a file using the browse button","Once selected the filename will appear in the ""Select a file"" text box 
+ Name, Platform, App Version and Size should be filled out correctly",,,
+,,,"4.5"," Click OK at the bottom"," ""App package file"" blade closes",,,
+,,,"4.6"," Click ""App information"" option"," ""App information"" blade opens",,,
+,,,"4.7"," If the test case calls for it, make changes to specified fields "," ",,,
+,,,"4.8"," Click OK at the bottom","""App information"" blade closes ",,,
+,,,"4.9"," Click ""Save"" button at the bottom of ""Add app""
+"," App is successfully updated, you should see successful toast messages that new binary was uploaded",,,
+,,,"5","V2 of app should be successfully saved  ","All devices with App V1 should be upgraded to App V2 ",,,
+"1731001","Test Case","[IntuneSA]:[Windows]:[AppUpdate][V1>>V2>>V3]:[Appx/AppxBundle]:[Required][UserGroup]:Verify App update for different versions is updated for all devices of user. [V1 installed, V1 updated by V2 : V2 installed, V2 updated by V3: V3 installed]",,,,"Intune\Mgmt\Apps","Wei Li (Centific Technologies Inc) <v-vivli@microsoft.com>","Design"
+"1347086","Shared Steps",,"1","Publish LOB App",,,,
+,,,"1.1","Click Apps","Apps listing blade opens",,,
+,,,"1.2","Click macOS"," macOS  blade opens ",,,
+,,,"1.3"," Click ""+ Create"""," Add App blade opens",,,
+,,,"1.4"," Click ""Select app type""","dropdown list opens",,,
+,,,"1.5","Select ""Line-of-business app"" from
+dropdown list "," ""App package file"" and ""App
+information"" options are added to the blade",,,
+,,,"1.6","Click ""Select"" in the ""App
+package file"" option "," ""App package file"" blade opens",,,
+,,,"1.7","Click ""Select app package file"" in the ""App
+package file"" option "," ""Select app package file"" blade opens",,,
+,,,"1.8","Click ""Select a file"" in the ""App
+package file"" option "," ""Select a file"" blade opens",,,
+,,,"1.9","Select ""Line-of-business app"" from
+"," LOB App show in ""App package file"" blade ",,,
+,,,"1.1","Click ""OK"" in the ""App
+package file"" option "," ""App information"" blade opens",,,
+,,,"1.11"," Fill out required fields","
+",,,
+,,,"1.12"," If the test case calls for it add info to
+optional fields","
+",,,
+,,,"1.13"," Click OK at the bottom","""App information"" blade closes ",,,
+,,,"1.1400000000000001","Click ""Add"" button at the bottom of
+""Add app"" ","App is successfully Published, success toast
+message is shown ",,,
+"1347081","Shared Steps",,"2","Deploy App",,,,
+,,,"2.1","On the Assignments tab in create app
+or
+In Mobile Apps -> Apps click on the app you wish to deploy -> Properties - Click Edit next to Assignments","""Assignments"" blade will open showing any current assignments
+",,,
+,,,"2.2"," Click ""+ Select groups"" button","""Select groups"" blade will open showing a list of previously created groups
+",,,
+,,,"2.3","Select 1 or more goups as per test case
+requirements ","Check box next to group will show a check mark ",,,
+,,,"2.4","Click ""Select"" button at the bottom of
+the ""Select groups"" blade ","New groups selected will show in the ""Assignments"" blade",,,
+,,,"2.5"," For each selected group, in the ""Type""
+column select the intent as per the test case requirements"," ""Save"" button at the top is enabled",,,
+,,,"2.6"," Click ""Save"" button at the top of the
+""Assignments"" blade"," Successful toast message",,,
+"1347106","Shared Steps",,"3","Update App Binary",,,,
+,,,"3.1"," In Mobile Apps -> Apps click on the app you wish to deploy"," App blade for that app will open",,,
+,,,"3.2"," Click ""Properties"""," ""Properties"" blade will open",,,
+,,,"3.3"," Click ""App package file"" option"," ""App package file"" blade opens",,,
+,,,"3.4"," Select a file using the browse button","Once selected the filename will appear in the ""Select a file"" text box 
+ Name, Platform, App Version and Size should be filled out correctly",,,
+,,,"3.5"," Click OK at the bottom"," ""App package file"" blade closes",,,
+,,,"3.6"," Click ""App information"" option"," ""App information"" blade opens",,,
+,,,"3.7"," If the test case calls for it, make changes to specified fields "," ",,,
+,,,"3.8"," Click OK at the bottom","""App information"" blade closes ",,,
+,,,"3.9"," Click ""Save"" button at the bottom of ""Add app""
+"," App is successfully updated, you should see successful toast messages that new binary was uploaded",,,
+,,,"4","V2 of app should be successfully saved","All devices with App V1 should be upgraded to App V2",,,
+"1347106","Shared Steps",,"5","Update App Binary",,,,
+,,,"5.1"," In Mobile Apps -> Apps click on the app you wish to deploy"," App blade for that app will open",,,
+,,,"5.2"," Click ""Properties"""," ""Properties"" blade will open",,,
+,,,"5.3"," Click ""App package file"" option"," ""App package file"" blade opens",,,
+,,,"5.4"," Select a file using the browse button","Once selected the filename will appear in the ""Select a file"" text box 
+ Name, Platform, App Version and Size should be filled out correctly",,,
+,,,"5.5"," Click OK at the bottom"," ""App package file"" blade closes",,,
+,,,"5.6"," Click ""App information"" option"," ""App information"" blade opens",,,
+,,,"5.7"," If the test case calls for it, make changes to specified fields "," ",,,
+,,,"5.8"," Click OK at the bottom","""App information"" blade closes ",,,
+,,,"5.9"," Click ""Save"" button at the bottom of ""Add app""
+"," App is successfully updated, you should see successful toast messages that new binary was uploaded",,,
+,,,"6","V3 of app should be successfully saved","All devices with App V2 should be upgraded to App V3",,,
+"1731005","Test Case","[IntuneSA]:[Windows]:[AppUpdate][V1 >>V2]:[Appx/AppxBundle]:[Available][UserGroup]:App V1 is deployed as available and installed on the device. Now V1 is updated to V2. Ensure that V2 is installed on the device.",,,,"Intune\Mgmt\Apps","Wei Li (Centific Technologies Inc) <v-vivli@microsoft.com>","Design"
+"1347086","Shared Steps",,"1","Publish LOB App",,,,
+,,,"1.1","Click Apps","Apps listing blade opens",,,
+,,,"1.2","Click macOS"," macOS  blade opens ",,,
+,,,"1.3"," Click ""+ Create"""," Add App blade opens",,,
+,,,"1.4"," Click ""Select app type""","dropdown list opens",,,
+,,,"1.5","Select ""Line-of-business app"" from
+dropdown list "," ""App package file"" and ""App
+information"" options are added to the blade",,,
+,,,"1.6","Click ""Select"" in the ""App
+package file"" option "," ""App package file"" blade opens",,,
+,,,"1.7","Click ""Select app package file"" in the ""App
+package file"" option "," ""Select app package file"" blade opens",,,
+,,,"1.8","Click ""Select a file"" in the ""App
+package file"" option "," ""Select a file"" blade opens",,,
+,,,"1.9","Select ""Line-of-business app"" from
+"," LOB App show in ""App package file"" blade ",,,
+,,,"1.1","Click ""OK"" in the ""App
+package file"" option "," ""App information"" blade opens",,,
+,,,"1.11"," Fill out required fields","
+",,,
+,,,"1.12"," If the test case calls for it add info to
+optional fields","
+",,,
+,,,"1.13"," Click OK at the bottom","""App information"" blade closes ",,,
+,,,"1.1400000000000001","Click ""Add"" button at the bottom of
+""Add app"" ","App is successfully Published, success toast
+message is shown ",,,
+"1347081","Shared Steps",,"2","Deploy App",,,,
+,,,"2.1","On the Assignments tab in create app
+or
+In Mobile Apps -> Apps click on the app you wish to deploy -> Properties - Click Edit next to Assignments","""Assignments"" blade will open showing any current assignments
+",,,
+,,,"2.2"," Click ""+ Select groups"" button","""Select groups"" blade will open showing a list of previously created groups
+",,,
+,,,"2.3","Select 1 or more goups as per test case
+requirements ","Check box next to group will show a check mark ",,,
+,,,"2.4","Click ""Select"" button at the bottom of
+the ""Select groups"" blade ","New groups selected will show in the ""Assignments"" blade",,,
+,,,"2.5"," For each selected group, in the ""Type""
+column select the intent as per the test case requirements"," ""Save"" button at the top is enabled",,,
+,,,"2.6"," Click ""Save"" button at the top of the
+""Assignments"" blade"," Successful toast message",,,
+"1347106","Shared Steps",,"3","Update App Binary",,,,
+,,,"3.1"," In Mobile Apps -> Apps click on the app you wish to deploy"," App blade for that app will open",,,
+,,,"3.2"," Click ""Properties"""," ""Properties"" blade will open",,,
+,,,"3.3"," Click ""App package file"" option"," ""App package file"" blade opens",,,
+,,,"3.4"," Select a file using the browse button","Once selected the filename will appear in the ""Select a file"" text box 
+ Name, Platform, App Version and Size should be filled out correctly",,,
+,,,"3.5"," Click OK at the bottom"," ""App package file"" blade closes",,,
+,,,"3.6"," Click ""App information"" option"," ""App information"" blade opens",,,
+,,,"3.7"," If the test case calls for it, make changes to specified fields "," ",,,
+,,,"3.8"," Click OK at the bottom","""App information"" blade closes ",,,
+,,,"3.9"," Click ""Save"" button at the bottom of ""Add app""
+"," App is successfully updated, you should see successful toast messages that new binary was uploaded",,,
+,,,"4","V2 of app should be successfully saved","All devices with App V1 should be upgraded to App V2",,,
+"1731030","Test Case","[IntuneSA]:[Ibiza]:[Windows][Win10RS2+]:[OfficeCSP][UI]:Verify that the text of the options on the ""Add app"" blade changes when the respective blade is opened filled out and saved",,,,"Intune\Mgmt\MAM","Wei Li (Centific Technologies Inc) <v-vivli@microsoft.com>","Design"
+,,,"1","Create an O365 app.","
+",,,
+,,,"2","Re-edit the properties of the O365 app, open the App suite configuration edit page.","
+",,,
+,,,"3","Verify that every text of the options can be changed.
+","
+",,,
+"1731055","Test Case","[IntuneSA]:[Ibiza]:[Windows][Win10RS2+]:[OfficeCSP][InstallStatus]:[ProPlus]:[Required][DeviceGroup]:Verify successful ProPlus (multiple apps) installation is reported successfully in the UI for all Devices in the Group",,,,"Intune\Mgmt\MAM","Wei Li (Centific Technologies Inc) <v-vivli@microsoft.com>","Design"
+,,,"1","Go Apps->Windows then click Create button","
+",,,
+,,,"2","Select the 'Microsoft 365 Apps for Windows 10 and later' option from the 'Select App type'.","
+",,,
+,,,"3","For the apps to select, check all 10 of the apps (Access to Word) above the line in the Configure app suite blade.","See attachment (SelectOfficeApps.png)",,,
+,,,"4","Select Default file format and Update channel in the App suite information, ","See attachment (AppSuiteInformation.png)",,,
+,,,"5","For the group select a device group to assign the app to and make the ""TYPE"" Required.","
+",,,
+"3777196","Shared Steps",,"6","Deploy App to group(s)",,,,
+,,,"6.1","Select the app in the list","List item should become highlighted and the Overview blade for the app should open.",,,
+,,,"6.2","Click on ""Assignments"" in the Overview blade.","The status from the Overview should close and the UI to select groups should appear. The ""Save"" and ""Discard"" buttons should be disabled if there are no groups.",,,
+,,,"6.3","Click on ""+ Select groups""","The ""Select groups"" blade should open. The ""Select"" button should be disabled.",,,
+,,,"6.4","Select groups","Click on one or more groups. A checked checkbox should appear next to the selected groups. When one or more groups are selected, the ""Select"" button should become enabled.",,,
+,,,"6.5","Click on the ""Select"" button in the ""Select groups"" blade","The ""Select groups"" blade should close. In the list view, all selected groups should be listed.",,,
+,,,"6.6","Select the assignment ""TYPE"" for each group using the combo box","When all groups have a type set, the Save and discard buttons should be enabled.",,,
+,,,"6.7","Click on the ""Save"" button.","A bar indicating ""Saving"" should briefly appear. A popup with a green check mark indicating ""Success"" should also briefly appear.",,,
+"3777227","Shared Steps",,"7","Verify that the app(s) have been installed",,,,
+,,,"7.1","Verify that the app(s) have been installed","App should be installed on the device.",,,
+"3777225","Shared Steps",,"8","Verify that the app installation for all devices is reported in the Ibiza UI.",,,,
+,,,"8.1","Verify that the app installation for all devices is reported in the Ibiza UI.",,,,
+"1731071","Test Case","[IntuneSA]:[Ibiza]:[Windows][Win10RS2+]:[OfficeCSP][InstallStatus]:[Visio]:[Required][UserGroup]:Verify successful Visio installation is reported successfully in the UI for all Users in the Group",,,,"Intune\Mgmt\MAM","Wei Li (Centific Technologies Inc) <v-vivli@microsoft.com>","Design"
+,,,"1","For the apps to select on the 'Configure app bundle' blade, select Publisher and Visio.",,,,
+"3777187","Shared Steps",,"2","Add Office 365 Pro Plus Suite App",,,,
+,,,"2.1","Select the 'Office 365 Pro Plus Suite (Windows 10) option from the 'App type' combo box on the 'Add app' blade.","Below the 'App type' combo box Information appears and 3 selectors ('Configure app bundle', 'App Information', and 'App settings') appear below the information. The 'Add' button at the bottom of the 'Add app' blade should be disabled.",,,
+,,,"2.2","Click on the ""Configure app bundle"" selector","The 'Configure app bundle' blade opens and the OK button at the bottom of that blade is disabled. The 'Add' button at the bottom of the Add app blade should be disabled.",,,
+,,,"2.3","Select one or more Office 365 apps as required by the test case","The Check boxes next to the selected apps should have a check mark and the ""OK"" button at the bottom should enable after at least one Office 265 app has been checked.",,,
+,,,"2.4","Click ""OK"" button at the bottom of ""Configure app bundle"" blade","""Configure app bundle"" blade should close and the ""Configure app bundle"" option on the ""Add app"" blade should update with ""X apps selected"" text where ""X"" is the number of apps you selected. The 'Add' button at the bottom of the 'Add app' blade should be disabled.",,,
+,,,"2.5","Click on the ""App Information"" selector","The ""App information"" blade should open. The ""OK"" button at the bottom of the blade should be disabled. The ""Bundle name"" and ""Bundle description"" text boxes should have a red ""!"" after them. ""Publisher"" should have a green check mark. If you scroll down, an image should already be displayed for the ""Logo"" The ""Add"" button at the bottom of the ""Add app"" blade should be disabled.",,,
+,,,"2.6","Set values for the ""App Information""","After setting the ""Bundle name"", ""Bundle description"", and ""Publisher"" and leaving the text box, a green check mark should appear next to the item. When a valid URL (or no value) is entered for the ""Information URL"" or ""Privacy URL"" a green checkbox should appear. If any of these items is not valid as described, a red ""!"" should appear next to the text box for the item. If any red ""!"" appear on the blade, the ""OK"" button at the bottom should be disabled, otherwise it should be enabled.",,,
+,,,"2.7","Click ""OK"" button at the bottom of the App information blade","The text below ""App information"" in the selector should change to ""App bundle information is configured"". The ""Add"" button should be disabled.",,,
+,,,"2.8","Click on the ""App settings"" selector","The ""App settings"" blade should open. The ""Update channel"" combo box should have a red ""!"" next to it. The ""OK"" button should be disabled. The ""Add"" button at the bottom of the ""Add app"" blade should be disabled.",,,
+,,,"2.9","Set values for the ""App settings""  blade","After the ""Update channel"" combo box has been set, the red ""!"" after it should turn to a green check mark and the ""OK"" button at the bottom will become enabled.",,,
+,,,"2.1","Click on the ""Languages"" selector","The ""Languages"" blade should open. The list of languages should be displayed with a checkbox for each. The ""OK"" button for this blade and also the ""App settings"" blade should be enabled.",,,
+,,,"2.11","Set values for the ""Languages"" blade","After clicking on the checkbox for a language, a checkmark should appear in the box. The ""OK"" button at the bottom should stay enabled.",,,
+,,,"2.12","Click on the ""OK"" button for the ""Languages"" blade","The ""Languages"" blade should close.",,,
+,,,"2.13","Click on the ""OK"" button for the ""App settings"" blade","The ""App settings"" blade should close. The ""Add"" button at the bottom of the ""Add app"" blade should be enabled.",,,
+,,,"2.14","Click on the ""Add"" button on the ""Add app"" blade","A bar indicating ""Saving"" may appear. The ""Add app"" blade should close. A pop up with a green check mark and Application saved should appear briefly and close. The Overview blade for the app should appear, with the ""Bundle Name"" that was set for the app appearing in the title of the blade (""Test A - Overview"" if the ""Bundle Name"" was ""Test A"", for example). The app should also appear in the app list (this may require the ""Load more"" at the bottom of the page to be clicked on.",,,
+,,,"2.15",,,,,
+,,,"3","For the group select a user group to assign the app to and make the ""TYPE"" Required.",,,,
+"3777196","Shared Steps",,"4","Deploy App to group(s)",,,,
+,,,"4.1","Select the app in the list","List item should become highlighted and the Overview blade for the app should open.",,,
+,,,"4.2","Click on ""Assignments"" in the Overview blade.","The status from the Overview should close and the UI to select groups should appear. The ""Save"" and ""Discard"" buttons should be disabled if there are no groups.",,,
+,,,"4.3","Click on ""+ Select groups""","The ""Select groups"" blade should open. The ""Select"" button should be disabled.",,,
+,,,"4.4","Select groups","Click on one or more groups. A checked checkbox should appear next to the selected groups. When one or more groups are selected, the ""Select"" button should become enabled.",,,
+,,,"4.5","Click on the ""Select"" button in the ""Select groups"" blade","The ""Select groups"" blade should close. In the list view, all selected groups should be listed.",,,
+,,,"4.6","Select the assignment ""TYPE"" for each group using the combo box","When all groups have a type set, the Save and discard buttons should be enabled.",,,
+,,,"4.7","Click on the ""Save"" button.","A bar indicating ""Saving"" should briefly appear. A popup with a green check mark indicating ""Success"" should also briefly appear.",,,
+"3777227","Shared Steps",,"5","Verify that the app(s) have been installed",,,,
+,,,"5.1","Verify that the app(s) have been installed","App should be installed on the device.",,,
+"3777226","Shared Steps",,"6","Verify that the app installation for all users is reported in the Ibiza UI",,,,
+,,,"6.1","Verify that the app installation for all users is reported in the Ibiza UI.",,,,
+,,,"7",,,,,
+"1731075","Test Case","[IntuneSA]:[Ibiza]:[Windows][Win10RS2+]:[OfficeCSP][InstallStatus]:[Project]:[Required][UserGroup]:Verify successful Project installation is reported successfully in the UI for all Users in the Group",,,,"Intune\Mgmt\MAM","Wei Li (Centific Technologies Inc) <v-vivli@microsoft.com>","Design"
+,,,"1","For the apps to select on the 'Configure app bundle' blade, select OneNote and Project.",,,,
+"3777187","Shared Steps",,"2","Add Office 365 Pro Plus Suite App",,,,
+,,,"2.1","Select the 'Office 365 Pro Plus Suite (Windows 10) option from the 'App type' combo box on the 'Add app' blade.","Below the 'App type' combo box Information appears and 3 selectors ('Configure app bundle', 'App Information', and 'App settings') appear below the information. The 'Add' button at the bottom of the 'Add app' blade should be disabled.",,,
+,,,"2.2","Click on the ""Configure app bundle"" selector","The 'Configure app bundle' blade opens and the OK button at the bottom of that blade is disabled. The 'Add' button at the bottom of the Add app blade should be disabled.",,,
+,,,"2.3","Select one or more Office 365 apps as required by the test case","The Check boxes next to the selected apps should have a check mark and the ""OK"" button at the bottom should enable after at least one Office 265 app has been checked.",,,
+,,,"2.4","Click ""OK"" button at the bottom of ""Configure app bundle"" blade","""Configure app bundle"" blade should close and the ""Configure app bundle"" option on the ""Add app"" blade should update with ""X apps selected"" text where ""X"" is the number of apps you selected. The 'Add' button at the bottom of the 'Add app' blade should be disabled.",,,
+,,,"2.5","Click on the ""App Information"" selector","The ""App information"" blade should open. The ""OK"" button at the bottom of the blade should be disabled. The ""Bundle name"" and ""Bundle description"" text boxes should have a red ""!"" after them. ""Publisher"" should have a green check mark. If you scroll down, an image should already be displayed for the ""Logo"" The ""Add"" button at the bottom of the ""Add app"" blade should be disabled.",,,
+,,,"2.6","Set values for the ""App Information""","After setting the ""Bundle name"", ""Bundle description"", and ""Publisher"" and leaving the text box, a green check mark should appear next to the item. When a valid URL (or no value) is entered for the ""Information URL"" or ""Privacy URL"" a green checkbox should appear. If any of these items is not valid as described, a red ""!"" should appear next to the text box for the item. If any red ""!"" appear on the blade, the ""OK"" button at the bottom should be disabled, otherwise it should be enabled.",,,
+,,,"2.7","Click ""OK"" button at the bottom of the App information blade","The text below ""App information"" in the selector should change to ""App bundle information is configured"". The ""Add"" button should be disabled.",,,
+,,,"2.8","Click on the ""App settings"" selector","The ""App settings"" blade should open. The ""Update channel"" combo box should have a red ""!"" next to it. The ""OK"" button should be disabled. The ""Add"" button at the bottom of the ""Add app"" blade should be disabled.",,,
+,,,"2.9","Set values for the ""App settings""  blade","After the ""Update channel"" combo box has been set, the red ""!"" after it should turn to a green check mark and the ""OK"" button at the bottom will become enabled.",,,
+,,,"2.1","Click on the ""Languages"" selector","The ""Languages"" blade should open. The list of languages should be displayed with a checkbox for each. The ""OK"" button for this blade and also the ""App settings"" blade should be enabled.",,,
+,,,"2.11","Set values for the ""Languages"" blade","After clicking on the checkbox for a language, a checkmark should appear in the box. The ""OK"" button at the bottom should stay enabled.",,,
+,,,"2.12","Click on the ""OK"" button for the ""Languages"" blade","The ""Languages"" blade should close.",,,
+,,,"2.13","Click on the ""OK"" button for the ""App settings"" blade","The ""App settings"" blade should close. The ""Add"" button at the bottom of the ""Add app"" blade should be enabled.",,,
+,,,"2.14","Click on the ""Add"" button on the ""Add app"" blade","A bar indicating ""Saving"" may appear. The ""Add app"" blade should close. A pop up with a green check mark and Application saved should appear briefly and close. The Overview blade for the app should appear, with the ""Bundle Name"" that was set for the app appearing in the title of the blade (""Test A - Overview"" if the ""Bundle Name"" was ""Test A"", for example). The app should also appear in the app list (this may require the ""Load more"" at the bottom of the page to be clicked on.",,,
+,,,"2.15",,,,,
+,,,"3","For the group select a user group to assign the app to and make the ""TYPE"" Required.",,,,
+"3777196","Shared Steps",,"4","Deploy App to group(s)",,,,
+,,,"4.1","Select the app in the list","List item should become highlighted and the Overview blade for the app should open.",,,
+,,,"4.2","Click on ""Assignments"" in the Overview blade.","The status from the Overview should close and the UI to select groups should appear. The ""Save"" and ""Discard"" buttons should be disabled if there are no groups.",,,
+,,,"4.3","Click on ""+ Select groups""","The ""Select groups"" blade should open. The ""Select"" button should be disabled.",,,
+,,,"4.4","Select groups","Click on one or more groups. A checked checkbox should appear next to the selected groups. When one or more groups are selected, the ""Select"" button should become enabled.",,,
+,,,"4.5","Click on the ""Select"" button in the ""Select groups"" blade","The ""Select groups"" blade should close. In the list view, all selected groups should be listed.",,,
+,,,"4.6","Select the assignment ""TYPE"" for each group using the combo box","When all groups have a type set, the Save and discard buttons should be enabled.",,,
+,,,"4.7","Click on the ""Save"" button.","A bar indicating ""Saving"" should briefly appear. A popup with a green check mark indicating ""Success"" should also briefly appear.",,,
+"3777227","Shared Steps",,"5","Verify that the app(s) have been installed",,,,
+,,,"5.1","Verify that the app(s) have been installed","App should be installed on the device.",,,
+"3777226","Shared Steps",,"6","Verify that the app installation for all users is reported in the Ibiza UI",,,,
+,,,"6.1","Verify that the app installation for all users is reported in the Ibiza UI.",,,,
+,,,"7",,,,,
+"1731081","Test Case","[IntuneSA]:[Ibiza]:[Windows][Win10RS2+]:[OfficeCSP][Uninstall]:[ProPlus]:[Required][DeviceGroup]:Verify Project can be uninstalled successfully",,,,"Intune\Mgmt\MAM","Wei Li (Centific Technologies Inc) <v-vivli@microsoft.com>","Design"
+,,,"1","For the apps to deploy on the 'Configure app bundle' blade, select OneDrive for Business (Groove) and Project",,,,
+"3777187","Shared Steps",,"2","Add Office 365 Pro Plus Suite App",,,,
+,,,"2.1","Select the 'Office 365 Pro Plus Suite (Windows 10) option from the 'App type' combo box on the 'Add app' blade.","Below the 'App type' combo box Information appears and 3 selectors ('Configure app bundle', 'App Information', and 'App settings') appear below the information. The 'Add' button at the bottom of the 'Add app' blade should be disabled.",,,
+,,,"2.2","Click on the ""Configure app bundle"" selector","The 'Configure app bundle' blade opens and the OK button at the bottom of that blade is disabled. The 'Add' button at the bottom of the Add app blade should be disabled.",,,
+,,,"2.3","Select one or more Office 365 apps as required by the test case","The Check boxes next to the selected apps should have a check mark and the ""OK"" button at the bottom should enable after at least one Office 265 app has been checked.",,,
+,,,"2.4","Click ""OK"" button at the bottom of ""Configure app bundle"" blade","""Configure app bundle"" blade should close and the ""Configure app bundle"" option on the ""Add app"" blade should update with ""X apps selected"" text where ""X"" is the number of apps you selected. The 'Add' button at the bottom of the 'Add app' blade should be disabled.",,,
+,,,"2.5","Click on the ""App Information"" selector","The ""App information"" blade should open. The ""OK"" button at the bottom of the blade should be disabled. The ""Bundle name"" and ""Bundle description"" text boxes should have a red ""!"" after them. ""Publisher"" should have a green check mark. If you scroll down, an image should already be displayed for the ""Logo"" The ""Add"" button at the bottom of the ""Add app"" blade should be disabled.",,,
+,,,"2.6","Set values for the ""App Information""","After setting the ""Bundle name"", ""Bundle description"", and ""Publisher"" and leaving the text box, a green check mark should appear next to the item. When a valid URL (or no value) is entered for the ""Information URL"" or ""Privacy URL"" a green checkbox should appear. If any of these items is not valid as described, a red ""!"" should appear next to the text box for the item. If any red ""!"" appear on the blade, the ""OK"" button at the bottom should be disabled, otherwise it should be enabled.",,,
+,,,"2.7","Click ""OK"" button at the bottom of the App information blade","The text below ""App information"" in the selector should change to ""App bundle information is configured"". The ""Add"" button should be disabled.",,,
+,,,"2.8","Click on the ""App settings"" selector","The ""App settings"" blade should open. The ""Update channel"" combo box should have a red ""!"" next to it. The ""OK"" button should be disabled. The ""Add"" button at the bottom of the ""Add app"" blade should be disabled.",,,
+,,,"2.9","Set values for the ""App settings""  blade","After the ""Update channel"" combo box has been set, the red ""!"" after it should turn to a green check mark and the ""OK"" button at the bottom will become enabled.",,,
+,,,"2.1","Click on the ""Languages"" selector","The ""Languages"" blade should open. The list of languages should be displayed with a checkbox for each. The ""OK"" button for this blade and also the ""App settings"" blade should be enabled.",,,
+,,,"2.11","Set values for the ""Languages"" blade","After clicking on the checkbox for a language, a checkmark should appear in the box. The ""OK"" button at the bottom should stay enabled.",,,
+,,,"2.12","Click on the ""OK"" button for the ""Languages"" blade","The ""Languages"" blade should close.",,,
+,,,"2.13","Click on the ""OK"" button for the ""App settings"" blade","The ""App settings"" blade should close. The ""Add"" button at the bottom of the ""Add app"" blade should be enabled.",,,
+,,,"2.14","Click on the ""Add"" button on the ""Add app"" blade","A bar indicating ""Saving"" may appear. The ""Add app"" blade should close. A pop up with a green check mark and Application saved should appear briefly and close. The Overview blade for the app should appear, with the ""Bundle Name"" that was set for the app appearing in the title of the blade (""Test A - Overview"" if the ""Bundle Name"" was ""Test A"", for example). The app should also appear in the app list (this may require the ""Load more"" at the bottom of the page to be clicked on.",,,
+,,,"2.15",,,,,
+,,,"3","When deploying the app, select a Device Group and set the ""TYPE"" to ""required"".",,,,
+"3777196","Shared Steps",,"4","Deploy App to group(s)",,,,
+,,,"4.1","Select the app in the list","List item should become highlighted and the Overview blade for the app should open.",,,
+,,,"4.2","Click on ""Assignments"" in the Overview blade.","The status from the Overview should close and the UI to select groups should appear. The ""Save"" and ""Discard"" buttons should be disabled if there are no groups.",,,
+,,,"4.3","Click on ""+ Select groups""","The ""Select groups"" blade should open. The ""Select"" button should be disabled.",,,
+,,,"4.4","Select groups","Click on one or more groups. A checked checkbox should appear next to the selected groups. When one or more groups are selected, the ""Select"" button should become enabled.",,,
+,,,"4.5","Click on the ""Select"" button in the ""Select groups"" blade","The ""Select groups"" blade should close. In the list view, all selected groups should be listed.",,,
+,,,"4.6","Select the assignment ""TYPE"" for each group using the combo box","When all groups have a type set, the Save and discard buttons should be enabled.",,,
+,,,"4.7","Click on the ""Save"" button.","A bar indicating ""Saving"" should briefly appear. A popup with a green check mark indicating ""Success"" should also briefly appear.",,,
+"3777227","Shared Steps",,"5","Verify that the app(s) have been installed",,,,
+,,,"5.1","Verify that the app(s) have been installed","App should be installed on the device.",,,
+,,,"6","When setting the ""TYPE"" for the app deployment select ""uninstall""",,,,
+"3777195","Shared Steps",,"7","Change the App deployment",,,,
+,,,"7.1","Change the App deployment",,,,
+"3777228","Shared Steps",,"8","Verify that the app(s) have been uninstalled",,,,
+,,,"8.1","Verify that the app(s) have been uninstalled.",,,,
+"1731088","Test Case","[IntuneSA]:[Windows][Win10RS2+]:[OfficeCSP][Uninstall]:[ProPlus][Visio][Project]:[Required][UserGroup]:Verify ProPlus (multiple apps), Visio and Project can all be uninstall successfully",,,,"Intune\Mgmt\MAM","Wei Li (Centific Technologies Inc) <v-vivli@microsoft.com>","Design"
+,,,"1","Go Apps->Windows then click Create button","
+",,,
+,,,"2","Select the 'Microsoft 365 Apps for Windows 10 and later' option from the 'Select App type'.","
+",,,
+,,,"3","In 'Configure app suite' blade, select multiple apps (ex. Access, Excel, Outlook) Project and Visio.","See attachment (SelectOfficeApps.png)",,,
+,,,"4","Select Default file format and Update channel in the App suite information, ","See attachment (AppSuiteInformation.png)",,,
+,,,"5","When deploying the app, select a User Group and set the ""TYPE"" to ""required"".","
+",,,
+"3777227","Shared Steps",,"6","Verify that the app(s) have been installed",,,,
+,,,"6.1","Verify that the app(s) have been installed","App should be installed on the device.",,,
+,,,"7","Change the app deployment to ""uninstall""","
+",,,
+"3777228","Shared Steps",,"8","Verify that the app(s) have been uninstalled",,,,
+,,,"8.1","Verify that the app(s) have been uninstalled.",,,,
+"1731093","Test Case","[IntuneSA]:[Windows][Win10RS2+]:[OfficeCSP][Install]:[ProPlus][Visio][Project]:[Required][DeviceGroup][UserGroup]:Verify ProPlus (multiple apps), Visio and Project can all install successfully",,,,"Intune\Mgmt\MAM","Wei Li (Centific Technologies Inc) <v-vivli@microsoft.com>","Design"
+,,,"1","Go Apps->Windows then click Create button","
+",,,
+,,,"2","Select the 'Microsoft 365 Apps for Windows 10 and later' option from the 'Select App type'.","
+",,,
+,,,"3","In 'Configure app suite' blade, select multiple apps (ex. Access, Excel, Outlook) Project and Visio.
+","See attachment (SelectOfficeApps.png)",,,
+,,,"4","Select Default file format and Update channel in the App suite information, ","See attachment (AppSuiteInformation.png)",,,
+,,,"5","Deploy the Office app to Device Group and UserGroup. 
+","
+",,,
+,,,"6","Verify that the app(s) have been installed
+","The app(s) have been installed",,,
+,,,"7","Verify Visio and Project have been installed","The Visio and Project have been installed",,,
+"1731094","Test Case","[IntuneSA]:[Ibiza]:[Windows][Win10RS2+]:[OfficeCSP][Install]:[Project]:[Required][DeviceGroup][UserGroup]:Verify Project can be installed successfully",,,,"Intune\Mgmt\MAM","Wei Li (Centific Technologies Inc) <v-vivli@microsoft.com>","Design"
+"3777187","Shared Steps",,"1","Add Office 365 Pro Plus Suite App",,,,
+,,,"1.1","Select the 'Office 365 Pro Plus Suite (Windows 10) option from the 'App type' combo box on the 'Add app' blade.","Below the 'App type' combo box Information appears and 3 selectors ('Configure app bundle', 'App Information', and 'App settings') appear below the information. The 'Add' button at the bottom of the 'Add app' blade should be disabled.",,,
+,,,"1.2","Click on the ""Configure app bundle"" selector","The 'Configure app bundle' blade opens and the OK button at the bottom of that blade is disabled. The 'Add' button at the bottom of the Add app blade should be disabled.",,,
+,,,"1.3","Select one or more Office 365 apps as required by the test case","The Check boxes next to the selected apps should have a check mark and the ""OK"" button at the bottom should enable after at least one Office 265 app has been checked.",,,
+,,,"1.4","Click ""OK"" button at the bottom of ""Configure app bundle"" blade","""Configure app bundle"" blade should close and the ""Configure app bundle"" option on the ""Add app"" blade should update with ""X apps selected"" text where ""X"" is the number of apps you selected. The 'Add' button at the bottom of the 'Add app' blade should be disabled.",,,
+,,,"1.5","Click on the ""App Information"" selector","The ""App information"" blade should open. The ""OK"" button at the bottom of the blade should be disabled. The ""Bundle name"" and ""Bundle description"" text boxes should have a red ""!"" after them. ""Publisher"" should have a green check mark. If you scroll down, an image should already be displayed for the ""Logo"" The ""Add"" button at the bottom of the ""Add app"" blade should be disabled.",,,
+,,,"1.6","Set values for the ""App Information""","After setting the ""Bundle name"", ""Bundle description"", and ""Publisher"" and leaving the text box, a green check mark should appear next to the item. When a valid URL (or no value) is entered for the ""Information URL"" or ""Privacy URL"" a green checkbox should appear. If any of these items is not valid as described, a red ""!"" should appear next to the text box for the item. If any red ""!"" appear on the blade, the ""OK"" button at the bottom should be disabled, otherwise it should be enabled.",,,
+,,,"1.7","Click ""OK"" button at the bottom of the App information blade","The text below ""App information"" in the selector should change to ""App bundle information is configured"". The ""Add"" button should be disabled.",,,
+,,,"1.8","Click on the ""App settings"" selector","The ""App settings"" blade should open. The ""Update channel"" combo box should have a red ""!"" next to it. The ""OK"" button should be disabled. The ""Add"" button at the bottom of the ""Add app"" blade should be disabled.",,,
+,,,"1.9","Set values for the ""App settings""  blade","After the ""Update channel"" combo box has been set, the red ""!"" after it should turn to a green check mark and the ""OK"" button at the bottom will become enabled.",,,
+,,,"1.1","Click on the ""Languages"" selector","The ""Languages"" blade should open. The list of languages should be displayed with a checkbox for each. The ""OK"" button for this blade and also the ""App settings"" blade should be enabled.",,,
+,,,"1.11","Set values for the ""Languages"" blade","After clicking on the checkbox for a language, a checkmark should appear in the box. The ""OK"" button at the bottom should stay enabled.",,,
+,,,"1.12","Click on the ""OK"" button for the ""Languages"" blade","The ""Languages"" blade should close.",,,
+,,,"1.13","Click on the ""OK"" button for the ""App settings"" blade","The ""App settings"" blade should close. The ""Add"" button at the bottom of the ""Add app"" blade should be enabled.",,,
+,,,"1.1400000000000001","Click on the ""Add"" button on the ""Add app"" blade","A bar indicating ""Saving"" may appear. The ""Add app"" blade should close. A pop up with a green check mark and Application saved should appear briefly and close. The Overview blade for the app should appear, with the ""Bundle Name"" that was set for the app appearing in the title of the blade (""Test A - Overview"" if the ""Bundle Name"" was ""Test A"", for example). The app should also appear in the app list (this may require the ""Load more"" at the bottom of the page to be clicked on.",,,
+,,,"1.15",,,,,
+,,,"2","In 'Configure app suite' blade, select an app (ex. Access) and Project.
+","
+",,,
+,,,"3","Deploy the Office app to Device Group and User Group.
+","
+",,,
+,,,"4","Verify Project can be installed successfully.
+","
+",,,
+"1731102","Test Case","[IntuneSA]:[Ibiza]:[Windows][Win10RS2+]:[OfficeCSP][Install][Language]:[ProPlus]:[Required][DeviceGroup][UserGroup]:Verify ProPlus (multiple apps) Multiple Languages can all install successfully",,,,"Intune\Mgmt\MAM","Wei Li (Centific Technologies Inc) <v-vivli@microsoft.com>","Design"
+,,,"1","For the apps to deploy on the 'Configure app bundle' blade, select Word. On the 'App information' blade set the Logo to another imageView app in Company Portal or IWPortalCustom Icon should be displayed",,,,
+"3778549","Test Case","[IntuneSA]:[Windows]:[AppUpdate]:[InstallStatus]:[Appx]:[Required]:[UserGroup]:IT Pro can view application status summary change for V1 of app when V2 is updated.  Existing status moves to Unknown.",,,,"Intune\Mgmt\Apps\Win32 Apps","Scott Brimley (Intune) <scottbr@microsoft.com>","Design"
+"1347086","Shared Steps",,"1","Publish LOB App",,,,
+,,,"1.1","Click Apps","Apps listing blade opens",,,
+,,,"1.2","Click macOS"," macOS  blade opens ",,,
+,,,"1.3"," Click ""+ Create"""," Add App blade opens",,,
+,,,"1.4"," Click ""Select app type""","dropdown list opens",,,
+,,,"1.5","Select ""Line-of-business app"" from
+dropdown list "," ""App package file"" and ""App
+information"" options are added to the blade",,,
+,,,"1.6","Click ""Select"" in the ""App
+package file"" option "," ""App package file"" blade opens",,,
+,,,"1.7","Click ""Select app package file"" in the ""App
+package file"" option "," ""Select app package file"" blade opens",,,
+,,,"1.8","Click ""Select a file"" in the ""App
+package file"" option "," ""Select a file"" blade opens",,,
+,,,"1.9","Select ""Line-of-business app"" from
+"," LOB App show in ""App package file"" blade ",,,
+,,,"1.1","Click ""OK"" in the ""App
+package file"" option "," ""App information"" blade opens",,,
+,,,"1.11"," Fill out required fields","
+",,,
+,,,"1.12"," If the test case calls for it add info to
+optional fields","
+",,,
+,,,"1.13"," Click OK at the bottom","""App information"" blade closes ",,,
+,,,"1.1400000000000001","Click ""Add"" button at the bottom of
+""Add app"" ","App is successfully Published, success toast
+message is shown ",,,
+"1347081","Shared Steps",,"2","Deploy App",,,,
+,,,"2.1","On the Assignments tab in create app
+or
+In Mobile Apps -> Apps click on the app you wish to deploy -> Properties - Click Edit next to Assignments","""Assignments"" blade will open showing any current assignments
+",,,
+,,,"2.2"," Click ""+ Select groups"" button","""Select groups"" blade will open showing a list of previously created groups
+",,,
+,,,"2.3","Select 1 or more goups as per test case
+requirements ","Check box next to group will show a check mark ",,,
+,,,"2.4","Click ""Select"" button at the bottom of
+the ""Select groups"" blade ","New groups selected will show in the ""Assignments"" blade",,,
+,,,"2.5"," For each selected group, in the ""Type""
+column select the intent as per the test case requirements"," ""Save"" button at the top is enabled",,,
+,,,"2.6"," Click ""Save"" button at the top of the
+""Assignments"" blade"," Successful toast message",,,
+"1347106","Shared Steps",,"3","Update App Binary",,,,
+,,,"3.1"," In Mobile Apps -> Apps click on the app you wish to deploy"," App blade for that app will open",,,
+,,,"3.2"," Click ""Properties"""," ""Properties"" blade will open",,,
+,,,"3.3"," Click ""App package file"" option"," ""App package file"" blade opens",,,
+,,,"3.4"," Select a file using the browse button","Once selected the filename will appear in the ""Select a file"" text box 
+ Name, Platform, App Version and Size should be filled out correctly",,,
+,,,"3.5"," Click OK at the bottom"," ""App package file"" blade closes",,,
+,,,"3.6"," Click ""App information"" option"," ""App information"" blade opens",,,
+,,,"3.7"," If the test case calls for it, make changes to specified fields "," ",,,
+,,,"3.8"," Click OK at the bottom","""App information"" blade closes ",,,
+,,,"3.9"," Click ""Save"" button at the bottom of ""Add app""
+"," App is successfully updated, you should see successful toast messages that new binary was uploaded",,,
+,,,"4","V2 of app should be successfully saved","Status should be changed to ""Install Status Unknown"" until device is upgraded",,,
+"3778608","Test Case","[IntuneSA]:[Windows]:[GRS]:[Win10][Required][UserGroup][Appx/AppxBundle]:Verify Install is success after requried deployment and app is evaluated after GRS is expired. All apps including failed apps will attempt to install",,,,"Intune\Mgmt\Apps","Scott Brimley (Intune) <scottbr@microsoft.com>","Design"
+,,,"1","The global reevaluation schedule (GRS) cannot be changed on standalone. To work around this edit the description or some other property on the App. This will simulate the GRS expiring. 
+","
+",,,
+"5657693","Test Case","[IntuneSA]:[Windows][Win10RS3+]:[Publish][E2E]:[Required]:Verify Edge Dev app is installed and correct version is reported in status",,,,"Intune\Mgmt\Apps\Win32 Apps","Wei Li (Centific Technologies Inc) <v-vivli@microsoft.com>","Design"
+,,,"1","Create a Microsoft Edge app. Select Dev channel in App settings.","
+",,,
+,,,"2","Deploy the app to usergroup.","
+",,,
+,,,"3","Verify Edge Dev app is installed and correct version is reported in status.
+","
+",,,
+"5657697","Test Case","[IntuneSA]:[Windows][Win10RS3+]:[Publish][E2E]:Verify Edge Dev and Edge Beta app can be installed side by side",,,,"Intune\Mgmt\Apps\Win32 Apps","Lyn Hu (Centific Technologies Inc) <v-lianlh@microsoft.com>","Design"
+,,,"1","Create two Microsoft Edge app. set one as the Dev channel and the other as the Beta channel.
+","
+",,,
+,,,"2","Deploy them to the same as user group.","
+",,,
+,,,"3","Verify Edge Dev and Edge Beta app can be installed side by side
+","
+",,,
+"7365651","Test Case","[IntuneSA]:[Windows][Win10RS2+]:[Assignment Filters][Match][E2E]:[OfficeCSP][ProPlus]:[Required][UserGroup]:Verify ProPlus (multiple apps), Single Language can all install successfully",,,,"Intune\Mgmt\Apps","Scott Brimley (Intune) <scottbr@microsoft.com>","Design"
+"7464252","Shared Steps",,"1","Create Matching Assignment Filters (if needed)",,,,
+,,,"1.1","If Assignment Filters have already been created, you can skip the rest of this step","
+",,,
+,,,"1.2","Click on Tenant Administration -> Assingment Filters
+
+or if the above is not visable
+ For Selfhost copy and paste this link into the address bar: https://endpoint.microsoft.com/?enableAdvancedRuleEditing=true&feature.canmodifystamps=true&feature.canmodifyextensions=true&feature.fullwidth=true&feature.customPortal=false&feature.Microsoft_Intune=sh&Microsoft_Intune=sh&Microsoft_Intune_Apps_urlredirect=intuneappssh&Microsoft_Intune_DeviceSettings=selfhost&Microsoft_Intune_Devices_urlredirect=intunedevicessh&Microsoft_Intune_Workflows_urlredirect=Intuneworkflowsselfhost&Microsoft_Intune_Enrollment_urlredirect=intuneenrollmentsh#blade/Microsoft_Intune_DeviceSettings/AssignmentFilterListBlade","Assignment Filter blade will open",,,
+,,,"1.3","Click ""+ Create""","Create Assignment Filter blade will open",,,
+,,,"1.4","Add a Name, Description and select a Platform then click Next","Rules tab opens",,,
+,,,"1.5","Add 2 expressions that will match your device (make them simple like deviceName) and click Next","
+",,,
+,,,"1.6","Do not change scope tags, click Next","
+",,,
+,,,"1.7","Click Create","Filter should be successfully created",,,
+"3777187","Shared Steps",,"2","Add Office 365 Pro Plus Suite App",,,,
+,,,"2.1","Select the 'Office 365 Pro Plus Suite (Windows 10) option from the 'App type' combo box on the 'Add app' blade.","Below the 'App type' combo box Information appears and 3 selectors ('Configure app bundle', 'App Information', and 'App settings') appear below the information. The 'Add' button at the bottom of the 'Add app' blade should be disabled.",,,
+,,,"2.2","Click on the ""Configure app bundle"" selector","The 'Configure app bundle' blade opens and the OK button at the bottom of that blade is disabled. The 'Add' button at the bottom of the Add app blade should be disabled.",,,
+,,,"2.3","Select one or more Office 365 apps as required by the test case","The Check boxes next to the selected apps should have a check mark and the ""OK"" button at the bottom should enable after at least one Office 265 app has been checked.",,,
+,,,"2.4","Click ""OK"" button at the bottom of ""Configure app bundle"" blade","""Configure app bundle"" blade should close and the ""Configure app bundle"" option on the ""Add app"" blade should update with ""X apps selected"" text where ""X"" is the number of apps you selected. The 'Add' button at the bottom of the 'Add app' blade should be disabled.",,,
+,,,"2.5","Click on the ""App Information"" selector","The ""App information"" blade should open. The ""OK"" button at the bottom of the blade should be disabled. The ""Bundle name"" and ""Bundle description"" text boxes should have a red ""!"" after them. ""Publisher"" should have a green check mark. If you scroll down, an image should already be displayed for the ""Logo"" The ""Add"" button at the bottom of the ""Add app"" blade should be disabled.",,,
+,,,"2.6","Set values for the ""App Information""","After setting the ""Bundle name"", ""Bundle description"", and ""Publisher"" and leaving the text box, a green check mark should appear next to the item. When a valid URL (or no value) is entered for the ""Information URL"" or ""Privacy URL"" a green checkbox should appear. If any of these items is not valid as described, a red ""!"" should appear next to the text box for the item. If any red ""!"" appear on the blade, the ""OK"" button at the bottom should be disabled, otherwise it should be enabled.",,,
+,,,"2.7","Click ""OK"" button at the bottom of the App information blade","The text below ""App information"" in the selector should change to ""App bundle information is configured"". The ""Add"" button should be disabled.",,,
+,,,"2.8","Click on the ""App settings"" selector","The ""App settings"" blade should open. The ""Update channel"" combo box should have a red ""!"" next to it. The ""OK"" button should be disabled. The ""Add"" button at the bottom of the ""Add app"" blade should be disabled.",,,
+,,,"2.9","Set values for the ""App settings""  blade","After the ""Update channel"" combo box has been set, the red ""!"" after it should turn to a green check mark and the ""OK"" button at the bottom will become enabled.",,,
+,,,"2.1","Click on the ""Languages"" selector","The ""Languages"" blade should open. The list of languages should be displayed with a checkbox for each. The ""OK"" button for this blade and also the ""App settings"" blade should be enabled.",,,
+,,,"2.11","Set values for the ""Languages"" blade","After clicking on the checkbox for a language, a checkmark should appear in the box. The ""OK"" button at the bottom should stay enabled.",,,
+,,,"2.12","Click on the ""OK"" button for the ""Languages"" blade","The ""Languages"" blade should close.",,,
+,,,"2.13","Click on the ""OK"" button for the ""App settings"" blade","The ""App settings"" blade should close. The ""Add"" button at the bottom of the ""Add app"" blade should be enabled.",,,
+,,,"2.14","Click on the ""Add"" button on the ""Add app"" blade","A bar indicating ""Saving"" may appear. The ""Add app"" blade should close. A pop up with a green check mark and Application saved should appear briefly and close. The Overview blade for the app should appear, with the ""Bundle Name"" that was set for the app appearing in the title of the blade (""Test A - Overview"" if the ""Bundle Name"" was ""Test A"", for example). The app should also appear in the app list (this may require the ""Load more"" at the bottom of the page to be clicked on.",,,
+,,,"2.15",,,,,
+"7464140","Shared Steps",,"3","Add Assignment Filter",,,,
+,,,"3.1","On the Assignments tab in create app
+or
+In Mobile Apps -> Apps click on the app you wish to deploy -> Properties - Click Edit next to Assignments
+","""Assignments"" blade will open showing any current assignments
+",,,
+,,,"3.2"," Click ""+ Add groups"" button","""Select groups"" blade will open showing a list of previously created groups
+",,,
+,,,"3.3","Select 1 or more goups as per test case
+requirements ","Check box next to group will show a check mark ",,,
+,,,"3.4","Click ""Select"" button at the bottom of
+the ""Select groups"" blade ","New groups selected will show in the ""Assignments"" blade",,,
+,,,"3.5"," For each selected group, in the ""Group Mode""
+column select the intent as per the test case requirements","
+",,,
+,,,"3.6"," For each selected group, in the ""Assignment filter"" column, click None (or if editing click the Filter name link)"," Assignment Filter pane opens",,,
+,,,"3.7","Click the ""Include filtered devices in assignment"" radio button","List of filters opens below",,,
+,,,"3.8","Add a filter that will match your test device and click OK","
+",,,
+,,,"4","On the device","App should not be listed
+",,,
+"9519652","Shared Steps",,"5","In Admin UI Check Assignment Filter Reporting",,,,
+,,,"5.1","In Admin UI check the reporting
+Open the App
+Click on Device install status","Device should have an Installed status",,,
+,,,"5.2","On the line for the device, click on link in the Filter column","Verify that the correct filters were evaluated correctly
+",,,
+"7365652","Test Case","[IntuneSA]:[Windows][Win10RS2+]:[Assignment Filters][Match][E2E]:[OfficeCSP][ProPlus]:[Uninstall][UserGroup]:Verify ProPlus (multiple apps), Single Language all uninstall successfully",,,,"Intune\Mgmt\Apps","Scott Brimley (Intune) <scottbr@microsoft.com>","Design"
+,,,"1","App should be previously published and installed on the device.  You can re-use the installed app by changing the deployment to Uninstall
+","
+",,,
+"7464252","Shared Steps",,"2","Create Matching Assignment Filters (if needed)",,,,
+,,,"2.1","If Assignment Filters have already been created, you can skip the rest of this step","
+",,,
+,,,"2.2","Click on Tenant Administration -> Assingment Filters
+
+or if the above is not visable
+ For Selfhost copy and paste this link into the address bar: https://endpoint.microsoft.com/?enableAdvancedRuleEditing=true&feature.canmodifystamps=true&feature.canmodifyextensions=true&feature.fullwidth=true&feature.customPortal=false&feature.Microsoft_Intune=sh&Microsoft_Intune=sh&Microsoft_Intune_Apps_urlredirect=intuneappssh&Microsoft_Intune_DeviceSettings=selfhost&Microsoft_Intune_Devices_urlredirect=intunedevicessh&Microsoft_Intune_Workflows_urlredirect=Intuneworkflowsselfhost&Microsoft_Intune_Enrollment_urlredirect=intuneenrollmentsh#blade/Microsoft_Intune_DeviceSettings/AssignmentFilterListBlade","Assignment Filter blade will open",,,
+,,,"2.3","Click ""+ Create""","Create Assignment Filter blade will open",,,
+,,,"2.4","Add a Name, Description and select a Platform then click Next","Rules tab opens",,,
+,,,"2.5","Add 2 expressions that will match your device (make them simple like deviceName) and click Next","
+",,,
+,,,"2.6","Do not change scope tags, click Next","
+",,,
+,,,"2.7","Click Create","Filter should be successfully created",,,
+"7464140","Shared Steps",,"3","Add Assignment Filter",,,,
+,,,"3.1","On the Assignments tab in create app
+or
+In Mobile Apps -> Apps click on the app you wish to deploy -> Properties - Click Edit next to Assignments
+","""Assignments"" blade will open showing any current assignments
+",,,
+,,,"3.2"," Click ""+ Add groups"" button","""Select groups"" blade will open showing a list of previously created groups
+",,,
+,,,"3.3","Select 1 or more goups as per test case
+requirements ","Check box next to group will show a check mark ",,,
+,,,"3.4","Click ""Select"" button at the bottom of
+the ""Select groups"" blade ","New groups selected will show in the ""Assignments"" blade",,,
+,,,"3.5"," For each selected group, in the ""Group Mode""
+column select the intent as per the test case requirements","
+",,,
+,,,"3.6"," For each selected group, in the ""Assignment filter"" column, click None (or if editing click the Filter name link)"," Assignment Filter pane opens",,,
+,,,"3.7","Click the ""Include filtered devices in assignment"" radio button","List of filters opens below",,,
+,,,"3.8","Add a filter that will match your test device and click OK","
+",,,
+,,,"4","Verify on device","Office should be uninstalled",,,
+"9519652","Shared Steps",,"5","In Admin UI Check Assignment Filter Reporting",,,,
+,,,"5.1","In Admin UI check the reporting
+Open the App
+Click on Device install status","Device should have an Installed status",,,
+,,,"5.2","On the line for the device, click on link in the Filter column","Verify that the correct filters were evaluated correctly
+",,,
+"7365653","Test Case","[IntuneSA]:[Windows][Win10RS2+]:[Assignment Filters][Match][E2E]:[OfficeCSP][ProPlus]:[Available][UserGroup]:Verify ProPlus (multiple apps), Single Language shows in CP and IWP and can all install successfully",,,,"Intune\Mgmt\Apps","Scott Brimley (Intune) <scottbr@microsoft.com>","Design"
+"7464252","Shared Steps",,"1","Create Matching Assignment Filters (if needed)",,,,
+,,,"1.1","If Assignment Filters have already been created, you can skip the rest of this step","
+",,,
+,,,"1.2","Click on Tenant Administration -> Assingment Filters
+
+or if the above is not visable
+ For Selfhost copy and paste this link into the address bar: https://endpoint.microsoft.com/?enableAdvancedRuleEditing=true&feature.canmodifystamps=true&feature.canmodifyextensions=true&feature.fullwidth=true&feature.customPortal=false&feature.Microsoft_Intune=sh&Microsoft_Intune=sh&Microsoft_Intune_Apps_urlredirect=intuneappssh&Microsoft_Intune_DeviceSettings=selfhost&Microsoft_Intune_Devices_urlredirect=intunedevicessh&Microsoft_Intune_Workflows_urlredirect=Intuneworkflowsselfhost&Microsoft_Intune_Enrollment_urlredirect=intuneenrollmentsh#blade/Microsoft_Intune_DeviceSettings/AssignmentFilterListBlade","Assignment Filter blade will open",,,
+,,,"1.3","Click ""+ Create""","Create Assignment Filter blade will open",,,
+,,,"1.4","Add a Name, Description and select a Platform then click Next","Rules tab opens",,,
+,,,"1.5","Add 2 expressions that will match your device (make them simple like deviceName) and click Next","
+",,,
+,,,"1.6","Do not change scope tags, click Next","
+",,,
+,,,"1.7","Click Create","Filter should be successfully created",,,
+"3777187","Shared Steps",,"2","Add Office 365 Pro Plus Suite App",,,,
+,,,"2.1","Select the 'Office 365 Pro Plus Suite (Windows 10) option from the 'App type' combo box on the 'Add app' blade.","Below the 'App type' combo box Information appears and 3 selectors ('Configure app bundle', 'App Information', and 'App settings') appear below the information. The 'Add' button at the bottom of the 'Add app' blade should be disabled.",,,
+,,,"2.2","Click on the ""Configure app bundle"" selector","The 'Configure app bundle' blade opens and the OK button at the bottom of that blade is disabled. The 'Add' button at the bottom of the Add app blade should be disabled.",,,
+,,,"2.3","Select one or more Office 365 apps as required by the test case","The Check boxes next to the selected apps should have a check mark and the ""OK"" button at the bottom should enable after at least one Office 265 app has been checked.",,,
+,,,"2.4","Click ""OK"" button at the bottom of ""Configure app bundle"" blade","""Configure app bundle"" blade should close and the ""Configure app bundle"" option on the ""Add app"" blade should update with ""X apps selected"" text where ""X"" is the number of apps you selected. The 'Add' button at the bottom of the 'Add app' blade should be disabled.",,,
+,,,"2.5","Click on the ""App Information"" selector","The ""App information"" blade should open. The ""OK"" button at the bottom of the blade should be disabled. The ""Bundle name"" and ""Bundle description"" text boxes should have a red ""!"" after them. ""Publisher"" should have a green check mark. If you scroll down, an image should already be displayed for the ""Logo"" The ""Add"" button at the bottom of the ""Add app"" blade should be disabled.",,,
+,,,"2.6","Set values for the ""App Information""","After setting the ""Bundle name"", ""Bundle description"", and ""Publisher"" and leaving the text box, a green check mark should appear next to the item. When a valid URL (or no value) is entered for the ""Information URL"" or ""Privacy URL"" a green checkbox should appear. If any of these items is not valid as described, a red ""!"" should appear next to the text box for the item. If any red ""!"" appear on the blade, the ""OK"" button at the bottom should be disabled, otherwise it should be enabled.",,,
+,,,"2.7","Click ""OK"" button at the bottom of the App information blade","The text below ""App information"" in the selector should change to ""App bundle information is configured"". The ""Add"" button should be disabled.",,,
+,,,"2.8","Click on the ""App settings"" selector","The ""App settings"" blade should open. The ""Update channel"" combo box should have a red ""!"" next to it. The ""OK"" button should be disabled. The ""Add"" button at the bottom of the ""Add app"" blade should be disabled.",,,
+,,,"2.9","Set values for the ""App settings""  blade","After the ""Update channel"" combo box has been set, the red ""!"" after it should turn to a green check mark and the ""OK"" button at the bottom will become enabled.",,,
+,,,"2.1","Click on the ""Languages"" selector","The ""Languages"" blade should open. The list of languages should be displayed with a checkbox for each. The ""OK"" button for this blade and also the ""App settings"" blade should be enabled.",,,
+,,,"2.11","Set values for the ""Languages"" blade","After clicking on the checkbox for a language, a checkmark should appear in the box. The ""OK"" button at the bottom should stay enabled.",,,
+,,,"2.12","Click on the ""OK"" button for the ""Languages"" blade","The ""Languages"" blade should close.",,,
+,,,"2.13","Click on the ""OK"" button for the ""App settings"" blade","The ""App settings"" blade should close. The ""Add"" button at the bottom of the ""Add app"" blade should be enabled.",,,
+,,,"2.14","Click on the ""Add"" button on the ""Add app"" blade","A bar indicating ""Saving"" may appear. The ""Add app"" blade should close. A pop up with a green check mark and Application saved should appear briefly and close. The Overview blade for the app should appear, with the ""Bundle Name"" that was set for the app appearing in the title of the blade (""Test A - Overview"" if the ""Bundle Name"" was ""Test A"", for example). The app should also appear in the app list (this may require the ""Load more"" at the bottom of the page to be clicked on.",,,
+,,,"2.15",,,,,
+"7464140","Shared Steps",,"3","Add Assignment Filter",,,,
+,,,"3.1","On the Assignments tab in create app
+or
+In Mobile Apps -> Apps click on the app you wish to deploy -> Properties - Click Edit next to Assignments
+","""Assignments"" blade will open showing any current assignments
+",,,
+,,,"3.2"," Click ""+ Add groups"" button","""Select groups"" blade will open showing a list of previously created groups
+",,,
+,,,"3.3","Select 1 or more goups as per test case
+requirements ","Check box next to group will show a check mark ",,,
+,,,"3.4","Click ""Select"" button at the bottom of
+the ""Select groups"" blade ","New groups selected will show in the ""Assignments"" blade",,,
+,,,"3.5"," For each selected group, in the ""Group Mode""
+column select the intent as per the test case requirements","
+",,,
+,,,"3.6"," For each selected group, in the ""Assignment filter"" column, click None (or if editing click the Filter name link)"," Assignment Filter pane opens",,,
+,,,"3.7","Click the ""Include filtered devices in assignment"" radio button","List of filters opens below",,,
+,,,"3.8","Add a filter that will match your test device and click OK","
+",,,
+,,,"4","On device run IWP or Company Portal
+","App should be listed
+",,,
+,,,"5","Click on the App and choose install
+","App should be installed on the device
+",,,
+"9519652","Shared Steps",,"6","In Admin UI Check Assignment Filter Reporting",,,,
+,,,"6.1","In Admin UI check the reporting
+Open the App
+Click on Device install status","Device should have an Installed status",,,
+,,,"6.2","On the line for the device, click on link in the Filter column","Verify that the correct filters were evaluated correctly
+",,,
+"7365654","Test Case","[IntuneSA]:[Windows][Win10RS2+]:[Assignment Filters][No Match][E2E]:[OfficeCSP][ProPlus]:[Required][UserGroup]:Verify ProPlus (multiple apps), Single Language is not installed on the device",,,,"Intune\Mgmt\Apps","Scott Brimley (Intune) <scottbr@microsoft.com>","Design"
+"7469668","Shared Steps",,"1","Create Non-Matching Assignment Filters (if needed)",,,,
+,,,"1.1","If Assignment Filters have already been created, you can skip the rest of this step
+","
+",,,
+,,,"1.2","Click on Tenant Administration -> Assingment Filters
+
+or if the above is not visable
+ For Selfhost copy and paste this link into the address bar: https://endpoint.microsoft.com/?enableAdvancedRuleEditing=true&feature.canmodifystamps=true&feature.canmodifyextensions=true&feature.fullwidth=true&feature.customPortal=false&feature.Microsoft_Intune=sh&Microsoft_Intune=sh&Microsoft_Intune_Apps_urlredirect=intuneappssh&Microsoft_Intune_DeviceSettings=selfhost&Microsoft_Intune_Devices_urlredirect=intunedevicessh&Microsoft_Intune_Workflows_urlredirect=Intuneworkflowsselfhost&Microsoft_Intune_Enrollment_urlredirect=intuneenrollmentsh#blade/Microsoft_Intune_DeviceSettings/AssignmentFilterListBlade
+","Assignment Filter blade will open
+",,,
+,,,"1.3","Click ""+ Create""
+","Create Assignment Filter blade will open
+",,,
+,,,"1.4","Add a Name, Description and select a Platform then click Next
+","Rules tab opens
+",,,
+,,,"1.5","Add 2 expressions that will not match your device (make them simple like deviceName) and click Next
+","
+",,,
+,,,"1.6","Do not change scope tags, click Next
+","
+",,,
+,,,"1.7","Click Create
+","Filter should be successfully created
+",,,
+"3777187","Shared Steps",,"2","Add Office 365 Pro Plus Suite App",,,,
+,,,"2.1","Select the 'Office 365 Pro Plus Suite (Windows 10) option from the 'App type' combo box on the 'Add app' blade.","Below the 'App type' combo box Information appears and 3 selectors ('Configure app bundle', 'App Information', and 'App settings') appear below the information. The 'Add' button at the bottom of the 'Add app' blade should be disabled.",,,
+,,,"2.2","Click on the ""Configure app bundle"" selector","The 'Configure app bundle' blade opens and the OK button at the bottom of that blade is disabled. The 'Add' button at the bottom of the Add app blade should be disabled.",,,
+,,,"2.3","Select one or more Office 365 apps as required by the test case","The Check boxes next to the selected apps should have a check mark and the ""OK"" button at the bottom should enable after at least one Office 265 app has been checked.",,,
+,,,"2.4","Click ""OK"" button at the bottom of ""Configure app bundle"" blade","""Configure app bundle"" blade should close and the ""Configure app bundle"" option on the ""Add app"" blade should update with ""X apps selected"" text where ""X"" is the number of apps you selected. The 'Add' button at the bottom of the 'Add app' blade should be disabled.",,,
+,,,"2.5","Click on the ""App Information"" selector","The ""App information"" blade should open. The ""OK"" button at the bottom of the blade should be disabled. The ""Bundle name"" and ""Bundle description"" text boxes should have a red ""!"" after them. ""Publisher"" should have a green check mark. If you scroll down, an image should already be displayed for the ""Logo"" The ""Add"" button at the bottom of the ""Add app"" blade should be disabled.",,,
+,,,"2.6","Set values for the ""App Information""","After setting the ""Bundle name"", ""Bundle description"", and ""Publisher"" and leaving the text box, a green check mark should appear next to the item. When a valid URL (or no value) is entered for the ""Information URL"" or ""Privacy URL"" a green checkbox should appear. If any of these items is not valid as described, a red ""!"" should appear next to the text box for the item. If any red ""!"" appear on the blade, the ""OK"" button at the bottom should be disabled, otherwise it should be enabled.",,,
+,,,"2.7","Click ""OK"" button at the bottom of the App information blade","The text below ""App information"" in the selector should change to ""App bundle information is configured"". The ""Add"" button should be disabled.",,,
+,,,"2.8","Click on the ""App settings"" selector","The ""App settings"" blade should open. The ""Update channel"" combo box should have a red ""!"" next to it. The ""OK"" button should be disabled. The ""Add"" button at the bottom of the ""Add app"" blade should be disabled.",,,
+,,,"2.9","Set values for the ""App settings""  blade","After the ""Update channel"" combo box has been set, the red ""!"" after it should turn to a green check mark and the ""OK"" button at the bottom will become enabled.",,,
+,,,"2.1","Click on the ""Languages"" selector","The ""Languages"" blade should open. The list of languages should be displayed with a checkbox for each. The ""OK"" button for this blade and also the ""App settings"" blade should be enabled.",,,
+,,,"2.11","Set values for the ""Languages"" blade","After clicking on the checkbox for a language, a checkmark should appear in the box. The ""OK"" button at the bottom should stay enabled.",,,
+,,,"2.12","Click on the ""OK"" button for the ""Languages"" blade","The ""Languages"" blade should close.",,,
+,,,"2.13","Click on the ""OK"" button for the ""App settings"" blade","The ""App settings"" blade should close. The ""Add"" button at the bottom of the ""Add app"" blade should be enabled.",,,
+,,,"2.14","Click on the ""Add"" button on the ""Add app"" blade","A bar indicating ""Saving"" may appear. The ""Add app"" blade should close. A pop up with a green check mark and Application saved should appear briefly and close. The Overview blade for the app should appear, with the ""Bundle Name"" that was set for the app appearing in the title of the blade (""Test A - Overview"" if the ""Bundle Name"" was ""Test A"", for example). The app should also appear in the app list (this may require the ""Load more"" at the bottom of the page to be clicked on.",,,
+,,,"2.15",,,,,
+"7464140","Shared Steps",,"3","Add Assignment Filter",,,,
+,,,"3.1","On the Assignments tab in create app
+or
+In Mobile Apps -> Apps click on the app you wish to deploy -> Properties - Click Edit next to Assignments
+","""Assignments"" blade will open showing any current assignments
+",,,
+,,,"3.2"," Click ""+ Add groups"" button","""Select groups"" blade will open showing a list of previously created groups
+",,,
+,,,"3.3","Select 1 or more goups as per test case
+requirements ","Check box next to group will show a check mark ",,,
+,,,"3.4","Click ""Select"" button at the bottom of
+the ""Select groups"" blade ","New groups selected will show in the ""Assignments"" blade",,,
+,,,"3.5"," For each selected group, in the ""Group Mode""
+column select the intent as per the test case requirements","
+",,,
+,,,"3.6"," For each selected group, in the ""Assignment filter"" column, click None (or if editing click the Filter name link)"," Assignment Filter pane opens",,,
+,,,"3.7","Click the ""Include filtered devices in assignment"" radio button","List of filters opens below",,,
+,,,"3.8","Add a filter that will match your test device and click OK","
+",,,
+,,,"4","On the device","Verify the app is not installed",,,
+"9519652","Shared Steps",,"5","In Admin UI Check Assignment Filter Reporting",,,,
+,,,"5.1","In Admin UI check the reporting
+Open the App
+Click on Device install status","Device should have an Installed status",,,
+,,,"5.2","On the line for the device, click on link in the Filter column","Verify that the correct filters were evaluated correctly
+",,,
+"7365655","Test Case","[IntuneSA]:[Windows][Win10RS2+]:[Assignment Filters][No Match]:[OfficeCSP][ProPlus]:[Available][UserGroup]:Verify ProPlus (multiple apps), Single Language does not show in CP and IWP",,,,"Intune\Mgmt\Apps","Scott Brimley (Intune) <scottbr@microsoft.com>","Design"
+"7469668","Shared Steps",,"1","Create Non-Matching Assignment Filters (if needed)",,,,
+,,,"1.1","If Assignment Filters have already been created, you can skip the rest of this step
+","
+",,,
+,,,"1.2","Click on Tenant Administration -> Assingment Filters
+
+or if the above is not visable
+ For Selfhost copy and paste this link into the address bar: https://endpoint.microsoft.com/?enableAdvancedRuleEditing=true&feature.canmodifystamps=true&feature.canmodifyextensions=true&feature.fullwidth=true&feature.customPortal=false&feature.Microsoft_Intune=sh&Microsoft_Intune=sh&Microsoft_Intune_Apps_urlredirect=intuneappssh&Microsoft_Intune_DeviceSettings=selfhost&Microsoft_Intune_Devices_urlredirect=intunedevicessh&Microsoft_Intune_Workflows_urlredirect=Intuneworkflowsselfhost&Microsoft_Intune_Enrollment_urlredirect=intuneenrollmentsh#blade/Microsoft_Intune_DeviceSettings/AssignmentFilterListBlade
+","Assignment Filter blade will open
+",,,
+,,,"1.3","Click ""+ Create""
+","Create Assignment Filter blade will open
+",,,
+,,,"1.4","Add a Name, Description and select a Platform then click Next
+","Rules tab opens
+",,,
+,,,"1.5","Add 2 expressions that will not match your device (make them simple like deviceName) and click Next
+","
+",,,
+,,,"1.6","Do not change scope tags, click Next
+","
+",,,
+,,,"1.7","Click Create
+","Filter should be successfully created
+",,,
+"3777187","Shared Steps",,"2","Add Office 365 Pro Plus Suite App",,,,
+,,,"2.1","Select the 'Office 365 Pro Plus Suite (Windows 10) option from the 'App type' combo box on the 'Add app' blade.","Below the 'App type' combo box Information appears and 3 selectors ('Configure app bundle', 'App Information', and 'App settings') appear below the information. The 'Add' button at the bottom of the 'Add app' blade should be disabled.",,,
+,,,"2.2","Click on the ""Configure app bundle"" selector","The 'Configure app bundle' blade opens and the OK button at the bottom of that blade is disabled. The 'Add' button at the bottom of the Add app blade should be disabled.",,,
+,,,"2.3","Select one or more Office 365 apps as required by the test case","The Check boxes next to the selected apps should have a check mark and the ""OK"" button at the bottom should enable after at least one Office 265 app has been checked.",,,
+,,,"2.4","Click ""OK"" button at the bottom of ""Configure app bundle"" blade","""Configure app bundle"" blade should close and the ""Configure app bundle"" option on the ""Add app"" blade should update with ""X apps selected"" text where ""X"" is the number of apps you selected. The 'Add' button at the bottom of the 'Add app' blade should be disabled.",,,
+,,,"2.5","Click on the ""App Information"" selector","The ""App information"" blade should open. The ""OK"" button at the bottom of the blade should be disabled. The ""Bundle name"" and ""Bundle description"" text boxes should have a red ""!"" after them. ""Publisher"" should have a green check mark. If you scroll down, an image should already be displayed for the ""Logo"" The ""Add"" button at the bottom of the ""Add app"" blade should be disabled.",,,
+,,,"2.6","Set values for the ""App Information""","After setting the ""Bundle name"", ""Bundle description"", and ""Publisher"" and leaving the text box, a green check mark should appear next to the item. When a valid URL (or no value) is entered for the ""Information URL"" or ""Privacy URL"" a green checkbox should appear. If any of these items is not valid as described, a red ""!"" should appear next to the text box for the item. If any red ""!"" appear on the blade, the ""OK"" button at the bottom should be disabled, otherwise it should be enabled.",,,
+,,,"2.7","Click ""OK"" button at the bottom of the App information blade","The text below ""App information"" in the selector should change to ""App bundle information is configured"". The ""Add"" button should be disabled.",,,
+,,,"2.8","Click on the ""App settings"" selector","The ""App settings"" blade should open. The ""Update channel"" combo box should have a red ""!"" next to it. The ""OK"" button should be disabled. The ""Add"" button at the bottom of the ""Add app"" blade should be disabled.",,,
+,,,"2.9","Set values for the ""App settings""  blade","After the ""Update channel"" combo box has been set, the red ""!"" after it should turn to a green check mark and the ""OK"" button at the bottom will become enabled.",,,
+,,,"2.1","Click on the ""Languages"" selector","The ""Languages"" blade should open. The list of languages should be displayed with a checkbox for each. The ""OK"" button for this blade and also the ""App settings"" blade should be enabled.",,,
+,,,"2.11","Set values for the ""Languages"" blade","After clicking on the checkbox for a language, a checkmark should appear in the box. The ""OK"" button at the bottom should stay enabled.",,,
+,,,"2.12","Click on the ""OK"" button for the ""Languages"" blade","The ""Languages"" blade should close.",,,
+,,,"2.13","Click on the ""OK"" button for the ""App settings"" blade","The ""App settings"" blade should close. The ""Add"" button at the bottom of the ""Add app"" blade should be enabled.",,,
+,,,"2.14","Click on the ""Add"" button on the ""Add app"" blade","A bar indicating ""Saving"" may appear. The ""Add app"" blade should close. A pop up with a green check mark and Application saved should appear briefly and close. The Overview blade for the app should appear, with the ""Bundle Name"" that was set for the app appearing in the title of the blade (""Test A - Overview"" if the ""Bundle Name"" was ""Test A"", for example). The app should also appear in the app list (this may require the ""Load more"" at the bottom of the page to be clicked on.",,,
+,,,"2.15",,,,,
+"7464140","Shared Steps",,"3","Add Assignment Filter",,,,
+,,,"3.1","On the Assignments tab in create app
+or
+In Mobile Apps -> Apps click on the app you wish to deploy -> Properties - Click Edit next to Assignments
+","""Assignments"" blade will open showing any current assignments
+",,,
+,,,"3.2"," Click ""+ Add groups"" button","""Select groups"" blade will open showing a list of previously created groups
+",,,
+,,,"3.3","Select 1 or more goups as per test case
+requirements ","Check box next to group will show a check mark ",,,
+,,,"3.4","Click ""Select"" button at the bottom of
+the ""Select groups"" blade ","New groups selected will show in the ""Assignments"" blade",,,
+,,,"3.5"," For each selected group, in the ""Group Mode""
+column select the intent as per the test case requirements","
+",,,
+,,,"3.6"," For each selected group, in the ""Assignment filter"" column, click None (or if editing click the Filter name link)"," Assignment Filter pane opens",,,
+,,,"3.7","Click the ""Include filtered devices in assignment"" radio button","List of filters opens below",,,
+,,,"3.8","Add a filter that will match your test device and click OK","
+",,,
+,,,"4","On device run IWP or Company Portal
+","App should not be listed
+",,,
+"7365656","Test Case","[IntuneSA]:[Windows][Win10]:[Assignment Filters][Match][E2E]:[Appx][Universal]:[Required][UserGroup]:Verify LOB App is install successfully on the device",,,,"Intune\Mgmt\Apps","Scott Brimley (Intune) <scottbr@microsoft.com>","Design"
+"7464252","Shared Steps",,"1","Create Matching Assignment Filters (if needed)",,,,
+,,,"1.1","If Assignment Filters have already been created, you can skip the rest of this step","
+",,,
+,,,"1.2","Click on Tenant Administration -> Assingment Filters
+
+or if the above is not visable
+ For Selfhost copy and paste this link into the address bar: https://endpoint.microsoft.com/?enableAdvancedRuleEditing=true&feature.canmodifystamps=true&feature.canmodifyextensions=true&feature.fullwidth=true&feature.customPortal=false&feature.Microsoft_Intune=sh&Microsoft_Intune=sh&Microsoft_Intune_Apps_urlredirect=intuneappssh&Microsoft_Intune_DeviceSettings=selfhost&Microsoft_Intune_Devices_urlredirect=intunedevicessh&Microsoft_Intune_Workflows_urlredirect=Intuneworkflowsselfhost&Microsoft_Intune_Enrollment_urlredirect=intuneenrollmentsh#blade/Microsoft_Intune_DeviceSettings/AssignmentFilterListBlade","Assignment Filter blade will open",,,
+,,,"1.3","Click ""+ Create""","Create Assignment Filter blade will open",,,
+,,,"1.4","Add a Name, Description and select a Platform then click Next","Rules tab opens",,,
+,,,"1.5","Add 2 expressions that will match your device (make them simple like deviceName) and click Next","
+",,,
+,,,"1.6","Do not change scope tags, click Next","
+",,,
+,,,"1.7","Click Create","Filter should be successfully created",,,
+"1347086","Shared Steps",,"2","Publish LOB App",,,,
+,,,"2.1","Click Apps","Apps listing blade opens",,,
+,,,"2.2","Click macOS"," macOS  blade opens ",,,
+,,,"2.3"," Click ""+ Create"""," Add App blade opens",,,
+,,,"2.4"," Click ""Select app type""","dropdown list opens",,,
+,,,"2.5","Select ""Line-of-business app"" from
+dropdown list "," ""App package file"" and ""App
+information"" options are added to the blade",,,
+,,,"2.6","Click ""Select"" in the ""App
+package file"" option "," ""App package file"" blade opens",,,
+,,,"2.7","Click ""Select app package file"" in the ""App
+package file"" option "," ""Select app package file"" blade opens",,,
+,,,"2.8","Click ""Select a file"" in the ""App
+package file"" option "," ""Select a file"" blade opens",,,
+,,,"2.9","Select ""Line-of-business app"" from
+"," LOB App show in ""App package file"" blade ",,,
+,,,"2.1","Click ""OK"" in the ""App
+package file"" option "," ""App information"" blade opens",,,
+,,,"2.11"," Fill out required fields","
+",,,
+,,,"2.12"," If the test case calls for it add info to
+optional fields","
+",,,
+,,,"2.13"," Click OK at the bottom","""App information"" blade closes ",,,
+,,,"2.14","Click ""Add"" button at the bottom of
+""Add app"" ","App is successfully Published, success toast
+message is shown ",,,
+"7464140","Shared Steps",,"3","Add Assignment Filter",,,,
+,,,"3.1","On the Assignments tab in create app
+or
+In Mobile Apps -> Apps click on the app you wish to deploy -> Properties - Click Edit next to Assignments
+","""Assignments"" blade will open showing any current assignments
+",,,
+,,,"3.2"," Click ""+ Add groups"" button","""Select groups"" blade will open showing a list of previously created groups
+",,,
+,,,"3.3","Select 1 or more goups as per test case
+requirements ","Check box next to group will show a check mark ",,,
+,,,"3.4","Click ""Select"" button at the bottom of
+the ""Select groups"" blade ","New groups selected will show in the ""Assignments"" blade",,,
+,,,"3.5"," For each selected group, in the ""Group Mode""
+column select the intent as per the test case requirements","
+",,,
+,,,"3.6"," For each selected group, in the ""Assignment filter"" column, click None (or if editing click the Filter name link)"," Assignment Filter pane opens",,,
+,,,"3.7","Click the ""Include filtered devices in assignment"" radio button","List of filters opens below",,,
+,,,"3.8","Add a filter that will match your test device and click OK","
+",,,
+,,,"4","On the device","App should not be listed
+",,,
+"9519652","Shared Steps",,"5","In Admin UI Check Assignment Filter Reporting",,,,
+,,,"5.1","In Admin UI check the reporting
+Open the App
+Click on Device install status","Device should have an Installed status",,,
+,,,"5.2","On the line for the device, click on link in the Filter column","Verify that the correct filters were evaluated correctly
+",,,
+"7365657","Test Case","[IntuneSA]:[Windows][Win10]:[Assignment Filters][Match][E2E]:[Appx][Universal]:[Uninstall][UserGroup]:Verify LOB App is uninstalled on the device",,,,"Intune\Mgmt\Apps","Scott Brimley (Intune) <scottbr@microsoft.com>","Design"
+,,,"1","App should be previously published and installed on the device.  You can re-use the installed app by changing the deployment to Uninstall
+","
+",,,
+"7464252","Shared Steps",,"2","Create Matching Assignment Filters (if needed)",,,,
+,,,"2.1","If Assignment Filters have already been created, you can skip the rest of this step","
+",,,
+,,,"2.2","Click on Tenant Administration -> Assingment Filters
+
+or if the above is not visable
+ For Selfhost copy and paste this link into the address bar: https://endpoint.microsoft.com/?enableAdvancedRuleEditing=true&feature.canmodifystamps=true&feature.canmodifyextensions=true&feature.fullwidth=true&feature.customPortal=false&feature.Microsoft_Intune=sh&Microsoft_Intune=sh&Microsoft_Intune_Apps_urlredirect=intuneappssh&Microsoft_Intune_DeviceSettings=selfhost&Microsoft_Intune_Devices_urlredirect=intunedevicessh&Microsoft_Intune_Workflows_urlredirect=Intuneworkflowsselfhost&Microsoft_Intune_Enrollment_urlredirect=intuneenrollmentsh#blade/Microsoft_Intune_DeviceSettings/AssignmentFilterListBlade","Assignment Filter blade will open",,,
+,,,"2.3","Click ""+ Create""","Create Assignment Filter blade will open",,,
+,,,"2.4","Add a Name, Description and select a Platform then click Next","Rules tab opens",,,
+,,,"2.5","Add 2 expressions that will match your device (make them simple like deviceName) and click Next","
+",,,
+,,,"2.6","Do not change scope tags, click Next","
+",,,
+,,,"2.7","Click Create","Filter should be successfully created",,,
+"7464140","Shared Steps",,"3","Add Assignment Filter",,,,
+,,,"3.1","On the Assignments tab in create app
+or
+In Mobile Apps -> Apps click on the app you wish to deploy -> Properties - Click Edit next to Assignments
+","""Assignments"" blade will open showing any current assignments
+",,,
+,,,"3.2"," Click ""+ Add groups"" button","""Select groups"" blade will open showing a list of previously created groups
+",,,
+,,,"3.3","Select 1 or more goups as per test case
+requirements ","Check box next to group will show a check mark ",,,
+,,,"3.4","Click ""Select"" button at the bottom of
+the ""Select groups"" blade ","New groups selected will show in the ""Assignments"" blade",,,
+,,,"3.5"," For each selected group, in the ""Group Mode""
+column select the intent as per the test case requirements","
+",,,
+,,,"3.6"," For each selected group, in the ""Assignment filter"" column, click None (or if editing click the Filter name link)"," Assignment Filter pane opens",,,
+,,,"3.7","Click the ""Include filtered devices in assignment"" radio button","List of filters opens below",,,
+,,,"3.8","Add a filter that will match your test device and click OK","
+",,,
+,,,"4","Verify on Device","App should not be listed
+",,,
+"9519652","Shared Steps",,"5","In Admin UI Check Assignment Filter Reporting",,,,
+,,,"5.1","In Admin UI check the reporting
+Open the App
+Click on Device install status","Device should have an Installed status",,,
+,,,"5.2","On the line for the device, click on link in the Filter column","Verify that the correct filters were evaluated correctly
+",,,
+"7365658","Test Case","[IntuneSA]:[Windows][Win10]:[Assignment Filters][Match][E2E]:[Appx][Universal]:[Available][UserGroup]:Verify LOB App shows in CP and IWP and can all install successfully on the device",,,,"Intune\Mgmt\Apps","Scott Brimley (Intune) <scottbr@microsoft.com>","Design"
+"7464252","Shared Steps",,"1","Create Matching Assignment Filters (if needed)",,,,
+,,,"1.1","If Assignment Filters have already been created, you can skip the rest of this step","
+",,,
+,,,"1.2","Click on Tenant Administration -> Assingment Filters
+
+or if the above is not visable
+ For Selfhost copy and paste this link into the address bar: https://endpoint.microsoft.com/?enableAdvancedRuleEditing=true&feature.canmodifystamps=true&feature.canmodifyextensions=true&feature.fullwidth=true&feature.customPortal=false&feature.Microsoft_Intune=sh&Microsoft_Intune=sh&Microsoft_Intune_Apps_urlredirect=intuneappssh&Microsoft_Intune_DeviceSettings=selfhost&Microsoft_Intune_Devices_urlredirect=intunedevicessh&Microsoft_Intune_Workflows_urlredirect=Intuneworkflowsselfhost&Microsoft_Intune_Enrollment_urlredirect=intuneenrollmentsh#blade/Microsoft_Intune_DeviceSettings/AssignmentFilterListBlade","Assignment Filter blade will open",,,
+,,,"1.3","Click ""+ Create""","Create Assignment Filter blade will open",,,
+,,,"1.4","Add a Name, Description and select a Platform then click Next","Rules tab opens",,,
+,,,"1.5","Add 2 expressions that will match your device (make them simple like deviceName) and click Next","
+",,,
+,,,"1.6","Do not change scope tags, click Next","
+",,,
+,,,"1.7","Click Create","Filter should be successfully created",,,
+"1347086","Shared Steps",,"2","Publish LOB App",,,,
+,,,"2.1","Click Apps","Apps listing blade opens",,,
+,,,"2.2","Click macOS"," macOS  blade opens ",,,
+,,,"2.3"," Click ""+ Create"""," Add App blade opens",,,
+,,,"2.4"," Click ""Select app type""","dropdown list opens",,,
+,,,"2.5","Select ""Line-of-business app"" from
+dropdown list "," ""App package file"" and ""App
+information"" options are added to the blade",,,
+,,,"2.6","Click ""Select"" in the ""App
+package file"" option "," ""App package file"" blade opens",,,
+,,,"2.7","Click ""Select app package file"" in the ""App
+package file"" option "," ""Select app package file"" blade opens",,,
+,,,"2.8","Click ""Select a file"" in the ""App
+package file"" option "," ""Select a file"" blade opens",,,
+,,,"2.9","Select ""Line-of-business app"" from
+"," LOB App show in ""App package file"" blade ",,,
+,,,"2.1","Click ""OK"" in the ""App
+package file"" option "," ""App information"" blade opens",,,
+,,,"2.11"," Fill out required fields","
+",,,
+,,,"2.12"," If the test case calls for it add info to
+optional fields","
+",,,
+,,,"2.13"," Click OK at the bottom","""App information"" blade closes ",,,
+,,,"2.14","Click ""Add"" button at the bottom of
+""Add app"" ","App is successfully Published, success toast
+message is shown ",,,
+"7464140","Shared Steps",,"3","Add Assignment Filter",,,,
+,,,"3.1","On the Assignments tab in create app
+or
+In Mobile Apps -> Apps click on the app you wish to deploy -> Properties - Click Edit next to Assignments
+","""Assignments"" blade will open showing any current assignments
+",,,
+,,,"3.2"," Click ""+ Add groups"" button","""Select groups"" blade will open showing a list of previously created groups
+",,,
+,,,"3.3","Select 1 or more goups as per test case
+requirements ","Check box next to group will show a check mark ",,,
+,,,"3.4","Click ""Select"" button at the bottom of
+the ""Select groups"" blade ","New groups selected will show in the ""Assignments"" blade",,,
+,,,"3.5"," For each selected group, in the ""Group Mode""
+column select the intent as per the test case requirements","
+",,,
+,,,"3.6"," For each selected group, in the ""Assignment filter"" column, click None (or if editing click the Filter name link)"," Assignment Filter pane opens",,,
+,,,"3.7","Click the ""Include filtered devices in assignment"" radio button","List of filters opens below",,,
+,,,"3.8","Add a filter that will match your test device and click OK","
+",,,
+,,,"4","On device run IWP or Company Portal
+","App should be listed
+",,,
+,,,"5","Click on the App and choose install
+","App should be installed on the device
+",,,
+"9519652","Shared Steps",,"6","In Admin UI Check Assignment Filter Reporting",,,,
+,,,"6.1","In Admin UI check the reporting
+Open the App
+Click on Device install status","Device should have an Installed status",,,
+,,,"6.2","On the line for the device, click on link in the Filter column","Verify that the correct filters were evaluated correctly
+",,,
+"7365659","Test Case","[IntuneSA]:[Windows][Win10]:[Assignment Filters][No Match][E2E]:[Appx][Universal]:[Required][UserGroup]:Verify LOB App is not installed on the device",,,,"Intune\Mgmt\Apps","Scott Brimley (Intune) <scottbr@microsoft.com>","Design"
+"7469668","Shared Steps",,"1","Create Non-Matching Assignment Filters (if needed)",,,,
+,,,"1.1","If Assignment Filters have already been created, you can skip the rest of this step
+","
+",,,
+,,,"1.2","Click on Tenant Administration -> Assingment Filters
+
+or if the above is not visable
+ For Selfhost copy and paste this link into the address bar: https://endpoint.microsoft.com/?enableAdvancedRuleEditing=true&feature.canmodifystamps=true&feature.canmodifyextensions=true&feature.fullwidth=true&feature.customPortal=false&feature.Microsoft_Intune=sh&Microsoft_Intune=sh&Microsoft_Intune_Apps_urlredirect=intuneappssh&Microsoft_Intune_DeviceSettings=selfhost&Microsoft_Intune_Devices_urlredirect=intunedevicessh&Microsoft_Intune_Workflows_urlredirect=Intuneworkflowsselfhost&Microsoft_Intune_Enrollment_urlredirect=intuneenrollmentsh#blade/Microsoft_Intune_DeviceSettings/AssignmentFilterListBlade
+","Assignment Filter blade will open
+",,,
+,,,"1.3","Click ""+ Create""
+","Create Assignment Filter blade will open
+",,,
+,,,"1.4","Add a Name, Description and select a Platform then click Next
+","Rules tab opens
+",,,
+,,,"1.5","Add 2 expressions that will not match your device (make them simple like deviceName) and click Next
+","
+",,,
+,,,"1.6","Do not change scope tags, click Next
+","
+",,,
+,,,"1.7","Click Create
+","Filter should be successfully created
+",,,
+"1347086","Shared Steps",,"2","Publish LOB App",,,,
+,,,"2.1","Click Apps","Apps listing blade opens",,,
+,,,"2.2","Click macOS"," macOS  blade opens ",,,
+,,,"2.3"," Click ""+ Create"""," Add App blade opens",,,
+,,,"2.4"," Click ""Select app type""","dropdown list opens",,,
+,,,"2.5","Select ""Line-of-business app"" from
+dropdown list "," ""App package file"" and ""App
+information"" options are added to the blade",,,
+,,,"2.6","Click ""Select"" in the ""App
+package file"" option "," ""App package file"" blade opens",,,
+,,,"2.7","Click ""Select app package file"" in the ""App
+package file"" option "," ""Select app package file"" blade opens",,,
+,,,"2.8","Click ""Select a file"" in the ""App
+package file"" option "," ""Select a file"" blade opens",,,
+,,,"2.9","Select ""Line-of-business app"" from
+"," LOB App show in ""App package file"" blade ",,,
+,,,"2.1","Click ""OK"" in the ""App
+package file"" option "," ""App information"" blade opens",,,
+,,,"2.11"," Fill out required fields","
+",,,
+,,,"2.12"," If the test case calls for it add info to
+optional fields","
+",,,
+,,,"2.13"," Click OK at the bottom","""App information"" blade closes ",,,
+,,,"2.14","Click ""Add"" button at the bottom of
+""Add app"" ","App is successfully Published, success toast
+message is shown ",,,
+"7464140","Shared Steps",,"3","Add Assignment Filter",,,,
+,,,"3.1","On the Assignments tab in create app
+or
+In Mobile Apps -> Apps click on the app you wish to deploy -> Properties - Click Edit next to Assignments
+","""Assignments"" blade will open showing any current assignments
+",,,
+,,,"3.2"," Click ""+ Add groups"" button","""Select groups"" blade will open showing a list of previously created groups
+",,,
+,,,"3.3","Select 1 or more goups as per test case
+requirements ","Check box next to group will show a check mark ",,,
+,,,"3.4","Click ""Select"" button at the bottom of
+the ""Select groups"" blade ","New groups selected will show in the ""Assignments"" blade",,,
+,,,"3.5"," For each selected group, in the ""Group Mode""
+column select the intent as per the test case requirements","
+",,,
+,,,"3.6"," For each selected group, in the ""Assignment filter"" column, click None (or if editing click the Filter name link)"," Assignment Filter pane opens",,,
+,,,"3.7","Click the ""Include filtered devices in assignment"" radio button","List of filters opens below",,,
+,,,"3.8","Add a filter that will match your test device and click OK","
+",,,
+,,,"4","On the device","Verify the app is not installed",,,
+"9519652","Shared Steps",,"5","In Admin UI Check Assignment Filter Reporting",,,,
+,,,"5.1","In Admin UI check the reporting
+Open the App
+Click on Device install status","Device should have an Installed status",,,
+,,,"5.2","On the line for the device, click on link in the Filter column","Verify that the correct filters were evaluated correctly
+",,,
+"7365660","Test Case","[IntuneSA]:[Windows][Win10]:[Assignment Filters][No Match]:[Appx][Universal]:[Available][UserGroup]:Verify LOB App does not show in CP and IWP",,,,"Intune\Mgmt\Apps","Scott Brimley (Intune) <scottbr@microsoft.com>","Design"
+"7469668","Shared Steps",,"1","Create Non-Matching Assignment Filters (if needed)",,,,
+,,,"1.1","If Assignment Filters have already been created, you can skip the rest of this step
+","
+",,,
+,,,"1.2","Click on Tenant Administration -> Assingment Filters
+
+or if the above is not visable
+ For Selfhost copy and paste this link into the address bar: https://endpoint.microsoft.com/?enableAdvancedRuleEditing=true&feature.canmodifystamps=true&feature.canmodifyextensions=true&feature.fullwidth=true&feature.customPortal=false&feature.Microsoft_Intune=sh&Microsoft_Intune=sh&Microsoft_Intune_Apps_urlredirect=intuneappssh&Microsoft_Intune_DeviceSettings=selfhost&Microsoft_Intune_Devices_urlredirect=intunedevicessh&Microsoft_Intune_Workflows_urlredirect=Intuneworkflowsselfhost&Microsoft_Intune_Enrollment_urlredirect=intuneenrollmentsh#blade/Microsoft_Intune_DeviceSettings/AssignmentFilterListBlade
+","Assignment Filter blade will open
+",,,
+,,,"1.3","Click ""+ Create""
+","Create Assignment Filter blade will open
+",,,
+,,,"1.4","Add a Name, Description and select a Platform then click Next
+","Rules tab opens
+",,,
+,,,"1.5","Add 2 expressions that will not match your device (make them simple like deviceName) and click Next
+","
+",,,
+,,,"1.6","Do not change scope tags, click Next
+","
+",,,
+,,,"1.7","Click Create
+","Filter should be successfully created
+",,,
+"1347086","Shared Steps",,"2","Publish LOB App",,,,
+,,,"2.1","Click Apps","Apps listing blade opens",,,
+,,,"2.2","Click macOS"," macOS  blade opens ",,,
+,,,"2.3"," Click ""+ Create"""," Add App blade opens",,,
+,,,"2.4"," Click ""Select app type""","dropdown list opens",,,
+,,,"2.5","Select ""Line-of-business app"" from
+dropdown list "," ""App package file"" and ""App
+information"" options are added to the blade",,,
+,,,"2.6","Click ""Select"" in the ""App
+package file"" option "," ""App package file"" blade opens",,,
+,,,"2.7","Click ""Select app package file"" in the ""App
+package file"" option "," ""Select app package file"" blade opens",,,
+,,,"2.8","Click ""Select a file"" in the ""App
+package file"" option "," ""Select a file"" blade opens",,,
+,,,"2.9","Select ""Line-of-business app"" from
+"," LOB App show in ""App package file"" blade ",,,
+,,,"2.1","Click ""OK"" in the ""App
+package file"" option "," ""App information"" blade opens",,,
+,,,"2.11"," Fill out required fields","
+",,,
+,,,"2.12"," If the test case calls for it add info to
+optional fields","
+",,,
+,,,"2.13"," Click OK at the bottom","""App information"" blade closes ",,,
+,,,"2.14","Click ""Add"" button at the bottom of
+""Add app"" ","App is successfully Published, success toast
+message is shown ",,,
+"7464140","Shared Steps",,"3","Add Assignment Filter",,,,
+,,,"3.1","On the Assignments tab in create app
+or
+In Mobile Apps -> Apps click on the app you wish to deploy -> Properties - Click Edit next to Assignments
+","""Assignments"" blade will open showing any current assignments
+",,,
+,,,"3.2"," Click ""+ Add groups"" button","""Select groups"" blade will open showing a list of previously created groups
+",,,
+,,,"3.3","Select 1 or more goups as per test case
+requirements ","Check box next to group will show a check mark ",,,
+,,,"3.4","Click ""Select"" button at the bottom of
+the ""Select groups"" blade ","New groups selected will show in the ""Assignments"" blade",,,
+,,,"3.5"," For each selected group, in the ""Group Mode""
+column select the intent as per the test case requirements","
+",,,
+,,,"3.6"," For each selected group, in the ""Assignment filter"" column, click None (or if editing click the Filter name link)"," Assignment Filter pane opens",,,
+,,,"3.7","Click the ""Include filtered devices in assignment"" radio button","List of filters opens below",,,
+,,,"3.8","Add a filter that will match your test device and click OK","
+",,,
+,,,"4","On device run IWP or Company Portal
+","App should not be listed
+",,,
+"8982223","Test Case","[IntuneSA]:[Windows][Win10RS3+]:[Publish][E2E]:[Uninstall]:Verify Edge Beta can be uninstalled",,,,"Intune\Mgmt\Apps","Lyn Hu (Centific Technologies Inc) <v-lianlh@microsoft.com>","Design"
+,,,"1","Create a Microsoft Edge app. Select Beta channel in App settings.
+","
+",,,
+,,,"2","Deploy the app to usergroup.
+","
+",,,
+,,,"3","Verify Beta app is installed.
+","
+",,,
+,,,"4","Change deployment of App to uninstall.","
+",,,
+,,,"5","Verify Edge Beta can be uninstalled.
+","
+",,,
+"8982258","Test Case","[IntuneSA]:[Windows][Win10RS3+]:[Publish][E2E]:[Available]:Verify Edge Stable app is installed and correct version is reported in status",,,,"Intune\Mgmt\Apps","Scott Brimley (Intune) <scottbr@microsoft.com>","Design"
+,,,"1","Create a Microsoft Edge app. Select Stable channel in App settings.
+","
+",,,
+,,,"2","Deploy the app as available.
+","
+",,,
+,,,"3","Login IWP page, find the app and clicking install button.
+","
+",,,
+,,,"4","Verify Edge Stable app is installed and correct version is reported in status.
+","
+",,,
+"9495531","Test Case","[IntuneSA]:[Windows][Win10]:[Assignment Filters][Include][Match][E2E]:[Edge]:[Required][UserGroup]:Verify App is install successfully on the device",,,,"Intune\Mgmt\Apps","Scott Brimley (Intune) <scottbr@microsoft.com>","Design"
+"7464252","Shared Steps",,"1","Create Matching Assignment Filters (if needed)",,,,
+,,,"1.1","If Assignment Filters have already been created, you can skip the rest of this step","
+",,,
+,,,"1.2","Click on Tenant Administration -> Assingment Filters
+
+or if the above is not visable
+ For Selfhost copy and paste this link into the address bar: https://endpoint.microsoft.com/?enableAdvancedRuleEditing=true&feature.canmodifystamps=true&feature.canmodifyextensions=true&feature.fullwidth=true&feature.customPortal=false&feature.Microsoft_Intune=sh&Microsoft_Intune=sh&Microsoft_Intune_Apps_urlredirect=intuneappssh&Microsoft_Intune_DeviceSettings=selfhost&Microsoft_Intune_Devices_urlredirect=intunedevicessh&Microsoft_Intune_Workflows_urlredirect=Intuneworkflowsselfhost&Microsoft_Intune_Enrollment_urlredirect=intuneenrollmentsh#blade/Microsoft_Intune_DeviceSettings/AssignmentFilterListBlade","Assignment Filter blade will open",,,
+,,,"1.3","Click ""+ Create""","Create Assignment Filter blade will open",,,
+,,,"1.4","Add a Name, Description and select a Platform then click Next","Rules tab opens",,,
+,,,"1.5","Add 2 expressions that will match your device (make them simple like deviceName) and click Next","
+",,,
+,,,"1.6","Do not change scope tags, click Next","
+",,,
+,,,"1.7","Click Create","Filter should be successfully created",,,
+,,,"2","Create a Edge app","
+",,,
+"7464140","Shared Steps",,"3","Add Assignment Filter",,,,
+,,,"3.1","On the Assignments tab in create app
+or
+In Mobile Apps -> Apps click on the app you wish to deploy -> Properties - Click Edit next to Assignments
+","""Assignments"" blade will open showing any current assignments
+",,,
+,,,"3.2"," Click ""+ Add groups"" button","""Select groups"" blade will open showing a list of previously created groups
+",,,
+,,,"3.3","Select 1 or more goups as per test case
+requirements ","Check box next to group will show a check mark ",,,
+,,,"3.4","Click ""Select"" button at the bottom of
+the ""Select groups"" blade ","New groups selected will show in the ""Assignments"" blade",,,
+,,,"3.5"," For each selected group, in the ""Group Mode""
+column select the intent as per the test case requirements","
+",,,
+,,,"3.6"," For each selected group, in the ""Assignment filter"" column, click None (or if editing click the Filter name link)"," Assignment Filter pane opens",,,
+,,,"3.7","Click the ""Include filtered devices in assignment"" radio button","List of filters opens below",,,
+,,,"3.8","Add a filter that will match your test device and click OK","
+",,,
+,,,"4","On the device
+","App should be installed.
+",,,
+"9495532","Test Case","[IntuneSA]:[Windows][Win10]:[Assignment Filters][Include][Match][E2E]:[Edge]:[Uninstall][UserGroup]:Verify App is uninstalled on the device",,,,"Intune\Mgmt\Apps","Scott Brimley (Intune) <scottbr@microsoft.com>","Design"
+"7464252","Shared Steps",,"1","Create Matching Assignment Filters (if needed)",,,,
+,,,"1.1","If Assignment Filters have already been created, you can skip the rest of this step","
+",,,
+,,,"1.2","Click on Tenant Administration -> Assingment Filters
+
+or if the above is not visable
+ For Selfhost copy and paste this link into the address bar: https://endpoint.microsoft.com/?enableAdvancedRuleEditing=true&feature.canmodifystamps=true&feature.canmodifyextensions=true&feature.fullwidth=true&feature.customPortal=false&feature.Microsoft_Intune=sh&Microsoft_Intune=sh&Microsoft_Intune_Apps_urlredirect=intuneappssh&Microsoft_Intune_DeviceSettings=selfhost&Microsoft_Intune_Devices_urlredirect=intunedevicessh&Microsoft_Intune_Workflows_urlredirect=Intuneworkflowsselfhost&Microsoft_Intune_Enrollment_urlredirect=intuneenrollmentsh#blade/Microsoft_Intune_DeviceSettings/AssignmentFilterListBlade","Assignment Filter blade will open",,,
+,,,"1.3","Click ""+ Create""","Create Assignment Filter blade will open",,,
+,,,"1.4","Add a Name, Description and select a Platform then click Next","Rules tab opens",,,
+,,,"1.5","Add 2 expressions that will match your device (make them simple like deviceName) and click Next","
+",,,
+,,,"1.6","Do not change scope tags, click Next","
+",,,
+,,,"1.7","Click Create","Filter should be successfully created",,,
+,,,"2","Create a Edge app.","
+",,,
+"7464140","Shared Steps",,"3","Add Assignment Filter",,,,
+,,,"3.1","On the Assignments tab in create app
+or
+In Mobile Apps -> Apps click on the app you wish to deploy -> Properties - Click Edit next to Assignments
+","""Assignments"" blade will open showing any current assignments
+",,,
+,,,"3.2"," Click ""+ Add groups"" button","""Select groups"" blade will open showing a list of previously created groups
+",,,
+,,,"3.3","Select 1 or more goups as per test case
+requirements ","Check box next to group will show a check mark ",,,
+,,,"3.4","Click ""Select"" button at the bottom of
+the ""Select groups"" blade ","New groups selected will show in the ""Assignments"" blade",,,
+,,,"3.5"," For each selected group, in the ""Group Mode""
+column select the intent as per the test case requirements","
+",,,
+,,,"3.6"," For each selected group, in the ""Assignment filter"" column, click None (or if editing click the Filter name link)"," Assignment Filter pane opens",,,
+,,,"3.7","Click the ""Include filtered devices in assignment"" radio button","List of filters opens below",,,
+,,,"3.8","Add a filter that will match your test device and click OK","
+",,,
+,,,"4","On the device
+","App should not be listed
+",,,
+,,,"5","Change deployment of App to uninstall.
+
+","
+",,,
+,,,"6","Verify App is uninstalled on the device.
+","
+",,,
+"9495533","Test Case","[IntuneSA]:[Windows][Win10]:[Assignment Filters][Include][Match][E2E]:[Edge]:[Available][UserGroup]:Verify App shows in CP and IWP and can all install successfully on the device",,,,"Intune\Mgmt\Apps","Scott Brimley (Intune) <scottbr@microsoft.com>","Design"
+"7464252","Shared Steps",,"1","Create Matching Assignment Filters (if needed)",,,,
+,,,"1.1","If Assignment Filters have already been created, you can skip the rest of this step","
+",,,
+,,,"1.2","Click on Tenant Administration -> Assingment Filters
+
+or if the above is not visable
+ For Selfhost copy and paste this link into the address bar: https://endpoint.microsoft.com/?enableAdvancedRuleEditing=true&feature.canmodifystamps=true&feature.canmodifyextensions=true&feature.fullwidth=true&feature.customPortal=false&feature.Microsoft_Intune=sh&Microsoft_Intune=sh&Microsoft_Intune_Apps_urlredirect=intuneappssh&Microsoft_Intune_DeviceSettings=selfhost&Microsoft_Intune_Devices_urlredirect=intunedevicessh&Microsoft_Intune_Workflows_urlredirect=Intuneworkflowsselfhost&Microsoft_Intune_Enrollment_urlredirect=intuneenrollmentsh#blade/Microsoft_Intune_DeviceSettings/AssignmentFilterListBlade","Assignment Filter blade will open",,,
+,,,"1.3","Click ""+ Create""","Create Assignment Filter blade will open",,,
+,,,"1.4","Add a Name, Description and select a Platform then click Next","Rules tab opens",,,
+,,,"1.5","Add 2 expressions that will match your device (make them simple like deviceName) and click Next","
+",,,
+,,,"1.6","Do not change scope tags, click Next","
+",,,
+,,,"1.7","Click Create","Filter should be successfully created",,,
+,,,"2","Create a Edge app.","
+",,,
+"7464140","Shared Steps",,"3","Add Assignment Filter",,,,
+,,,"3.1","On the Assignments tab in create app
+or
+In Mobile Apps -> Apps click on the app you wish to deploy -> Properties - Click Edit next to Assignments
+","""Assignments"" blade will open showing any current assignments
+",,,
+,,,"3.2"," Click ""+ Add groups"" button","""Select groups"" blade will open showing a list of previously created groups
+",,,
+,,,"3.3","Select 1 or more goups as per test case
+requirements ","Check box next to group will show a check mark ",,,
+,,,"3.4","Click ""Select"" button at the bottom of
+the ""Select groups"" blade ","New groups selected will show in the ""Assignments"" blade",,,
+,,,"3.5"," For each selected group, in the ""Group Mode""
+column select the intent as per the test case requirements","
+",,,
+,,,"3.6"," For each selected group, in the ""Assignment filter"" column, click None (or if editing click the Filter name link)"," Assignment Filter pane opens",,,
+,,,"3.7","Click the ""Include filtered devices in assignment"" radio button","List of filters opens below",,,
+,,,"3.8","Add a filter that will match your test device and click OK","
+",,,
+,,,"4","Login IWP page, find the app and clicking install button.
+","
+",,,
+,,,"5","Verify App shows in CP and IWP and can all install successfully on the device.
+","
+",,,
+"9495534","Test Case","[IntuneSA]:[Windows][Win10]:[Assignment Filters][Exclude][Match][E2E]:[Edge]:[Required][UserGroup]:Verify App is not installed on the device",,,,"Intune\Mgmt\Apps","Scott Brimley (Intune) <scottbr@microsoft.com>","Design"
+"7464252","Shared Steps",,"1","Create Matching Assignment Filters (if needed)",,,,
+,,,"1.1","If Assignment Filters have already been created, you can skip the rest of this step","
+",,,
+,,,"1.2","Click on Tenant Administration -> Assingment Filters
+
+or if the above is not visable
+ For Selfhost copy and paste this link into the address bar: https://endpoint.microsoft.com/?enableAdvancedRuleEditing=true&feature.canmodifystamps=true&feature.canmodifyextensions=true&feature.fullwidth=true&feature.customPortal=false&feature.Microsoft_Intune=sh&Microsoft_Intune=sh&Microsoft_Intune_Apps_urlredirect=intuneappssh&Microsoft_Intune_DeviceSettings=selfhost&Microsoft_Intune_Devices_urlredirect=intunedevicessh&Microsoft_Intune_Workflows_urlredirect=Intuneworkflowsselfhost&Microsoft_Intune_Enrollment_urlredirect=intuneenrollmentsh#blade/Microsoft_Intune_DeviceSettings/AssignmentFilterListBlade","Assignment Filter blade will open",,,
+,,,"1.3","Click ""+ Create""","Create Assignment Filter blade will open",,,
+,,,"1.4","Add a Name, Description and select a Platform then click Next","Rules tab opens",,,
+,,,"1.5","Add 2 expressions that will match your device (make them simple like deviceName) and click Next","
+",,,
+,,,"1.6","Do not change scope tags, click Next","
+",,,
+,,,"1.7","Click Create","Filter should be successfully created",,,
+,,,"2","Create a Edge app
+","
+",,,
+,,,"3","Deploy it to user group and click the ""Exclude filtered devices in assignment"" radio button in Assignments blade.","
+",,,
+,,,"4","Verify App is not installed on the device.
+","
+",,,
+"9495535","Test Case","[IntuneSA]:[Windows][Win10]:[Assignment Filters][Exclude][Match]:[Edge]:[Available][UserGroup]:Verify App does not show in CP and IWP and does not install on the device",,,,"Intune\Mgmt\Apps","Scott Brimley (Intune) <scottbr@microsoft.com>","Design"
+"7464252","Shared Steps",,"1","Create Matching Assignment Filters (if needed)",,,,
+,,,"1.1","If Assignment Filters have already been created, you can skip the rest of this step","
+",,,
+,,,"1.2","Click on Tenant Administration -> Assingment Filters
+
+or if the above is not visable
+ For Selfhost copy and paste this link into the address bar: https://endpoint.microsoft.com/?enableAdvancedRuleEditing=true&feature.canmodifystamps=true&feature.canmodifyextensions=true&feature.fullwidth=true&feature.customPortal=false&feature.Microsoft_Intune=sh&Microsoft_Intune=sh&Microsoft_Intune_Apps_urlredirect=intuneappssh&Microsoft_Intune_DeviceSettings=selfhost&Microsoft_Intune_Devices_urlredirect=intunedevicessh&Microsoft_Intune_Workflows_urlredirect=Intuneworkflowsselfhost&Microsoft_Intune_Enrollment_urlredirect=intuneenrollmentsh#blade/Microsoft_Intune_DeviceSettings/AssignmentFilterListBlade","Assignment Filter blade will open",,,
+,,,"1.3","Click ""+ Create""","Create Assignment Filter blade will open",,,
+,,,"1.4","Add a Name, Description and select a Platform then click Next","Rules tab opens",,,
+,,,"1.5","Add 2 expressions that will match your device (make them simple like deviceName) and click Next","
+",,,
+,,,"1.6","Do not change scope tags, click Next","
+",,,
+,,,"1.7","Click Create","Filter should be successfully created",,,
+,,,"2","Create a Edge app
+","
+",,,
+,,,"3","Deploy it as available and click the ""Exclude filtered devices in assignment"" radio button in Assignments blade.
+","
+",,,
+,,,"4","Verify App does not show in CP and IWP and does not install on the device.
+","
+",,,
+"14716382","Test Case","[IntuneSA]:[Windows]:[WebApp][UI]:Admin can update the application metadata",,,,"Intune\Mgmt\Apps","Lyn Hu (Centific Technologies Inc) <v-lianlh@microsoft.com>","Design"
+,,,"1","Create a WebApp, fill out common properties (Description/Publisher/Category/etc), clicking save button.
+","
+",,,
+,,,"2","Edit the properties of webapp, update the metadata of App information. ","
+",,,
+,,,"3","The application metadata can be updated.
+","
+",,,
+"14716397","Test Case","[IntuneSA]:[Windows]:[WebApp][UI]:Admin can delete the application",,,,"Intune\Mgmt\Apps","Lyn Hu (Centific Technologies Inc) <v-lianlh@microsoft.com>","Design"
+,,,"1","Create a webApp, and then click delete button
+","
+",,,
+"14775098","Test Case","[IntuneSA]:[Windows]:[Appinfo]:[WebApp][UI]:Verify common properties (Description/Publisher/Category/etc) are properly saved",,,,"Intune\Mgmt\Apps","Lyn Hu (Centific Technologies Inc) <v-lianlh@microsoft.com>","Design"
+,,,"1","Create a WebApp, and then fill out common properties (Description/Publisher/Category/etc) ","
+",,,

@@ -1,500 +1,532 @@
-{
-    "testCases": [
-        {
-            "testCaseId": "TC_14673239",
-            "testName": "Windows_WinGetStoreApp_Required_UserGroup_UWPType_UserScope",
-            "description": "[IntuneSA]:[Windows]:[WinGetStoreApp]:[Required]:[UserGroup]:[UWPType]:[UserScope]: Verify App is installed successfully on the device",
-            "category": "WinGetApp",
-            "priority": "High",
-            "enabled": true,
-            "parameters": {
-                "firstLink": "Apps",
-                "secondLink": "Windows",
-                "AppType": "Microsoft store app (new)",
-                "search app": "WhatsApp",
-                "displayName": "WhatsApp",
-                "description": "WhatsApp from Meta is a 100% free messaging app. It's used by over 2B people in more than 180 countries.",
-                "publisher": "WhatsApp Inc.",
-                "Assignments": {
-                    "Required": "Add group",
-                    "Available for enrolled devices": "",
-                    "uninstall": "",
-                    "select groups": "AI_Automation_User_group",
-                    "Install context": "User"
-                },
-                "API parameters": {},
-                "Device Validation": {
-                    "pre-requisite on device": "",
-                    "App Installation Validation": "Verify App is installed successfully on the device",
-                    "searchTerm": "",
-                    "expectedValue": ""
-                }
-            }
-        },
-        {
-            "testCaseId": "TC_14673246",
-            "testName": "Windows_WinGetStoreApp_Uninstall_UserGroup_UWPType_UserScope",
-            "description": "[IntuneSA]:[Windows]:[WinGetStoreApp]:[Uninstall]:[UserGroup]:[UWPType]:[UserScope]: Verify existing App is uninstalled successfully on the device",
-            "category": "WinGetApp",
-            "priority": "High",
-            "enabled": true,
-            "parameters": {
-                "firstLink": "Apps",
-                "secondLink": "Windows",
-                "AppType": "Microsoft store app (new)",
-                "search app": "Instagram",
-                "displayName": "Instagram",
-                "description": "Instagram from Meta helps you connect with friends, share what you're up to, or see what's new from others all over the world.",
-                "publisher": "Instagram",
-                "Assignments": {
-                    "Required": "",
-                    "Available for enrolled devices": "",
-                    "uninstall": "Add group",
-                    "select groups": "AI_Automation_User_group",
-                    "Install context": "User"
-                },
-                "API parameters": {},
-                "Device Validation": {
-                    "pre-requisite on device": "",
-                    "App Installation Validation": "Verify existing App is uninstalled successfully on the device",
-                    "searchTerm": "",
-                    "expectedValue": ""
-                }
-            }
-        },
-        {
-            "testCaseId": "TC_14673264",
-            "testName": "Windows_WinGetStoreApp_Available_UserGroup_UWPType_UserScope",
-            "description": "[IntuneSA]:[Windows]:[WinGetStoreApp]:[Available]:[UserGroup]:[UWPType]:[UserScope]: Verify App is available in company portal on the device",
-            "category": "WinGetApp",
-            "priority": "High",
-            "enabled": true,
-            "parameters": {
-                "firstLink": "Apps",
-                "secondLink": "Windows",
-                "AppType": "Microsoft store app (new)",
-                "search app": "Facebook",
-                "displayName": "Facebook",
-                "description": "Facebook helps you connect and share with the people in your life.",
-                "publisher": "Meta Platforms, Inc.",
-                "Assignments": {
-                    "Required": "",
-                    "Available for enrolled devices": "Add group",
-                    "uninstall": "",
-                    "select groups": "AI_Automation_User_group",
-                    "Install context": "User"
-                },
-                "API parameters": {},
-                "Device Validation": {
-                    "pre-requisite on device": "",
-                    "App Installation Validation": "Verify App is available in company portal on the device",
-                    "searchTerm": "",
-                    "expectedValue": ""
-                }
-            }
-        },
-        {
-            "testCaseId": "TC_14673598",
-            "testName": "Windows_WinGetStoreApp_Required_DeviceGroup_UWPType_UserScope",
-            "description": "[IntuneSA]:[Windows]:[WinGetStoreApp]:[Required]:[DeviceGroup]:[UWPType]:[UserScope]: Verify App is installed successfully on the device",
-            "category": "WinGetApp",
-            "priority": "High",
-            "enabled": true,
-            "parameters": {
-                "firstLink": "Apps",
-                "secondLink": "Windows",
-                "AppType": "Microsoft store app (new)",
-                "search app": "Snapchat",
-                "displayName": "Snapchat",
-                "description": "Snapchat is a fast and fun way to share the moment with your friends and family.",
-                "publisher": "Snap Inc",
-                "Assignments": {
-                    "Required": "Add group",
-                    "Available for enrolled devices": "",
-                    "uninstall": "",
-                    "select groups": "AI_Automation_Device_group",
-                    "Install context": "User"
-                },
-                "API parameters": {},
-                "Device Validation": {
-                    "pre-requisite on device": "",
-                    "App Installation Validation": "Verify App is installed successfully on the device",
-                    "searchTerm": "",
-                    "expectedValue": ""
-                }
-            }
-        },
-        {
-            "testCaseId": "TC_16407789",
-            "testName": "Windows_WinGetStoreApp_Required_UserGroup_Win32Type_SystemScope",
-            "description": "[IntuneSA]:[Windows]:[WinGetStoreApp]:[Required]:[UserGroup]:[Win32Type]:[SystemScope]: Verify App is installed successfully on the device",
-            "category": "WinGetApp",
-            "priority": "High",
-            "enabled": true,
-            "parameters": {
-                "firstLink": "Apps",
-                "secondLink": "Windows",
-                "AppType": "Microsoft store app (new)",
-                "search app": "PowerShell 7",
-                "displayName": "PowerShell 7",
-                "description": "PowerShell is a cross-platform task automation solution made up of a command-line shell, a scripting language, and a configuration management framework.",
-                "publisher": "Microsoft Corporation",
-                "Assignments": {
-                    "Required": "Add group",
-                    "Available for enrolled devices": "",
-                    "uninstall": "",
-                    "select groups": "AI_Automation_User_group",
-                    "Install context": "System"
-                },
-                "API parameters": {},
-                "Device Validation": {
-                    "pre-requisite on device": "",
-                    "App Installation Validation": "Verify App is installed successfully on the device",
-                    "searchTerm": "",
-                    "expectedValue": ""
-                }
-            }
-        },
-        {
-            "testCaseId": "TC_16407791",
-            "testName": "Windows_WinGetStoreApp_Uninstall_UserGroup_Win32Type_SystemScope",
-            "description": "[IntuneSA]:[Windows]:[WinGetStoreApp]:[Uninstall]:[UserGroup]:[Win32Type]:[SystemScope]: Verify existing App is uninstalled successfully on the device",
-            "category": "WinGetApp",
-            "priority": "High",
-            "enabled": true,
-            "parameters": {
-                "firstLink": "Apps",
-                "secondLink": "Windows",
-                "AppType": "Microsoft store app (new)",
-                "search app": "369links-US",
-                "displayName": "369links-US",
-                "description": "369links-US application for Windows devices.",
-                "publisher": "369links",
-                "Assignments": {
-                    "Required": "",
-                    "Available for enrolled devices": "",
-                    "uninstall": "Add group",
-                    "select groups": "AI_Automation_User_group",
-                    "Install context": "System"
-                },
-                "API parameters": {},
-                "Device Validation": {
-                    "pre-requisite on device": "",
-                    "App Installation Validation": "Verify existing App is uninstalled successfully on the device",
-                    "searchTerm": "",
-                    "expectedValue": ""
-                }
-            }
-        },
-        {
-            "testCaseId": "TC_16408400",
-            "testName": "Windows_WinGetStoreApp_Required_UserGroup_Win32Type_UserScope",
-            "description": "[IntuneSA]:[Windows]:[WinGetStoreApp]:[Required]:[UserGroup]:[Win32Type]:[UserScope]: Verify App is installed successfully on the device",
-            "category": "WinGetApp",
-            "priority": "High",
-            "enabled": true,
-            "parameters": {
-                "firstLink": "Apps",
-                "secondLink": "Windows",
-                "AppType": "Microsoft store app (new)",
-                "search app": "CoreDirector",
-                "displayName": "CoreDirector",
-                "description": "CoreDirector application for Windows devices.",
-                "publisher": "CoreDirector",
-                "Assignments": {
-                    "Required": "Add group",
-                    "Available for enrolled devices": "",
-                    "uninstall": "",
-                    "select groups": "AI_Automation_User_group",
-                    "Install context": "User"
-                },
-                "API parameters": {},
-                "Device Validation": {
-                    "pre-requisite on device": "",
-                    "App Installation Validation": "Verify App is installed successfully on the device",
-                    "searchTerm": "",
-                    "expectedValue": ""
-                }
-            }
-        },
-        {
-            "testCaseId": "TC_16408405",
-            "testName": "Windows_WinGetStoreApp_Uninstall_UserGroup_Win32Type_UserScope",
-            "description": "[IntuneSA]:[Windows]:[WinGetStoreApp]:[Uninstall]:[UserGroup]:[Win32Type]:[UserScope]: Verify existing App is uninstalled successfully on the device",
-            "category": "WinGetApp",
-            "priority": "High",
-            "enabled": true,
-            "parameters": {
-                "firstLink": "Apps",
-                "secondLink": "Windows",
-                "AppType": "Microsoft store app (new)",
-                "search app": "Microsoft Teams",
-                "displayName": "Microsoft Teams",
-                "description": "Microsoft Teams is the hub for team collaboration in Microsoft 365 that integrates the people, content, and tools your team needs to be more engaged and effective.",
-                "publisher": "Microsoft Corporation",
-                "Assignments": {
-                    "Required": "",
-                    "Available for enrolled devices": "",
-                    "uninstall": "Add group",
-                    "select groups": "AI_Automation_User_group",
-                    "Install context": "User"
-                },
-                "API parameters": {},
-                "Device Validation": {
-                    "pre-requisite on device": "",
-                    "App Installation Validation": "Verify existing App is uninstalled successfully on the device",
-                    "searchTerm": "",
-                    "expectedValue": ""
-                }
-            }
-        },
-        {
-            "testCaseId": "TC_16408410",
-            "testName": "Windows_WinGetStoreApp_Available_UserGroup_Win32Type_UserScope",
-            "description": "[IntuneSA]:[Windows]:[WinGetStoreApp]:[Available]:[UserGroup]:[Win32Type]:[UserScope]: Verify App is available in company portal on the device",
-            "category": "WinGetApp",
-            "priority": "High",
-            "enabled": true,
-            "parameters": {
-                "firstLink": "Apps",
-                "secondLink": "Windows",
-                "AppType": "Microsoft store app (new)",
-                "search app": "LagoFast",
-                "displayName": "LagoFast",
-                "description": "LagoFast Game Booster can effectively reduce high ping and latency in games.",
-                "publisher": "LagoFast",
-                "Assignments": {
-                    "Required": "",
-                    "Available for enrolled devices": "Add group",
-                    "uninstall": "",
-                    "select groups": "AI_Automation_User_group",
-                    "Install context": "User"
-                },
-                "API parameters": {},
-                "Device Validation": {
-                    "pre-requisite on device": "",
-                    "App Installation Validation": "Verify App is available in company portal on the device",
-                    "searchTerm": "",
-                    "expectedValue": ""
-                }
-            }
-        },
-        {
-            "testCaseId": "TC_16408416",
-            "testName": "Windows_WinGetStoreApp_Available_UserGroup_Win32Type_SystemScope",
-            "description": "[IntuneSA]:[Windows]:[WinGetStoreApp]:[Available]:[UserGroup]:[Win32Type]:[SystemScope]: Verify App is available in company portal on the device",
-            "category": "WinGetApp",
-            "priority": "High",
-            "enabled": true,
-            "parameters": {
-                "firstLink": "Apps",
-                "secondLink": "Windows",
-                "AppType": "Microsoft store app (new)",
-                "search app": "Sidekick Browser",
-                "displayName": "Sidekick Browser",
-                "description": "Sidekick is a browser designed for multitasking and productivity.",
-                "publisher": "Sidekick",
-                "Assignments": {
-                    "Required": "",
-                    "Available for enrolled devices": "Add group",
-                    "uninstall": "",
-                    "select groups": "AI_Automation_User_group",
-                    "Install context": "System"
-                },
-                "API parameters": {},
-                "Device Validation": {
-                    "pre-requisite on device": "",
-                    "App Installation Validation": "Verify App is available in company portal on the device",
-                    "searchTerm": "",
-                    "expectedValue": ""
-                }
-            }
-        },
-        {
-            "testCaseId": "TC_16408417",
-            "testName": "Windows_WinGetStoreApp_Required_DeviceGroup_Win32Type_UserScope",
-            "description": "[IntuneSA]:[Windows]:[WinGetStoreApp]:[Required]:[DeviceGroup]:[Win32Type]:[UserScope]: Verify App is installed successfully on the device",
-            "category": "WinGetApp",
-            "priority": "High",
-            "enabled": true,
-            "parameters": {
-                "firstLink": "Apps",
-                "secondLink": "Windows",
-                "AppType": "Microsoft store app (new)",
-                "search app": "Adobe Acrobat Reader DC",
-                "displayName": "Adobe Acrobat Reader DC",
-                "description": "Adobe Acrobat Reader DC is the free, trusted standard for viewing, printing, signing, sharing, and annotating PDFs.",
-                "publisher": "Adobe Inc.",
-                "Assignments": {
-                    "Required": "Add group",
-                    "Available for enrolled devices": "",
-                    "uninstall": "",
-                    "select groups": "AI_Automation_Device_group",
-                    "Install context": "User"
-                },
-                "API parameters": {},
-                "Device Validation": {
-                    "pre-requisite on device": "",
-                    "App Installation Validation": "Verify App is installed successfully on the device",
-                    "searchTerm": "",
-                    "expectedValue": ""
-                }
-            }
-        },
-        {
-            "testCaseId": "TC_16408419",
-            "testName": "Windows_WinGetStoreApp_Required_DeviceGroup_Win32Type_SystemScope",
-            "description": "[IntuneSA]:[Windows]:[WinGetStoreApp]:[Required]:[DeviceGroup]:[Win32Type]:[SystemScope]: Verify App is installed successfully on the device",
-            "category": "WinGetApp",
-            "priority": "High",
-            "enabled": true,
-            "parameters": {
-                "firstLink": "Apps",
-                "secondLink": "Windows",
-                "AppType": "Microsoft store app (new)",
-                "search app": "7-Zip",
-                "displayName": "7-Zip",
-                "description": "7-Zip is a file archiver with a high compression ratio.",
-                "publisher": "Igor Pavlov",
-                "Assignments": {
-                    "Required": "Add group",
-                    "Available for enrolled devices": "",
-                    "uninstall": "",
-                    "select groups": "AI_Automation_Device_group",
-                    "Install context": "System"
-                },
-                "API parameters": {},
-                "Device Validation": {
-                    "pre-requisite on device": "",
-                    "App Installation Validation": "Verify App is installed successfully on the device",
-                    "searchTerm": "",
-                    "expectedValue": ""
-                }
-            }
-        },
-        {
-            "testCaseId": "TC_16820381",
-            "testName": "Windows_WinGetStoreApp_Available_UserGroup_UWPType_SystemScope",
-            "description": "[IntuneSA]:[Windows]:[WinGetStoreApp]:[Available]:[UserGroup]:[UWPType]:[SystemScope]: Verify App is available in company portal on the device",
-            "category": "WinGetApp",
-            "priority": "High",
-            "enabled": true,
-            "parameters": {
-                "firstLink": "Apps",
-                "secondLink": "Windows",
-                "AppType": "Microsoft store app (new)",
-                "search app": "Screenshot",
-                "displayName": "Screenshot",
-                "description": "Snipping Tool is a screenshot utility included in Windows.",
-                "publisher": "Microsoft Corporation",
-                "Assignments": {
-                    "Required": "",
-                    "Available for enrolled devices": "Add group",
-                    "uninstall": "",
-                    "select groups": "AI_Automation_User_group",
-                    "Install context": "System"
-                },
-                "API parameters": {},
-                "Device Validation": {
-                    "pre-requisite on device": "",
-                    "App Installation Validation": "Verify App is available in company portal on the device",
-                    "searchTerm": "",
-                    "expectedValue": ""
-                }
-            }
-        },
-        {
-            "testCaseId": "TC_16820413",
-            "testName": "Windows_WinGetStoreApp_Required_DeviceGroup_UWPType_SystemScope",
-            "description": "[IntuneSA]:[Windows]:[WinGetStoreApp]:[Required]:[DeviceGroup]:[UWPType]:[SystemScope]: Verify App is installed successfully on the device",
-            "category": "WinGetApp",
-            "priority": "High",
-            "enabled": true,
-            "parameters": {
-                "firstLink": "Apps",
-                "secondLink": "Windows",
-                "AppType": "Microsoft store app (new)",
-                "search app": "WhatsApp",
-                "displayName": "WhatsApp",
-                "description": "WhatsApp from Meta is a 100% free messaging app. It's used by over 2B people in more than 180 countries.",
-                "publisher": "WhatsApp Inc.",
-                "Assignments": {
-                    "Required": "Add group",
-                    "Available for enrolled devices": "",
-                    "uninstall": "",
-                    "select groups": "AI_Automation_Device_group",
-                    "Install context": "System"
-                },
-                "API parameters": {},
-                "Device Validation": {
-                    "pre-requisite on device": "",
-                    "App Installation Validation": "Verify App is installed successfully on the device",
-                    "searchTerm": "",
-                    "expectedValue": ""
-                }
-            }
-        },
-        {
-            "testCaseId": "TC_16820429",
-            "testName": "Windows_WinGetStoreApp_Uninstall_UserGroup_UWPType_SystemScope",
-            "description": "[IntuneSA]:[Windows]:[WinGetStoreApp]:[Uninstall]:[UserGroup]:[UWPType]:[SystemScope]: Verify existing App is uninstalled successfully on the device",
-            "category": "WinGetApp",
-            "priority": "High",
-            "enabled": true,
-            "parameters": {
-                "firstLink": "Apps",
-                "secondLink": "Windows",
-                "AppType": "Microsoft store app (new)",
-                "search app": "Instagram",
-                "displayName": "Instagram",
-                "description": "Instagram from Meta helps you connect with friends, share what you're up to, or see what's new from others all over the world.",
-                "publisher": "Instagram",
-                "Assignments": {
-                    "Required": "",
-                    "Available for enrolled devices": "",
-                    "uninstall": "Add group",
-                    "select groups": "AI_Automation_User_group",
-                    "Install context": "System"
-                },
-                "API parameters": {},
-                "Device Validation": {
-                    "pre-requisite on device": "",
-                    "App Installation Validation": "Verify existing App is uninstalled successfully on the device",
-                    "searchTerm": "",
-                    "expectedValue": ""
-                }
-            }
-        },
-        {
-            "testCaseId": "TC_16820432",
-            "testName": "Windows_WinGetStoreApp_Required_UserGroup_UWPType_SystemScope",
-            "description": "[IntuneSA]:[Windows]:[WinGetStoreApp]:[Required]:[UserGroup]:[UWPType]:[SystemScope]: Verify App is installed successfully on the device",
-            "category": "WinGetApp",
-            "priority": "High",
-            "enabled": true,
-            "parameters": {
-                "firstLink": "Apps",
-                "secondLink": "Windows",
-                "AppType": "Microsoft store app (new)",
-                "search app": "Facebook",
-                "displayName": "Facebook",
-                "description": "Facebook helps you connect and share with the people in your life.",
-                "publisher": "Meta Platforms, Inc.",
-                "Assignments": {
-                    "Required": "Add group",
-                    "Available for enrolled devices": "",
-                    "uninstall": "",
-                    "select groups": "AI_Automation_User_group",
-                    "Install context": "System"
-                },
-                "API parameters": {},
-                "Device Validation": {
-                    "pre-requisite on device": "",
-                    "App Installation Validation": "Verify App is installed successfully on the device",
-                    "searchTerm": "",
-                    "expectedValue": ""
-                }
-            }
-        }
-    ]
+﻿{
+    "testCases":  [
+                      {
+                          "testCaseId":  "TC_14673239",
+                          "testName":  "Windows_WinGetStoreApp_Required_UserGroup_UWPType_UserScope",
+                          "description":  "[IntuneSA]:[Windows]:[WinGetStoreApp]:[Required]:[UserGroup]:[UWPType]:[UserScope]: Verify App is installed successfully on the device",
+                          "category":  "WinGetApp",
+                          "priority":  "High",
+                          "enabled":  true,
+                          "parameters":  {
+                                             "firstLink":  "Apps",
+                                             "secondLink":  "Windows",
+                                             "AppType":  "Microsoft store app (new)",
+                                             "search app":  "WhatsApp",
+                                             "displayName":  "Test-Case1-WhatsApp",
+                                             "description":  "WhatsApp from Meta is a 100% free messaging app. It\u0027s used by over 2B people in more than 180 countries.",
+                                             "publisher":  "WhatsApp Inc.",
+                                             "Assignments":  {
+                                                                 "Required":  "Add group",
+                                                                 "Available for enrolled devices":  "",
+                                                                 "uninstall":  "",
+                                                                 "select groups":  "AI_Automation_User_group",
+                                                                 "Install context":  "User"
+                                                             },
+                                             "API parameters":  {
+
+                                                                },
+                                             "Device Validation":  {
+                                                                       "pre-requisite on device":  "",
+                                                                       "App Installation Validation":  "Verify App is installed successfully on the device",
+                                                                       "searchTerm":  "WhatsApp",
+                                                                       "expectedValue":  "installed"
+                                                                   }
+                                         }
+                      },
+                      {
+                          "testCaseId":  "TC_14673246",
+                          "testName":  "Windows_WinGetStoreApp_Uninstall_UserGroup_UWPType_UserScope",
+                          "description":  "[IntuneSA]:[Windows]:[WinGetStoreApp]:[Uninstall]:[UserGroup]:[UWPType]:[UserScope]: Verify existing App is uninstalled successfully on the device",
+                          "category":  "WinGetApp",
+                          "priority":  "High",
+                          "enabled":  true,
+                          "parameters":  {
+                                             "firstLink":  "Apps",
+                                             "secondLink":  "Windows",
+                                             "AppType":  "Microsoft store app (new)",
+                                             "search app":  "Instagram",
+                                             "displayName":  "Test-Case2-Instagram",
+                                             "description":  "Instagram from Meta helps you connect with friends, share what you\u0027re up to, or see what\u0027s new from others all over the world.",
+                                             "publisher":  "Instagram",
+                                             "Assignments":  {
+                                                                 "Required":  "Add group",
+                                                                 "Available for enrolled devices":  "",
+                                                                 "uninstall":  "",
+                                                                 "select groups":  "AI_Automation_User_group",
+                                                                 "Install context":  "User"
+                                                             },
+                                             "API parameters":  {
+
+                                                                },
+                                             "Device Validation":  {
+                                                                       "pre-requisite on device":  "",
+                                                                       "App Installation Validation":  "Verify existing App is uninstalled successfully on the device",
+                                                                       "searchTerm":  "Instagram",
+                                                                       "expectedValue":  "not installed"
+                                                                   }
+                                         }
+                      },
+                      {
+                          "testCaseId":  "TC_14673264",
+                          "testName":  "Windows_WinGetStoreApp_Available_UserGroup_UWPType_UserScope",
+                          "description":  "[IntuneSA]:[Windows]:[WinGetStoreApp]:[Available]:[UserGroup]:[UWPType]:[UserScope]: Verify App is available in company portal on the device",
+                          "category":  "WinGetApp",
+                          "priority":  "High",
+                          "enabled":  true,
+                          "parameters":  {
+                                             "firstLink":  "Apps",
+                                             "secondLink":  "Windows",
+                                             "AppType":  "Microsoft store app (new)",
+                                             "search app":  "Facebook",
+                                             "displayName":  "Test-Case3-Facebook",
+                                             "description":  "Facebook helps you connect and share with the people in your life.",
+                                             "publisher":  "Meta Platforms, Inc.",
+                                             "Assignments":  {
+                                                                 "Required":  "",
+                                                                 "Available for enrolled devices":  "Add group",
+                                                                 "uninstall":  "",
+                                                                 "select groups":  "AI_Automation_User_group",
+                                                                 "Install context":  "User"
+                                                             },
+                                             "API parameters":  {
+
+                                                                },
+                                             "Device Validation":  {
+                                                                       "pre-requisite on device":  "",
+                                                                       "App Installation Validation":  "Verify App is available in company portal on the device",
+                                                                       "searchTerm":  "Facebook",
+                                                                       "expectedValue":  "available"
+                                                                   }
+                                         }
+                      },
+                      {
+                          "testCaseId":  "TC_14673598",
+                          "testName":  "Windows_WinGetStoreApp_Required_DeviceGroup_UWPType_UserScope",
+                          "description":  "[IntuneSA]:[Windows]:[WinGetStoreApp]:[Required]:[DeviceGroup]:[UWPType]:[UserScope]: Verify App is installed successfully on the device",
+                          "category":  "WinGetApp",
+                          "priority":  "High",
+                          "enabled":  true,
+                          "parameters":  {
+                                             "firstLink":  "Apps",
+                                             "secondLink":  "Windows",
+                                             "AppType":  "Microsoft store app (new)",
+                                             "search app":  "Snapchat",
+                                             "displayName":  "Test-Case4-Snapchat",
+                                             "description":  "Snapchat is a fast and fun way to share the moment with your friends and family.",
+                                             "publisher":  "Snap Inc",
+                                             "Assignments":  {
+                                                                 "Required":  "Add group",
+                                                                 "Available for enrolled devices":  "",
+                                                                 "uninstall":  "",
+                                                                 "select groups":  "AI_Automation_Device_group",
+                                                                 "Install context":  "User"
+                                                             },
+                                             "API parameters":  {
+
+                                                                },
+                                             "Device Validation":  {
+                                                                       "pre-requisite on device":  "",
+                                                                       "App Installation Validation":  "Verify App is installed successfully on the device",
+                                                                       "searchTerm":  "Snapchat",
+                                                                       "expectedValue":  "installed"
+                                                                   }
+                                         }
+                      },
+                      {
+                          "testCaseId":  "TC_16407789",
+                          "testName":  "Windows_WinGetStoreApp_Required_UserGroup_Win32Type_SystemScope",
+                          "description":  "[IntuneSA]:[Windows]:[WinGetStoreApp]:[Required]:[UserGroup]:[Win32Type]:[SystemScope]: Verify App is installed successfully on the device",
+                          "category":  "WinGetApp",
+                          "priority":  "High",
+                          "enabled":  true,
+                          "parameters":  {
+                                             "firstLink":  "Apps",
+                                             "secondLink":  "Windows",
+                                             "AppType":  "Microsoft store app (new)",
+                                             "search app":  "PowerShell to exe\u0026msi Converter free",
+                                             "displayName":  "Test-Case5-PowerShellConverter",
+                                             "description":  "PowerShell is a cross-platform task automation solution made up of a command-line shell, a scripting language, and a configuration management framework.",
+                                             "publisher":  "Microsoft Corporation",
+                                             "Assignments":  {
+                                                                 "Required":  "Add group",
+                                                                 "Available for enrolled devices":  "",
+                                                                 "uninstall":  "",
+                                                                 "select groups":  "AI_Automation_User_group",
+                                                                 "Install context":  "System"
+                                                             },
+                                             "API parameters":  {
+
+                                                                },
+                                             "Device Validation":  {
+                                                                       "pre-requisite on device":  "",
+                                                                       "App Installation Validation":  "Verify App is installed successfully on the device",
+                                                                       "searchTerm":  "PowerShell to exe\u0026msi Converter free",
+                                                                       "expectedValue":  "installed"
+                                                                   }
+                                         }
+                      },
+                      {
+                          "testCaseId":  "TC_16407791",
+                          "testName":  "Windows_WinGetStoreApp_Uninstall_UserGroup_Win32Type_SystemScope",
+                          "description":  "[IntuneSA]:[Windows]:[WinGetStoreApp]:[Uninstall]:[UserGroup]:[Win32Type]:[SystemScope]: Verify existing App is uninstalled successfully on the device",
+                          "category":  "WinGetApp",
+                          "priority":  "High",
+                          "enabled":  true,
+                          "parameters":  {
+                                             "firstLink":  "Apps",
+                                             "secondLink":  "Windows",
+                                             "AppType":  "Microsoft store app (new)",
+                                             "search app":  "369links-US",
+                                             "displayName":  "Test-Case6-369linksUS",
+                                             "description":  "369links-US application for Windows devices.",
+                                             "publisher":  "369links",
+                                             "Assignments":  {
+                                                                 "Required":  "Add group",
+                                                                 "Available for enrolled devices":  "",
+                                                                 "uninstall":  "",
+                                                                 "select groups":  "AI_Automation_User_group",
+                                                                 "Install context":  "System"
+                                                             },
+                                             "API parameters":  {
+
+                                                                },
+                                             "Device Validation":  {
+                                                                       "pre-requisite on device":  "",
+                                                                       "App Installation Validation":  "Verify existing App is uninstalled successfully on the device",
+                                                                       "searchTerm":  "369links-US",
+                                                                       "expectedValue":  "not installed"
+                                                                   }
+                                         }
+                      },
+                      {
+                          "testCaseId":  "TC_16408400",
+                          "testName":  "Windows_WinGetStoreApp_Required_UserGroup_Win32Type_UserScope",
+                          "description":  "[IntuneSA]:[Windows]:[WinGetStoreApp]:[Required]:[UserGroup]:[Win32Type]:[UserScope]: Verify App is installed successfully on the device",
+                          "category":  "WinGetApp",
+                          "priority":  "High",
+                          "enabled":  true,
+                          "parameters":  {
+                                             "firstLink":  "Apps",
+                                             "secondLink":  "Windows",
+                                             "AppType":  "Microsoft store app (new)",
+                                             "search app":  "CoreDirector",
+                                             "displayName":  "Test-Case7-CoreDirector",
+                                             "description":  "CoreDirector application for Windows devices.",
+                                             "publisher":  "CoreDirector",
+                                             "Assignments":  {
+                                                                 "Required":  "Add group",
+                                                                 "Available for enrolled devices":  "",
+                                                                 "uninstall":  "",
+                                                                 "select groups":  "AI_Automation_User_group",
+                                                                 "Install context":  "User"
+                                                             },
+                                             "API parameters":  {
+
+                                                                },
+                                             "Device Validation":  {
+                                                                       "pre-requisite on device":  "",
+                                                                       "App Installation Validation":  "Verify App is installed successfully on the device",
+                                                                       "searchTerm":  "CoreDirector",
+                                                                       "expectedValue":  "installed"
+                                                                   }
+                                         }
+                      },
+                      {
+                          "testCaseId":  "TC_16408405",
+                          "testName":  "Windows_WinGetStoreApp_Uninstall_UserGroup_Win32Type_UserScope",
+                          "description":  "[IntuneSA]:[Windows]:[WinGetStoreApp]:[Uninstall]:[UserGroup]:[Win32Type]:[UserScope]: Verify existing App is uninstalled successfully on the device",
+                          "category":  "WinGetApp",
+                          "priority":  "High",
+                          "enabled":  true,
+                          "parameters":  {
+                                             "firstLink":  "Apps",
+                                             "secondLink":  "Windows",
+                                             "AppType":  "Microsoft store app (new)",
+                                             "search app":  "Microsoft Teams",
+                                             "displayName":  "Test-Case8-MicrosoftTeams",
+                                             "description":  "Microsoft Teams is the hub for team collaboration in Microsoft 365 that integrates the people, content, and tools your team needs to be more engaged and effective.",
+                                             "publisher":  "Microsoft Corporation",
+                                             "Assignments":  {
+                                                                 "Required":  "Add group",
+                                                                 "Available for enrolled devices":  "",
+                                                                 "uninstall":  "",
+                                                                 "select groups":  "AI_Automation_User_group",
+                                                                 "Install context":  "User"
+                                                             },
+                                             "API parameters":  {
+
+                                                                },
+                                             "Device Validation":  {
+                                                                       "pre-requisite on device":  "",
+                                                                       "App Installation Validation":  "Verify existing App is uninstalled successfully on the device",
+                                                                       "searchTerm":  "Microsoft Teams",
+                                                                       "expectedValue":  "not installed"
+                                                                   }
+                                         }
+                      },
+                      {
+                          "testCaseId":  "TC_16408410",
+                          "testName":  "Windows_WinGetStoreApp_Available_UserGroup_Win32Type_UserScope",
+                          "description":  "[IntuneSA]:[Windows]:[WinGetStoreApp]:[Available]:[UserGroup]:[Win32Type]:[UserScope]: Verify App is available in company portal on the device",
+                          "category":  "WinGetApp",
+                          "priority":  "High",
+                          "enabled":  true,
+                          "parameters":  {
+                                             "firstLink":  "Apps",
+                                             "secondLink":  "Windows",
+                                             "AppType":  "Microsoft store app (new)",
+                                             "search app":  "Adobe Photoshop",
+                                             "displayName":  "Test-Case9-AdobePhotoshop",
+                                             "description":  "Adobe Photoshop is a powerful image editing software used by professionals worldwide.",
+                                             "publisher":  "Adobe Inc.",
+                                             "Assignments":  {
+                                                                 "Required":  "",
+                                                                 "Available for enrolled devices":  "Add group",
+                                                                 "uninstall":  "",
+                                                                 "select groups":  "AI_Automation_User_group",
+                                                                 "Install context":  "User"
+                                                             },
+                                             "API parameters":  {
+
+                                                                },
+                                             "Device Validation":  {
+                                                                       "pre-requisite on device":  "",
+                                                                       "App Installation Validation":  "Verify App is available in company portal on the device",
+                                                                       "searchTerm":  "Adobe Photoshop",
+                                                                       "expectedValue":  "available"
+                                                                   }
+                                         }
+                      },
+                      {
+                          "testCaseId":  "TC_16408416",
+                          "testName":  "Windows_WinGetStoreApp_Available_UserGroup_Win32Type_SystemScope",
+                          "description":  "[IntuneSA]:[Windows]:[WinGetStoreApp]:[Available]:[UserGroup]:[Win32Type]:[SystemScope]: Verify App is available in company portal on the device",
+                          "category":  "WinGetApp",
+                          "priority":  "High",
+                          "enabled":  true,
+                          "parameters":  {
+                                             "firstLink":  "Apps",
+                                             "secondLink":  "Windows",
+                                             "AppType":  "Microsoft store app (new)",
+                                             "search app":  "Sidekick Browser",
+                                             "displayName":  "Test-Case10-SidekickBrowser",
+                                             "description":  "Sidekick is a browser designed for multitasking and productivity.",
+                                             "publisher":  "Sidekick",
+                                             "Assignments":  {
+                                                                 "Required":  "",
+                                                                 "Available for enrolled devices":  "Add group",
+                                                                 "uninstall":  "",
+                                                                 "select groups":  "AI_Automation_User_group",
+                                                                 "Install context":  "System"
+                                                             },
+                                             "API parameters":  {
+
+                                                                },
+                                             "Device Validation":  {
+                                                                       "pre-requisite on device":  "",
+                                                                       "App Installation Validation":  "Verify App is available in company portal on the device",
+                                                                       "searchTerm":  "Sidekick Browser",
+                                                                       "expectedValue":  "available"
+                                                                   }
+                                         }
+                      },
+                      {
+                          "testCaseId":  "TC_16408417",
+                          "testName":  "Windows_WinGetStoreApp_Required_DeviceGroup_Win32Type_UserScope",
+                          "description":  "[IntuneSA]:[Windows]:[WinGetStoreApp]:[Required]:[DeviceGroup]:[Win32Type]:[UserScope]: Verify App is installed successfully on the device",
+                          "category":  "WinGetApp",
+                          "priority":  "High",
+                          "enabled":  true,
+                          "parameters":  {
+                                             "firstLink":  "Apps",
+                                             "secondLink":  "Windows",
+                                             "AppType":  "Microsoft store app (new)",
+                                             "search app":  "Adobe Acrobat Reader DC",
+                                             "displayName":  "Test-Case11-AdobeAcrobatReaderDC",
+                                             "description":  "Adobe Acrobat Reader DC is the free, trusted standard for viewing, printing, signing, sharing, and annotating PDFs.",
+                                             "publisher":  "Adobe Inc.",
+                                             "Assignments":  {
+                                                                 "Required":  "Add group",
+                                                                 "Available for enrolled devices":  "",
+                                                                 "uninstall":  "",
+                                                                 "select groups":  "AI_Automation_Device_group",
+                                                                 "Install context":  "User"
+                                                             },
+                                             "API parameters":  {
+
+                                                                },
+                                             "Device Validation":  {
+                                                                       "pre-requisite on device":  "",
+                                                                       "App Installation Validation":  "Verify App is installed successfully on the device",
+                                                                       "searchTerm":  "Adobe Acrobat Reader DC",
+                                                                       "expectedValue":  "installed"
+                                                                   }
+                                         }
+                      },
+                      {
+                          "testCaseId":  "TC_16408419",
+                          "testName":  "Windows_WinGetStoreApp_Required_DeviceGroup_Win32Type_SystemScope",
+                          "description":  "[IntuneSA]:[Windows]:[WinGetStoreApp]:[Required]:[DeviceGroup]:[Win32Type]:[SystemScope]: Verify App is installed successfully on the device",
+                          "category":  "WinGetApp",
+                          "priority":  "High",
+                          "enabled":  true,
+                          "parameters":  {
+                                             "firstLink":  "Apps",
+                                             "secondLink":  "Windows",
+                                             "AppType":  "Microsoft store app (new)",
+                                             "search app":  "Adobe Lightroom",
+                                             "displayName":  "Test-Case12-AdobeLightroom",
+                                             "description":  "Adobe Lightroom is a powerful photo editing and management software.",
+                                             "publisher":  "Adobe Inc.",
+                                             "Assignments":  {
+                                                                 "Required":  "Add group",
+                                                                 "Available for enrolled devices":  "",
+                                                                 "uninstall":  "",
+                                                                 "select groups":  "AI_Automation_Device_group",
+                                                                 "Install context":  "System"
+                                                             },
+                                             "API parameters":  {
+
+                                                                },
+                                             "Device Validation":  {
+                                                                       "pre-requisite on device":  "",
+                                                                       "App Installation Validation":  "Verify App is installed successfully on the device",
+                                                                       "searchTerm":  "Adobe Lightroom",
+                                                                       "expectedValue":  "installed"
+                                                                   }
+                                         }
+                      },
+                      {
+                          "testCaseId":  "TC_16820381",
+                          "testName":  "Windows_WinGetStoreApp_Available_UserGroup_UWPType_SystemScope",
+                          "description":  "[IntuneSA]:[Windows]:[WinGetStoreApp]:[Available]:[UserGroup]:[UWPType]:[SystemScope]: Verify App is available in company portal on the device",
+                          "category":  "WinGetApp",
+                          "priority":  "High",
+                          "enabled":  true,
+                          "parameters":  {
+                                             "firstLink":  "Apps",
+                                             "secondLink":  "Windows",
+                                             "AppType":  "Microsoft store app (new)",
+                                             "search app":  "Screenshot",
+                                             "displayName":  "Test-Case13-Screenshot",
+                                             "description":  "Snipping Tool is a screenshot utility included in Windows.",
+                                             "publisher":  "Microsoft Corporation",
+                                             "Assignments":  {
+                                                                 "Required":  "",
+                                                                 "Available for enrolled devices":  "Add group",
+                                                                 "uninstall":  "",
+                                                                 "select groups":  "AI_Automation_User_group",
+                                                                 "Install context":  "System"
+                                                             },
+                                             "API parameters":  {
+
+                                                                },
+                                             "Device Validation":  {
+                                                                       "pre-requisite on device":  "",
+                                                                       "App Installation Validation":  "Verify App is available in company portal on the device",
+                                                                       "searchTerm":  "Screenshot",
+                                                                       "expectedValue":  "available"
+                                                                   }
+                                         }
+                      },
+                      {
+                          "testCaseId":  "TC_16820413",
+                          "testName":  "Windows_WinGetStoreApp_Required_DeviceGroup_UWPType_SystemScope",
+                          "description":  "[IntuneSA]:[Windows]:[WinGetStoreApp]:[Required]:[DeviceGroup]:[UWPType]:[SystemScope]: Verify App is installed successfully on the device",
+                          "category":  "WinGetApp",
+                          "priority":  "High",
+                          "enabled":  true,
+                          "parameters":  {
+                                             "firstLink":  "Apps",
+                                             "secondLink":  "Windows",
+                                             "AppType":  "Microsoft store app (new)",
+                                             "search app":  "WhatsApp",
+                                             "displayName":  "Test-Case14-WhatsApp",
+                                             "description":  "WhatsApp from Meta is a 100% free messaging app. It\u0027s used by over 2B people in more than 180 countries.",
+                                             "publisher":  "WhatsApp Inc.",
+                                             "Assignments":  {
+                                                                 "Required":  "Add group",
+                                                                 "Available for enrolled devices":  "",
+                                                                 "uninstall":  "",
+                                                                 "select groups":  "AI_Automation_Device_group",
+                                                                 "Install context":  "System"
+                                                             },
+                                             "API parameters":  {
+
+                                                                },
+                                             "Device Validation":  {
+                                                                       "pre-requisite on device":  "",
+                                                                       "App Installation Validation":  "Verify App is installed successfully on the device",
+                                                                       "searchTerm":  "WhatsApp",
+                                                                       "expectedValue":  "installed"
+                                                                   }
+                                         }
+                      },
+                      {
+                          "testCaseId":  "TC_16820429",
+                          "testName":  "Windows_WinGetStoreApp_Uninstall_UserGroup_UWPType_SystemScope",
+                          "description":  "[IntuneSA]:[Windows]:[WinGetStoreApp]:[Uninstall]:[UserGroup]:[UWPType]:[SystemScope]: Verify existing App is uninstalled successfully on the device",
+                          "category":  "WinGetApp",
+                          "priority":  "High",
+                          "enabled":  true,
+                          "parameters":  {
+                                             "firstLink":  "Apps",
+                                             "secondLink":  "Windows",
+                                             "AppType":  "Microsoft store app (new)",
+                                             "search app":  "Telegram Desktop",
+                                             "displayName":  "Test-Case15-TelegramDesktop",
+                                             "description":  "Telegram Desktop from Telegram Messenger LLP is a cloud-based instant messaging app.",
+                                             "publisher":  "Telegram Messenger LLP",
+                                             "Assignments":  {
+                                                                 "Required":  "Add group",
+                                                                 "Available for enrolled devices":  "",
+                                                                 "uninstall":  "",
+                                                                 "select groups":  "AI_Automation_User_group",
+                                                                 "Install context":  "System"
+                                                             },
+                                             "API parameters":  {
+
+                                                                },
+                                             "Device Validation":  {
+                                                                       "pre-requisite on device":  "",
+                                                                       "App Installation Validation":  "Verify existing App is uninstalled successfully on the device",
+                                                                       "searchTerm":  "Telegram Desktop",
+                                                                       "expectedValue":  "not installed"
+                                                                   }
+                                         }
+                      },
+                      {
+                          "testCaseId":  "TC_16820432",
+                          "testName":  "Windows_WinGetStoreApp_Required_UserGroup_UWPType_SystemScope",
+                          "description":  "[IntuneSA]:[Windows]:[WinGetStoreApp]:[Required]:[UserGroup]:[UWPType]:[SystemScope]: Verify App is installed successfully on the device",
+                          "category":  "WinGetApp",
+                          "priority":  "High",
+                          "enabled":  true,
+                          "parameters":  {
+                                             "firstLink":  "Apps",
+                                             "secondLink":  "Windows",
+                                             "AppType":  "Microsoft store app (new)",
+                                             "search app":  "Facebook",
+                                             "displayName":  "Test-Case16-Facebook",
+                                             "description":  "Facebook helps you connect and share with the people in your life.",
+                                             "publisher":  "Meta Platforms, Inc.",
+                                             "Assignments":  {
+                                                                 "Required":  "Add group",
+                                                                 "Available for enrolled devices":  "",
+                                                                 "uninstall":  "",
+                                                                 "select groups":  "AI_Automation_User_group",
+                                                                 "Install context":  "System"
+                                                             },
+                                             "API parameters":  {
+
+                                                                },
+                                             "Device Validation":  {
+                                                                       "pre-requisite on device":  "",
+                                                                       "App Installation Validation":  "Verify App is installed successfully on the device",
+                                                                       "searchTerm":  "Facebook",
+                                                                       "expectedValue":  "installed"
+                                                                   }
+                                         }
+                      }
+                  ]
 }

@@ -83,7 +83,7 @@
                                                                  "Required":  "Add group",
                                                                  "Available for enrolled devices":  "",
                                                                  "uninstall":  "",
-                                                                 "select groups":  "Automation_AI"
+                                                                 "select groups":  "Automation_AI User group"
                                                              },
                                              "API parameters":  {
 
@@ -481,8 +481,8 @@
                                          }
                       },
                       {
-                          "testCaseId":  "TC_4180340A",
-                          "testName":  "Win32App_DependentApp_4180340A",
+                          "testCaseId":  "TC_4180340B",
+                          "testName":  "Win32App_DependentApp_4180340B",
                           "description":  "[IntuneSA]:[Windows][Win10]:[DependentApp]:[WinClassicApp]:[Available][UserGroup]: A -\u003e B, both applicable to client, deploy A to user",
                           "category":  "WinClassicApp",
                           "priority":  "High",
@@ -493,8 +493,8 @@
                                              "AppType":  "Windows app (Win32)",
                                              "select app package file":  "14 Fake MSI.intunewin",
                                              "Type of app install file":  "MSI",
-                                             "Name":  "TC_4180340A_14 Fake MSI.intunewin",
-                                             "Description":  "TC_4180340A_14 Fake MSI.intunewin",
+                                             "Name":  "TC_4180340B_14 Fake MSI.intunewin",
+                                             "Description":  "TC_4180340B_14 Fake MSI.intunewin",
                                              "Publisher":  "AIAuto ddmmyyyymmss",
                                              "program parameters":  {
                                                                         "Installation time required (mins)":  "5",
@@ -529,8 +529,8 @@
                                          }
                       },
                         {
-                          "testCaseId":  "TC_4180340B",
-                          "testName":  "Win32App_DependentApp_4180340B",
+                          "testCaseId":  "TC_4180340A",
+                          "testName":  "Win32App_DependentApp_4180340A",
                           "description":  "[IntuneSA]:[Windows][Win10]:[DependentApp]:[WinClassicApp]:[Available][UserGroup]: A -\u003e B, both applicable to client, deploy A to user",
                           "category":  "WinClassicApp",
                           "priority":  "High",
@@ -541,8 +541,8 @@
                                              "AppType":  "Windows app (Win32)",
                                              "select app package file":  "15 Fake MSI.intunewin",
                                              "Type of app install file":  "MSI",
-                                             "Name":  "TC_4180340B_15 Fake MSI.intunewin",
-                                             "Description":  "TC_4180340B_15 Fake MSI.intunewin",
+                                             "Name":  "TC_4180340A_15 Fake MSI.intunewin",
+                                             "Description":  "TC_4180340A_15 Fake MSI.intunewin",
                                              "Publisher":  "AIAuto ddmmyyyymmss",
                                              "program parameters":  {
                                                                         "Installation time required (mins)":  "5",
@@ -557,13 +557,13 @@
                                                                                 "Rule type":  "MSI",
                                                                                 "Rules format":  "Manually configure detection rules"
                                                                             },
-                                             "Dependencies":  "Configured as per test description",
+                                             "Dependencies":  "TC_4180340B_14 Fake MSI.intunewin",
                                              "Supercedence":  "",
                                              "Assignments":  {
                                                                  "Required":  "",
-                                                                 "Available for enrolled devices":  "",
+                                                                 "Available for enrolled devices":  "Add group",
                                                                  "uninstall":  "",
-                                                                 "select groups":  ""
+                                                                 "select groups":  "AI_Automation_User_group"
                                                              },
                                              "API parameters":  {
 
@@ -577,8 +577,8 @@
                                          }
                       },
                       {
-                          "testCaseId":  "TC_4180341A",
-                          "testName":  "Win32App_DependentApp_4180341A",
+                          "testCaseId":  "TC_4180341B",
+                          "testName":  "Win32App_DependentApp_4180341B",
                           "description":  "[IntuneSA]:[Windows][Win10]:[DependentApp]:[WinClassicApp]:[Required][DeviceGroup]:A -\u003e B. A is deployed, B is installed then A. Then dependency is changed to A -\u003e C. At global re-eval, C is installed",
                           "category":  "WinClassicApp",
                           "priority":  "High",
@@ -589,8 +589,8 @@
                                              "AppType":  "Windows app (Win32)",
                                              "select app package file":  "16 Fake MSI.intunewin",
                                              "Type of app install file":  "MSI",
-                                             "Name":  "TC_4180341A_16 Fake MSI.intunewin",
-                                             "Description":  "TC_4180341A_16 Fake MSI.intunewin",
+                                             "Name":  "TC_4180341B_16 Fake MSI.intunewin",
+                                             "Description":  "TC_4180341B_16 Fake MSI.intunewin",
                                              "Publisher":  "AIAuto ddmmyyyymmss",
                                              "program parameters":  {
                                                                         "Installation time required (mins)":  "5",
@@ -629,7 +629,7 @@
                       },
 
                      {
-                          "testCaseId":  "TC_4180341B",
+                          "testCaseId":  "TC_4180341C",
                           "testName":  "Win32App_DependentApp_4180341B",
                           "description":  "[IntuneSA]:[Windows][Win10]:[DependentApp]:[WinClassicApp]:[Required][DeviceGroup]:A -\u003e B. A is deployed, B is installed then A. Then dependency is changed to A -\u003e C. At global re-eval, C is installed",
                           "category":  "WinClassicApp",

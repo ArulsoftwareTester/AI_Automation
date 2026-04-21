@@ -15,6 +15,7 @@ tools:
   - mcp_playwright_browser_network_requests
   - mcp_playwright_browser_evaluate
   - mcp_playwright_browser_close
+  - intune-playwright/*
 agents: []
 user-invocable: false
 ---

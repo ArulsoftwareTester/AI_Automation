@@ -7,6 +7,7 @@ tools:
   - edit
   - playwright/*
   - microsoft-learn/*
+  - intune-playwright/*
 agents: []
 user-invocable: false
 ---
@@ -192,6 +193,45 @@ HealingHints:
 | Structure shifted across snapshots | -1 |
 
 Score: 1-3 = Fragile, 4-6 = Moderate, 7-10 = Stable
+
+---
+
+# DomScanner Runtime Scanning Rules
+
+## Always Scan All Elements During Healing
+
+When the self-healing flow is triggered (primary locator failed), DomScanner **MUST** scan all page elements — not just overlays.
+
+### Rule 1: Remove `HasBaselines` Guard
+- `SelfHealingLocator.cs` must **always** call `DomScanner.ScanPageAsync()` when primary locator fails
+- The `if (!DomScanner.HasBaselines)` guard causes stale baselines from previous tests to prevent fresh scans
+- A stale baseline means the current page's elements (e.g., Command Bar buttons) are never captured
+
+### Rule 2: Scan Order
+1. **`ScanPageAsync`** — Full page scan (buttons, links, inputs, roles, aria-labels — 18 CSS selectors, ~37-45ms, ~150-200 elements)
+2. **`ScanActiveOverlaysAsync`** — Overlay-only scan (listbox, callout, panel, dialog — dynamically appearing elements)
+3. Both scans enrich hints via `EnrichHintsFromBaseline()`
+
+### Rule 3: FindMatchingElement Priorities
+| Priority | Match Strategy | Example |
+|----------|---------------|---------|
+| 1 | `data-automation-id` (exact) | Unique IDs |
+| 2 | `aria-label` + `role` (exact) | Button with label "Create" |
+| 3 | `text` + section context | "+ Add group" under "Uninstall" heading |
+| 4 | `aria-label` (exact) | Fallback without role |
+| 5 | `text` (exact) | Least specific exact match |
+| 6 | `className` + `role` (contains) | Command bar buttons by CSS class + role |
+| 7 | `className` + partial `aria-label` | Renamed buttons (Add→Create) sharing same class |
+
+### Rule 4: Performance Guardrails
+- `ScanPageAsync` must complete in < 50ms (typical: 37-45ms)
+- Element count should be 150-200 for standard Intune pages
+- If scan exceeds 100ms or 500 elements, log a warning but do NOT abort
+
+### Rule 5: Command Bar Special Handling
+- Intune Command Bar buttons may be renamed (e.g., "Add" → "Create")
+- `FindCommandBarButtons()` helper scans for `[role="menubar"]` button descendants
+- Primary locator order: try "Create" first, fall back to "Add"
 
 ---
 

@@ -6,6 +6,7 @@ tools:
   - search
   - edit
   - execute
+  - intune-playwright/*
 agents: []
 user-invocable: false
 ---

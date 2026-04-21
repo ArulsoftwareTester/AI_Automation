@@ -4,6 +4,7 @@ using System.Threading.Tasks;
 namespace IntuneCanaryTests
 {
     [TestFixture]
+    [Parallelizable(ParallelScope.Self)]
     public class Test_14673239_App_Signoff_Test_WinGet_App_Test_Cases : WinGetStoreAppRegressionTestBase
     {
         protected override string RegressionTestCaseId => "TC_14673239";

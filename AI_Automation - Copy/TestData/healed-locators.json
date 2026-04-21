@@ -1,0 +1,66 @@
+[
+  {
+    "identifier": "auto_Combobox_unknown",
+    "healedSelector": "css: #form-label-id-11textbox",
+    "strategy": "AI(Gemini)",
+    "healCount": 5,
+    "lastHealed": "2026-04-16T13:43:31.058108Z",
+    "confidence": 1
+  },
+  {
+    "identifier": "auto_Complementary_Search_the_Microsoft_Store_app_(new)",
+    "healedSelector": "a[aria-label=\u0022Search\\ the\\ Microsoft\\ Store\\ app\\ (new)\u0022] (section: )",
+    "strategy": "DomScanner.SectionMatch",
+    "healCount": 3,
+    "lastHealed": "2026-04-15T08:51:05.0163771Z",
+    "confidence": 0.7000000000000001
+  },
+  {
+    "identifier": "auto_element_App_information",
+    "healedSelector": "fxc-tabs-itemslist fxc-tabs-headers",
+    "strategy": "ElementHelper.Class",
+    "healCount": 10,
+    "lastHealed": "2026-04-20T21:11:44.3791422Z",
+    "confidence": 1
+  },
+  {
+    "identifier": "auto_element_System",
+    "healedSelector": "System",
+    "strategy": "getByText(exact)",
+    "healCount": 3,
+    "lastHealed": "2026-04-15T12:49:46.2120197Z",
+    "confidence": 0.7000000000000001
+  },
+  {
+    "identifier": "auto_element_User",
+    "healedSelector": "User",
+    "strategy": "getByText(exact)",
+    "healCount": 3,
+    "lastHealed": "2026-04-15T12:50:08.7145192Z",
+    "confidence": 0.7000000000000001
+  },
+  {
+    "identifier": "auto_Treeitem_Web_Link",
+    "healedSelector": "//div[1]/div[4]/div[1]/div[1]/div[3]/section/div[2]/div[1]/div[4]/div[2]/div/div/div[2]/div/div[2]/div[2]/div/div[1]/div[1]/div[1]/div[2]/div/div[2]/div[2]/div/div[1]/div[20]",
+    "strategy": "DomScanner.OverlayXPath",
+    "healCount": 3,
+    "lastHealed": "2026-04-20T09:13:26.8731179Z",
+    "confidence": 0.6000000000000001
+  },
+  {
+    "identifier": "Treeitem_Microsoft_365_Apps_for_Windows_10_and_later",
+    "healedSelector": "parent=\u0027Microsoft 365 Apps\u0027 child=\u0027Windows 10 and later\u0027",
+    "strategy": "GroupedParentChild.Sibling",
+    "healCount": 14,
+    "lastHealed": "2026-04-20T21:09:08.3382941Z",
+    "confidence": 1
+  },
+  {
+    "identifier": "Treeitem_Microsoft_Edge_for_Windows_10_and_later",
+    "healedSelector": "parent=\u0027Microsoft Edge\u0027 child=\u0027Windows 10 and later\u0027",
+    "strategy": "GroupedParentChild.Sibling",
+    "healCount": 7,
+    "lastHealed": "2026-04-20T22:05:28.8109936Z",
+    "confidence": 1
+  }
+]
