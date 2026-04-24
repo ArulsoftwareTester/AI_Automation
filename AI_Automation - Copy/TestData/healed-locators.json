@@ -1,5 +1,13 @@
 [
   {
+    "identifier": "auto_Columnheader_Filter_mode",
+    "healedSelector": "Available for enrolled devices Assignments",
+    "strategy": "DynamicRole(Columnheader)",
+    "healCount": 5,
+    "lastHealed": "2026-04-24T08:44:50.043417Z",
+    "confidence": 1
+  },
+  {
     "identifier": "auto_Combobox_unknown",
     "healedSelector": "css: #form-label-id-11textbox",
     "strategy": "AI(Gemini)",
@@ -8,20 +16,20 @@
     "confidence": 1
   },
   {
-    "identifier": "auto_Complementary_Search_the_Microsoft_Store_app_(new)",
-    "healedSelector": "a[aria-label=\u0022Search\\ the\\ Microsoft\\ Store\\ app\\ (new)\u0022] (section: )",
-    "strategy": "DomScanner.SectionMatch",
-    "healCount": 3,
-    "lastHealed": "2026-04-15T08:51:05.0163771Z",
-    "confidence": 0.7000000000000001
-  },
-  {
     "identifier": "auto_element_App_information",
     "healedSelector": "fxc-tabs-itemslist fxc-tabs-headers",
     "strategy": "ElementHelper.Class",
     "healCount": 10,
     "lastHealed": "2026-04-20T21:11:44.3791422Z",
     "confidence": 1
+  },
+  {
+    "identifier": "auto_element_Required_Assignments",
+    "healedSelector": "#fxc-gc_0 (section: Required)",
+    "strategy": "DomScanner.SectionMatch",
+    "healCount": 3,
+    "lastHealed": "2026-04-24T08:39:29.2218566Z",
+    "confidence": 0.7000000000000001
   },
   {
     "identifier": "auto_element_System",
@@ -52,15 +60,15 @@
     "healedSelector": "parent=\u0027Microsoft 365 Apps\u0027 child=\u0027Windows 10 and later\u0027",
     "strategy": "GroupedParentChild.Sibling",
     "healCount": 14,
-    "lastHealed": "2026-04-20T21:09:08.3382941Z",
+    "lastHealed": "2026-04-22T16:40:53.7640492Z",
     "confidence": 1
   },
   {
     "identifier": "Treeitem_Microsoft_Edge_for_Windows_10_and_later",
     "healedSelector": "parent=\u0027Microsoft Edge\u0027 child=\u0027Windows 10 and later\u0027",
     "strategy": "GroupedParentChild.Sibling",
-    "healCount": 7,
-    "lastHealed": "2026-04-20T22:05:28.8109936Z",
+    "healCount": 5,
+    "lastHealed": "2026-04-24T13:23:05.1606371Z",
     "confidence": 1
   }
 ]

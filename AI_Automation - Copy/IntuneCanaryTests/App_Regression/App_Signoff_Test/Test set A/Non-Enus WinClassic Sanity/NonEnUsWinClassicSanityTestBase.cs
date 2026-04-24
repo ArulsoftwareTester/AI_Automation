@@ -10,6 +10,7 @@ using global::PlaywrightTests.Common.Utils.BaseUtils.PopUp;
 using global::PlaywrightTests.Common.Utils.BaseUtils.UtilInterface;
 using System;
 using System.Collections.Generic;
+using System.Collections.Concurrent;
 using System.IO;
 using System.Linq;
 using System.Text.Json;
@@ -22,6 +23,9 @@ namespace IntuneCanaryTests
     public abstract class NonEnUsWinClassicSanityTestBase : PageTest
     {
         private ExtentTest? _test;
+
+        // Static map: JSON test data Name ? actual unique app name created at runtime
+        private static readonly ConcurrentDictionary<string, string> _createdAppNameMap = new();
 
         protected abstract string TestId { get; }
         protected abstract string TestTitle { get; }
@@ -102,19 +106,15 @@ namespace IntuneCanaryTests
 
                 await UploadWin32PackageAsync(environment, parameters, testData.Parameters.SelectAppPackageFile);
 
-                parameters = await ExecuteStepAsync(
-                    allAppsUtils,
-                    parameters,
-                    "Set app display name",
-                    new ControlInfo
-                    {
-                        ControlType = "SetAppInformationNameAsync",
-                        OperationValue = testData.Parameters.Name
-                    });
+                // Set app name directly from JSON (no GUID transformation)
+                _test?.Info($"Setting app name: {testData.Parameters.Name}");
+                await allAppsUtils.SetAppInformationInputWithPlaceholderAsync("Enter a name", testData.Parameters.Name);
+                createdAppName = testData.Parameters.Name;
+                parameters["AppAutomationAppName"] = createdAppName;
 
-                createdAppName = parameters.TryGetValue("AppAutomationAppName", out var uniqueName)
-                    ? uniqueName
-                    : testData.Parameters.Name;
+                // Store mapping so other tests (e.g. supersedence B) can resolve this app name
+                _createdAppNameMap[testData.Parameters.Name] = createdAppName;
+                Console.WriteLine($"[AppNameMap] Stored: '{testData.Parameters.Name}'");
 
                 parameters = await ExecuteStepAsync(
                     allAppsUtils,
@@ -231,7 +231,7 @@ namespace IntuneCanaryTests
                 }
                 else
                 {
-                    _test?.Info("No dependencies configured â€” skipping");
+                    _test?.Info("No dependencies configured — skipping");
                 }
 
                 parameters = await ExecuteStepAsync(
@@ -240,12 +240,56 @@ namespace IntuneCanaryTests
                     "Continue to supersedence",
                     new ControlInfo { ControlType = "ClickNextButtonAsync" });
 
+                if (!string.IsNullOrWhiteSpace(testData.Parameters.Supercedence))
+                {
+                    // Resolve the supersedence app's actual unique name from the static map
+                    var supersedenceSearchName = testData.Parameters.Supercedence;
+                    if (_createdAppNameMap.TryGetValue(testData.Parameters.Supercedence, out var resolvedName))
+                    {
+                        supersedenceSearchName = resolvedName;
+                        Console.WriteLine($"[Supersedence] Resolved '{testData.Parameters.Supercedence}' ? '{resolvedName}'");
+                    }
+                    else
+                    {
+                        Console.WriteLine($"[Supersedence] WARNING: Could not resolve '{testData.Parameters.Supercedence}' from map. Using as-is.");
+                    }
+
+                    _test?.Info($"Adding supersedence: {supersedenceSearchName}");
+                    Console.WriteLine($"[Supersedence] Adding supersedence app: {supersedenceSearchName}");
+
+                    parameters = await ExecuteStepAsync(
+                        allAppsUtils,
+                        parameters,
+                        "Click Add supersedence button",
+                        new ControlInfo { ControlType = "ClickSupersedenceAddButtonAsync" });
+
+                    var uninstallPrev = string.IsNullOrWhiteSpace(testData.Parameters.UninstallPreviousVersion)
+                        ? "No"
+                        : testData.Parameters.UninstallPreviousVersion;
+
+                    parameters = await ExecuteStepAsync(
+                        allAppsUtils,
+                        parameters,
+                        $"Select supersedence app {supersedenceSearchName}",
+                        new ControlInfo
+                        {
+                            ControlType = "SelectSupersedenceAppsAsync",
+                            Value = new List<string> { supersedenceSearchName, uninstallPrev }
+                        });
+
+                    Console.WriteLine($"[Supersedence] Supersedence added: {supersedenceSearchName}, Uninstall={uninstallPrev}");
+                    _test?.Pass($"Supersedence added: {supersedenceSearchName}");
+                }
+                else
+                {
+                    _test?.Info("No supersedence configured — skipping");
+                }
+
                 parameters = await ExecuteStepAsync(
                     allAppsUtils,
                     parameters,
                     "Continue to assignments",
                     new ControlInfo { ControlType = "ClickNextButtonAsync" });
-
                 if (assignmentMode.HasValue)
                 {
                     parameters = await ConfigureAssignmentsAsync(allAppsUtils, parameters, testData, assignmentMode.Value);
@@ -258,7 +302,7 @@ namespace IntuneCanaryTests
                 }
                 else
                 {
-                    _test?.Info("No assignment mode configured (Delete test)  skipping assignment configuration");
+                    _test?.Info("No assignment mode configured (Delete test) — skipping assignment configuration");
                 }
 
                 parameters = await ExecuteStepAsync(
@@ -314,11 +358,14 @@ namespace IntuneCanaryTests
 
                 if (assignmentMode.HasValue)
                 {
+                    // Wait for Properties page to fully render before verifying assignments
+                    await Page.WaitForLoadStateAsync(LoadState.NetworkIdle);
+                    await Page.WaitForTimeoutAsync(3000);
                     parameters = await VerifyAssignmentsAsync(allAppsUtils, parameters, testData, assignmentMode.Value);
                 }
                 else
                 {
-                    _test?.Info("No assignment mode  skipping assignment verification");
+                    _test?.Info("No assignment mode — skipping assignment verification");
                 }
 
                 _test?.Info(testData.Parameters.DeviceValidation.AppInstallationValidation);
@@ -542,7 +589,7 @@ namespace IntuneCanaryTests
         {
             if (string.IsNullOrWhiteSpace(deviceValidation.SearchTerm))
             {
-                _test?.Info("No searchTerm configured â€” skipping device installation validation.");
+                _test?.Info("No searchTerm configured ?Â?Â? skipping device installation validation.");
                 return;
             }
 
@@ -597,12 +644,12 @@ namespace IntuneCanaryTests
 
             if (expectInstalled && appFound)
             {
-                _test?.Pass($"VALIDATION PASSED: \"{deviceValidation.SearchTerm}\" found in winget list â€” app is installed as expected.");
+                _test?.Pass($"VALIDATION PASSED: \"{deviceValidation.SearchTerm}\" found in winget list ?Â?Â? app is installed as expected.");
                 Console.WriteLine($"[{DateTime.Now:HH:mm:ss}] VALIDATION PASSED: App installed as expected.");
             }
             else if (!expectInstalled && !appFound)
             {
-                _test?.Pass($"VALIDATION PASSED: \"{deviceValidation.SearchTerm}\" not found in winget list â€” app is not installed as expected.");
+                _test?.Pass($"VALIDATION PASSED: \"{deviceValidation.SearchTerm}\" not found in winget list ?Â?Â? app is not installed as expected.");
                 Console.WriteLine($"[{DateTime.Now:HH:mm:ss}] VALIDATION PASSED: App not installed as expected.");
             }
             else if (expectInstalled && !appFound)
@@ -679,7 +726,7 @@ namespace IntuneCanaryTests
                 "..",
                 "..",
                 "TestData_AppReggersion",
-                "Non-Enus_winclassic_santity"));
+                "WinClassicApp_Sanity_BACKUP.json"));
 
             using var stream = File.OpenRead(testDataPath);
             var root = JsonSerializer.Deserialize<NonEnUsWinClassicRoot>(stream, new JsonSerializerOptions
@@ -857,6 +904,9 @@ namespace IntuneCanaryTests
 
             [JsonPropertyName("Device Validation")]
             public NonEnUsWinClassicDeviceValidation DeviceValidation { get; set; } = new();
+
+            [JsonPropertyName("Uninstall previous version")]
+            public string UninstallPreviousVersion { get; set; } = string.Empty;
         }
 
         protected sealed class NonEnUsWinClassicProgramParameters

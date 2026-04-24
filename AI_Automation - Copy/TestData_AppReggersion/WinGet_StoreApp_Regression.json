@@ -1,4 +1,4 @@
-﻿{
+{
     "testCases":  [
                       {
                           "testCaseId":  "TC_14673239",
@@ -278,7 +278,7 @@
                                              "search app":  "Adobe Photoshop",
                                              "displayName":  "Test-Case9-AdobePhotoshop",
                                              "description":  "Adobe Photoshop is a powerful image editing software used by professionals worldwide.",
-                                             "publisher":  "Adobe Inc.",
+                                             "publisher":  "Spotify AB",
                                              "Assignments":  {
                                                                  "Required":  "",
                                                                  "Available for enrolled devices":  "Add group",
@@ -344,7 +344,7 @@
                                              "search app":  "Adobe Acrobat Reader DC",
                                              "displayName":  "Test-Case11-AdobeAcrobatReaderDC",
                                              "description":  "Adobe Acrobat Reader DC is the free, trusted standard for viewing, printing, signing, sharing, and annotating PDFs.",
-                                             "publisher":  "Adobe Inc.",
+                                             "publisher":  "Spotify AB",
                                              "Assignments":  {
                                                                  "Required":  "Add group",
                                                                  "Available for enrolled devices":  "",
@@ -374,10 +374,10 @@
                                              "firstLink":  "Apps",
                                              "secondLink":  "Windows",
                                              "AppType":  "Microsoft store app (new)",
-                                             "search app":  "Adobe Lightroom",
-                                             "displayName":  "Test-Case12-AdobeLightroom",
-                                             "description":  "Adobe Lightroom is a powerful photo editing and management software.",
-                                             "publisher":  "Adobe Inc.",
+                                             "search app":  "Spotify Music",
+                                             "displayName":  "Test-Case12-SpotifyMusic",
+                                             "description":  "Spotify Music is a digital music streaming service.",
+                                             "publisher":  "Spotify AB",
                                              "Assignments":  {
                                                                  "Required":  "Add group",
                                                                  "Available for enrolled devices":  "",
@@ -391,7 +391,7 @@
                                              "Device Validation":  {
                                                                        "pre-requisite on device":  "",
                                                                        "App Installation Validation":  "Verify App is installed successfully on the device",
-                                                                       "searchTerm":  "Adobe Lightroom",
+                                                                       "searchTerm":  "Spotify Music",
                                                                        "expectedValue":  "installed"
                                                                    }
                                          }

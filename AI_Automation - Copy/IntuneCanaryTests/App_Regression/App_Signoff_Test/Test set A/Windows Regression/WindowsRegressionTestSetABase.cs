@@ -21,6 +21,13 @@ namespace IntuneCanaryTests
     {
         private ExtentTest? _test;
         private SmartStepExecutor? _smartStep;
+        private static readonly string _debugLogPath = Path.Combine(
+            Path.GetDirectoryName(typeof(WindowsRegressionTestSetABase).Assembly.Location) ?? ".",
+            "..", "..", "..", "..", "debug-step-log.txt");
+        private static void DebugLog(string msg)
+        {
+            try { File.AppendAllText(_debugLogPath, $"[{DateTime.Now:HH:mm:ss.fff}] {msg}{Environment.NewLine}"); } catch { }
+        }
 
         protected abstract string RegressionTestCaseId { get; }
 
@@ -414,8 +421,8 @@ namespace IntuneCanaryTests
                 }
 
                 // Click Next to proceed to Requirements (for Win32 apps) or Assignments
-                // Skip for M365 apps ï¿½ Step 8b already navigated from Configure App Suite to Assignments
-                // Skip for Edge apps ï¿½ Step 8a already navigated from App Settings to Assignments
+                // Skip for M365 apps Ã¯Â¿Â½ Step 8b already navigated from Configure App Suite to Assignments
+                // Skip for Edge apps Ã¯Â¿Â½ Step 8a already navigated from App Settings to Assignments
                 if (!isM365App && !isEdgeApp)
                 {
                     parameters = await ExecuteStepAsync(
@@ -482,7 +489,7 @@ namespace IntuneCanaryTests
                 }
                 else
                 {
-                    _test?.Info("Step 10: No assignments configured ï¿½ skipping");
+                    _test?.Info("Step 10: No assignments configured Ã¯Â¿Â½ skipping");
                 }
 
                 // Click Next to go to Review + Create
@@ -735,6 +742,51 @@ namespace IntuneCanaryTests
                     break;
             }
 
+
+            // Configure assignment filter if specified
+            if (!string.IsNullOrWhiteSpace(testData.Parameters.Assignments.AssignmentFiltergroup))
+            {
+                var filterModeCellType = assignmentMode switch
+                {
+                    AssignmentMode.Required => "ClickRequiredFilterModeCellAsync",
+                    AssignmentMode.Available => "ClickAvailableFilterModeCellAsync",
+                    AssignmentMode.Uninstall => "ClickUninstallFilterModeCellAsync",
+                    _ => throw new ArgumentOutOfRangeException(nameof(assignmentMode))
+                };
+
+                parameters = await ExecuteStepAsync(
+                    utils,
+                    parameters,
+                    $"Click filter mode cell for {testData.Parameters.Assignments.SelectGroups}",
+                    new ControlInfo
+                    {
+                        ControlType = filterModeCellType,
+                        OperationValue = testData.Parameters.Assignments.SelectGroups
+                    });
+
+                if (parameters.ContainsKey("FilterModeNotAvailable"))
+                {
+                    Console.WriteLine($"[AssignmentFilter] Skipping SetAssignmentFilter — 'Filter mode' column not available for this app type");
+                    _test?.Info("Filter mode column not available in assignment grid — skipping filter configuration");
+                    parameters.Remove("FilterModeNotAvailable");
+                }
+                else
+                {
+                    parameters = await ExecuteStepAsync(
+                        utils,
+                        parameters,
+                        $"Set assignment filter '{testData.Parameters.Assignments.AssignmentFiltergroup}' ({testData.Parameters.Assignments.AppManagementAssignmentFilterType})",
+                        new ControlInfo
+                        {
+                            ControlType = "SetAssignmentFilterAsync",
+                            Value = new List<string>
+                            {
+                                testData.Parameters.Assignments.AssignmentFiltergroup,
+                                testData.Parameters.Assignments.AppManagementAssignmentFilterType
+                            }
+                        });
+                }
+            }
             return parameters;
         }
 
@@ -765,18 +817,29 @@ namespace IntuneCanaryTests
             string stepDescription,
             ControlInfo controlInfo)
         {
+            DebugLog($"STEP START: {stepDescription} | ControlType={controlInfo.ControlType} | OpValue={controlInfo.OperationValue}");
             _test?.Info(stepDescription);
             controlInfo.Parameter = parameters;
 
-            // Use SmartStepExecutor when available (provides tab pre-check & retry on wrong-page)
-            if (_smartStep != null && utils is AllAppsUtils)
+            try
             {
-                var result = await _smartStep.ExecuteWithGuardsAsync(controlInfo);
-                return result.Parameter;
-            }
+                // Use SmartStepExecutor when available (provides tab pre-check & retry on wrong-page)
+                if (_smartStep != null && utils is AllAppsUtils)
+                {
+                    var result = await _smartStep.ExecuteWithGuardsAsync(controlInfo);
+                    DebugLog($"STEP DONE:  {stepDescription} | ControlType={controlInfo.ControlType}");
+                    return result.Parameter;
+                }
 
-            var directResult = await utils.RunStepAsync(controlInfo);
-            return directResult.Parameter;
+                var directResult = await utils.RunStepAsync(controlInfo);
+                DebugLog($"STEP DONE:  {stepDescription} | ControlType={controlInfo.ControlType}");
+                return directResult.Parameter;
+            }
+            catch (Exception ex)
+            {
+                DebugLog($"STEP FAIL:  {stepDescription} | ControlType={controlInfo.ControlType} | Error={ex.Message}");
+                throw;
+            }
         }
 
         private async Task TryCleanupCreatedAppAsync(string createdAppName)
@@ -1183,6 +1246,12 @@ namespace IntuneCanaryTests
 
             [JsonPropertyName("select groups")]
             public string SelectGroups { get; set; } = string.Empty;
+
+            [JsonPropertyName("AssignmentFiltergroup")]
+            public string AssignmentFiltergroup { get; set; } = string.Empty;
+
+            [JsonPropertyName("AppManagementAssignmentFilterType")]
+            public string AppManagementAssignmentFilterType { get; set; } = string.Empty;
         }
 
         private sealed class WindowsRegressionDeviceValidation

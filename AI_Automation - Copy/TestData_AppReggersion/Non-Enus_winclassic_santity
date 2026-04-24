@@ -2870,10 +2870,10 @@
                                              "firstLink":  "Apps",
                                              "secondLink":  "Windows",
                                              "AppType":  "Windows app (Win32)",
-                                             "select app package file":  "010 Fake MSI.intunewin",
+                                             "select app package file":  "25 Fake MSI.intunewin",
                                              "Type of app install file":  "MSI",
-                                             "Name":  "TC_8195647A_010 Fake MSI.intunewin",
-                                             "Description":  "TC_8195647A_010 Fake MSI.intunewin",
+                                             "Name":  "TC_8195647A_025 Fake MSI.intunewin",
+                                             "Description":  "TC_8195647A_025 Fake MSI.intunewin",
                                              "Publisher":  "AIAuto ddmmyyyymmss",
                                              "program parameters":  {
                                                                         "Installation time required (mins)":  "5",
@@ -2889,12 +2889,12 @@
                                                                                 "Rules format":  "Manually configure detection rules"
                                                                             },
                                              "Dependencies":  "",
-                                             "Supercedence":  "Configured as per test description",
+                                             "Supercedence":  "",
                                              "Assignments":  {
                                                                  "Required":  "Add group",
                                                                  "Available for enrolled devices":  "",
                                                                  "uninstall":  "",
-                                                                 "select groups":  "Automation_AI"
+                                                                 "select groups":  "Automation_AI_User_group_win32"
                                                              },
                                              "API parameters":  {
 
@@ -2918,10 +2918,10 @@
                                                                  "firstLink":  "Apps",
                                                                  "secondLink":  "Windows",
                                                                  "AppType":  "Windows app (Win32)",
-                                                                 "select app package file":  "011 Fake MSI.intunewin",
+                                                                 "select app package file":  "26 Fake MSI.intunewin",
                                                                  "Type of app install file":  "MSI",
-                                                                 "Name":  "TC_8195647B_011 Fake MSI.intunewin",
-                                                                 "Description":  "TC_8195647B_011 Fake MSI.intunewin",
+                                                                 "Name":  "TC_8195647B_026 Fake MSI.intunewin",
+                                                                 "Description":  "TC_8195647B_026 Fake MSI.intunewin",
                                                                  "Publisher":  "AIAuto ddmmyyyymmss",
                                                                  "program parameters":  {
                                                                                             "Installation time required (mins)":  "5",
@@ -2937,7 +2937,7 @@
                                                                                                     "Rules format":  "Manually configure detection rules"
                                                                                                 },
                                                                  "Dependencies":  "",
-                                                                 "Supercedence":  "Configured as per test description",
+                                                                 "Supercedence":  "TC_8195647A_025 Fake MSI.intunewin",
                                                                  "Assignments":  {
                                                                                      "Required":  "",
                                                                                      "Available for enrolled devices":  "",
@@ -2952,8 +2952,9 @@
                                                                                            "App Installation Validation":  "Verify App A should not be installed on the device",
                                                                                            "searchTerm":  "",
                                                                                            "expectedValue":  ""
-                                                                                       }
-                                                             }
+                                                                                       },
+                                                                 "Uninstall previous version":  "Yes"
+                                                              }
                       },
                       {
                           "testCaseId":  "TC_9133729",
