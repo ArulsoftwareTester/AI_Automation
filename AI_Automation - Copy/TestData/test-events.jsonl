@@ -1,2 +1,3 @@
 {"event":"SESSION_START","identifier":"TestRun","timestamp":"2026-04-24T15:23:10.4969525Z","data":{"machine":"DESKTOP-Q86QLIA","startTime":"2026-04-24T15:23:10.4968407Z","eventsFile":"C:\\Users\\v-arulmani\\Downloads\\AI_Automation 5\\AI_Automation - Copy\\TestData\\test-events.jsonl"}}
 {"event":"HEALING_SUCCESS","identifier":"auto_element_Install_behavior","timestamp":"2026-04-24T15:23:10.5020335Z","data":{"strategy":"getByText(exact)","detail":"Install behavior","healCount":1,"latencyMs":0}}
+{"event":"PORTAL_UPDATE_LIKELY","identifier":"stability","timestamp":"2026-04-24T15:27:26.3600588Z","data":{"fragilePercent":100,"degradedCount":0}}

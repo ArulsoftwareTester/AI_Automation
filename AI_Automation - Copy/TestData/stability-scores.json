@@ -1,18 +1,5 @@
 {
   "runs": {
-    "2026-04-16_10:42": {
-      "App install may force a device restart": 3,
-      "Home": 3,
-      "Soft reboot": 3,
-      "Apps | All Apps": 3,
-      "Retry": 3,
-      "Program": 3,
-      "Command line": 3,
-      "Success": 3,
-      "Hard reboot": 3,
-      "Requirements": 3,
-      "Detection rules": 3
-    },
     "2026-04-16_10:48": {
       "App install may force a device restart": 3,
       "Home": 3,
@@ -155,6 +142,21 @@
       "Hard reboot": 3,
       "Requirements": 3,
       "Detection rules": 3
+    },
+    "2026-04-24_15:27": {
+      "Requirements": 3,
+      "App install may force a device restart": 3,
+      "Program": 3,
+      "Retry": 3,
+      "Success": 3,
+      "Soft reboot": 3,
+      "Detection rules": 3,
+      "Home": 3,
+      "Supersedence": 3,
+      "Apps | All Apps": 3,
+      "Command line": 3,
+      "Hard reboot": 3,
+      "Dependencies": 3
     }
   }
 }
