@@ -1,4 +1,4 @@
-﻿{
+{
     "testCases":  [
                       {
                           "testCaseId":  "TC_3045446",
@@ -2051,7 +2051,7 @@
                                                                  "Required":  "",
                                                                  "Available for enrolled devices":  "Add group",
                                                                  "uninstall":  "",
-                                                                 "select groups":  "Automation_AI user group_win32"
+                                                                 "select groups":  "Automation_AI_User_group_win32"
                                                              },
                                              "API parameters":  {
 
@@ -2341,7 +2341,7 @@
                                                                  "Required":  "Add group",
                                                                  "Available for enrolled devices":  "",
                                                                  "uninstall":  "",
-                                                                 "select groups":  "Automation_AI user group_win32"
+                                                                 "select groups":  "Automation_AI_User_group_win32"
                                                              },
                                              "API parameters":  {
 
